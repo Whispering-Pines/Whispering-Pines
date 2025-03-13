@@ -25,7 +25,7 @@
 		return
 	if(owner.name == "Unknown" || owner.name == "Unknown Man" || owner.name == "Unknown Woman")
 		return
-	if(is_human_part_visible(owner, HIDEEYES) || organ.glows) //hideface so people can hide their glowy ass eyes with a mask etc.
+	if(is_human_part_visible(owner, HIDEEYES) && organ.glows) //hideface so people can hide their glowy ass eyes with a mask etc.
 		owner.eye_overlay = mutable_appearance(icon, "human_glow_1", MOUTH_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.client.prefs.get_eye_color())
 		owner.eye_overlay2 = mutable_appearance(icon, "human_glow_2", MOUTH_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.client.prefs.get_eye_second_color())
 		if(owner.eye_overlay && owner.eye_overlay2)

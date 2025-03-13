@@ -20,7 +20,7 @@ GLOBAL_LIST_INIT(named_ball_sizes, list(
 	"small" = 1,
 	"average" = 2,
 	"large" = 3,
-	"massive" = 4,
+	"massive (!)" = 4,
 	"enormous (!)" = 5,
 ))
 

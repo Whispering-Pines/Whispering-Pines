@@ -52,6 +52,12 @@
 	if(damage > maxHealth)//cap liver damage
 		damage = maxHealth
 
+
+/obj/item/organ/liver/prepare_eat()
+	var/obj/S = ..()
+	S.reagents.add_reagent(/datum/reagent/iron, 5)
+	return S
+
 #undef LIVER_DEFAULT_TOX_TOLERANCE
 #undef LIVER_DEFAULT_TOX_LETHALITY
 #undef HAS_SILENT_TOXIN

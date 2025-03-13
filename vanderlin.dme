@@ -2931,4 +2931,8 @@
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
 #include "modular_whisper\code\modules\surgery\surgeries\resize_surgery.dm"
+#include "code\modules\client\customizer\customizers\bodypart_feature\crests.dm"
+#include "code\modules\mob\dead\new_player\sprite_accessories\crests.dm"
+#include "code\modules\mob\living\carbon\human\species_types\roguetown\construct\_construct.dm"
+#include "code\modules\mob\living\carbon\human\species_types\roguetown\construct\constructm.dm"
 // END_INCLUDE

@@ -219,7 +219,6 @@
 	desc = ""
 	icon_state = "brain-x"
 
-
 ////////////////////////////////////TRAUMAS////////////////////////////////////////
 
 /obj/item/organ/brain/proc/has_trauma_type(brain_trauma_type = /datum/brain_trauma, resilience = TRAUMA_RESILIENCE_ABSOLUTE)

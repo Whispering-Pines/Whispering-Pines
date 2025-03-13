@@ -107,6 +107,21 @@
 		/datum/customizer/organ/butt/human,
 	)
 
+	body_marking_sets = list(
+		/datum/body_marking_set/none,
+		/datum/body_marking_set/belly,
+		/datum/body_marking_set/socks,
+		/datum/body_marking_set/tiger,
+		/datum/body_marking_set/tiger_dark,
+	)
+	body_markings = list(
+		/datum/body_marking/flushed_cheeks,
+		/datum/body_marking/eyeliner,
+		/datum/body_marking/tonage,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
+		/datum/body_marking/nose,
+	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,
 		/datum/descriptor_choice/body,
@@ -120,6 +135,7 @@
 		/datum/descriptor_choice/prominent_three_wild,
 		/datum/descriptor_choice/prominent_four_wild,
 	)
+
 
 /datum/species/demihuman/get_hairc_list()
 	return sortList(list(

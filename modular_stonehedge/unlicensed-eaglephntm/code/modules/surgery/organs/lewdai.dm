@@ -46,6 +46,7 @@
 	var/vagina_organ = /obj/item/organ/filling_organ/vagina
 	var/show_genitals = FALSE
 	var/no_random_gender = FALSE
+	var/mutable_appearance/breast_overlay
 	var/mutable_appearance/nipple_overlay
 	var/mutable_appearance/vag_overlay
 	var/mutable_appearance/hair_overlay

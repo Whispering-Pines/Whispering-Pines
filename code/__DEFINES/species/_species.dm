@@ -21,6 +21,7 @@
 #define RACE_LUPIAN "Lupian"
 #define RACE_TABAXI "Tabaxi"
 #define RACE_VULPKANIN "Vulpkanin"
+#define RACE_CONSTRUCT "Metal Construct"
 #define RACE_HUMAN_SPACE "Human"
 
 // ============ USING ID BECAUSE FUCK YOU
@@ -49,6 +50,7 @@
 	"tabaxi",\
 	"vulpkanin",\
 	"humanspace",\
+	"constructm",\
 	)
 
 /// Species where females get underwear, no underwear for kobold, rakshari and triton, dwarves handled seperately
@@ -122,6 +124,7 @@
 	RACE_LUPIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
+	RACE_CONSTRUCT,\
 )
 
 /// Races not considered discriminated against in Phantom Kingdom. Used for nobility, etc.
@@ -149,6 +152,7 @@
 	RACE_LUPIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
+	RACE_CONSTRUCT,\
 )
 
 /// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Tenebrase. Used for church/faith roles.
@@ -177,6 +181,7 @@
 	RACE_LUPIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
+	RACE_CONSTRUCT,\
 )
 
 /// Races who are non-exotic to Phantom Kingdom. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
@@ -263,6 +268,7 @@
 	RACE_LUPIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
+	RACE_CONSTRUCT,\
 )
 
 /// Foreigner Nobility Races

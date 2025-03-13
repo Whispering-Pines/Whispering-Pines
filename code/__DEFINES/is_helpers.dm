@@ -201,3 +201,4 @@ GLOBAL_VAR_INIT(magic_appearance_detecting_image, new /image) // appearances are
 
 //whispering pines
 #define isresurgentis(A) (is_species(A, /datum/species/human/resurgentis))
+#define isconstruct(A) (is_species(A, /datum/species/construct/metal))

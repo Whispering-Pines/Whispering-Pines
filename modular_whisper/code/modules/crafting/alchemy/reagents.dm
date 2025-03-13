@@ -56,3 +56,16 @@
 		M.adjust_stamina(15)
 	..()
 	. = 1
+
+/datum/reagent/iron
+	name = "Iron"
+	description = "Pure iron is a metal."
+	reagent_state = SOLID
+	taste_description = "iron"
+
+	color = "#606060" //pure iron? let's make it violet of course
+
+/datum/reagent/iron/on_mob_life(mob/living/carbon/M)
+	if(M.blood_volume < BLOOD_VOLUME_NORMAL) //stabilize if in crit.
+		M.blood_volume += 5
+	..()
