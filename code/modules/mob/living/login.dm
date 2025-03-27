@@ -27,6 +27,7 @@
 
 	if(!funeral_login())
 		log_game("[key_name(src)] on login: had an issue with funeral-checking logic.")
+	set_ssd_indicator(FALSE)
 
 /mob/living/proc/login_fade()
 	set waitfor = FALSE
