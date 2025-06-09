@@ -119,7 +119,7 @@ GLOBAL_LIST_EMPTY(last_messages)
 	// update_mobility()
 	stop_pulling()
 
-	to_chat(src, span_green("A bleak afterlife awaits... but the Gods may let you walk again in another shape! Spirit, you must descend in a Journey to the Underworld and wait there for judgment..."))
+	to_chat(src, span_green("A bleak afterlife awaits... but the Gods may let you walk again in another shape! Spirit, you must descend in a Journey to the Underworld and wait there for judgment... Or defy it all and reclone and face another fate."))
 
 	. = ..()
 

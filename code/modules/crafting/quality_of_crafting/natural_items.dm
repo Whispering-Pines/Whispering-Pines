@@ -264,7 +264,8 @@
 	name = "recurve bow"
 	requirements = list(
 		/obj/item/grown/log/tree/small = 1,
-		/obj/item/natural/fibers = 4,
+		/obj/item/natural/fibers = 3,
+		/obj/item/reagent_containers/food/snacks/tallow = 1,
 	)
 	attacked_atom = /obj/item/grown/log/tree/small
 	starting_atom  = /obj/item/natural/fibers
@@ -276,8 +277,8 @@
 	name = "long bow"
 	requirements = list(
 		/obj/item/grown/log/tree/small = 1,
-		/obj/item/natural/fibers = 8,
-		/obj/item/reagent_containers/food/snacks/fat = 1,
+		/obj/item/natural/fibers = 6,
+		/obj/item/reagent_containers/food/snacks/tallow = 1,
 	)
 	attacked_atom = /obj/item/grown/log/tree/small
 	starting_atom  = /obj/item/natural/fibers

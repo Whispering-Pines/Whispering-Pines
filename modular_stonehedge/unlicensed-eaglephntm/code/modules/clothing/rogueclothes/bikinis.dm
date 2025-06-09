@@ -450,16 +450,17 @@
 	name = "hardened leather bikini"
 	result = /obj/item/clothing/armor/leather/advanced/bikini
 	reqs = list(/obj/item/natural/hide/cured = 2,
-				/obj/item/natural/fibers = 1)
+				/obj/item/natural/fibers = 1,
+				/obj/item/reagent_containers/food/snacks/tallow = 1,)
 	craftdiff = 4
 
 /datum/crafting_recipe/sewing/leather/hardenedbra
 	name = "hardened leather bra"
 	result = /obj/item/clothing/armor/leather/advanced/bikini/bra
 	reqs = list(/obj/item/natural/hide/cured = 2,
-				/obj/item/natural/fibers = 1)
+				/obj/item/natural/fibers = 1,
+				/obj/item/reagent_containers/food/snacks/tallow = 1,)
 	craftdiff = 4
-
 
 /datum/crafting_recipe/leather/bikini
 	name = "leather bikini (2 leather)"

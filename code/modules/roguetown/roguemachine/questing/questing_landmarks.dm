@@ -10,9 +10,10 @@
 		/obj/item/reagent_containers/glass/bottle/whitewine
 	)
 	var/list/kill_mobs = list(
-		/mob/living/carbon/human/species/goblin/npc/ambush/sea,
+		/mob/living/carbon/human/species/goblin/npc/ambush,
 		/mob/living/carbon/human/species/skeleton/npc/ambush,
-		/mob/living/carbon/human/species/human/northern/searaider/ambush
+		/mob/living/carbon/human/species/zizombie/npc/ambush,
+		/mob/living/carbon/human/species/orc/npc,
 	)
 	var/miniboss_mobs = list(
 		/mob/living/carbon/human/species/human/northern/deranged_knight

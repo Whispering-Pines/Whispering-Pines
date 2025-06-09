@@ -84,13 +84,13 @@
 /datum/repeatable_crafting_recipe/crafting/candle
 	name = "candle"
 	requirements = list(
-		/obj/item/reagent_containers/food/snacks/fat= 1,
+		/obj/item/reagent_containers/food/snacks/tallow = 1,
 		/obj/item/natural/fibers= 1,
 	)
 	starting_atom = /obj/item/natural/fibers
-	attacked_atom = /obj/item/reagent_containers/food/snacks/fat
+	attacked_atom = /obj/item/reagent_containers/food/snacks/tallow
 	output = /obj/item/candle/yellow
-	output_amount = 2
+	output_amount = 3
 	uses_attacked_atom = TRUE
 
 /datum/repeatable_crafting_recipe/crafting/woodclub
@@ -512,6 +512,7 @@
 	starting_atom = /obj/item/natural/fibers
 	attacked_atom = /obj/item/paper
 	output = /obj/item/paper/scroll
+	output_amount = 3
 	subtypes_allowed = TRUE
 	uses_attacked_atom = TRUE
 	craftdiff = 0

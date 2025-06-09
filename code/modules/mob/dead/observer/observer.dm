@@ -318,7 +318,7 @@ Works together with spawning an observer, noted above.
 				mind.remove_antag_datum(/datum/antagonist/zombie)
 				return ..()
 			var/datum/antagonist/zombie/Z = mind.has_antag_datum(/datum/antagonist/zombie)
-			if(Z && get_playerquality(ckey) < 15)
+			if(Z && get_playerquality(ckey) < 0)
 				can_reenter_corpse = FALSE
 			// if(!Z.revived)
 			// 	if(!(world.time % 5))

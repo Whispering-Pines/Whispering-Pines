@@ -627,7 +627,10 @@
 			else
 				examination += span_info("My [pick(forgan.altnames)] are about <bold>[round(forgan.reagents.total_volume / 3)]/[round(forgan.reagents.maximum_volume / 3)]</bold> oz full. [(forgan.maxHealth-forgan.damage) < forgan.maxHealth ? "Looks [(forgan.maxHealth-forgan.damage)/forgan.maxHealth * 100]% healthy." : "Looks </span><span class='green'>OK</span>"]")
 		else
-			examination += span_info("My [pick(forgan.altnames)] is empty.")
+			if(userino.has_quirk(/datum/quirk/selfawaregeni))
+				examination += span_info("My [pick(forgan.altnames)] is empty. [(forgan.maxHealth-forgan.damage) < forgan.maxHealth ? "Looks [(forgan.maxHealth-forgan.damage)]/[forgan.maxHealth] damaged." : "Looks <span class='green'>OK</span>"]")
+			else
+				examination += span_info("My [pick(forgan.altnames)] is empty.[(forgan.maxHealth-forgan.damage) < forgan.maxHealth ? "Looks [(forgan.maxHealth-forgan.damage)/forgan.maxHealth * 100]% healthy." : "Looks </span><span class='green'>OK</span>"]")
 		if(forgan.contents.len)
 			examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in my [pick(forgan.altnames)].")
 		continue

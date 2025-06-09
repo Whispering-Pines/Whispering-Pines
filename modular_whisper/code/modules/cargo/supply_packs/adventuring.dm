@@ -82,3 +82,12 @@
 	contains = list(/obj/item/reagent_containers/blood/OMinus,
 					/obj/item/reagent_containers/blood/OMinus,
 					/obj/item/reagent_containers/blood/OMinus)
+
+
+/datum/supply_pack/adventure_supplies/rationpaper
+	name = "Ration Papers"
+	cost = 20
+	contains = list(
+					/obj/item/ration,
+					/obj/item/ration,
+				)

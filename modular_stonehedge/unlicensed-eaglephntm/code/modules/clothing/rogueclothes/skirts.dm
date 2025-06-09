@@ -55,8 +55,17 @@
 /datum/crafting_recipe/sewing/leatherskirt
 	name = "leather skirt"
 	result = list(/obj/item/clothing/pants/trou/leather/skirt)
-	reqs = list(/obj/item/natural/hide = 1)
+	reqs = list(/obj/item/natural/hide = 1,
+	/obj/item/reagent_containers/food/snacks/tallow = 1,)
 	sellprice = 10
+
+/datum/repeatable_crafting_recipe/leather/standalone/hlskirt
+	name = "hardened leather skirt"
+	output = /obj/item/clothing/pants/trou/leather/advanced/skirt
+	requirements = list(/obj/item/natural/hide/cured = 1,
+				/obj/item/natural/fibers = 1,
+				/obj/item/reagent_containers/food/snacks/tallow = 1,)
+	craftdiff = 4
 
 /datum/anvil_recipe/armor/studdedskirt
 	name = "Studded Skirt (+1 Leather Skirt)"

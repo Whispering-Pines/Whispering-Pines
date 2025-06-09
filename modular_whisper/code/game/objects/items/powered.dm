@@ -35,7 +35,7 @@
 				update_appearance(UPDATE_ICON_STATE)
 				to_chat(huser, span_green("I figure that this should be a [name]."))
 				huser.adjust_experience(/datum/skill/misc/lore, huser.STAINT * 2 + identify_difficulty, FALSE, TRUE)
-				if(!type in huser.identified_items)
+				if(!(type in huser.identified_items))
 					huser.identified_items += type
 			else
 				to_chat(huser, span_red("I can't quite figure out what this is, I should ponder again later... [the_roll]%"))

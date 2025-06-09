@@ -8,6 +8,11 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 	icon_state = "nuclear"
 	desc = "A mysterious old world machine capable of remotely making every ancient tech in the area start working again."
 	var/toggled = FALSE
+	var/datum/looping_sound/streetlamp1/soundloop
+
+/obj/machinery/mini_nuclear_generator/Initialize(mapload, ...)
+	. = ..()
+	soundloop = new(src, FALSE)
 
 /obj/machinery/mini_nuclear_generator/Destroy()
 	if(toggled)
@@ -22,6 +27,9 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 		for(var/obj/structure/chair/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
+	if(soundloop)
+		QDEL_NULL(soundloop)
+	explosion(loc, GLOB.MAX_EX_DEVESTATION_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
 	. = ..()
 
 /obj/machinery/mini_nuclear_generator/can_be_unfasten_wrench(mob/user, silent)
@@ -36,6 +44,7 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 	toggled = !toggled
 	var/area/current_area = get_area(src)
 	if(toggled)
+		soundloop.start()
 		current_area.fake_power += 1 //hopefully should handle multiples
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
 		icon_state = "[initial(icon_state)]_on"
@@ -48,8 +57,8 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 		for(var/obj/structure/chair/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-
 	else
+		soundloop.stop()
 		current_area.fake_power -= 1
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		icon_state = "[initial(icon_state)]_off"
@@ -181,6 +190,11 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 	var/charge_stored = 0
 	var/max_charge = 1000
 	var/charge_amt
+	var/datum/looping_sound/streetlamp1/soundloop
+
+/obj/structure/chair/sexgenerator/Initialize(mapload, ...)
+	. = ..()
+	soundloop = new(src, FALSE)
 
 /obj/structure/chair/sexgenerator/examine(mob/user)
 	. = ..()
@@ -206,6 +220,8 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 		for(var/obj/structure/chair/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
+	if(soundloop)
+		QDEL_NULL(soundloop)
 	. = ..()
 
 /obj/structure/chair/sexgenerator/attack_hand_secondary(mob/user)
@@ -219,6 +235,7 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 	toggled = !toggled
 	var/area/current_area = get_area(src)
 	if(toggled)
+		soundloop.start()
 		current_area.fake_power += 1 //hopefully should handle multiples
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
 		icon_state = "milker_gen_on"
@@ -232,6 +249,7 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
 	else
+		soundloop.stop()
 		current_area.fake_power -= 1
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		icon_state = "milker_gen"

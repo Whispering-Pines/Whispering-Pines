@@ -662,7 +662,7 @@
 	return (health <= crit_threshold && (stat == SOFT_CRIT || stat == UNCONSCIOUS))
 
 /mob/living/proc/InFullCritical()
-	return ((health <= HEALTH_THRESHOLD_FULLCRIT) && stat == UNCONSCIOUS)
+	return ((health <= hardcrit_threshold) && stat == UNCONSCIOUS)
 
 /mob/living/proc/getMaxHealth()
 	return maxHealth

@@ -1698,6 +1698,8 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					var/choice = browser_input_list(user, "WHO IS YOUR HERO?", "LAST DEATH AWAITS", choices, real_name)
 					if(choice)
 						choice = choices[choice]
+						user.cut_overlays()
+						user.update_body()
 						if(!load_character(choice))
 							randomise_appearance_prefs(include_patreon = patreon)
 							save_character()

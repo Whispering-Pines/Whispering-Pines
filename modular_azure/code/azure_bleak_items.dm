@@ -544,3 +544,133 @@ Reel teleports the attached atom to the grabbed turf.
 /obj/item/candle/silver/lit
 	icon_state = "scandle_lit"
 	start_lit = TRUE
+
+// TALLOW is used as an intermediate crafting ingredient for other recipes.
+/obj/item/reagent_containers/food/snacks/tallow
+	name = "tallow"
+	desc = "Fatty tissue is harvested from slain creachurs and rendered of its membraneous sinew to produce a hard shelf-stable \
+	grease."
+	icon = 'modular/Neu_Food/icons/others/fat.dmi'
+	icon_state = "tallow"
+	tastes = list("grease" = 1, "oil" = 1, "regret" =1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR)
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+	bitesize = 1
+	dropshrink = 0.3
+
+/datum/crafting_recipe/roguetown/tallow/hearth_tallow
+	name = "render tallow over the hearth"
+	result = list(
+				/obj/item/reagent_containers/food/snacks/tallow,
+				/obj/item/reagent_containers/food/snacks/tallow,
+				/obj/item/reagent_containers/food/snacks/tallow,
+				/obj/item/reagent_containers/food/snacks/tallow,
+				)
+	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 1)
+	tools = list(/obj/item/cooking/pan,)
+	structurecraft = /obj/machinery/light/fueled/hearth
+	craftdiff = 0
+	craftsound = 'sound/misc/frying.ogg'
+	verbage = "render"
+
+/datum/crafting_recipe/roguetown/tallow/campfire_tallow
+	name = "render tallow over the campfire"
+	result = list(
+				/obj/item/reagent_containers/food/snacks/tallow,
+				/obj/item/reagent_containers/food/snacks/tallow,
+				/obj/item/reagent_containers/food/snacks/tallow,
+				)
+	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 1)
+	tools = list(/obj/item/cooking/pan,)
+	structurecraft = /obj/machinery/light/fueled/campfire
+	craftdiff = 0
+	craftsound = 'sound/misc/frying.ogg'
+	verbage = "render"
+
+/obj/item/mobilestove
+	name = "packed stove"
+	desc = "A portable bronze stovetop. The underside is covered in an esoteric pattern of small tubes."
+	icon = 'icons/roguetown/misc/lighting.dmi'
+	icon_state = "hobostovep"
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_BACK
+	grid_width = 32
+	grid_height = 64
+
+/obj/machinery/light/fueled/hearth/mobilestove // thanks to Reen and Ppooch for their help on this. If any of this is slopcode, its my slopcode, not theirs. They only made improvements.
+	name = "mobile stove"
+	desc = "A portable bronze stovetop. The underside is covered in an esoteric pattern of small tubes."
+	icon_state = "hobostove1"
+	base_state = "hobostove"
+	brightness = 4
+	bulb_colour ="#4ac77e"
+	density = FALSE
+	anchored = TRUE
+	climbable = FALSE
+	climb_offset = FALSE
+	layer = TABLE_LAYER
+	on = FALSE
+	status = LIGHT_BURNED
+	crossfire = FALSE
+	soundloop = null
+
+/obj/item/mobilestove/attack_self(mob/user, params)
+	..()
+	var/turf/T = get_turf(loc)
+	if(!isfloorturf(T))
+		to_chat(user, span_warning("I need ground to plant this on!"))
+		return
+	for(var/obj/A in T)
+		if(istype(A, /obj/structure))
+			to_chat(user, span_warning("I need some free space to deploy a [src] here!"))
+			return
+		if(A.density && !(A.flags_1 & ON_BORDER_1))
+			to_chat(user, span_warning("There is already something here!</span>"))
+			return
+	user.visible_message(span_notice("[user] begins placing \the [src] down on the ground."))
+	if(do_after(user, 2 SECONDS, TRUE, src))
+		var/obj/machinery/light/fueled/hearth/mobilestove/new_mobilestove = new /obj/machinery/light/fueled/hearth/mobilestove(get_turf(src))
+		new_mobilestove.color = src.color
+		qdel(src)
+
+/datum/crafting_recipe/roguetown/cooking/mobilestove_tallow
+	name = "render tallow over the mobile stove"
+	result = list(
+				/obj/item/reagent_containers/food/snacks/tallow,
+				/obj/item/reagent_containers/food/snacks/tallow,
+				/obj/item/reagent_containers/food/snacks/tallow,
+				)
+	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 1)
+	tools = list(/obj/item/cooking/pan,)
+	structurecraft = /obj/machinery/light/fueled/hearth/mobilestove
+	craftdiff = 0
+	craftsound = 'sound/misc/frying.ogg'
+	req_table = FALSE
+	verbage = "render"
+
+/datum/repeatable_crafting_recipe/survival/ration_wrapper
+	name = "ration wrapping paper"
+	output = /obj/item/ration
+	requirements = list(
+		/obj/item/paper = 1,
+		/obj/item/reagent_containers/food/snacks/tallow = 1,
+		)
+	starting_atom = /obj/item/paper
+	attacked_atom = /obj/item/reagent_containers/food/snacks/tallow
+	skillcraft = /datum/skill/craft/cooking
+	craftdiff = 2
+	output_amount = 2
+	uses_attacked_atom = TRUE
+
+/datum/repeatable_crafting_recipe/candle/eora
+	name = "rosa candle"
+	requirements = list(
+		/obj/item/reagent_containers/food/snacks/tallow= 1,
+		/obj/item/natural/fibers= 1,
+		/obj/item/alch/rosa= 1,
+	)
+	starting_atom = /obj/item/natural/fibers
+	attacked_atom = /obj/item/reagent_containers/food/snacks/tallow
+	output = /obj/item/candle/eora
+	output_amount = 3
+	uses_attacked_atom = TRUE
