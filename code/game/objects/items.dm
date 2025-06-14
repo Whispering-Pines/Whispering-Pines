@@ -769,13 +769,14 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 			A.Grant(user)
 	item_flags |= IN_INVENTORY
 	if(!initial)
-		if(equip_sound && (slot_flags & slot))
-			if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
+		var/slotbit = slotdefine2slotbit(slot)
+		if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
+			if(pickup_sound && slot == ITEM_SLOT_HANDS)
+				playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
+			if(sheathe_sound && slotbit == ITEM_SLOT_HIP | ITEM_SLOT_BACK_R | ITEM_SLOT_BACK_L)
+				playsound(src, sheathe_sound, SHEATHE_SOUND_VOLUME, ignore_walls = FALSE)
+			else if(equip_sound &&(slot_flags & slotbit))
 				playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
-		if(pickup_sound)
-			if(user.is_holding(src))
-				if(user.m_intent != MOVE_INTENT_SNEAK) // Don't play a sound if we're sneaking, for assassination purposes.
-					playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
 	user.update_equipment_speed_mods()
 
 	if(!user.is_holding(src))
