@@ -28,6 +28,13 @@
 	minstr = 7
 	sellprice = 30
 	wdefense = GREAT_PARRY
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_sword.ogg'
+	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword.ogg'
+
+/obj/item/weapon/sword/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_sword.ogg", "modular_helmsguard/sound/sheath_sounds/draw_sword2.ogg", "modular_helmsguard/sound/sheath_sounds/draw_sword3.ogg")
+	sheathe_sound = pick("modular_helmsguard/sound/sheath_sounds/put_back_sword.ogg", "modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg")
+	. = ..()
 
 /obj/item/weapon/sword/getonmobprop(tag)
 	. = ..()
@@ -336,6 +343,8 @@
 	swingsound = BLADEWOOSH_HUGE
 	wbalance = EASY_TO_DODGE
 	sellprice = 100
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_greatsword.ogg'
+	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'
 
 /obj/item/weapon/sword/scimitar/messer
 	name = "messer"
@@ -533,6 +542,11 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.75
 	sellprice = 60
+
+/obj/item/rogueweapon/sword/long/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pickup_sound
+	sheathe_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
+	. = ..()
 
 /obj/item/weapon/sword/long/death
 	color = CLOTHING_SOOT_BLACK

@@ -23,6 +23,8 @@
 	cartridge_wording = "arrow"
 	load_sound = 'sound/foley/nockarrow.ogg'
 	metalizer_result = /obj/item/restraints/legcuffs/beartrap/armed
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_bow.ogg'
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/getonmobprop(tag)
 	if(tag)

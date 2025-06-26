@@ -31,6 +31,12 @@
 
 	grid_height = 64
 	grid_width = 32
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg'
+	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_dagger.ogg'
+
+/obj/item/weapon/knife/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg", "modular_helmsguard/sound/sheath_sounds/draw_dagger2.ogg", "sound/foley/equip/swordsmall2.ogg")
+	. = ..()
 
 /obj/item/weapon/knife/Initialize()
 	. = ..()

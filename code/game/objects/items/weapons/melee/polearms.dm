@@ -26,6 +26,13 @@
 	wdefense = GREAT_PARRY
 	thrown_bclass = BCLASS_STAB
 	sellprice = 20
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg'
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
+
+/obj/item/weapon/polearm/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
+	sheathe_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
+	. = ..()
 
 /obj/item/weapon/polearm/Initialize()
 	. = ..()
@@ -140,6 +147,9 @@
 	wdefense = ULTMATE_PARRY
 	minstr = 5
 	sellprice = 5
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg'
+	sheathe_sound = 'sound/foley/equip/swordlarge1.ogg'
+
 
 /obj/item/weapon/polearm/woodstaff/getonmobprop(tag)
 	. = ..()
@@ -393,6 +403,10 @@
 	wdefense = AVERAGE_PARRY
 	axe_cut = 10
 	sellprice = 30
+
+/obj/item/weapon/polearm/halberd/bardiche/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_greatsword.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
+	. = ..()
 
 /obj/item/weapon/polearm/halberd/bardiche/blissrose
 	name = "summer scythe"

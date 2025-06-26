@@ -25,6 +25,8 @@
 	sellprice = 30
 	grid_width = 32
 	grid_height = 64
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_gen.ogg'
+	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_to_leather.ogg'
 
 /obj/item/weapon/whip/getonmobprop(tag)
 	. = ..()

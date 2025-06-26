@@ -14,6 +14,11 @@
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	axe_cut = 10	// bonus damage to trees
 
+/obj/item/weapon/axe/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
+	. = ..()
+
 /*------------\
 | Chop intent |	small AP, fewer protect vs this crit (more delimb?)
 \------------*/
@@ -238,7 +243,13 @@
 	pickmult = 1.2 // It's a pick...
 	axe_cut = 15 // ...and an Axe!
 	toolspeed = 2
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_gen.ogg'
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
 
+/obj/item/weapon/pick/paxe/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_gen.ogg") //adds more variety of sound at every interaction
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
+	. = ..()
 
 //................ Steel Axe ............... //
 /obj/item/weapon/axe/steel
@@ -289,6 +300,9 @@
 	wlength = WLENGTH_SHORT
 	pickup_sound = 'sound/foley/equip/rummaging-03.ogg'
 	sellprice = 15
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_greatsword.ogg'
+	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_to_leather.ogg'
+
 /obj/item/weapon/axe/copper/getonmobprop(tag)
 	. = ..()
 	if(tag)

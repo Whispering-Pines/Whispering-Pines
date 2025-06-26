@@ -31,6 +31,12 @@
 	blade_dulling = DULLING_BASHCHOP
 	grid_height = 64
 	grid_width = 32
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg'
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
+
+/obj/item/weapon/mace/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg", "modular_helmsguard/sound/sheath_sounds/draw_mace.ogg", "modular_helmsguard/sound/sheath_sounds/draw_blunt2.ogg")
+	. = ..()
 
 /obj/item/weapon/mace/getonmobprop(tag)
 	if(tag)

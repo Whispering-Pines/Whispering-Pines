@@ -279,6 +279,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	/// angle of the icon, these are used for attack animations
 	var/icon_angle = 50 // most of our icons are angled
 
+	var/sheathe_sound = 'sound/items/wood_sharpen.ogg'
+
 /obj/item/Initialize()
 	. = ..()
 
@@ -769,13 +771,12 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 			A.Grant(user)
 	item_flags |= IN_INVENTORY
 	if(!initial)
-		var/slotbit = slotdefine2slotbit(slot)
 		if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
 			if(pickup_sound && slot == ITEM_SLOT_HANDS)
 				playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
-			if(sheathe_sound && slotbit == ITEM_SLOT_HIP | ITEM_SLOT_BACK_R | ITEM_SLOT_BACK_L)
+			if(sheathe_sound && slot == ITEM_SLOT_HIP | ITEM_SLOT_BACK_R | ITEM_SLOT_BACK_L)
 				playsound(src, sheathe_sound, SHEATHE_SOUND_VOLUME, ignore_walls = FALSE)
-			else if(equip_sound &&(slot_flags & slotbit))
+			else if(equip_sound &&(slot_flags & slot))
 				playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
 	user.update_equipment_speed_mods()
 

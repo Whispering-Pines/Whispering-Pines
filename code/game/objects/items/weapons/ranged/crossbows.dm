@@ -18,6 +18,8 @@
 	cartridge_wording = "bolt"
 	load_sound = 'sound/foley/nockarrow.ogg'
 	fire_sound = 'sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_crossbow.ogg'
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/getonmobprop(tag)
 	. = ..()

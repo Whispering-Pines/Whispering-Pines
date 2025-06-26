@@ -82,6 +82,10 @@
 #define TRAIT_CABAL                     "Of the Cabal" //Tenebrase cultists recognize each other too
 #define TRAIT_DISMAS_EYES				"Eyes of Dismas" //Examine to see the most expensive item someone has
 
+//DREAMKEEP traits
+#define TRAIT_BLINDFIGHTING "Blind Fighting"
+
+
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
 #define TRAIT_BAD_MOOD "Bad Mood"
@@ -247,6 +251,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_FLOWERFIELD_IMMUNITY = span_info("I am immune to the effects of flower fields."),
 	TRAIT_USEMAGIC = span_info("I know my way around magic items by legit means or trickery."),
 	TRAIT_LEARNMAGIC = span_info("I can memorize spells long as my intellect allow me."),
+	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming, If i am in high awareness, I can even prevent sneak attacks."),
 	))
 
 #define SIGNAL_ADDTRAIT(trait_ref) ("addtrait " + trait_ref)

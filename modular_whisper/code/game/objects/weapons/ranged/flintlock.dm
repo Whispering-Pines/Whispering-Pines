@@ -17,12 +17,10 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	can_parry = TRUE
+	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	minstr = 6
 	experimental_onback = TRUE
-	var/click_delay = 0.5
-	var/obj/item/ramrod/rod
 	cartridge_wording = "ball"
-	var/rammed = FALSE
 	load_sound = 'modular_helmsguard/sound/arquebus/musketload.ogg'
 	fire_sound = "modular_helmsguard/sound/arquebus/arquefire.ogg"
 	equip_sound = 'sound/foley/gun_equip.ogg'
@@ -39,9 +37,6 @@
 	sellprice = 200 // This kind of equipment is very hard to come by in Rockhill.
 	grid_height = 32
 	grid_width = 192
-	var/cocked = FALSE
-	var/ramrod_inserted = TRUE
-	var/powdered = FALSE
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/arquebus/shoot_live_shot(mob/living/user, pointblank, mob/pbtarget, message)
 	fire_sound = pick("modular_helmsguard/sound/arquebus/arquefire.ogg", "modular_helmsguard/sound/arquebus/arquefire2.ogg", "modular_helmsguard/sound/arquebus/arquefire3.ogg",

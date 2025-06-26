@@ -26,6 +26,7 @@
 	sellprice = 20
 	grid_width = 32
 	grid_height = 96
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
 
 /obj/item/weapon/flail/getonmobprop(tag)
 	. = ..()

@@ -157,6 +157,9 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Tiny" = TRAIT_TINY,
 		"Bedbreaker" = TRAIT_DEATHBYSNOOSNOO,
 		"Good Lover" = TRAIT_GOODLOVER,
+		"Blindfighting" = TRAIT_BLINDFIGHTING
+		"Use Magic" = TRAIT_USEMAGIC
+		"Learn Magic" = TRAIT_LEARNMAGIC
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS

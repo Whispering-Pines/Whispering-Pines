@@ -23,6 +23,8 @@
 
 	grid_height = 96
 	grid_width = 32
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg'
+	sheathe_sound = 'sound/items/wood_sharpen.ogg'
 
 /datum/intent/lordbash
 	name = "bash"
@@ -123,6 +125,8 @@
 	wdefense = 0
 	var/charge = 100
 	var/on = FALSE
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg'
+	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_dagger.ogg'
 
 /datum/intent/mace/strike/stunner/afterchange()
 	var/obj/item/weapon/mace/stunmace/I = get_master_item()
