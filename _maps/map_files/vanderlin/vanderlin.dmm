@@ -21875,7 +21875,7 @@
 "oaZ" = (
 /obj/effect/mapping_helpers/secret_door_creator{
 	name = "Orphanage Secret Door";
-	redstone_id = "matthiosroom";
+	redstone_id = "dismasroom";
 	vip_message = "Orphan";
 	vips = list("Orphan")
 	},
@@ -22350,7 +22350,7 @@
 /area/rogue/indoors/town/church)
 "opv" = (
 /obj/structure/lever/hidden{
-	redstone_id = "matthiosroom"
+	redstone_id = "dismasroom"
 	},
 /turf/closed/wall/mineral/stone,
 /area/rogue/indoors/town/orphanage)

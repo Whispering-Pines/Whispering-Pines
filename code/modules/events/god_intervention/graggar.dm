@@ -35,12 +35,12 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 		winner.remove_stress(/datum/stressevent/graggar_culling_unfinished)
 		winner.verbs -= /mob/living/carbon/human/proc/remember_culling
 		winner.add_stress(/datum/stressevent/graggar_culling_finished)
-		to_chat(winner, span_notice("Your rival's heart has been DESTROYED! While not the glorious consumption Graggar desired, he acknowledges you as not weak."))
+		to_chat(winner, span_notice("Your rival's heart has been DESTROYED! While not the glorious consumption Sinius desired, he acknowledges you as not weak."))
 		winner.adjust_triumphs(1)
 	if(loser)
 		loser.remove_stress(/datum/stressevent/graggar_culling_unfinished)
 		loser.verbs -= /mob/living/carbon/human/proc/remember_culling
-		to_chat(loser, span_red("You have FAILED Graggar for the LAST TIME!"))
+		to_chat(loser, span_red("You have FAILED Sinius for the LAST TIME!"))
 		loser.gib()
 
 	qdel(src)
@@ -55,7 +55,7 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 	winner.set_stat_modifier("graggar_culling", STATKEY_INT, 1)
 	winner.set_stat_modifier("graggar_culling", STATKEY_SPD, 1)
 	winner.set_stat_modifier("graggar_culling", STATKEY_LCK, 1)
-	to_chat(winner, span_notice("You have proven your strength to Graggar by consuming your rival's heart! Your rival's power is now YOURS!"))
+	to_chat(winner, span_notice("You have proven your strength to Sinius by consuming your rival's heart! Your rival's power is now YOURS!"))
 	winner.adjust_triumphs(2)
 	winner.add_stress(/datum/stressevent/graggar_culling_finished)
 	winner.playsound_local(winner, 'sound/misc/gods/graggar_omen.ogg', 100)
@@ -63,34 +63,34 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 	if(loser)
 		loser.remove_stress(/datum/stressevent/graggar_culling_unfinished)
 		loser.verbs -= /mob/living/carbon/human/proc/remember_culling
-		to_chat(loser, span_boldred("You have FAILED Graggar for the LAST TIME!"))
+		to_chat(loser, span_boldred("You have FAILED Sinius for the LAST TIME!"))
 		loser.gib()
 
 	qdel(src)
 
-/// Verb for the graggar's culling contestants to remember their targets
+/// Verb for the sinius's culling contestants to remember their targets
 /mob/living/carbon/human/proc/remember_culling()
-	set name = "Graggar's Culling"
-	set category = "Graggar"
+	set name = "Sinius's Culling"
+	set category = "Sinius"
 	if(!mind)
 		return
 	mind.recall_culling(src)
 
 /datum/round_event_control/graggar_culling
-	name = "Graggar's Culling"
+	name = "Sinius's Culling"
 	track = EVENT_TRACK_INTERVENTION
 	typepath = /datum/round_event/graggar_culling
 	weight = 8
 	earliest_start = 25 MINUTES
 	max_occurrences = 1
 	min_players = 40
-	allowed_storytellers = list(/datum/storyteller/graggar)
+	allowed_storytellers = list(/datum/storyteller/sinius)
 
 /datum/round_event_control/graggar_culling/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
 	if(!.)
 		return FALSE
-	if(GLOB.patron_follower_counts["Graggar"] < 3)
+	if(GLOB.patron_follower_counts["Sinius"] < 3)
 		return FALSE
 
 /datum/round_event/graggar_culling/start()
@@ -99,7 +99,7 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
 
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/graggar))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/sinius))
 			continue
 
 		var/obj/item/organ/heart/heart = human_mob.getorganslot(ORGAN_SLOT_HEART)
@@ -132,20 +132,20 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 		first_chosen.add_stress(/datum/stressevent/graggar_culling_unfinished)
 		first_chosen.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/extract_heart)
 		first_chosen.verbs |= /mob/living/carbon/human/proc/remember_culling
-		to_chat(first_chosen, span_userdanger("YOU ARE GRAGGAR'S CHOSEN!"))
-		to_chat(first_chosen, span_red("Weak should feed the strong, that is Graggar's will. Prove that you are not weak by eating the heart of [span_notice(second_chosen.real_name)], the [second_chosen.job] and gain unimaginable power in turn. Fail, and you will be the one eaten."))
+		to_chat(first_chosen, span_userdanger("YOU ARE SINIUS'S CHOSEN!"))
+		to_chat(first_chosen, span_red("Weak should feed the strong, that is Sinius's will. Prove that you are not weak by eating the heart of [span_notice(second_chosen.real_name)], the [second_chosen.job] and gain unimaginable power in turn. Fail, and you will be the one eaten."))
 		to_chat(first_chosen, span_red("[span_notice("[second_chosen.real_name]")], the [second_chosen.job] is somewhere in [span_notice("[second_chosen_location]")]. Eat their heart before they eat yours!"))
 		if(grand_culling)
-			to_chat(first_chosen, span_notice("Graggar has decreed a GRAND CULLING! Many hearts will feed the strong todae!"))
+			to_chat(first_chosen, span_notice("Sinius has decreed a GRAND CULLING! Many hearts will feed the strong todae!"))
 		first_chosen.playsound_local(first_chosen, 'sound/misc/gods/graggar_omen.ogg', 100)
 
 		// Notify second chosen
 		second_chosen.add_stress(/datum/stressevent/graggar_culling_unfinished)
 		second_chosen.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/extract_heart)
 		second_chosen.verbs |= /mob/living/carbon/human/proc/remember_culling
-		to_chat(second_chosen, span_userdanger("YOU ARE GRAGGAR'S CHOSEN!"))
-		to_chat(second_chosen, span_red("Weak should feed the strong, that is Graggar's will. Prove that you are not weak by eating the heart of [span_notice(first_chosen.real_name)], the [first_chosen.job] and gain unimaginable power in turn. Fail, and you will be the one eaten."))
+		to_chat(second_chosen, span_userdanger("YOU ARE SINIUS'S CHOSEN!"))
+		to_chat(second_chosen, span_red("Weak should feed the strong, that is Sinius's will. Prove that you are not weak by eating the heart of [span_notice(first_chosen.real_name)], the [first_chosen.job] and gain unimaginable power in turn. Fail, and you will be the one eaten."))
 		to_chat(second_chosen, span_red("[span_notice("[first_chosen.real_name]")], the [first_chosen.job] is somewhere in [span_notice("[first_chosen_location]")]. Eat their heart before they eat yours!"))
 		if(grand_culling)
-			to_chat(second_chosen, span_notice("Graggar has decreed a GRAND CULLING! Many hearts will feed the strong todae!"))
+			to_chat(second_chosen, span_notice("Sinius has decreed a GRAND CULLING! Many hearts will feed the strong todae!"))
 		second_chosen.playsound_local(second_chosen, 'sound/misc/gods/graggar_omen.ogg', 100)

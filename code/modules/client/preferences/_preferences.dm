@@ -394,10 +394,9 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	dat += "<tr>"
 	dat += "<td width='33%' align='left'></td>"
 	dat += "<td width='33%' align='center'>"
-	/*
 	var/mob/dead/new_player/N = user
 	if(istype(N))
-		dat += "<a href='?_src_=prefs;preference=bespecial'><b>[next_special_trait ? "<font color='red'>SPECIAL</font>" : "BE SPECIAL"]</b></a><BR>"
+		//dat += "<a href='?_src_=prefs;preference=bespecial'><b>[next_special_trait ? "<font color='red'>SPECIAL</font>" : "BE SPECIAL"]</b></a><BR>"
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
 			switch(N.ready)
 				if(PLAYER_NOT_READY)
@@ -414,7 +413,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	else
 		dat += "<a href='?_src_=prefs;preference=finished'>DONE</a>"
 		dat += "</center>"
-	*/
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
 	dat += "<b>Be Voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"

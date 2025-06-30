@@ -22,13 +22,13 @@
 /datum/patron/inhumen/tenebrase
 	name = "Lady Tenebrase"
 	domain = "Primordial Darkness, Evil, Chaos, Darkness, Undeath"
-	desc = "Tenebrase the Primordial Darkness. Tenebrase's history is a mystery to all, only way she shown her existence to the mortal\
-realm is through the underdark, as undead dug from their resting places towards the newly built\
-underdark city beneath no man's land at the west, they conveyed her message and demanded worship, slaying those who refuse and rebel.\
-Now mostly drow and other people worship her mostly due fear, others for personal gains, and so on.\
-She is known as a female figure in a pale mask, her long flowing hair and her whole form tinted in matte dark\
-steel coloring, her mask looking quite ancient in artwork which has an unnerving, smile with blank\
-open eyes with no pupils or irises. She does not speak, only use proxies or convey her messages by\
+	desc = "Tenebrase the Primordial Darkness. Tenebrase's history is a mystery to all, only way she shown her existence to the mortal \
+realm is through the underdark, as undead dug from their resting places towards the newly built \
+underdark city beneath no man's land at the west, they conveyed her message and demanded worship, slaying those who refuse and rebel. \
+Now mostly drow and other people worship her mostly due fear, others for personal gains, and so on. \
+She is known as a female figure in a pale mask, her long flowing hair and her whole form tinted in matte dark \
+steel coloring, her mask looking quite ancient in artwork which has an unnerving, smile with blank \
+open eyes with no pupils or irises. She does not speak, only use proxies or convey her messages by \
 creative punis- 'Tests' to her believers that are often lethal to the weak. Tenebrase is one of the few living old gods."
 	flaws = "Hubris, Superiority, Fury"
 	worshippers = "Dark Elves, Aspirants, Necromancers"
@@ -46,41 +46,42 @@ creative punis- 'Tests' to her believers that are often lethal to the weak. Tene
 		/mob/living/carbon/human/proc/praise,
 	)
 
-/datum/patron/inhumen/graggar
-	name = "Graggar"
-	domain = "Ascended God, the Dark Sini-Star of Unnatural Beasts, Unsated Consumption, and Unbridled Hatred"
-	desc = "Became the first orc upon ascension through His habit of consuming the bodies of those He conquered. His forces continue to ravage the lands in His name. Through him, one may achieve true strength."
+/datum/patron/inhumen/sinius
+	name = "Sinius"
+	domain = "New God of Ultraviolence, Hatred and Cannibalism"
+	desc = "Once an orc warlord who were gifted a fragment of Tenebrase's great power through being deemed worthy due to his pure evil \
+soul and too many atrocities to count. He was a red orc called.. 'Bad Green' but was named Sinius by Tenebrase who found that stupid."
 	flaws = "Rage, Hatred, Bloodthirst"
 	worshippers = "Greenskins, The Revenge-Driven, Sadists"
 	sins = "Compassion, Frailty, Servility"
-	boons = "You are drawn to the flavour of raw flesh and organs, and may consume without worry."
-	added_traits = list(TRAIT_ORGAN_EATER)
+	boons = "You are drawn to the flavour of raw flesh and organs, and may consume without worry. Your weapons lose integrity slower."
+	added_traits = list(TRAIT_ORGAN_EATER, TRAIT_SHARPER_BLADES)
 	confess_lines = list(
-		"GRAGGAR IS THE BEAST I WORSHIP!",
-		"GRAGGAR WILL RAVAGE YOU!",
-		"GRAGGAR BRINGS UNHOLY DESTRUCTION!"
+		"SINIUS IS THE BEAST I WORSHIP!",
+		"SINIUS WILL RAVAGE YOU!",
+		"SINIUS BRINGS UNHOLY DESTRUCTION!"
 	)
-	storyteller = /datum/storyteller/graggar
+	storyteller = /datum/storyteller/sinius
 
-/datum/patron/inhumen/matthios
-	name = "Matthios"
+/datum/patron/inhumen/dismas
+	name = "Dismas"
 	domain = "God of Thievery, Ill-Gotten Gains, and Highwaymen"
-	desc = "Legendary human bandit whose greatest thievery was a spark of divinity through which He ascended himself. It is because of He that nobles clutch their coin purses to their chests in town."
+	desc = "Legendary human bandit whose greatest thievery was a spark of divinity through which He ascended himself to be a new god."
 	flaws = "Pride, Greed, Orneryness"
 	worshippers = "Outlaws, Noble-Haters, Downtrodden Peasantry"
 	sins = "Clumsiness, Stupidity, Humility"
 	boons = "You can see the most expensive item someone is carrying."
-	added_traits = list(TRAIT_MATTHIOS_EYES)
+	added_traits = list(TRAIT_DISMAS_EYES)
 	confess_lines = list(
-		"MATTHIOS STEALS FROM THE WORTHLESS!",
-		"MATTHIOS IS JUSTICE FOR THE COMMON MAN!",
-		"MATTHIOS IS MY LORD, I SHALL BE HIS MARTYR!",
+		"DISMAS STEALS FROM THE WORTHLESS!",
+		"DISMAS IS JUSTICE FOR THE COMMON MAN!",
+		"DISMAS IS MY LORD, I SHALL BE HIS MARTYR!",
 	)
-	storyteller = /datum/storyteller/matthios
+	storyteller = /datum/storyteller/dismas
 
 /datum/patron/inhumen/lamashtu
 	name = "Lamashtu"
-	domain = "Goddess of Monsters, Family, Breeding"
+	domain = "Goddess of Monsters, Family, Breeding, Hedonism"
 	desc = "Mother of Monsters and demon-goddess of family. A demonic gnoll, she is primarily worshipped by \
 evil creatures, though any being who plans on starting a family can follow her. Good creatures who \
 follow her are generally looked down on by the rest of her followers, who feel that they cannot truly \
@@ -93,8 +94,8 @@ the power of a minor goddess.'"
 	flaws = "Enviousness, Self-Destruction, Willingness to Sacrifice Others"
 	worshippers = "Monsters, the Motherless and Maidenless"
 	sins = "Sobriety, Self-Sacrifice, Faltering Willpower"
-	boons = "You are better in bed, and gain devotion if you are able."
-	added_traits = list(TRAIT_GOODLOVER, TRAIT_SEXDEVO)
+	boons = "Your hips break others' when you are on strong intent during sex, clerics gain devotion through sex."
+	added_traits = list(TRAIT_DEATHBYSNOOSNOO, TRAIT_SEXDEVO)
 	confess_lines = list(
 		"BREED IN LAMASHTU'S NAME!",
 		"MULTIPLY TO A HORDE FOR LAMASHTU!",

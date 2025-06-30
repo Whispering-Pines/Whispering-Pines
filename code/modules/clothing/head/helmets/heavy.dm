@@ -112,13 +112,13 @@
 	block2add = FOV_BEHIND
 	sellprice = 0 // Incredibly evil Zizoid armor, this should be burnt, nobody wants this
 
-//............... Matthios Helmet ............... //
+//............... Dismas Helmet ............... //
 
-/obj/item/clothing/head/helmet/heavy/matthios
+/obj/item/clothing/head/helmet/heavy/dismas
 	name = "gilded visage"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	desc = "A sinister visage. So that your crimes are never brought to you."
-	icon_state = "matthioshelm"
+	icon_state = "mattioshelm"
 	icon = 'icons/roguetown/clothing/special/evilarmor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/evilarmor64x64.dmi'
 	armor = ARMOR_PLATE
@@ -214,7 +214,7 @@
 	item_state = "ravoxhelm"
 	item_weight = 6 * IRON_MULTIPLIER
 
-//............... Sinistar (Graggar) Helmet ............... //
+//............... Sinistar (Sinius) Helmet ............... //
 /obj/item/clothing/head/helmet/heavy/sinistar
 	name = "sinistar helmet"
 	desc = "Glorious star, smeared in guts and greeted with a chorus of howls."

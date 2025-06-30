@@ -508,7 +508,7 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 			output += "<br>[carbon.real_name]"
 			if (carbon.job)
 				output += " - [carbon.job]"
-	output += "<br>Your creed is blood, your faith is steel. You will not rest until these souls are yours. Use the profane dagger to trap their souls for Graggar."
+	output += "<br>Your creed is blood, your faith is steel. You will not rest until these souls are yours. Use the profane dagger to trap their souls for Sinius."
 
 	if(window)
 		recipient << browse(output,"window=memory")
@@ -534,10 +534,10 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 				if(target_heart && target_heart.owner && target_heart.owner != target) // Rival is not gone but their heart is in someone else
 					output += "<br>[target.real_name], the [target.job]"
 					output += "<br>Your rival's heart beats in [target_heart.owner.real_name]'s chest in [target_heart_location]"
-					output += "<br>Retrieve and consume it to claim victory! Graggar will not forgive failure."
+					output += "<br>Retrieve and consume it to claim victory! Sinius will not forgive failure."
 				else
 					output += "<br>[target.real_name], the [target.job]"
-					output += "<br>Eat your rival's heart before they eat YOURS! Graggar will not forgive failure."
+					output += "<br>Eat your rival's heart before they eat YOURS! Sinius will not forgive failure."
 			else if(target_heart)
 				if(target_heart.owner && target_heart.owner != recipient)
 					output += "<br>Rival's Heart"
@@ -555,10 +555,10 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 				if(challenger_heart && challenger_heart.owner && challenger_heart.owner != challenger) // Rival is not gone but their heart is in someone else
 					output += "<br>[challenger.real_name], the [challenger.job]"
 					output += "<br>Your rival's heart beats in [challenger_heart.owner.real_name]'s chest in [challenger_heart_location]"
-					output += "<br>Retrieve and consume it to claim victory! Graggar will not forgive failure."
+					output += "<br>Retrieve and consume it to claim victory! Sinius will not forgive failure."
 				else
 					output += "<br>[challenger.real_name], the [challenger.job]"
-					output += "<br>Eat your rival's heart before he eat YOURS! Graggar will not forgive failure."
+					output += "<br>Eat your rival's heart before he eat YOURS! Sinius will not forgive failure."
 			else if(challenger_heart)
 				if(challenger_heart.owner && challenger_heart.owner != recipient)
 					output += "<br>Rival's Heart"

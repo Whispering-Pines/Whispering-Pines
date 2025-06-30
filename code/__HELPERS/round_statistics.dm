@@ -130,7 +130,7 @@
 #define STATS_CLERGY_DEATHS "clergy_deaths"
 #define STATS_TORTURES "tortures"
 
-// Graggar
+// Sinius
 #define STATS_BLOOD_SPILT "blood_lost"
 #define STATS_ORGANS_EATEN "organs_eaten"
 #define STATS_PEOPLE_GIBBED "gibbed"
@@ -144,7 +144,7 @@
 #define STATS_JUNKIES "junkies"
 #define STATS_LUXURIOUS_FOOD_EATEN "luxurious_food_eaten"
 
-// Matthios
+// Dismas
 #define STATS_ITEMS_PICKPOCKETED "items_pickpocketed"
 #define STATS_SHRINE_VALUE "shrine_value"
 #define STATS_GREEDY_PEOPLE "greedy_people"

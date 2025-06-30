@@ -10,8 +10,8 @@
 	name = "Pestra's Mercy"
 	desc = "Makes corpses rot slower."
 
-/datum/world_trait/matthios_fingers
-	name = "Matthios' Fingers"
+/datum/world_trait/dismas_fingers
+	name = "Dismas' Fingers"
 	desc = "Improves thief's chance of a successful pickpocket."
 
 /datum/world_trait/last_death_requiem

@@ -77,7 +77,7 @@
 			cloak = /obj/item/clothing/cloak/tabard/crusader
 			neck = /obj/item/clothing/neck/chaincoif/iron
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
-		if(/datum/patron/inhumen/graggar) // Heretical Patrons
+		if(/datum/patron/inhumen/sinius) // Heretical Patrons
 			cloak = /obj/item/clothing/cloak/raincloak/mortus
 			neck = /obj/item/clothing/neck/chaincoif/iron
 			H.change_stat(STATKEY_LCK, -1)
@@ -89,7 +89,7 @@
 			H.change_stat(STATKEY_LCK, -1)
 			H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
 			GLOB.heretical_players += H.real_name
-		if(/datum/patron/inhumen/matthios)
+		if(/datum/patron/inhumen/dismas)
 			cloak = /obj/item/clothing/cloak/raincloak/mortus
 			neck = /obj/item/clothing/neck/chaincoif/iron
 			H.change_stat(STATKEY_LCK, -1)
@@ -164,7 +164,7 @@
 					H.cmode_music = 'sound/music/cmode/church/CombatEora.ogg'
 					H.virginity = FALSE
 					ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
-				if(/datum/patron/inhumen/graggar) // Heretical Patrons
+				if(/datum/patron/inhumen/sinius) // Heretical Patrons
 					head = /obj/item/clothing/head/helmet/heavy/sinistar
 					H.cmode_music = 'sound/music/cmode/antag/combat_werewolf.ogg'
 					H.change_stat(STATKEY_LCK, -2)
@@ -177,7 +177,7 @@
 					H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
 					H.change_stat(STATKEY_LCK, -2)
 					GLOB.heretical_players += H.real_name
-				if(/datum/patron/inhumen/matthios)
+				if(/datum/patron/inhumen/dismas)
 					head = /obj/item/clothing/head/helmet/heavy/rust
 					H.cmode_music = 'sound/music/cmode/antag/CombatBandit1.ogg'
 					H.change_stat(STATKEY_LCK, -2)

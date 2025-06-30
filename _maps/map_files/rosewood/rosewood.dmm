@@ -2230,7 +2230,7 @@
 /area/rogue/indoors/town/theatre)
 "bjg" = (
 /obj/structure/lever/hidden{
-	redstone_id = "matthiosroom"
+	redstone_id = "dismasroom"
 	},
 /turf/closed/wall/mineral/stone,
 /area/rogue/indoors/town/orphanage)
@@ -11341,7 +11341,7 @@
 	name = "Orphanage Secret Door";
 	vip_message = "Orphan";
 	vips = list("Orphan");
-	redstone_id = "matthiosroom2"
+	redstone_id = "dismasroom2"
 	},
 /turf/closed/wall/mineral/stone,
 /area/rogue/indoors/town/orphanage)
@@ -16037,7 +16037,7 @@
 	name = "Orphanage Secret Door";
 	vip_message = "Orphan";
 	vips = list("Orphan");
-	redstone_id = "matthiosroom"
+	redstone_id = "dismasroom"
 	},
 /turf/closed/wall/mineral/stone,
 /area/rogue/indoors/town/orphanage)
@@ -37355,7 +37355,7 @@
 /area/rogue/indoors/town/smithy)
 "uyH" = (
 /obj/structure/lever/hidden{
-	redstone_id = "matthiosroom2"
+	redstone_id = "dismasroom2"
 	},
 /turf/closed/wall/mineral/stone,
 /area/rogue/indoors/town/orphanage)

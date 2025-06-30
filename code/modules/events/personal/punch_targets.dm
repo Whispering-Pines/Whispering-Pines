@@ -1,5 +1,5 @@
 /datum/round_event_control/graggar_punch
-	name = "Graggar's Misogyny"
+	name = "Sinius's Misogyny"
 	track = EVENT_TRACK_PERSONAL
 	typepath = /datum/round_event/graggar_punch
 	weight = 7
@@ -20,7 +20,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/graggar))
+		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/sinius))
 			continue
 		if(H.gender == FEMALE)
 			continue
@@ -34,7 +34,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/graggar))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/sinius))
 			continue
 		if(human_mob.gender == FEMALE)
 			continue
@@ -48,7 +48,7 @@
 	var/datum/objective/punch_women/new_objective = new(owner = chosen_one.mind)
 	chosen_one.mind.add_personal_objective(new_objective)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE GRAGGAR'S CHOSEN!"))
+	to_chat(chosen_one, span_userdanger("YOU ARE SINIUS'S CHOSEN!"))
 	to_chat(chosen_one, span_biginfo("[new_objective.explanation_text]"))
 	chosen_one.playsound_local(chosen_one, 'sound/misc/gods/graggar_omen.ogg', 100)
 

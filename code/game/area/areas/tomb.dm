@@ -1,11 +1,11 @@
 // Areas for the tomb
-// Copied from other areas but they all have the "Tomb of Matthios" name
+// Copied from other areas but they all have the "Tomb of Dismas" name
 // The only real difference is audio
 
 /area/rogue/under/tomb
-	name = "Tomb of Matthios"
+	name = "Tomb of Dismas"
 	icon_state = "basement"
-	first_time_text = "THE TOMB OF MATTHIOS"
+	first_time_text = "THE TOMB OF DISMAS"
 	soundenv = 5
 	ambientsounds = AMB_BASEMENT
 	ambientnight = AMB_BASEMENT

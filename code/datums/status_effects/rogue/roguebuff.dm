@@ -795,8 +795,8 @@
 	duration = 30 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/nocblessing
-	name = "Lunaria's blessing"
-	desc = "Gazing Lunaria helps me think."
+	name = "Moonbeam's blessing"
+	desc = "Gazing Moonbeam helps me think."
 	icon_state = "buff"
 
 /datum/status_effect/buff/nocblessed
@@ -806,8 +806,8 @@
 	duration = 300 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/nocblessed
-	name = "Blessed by Lunaria"
-	desc = "I have been blessed by Lunaria since i was born, with his help i can see and think better than anyone."
+	name = "Blessed by Moonbeam"
+	desc = "I have been blessed by Moonbeam since i was born, with her help i can see and think better than anyone."
 	icon_state = "intelligence"
 
 

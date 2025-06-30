@@ -123,7 +123,7 @@
 					situational_bonus = min(situational_bonus + 5, 50)
 				if (situational_bonus > 0)
 					conditional_buff = TRUE
-			if(/datum/patron/inhumen/graggar)
+			if(/datum/patron/inhumen/sinius)
 				target.visible_message(span_info("Foul fumes billow outward as [target] is restored!"), span_notice("A noxious scent burns my nostrils, but I feel better!"))
 				// if you've got lingering toxin damage, you get healed more, but your bonus healing doesn't affect toxin
 				var/toxloss = target.getToxLoss()
@@ -131,7 +131,7 @@
 					conditional_buff = TRUE
 					situational_bonus = 25
 					target.adjustToxLoss(situational_bonus) // remember we do a global toxloss adjust down below so this is okay
-			if(/datum/patron/inhumen/matthios)
+			if(/datum/patron/inhumen/dismas)
 				target.visible_message(span_info("A wreath of... strange light passes over [target]?"), span_notice("I'm bathed in a... strange holy light?"))
 				// COMRADES! WE MUST BAND TOGETHER!
 				if (HAS_TRAIT(target, TRAIT_BANDITCAMP))

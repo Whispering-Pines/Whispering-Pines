@@ -82,7 +82,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_SOUND_DEBUGGED" = TRAIT_SOUND_DEBUGGED,
 		//Rogue Traits Past here
 		"Blessing of Lamashtu" = TRAIT_CRACKHEAD,
-		"Blessing of Graggar" = TRAIT_ORGAN_EATER,
+		"Blessing of Sinius" = TRAIT_ORGAN_EATER,
 		"Blessing of Pestra"= TRAIT_ROT_EATER,
 		"Blessing of Blissrose" = TRAIT_KNEESTINGER_IMMUNITY,
 		"Blessing of Last Death" = TRAIT_SOUL_EXAMINE,
@@ -140,7 +140,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Better Sleep" = TRAIT_BETTER_SLEEP,
 		"Exteroception" = TRAIT_EXTEROCEPTION,
 		"Blackleg" = TRAIT_BLACKLEG,
-		"Eyes of Matthios" = TRAIT_MATTHIOS_EYES,
+		"Eyes of Dismas" = TRAIT_DISMAS_EYES,
 		"Magical Visions" = TRAIT_SEE_LEYLINES,
 		"Poison Bite" = TRAIT_POISONBITE,
 		"Tiny" = TRAIT_TINY,

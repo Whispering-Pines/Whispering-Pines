@@ -345,9 +345,9 @@
 
 	cost_variance = 30  // Makes events more erratic in timing
 
-/datum/storyteller/graggar
-	name = "Graggar"
-	desc = "Graggar encourages war and conquest, making combat the solution to all."
+/datum/storyteller/sinius
+	name = "Sinius"
+	desc = "Sinius encourages war and conquest, making combat the solution to all."
 	welcome_text = "Victory or death!"
 	weight = 4
 	always_votable = TRUE
@@ -379,9 +379,9 @@
 
 	cost_variance = 10  // Less randomness, more direct
 
-/datum/storyteller/matthios
-	name = "Matthios"
-	desc = "Matthios manipulates wealth and corruption, rewarding those who make deals."
+/datum/storyteller/dismas
+	name = "Dismas"
+	desc = "Dismas manipulates wealth and corruption, rewarding those who make deals."
 	welcome_text = "Fortune favors the cunning."
 	weight = 4
 	always_votable = TRUE

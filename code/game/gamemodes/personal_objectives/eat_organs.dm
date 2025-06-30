@@ -26,7 +26,7 @@
 
 	if(ispath(organ_type, /obj/item/reagent_containers/food/snacks/organ/heart))
 		hearts_consumed++
-		to_chat(owner.current, span_cult("You feel Graggar's pleasure as you consume a heart!"))
+		to_chat(owner.current, span_cult("You feel Sinius's pleasure as you consume a heart!"))
 	else
 		to_chat(owner.current, span_notice("Organ consumed! [organs_required - organs_consumed] more organ\s needed."))
 
@@ -34,12 +34,12 @@
 		complete_objective()
 
 /datum/objective/consume_organs/proc/complete_objective()
-	to_chat(owner.current, span_greentext("You have consumed enough organs and hearts to satisfy Graggar!"))
+	to_chat(owner.current, span_greentext("You have consumed enough organs and hearts to satisfy Sinius!"))
 	owner.current.adjust_triumphs(1)
 	completed = TRUE
-	adjust_storyteller_influence("Graggar", 15)
+	adjust_storyteller_influence("Sinius", 15)
 	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_ORGAN_CONSUMED)
 
 /datum/objective/consume_organs/update_explanation_text()
-	explanation_text = "Consume [organs_required] organ\s, including [hearts_required] heart\s, to appease Graggar!"
+	explanation_text = "Consume [organs_required] organ\s, including [hearts_required] heart\s, to appease Sinius!"

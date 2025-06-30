@@ -19,7 +19,7 @@
 /// Tag used for raid events, associated with Wanderer
 #define TAG_RAID "raid"
 
-/// Tag representing trade interactions, used by Abyssor and Matthios
+/// Tag representing trade interactions, used by Abyssor and Dismas
 #define TAG_TRADE "trade"
 
 /// Tag denoting widespread effects, utilized by Moonbeam
@@ -46,13 +46,13 @@
 /// Tag representing magical influence or events, used by Lunaria and Tenebrase
 #define TAG_MAGICAL "magical"
 
-/// Tag denoting battle-related effects, associated with Graggar
+/// Tag denoting battle-related effects, associated with Sinius
 #define TAG_BATTLE "battle"
 
-/// Tag symbolizing blood-related actions, belonging to Graggar
+/// Tag symbolizing blood-related actions, belonging to Sinius
 #define TAG_BLOOD "blood"
 
-/// Tag representing war-like influence, tied to Graggar
+/// Tag representing war-like influence, tied to Sinius
 #define TAG_WAR "war"
 
 /// Tag for gambling-related systems or events, used by Tenebrase
@@ -73,10 +73,10 @@
 /// Tag denoting disaster-related events or effects, tied to Lamashtu
 #define TAG_DISASTER "disaster"
 
-/// Tag representing corruption, used by Matthios
+/// Tag representing corruption, used by Dismas
 #define TAG_CORRUPTION "corruption"
 
-/// Tag for loot-related events, effects, or systems, used by Matthios
+/// Tag for loot-related events, effects, or systems, used by Dismas
 #define TAG_LOOT "loot"
 
 #define EVENT_TRACK_MUNDANE "Mundane"

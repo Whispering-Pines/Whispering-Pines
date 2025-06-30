@@ -45,7 +45,7 @@
 
 /obj/item/coin/pickup(mob/user)
 	. = ..()
-	if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+	if(HAS_TRAIT(user, TRAIT_DISMAS_CURSE))
 		var/mob/living/carbon/human/H = user
 		to_chat(H, span_warning("The idea repulses me!"))
 		H.cursed_freak_out()

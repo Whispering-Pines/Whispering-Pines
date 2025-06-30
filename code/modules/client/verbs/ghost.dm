@@ -28,7 +28,7 @@
 				message_admins("[key] IS TRYING TO CRASH THE SERVER BY SPAWNING SPIRITS AS A SPIRIT!")
 				return
 			if((mob.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(mob, TRAIT_ZIZOID_HUNTED)) && !MOBTIMER_FINISHED(mob, MT_LASTDIED, 60 SECONDS))
-				to_chat(mob, span_warning("Graggar's influence is currently preventing me from fleeing to the Underworld!"))
+				to_chat(mob, span_warning("Sinius's influence is currently preventing me from fleeing to the Underworld!"))
 				return
 			var/datum/mind/mind = mob.mind
 			// Check if the player's job is hiv+
@@ -70,7 +70,7 @@
 				message_admins("[key] IS TRYING TO CRASH THE SERVER BY SPAWNING BODIES WHILE A SPIRIT!")
 				return
 			if((mob.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(mob, TRAIT_ZIZOID_HUNTED)) && !MOBTIMER_FINISHED(mob, MT_LASTDIED, 60 SECONDS))
-				to_chat(mob, span_warning("Graggar's influence is currently preventing me from fleeing to a new body or to the underworld!"))
+				to_chat(mob, span_warning("Sinius's influence is currently preventing me from fleeing to a new body or to the underworld!"))
 				return
 			var/obj/machinery/fake_powered/cloning_pod/spawn_loc = pick(GLOB.cloning_bays)
 			if(!length(GLOB.cloning_bays)) //That cant be good.

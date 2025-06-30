@@ -295,7 +295,7 @@ SUBSYSTEM_DEF(gamemode)
 
 			//Inhumen Pantheon
 
-			"Matthios"= list(
+			"Dismas"= list(
 				"...a shadow slips your pocket open... you feel lighter in your dream...",
 				"...a purse vanishes from your belt... a laugh echoes in your ears... you check your pockets, your name is gone...",
 				"...you follow footprints that vanish behind you... no one walks beside you, yet you’re never alone..."
@@ -307,7 +307,7 @@ SUBSYSTEM_DEF(gamemode)
 				"...your body dances without thought... every breath tastes like honey and smoke... you forget, and it feels divine..."
 			),
 
-			"Graggar"= list(
+			"Sinius"= list(
 				"...your mouth is not your own... it’s laughing, snarling, hungry...",
 				"...you tear through flesh with joy... your dream is soaked in red... hunger knows your name, and calls you friend...",
 				"...an ancient drum beats under your ribs... it demands violence in return for peace..."

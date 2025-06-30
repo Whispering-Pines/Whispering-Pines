@@ -813,8 +813,8 @@
 			if(SSmapping.level_has_any_trait(turf.z, list(ZTRAIT_IGNORE_WEATHER_TRAIT)))
 				GLOB.weatherproof_z_levels |= "[turf.z]"
 		if("[turf.z]" in GLOB.weatherproof_z_levels)
-			faction |= FACTION_MATTHIOS
-			SSmobs.matthios_mobs |= src
+			faction |= FACTION_DISMAS
+			SSmobs.dismas_mobs |= src
 
 /**
  * Called when this human should be washed

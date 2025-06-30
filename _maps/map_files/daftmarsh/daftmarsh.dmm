@@ -9287,7 +9287,7 @@
 /area/rogue/indoors/town/manor)
 "jdP" = (
 /obj/effect/landmark/hammer/dev_text{
-	name = "Tomb of Matthios."
+	name = "Tomb of Dismas."
 	},
 /turf/open/floor/dirt,
 /area/rogue/under/cavewet)

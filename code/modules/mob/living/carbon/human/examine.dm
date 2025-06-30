@@ -201,7 +201,7 @@
 
 		if(user.mind?.has_antag_datum(/datum/antagonist/vampire))
 			. += span_userdanger("Blood Volume: [blood_volume]")
-		if(HAS_TRAIT(user, TRAIT_MATTHIOS_EYES))
+		if(HAS_TRAIT(user, TRAIT_DISMAS_EYES))
 			var/atom/item = get_most_expensive()
 			if(item)
 				. += span_notice("You get the feeling [m2] most valuable possession is \a [item.name].")

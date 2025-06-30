@@ -4,7 +4,7 @@
 /datum/species/halforc
 	id = "halforc"
 	name = "Half-Orc"
-	desc = "The bastards of Graggar. \
+	desc = "The bastards of Sinius. \
 	\n\n\
 	Half-Orcs are the offspring of orcs and another race, \
 	the powerful Graggarite genes of the former corrupting and maiming those of their fairer mates. \

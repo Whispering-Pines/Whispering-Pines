@@ -284,7 +284,7 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 		/datum/patron/divine/pestra = 0.5,
 		/datum/patron/divine/blissrose = 0.5,
 		/datum/patron/inhumen/tenebrase = 1,
-		/datum/patron/inhumen/graggar = 2,
+		/datum/patron/inhumen/sinius = 2,
 	)
 
 /datum/attunement/life
@@ -337,8 +337,8 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	alignments = list(
 		/datum/patron/inhumen/tenebrase = 0.15,
 		/datum/patron/inhumen/lamashtu = 0.15,
-		/datum/patron/inhumen/graggar = 0.15,
-		/datum/patron/inhumen/matthios = 0.15,
+		/datum/patron/inhumen/sinius = 0.15,
+		/datum/patron/inhumen/dismas = 0.15,
 	)
 
 /datum/attunement/time
@@ -348,7 +348,7 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	alignments = list(
 		/datum/patron/divine/last_death = 1,
 		/datum/patron/divine/moonbeam = 0.6,
-		/datum/patron/inhumen/matthios = 0.75,
+		/datum/patron/inhumen/dismas = 0.75,
 	)
 
 /datum/attunement/aeromancy

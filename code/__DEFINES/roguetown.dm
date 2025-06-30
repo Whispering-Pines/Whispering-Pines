@@ -1,6 +1,6 @@
 /*
 #define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/asteria, /datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/abyssor, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/moonbeam)
-#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/asteria, /datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/abyssor, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/moonbeam, /datum/patron/inhumen/tenebrase, /datum/patron/inhumen/matthios, /datum/patron/inhumen/lamashtu)
+#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/asteria, /datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/abyssor, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/moonbeam, /datum/patron/inhumen/tenebrase, /datum/patron/inhumen/dismas, /datum/patron/inhumen/lamashtu)
 #define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/asteria, /datum/patron/divine/lunaria, /datum/patron/divine/moonbeam, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/pestra, /datum/patron/divine/blissrose, /datum/patron/divine/abyssor, /datum/patron/divine/malum, /datum/patron/divine/xylix)
 */
 #define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/asteria, /datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/moonbeam,)
@@ -21,8 +21,8 @@ GLOBAL_LIST_INIT(curse_names, list())
 
 #define INHUMEN_CURSES list(\
 	/datum/curse/tenebrase,\
-	/datum/curse/graggar,\
-	/datum/curse/matthios,\
+	/datum/curse/sinius,\
+	/datum/curse/dismas,\
 	/datum/curse/lamashtu\
 )
 #define SPECIAL_CURSES list(\

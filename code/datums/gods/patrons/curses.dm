@@ -118,15 +118,15 @@
 	description = "I can see and hear things others cannot."
 	trait = TRAIT_SCHIZO_FLAW
 
-/datum/curse/graggar
-	name = "Graggar's Curse"
+/datum/curse/sinius
+	name = "Sinius's Curse"
 	description = "I am engulfed by unspeakable rage. I cannot stop myself from harming others. When that's not an option, my rage is directed inward."
 	trait = TRAIT_GRAGGAR_CURSE
 
-/datum/curse/matthios
-	name = "Matthios' Curse"
+/datum/curse/dismas
+	name = "Dismas' Curse"
 	description = "I hate the sight of wealth, and I cannot have anything to do with mammons."
-	trait = TRAIT_MATTHIOS_CURSE
+	trait = TRAIT_DISMAS_CURSE
 
 /datum/curse/lamashtu
 	name = "Lamashtu's Curse"
@@ -194,7 +194,7 @@
 
 	owner.reagents.add_reagent(/datum/reagent/druqks, 3)
 
-/datum/curse/graggar/on_life(mob/living/carbon/human/owner)
+/datum/curse/sinius/on_life(mob/living/carbon/human/owner)
 	. = ..()
 	if(!MOBTIMER_FINISHED(owner, MT_CURSE_GRAGGAR, rand(15, 60) SECONDS)) //this isn't how mob timers work
 		return

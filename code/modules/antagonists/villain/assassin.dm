@@ -1,4 +1,4 @@
-// Assassin, cultist of graggar. Normally found as a drifter.
+// Assassin, cultist of sinius. Normally found as a drifter.
 /datum/antagonist/assassin
 	name = "Assassin"
 	roundend_category = "assassins"
@@ -26,7 +26,7 @@
 /datum/antagonist/assassin/on_gain()
 	owner.current.cmode_music = list('sound/music/cmode/antag/CombatAssassin.ogg')
 	if(owner.current.job != "Drifter") // This code only runs if the assassin is assigned midround and is not a drifter.
-		owner.current.set_patron(/datum/patron/inhumen/graggar)
+		owner.current.set_patron(/datum/patron/inhumen/sinius)
 		var/old_knife_skill = owner.current.get_skill_level(/datum/skill/combat/knives)
 		var/old_sneak_skill = owner.current.get_skill_level(/datum/skill/misc/sneaking)
 		if(old_knife_skill < 4) // If the assassined player has less than 4 knife skill, get them to 4.
@@ -35,12 +35,12 @@
 			owner.current.adjust_skillrank(/datum/skill/misc/sneaking, 5 - old_sneak_skill, TRUE)
 		var/yea = /obj/item/weapon/knife/dagger/steel/profane
 		owner.special_items["Profane Dagger"] = yea // Assigned assassins can get their special dagger from right clicking certain objects.
-		to_chat(owner.current, "<span class='danger'>I've blended in well up until this point, but it's time for the Hunted of Graggar to perish. I must get my dagger from where I hid it.</span>")
+		to_chat(owner.current, "<span class='danger'>I've blended in well up until this point, but it's time for the Hunted of Sinius to perish. I must get my dagger from where I hid it.</span>")
 	return ..()
 
 /mob/living/carbon/human/proc/who_targets() // Verb for the assassin to remember their targets.
 	set name = "Remember Targets"
-	set category = "Graggar"
+	set category = "Sinius"
 	if(!mind)
 		return
 	mind.recall_targets(src)
@@ -64,7 +64,7 @@
 		if(istype(I, /obj/item/weapon/knife/dagger/steel/profane))
 			for(var/mob/dead/observer/profane/A in I) // Each trapped soul is announced to the server
 				if(A)
-					to_chat(world, "The [A.name] has been stolen for Graggar by [owner.name].<span class='greentext'>DAMNATION!</span>")
+					to_chat(world, "The [A.name] has been stolen for Sinius by [owner.name].<span class='greentext'>DAMNATION!</span>")
 					traitorwin = TRUE
 
 	if(!considered_alive(owner))

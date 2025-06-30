@@ -123,12 +123,12 @@
 	sleeved = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sellprice = 0 // Incredibly evil Zizoid armor, this should be burnt, nobody wants this
 
-//................ Matthios Armor ...............//
+//................ Dismas Armor ...............//
 
-/obj/item/clothing/armor/plate/full/matthios
+/obj/item/clothing/armor/plate/full/dismas
 	name = "gilded fullplate"
 	desc = "Full plate. Tales told of men in armor such as this stealing many riches, or lives."
-	icon_state = "matthiosarmor"
+	icon_state = "mattiosarmor"
 	icon = 'icons/roguetown/clothing/special/evilarmor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'

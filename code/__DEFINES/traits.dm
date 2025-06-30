@@ -53,7 +53,7 @@
 #define TRAIT_POISONBITE				"Poison Bite"
 #define TRAIT_FORAGER					"Foraging Knowledge" //Can tell which berries are good to eat when examining
 #define TRAIT_TINY 						"Tiny"
-#define TRAIT_DREAM_WATCHER				"Lunaria Blessed" //Unique Trait of the Dream Watcher Town Elder Class, they have a chance to know about antags or gods influences.
+#define TRAIT_DREAM_WATCHER				"Moonbeam Blessed" //Unique Trait of the Dream Watcher Town Elder Class, they have a chance to know about antags or gods influences.
 #define TRAIT_HOLLOWBONES				"Hollow Bones"
 #define TRAIT_AMAZING_BACK				"Light Load"
 #define TRAIT_KITTEN_MOM				"Loved By Kittens"
@@ -80,7 +80,7 @@
 #define TRAIT_ORGAN_EATER				"Raw eater"//Can eat organs (duh.) and raw meat
 #define TRAIT_CRACKHEAD					"Blessing of Lamashtu" //No overdose on drugs.
 #define TRAIT_CABAL                     "Of the Cabal" //Tenebrase cultists recognize each other too
-#define TRAIT_MATTHIOS_EYES				"Eyes of Matthios" //Examine to see the most expensive item someone has
+#define TRAIT_DISMAS_EYES				"Eyes of Dismas" //Examine to see the most expensive item someone has
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -128,8 +128,8 @@
 #define TRAIT_PESTRA_CURSE "Pestra's Curse"
 #define TRAIT_EORA_CURSE "Eora's Curse"
 #define TRAIT_ZIZO_CURSE "Tenebrase's Curse"
-#define TRAIT_GRAGGAR_CURSE "Graggar's Curse"
-#define TRAIT_MATTHIOS_CURSE "Matthios' Curse"
+#define TRAIT_GRAGGAR_CURSE "Sinius's Curse"
+#define TRAIT_DISMAS_CURSE "Dismas' Curse"
 #define TRAIT_BAOTHA_CURSE "Lamashtu's Curse"
 
 
@@ -182,7 +182,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_CYCLOPS_LEFT = span_warning("My left eye has been poked out..."),
 	TRAIT_CYCLOPS_RIGHT = span_warning("My right eye has been poked out..."),
 	TRAIT_LEECHIMMUNE = "Leeches are reluctant to drain my blood.",
-	TRAIT_ASSASSIN = "My soul has been tainted by Graggar, god of murder.",
+	TRAIT_ASSASSIN = "My soul has been tainted by Sinius, god of murder.",
 	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments.",
 	TRAIT_GRAVEROBBER = "Last Death favors my grim deeds, I can unearth graves without being cursed by her.",
 	TRAIT_MISSING_NOSE = span_warning("I struggle to breathe."),
@@ -212,7 +212,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_TUTELAGE = "I am a capable tutor to those who apprentice under me.",
 	TRAIT_APRICITY = "The warmth of the sun rejuvenates me, allowing me to regain my stamina quicker.",
 	TRAIT_BLACKLEG = "I can cheat by rigging coin and dice, and peek at cards.",
-	TRAIT_MATTHIOS_EYES = span_notice("I have a sense for what the most valuable item someone has is."),
+	TRAIT_DISMAS_EYES = span_notice("I have a sense for what the most valuable item someone has is."),
 	TRAIT_WOODWALKER = span_notice("I can climb trees quicker, and gain climbing experience twice as quickly. I can step on thorns and branches safely in the woods. I can get twice as many things from searching bushes, and I can stand on leaves in trees safely."),
 	TRAIT_ARCYNE_T1 = span_notice("I have received basic training in the Arcyne arts, allowing me access to a small variety of spells useful outside of combat."),
 	TRAIT_ARCYNE_T2 = span_notice("I have received advanced training in the Arcyne arts, allowing me to learn basic combat spells"),

@@ -607,14 +607,14 @@ GLOBAL_LIST_EMPTY(respawncounts)
 
 	// Inhumen Gods Section
 	var/zizo_followers = GLOB.patron_follower_counts["Tenebrase"] || 0
-	var/graggar_followers = GLOB.patron_follower_counts["Graggar"] || 0
+	var/graggar_followers = GLOB.patron_follower_counts["Sinius"] || 0
 	var/baotha_followers = GLOB.patron_follower_counts["Lamashtu"] || 0
-	var/matthios_followers = GLOB.patron_follower_counts["Matthios"] || 0
+	var/dismas_followers = GLOB.patron_follower_counts["Dismas"] || 0
 
 	var/zizo_storyteller = /datum/storyteller/tenebrase
-	var/graggar_storyteller = /datum/storyteller/graggar
+	var/graggar_storyteller = /datum/storyteller/sinius
 	var/baotha_storyteller = /datum/storyteller/lamashtu
-	var/matthios_storyteller = /datum/storyteller/matthios
+	var/dismas_storyteller = /datum/storyteller/dismas
 
 	data += "<div style='text-align: center; font-size: 1.3em; color: #AA0000; margin: 20px 0 10px 0;'><b>INHUMEN GODS</b></div>"
 	data += "<div style='border-top: 3px solid #404040; margin: 0 auto 30px; width: 91.5%;'></div>"
@@ -622,14 +622,14 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	data += "<div style='width: 91.5%; margin: 0 auto;'>"
 	data += "<div style='display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 20px; margin-bottom: 20px;'>"
 
-	// Matthios
-	data += god_ui_block("MATTHIOS", "#20202e", "#99b2b1", "\
-		Number of followers: [matthios_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(matthios_storyteller))])<br>\
-		Items pickpocketed: [GLOB.vanderlin_round_stats[STATS_ITEMS_PICKPOCKETED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(matthios_storyteller, STATS_ITEMS_PICKPOCKETED))])<br>\
-		Locks picked: [GLOB.vanderlin_round_stats[STATS_LOCKS_PICKED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(matthios_storyteller, STATS_LOCKS_PICKED))])<br>\
-		Dodges made: [GLOB.vanderlin_round_stats[STATS_DODGES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(matthios_storyteller, STATS_DODGES))])<br>\
-		Value offered to his idol: [GLOB.vanderlin_round_stats[STATS_SHRINE_VALUE]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(matthios_storyteller, STATS_SHRINE_VALUE))])<br>\
-		Number of greedy people: [GLOB.vanderlin_round_stats[STATS_GREEDY_PEOPLE]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(matthios_storyteller, STATS_GREEDY_PEOPLE))])", matthios_storyteller)
+	// Dismas
+	data += god_ui_block("DISMAS", "#20202e", "#99b2b1", "\
+		Number of followers: [dismas_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(dismas_storyteller))])<br>\
+		Items pickpocketed: [GLOB.vanderlin_round_stats[STATS_ITEMS_PICKPOCKETED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dismas_storyteller, STATS_ITEMS_PICKPOCKETED))])<br>\
+		Locks picked: [GLOB.vanderlin_round_stats[STATS_LOCKS_PICKED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dismas_storyteller, STATS_LOCKS_PICKED))])<br>\
+		Dodges made: [GLOB.vanderlin_round_stats[STATS_DODGES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dismas_storyteller, STATS_DODGES))])<br>\
+		Value offered to his idol: [GLOB.vanderlin_round_stats[STATS_SHRINE_VALUE]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dismas_storyteller, STATS_SHRINE_VALUE))])<br>\
+		Number of greedy people: [GLOB.vanderlin_round_stats[STATS_GREEDY_PEOPLE]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dismas_storyteller, STATS_GREEDY_PEOPLE))])", dismas_storyteller)
 
 	// Lamashtu
 	data += god_ui_block("LAMASHTU", "#46254a", "#e2abee", "\
@@ -640,8 +640,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		Number of alcoholics: [GLOB.vanderlin_round_stats[STATS_ALCOHOLICS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(baotha_storyteller, STATS_ALCOHOLICS))])<br>\
 		Number of junkies: [GLOB.vanderlin_round_stats[STATS_JUNKIES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(baotha_storyteller, STATS_JUNKIES))])", baotha_storyteller)
 
-	// Graggar
-	data += god_ui_block("GRAGGAR", "#3b5e51", "#99bbc7", "\
+	// Sinius
+	data += god_ui_block("SINIUS", "#3b5e51", "#99bbc7", "\
 		Number of followers: [graggar_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(graggar_storyteller))])<br>\
 		Successful assasinations: [GLOB.vanderlin_round_stats[STATS_ASSASSINATIONS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(graggar_storyteller, STATS_ASSASSINATIONS))])<br>\
 		Blood spilt: [round(GLOB.vanderlin_round_stats[STATS_BLOOD_SPILT] / 100)] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(graggar_storyteller, STATS_BLOOD_SPILT))])<br>\

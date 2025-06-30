@@ -281,7 +281,7 @@
 					if("Bandit")
 						held_confession.bad_type = "AN OUTLAW OF THE THIEF-LORD"
 						held_confession.antag = antag_type
-					if("Matthios")
+					if("Dismas")
 						held_confession.bad_type = "A FOLLOWER OF THE THIEF-LORD"
 						held_confession.antag = "worshiper of " + antag_type
 					if("Maniac")
@@ -317,7 +317,7 @@
 					if("Vampire Spawn")
 						held_confession.bad_type = "AN UNDERLING OF THE BLOOD-LORD"
 						held_confession.antag = antag_type
-					if("Graggar")
+					if("Sinius")
 						held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
 						held_confession.antag = "worshiper of " + antag_type
 					if("Godless")

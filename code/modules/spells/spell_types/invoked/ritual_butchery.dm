@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/extract_heart
 	name = "Heart Extraction"
-	desc = "An unholy rite to claim hearts as a tribute to Graggar. Only works on fresh corpses."
+	desc = "An unholy rite to claim hearts as a tribute to Sinius. Only works on fresh corpses."
 	overlay_state = "curse"
 	chargedrain = 0
 	chargetime = 0
@@ -20,11 +20,11 @@
 	var/mob/living/carbon/human/target = targets[1]
 
 	if(!istype(target))
-		to_chat(user, "<span class='warning'>Only proper flesh is worthy of Graggar's attention!</span>")
+		to_chat(user, "<span class='warning'>Only proper flesh is worthy of Sinius's attention!</span>")
 		return FALSE
 
 	if(target.stat != DEAD)
-		to_chat(user, "<span class='warning'>The weakling still pulses with life! Graggar demands you finish them properly first!</span>")
+		to_chat(user, "<span class='warning'>The weakling still pulses with life! Sinius demands you finish them properly first!</span>")
 		return FALSE
 
 	// Calculate actual time based on butchery skill
@@ -39,7 +39,7 @@
 		return FALSE
 
 	if(target.stat != DEAD)
-		to_chat(user, "<span class='warning'>The weakling still pulses with life! Graggar demands you finish them properly first!</span>")
+		to_chat(user, "<span class='warning'>The weakling still pulses with life! Sinius demands you finish them properly first!</span>")
 		return FALSE
 
 	var/obj/item/organ/heart/heart = target.getorganslot(ORGAN_SLOT_HEART)
@@ -55,7 +55,7 @@
 	target.adjustBruteLoss(20)
 
 	user.visible_message("<span class='warning'>[user] rips [target]'s heart out with a roar!</span>", \
-						"<span class='red'>You present the heart to Graggar! The God chuckles upon this offering.</span>")
+						"<span class='red'>You present the heart to Sinius! The God chuckles upon this offering.</span>")
 	user.emote("rage", forced = TRUE)
 
 	return ..()

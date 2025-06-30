@@ -6,8 +6,8 @@
 			if(SSmapping.level_has_any_trait(turf.z, list(ZTRAIT_IGNORE_WEATHER_TRAIT)))
 				GLOB.weatherproof_z_levels |= "[turf.z]"
 		if("[turf.z]" in GLOB.weatherproof_z_levels)
-			faction |= FACTION_MATTHIOS
-			SSmobs.matthios_mobs |= src
+			faction |= FACTION_DISMAS
+			SSmobs.dismas_mobs |= src
 
 /mob/living/Initialize()
 	. = ..()
@@ -24,8 +24,8 @@
 		create_reflection()
 
 /mob/living/Destroy()
-	if(FACTION_MATTHIOS in faction)
-		SSmobs.matthios_mobs -= src
+	if(FACTION_DISMAS in faction)
+		SSmobs.dismas_mobs -= src
 	surgeries = null
 	if(LAZYLEN(status_effects))
 		for(var/s in status_effects)
@@ -2543,8 +2543,8 @@
 
 	SEND_SIGNAL(src, COMSIG_LIVING_BEFRIENDED, new_friend)
 
-	if(src in SSmobs.matthios_mobs)
-		SSmobs.matthios_mobs -= src
+	if(src in SSmobs.dismas_mobs)
+		SSmobs.dismas_mobs -= src
 
 	return TRUE
 

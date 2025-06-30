@@ -154,7 +154,7 @@
 /// Returns the immersive flavor text based on both the target's patron and the specific blessing applied
 /// Falls back to generic patron text or a default generic divine message
 /// Returns the immersive flavor text based on both the target's patron and the specific blessing applied
-/// Fully extended for Abyssor, Asteria, Lamashtu, Blissrose, Moonbeam, Graggar, Malum, Matthios, Last Death, Lunaria, Pestra, Wanderer, Xylix, Tenebrase
+/// Fully extended for Abyssor, Asteria, Lamashtu, Blissrose, Moonbeam, Sinius, Malum, Dismas, Last Death, Lunaria, Pestra, Wanderer, Xylix, Tenebrase
 /proc/get_patron_blessing_text(mob/living/carbon/human/M, blessing_path)
 	var/patron_type = M.patron?.type
 	if(!patron_type)
@@ -243,20 +243,20 @@
 			/datum/status_effect/buff/barbrage = "Moonbeam whispers: \"Love rages too. Protect what’s yours.\""
 		),
 
-		/// Graggar - The Warborn Beast
-		/datum/patron/inhumen/graggar = list(
-			/datum/status_effect/buff/beastsense = "Graggar growls: \"Sniff it. Smell the fear, thu fool.\"",
-			/datum/status_effect/buff/trollshape = "Graggar roars: \"Meat swells. Thu strong. Thu crush now.\"",
-			/datum/status_effect/buff/divine_beauty = "Graggar spits: \"Pah! Pretty? WASTE! Git bloody, thu fole!\"",
-			/datum/status_effect/buff/call_to_arms = "Graggar bellows: \"Raise swerd. Kill 'em fast. Or die, weakling!\"",
-			/datum/status_effect/buff/craft_buff = "Graggar smirks: \"Build? HA! Smash it till 'tis strong!\"",
-			/datum/status_effect/buff/foodbuff = "Graggar snorts: \"Meat good. Git strong.\"",
-			/datum/status_effect/buff/clean_plus = "Graggar spits: \"Clean? Bah. Mud good fer ya.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Graggar snorts: \"Pah! Drop faster next time.\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Graggar huffs: \"See 'em hidin'. Then kill 'em.\"",
-			/datum/status_effect/buff/duration_modification/haste = "Graggar yells: \"Fast now! Get killin'!\"",
-			/datum/status_effect/buff/calm = "Graggar grumbles: \"Pff. Calm’s fer weaklings.\"",
-			/datum/status_effect/buff/barbrage = "Graggar roars: \"RAAAGH! Smash 'em flat!\""
+		/// Sinius - The Warborn Beast
+		/datum/patron/inhumen/sinius = list(
+			/datum/status_effect/buff/beastsense = "Sinius growls: \"Sniff it. Smell the fear, thu fool.\"",
+			/datum/status_effect/buff/trollshape = "Sinius roars: \"Meat swells. Thu strong. Thu crush now.\"",
+			/datum/status_effect/buff/divine_beauty = "Sinius spits: \"Pah! Pretty? WASTE! Git bloody, thu fole!\"",
+			/datum/status_effect/buff/call_to_arms = "Sinius bellows: \"Raise swerd. Kill 'em fast. Or die, weakling!\"",
+			/datum/status_effect/buff/craft_buff = "Sinius smirks: \"Build? HA! Smash it till 'tis strong!\"",
+			/datum/status_effect/buff/foodbuff = "Sinius snorts: \"Meat good. Git strong.\"",
+			/datum/status_effect/buff/clean_plus = "Sinius spits: \"Clean? Bah. Mud good fer ya.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Sinius snorts: \"Pah! Drop faster next time.\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Sinius huffs: \"See 'em hidin'. Then kill 'em.\"",
+			/datum/status_effect/buff/duration_modification/haste = "Sinius yells: \"Fast now! Get killin'!\"",
+			/datum/status_effect/buff/calm = "Sinius grumbles: \"Pff. Calm’s fer weaklings.\"",
+			/datum/status_effect/buff/barbrage = "Sinius roars: \"RAAAGH! Smash 'em flat!\""
 		),
 
 		/// Malum - The Iron Lord
@@ -275,20 +275,20 @@
 			/datum/status_effect/buff/barbrage = "Malum snarls: \"Unleash it. Strike like the hammer.\""
 		),
 
-		/// Matthios - The Bandit God
-		/datum/patron/inhumen/matthios = list(
-			/datum/status_effect/buff/beastsense = "Matthios laughs: \"Sniff it out, lad. Something worth stealing.\"",
-			/datum/status_effect/buff/trollshape = "Matthios grins: \"Ugly sells well in some towns, friend.\"",
-			/datum/status_effect/buff/divine_beauty = "Matthios smirks: \"Pretty coin, pretty face... both stolen easy.\"",
-			/datum/status_effect/buff/call_to_arms = "Matthios shouts: \"Fight dirty. Win rich.\"",
-			/datum/status_effect/buff/craft_buff = "Matthios shrugs: \"Build fast. Sell faster.\"",
-			/datum/status_effect/buff/foodbuff = "Matthios grins: \"Eat now... pay later.\"",
-			/datum/status_effect/buff/clean_plus = "Matthios cackles: \"Cleaned up nice... for a mark.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Matthios chuckles: \"Fall soft... means you live to steal again.\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Matthios winks: \"See the dark? Hide better.\"",
-			/datum/status_effect/buff/duration_modification/haste = "Matthios shouts: \"Quick hands win riches.\"",
-			/datum/status_effect/buff/calm = "Matthios smirks: \"Calm? Nah, means they don’t see you comin'.\"",
-			/datum/status_effect/buff/barbrage = "Matthios yells: \"Break stuff. Blame someone else!\""
+		/// Dismas - The Bandit God
+		/datum/patron/inhumen/dismas = list(
+			/datum/status_effect/buff/beastsense = "Dismas laughs: \"Sniff it out, lad. Something worth stealing.\"",
+			/datum/status_effect/buff/trollshape = "Dismas grins: \"Ugly sells well in some towns, friend.\"",
+			/datum/status_effect/buff/divine_beauty = "Dismas smirks: \"Pretty coin, pretty face... both stolen easy.\"",
+			/datum/status_effect/buff/call_to_arms = "Dismas shouts: \"Fight dirty. Win rich.\"",
+			/datum/status_effect/buff/craft_buff = "Dismas shrugs: \"Build fast. Sell faster.\"",
+			/datum/status_effect/buff/foodbuff = "Dismas grins: \"Eat now... pay later.\"",
+			/datum/status_effect/buff/clean_plus = "Dismas cackles: \"Cleaned up nice... for a mark.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Dismas chuckles: \"Fall soft... means you live to steal again.\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Dismas winks: \"See the dark? Hide better.\"",
+			/datum/status_effect/buff/duration_modification/haste = "Dismas shouts: \"Quick hands win riches.\"",
+			/datum/status_effect/buff/calm = "Dismas smirks: \"Calm? Nah, means they don’t see you comin'.\"",
+			/datum/status_effect/buff/barbrage = "Dismas yells: \"Break stuff. Blame someone else!\""
 		),
 
 		/// Last Death - The Nameless Death

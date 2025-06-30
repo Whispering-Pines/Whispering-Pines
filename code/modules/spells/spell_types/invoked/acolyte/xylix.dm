@@ -22,7 +22,7 @@
 	if(get_dist(user, victim) > 7)
 		to_chat(user, span_warning("[victim] is too far away from you!"))
 		return FALSE
-	var/list/bannedwords = list("tenebrase","graggar","matthios","lamashtu","inhumen","heresy")
+	var/list/bannedwords = list("tenebrase","sinius","dismas","lamashtu","inhumen","heresy")
 	forced_speak = sanitize_hear_message(forced_speak)
 	for(var/T in bannedwords)  //asteria smites naughty xylixans
 		if(findtext(forced_speak, T))

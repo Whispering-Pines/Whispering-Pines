@@ -20,7 +20,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/graggar))
+		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/sinius))
 			continue
 		if(locate(/obj/effect/proc_holder/spell/invoked/extract_heart) in H.mind.spell_list)
 			continue
@@ -34,7 +34,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/graggar))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/sinius))
 			continue
 		if(locate(/obj/effect/proc_holder/spell/invoked/extract_heart) in human_mob.mind.spell_list)
 			continue
@@ -51,10 +51,10 @@
 	var/obj/effect/proc_holder/spell/invoked/extract_heart/heart_spell = new()
 	chosen_one.mind.AddSpell(heart_spell)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE GRAGGAR'S CHOSEN!"))
-	to_chat(chosen_one, span_biginfo("Graggar hungers! [new_objective.explanation_text]"))
+	to_chat(chosen_one, span_userdanger("YOU ARE SINIUS'S CHOSEN!"))
+	to_chat(chosen_one, span_biginfo("Sinius hungers! [new_objective.explanation_text]"))
 	chosen_one.playsound_local(chosen_one, 'sound/misc/gods/graggar_omen.ogg', 100)
 
-	to_chat(chosen_one, span_notice("Graggar grants you a power to extract hearts from the dead!"))
+	to_chat(chosen_one, span_notice("Sinius grants you a power to extract hearts from the dead!"))
 
 	chosen_one.mind.announce_personal_objectives()

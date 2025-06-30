@@ -8,7 +8,7 @@
 	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 
 /datum/outfit/job/adventurer/barbarian
-	allowed_patrons = list(/datum/patron/divine/wanderer, /datum/patron/divine/abyssor, /datum/patron/divine/last_death, /datum/patron/divine/blissrose, /datum/patron/godless, /datum/patron/inhumen/graggar)
+	allowed_patrons = list(/datum/patron/divine/wanderer, /datum/patron/divine/abyssor, /datum/patron/divine/last_death, /datum/patron/divine/blissrose, /datum/patron/godless, /datum/patron/inhumen/sinius)
 
 /datum/outfit/job/adventurer/barbarian/pre_equip(mob/living/carbon/human/H)
 	..()

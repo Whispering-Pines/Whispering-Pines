@@ -19,13 +19,13 @@
 
 /datum/patron/divine/asteria
 	name = "Lady Asteria"
-	domain = "Primordial Radiance, Good, Lawfulness, Life"
-	desc = "Asteria the Primordial Radiance, old goddess of the sun and goodness. One of the few old gods remaining that are known and are somewhat actively involved in mankind's destiny. She appears to be a female humanoid silhouette of pure blinding, hot starlight with long flowing hair."
+	domain = "Primordial Radiance, Stars, Good, Life"
+	desc = "Asteria the Primordial Radiance, old goddess of the stars therefore the sun and all goodness. One of the few live old gods remaining. She took the crown of new heaven through having no contestants left alive beside Tenebrase, and the new gods who are not of such power of old gods. She appears to be a female humanoid silhouette of pure blinding, hot starlight with long flowing hair."
 	flaws = "Tyrannical, Ill-Tempered, Uncompromising"
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Betrayal, Sloth, Witchcraft"
-	boons = "Your stamina regeneration delay is lowered during daytime."
-	added_traits = list(TRAIT_APRICITY)
+	boons = "Your stamina regeneration delay is lowered during daytime and your weapons lose less integrity."
+	added_traits = list(TRAIT_APRICITY, TRAIT_SHARPER_BLADES)
 	t0 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t1 = /obj/effect/proc_holder/spell/invoked/heal
 	t2 = /obj/effect/proc_holder/spell/invoked/projectile/fireball
