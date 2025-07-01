@@ -34,7 +34,6 @@
 /obj/item/weapon/hammer/attack_obj(obj/O, mob/living/user)
 	if(!isliving(user) || !user.mind)
 		return
-	var/datum/mind/blacksmith_mind = user.mind
 	var/repair_percent = 0.025 // 2.5% Repairing per hammer smack
 	/// Repairing is MUCH better with an anvil!
 	if(locate(/obj/machinery/anvil) in O.loc)
@@ -69,7 +68,7 @@
 				user.visible_message(span_info("[user] repairs [attacked_prosthetic]!"))
 				attacked_prosthetic.wounds = null //You need actual skill to do this
 				attacked_prosthetic.bodypart_disabled = BODYPART_NOT_DISABLED
-			blacksmith_mind.add_sleep_experience(attacked_prosthetic.anvilrepair, amt2raise)
+			user.adjust_experience(attacked_prosthetic.anvilrepair, amt2raise)
 		else
 			user.visible_message(span_warning("[user] fumbles trying to repair [attacked_prosthetic]!"))
 			attacked_prosthetic.take_damage(attacked_prosthetic.max_integrity * 0.1, BRUTE, "blunt")
@@ -99,7 +98,7 @@
 				to_chat(user, span_warning("You fumble your way into slightly repairing [attacked_item]."))
 			else
 				user.visible_message(span_info("[user] repairs [attacked_item]!"))
-			blacksmith_mind.add_sleep_experience(attacked_item.anvilrepair, amt2raise)
+			user.adjust_experience(attacked_item.anvilrepair, amt2raise)
 		else
 			user.visible_message("<span class='warning'>[user] damages [attacked_item]!</span>")
 			attacked_item.take_damage(attacked_item.max_integrity * 0.1, BRUTE, "blunt")
@@ -117,7 +116,7 @@
 		var/amt2raise = floor(user.STAINT * 0.25)
 		repair_percent *= user.get_skill_level(attacked_structure.hammer_repair) * attacked_structure.max_integrity
 		attacked_structure.obj_integrity = min(attacked_structure.obj_integrity + repair_percent, attacked_structure.max_integrity)
-		blacksmith_mind.add_sleep_experience(attacked_structure.hammer_repair, amt2raise)
+		user.adjust_experience(attacked_structure.hammer_repair, amt2raise)
 		playsound(src,'sound/items/bsmithfail.ogg', 100, FALSE)
 		user.visible_message(span_info("[user] repairs [attacked_structure]!"))
 		attacked_structure.update_appearance()

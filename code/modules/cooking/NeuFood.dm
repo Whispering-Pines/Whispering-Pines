@@ -487,7 +487,7 @@
 		playsound(get_turf(user), 'sound/foley/kneading_alt.ogg', 90, TRUE, -1)
 		if(do_after(user, short_cooktime, src))
 			new /obj/item/reagent_containers/food/snacks/dough_base(get_turf(src))
-			user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
+			user.adjust_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
 			qdel(src)
 	else
 		..()

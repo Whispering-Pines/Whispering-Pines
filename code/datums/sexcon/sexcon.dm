@@ -653,7 +653,7 @@
 		if(!user.adjust_energy(-(action.stamina_cost * get_stamina_cost_multiplier())))
 			break
 		if(user.mind)
-			user.mind.add_sleep_experience(/datum/skill/misc/athletics, (user.STAINT*0.04)*get_stamina_cost_multiplier()) //endurance training boiii
+			user.adjust_experience(/datum/skill/misc/athletics, (user.STAINT*0.04)*get_stamina_cost_multiplier()) //endurance training boiii
 		if(!do_after(user, (action.do_time / get_speed_multiplier()), target = target))
 			break
 		if(current_action == null || performed_action_type != current_action)

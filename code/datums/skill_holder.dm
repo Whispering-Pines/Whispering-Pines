@@ -242,6 +242,7 @@
  ** check_apprentice - wether or not to give experience to your apprentice as well
 */
 /datum/skill_holder/proc/adjust_experience(skill, amt, silent = FALSE, check_apprentice = TRUE)
+	add_sleep_experience(skill, amt/2, silent) //adds half of the experience to your eepytime for free.
 	var/datum/skill/skill_ref = GetSkillRef(skill)
 	skill_experience[skill_ref] = max(0, skill_experience[skill_ref] + amt) //Prevent going below 0
 	var/old_level = get_skill_level(skill)
@@ -462,5 +463,5 @@
 				if(HAS_TRAIT(H, TRAIT_TUTELAGE)) //Base 50% of your xp is given to nearby apprentice
 					multiplier += 0.15
 			var/apprentice_amt = amt * 0.1 + multiplier
-			if(apprentice.mind.add_sleep_experience(skill, apprentice_amt, FALSE, FALSE))
+			if(apprentice.adjust_experience(skill, apprentice_amt, FALSE, FALSE))
 				current.add_stress(/datum/stressevent/apprentice_making_me_proud)

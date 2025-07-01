@@ -49,7 +49,7 @@
 			new /obj/effect/decal/cleanable/debris/wood(get_turf(src))
 		if(!skill_level)
 			to_chat(user, span_info("My poor skill has me ruin some of the timber..."))
-		user.mind.add_sleep_experience(/datum/skill/labor/lumberjacking, (user.STAINT*0.5))
+		user.adjust_experience(/datum/skill/labor/lumberjacking, (user.STAINT*0.5))
 		playsound(src, destroy_sound, 100, TRUE)
 		qdel(src)
 		return TRUE
@@ -84,7 +84,7 @@
 				new lumber_alt(get_turf(src))
 		if(!skill_level)
 			to_chat(user, span_info("My poor skill has me ruin some of the timber..."))
-		user.mind.add_sleep_experience(/datum/skill/labor/lumberjacking, (user.STAINT*0.5))
+		user.adjust_experience(/datum/skill/labor/lumberjacking, (user.STAINT*0.5))
 		playsound(src, destroy_sound, 100, TRUE)
 		qdel(src)
 		return TRUE

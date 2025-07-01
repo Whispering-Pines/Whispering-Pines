@@ -164,7 +164,7 @@
 	else
 		success = TRUE
 	if(success && user.mind && creator != user)
-		user.mind.add_sleep_experience(/datum/skill/misc/tracking, (user.STAINT*2))
+		user.adjust_experience(/datum/skill/misc/tracking, (user.STAINT*2))
 	return success
 
 ///Handles revealing the track, including checking how well the tracker can analyze it.

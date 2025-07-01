@@ -88,7 +88,7 @@
 			tastes = list("spicy red meat" = 2)
 			meal_properties()
 			bitesize = initial(bitesize)
-			user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
+			user.adjust_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
 	return ..()
 
 
@@ -411,5 +411,5 @@
 			overlays += spice
 			tastes = list("spicy birdmeat" = 2)
 			modified = TRUE
-			user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
+			user.adjust_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
 	return ..()

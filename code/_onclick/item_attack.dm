@@ -289,7 +289,7 @@
 						dullfactor = 0.2
 					else
 						dullfactor = 0.45 + (lumberskill * 0.15)
-						lumberjacker.mind.add_sleep_experience(/datum/skill/labor/lumberjacking, (lumberjacker.STAINT*0.2))
+						lumberjacker.adjust_experience(/datum/skill/labor/lumberjacking, (lumberjacker.STAINT*0.2))
 					cont = TRUE
 				if(BCLASS_CHOP)
 					//Additional damage for axes against trees.
@@ -461,12 +461,12 @@
 	if(I.force)
 		var/newforce = get_complex_damage(I, user)
 		if(from_behind && user.mind && !HAS_TRAIT(src, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))//Backstabs do increased damage; Sneak attacks have a higher crit chance. Combined, a stealthy backstab should be very damaging.
-			var/sneakmult = 2 + (user.mind.get_skill_level(/datum/skill/misc/sneaking))
+			var/sneakmult = 2 + (user.get_skill_level(/datum/skill/misc/sneaking))
 			newforce *= sneakmult
 			user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 			to_chat(src, span_userdanger("BACKSTAB!!! THE ATTACK DEALS GREATER DAMAGE!"))
 			to_chat(user, span_userdanger("BACKSTAB!!! MY ATTACK DOES GREATER DAMAGE!"))
-			user.mind?.adjust_experience(/datum/skill/misc/sneaking, user.STAINT * 5, TRUE)
+			user.adjust_experience(/datum/skill/misc/sneaking, user.STAINT * 5, TRUE)
 		apply_damage(newforce, I.damtype, def_zone = hitlim)
 		if(I.damtype == BRUTE)
 			next_attack_msg.Cut()

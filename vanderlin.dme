@@ -2841,4 +2841,5 @@
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
 #include "modular_whisper\code\game\objects\weapons\ranged\flintlock.dm"
+#include "modular_whisper\code\datums\status_effects\status_effects.dm"
 // END_INCLUDE

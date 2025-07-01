@@ -44,7 +44,7 @@
 		playsound(get_turf(user), 'sound/foley/splishy.ogg', 100, TRUE, -1)
 		if(do_after(user, long_cooktime, src))
 			new /obj/item/reagent_containers/food/snacks/jellycake_base(loc)
-			user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
+			user.adjust_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
 			qdel(src)
 			R.reagents.remove_reagent(/datum/reagent/consumable/sugar, 33)
 	else
@@ -335,7 +335,7 @@
 			if(reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 15))
 				reagents.remove_reagent(/datum/reagent/consumable/milk/salted_gote, 15)
 			new /obj/item/reagent_containers/food/snacks/butter(drop_location())
-			user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT))
+			user.adjust_experience(/datum/skill/craft/cooking, (user.STAINT))
 		return
 	..()
 
@@ -421,7 +421,7 @@
 				if(do_after(user, long_cooktime, src))
 					reagents.remove_reagent(milk, 5)
 					new cheese(drop_location())
-					user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT))
+					user.adjust_experience(/datum/skill/craft/cooking, (user.STAINT))
 			return
 	..()
 
@@ -434,7 +434,7 @@
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
 			if(do_after(user,3 SECONDS, src))
 				new /obj/item/reagent_containers/food/snacks/foodbase/cheesewheel_start(loc)
-				user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
+				user.adjust_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
 				qdel(I)
 				qdel(src)
 			return
@@ -504,7 +504,7 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks/cheese))
 		if(isturf(loc)&& (found_table))
 			playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
-			user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
+			user.adjust_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
 			if(do_after(user, short_cooktime, src))
 				qdel(I)
 				name = "maturing cheese wheel"

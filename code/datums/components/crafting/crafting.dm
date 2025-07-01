@@ -282,7 +282,7 @@
 							if(R.craftdiff > 0) //difficult recipe
 								amt2raise += (R.craftdiff * 10)
 							if(amt2raise > 0)
-								user.mind.add_sleep_experience(R.skillcraft, amt2raise, FALSE)
+								user.adjust_experience(R.skillcraft, amt2raise, FALSE)
 					return
 				return 0
 			return "."

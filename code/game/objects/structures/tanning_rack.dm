@@ -48,7 +48,7 @@
 				return
 			playsound(src,pick('sound/items/book_open.ogg','sound/items/book_page.ogg'), 100, FALSE)
 			QDEL_NULL(hide)
-			user.mind.add_sleep_experience(/datum/skill/craft/tanning, user.STAINT * 2) //these numbers may need some revision
+			user.adjust_experience(/datum/skill/craft/tanning, user.STAINT * 2) //these numbers may need some revision
 			update_appearance(UPDATE_OVERLAYS)
 			for(var/i = 0; i < pieces_to_spawn; i++)
 				if(prob(skill_level + CLAMP((user.STALUC - 10)*2,0,100)))
