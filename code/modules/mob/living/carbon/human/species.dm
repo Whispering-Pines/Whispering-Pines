@@ -2005,7 +2005,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)
 
 /datum/species/proc/CanIgniteMob(mob/living/carbon/human/H)
-	if(H.divine_fire_stacks > 0) // tieflings can't say no to asteria
+	if(H.divine_fire_stacks > 0) // tieflings can't say no to solaria
 		return TRUE
 	if(HAS_TRAIT(H, TRAIT_NOFIRE))
 		return FALSE

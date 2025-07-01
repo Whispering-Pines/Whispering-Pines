@@ -1,7 +1,7 @@
 /datum/job/priest
 	title = "Priest"
 	f_title = "Priestess"
-	tutorial = "You are a devoted follower of Asteria. \
+	tutorial = "You are a devoted follower of Solaria. \
 	The divine is all that matters in an immoral world. \
 	The Sun Queen and her pantheon rule over all, and you will preach their wisdom to Vanderlin. \
 	It is up to you to shephard the flock into a Ten-fearing future."
@@ -34,7 +34,7 @@
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
 	H.verbs |= /mob/living/carbon/human/proc/churchcurse
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
-	neck = /obj/item/clothing/neck/psycross/silver/asteria
+	neck = /obj/item/clothing/neck/psycross/silver/solaria
 	head = /obj/item/clothing/head/priestmask
 	shirt = /obj/item/clothing/shirt/undershirt/priest
 	pants = /obj/item/clothing/pants/tights/black
@@ -48,8 +48,8 @@
 	var/obj/item/weapon/polearm/woodstaff/aries/P = new()
 	H.put_in_hands(P, forced = TRUE)
 
-	if(H.patron != /datum/patron/divine/asteria) // For some stupid reason this was checking for Blissrose before.
-		H.set_patron(/datum/patron/divine/asteria)
+	if(H.patron != /datum/patron/divine/solaria) // For some stupid reason this was checking for Blissrose before.
+		H.set_patron(/datum/patron/divine/solaria)
 
 	H.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 	H.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)

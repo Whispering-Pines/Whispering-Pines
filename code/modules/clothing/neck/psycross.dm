@@ -21,8 +21,8 @@
 
 // PANTHEON SILVER PSYCROSSES START
 
-/obj/item/clothing/neck/psycross/silver/asteria
-	name = "amulet of Asteria"
+/obj/item/clothing/neck/psycross/silver/solaria
+	name = "amulet of Solaria"
 	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
 	icon_state = "astrata"
 	resistance_flags = FIRE_PROOF

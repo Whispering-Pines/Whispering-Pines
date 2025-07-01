@@ -1,7 +1,7 @@
 GLOBAL_LIST_EMPTY(street_lamp_lights)
 
-/obj/structure/asterianshard
-	name = "asterian shard"
+/obj/structure/solarianshard
+	name = "solarian shard"
 	max_integrity = 1500
 	icon = 'icons/roguetown/misc/64x64.dmi'
 	icon_state = "clockcrystal"
@@ -13,13 +13,13 @@ GLOBAL_LIST_EMPTY(street_lamp_lights)
 	pixel_x = -16
 	pixel_y = -12
 
-/obj/structure/asterianshard/Initialize()
+/obj/structure/solarianshard/Initialize()
 	. = ..()
-	the_hum = new /datum/looping_sound/asterianshard_hum(src,FALSE)
+	the_hum = new /datum/looping_sound/solarianshard_hum(src,FALSE)
 	the_hum.start()
 	set_light(5, 4, 30, l_color = LIGHT_COLOR_YELLOW)
 
-/obj/structure/asterianshard/Destroy()
+/obj/structure/solarianshard/Destroy()
 	if(broken_containment)
 		Unregall()
 	for(var/obj/machinery/light/fueledstreet/lamp as anything in GLOB.street_lamp_lights)
@@ -28,11 +28,11 @@ GLOBAL_LIST_EMPTY(street_lamp_lights)
 		QDEL_NULL(the_hum)
 	return ..()
 
-/obj/structure/asterianshard/deconstruct(disassembled = FALSE)
+/obj/structure/solarianshard/deconstruct(disassembled = FALSE)
 	if(!broken_containment)
 		broken_containment = TRUE
 		QDEL_NULL(the_hum)
-		the_hum = new /datum/looping_sound/asterianshard_broken(src, FALSE)
+		the_hum = new /datum/looping_sound/solarianshard_broken(src, FALSE)
 		the_hum.start()
 		RegisterSignal(src, COMSIG_ATOM_ATTACK_HAND,PROC_REF(on_touched))
 		RegisterSignal(src, COMSIG_ATOM_ATTACK_PAW,PROC_REF(on_touched))
@@ -45,24 +45,24 @@ GLOBAL_LIST_EMPTY(street_lamp_lights)
 		Unregall()
 		. = ..()
 
-/obj/structure/asterianshard/proc/Unregall()
+/obj/structure/solarianshard/proc/Unregall()
 	UnregisterSignal(src, COMSIG_ATOM_ATTACK_HAND)
 	UnregisterSignal(src, COMSIG_ATOM_ATTACK_PAW)
 	UnregisterSignal(src, COMSIG_ATOM_WAS_ATTACKED)
 	UnregisterSignal(src, COMSIG_ATOM_BUMPED)
 
-/obj/structure/asterianshard/proc/on_bump(atom/shard,atom/movable/movie)
+/obj/structure/solarianshard/proc/on_bump(atom/shard,atom/movable/movie)
 	SIGNAL_HANDLER
 	if(ismob(movie))
 		send_to_necra(movie)
 	else
 		on_whacked(movie)
 
-/obj/structure/asterianshard/proc/on_touched(atom/shard,mob/fool)
+/obj/structure/solarianshard/proc/on_touched(atom/shard,mob/fool)
 	SIGNAL_HANDLER
 	send_to_necra(fool)
 
-/obj/structure/asterianshard/proc/on_whacked(atom/shard,atom/thingy)
+/obj/structure/solarianshard/proc/on_whacked(atom/shard,atom/thingy)
 	SIGNAL_HANDLER
 	if(ismob(thingy))
 		send_to_necra(thingy)
@@ -71,7 +71,7 @@ GLOBAL_LIST_EMPTY(street_lamp_lights)
 		src.visible_message(span_danger("\The [deadthing] vanishes in a violent flash on contact with \The [src]!"))
 		deadthing.Destroy()
 
-/obj/structure/asterianshard/proc/send_to_necra(mob/fool,visible_message,mob_message,cause)
+/obj/structure/solarianshard/proc/send_to_necra(mob/fool,visible_message,mob_message,cause)
 	if(isdead(fool))
 		return
 	if(!visible_message)
@@ -84,14 +84,14 @@ GLOBAL_LIST_EMPTY(street_lamp_lights)
 	src.investigate_log("has been attacked ([cause]) by [key_name(fool)]", INVESTIGATE_SUPERMATTER)
 	fool.dust(drop_items = TRUE)
 
-/datum/looping_sound/asterianshard_hum
+/datum/looping_sound/solarianshard_hum
 	mid_sounds = list('sound/misc/loops/LightCrystal1.ogg')
 	mid_length = 145
 	volume = 100
 	extra_range = 1
 	vary = TRUE
 
-/datum/looping_sound/asterianshard_broken
+/datum/looping_sound/solarianshard_broken
 	mid_sounds = list('sound/misc/loops/LightCrystal2.ogg')
 	mid_length = 145
 	volume = 100

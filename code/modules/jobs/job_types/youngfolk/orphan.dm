@@ -8,8 +8,8 @@
 	job_flags = (JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ORPHAN
 	faction = FACTION_TOWN
-	total_positions = 12
-	spawn_positions = 12
+	total_positions = 0
+	spawn_positions = 0
 	min_pq = 2
 	bypass_lastclass = TRUE
 

@@ -19,7 +19,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/divine/asteria))
+		if(!H.patron || !istype(H.patron, /datum/patron/divine/solaria))
 			continue
 		if(H.is_noble() || (H.mind?.assigned_role.title in GLOB.church_positions))
 			continue
@@ -35,7 +35,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/asteria))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/solaria))
 			continue
 		if(human_mob.is_noble() || (human_mob.mind?.assigned_role.title in GLOB.church_positions))
 			continue
@@ -51,8 +51,8 @@
 	var/datum/objective/nobility/new_objective = new(owner = chosen_one.mind)
 	chosen_one.mind.add_personal_objective(new_objective)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE ASTERIA'S CHOSEN!"))
-	to_chat(chosen_one, span_notice("Asteria wishes you to ascend in status! Become a part of the nobility to earn Asteria's favor!"))
+	to_chat(chosen_one, span_userdanger("YOU ARE SOLARIA'S CHOSEN!"))
+	to_chat(chosen_one, span_notice("Solaria wishes you to ascend in status! Become a part of the nobility to earn Solaria's favor!"))
 	chosen_one.playsound_local(chosen_one, 'sound/magic/bless.ogg', 100)
 
 	chosen_one.mind.announce_personal_objectives()

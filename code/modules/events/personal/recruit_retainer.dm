@@ -19,7 +19,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/divine/asteria))
+		if(!H.patron || !istype(H.patron, /datum/patron/divine/solaria))
 			continue
 		if(!H.is_noble() || (H.mind?.assigned_role.title in GLOB.church_positions))
 			continue
@@ -36,7 +36,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/asteria))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/solaria))
 			continue
 		if(!human_mob.is_noble() || (human_mob.mind?.assigned_role.title in GLOB.church_positions))
 			continue
@@ -60,8 +60,8 @@
 	var/datum/objective/retainer/new_objective = new(owner = noble.mind)
 	noble.mind.add_personal_objective(new_objective)
 
-	to_chat(noble, span_userdanger("YOU ARE ASTERIA'S CHOSEN!"))
-	to_chat(noble, span_notice("Asteria wants you to demonstrate your ability to lead as a proper noble! Recruit at least one retainer to serve you!"))
+	to_chat(noble, span_userdanger("YOU ARE SOLARIA'S CHOSEN!"))
+	to_chat(noble, span_notice("Solaria wants you to demonstrate your ability to lead as a proper noble! Recruit at least one retainer to serve you!"))
 	noble.playsound_local(noble, 'sound/magic/bless.ogg', 100)
 
 	noble.mind.announce_personal_objectives()

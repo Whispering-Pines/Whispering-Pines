@@ -120,7 +120,7 @@
 #define TRAIT_CURSE "Curse" //source
 #define TRAIT_ATHEISM_CURSE "Curse of Atheism"
 #define TRAIT_PSYDON_CURSE "Psydon's Curse"
-#define TRAIT_ASTRATA_CURSE "Asteria's Curse"
+#define TRAIT_ASTRATA_CURSE "Solaria's Curse"
 #define TRAIT_NOC_CURSE "Lunaria's Curse"
 #define TRAIT_RAVOX_CURSE "Wanderer's Curse"
 #define TRAIT_LAST_DEATH_CURSE "Last Death's Curse"

@@ -4776,7 +4776,7 @@
 /area/rogue/indoors/town/garrison)
 "cUG" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/clothing/neck/psycross/silver/asteria,
+/obj/item/clothing/neck/psycross/silver/solaria,
 /turf/open/floor/blocks/newstone,
 /area/rogue/indoors/town/church)
 "cUL" = (
@@ -6759,7 +6759,7 @@
 /turf/open/floor/blocks/newstone,
 /area/rogue/under/town/basement)
 "ehh" = (
-/obj/structure/fluff/statue/asteria,
+/obj/structure/fluff/statue/solaria,
 /turf/open/floor/church,
 /area/rogue/indoors/town/church/chapel)
 "ehk" = (
@@ -9640,7 +9640,7 @@
 	pixel_x = 7;
 	pixel_y = 2
 	},
-/obj/item/clothing/neck/psycross/silver/asteria,
+/obj/item/clothing/neck/psycross/silver/solaria,
 /obj/item/clothing/neck/psycross/silver/wanderer,
 /obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
@@ -13051,7 +13051,7 @@
 /turf/open/floor/blocks/paving,
 /area/rogue/indoors/town/bath)
 "isM" = (
-/obj/structure/asterianshard,
+/obj/structure/solarianshard,
 /turf/open/floor/metal/barograte/open,
 /area/rogue/indoors/town/clocktower)
 "isX" = (
@@ -16599,12 +16599,12 @@
 /area/rogue/outdoors/rtfield)
 "kyI" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/shirt/robe/asteria,
-/obj/item/clothing/shirt/robe/asteria,
-/obj/item/clothing/shirt/robe/asteria,
-/obj/item/clothing/head/roguehood/asteria,
-/obj/item/clothing/head/roguehood/asteria,
-/obj/item/clothing/head/roguehood/asteria,
+/obj/item/clothing/shirt/robe/solaria,
+/obj/item/clothing/shirt/robe/solaria,
+/obj/item/clothing/shirt/robe/solaria,
+/obj/item/clothing/head/roguehood/solaria,
+/obj/item/clothing/head/roguehood/solaria,
+/obj/item/clothing/head/roguehood/solaria,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/church)
 "kyS" = (
@@ -36189,7 +36189,7 @@
 /area/rogue/outdoors/rtfield/safe)
 "xxb" = (
 /obj/structure/door/fancy{
-	name = "Court Physician's Room"
+	name = "Court Mender's Room"
 	},
 /obj/effect/mapping_helpers/access/locker,
 /obj/effect/mapping_helpers/access/keyset/manor/physician,

@@ -56,7 +56,7 @@
 			aspirant_mob.set_skillrank(/datum/skill/misc/lockpicking, 6)
 
 		if(CHOICE_GUN)
-			owner.special_items["Puffer"] = /obj/item/gun/ballistic/revolver/grenadelauncher/pistol
+			owner.special_items["Flintlock pistol"] = /obj/item/gun/ballistic/revolver/grenadelauncher/pistol
 			to_chat(owner, span_notice("I can retrieve my item from a statue, tree or clock by right clicking it."))
 
 		if(CHOICE_BOMB)

@@ -335,10 +335,10 @@
 	hammers_per_item = 5
 	craftdiff = 1
 
-/datum/artificer_recipe/psycross/asteria
-	name = "Asteria Psycross"
+/datum/artificer_recipe/psycross/solaria
+	name = "Solaria Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/asteria
+	created_item = /obj/item/clothing/neck/psycross/silver/solaria
 	hammers_per_item = 5
 	craftdiff = 2
 

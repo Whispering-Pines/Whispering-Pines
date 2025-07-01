@@ -155,7 +155,7 @@
 
 /datum/objective/ascend
 	name = "vampire ascend"
-	explanation_text = "Asteria has spurned us long enough. The Lord must conquer the Sun."
+	explanation_text = "Solaria has spurned us long enough. The Lord must conquer the Sun."
 	triumph_count = 5
 
 /datum/objective/ascend/check_completion()

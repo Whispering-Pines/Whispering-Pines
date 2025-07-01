@@ -137,11 +137,11 @@
 
 		if(length(GLOB.tennite_schisms))
 			var/datum/tennite_schism/S = GLOB.tennite_schisms[1]
-			var/user_side = (WEAKREF(user) in S.supporters_asteria) ? "asteria" : (WEAKREF(user) in S.supporters_challenger) ? "challenger" : null
-			var/mob_side = (WEAKREF(src) in S.supporters_asteria) ? "asteria" : (WEAKREF(src) in S.supporters_challenger) ? "challenger" : null
+			var/user_side = (WEAKREF(user) in S.supporters_solaria) ? "solaria" : (WEAKREF(user) in S.supporters_challenger) ? "challenger" : null
+			var/mob_side = (WEAKREF(src) in S.supporters_solaria) ? "solaria" : (WEAKREF(src) in S.supporters_challenger) ? "challenger" : null
 
 			if(user_side && mob_side)
-				var/datum/patron/their_god = (mob_side == "asteria") ? S.astrata_god.resolve() : S.challenger_god.resolve()
+				var/datum/patron/their_god = (mob_side == "solaria") ? S.astrata_god.resolve() : S.challenger_god.resolve()
 				if(their_god)
 					. += (user_side == mob_side) ? span_notice("Fellow [their_god.name] supporter!") : span_userdanger("Vile [their_god.name] supporter!")
 

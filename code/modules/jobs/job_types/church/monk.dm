@@ -35,12 +35,12 @@
 	backl = /obj/item/weapon/polearm/woodstaff/quarterstaff
 	backpack_contents = list(/obj/item/needle)
 	switch(H.patron?.type)
-		if(/datum/patron/divine/asteria)
-			head = /obj/item/clothing/head/roguehood/asteria
-			neck = /obj/item/clothing/neck/psycross/silver/asteria
+		if(/datum/patron/divine/solaria)
+			head = /obj/item/clothing/head/roguehood/solaria
+			neck = /obj/item/clothing/neck/psycross/silver/solaria
 			wrists = /obj/item/clothing/wrists/wrappings
 			shoes = /obj/item/clothing/shoes/sandals
-			armor = /obj/item/clothing/shirt/robe/asteria
+			armor = /obj/item/clothing/shirt/robe/solaria
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 		if(/datum/patron/divine/last_death) //last_death acolytes are now gravetenders
 			head = /obj/item/clothing/head/padded/deathshroud

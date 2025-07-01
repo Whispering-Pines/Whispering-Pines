@@ -384,7 +384,7 @@
 	// Define the available items, their costs, and max purchases
 	var/list/items = list(
 		// Weapons
-		"Puffer Pistol- 4 Lead Balls- Powder Flask  (8)" = list(
+		"Flintlock pistol Pistol- 4 Lead Balls- Powder Flask  (8)" = list(
 			list(type = /obj/item/gun/ballistic/revolver/grenadelauncher/pistol, count = 1),
 			list(type = /obj/item/storage/belt/pouch/bullets, count = 1),
 			list(type = /obj/item/reagent_containers/glass/bottle/aflask, count = 1),

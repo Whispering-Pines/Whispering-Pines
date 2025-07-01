@@ -12,7 +12,7 @@
 
 /obj/item/clothing/head/knitcap
 	name = "knit cap"
-	desc = "A crude peasant cap worn by about every serf under Asteria's radiance."
+	desc = "A crude peasant cap worn by about every serf under Solaria's radiance."
 	icon_state = "knitcap"
 
 /obj/item/clothing/head/headband

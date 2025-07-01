@@ -1026,7 +1026,7 @@
 	priest_job?.add_spells(M)
 	M.mind.set_assigned_role(/datum/job/priest)
 	M.job = "Priest"
-	M.set_patron(/datum/patron/divine/asteria)
+	M.set_patron(/datum/patron/divine/solaria)
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(M, M.patron)
 	C.grant_spells_priest(M)
 	M.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
@@ -1035,7 +1035,7 @@
 	M.verbs |= /mob/living/carbon/human/proc/churchcurse
 	M.verbs |= /mob/living/carbon/human/proc/churchannouncement
 	removeomen(OMEN_NOPRIEST)
-	priority_announce("Asteria has anointed [M.real_name] as the new head of the Church of new gods!", title = "Asteria Shines!", sound = 'sound/misc/bell.ogg')
+	priority_announce("Solaria has anointed [M.real_name] as the new head of the Church of new gods!", title = "Solaria Shines!", sound = 'sound/misc/bell.ogg')
 
 /datum/admins/proc/fix_death_area()
 	set category = "GameMaster"

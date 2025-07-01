@@ -45,8 +45,8 @@
 		switch(H.patron?.type)
 			if (/datum/patron/psydon, /datum/patron/psydon/progressive)
 				wrists = /obj/item/clothing/neck/psycross/silver
-			if(/datum/patron/divine/asteria)
-				wrists = /obj/item/clothing/neck/psycross/silver/asteria
+			if(/datum/patron/divine/solaria)
+				wrists = /obj/item/clothing/neck/psycross/silver/solaria
 			if(/datum/patron/divine/last_death)
 				wrists = /obj/item/clothing/neck/psycross/silver/last_death
 			if(/datum/patron/divine/pestra)

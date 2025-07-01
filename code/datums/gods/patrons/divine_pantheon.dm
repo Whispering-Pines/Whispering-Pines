@@ -17,10 +17,10 @@
 
 /* ----------------- */
 
-/datum/patron/divine/asteria
-	name = "Lady Asteria"
+/datum/patron/divine/solaria
+	name = "Lady Solaria"
 	domain = "Primordial Radiance, Stars, Good, Life"
-	desc = "Asteria the Primordial Radiance, old goddess of the stars therefore the sun and all goodness. One of the few live old gods remaining. She took the crown of new heaven through having no contestants left alive beside Tenebrase, and the new gods who are not of such power of old gods. She appears to be a female humanoid silhouette of pure blinding, hot starlight with long flowing hair."
+	desc = "Solaria the Primordial Radiance, old goddess of the stars therefore the sun and all goodness. One of the few live old gods remaining. She took the crown of new heaven through having no contestants left alive beside Tenebrase, and the new gods who are not of such power of old gods. She appears to be a female humanoid silhouette of pure blinding, hot starlight with long flowing hair."
 	flaws = "Tyrannical, Ill-Tempered, Uncompromising"
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Betrayal, Sloth, Witchcraft"
@@ -31,11 +31,11 @@
 	t2 = /obj/effect/proc_holder/spell/invoked/projectile/fireball
 	t3 = /obj/effect/proc_holder/spell/invoked/revive
 	confess_lines = list(
-		"ASTERIA IS MY LIGHT!",
-		"ASTERIA BRINGS LAW!",
+		"SOLARIA IS MY LIGHT!",
+		"SOLARIA BRINGS LAW!",
 		"I SERVE THE GLORY OF THE SUN!",
 	)
-	storyteller = /datum/storyteller/asteria
+	storyteller = /datum/storyteller/solaria
 
 /datum/patron/divine/lunaria
 	name = "Lunaria"
@@ -131,10 +131,10 @@ accend to the astral plane as the god of the desert where he has watched over al
 	sins = "Tyranny, Cruelty"
 	boons = "Your used weapons dull slower."
 	added_traits = list(TRAIT_SHARPER_BLADES)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/self/call_to_arms
-	t2 = /obj/effect/proc_holder/spell/self/divine_strike
-	t3 = /obj/effect/proc_holder/spell/invoked/persistence
+	t0 = /obj/effect/proc_holder/spell/self/call_to_arms
+	t1 = /obj/effect/proc_holder/spell/self/divine_strike
+	t2 = /obj/effect/proc_holder/spell/invoked/persistence
+	t3 = /obj/effect/proc_holder/spell/invoked/heatmetal
 	confess_lines = list(
 		"WANDERER GUIDE ME!",
 		"BURNING SANDS AGAINST MY SKIN!",
@@ -155,7 +155,7 @@ accend to the astral plane as the god of the desert where he has watched over al
 	t1 = /obj/effect/proc_holder/spell/invoked/vicious_mimicry
 	t2 = /obj/effect/proc_holder/spell/invoked/wheel
 	confess_lines = list(
-		"ASTERIA IS MY LIGHT!",
+		"SOLARIA IS MY LIGHT!",
 		"LUNARIA IS NIGHT!",
 		"BLISSROSE PROVIDES!",
 		"ABYSSOR COMMANDS THE WAVES!",
@@ -213,14 +213,14 @@ accend to the astral plane as the god of the desert where he has watched over al
 	domain = "Goddess of Dreams, Illusion, Pleasure."
 	desc = "The Dream Goddess. Initially a human psion, she named herself 'Moonbeam', as her favorite thing in the mortal world that didn't leave her until her death. Eventually finding what's remaining of an old god in the astral plane with still strange traces of lewd energy... she takes it, being filled with all of the universe's secrets without -fully- losing her mind. She returned to the astral plane and began building her astral 'dreamland' empire out of people's sweetest dreams... Or wet, whatever pleases the wandering dreamer... she remains a bodiless, astral form taking on an ever-changing cosmic body when she must be seen. Often not speaking, but showing, finding that easier to express herself, her forms often have no mouth, but white glowing wide eyes to take attention, Her most common appearance would be that of a female humanoid shaped pattern of stars and cosmos with flowing hair. Lunaria is her best friend."
 	flaws= "Naivete, Impulsiveness, Slight madness, libido"
-	worshippers = "Mothers, Illusionists, Dreamers, Married Couples"
+	worshippers = "Illusionists, Dreamers, Perverts"
 	sins = "Sadism, Abandonment, Spreading illness purposefully."
 	boons = "You gain more sleep experience, you are better in bed."
 	added_traits = list(TRAIT_TUTELAGE, TRAIT_GOODLOVER, TRAIT_SEXDEVO)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/instill_perfection
-	t2 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
-	t3 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t0 = /obj/effect/proc_holder/spell/invoked/instill_perfection
+	t1 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
+	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t3 = /obj/effect/proc_holder/spell/invoked/blindness/miracle
 	confess_lines = list(
 		"TAKE ME TO YOUR ASTRAL EMBRACE!",
 		"MOONBEAM, WAKE ME FROM THIS BAD DREAM!",

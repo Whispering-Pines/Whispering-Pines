@@ -69,8 +69,8 @@
 //////////////////////
 ///   TEN CURSES   ///
 //////////////////////
-/datum/curse/asteria
-	name = "Asteria's Curse"
+/datum/curse/solaria
+	name = "Solaria's Curse"
 	description = "I am forsaken by the Sun. Healing miracles have no effect on me."
 	trait = TRAIT_ASTRATA_CURSE
 

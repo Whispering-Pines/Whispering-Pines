@@ -317,8 +317,8 @@
 	lockids = list(ACCESS_GUEST)
 
 /obj/item/key/courtphys
-	name = "court physician's key"
-	desc = "A key granted to the honored Court Physician."
+	name = "court mender's key"
+	desc = "A key granted to the honored Court Mender."
 	icon_state = "ankhkey"
 	lockids = list(ACCESS_PHYSICIAN)
 

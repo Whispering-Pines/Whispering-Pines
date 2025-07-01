@@ -147,8 +147,8 @@
 
 /* tallandwide.dmi */
 
-/datum/slapcraft_recipe/masonry/structure/statue/asteria
-	name = "asteria statue"
+/datum/slapcraft_recipe/masonry/structure/statue/solaria
+	name = "solaria statue"
 	steps = list(
 		/datum/slapcraft_step/structure/carving_block,
 		/datum/slapcraft_step/use_item/masonry/chisel,
@@ -161,11 +161,11 @@
 		/datum/slapcraft_step/use_item/masonry/hammer/second,
 		/datum/slapcraft_step/use_item/masonry/chisel/third,
 		)
-	result_type = /obj/structure/fluff/statue/asteria
+	result_type = /obj/structure/fluff/statue/solaria
 	craftdiff = 5
 
-/datum/slapcraft_recipe/masonry/structure/statue/asteriabling
-	name = "asteria statue (bling)"
+/datum/slapcraft_recipe/masonry/structure/statue/solariabling
+	name = "solaria statue (bling)"
 	steps = list(
 		/datum/slapcraft_step/structure/carving_block,
 		/datum/slapcraft_step/use_item/masonry/chisel,
@@ -179,7 +179,7 @@
 		/datum/slapcraft_step/use_item/masonry/hammer/second,
 		/datum/slapcraft_step/use_item/masonry/chisel/third,
 		)
-	result_type = /obj/structure/fluff/statue/asteria/bling
+	result_type = /obj/structure/fluff/statue/solaria/bling
 	craftdiff = 5
 
 /* ay.dmi */

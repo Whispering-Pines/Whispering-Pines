@@ -73,9 +73,9 @@
 	armor = ARMOR_WEAK
 	salvage_result = NUTRITION_LEVEL_HUNGRY
 
-/obj/item/clothing/head/roguehood/asteria
+/obj/item/clothing/head/roguehood/solaria
 	name = "sun hood"
-	desc = "Worn by the faithful of Asteria."
+	desc = "Worn by the faithful of Solaria."
 	icon_state = "astratahood"
 	resistance_flags = FIRE_PROOF // Not the sun hat!
 

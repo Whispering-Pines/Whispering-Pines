@@ -1,5 +1,5 @@
 /datum/job/feldsher
-	title = "Feldsher"
+	title = "Mender"
 	tutorial = "You have seen countless wounds over your time. \
 	Stitched the sores of blades, sealed honey over the bubous of plague. \
 	A thousand deaths stolen from the Carriagemen, yet these people will still call you a charlatan. \
@@ -13,7 +13,7 @@
 	spawn_positions = 2
 	min_pq = 2
 
-	//Reason all races allowed is you are basically a very talented court physician; even 'lower races' would find this to be one of the only ways to obtain a sort of nobility.
+	//Reason all races allowed is you are basically a very talented court mender; even 'lower races' would find this to be one of the only ways to obtain a sort of nobility.
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_NONEXOTIC
 

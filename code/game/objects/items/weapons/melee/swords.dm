@@ -913,7 +913,7 @@
 			if("onback")
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
-/obj/item/weapon/sword/long/exe/asteria
+/obj/item/weapon/sword/long/exe/solaria
 	name = "solar judge"
 	desc = "This wicked executioner's blade calls for order."
 	icon_state = "astratasword"

@@ -59,10 +59,10 @@
 		H.grant_language(/datum/language/celestial)
 		to_chat(H, "<span class='info'>I can speak Celestial with ,c before my speech.</span>")
 	switch(H.patron?.type) //this is a ridiculous way of doing it and it is annoying.
-		if(/datum/patron/divine/asteria)
-			wrists = /obj/item/clothing/neck/psycross/silver/asteria
-			head = /obj/item/clothing/head/helmet/heavy/necked/asteria
-			cloak = /obj/item/clothing/cloak/stabard/templar/asteria
+		if(/datum/patron/divine/solaria)
+			wrists = /obj/item/clothing/neck/psycross/silver/solaria
+			head = /obj/item/clothing/head/helmet/heavy/necked/solaria
+			cloak = /obj/item/clothing/cloak/stabard/templar/solaria
 			H.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
 			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		if(/datum/patron/divine/lunaria)
@@ -135,8 +135,8 @@
 /datum/outfit/job/templar/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	switch(H.patron?.type) //this is a ridiculous way of doing it and it is annoying.
-		if(/datum/patron/divine/asteria)
-			var/obj/item/weapon/sword/long/exe/asteria/P = new(get_turf(src))
+		if(/datum/patron/divine/solaria)
+			var/obj/item/weapon/sword/long/exe/solaria/P = new(get_turf(src))
 			H.equip_to_appropriate_slot(P)
 		if(/datum/patron/divine/lunaria)
 			var/obj/item/weapon/sword/sabre/lunaria/P = new(get_turf(src))

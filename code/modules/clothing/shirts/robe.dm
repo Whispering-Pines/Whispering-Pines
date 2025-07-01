@@ -45,9 +45,9 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/patron_robes.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/patron_robes.dmi'
 
-/obj/item/clothing/shirt/robe/asteria
+/obj/item/clothing/shirt/robe/solaria
 	name = "sun robe"
-	desc = "The cloth of a follower of Asteria."
+	desc = "The cloth of a follower of Solaria."
 	icon_state = "astratarobe"
 	sleeved = null
 

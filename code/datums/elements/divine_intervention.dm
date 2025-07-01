@@ -5,7 +5,7 @@
 	var/allows_pantheon
 	var/sets_alight
 
-/datum/element/divine_intervention/Attach(obj/item/item, patron = /datum/patron/divine/asteria, allows_pantheon = PUNISHMENT_NONE, stress_event = null, sets_alight = FALSE)
+/datum/element/divine_intervention/Attach(obj/item/item, patron = /datum/patron/divine/solaria, allows_pantheon = PUNISHMENT_NONE, stress_event = null, sets_alight = FALSE)
 	. = ..()
 	if(!istype(item))
 		return ELEMENT_INCOMPATIBLE

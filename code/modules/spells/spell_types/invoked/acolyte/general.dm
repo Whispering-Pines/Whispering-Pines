@@ -45,7 +45,7 @@
 		switch(user.patron.type)
 			if(/datum/patron/psydon)
 				target.visible_message(span_info("A strange stirring feeling pours from [target]!"), span_notice("Sentimental thoughts drive away my pains!"))
-			if(/datum/patron/divine/asteria)
+			if(/datum/patron/divine/solaria)
 				target.visible_message(span_info("A wreath of gentle light passes over [target]!"), span_notice("I'm bathed in holy light!"))
 				// during the day, heal 10 more (basic as fuck)
 				if (GLOB.tod == "day")

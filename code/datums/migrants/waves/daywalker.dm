@@ -8,7 +8,7 @@
 /datum/outfit/job/daywalker/pre_equip(mob/living/carbon/human/H)
 	..()
 	wrists = /obj/item/clothing/wrists/bracers/leather
-	neck = /obj/item/clothing/neck/psycross/silver/asteria
+	neck = /obj/item/clothing/neck/psycross/silver/solaria
 	gloves = /obj/item/clothing/gloves/fingerless/shadowgloves // Would give em Fingerless, but parrying with fists sounds funny as fuck
 	pants = /obj/item/clothing/pants/trou/shadowpants
 	shirt = /obj/item/clothing/shirt/tunic/black
@@ -23,8 +23,8 @@
 	H.virginity = TRUE
 
 	if(H.mind)
-		if(H.patron != /datum/patron/divine/asteria)
-			H.set_patron(/datum/patron/divine/asteria)
+		if(H.patron != /datum/patron/divine/solaria)
+			H.set_patron(/datum/patron/divine/solaria)
 
 		H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
@@ -49,7 +49,7 @@
 	H.cmode_music = 'sound/music/cmode/antag/CombatThrall.ogg'
 
 /datum/migrant_wave/daywalker
-	name = "Asteria's Daywalker"
+	name = "Solaria's Daywalker"
 	max_spawns = 1
 	shared_wave_type = /datum/migrant_wave/daywalker
 	weight = 3

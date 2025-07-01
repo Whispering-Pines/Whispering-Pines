@@ -1294,7 +1294,7 @@ ____________End of Example*/
 
 /atom/movable/screen/alert/status_effect/buff/blessed
 	name = "Blessed"
-	desc = "Asteria's light flows through me."
+	desc = "Solaria's light flows through me."
 	icon_state = "buff"
 
 /datum/status_effect/buff/blessed/on_apply()

@@ -23,9 +23,9 @@
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 
 	switch(H.patron?.type)
-		if(/datum/patron/divine/asteria)
-			wrists = /obj/item/clothing/neck/psycross/silver/asteria
-			cloak = /obj/item/clothing/cloak/stabard/templar/asteria
+		if(/datum/patron/divine/solaria)
+			wrists = /obj/item/clothing/neck/psycross/silver/solaria
+			cloak = /obj/item/clothing/cloak/stabard/templar/solaria
 			neck = /obj/item/clothing/neck/chaincoif
 			H.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
 		if(/datum/patron/divine/blissrose)	// good helmet but no money
@@ -122,9 +122,9 @@
 					head = /obj/item/clothing/head/helmet/heavy/bucket/gold
 					wrists = /obj/item/clothing/neck/psycross/g
 					H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
-				if(/datum/patron/divine/asteria)
-					head = /obj/item/clothing/head/helmet/heavy/necked/asteria
-					wrists = /obj/item/clothing/neck/psycross/silver/asteria
+				if(/datum/patron/divine/solaria)
+					head = /obj/item/clothing/head/helmet/heavy/necked/solaria
+					wrists = /obj/item/clothing/neck/psycross/silver/solaria
 					H.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
 				if(/datum/patron/divine/lunaria)
 					head = /obj/item/clothing/head/helmet/heavy/necked/lunaria

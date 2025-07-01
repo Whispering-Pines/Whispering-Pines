@@ -4684,7 +4684,7 @@
 	pixel_x = 2;
 	pixel_y = 7
 	},
-/obj/item/clothing/neck/psycross/silver/asteria,
+/obj/item/clothing/neck/psycross/silver/solaria,
 /obj/item/clothing/neck/psycross/silver/moonbeam{
 	pixel_x = -20;
 	pixel_y = 13

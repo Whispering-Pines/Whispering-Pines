@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol
-	name = "puffer"
-	desc = "The current zenith of Dwarven and Human cooperation on the Eastern continent. It uses alchemical blastpowder to propel metal balls for devastating effect."
+	name = "flintlock pistol"
+	desc = "The current zenith of Dwarven and Human cooperation on the Western continent. It uses alchemical blastpowder to propel metal balls for devastating effect."
 	icon = 'icons/roguetown/weapons/32.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -17,7 +17,7 @@
 	var/obj/item/ramrod/rod
 	cartridge_wording = "ball"
 	var/rammed = FALSE
-	load_sound = 'sound/foley/nockarrow.ogg'
+	load_sound = 'modular_helmsguard/sound/arquebus/musketload.ogg'
 	fire_sound = 'sound/combat/Ranged/muskshoot.ogg'
 	equip_sound = 'sound/foley/gun_equip.ogg'
 	pickup_sound = 'sound/foley/gun_equip.ogg'
@@ -36,7 +36,6 @@
 	var/cocked = FALSE
 	var/ramrod_inserted = TRUE
 	var/powdered = FALSE
-	var/wound = FALSE
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/update_icon_state()
 	. = ..()
@@ -48,11 +47,10 @@
 	new /obj/effect/particle_effect/smoke(get_turf(user))
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/shoot_with_empty_chamber(mob/living/user)
-	if(!cocked || !wound)
+	if(!cocked)
 		return
 	playsound(src.loc, 'sound/combat/Ranged/muskclick.ogg', 100, FALSE)
 	cocked = FALSE
-	wound = FALSE
 	update_appearance(UPDATE_ICON_STATE)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/attack_right(mob/user)
@@ -71,22 +69,6 @@
 	update_appearance(UPDATE_ICON_STATE)
 
 
-/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/rmb_self(mob/user)
-	. = ..()
-	if(user.get_skill_level(/datum/skill/combat/firearms) <= 0)
-		to_chat(user, "<span class='warning'>I don't know how to do this!</span>")
-		return
-	if(wound)
-		to_chat(user, "<span class='info'>\The [src]'s mechanism is already wound!</span>")
-		return
-	var/windtime = 3.5
-	windtime = windtime - (user.get_skill_level(/datum/skill/combat/firearms) / 2)
-	if(do_after(user, windtime SECONDS, src) && !wound)
-		to_chat(user, "<span class='info'>I wind \the [src]'s mechanism.</span>")
-		playsound(src.loc, 'sound/foley/winding.ogg', 100, FALSE)
-		wound = TRUE
-
-
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/MiddleClick(mob/user, params)
 	. = ..()
 	if(ishuman(user))
@@ -96,14 +78,14 @@
 			rod = null
 			ramrod_inserted = FALSE
 			to_chat(user, "<span class='info'>I remove the ramrod from \the [src].</span>")
-			playsound(src.loc, 'sound/foley/struggle.ogg', 100, FALSE, -1)
+			playsound(src.loc, 'sound/items/sharpen_short1.ogg', 100, FALSE, -1)
 		else if(istype(H.get_active_held_item(), /obj/item/ramrod))
 			var/obj/item/ramrod/rrod = H.get_active_held_item()
 			rrod.forceMove(src)
 			rod = rrod
 			ramrod_inserted = TRUE
 			to_chat(user, "<span class='info'>I put \the [rrod] into \the [src].</span>")
-			playsound(src.loc, 'sound/foley/struggle.ogg', 100, FALSE, -1)
+			playsound(src.loc, 'modular_helmsguard/sound/arquebus/musketload.ogg', 100, FALSE, -1)
 		update_appearance(UPDATE_ICON_STATE)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
@@ -112,8 +94,6 @@
 	if(!rammed)
 		return
 	if(!powdered)
-		return
-	if(!wound)
 		return
 	if(user.client)
 		if(user.client.chargedprog >= 100)
@@ -137,7 +117,6 @@
 	cocked = FALSE
 	rammed = FALSE
 	powdered = FALSE
-	wound = FALSE
 	sleep(click_delay)
 	update_appearance(UPDATE_ICON_STATE)
 	..()
@@ -170,10 +149,14 @@
 				to_chat(user, "<span class='warning'>I need to powder the [src] before I can ram it.</span>")
 				return
 			if(!rammed)
+				var/gunchannel = SSsounds.random_available_channel()
+				playsound(user, 'modular_helmsguard/sound/arquebus/ramrod.ogg', 100, FALSE, channel = gunchannel)
+				to_chat(user, "<span class='info'>I start ramrodding \the [src].</span>")
 				if(do_after(user, ramtime SECONDS, src))
 					to_chat(user, "<span class='info'>I ram \the [src].</span>")
-					playsound(src.loc, 'sound/foley/nockarrow.ogg', 100, FALSE)
 					rammed = TRUE
+				user.stop_sound_channel(gunchannel)
+
 	else
 		// Check if the item used is a reagent container
 		if(istype(I, /obj/item/reagent_containers))
@@ -185,13 +168,21 @@
 				return
 			// Check if the reagent container contains at least 5u of blastpowder
 			if(I.reagents.get_reagent_amount(/datum/reagent/blastpowder) >= 5)
-				// Subtract 5u of blastpowder from the reagent container
-				I.reagents.remove_reagent(/datum/reagent/blastpowder, 5)
-				// Set the 'powdered' flag on the pistol
-				powdered = TRUE
-				to_chat(user, "<span class='info'>I add blastpowder to \the [src], making it ready for a powerful shot.</span>")
-				playsound(src.loc, 'sound/foley/gunpowder_fill.ogg', 100, FALSE)
-				return 1
+				var/gunchannel = SSsounds.random_available_channel()
+				to_chat(user, "<span class='info'>I start adding blastpowder to \the [src]")
+				var/pourtime = 3.5
+				pourtime = pourtime - (user.get_skill_level(/datum/skill/combat/firearms) / 2)
+				playsound(user, 'modular_helmsguard/sound/arquebus/pour_powder.ogg', 50, FALSE)
+				if(do_after(user, pourtime SECONDS, src))
+					to_chat(user, "<span class='info'>I add blastpowder to \the [src], making it ready for a powerful shot.</span>")
+					// Subtract 5u of blastpowder from the reagent container
+					I.reagents.remove_reagent(/datum/reagent/blastpowder, 5)
+					// Set the 'powdered' flag on the pistol
+					powdered = TRUE
+					user.stop_sound_channel(gunchannel)
+					return 1
+				else
+					user.stop_sound_channel(gunchannel)
 			else
 				to_chat(user, "<span class='warning'>Not enough blastpowder in [I] to powder the [src].</span>")
 				return 0
@@ -215,3 +206,4 @@
 /obj/item/reagent_containers/glass/bottle/aflask/Initialize()
 	. = ..()
 	icon_state = "aflask"
+

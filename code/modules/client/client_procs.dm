@@ -470,7 +470,7 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	data += "</div></div></div>"
 
 	// New gods Section
-	var/astrata_followers = GLOB.patron_follower_counts["Asteria"] || 0
+	var/astrata_followers = GLOB.patron_follower_counts["Solaria"] || 0
 	var/noc_followers = GLOB.patron_follower_counts["Lunaria"] || 0
 	var/last_death_followers = GLOB.patron_follower_counts["Last Death"] || 0
 	var/pestra_followers = GLOB.patron_follower_counts["Pestra"] || 0
@@ -482,7 +482,7 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	var/eora_followers = GLOB.patron_follower_counts["Moonbeam"] || 0
 	var/wanderer_followers = GLOB.patron_follower_counts["The Wanderer"] || 0
 
-	var/astrata_storyteller = /datum/storyteller/asteria
+	var/astrata_storyteller = /datum/storyteller/solaria
 	var/noc_storyteller = /datum/storyteller/lunaria
 	var/last_death_storyteller = /datum/storyteller/last_death
 	var/pestra_storyteller = /datum/storyteller/pestra
@@ -500,8 +500,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	data += "<div style='width: 91.5%; margin: 0 auto 40px;'>"
 	data += "<div style='display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-bottom: 30px;'>"
 
-	// Asteria
-	data += god_ui_block("ASTERIA", "#e7a962", "#642705", "\
+	// Solaria
+	data += god_ui_block("SOLARIA", "#e7a962", "#642705", "\
 		Number of followers: [astrata_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(astrata_storyteller))])<br>\
 		Holy revivals: [GLOB.vanderlin_round_stats[STATS_ASTRATA_REVIVALS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(astrata_storyteller, STATS_ASTRATA_REVIVALS))])<br>\
 		Number of nobles: [GLOB.vanderlin_round_stats[STATS_ALIVE_NOBLES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(astrata_storyteller, STATS_ALIVE_NOBLES))])<br>\

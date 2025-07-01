@@ -201,7 +201,7 @@
 /datum/stressevent/astrata_grandeur
 	timer = 30 MINUTES
 	stressadd = -2
-	desc = span_green("Asteria's light shines brightly through me. I must not let others ever forget that.")
+	desc = span_green("Solaria's light shines brightly through me. I must not let others ever forget that.")
 
 /datum/stressevent/graggar_culling_finished
 	stressadd = -1

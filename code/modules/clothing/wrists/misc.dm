@@ -1,7 +1,7 @@
 
 /obj/item/clothing/wrists/wrappings
 	name = "solar wrappings"
-	desc = "Common Asterian vestments for the forearms."
+	desc = "Common Solarian vestments for the forearms."
 	slot_flags = ITEM_SLOT_WRISTS
 	icon_state = "wrappings"
 	item_state = "wrappings"

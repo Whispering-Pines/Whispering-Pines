@@ -2,14 +2,14 @@
 	name = "Totod Order Emissary"
 	tutorial = "The Crusaders are knights who have pledged their wealth and lands to the Church, \
 	taking up the banner of the Totod Order dedicated to retaking Valoria. \
-	Three cults provide knights for the Order: Asteria, Last Death and Psydon. \
+	Three cults provide knights for the Order: Solaria, Last Death and Psydon. \
 	You were sent to Vanderlin by the Order to get any and all assistance from the faithful for the Crusade."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Human",
 		"Dwarf"
 	)
-	allowed_patrons = list(/datum/patron/divine/asteria, /datum/patron/divine/last_death, /datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/divine/solaria, /datum/patron/divine/last_death, /datum/patron/psydon)
 	outfit = /datum/outfit/job/adventurer/crusader
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 1
@@ -17,7 +17,7 @@
 	min_pq = 0
 
 /datum/outfit/job/adventurer/crusader
-	allowed_patrons = list(/datum/patron/divine/asteria, /datum/patron/divine/last_death, /datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/divine/solaria, /datum/patron/divine/last_death, /datum/patron/psydon)
 
 /datum/outfit/job/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -35,10 +35,10 @@
 	beltl = /obj/item/weapon/sword/silver
 
 	switch(H.patron?.name)
-		if("Asteria")
+		if("Solaria")
 			H.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
-			cloak = /obj/item/clothing/cloak/stabard/crusader // Gold for Asteria regardless of gender
-			wrists = /obj/item/clothing/neck/psycross/silver/asteria
+			cloak = /obj/item/clothing/cloak/stabard/crusader // Gold for Solaria regardless of gender
+			wrists = /obj/item/clothing/neck/psycross/silver/solaria
 		if("Last Death")
 			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 			cloak = /obj/item/clothing/cloak/stabard/templar/last_death

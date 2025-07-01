@@ -95,7 +95,7 @@
 				ghost.mind.transfer_to(target, TRUE)
 			target.grab_ghost(force = TRUE) // even suicides
 		if(!target.revive(full_heal = FALSE))
-			to_chat(user, "<span class='warning'>Asteria's light fails to heal [target]!</span>")
+			to_chat(user, "<span class='warning'>Solaria's light fails to heal [target]!</span>")
 			return FALSE
 		GLOB.vanderlin_round_stats[STATS_ASTRATA_REVIVALS]++
 		target.emote("breathgasp")

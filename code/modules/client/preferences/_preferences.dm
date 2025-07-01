@@ -86,7 +86,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/ooc_notes
 	var/datum/species/pref_species = new /datum/species/human/northern()	//Mutant race
 	var/datum/patron/selected_patron
-	var/static/datum/patron/default_patron = /datum/patron/divine/asteria
+	var/static/datum/patron/default_patron = /datum/patron/divine/solaria
 	var/list/features = MANDATORY_FEATURE_LIST
 	var/list/randomise = list(
 		(RANDOM_BODY) = FALSE,

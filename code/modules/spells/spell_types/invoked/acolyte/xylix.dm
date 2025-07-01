@@ -24,7 +24,7 @@
 		return FALSE
 	var/list/bannedwords = list("tenebrase","sinius","dismas","lamashtu","inhumen","heresy")
 	forced_speak = sanitize_hear_message(forced_speak)
-	for(var/T in bannedwords)  //asteria smites naughty xylixans
+	for(var/T in bannedwords)  //solaria smites naughty xylixans
 		if(findtext(forced_speak, T))
 			if(isliving(user))
 				var/mob/living/L = user

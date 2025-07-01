@@ -109,6 +109,6 @@
 	sewrepair = TRUE
 
 /obj/item/clothing/head/physhat
-	name = "court physician's hat"
+	name = "court mender's hat"
 	desc = "A head covering for the distinguished physician."
 	icon_state = "physicianhat"

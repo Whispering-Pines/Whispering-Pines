@@ -229,7 +229,7 @@
 		target.visible_message("<font color='yellow'>After [user]'s incantation, [target] melts into an ingot.</font>")
 		itemtospawn = new target.smeltresult(get_turf(target))
 	else if(target_loc == user)
-		user.visible_message("<font color='yellow'>[user] channels Malum's power to smelt [target] [user.p_theyre()] holding.</font>")
+		user.visible_message("<font color='yellow'>[user] channels Wanderer's power to smelt [target] [user.p_theyre()] holding.</font>")
 		itemtospawn = new target.smeltresult(get_turf(target))
 	else
 		return FALSE

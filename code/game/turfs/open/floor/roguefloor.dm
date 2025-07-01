@@ -168,7 +168,7 @@
 
 /turf/open/floor/grass/yel
 	name = "yellow grass"
-	desc = "Grass, blessed by Asteria's light."
+	desc = "Grass, blessed by Solaria's light."
 	icon_state = "grass_yel"
 	neighborlay = "grass_yeledge"
 

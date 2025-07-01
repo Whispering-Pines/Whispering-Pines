@@ -443,7 +443,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.json")
 				if (APPRENTICES)
 					cat_name = "Apprentices"
 				if (YOUNGFOLK)
-					cat_name = "Young Folk"
+					cat_name = "Younger Folk"
 				if (OUTSIDERS)
 					cat_name = "Outsiders"
 

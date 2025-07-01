@@ -255,12 +255,12 @@
 			H.mind.AddSpell(new S)
 /datum/migrant_role/heartfelt/prior
 	name = "Prior of Heartfelt"
-	greet_text = "The Prior of Heartfelt, you were destined for ascension within the Church, but fate intervened with the barony's downfall, delaying it indefinitely. Still guided by the blessings of Asteria, you journey to Vanderlin, determined to offer what aid and solace you can."
+	greet_text = "The Prior of Heartfelt, you were destined for ascension within the Church, but fate intervened with the barony's downfall, delaying it indefinitely. Still guided by the blessings of Solaria, you journey to Vanderlin, determined to offer what aid and solace you can."
 	outfit = /datum/outfit/job/heartfelt/prior
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
 /datum/outfit/job/heartfelt/prior
-	allowed_patrons = list(/datum/patron/divine/asteria)
+	allowed_patrons = list(/datum/patron/divine/solaria)
 /datum/outfit/job/heartfelt/prior/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE

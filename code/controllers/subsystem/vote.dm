@@ -238,7 +238,7 @@ SUBSYSTEM_DEF(vote)
 			if("endround")
 				var/rng = rand(1, 1000)
 				if(rng > 200) // 80%
-					initiator_key = pick("Asteria", "Lunaria", "Blissrose", "Abyssor", "Last Death", "Wanderer", "Xylix", "Pestra", "Malum", "Moonbeam")
+					initiator_key = pick("Solaria", "Lunaria", "Blissrose", "Abyssor", "Last Death", "Wanderer", "Xylix", "Pestra", "Malum", "Moonbeam")
 				else if(rng > 50) // 15%
 					initiator_key = pick("Tenebrase", "Sinius", "Dismas", "Lamashtu")
 				else

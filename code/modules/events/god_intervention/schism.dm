@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 /datum/tennite_schism
 	var/datum/weakref/challenger_god
 	var/datum/weakref/astrata_god
-	var/list/supporters_asteria = list()
+	var/list/supporters_solaria = list()
 	var/list/supporters_challenger = list()
 	var/list/neutrals = list()
 	var/halfway_passed = FALSE
@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 /datum/tennite_schism/New(datum/patron/challenger)
 	. = ..()
 	src.challenger_god = WEAKREF(challenger)
-	src.astrata_god = WEAKREF(GLOB.patronlist[/datum/patron/divine/asteria])
+	src.astrata_god = WEAKREF(GLOB.patronlist[/datum/patron/divine/solaria])
 	GLOB.tennite_schisms += src
 
 /datum/tennite_schism/Destroy()
@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	if(!challenger)
 		return
 
-	priority_announce("[challenger.name] challenges Asteria's leadership! The outcome of this conflict will be decided in less than 2 daes by a sheer number of their alive supporters. [challenger.name] promises great rewards to the faithful if victorious, while Asteria swears revenge to any who dare to defy her. Choose your side, or stand aside...", "Schism within new gods", 'sound/magic/marked.ogg')
+	priority_announce("[challenger.name] challenges Solaria's leadership! The outcome of this conflict will be decided in less than 2 daes by a sheer number of their alive supporters. [challenger.name] promises great rewards to the faithful if victorious, while Solaria swears revenge to any who dare to defy her. Choose your side, or stand aside...", "Schism within new gods", 'sound/magic/marked.ogg')
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		setup_mob(H)
 
@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	if(!challenger || !H)
 		return
 
-	to_chat(H, span_notice("There is an active schism within new gods! [challenger.name] has challenged Asteria's leadership!"))
+	to_chat(H, span_notice("There is an active schism within new gods! [challenger.name] has challenged Solaria's leadership!"))
 	setup_mob(H)
 
 /datum/tennite_schism/proc/setup_mob(mob/living/carbon/human/H)
@@ -53,15 +53,15 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 
 /datum/tennite_schism/proc/process_winner()
 	var/datum/patron/challenger = challenger_god.resolve()
-	var/datum/patron/asteria = astrata_god.resolve()
+	var/datum/patron/solaria = astrata_god.resolve()
 
-	if(!challenger || !asteria)
+	if(!challenger || !solaria)
 		return
 
 	var/astrata_count = 0
 	var/challenger_count = 0
 
-	for(var/datum/weakref/supporter_ref in supporters_asteria)
+	for(var/datum/weakref/supporter_ref in supporters_solaria)
 		var/mob/living/carbon/human/supporter = supporter_ref.resolve()
 		if(supporter && supporter.stat != DEAD && is_tennite(supporter))
 			astrata_count++
@@ -72,36 +72,36 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			challenger_count++
 
 	if(astrata_count >= challenger_count)
-		priority_announce("Asteria's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as a true heir of Psydon!", "Asteria is VICTORIOUS!", 'sound/magic/ahh2.ogg')
-		adjust_storyteller_influence("Asteria", 200)
+		priority_announce("Solaria's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as a true heir of Psydon!", "Solaria is VICTORIOUS!", 'sound/magic/ahh2.ogg')
+		adjust_storyteller_influence("Solaria", 200)
 		adjust_storyteller_influence(challenger.name, -50)
 
-		for(var/datum/weakref/supporter_ref in supporters_asteria)
+		for(var/datum/weakref/supporter_ref in supporters_solaria)
 			var/mob/living/carbon/human/supporter = supporter_ref.resolve()
-			if(supporter && supporter.patron == asteria)
+			if(supporter && supporter.patron == solaria)
 				for(var/obj/effect/proc_holder/spell/self/choose_schism_side/spell in supporter.mind.spell_list)
 					if(spell.chose_early)
-						to_chat(supporter, span_notice("Asteria's light prevails! Your steadfast devotion is rewarded with many triumphs."))
+						to_chat(supporter, span_notice("Solaria's light prevails! Your steadfast devotion is rewarded with many triumphs."))
 						supporter.adjust_triumphs(3)
 					else
-						to_chat(supporter, span_notice("Asteria's light prevails, but your late support goes unrewarded."))
+						to_chat(supporter, span_notice("Solaria's light prevails, but your late support goes unrewarded."))
 					break
 			else if(supporter)
-				to_chat(supporter, span_notice("Asteria's light prevails over the challenge of [challenger.name]! The Sun Queen expected no less than your total support."))
+				to_chat(supporter, span_notice("Solaria's light prevails over the challenge of [challenger.name]! The Sun Queen expected no less than your total support."))
 
 		for(var/datum/weakref/supporter_ref in supporters_challenger)
 			var/mob/living/carbon/human/supporter = supporter_ref.resolve()
 			if(supporter)
 				to_chat(supporter, span_userdanger("NEVER DEFY ME AGAIN!"))
-				supporter.electrocute_act(5, asteria)
-				supporter.add_curse(/datum/curse/asteria)
+				supporter.electrocute_act(5, solaria)
+				supporter.add_curse(/datum/curse/solaria)
 
 		cleanup_schism()
 
 	else if(challenger_count > astrata_count)
-		priority_announce("[challenger.name]'s challenge succeeds against Asteria's tyranny! The Sun Queen is grudgingly forced to share power with [challenger.name]...", "[challenger.name] RULES!", 'sound/magic/inspire_02.ogg')
+		priority_announce("[challenger.name]'s challenge succeeds against Solaria's tyranny! The Sun Queen is grudgingly forced to share power with [challenger.name]...", "[challenger.name] RULES!", 'sound/magic/inspire_02.ogg')
 		adjust_storyteller_influence(challenger.name, 200)
-		adjust_storyteller_influence("Asteria", -50)
+		adjust_storyteller_influence("Solaria", -50)
 
 		for(var/datum/weakref/supporter_ref in supporters_challenger)
 			var/mob/living/carbon/human/supporter = supporter_ref.resolve()
@@ -116,16 +116,16 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			else if(supporter)
 				for(var/obj/effect/proc_holder/spell/self/choose_schism_side/spell in supporter.mind.spell_list)
 					if(spell.chose_early)
-						to_chat(supporter, span_notice("[challenger.name]'s challenge succeeds against Asteria's tyranny! Your support is rewarded with a triumph."))
+						to_chat(supporter, span_notice("[challenger.name]'s challenge succeeds against Solaria's tyranny! Your support is rewarded with a triumph."))
 						supporter.adjust_triumphs(1)
 					else
 						to_chat(supporter, span_notice("[challenger.name]'s challenge succeeds, but your late support goes unrewarded."))
 					break
-		for(var/datum/weakref/supporter_ref in supporters_asteria)
+		for(var/datum/weakref/supporter_ref in supporters_solaria)
 			var/mob/living/carbon/human/supporter = supporter_ref.resolve()
 			if(supporter)
 				to_chat(supporter, span_userdanger("INCOMPETENT IMBECILES!"))
-				supporter.electrocute_act(5, asteria)
+				supporter.electrocute_act(5, solaria)
 
 		if(GLOB.todoverride == null)
 			addtimer(CALLBACK(src, PROC_REF(astrata_scorn)), 15 SECONDS)
@@ -133,7 +133,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 		addtimer(CALLBACK(src, PROC_REF(select_and_announce_vice_priest), challenger), 30 SECONDS)
 
 /datum/tennite_schism/proc/astrata_scorn()
-		priority_announce("You don't deserve my holy light, you ungrateful swines!", "Asteria's Scorn", 'sound/magic/fireball.ogg')
+		priority_announce("You don't deserve my holy light, you ungrateful swines!", "Solaria's Scorn", 'sound/magic/fireball.ogg')
 		GLOB.todoverride = "night"
 		settod()
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(reset_tod_override)), 20 MINUTES)
@@ -203,15 +203,15 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 /// Announces the current standings in the schism
 /datum/tennite_schism/proc/announce_standings()
 	var/datum/patron/challenger = challenger_god.resolve()
-	var/datum/patron/asteria = astrata_god.resolve()
+	var/datum/patron/solaria = astrata_god.resolve()
 
-	if(!challenger || !asteria)
+	if(!challenger || !solaria)
 		return
 
 	var/astrata_count = 0
 	var/challenger_count = 0
 
-	for(var/datum/weakref/supporter_ref in supporters_asteria)
+	for(var/datum/weakref/supporter_ref in supporters_solaria)
 		var/mob/living/carbon/human/supporter = supporter_ref.resolve()
 		if(supporter && supporter.stat != DEAD && is_tennite(supporter))
 			astrata_count++
@@ -222,21 +222,21 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			challenger_count++
 
 	if(astrata_count >= challenger_count)
-		priority_announce("Asteria is leading in the schism! She will have her revenge soon enough...", "Schism Rages On", 'sound/magic/marked.ogg')
+		priority_announce("Solaria is leading in the schism! She will have her revenge soon enough...", "Schism Rages On", 'sound/magic/marked.ogg')
 	else if(challenger_count > astrata_count)
-		priority_announce("[challenger.name] is leading in the schism! Asteria will soon be forced to yield...", "Schism Rages On", 'sound/magic/marked.ogg')
+		priority_announce("[challenger.name] is leading in the schism! Solaria will soon be forced to yield...", "Schism Rages On", 'sound/magic/marked.ogg')
 
 	halfway_passed = TRUE
 
 /datum/tennite_schism/proc/change_side(mob/living/carbon/human/user, new_side)
-	supporters_asteria -= WEAKREF(user)
+	supporters_solaria -= WEAKREF(user)
 	supporters_challenger -= WEAKREF(user)
 	neutrals -= WEAKREF(user)
 
 	switch(new_side)
-		if("asteria")
-			supporters_asteria += WEAKREF(user)
-			to_chat(user, span_notice("You have declared your allegiance to Asteria!"))
+		if("solaria")
+			supporters_solaria += WEAKREF(user)
+			to_chat(user, span_notice("You have declared your allegiance to Solaria!"))
 		if("challenger")
 			supporters_challenger += WEAKREF(user)
 			var/datum/patron/challenger = challenger_god.resolve()
@@ -266,7 +266,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 		return
 
 	var/list/options = list()
-	options["Asteria"] = "asteria"
+	options["Solaria"] = "solaria"
 	options["Neutral"] = "neutral"
 	if(challenger)
 		options["[challenger.name]"] = "challenger"
@@ -277,8 +277,8 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 
 	var/current_side
 	var/datum/weakref/user_ref = WEAKREF(user)
-	if(user_ref in current_schism.supporters_asteria)
-		current_side = "asteria"
+	if(user_ref in current_schism.supporters_solaria)
+		current_side = "solaria"
 	else if(user_ref in current_schism.supporters_challenger)
 		current_side = "challenger"
 	else
@@ -348,7 +348,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			continue
 
 		if(human_mob.patron == strongest_challenger)
-			to_chat(human_mob, span_notice("You hear a divine calling from your patron - the time has come to challenge Asteria's authority! Prepare for the coming schism!"))
+			to_chat(human_mob, span_notice("You hear a divine calling from your patron - the time has come to challenge Solaria's authority! Prepare for the coming schism!"))
 			human_mob.playsound_local(human_mob, 'sound/magic/marked.ogg', 100)
 
 	new /datum/tennite_schism(strongest_challenger)
@@ -381,13 +381,13 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 /proc/reset_tod_override()
 	GLOB.todoverride = null
 
-/// Finds strongest divine pantheon to challenge Asteria
+/// Finds strongest divine pantheon to challenge Solaria
 /proc/find_strongest_challenger()
 	var/datum/patron/strongest_challenger
 	var/highest_influence = 0
-	var/astrata_influence = get_storyteller_influence("Asteria") || 0
+	var/astrata_influence = get_storyteller_influence("Solaria") || 0
 
-	for(var/type in subtypesof(/datum/patron/divine) - list(/datum/patron/divine/asteria, /datum/patron/divine/moonbeam))
+	for(var/type in subtypesof(/datum/patron/divine) - list(/datum/patron/divine/solaria, /datum/patron/divine/moonbeam))
 		var/datum/patron/divine/god = GLOB.patronlist[type]
 		if(!god)
 			continue

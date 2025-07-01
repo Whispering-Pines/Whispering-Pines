@@ -31,7 +31,7 @@
 
 /obj/item/clothing/neck/mercmedal/steppesman
 	name = "steppe effigy"
-	desc = "This straw doll is claimed to be a representation of Asteria. In truth, a homage to the steppe's wild spirits of yore."
+	desc = "This straw doll is claimed to be a representation of Solaria. In truth, a homage to the steppe's wild spirits of yore."
 	icon_state = "effigy"
 
 /obj/item/clothing/neck/mercmedal/boltslinger

@@ -152,10 +152,10 @@
 	block2add = FOV_BEHIND
 
 //............... Temple heavy helmets ......................//
-//............... Asteria Helmet ............... //
-/obj/item/clothing/head/helmet/heavy/necked/asteria
-	name = "asteria helmet"
-	desc = "A great helmet decorated with a golden sigil of the solar order and a maille neck cover. The dependable companion of many holy warriors of Asteria."
+//............... Solaria Helmet ............... //
+/obj/item/clothing/head/helmet/heavy/necked/solaria
+	name = "solaria helmet"
+	desc = "A great helmet decorated with a golden sigil of the solar order and a maille neck cover. The dependable companion of many holy warriors of Solaria."
 	icon_state = "astratahelm"
 	item_weight = 6 * GOLD_MULITPLIER
 

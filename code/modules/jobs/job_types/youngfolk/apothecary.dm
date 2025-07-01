@@ -5,7 +5,7 @@
 	For a price, of course. \
 	You have been known to kill men who cross you or your work-partner."
 	flag = APOTHECARY
-	department_flag = YOUNGFOLK
+	department_flag = SERFS
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_APOTHECARY
 	faction = FACTION_TOWN

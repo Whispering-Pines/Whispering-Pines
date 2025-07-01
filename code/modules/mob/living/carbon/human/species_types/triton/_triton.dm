@@ -11,7 +11,7 @@
 	Born from the creatures of the deep with Abyssor's guidance, \
 	these aquatic wayfarers all share a few common traits. \
 	Similar to other creatures that dwell below the surface, their eyes are dull with disuse. \
-	Tritons feel pain when gazing upon that which direct light of Asteria herself illuminates. \
+	Tritons feel pain when gazing upon that which direct light of Solaria herself illuminates. \
 	\n\n\
 	Unlike most of the people of Psydonia, their culture is often considered cold and dour by most, \
 	an apathetic attitude to most negative or positive news. For them, the depths of Psydonias oceans are cold and unforgiving. \

@@ -277,8 +277,8 @@
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/mid = 1, /obj/item/needle = 1 )
 
 	switch(H.patron?.type)
-		if(/datum/patron/divine/asteria)
-			neck = /obj/item/clothing/neck/psycross/silver/asteria
+		if(/datum/patron/divine/solaria)
+			neck = /obj/item/clothing/neck/psycross/silver/solaria
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 		if(/datum/patron/divine/last_death)
 			neck = /obj/item/clothing/neck/psycross/silver/last_death

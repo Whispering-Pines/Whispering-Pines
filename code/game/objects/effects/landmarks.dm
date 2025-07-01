@@ -132,7 +132,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/courtphys
-	name = "Court Physician"
+	name = "Court Mender"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/guardsman
@@ -346,7 +346,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/feldsher
-	name = "Feldsher"
+	name = "Mender"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/gaffer
