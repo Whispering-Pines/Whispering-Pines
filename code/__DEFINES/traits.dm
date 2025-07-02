@@ -146,6 +146,7 @@
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker"
 #define TRAIT_USEMAGIC "Use Magic"
 #define TRAIT_LEARNMAGIC "Learn Magic" //You dont need usemagic if you have learnmagic.
+#define TRAIT_SEA_DRINKER "Denizen of the Deep"
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
@@ -252,6 +253,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_USEMAGIC = span_info("I know my way around magic items by legit means or trickery."),
 	TRAIT_LEARNMAGIC = span_info("I can memorize spells long as my intellect allow me."),
 	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming, If i am in high awareness, I can even prevent sneak attacks."),
+	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely."),
 	))
 
 #define SIGNAL_ADDTRAIT(trait_ref) ("addtrait " + trait_ref)

@@ -75,6 +75,7 @@
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_TAIL = /obj/item/organ/tail,
+		ORGAN_SLOT_GUTS = /obj/item/organ/filling_organ/guts,
 	)
 	bodypart_features = list(
 		/datum/bodypart_feature/hair/head,

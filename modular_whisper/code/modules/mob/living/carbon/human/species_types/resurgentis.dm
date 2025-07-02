@@ -1,7 +1,7 @@
 /mob/living/carbon/human/species/resurgentis
-	race = /datum/species/resurgentis
+	race = /datum/species/human/resurgentis
 
-/datum/species/resurgentis
+/datum/species/human/resurgentis
 	id = "resurgentis"
 	name = "Resurgentis"
 	desc = "The children of Last Death. \
@@ -78,7 +78,7 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	specstats_m = list(STATKEY_STR = 2, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 0, STATKEY_SPD = -1, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = 1, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 0, STATKEY_SPD = -1, STATKEY_LCK = 0)
 	specstats_f = list(STATKEY_STR = 1, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 0, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
 
 	enflamed_icon = "widefire"
@@ -121,13 +121,13 @@
 
 	nutrition_mod = 1.5 // 150% higher hunger rate.
 
-/datum/species/resurgentis/check_roundstart_eligible()
+/datum/species/human/resurgentis/check_roundstart_eligible()
 	return TRUE
 
-/datum/species/resurgentis/qualifies_for_rank(rank, list/features)
+/datum/species/human/resurgentis/qualifies_for_rank(rank, list/features)
 	return TRUE
 
-/datum/species/resurgentis/get_skin_list()
+/datum/species/human/resurgentis/get_skin_list()
 	return list(
 		"purple - pale" = "df78f9",
 		"purple - light" = "ba67cf",
@@ -137,7 +137,7 @@
 		"purple - burnt" = "4d1255",
 	)
 
-/datum/species/resurgentis/get_hairc_list()
+/datum/species/human/resurgentis/get_hairc_list()
 	return sortList(list(
 	"brown - dirt" = "785547",
 	"red - anger" = "ff0000",
@@ -158,7 +158,7 @@
 	"white - royalty" = "ffffff",
 	))
 
-/datum/species/resurgentis/get_oldhc_list()
+/datum/species/human/resurgentis/get_oldhc_list()
 	return sortList(list(
 	"brown - dirt" = "624e46",
 	"red - anger" = "7e0000",

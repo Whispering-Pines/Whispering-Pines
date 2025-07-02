@@ -46,15 +46,19 @@
 		if("hair_color")
 			var/list/hairs
 			var/new_color
-			if(prefs.age == AGE_OLD && (OLDGREY in prefs.pref_species.species_traits))
-				hairs = prefs.pref_species.get_oldhc_list()
-			else
-				hairs = prefs.pref_species.get_hairc_list()
-			var/new_hair = browser_input_list(user, "SELECT YOUR HERO'S HAIR COLOR", "BARBER", hairs)
-			if(new_hair)
-				new_color = hairs[new_hair]
-			if(!new_color)
-				return
+			if(prefs.pref_species.get_hairc_list())
+				if(prefs.age == AGE_OLD && (OLDGREY in prefs.pref_species.species_traits))
+					hairs = prefs.pref_species.get_oldhc_list()
+				else
+					hairs = prefs.pref_species.get_hairc_list()
+				new_color= browser_input_list(user, "SELECT YOUR HERO'S HAIR COLOR", "BARBER", hairs)
+				if(!new_color)
+					return
+				new_color = hairs[new_color]
+			else //use free picker in case there is no preset colors
+				new_color = color_pick_sanitized(user, "CHOOSE YOUR HERO'S HAIR COLOR", "BARBER", hair_entry.hair_color)
+				if(!new_color)
+					return
 			hair_entry.hair_color = sanitize_hexcolor(new_color, 6, TRUE)
 		if("natural_gradient")
 			if(!allows_natural_gradient)

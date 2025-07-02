@@ -91,6 +91,41 @@
 	M.adjustToxLoss(1)
 	M.add_nausea(12) //Over 8 units will cause puking
 
+/datum/reagent/water/salty
+	taste_description = "salt"
+	color = "#417ac5c6"
+
+/datum/reagent/water/salty/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
+	if(method == INGEST) // Make sure you DRANK the salty water before losing hydration
+		..()
+
+/datum/reagent/water/salty/on_mob_life(mob/living/carbon/M)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(!HAS_TRAIT(H, TRAIT_NOHUNGER)&&!HAS_TRAIT(H, TRAIT_SEA_DRINKER))
+			H.adjust_hydration(-6)  //saltwater dehydrates more than it hydrates
+		else if(HAS_TRAIT(H, TRAIT_SEA_DRINKER))
+			H.adjust_hydration(hydration)  //saltwater dehydrates more than it hydrates
+	..()
+
+/datum/chemical_reaction/saltwaterify
+	name = "saltwater"
+	id = /datum/reagent/water/salty
+	results = list(/datum/reagent/water/salty = 2)
+	required_reagents = list(/datum/reagent/water/salty = 1, /datum/reagent/water = 1)
+
+/datum/chemical_reaction/saltwaterboil //boiling water purifies it
+	name = "saltwater purification"
+	id = /datum/reagent/water
+	results = list(/datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/water/salty = 1)
+	required_temp = 375
+
+/datum/chemical_reaction/saltwaterboil/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	new /obj/item/reagent_containers/powder/salt(location)
+	new /obj/item/reagent_containers/powder/salt(location)
+	new /obj/item/reagent_containers/powder/salt(location)
 
 /*
  *	Water reaction to turf

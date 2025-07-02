@@ -441,7 +441,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 	return GLOB.skin_tones
 
 /datum/species/proc/get_hairc_list()
-	return GLOB.haircolor
+	return null //edited to null so it turns to free color picker.
 
 /datum/species/proc/get_oldhc_list()
 	return GLOB.oldhc

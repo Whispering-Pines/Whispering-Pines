@@ -26,12 +26,42 @@
 /datum/body_marking/proc/get_default_color(list/features, datum/species/pref_species) //Needs features for the color information
 	var/list/colors
 	switch(default_color)
+		if(DEFAULT_PRIMARY)
+			colors = features["mcolor"]
+		if(DEFAULT_SECONDARY)
+			colors = features["mcolor2"]
+		if(DEFAULT_TERTIARY)
+			colors = features["mcolor3"]
 		if(DEFAULT_SKIN_OR_PRIMARY)
-			colors = features["skin_color"]
+			if(pref_species && pref_species.use_skintones)
+				colors = features["skin_color"]
+			else
+				colors = features["mcolor"]
 		else
 			colors = default_color
 
 	return colors
+
+/datum/body_marking/nose
+	icon = 'icons/mob/body_markings/other_markings.dmi'
+	name = "Nose"
+	icon_state = "nose"
+	default_color = "FF0000"
+	affected_bodyparts = HEAD
+
+/datum/body_marking/flushed_cheeks
+	icon = 'icons/mob/body_markings/other_markings.dmi'
+	name = "Flushed Cheeks"
+	icon_state = "flushed_cheeks"
+	default_color = "FF0000"
+	affected_bodyparts = HEAD
+
+/datum/body_marking/eyeliner
+	icon = 'icons/mob/body_markings/other_markings.dmi'
+	name = "Eyeliner"
+	icon_state = "eyeliner"
+	default_color = "FF0000"
+	affected_bodyparts = HEAD
 
 /datum/body_marking/plain
 	icon = 'icons/mob/body_markings/plain_markings.dmi'
@@ -199,6 +229,13 @@
 	affected_bodyparts = HEAD
 	default_color = "FF0000"
 
+/datum/body_marking/small/nose
+	icon = 'icons/mob/body_markings/other_markings.dmi'
+	name = "Nose (Volk)"
+	icon_state = "nose_s"
+	default_color = "FF0000"
+	affected_bodyparts = HEAD
+
 /datum/body_marking/small/plain
 	icon = 'icons/mob/body_markings/small_plain_markings.dmi'
 	name = "Plain (Volk)"
@@ -306,3 +343,19 @@
 	icon_state = "eyeliner"
 	default_color = "FF0000"
 	affected_bodyparts = HEAD
+
+/datum/body_marking/harlequin
+	icon = 'icons/mob/body_markings/plain_markings.dmi'
+	name = "Harlequin"
+	icon_state = "harlequin"
+	affected_bodyparts = HEAD | CHEST
+	default_color = DEFAULT_SECONDARY
+	covers_chest = TRUE
+
+/datum/body_marking/harlequinreversed
+	icon = 'icons/mob/body_markings/plain_markings.dmi'
+	name = "Harlequin (Reversed)"
+	icon_state = "harlequin_reversed"
+	affected_bodyparts = HEAD | CHEST
+	default_color = DEFAULT_SECONDARY
+	covers_chest = TRUE

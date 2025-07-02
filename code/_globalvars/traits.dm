@@ -160,6 +160,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Blindfighting" = TRAIT_BLINDFIGHTING,
 		"Use Magic" = TRAIT_USEMAGIC,
 		"Learn Magic" = TRAIT_LEARNMAGIC,
+		"Sea Drinker" = TRAIT_SEA_DRINKER,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
