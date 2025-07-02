@@ -3,7 +3,7 @@
 // Hair Definitions //
 //////////////////////
 /datum/sprite_accessory/hair/head
-	icon = 'icons/roguetown/mob/hair.dmi'	  // default icon for all hairs
+	icon = 'icons/mob/sprite_accessory/hair/human_hair.dmi'	  // default icon for all hairs
 	dynamic_file = 'icons/roguetown/mob/hair_extensions.dmi'
 	var/static/list/extensions
 

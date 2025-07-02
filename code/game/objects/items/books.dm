@@ -520,7 +520,7 @@
 
 		var/display_style = should_show ? "" : "display: none;"
 
-		html += "<a class='item-link [display_style]' href='byond://?src=\ref[src];action=add_to_cart&item=\ref[pack]&quantity=1' style='[display_style]'>[pack.name] ([pack.cost] mammons)</a>"
+		html += "<a class='item-link [display_style]' href='byond://?src=\ref[src];action=add_to_cart&item=\ref[pack]&quantity=1' style='[display_style]'>[pack.name] ([pack.cost] casings)</a>"
 
 	html += {"
 						<div id="noMatchesMsg" class="no-matches">No matching items found.</div>
@@ -553,11 +553,11 @@
 			html += "<input type='submit' value='Update' class='add-btn' style='padding: 3px 8px; font-size: 0.8em;'>"
 			html += "</form>"
 			html += "</td>"
-			html += "<td>[item_cost] mammons</td>"
+			html += "<td>[item_cost] casings</td>"
 			html += "<td><span class='remove-item' onclick=\"location.href='byond://?src=\ref[src];action=remove_from_cart&item=\ref[pack]'\">✖</span></td>"
 			html += "</tr>"
 
-		html += "<tr><td colspan='2'><strong>Total:</strong></td><td colspan='2'><strong>[total_cost] mammons</strong></td></tr>"
+		html += "<tr><td colspan='2'><strong>Total:</strong></td><td colspan='2'><strong>[total_cost] casings</strong></td></tr>"
 		html += "</table>"
 		html += "<button class='checkout-button' onclick=\"location.href='byond://?src=\ref[src];action=checkout'\">Create Order Scroll</button>"
 

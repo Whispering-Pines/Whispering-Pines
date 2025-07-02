@@ -23,12 +23,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		/obj/effect/proc_holder/spell/self/grant_nobility,
 	)
 
-	allowed_races = list(
-		"Human",
-		"Elf",
-		"Half-Elf",
-		"Dwarf"
-	)
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
+
 	outfit = /datum/outfit/job/lord
 	bypass_lastclass = TRUE
 	give_bank_account = 500
@@ -68,9 +64,6 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1)
 	ring = /obj/item/clothing/ring/active/nomag
 	l_hand = /obj/item/weapon/lordscepter
-
-	H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
@@ -84,12 +77,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	H.adjust_skillrank(/datum/skill/labor/mathematics, 3, TRUE)
 	if(H.age == AGE_OLD)
 		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_STR, 2) //to beat your wife efficently.
 	H.change_stat(STATKEY_INT, 3)
-	H.change_stat(STATKEY_END, 3)
-	H.change_stat(STATKEY_SPD, 1)
-	H.change_stat(STATKEY_PER, 2)
-	H.change_stat(STATKEY_LCK, 5)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/pants/tights/black
 		shirt = /obj/item/clothing/shirt/undershirt/black
@@ -102,6 +91,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	else
 		pants = /obj/item/clothing/pants/tights/random
 		armor = /obj/item/clothing/shirt/dress/royal
+		shirt = /obj/item/clothing/armor/gambeson/heavy
 		shoes = /obj/item/clothing/shoes/shortboots
 		cloak = /obj/item/clothing/cloak/lordcloak/ladycloak
 		wrists = /obj/item/clothing/wrists/royalsleeves
@@ -116,8 +106,27 @@ GLOBAL_LIST_EMPTY(lord_titles)
 
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWKEEPPLANS, TRAIT_GENERIC)
+
+	var/classes = list(
+	"Monarch",
+	)
+	if(isdwarf(H))
+		classes += "Ancestor"
+	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
+	switch(classchoice)
+		if("Monarch")
+			Monarch(H)
+		if("Ancestor")
+			Ancestor(H)
+
+/datum/outfit/job/lord/proc/Monarch(mob/living/carbon/human/H)
+
+/datum/outfit/job/lord/proc/Ancestor(mob/living/carbon/human/H)
+	H.dna.species.species_traits |= DRINKSBLOOD
+	H.dna.species.liked_food |= CANNIBAL
+	ADD_TRAIT(H, TRAIT_MISSING_NOSE, TRAIT_GENERIC)
 
 /datum/job/exlord //just used to change the lords title
 	title = "Ex-Monarch"

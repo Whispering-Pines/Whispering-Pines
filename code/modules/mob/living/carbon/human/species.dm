@@ -102,7 +102,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 	/// Food we (SHOULD) get a mood buff from
 	var/liked_food = NONE
 	/// Food we (SHOULD) get a mood debuff from
-	var/disliked_food = GROSS
+	var/disliked_food = GROSS | CANNIBAL
 	/// Food that (SHOULD) be toxic to us
 	var/toxic_food = TOXIC
 
@@ -2140,12 +2140,16 @@ GLOBAL_LIST_EMPTY(patreon_races)
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
 		if(BODY_FRONT_FRONT_LAYER)
-			return "FFRONT"
+			return "FRONT"
 		if(BODY_FRONT_FRONT_FRONT_LAYER)
 			return "FRONT"
 		if(BODY_FFFFRONT_LAYER)
 			return "FRONT"
 		if(BODY_FFFFFRONT_LAYER)
 			return "FRONT"
+		if(HALO_LAYER)
+			return "FRONT"
 		if(BODY_UNDER_LAYER)
 			return "UNDER"
+		else
+			CRASH("Tried to get an unimplemented layer suffix for sprite accessory of type [type]")

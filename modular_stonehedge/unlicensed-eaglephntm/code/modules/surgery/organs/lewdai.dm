@@ -52,6 +52,8 @@
 				continue
 			if(!target && fucktarg.cmode) //skip if the target has cmode on and the mob is not targeting anyone so probably not aggressive...
 				continue
+			if(fucktarg.age == AGE_CHILD)
+				continue
 			if(fucktarg.alpha <= 100)
 				continue
 			if(gender == MALE && !fucktarg.has_quirk(/datum/quirk/monsterhuntermale))
@@ -234,6 +236,8 @@
 			if(fucktarg == src)
 				continue
 			if(!(health < maxHealth) && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
+				continue
+			if(fucktarg.age == AGE_CHILD)
 				continue
 			if(fucktarg.alpha <= 100)
 				continue

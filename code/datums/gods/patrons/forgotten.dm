@@ -24,7 +24,7 @@
 
 /datum/patron/psydon/progressive
 	display_name = "Old Gods (Progressive)"
-	desc = "Last Death killed the old gods who would have unmade the universe through their never ending conflict, They have always been the true gods and they deserve worship not their descendants."
+	desc = "Last Death killed the old gods who would have unmade the universe through their never ending conflict, their descendants carry their spark of divinity and are part of them."
 	flaws = "Fatalistic, Sentimental, Acquiescent"
 	worshippers = "Idealistic Dreamers, Optimists, Diplomats"
 	confess_lines = list(

@@ -125,7 +125,7 @@
 
 /datum/curse/dismas
 	name = "Dismas' Curse"
-	description = "I hate the sight of wealth, and I cannot have anything to do with mammons."
+	description = "I hate the sight of wealth, and I cannot have anything to do with casings."
 	trait = TRAIT_DISMAS_CURSE
 
 /datum/curse/lamashtu

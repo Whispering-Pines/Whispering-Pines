@@ -352,7 +352,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /datum/charflaw/greedy
 	name = "Greedy"
-	desc = "I can't get enough of mammons, I need more and more!"
+	desc = "I can't get enough of casings, I need more and more!"
 	var/last_checked_mammons = 0
 	var/required_mammons = 0
 	var/next_mammon_increase = 0
@@ -381,16 +381,16 @@ GLOBAL_LIST_INIT(character_flaws, list(
 /datum/charflaw/greedy/proc/mammon_increase(mob/living/carbon/human/user)
 	if(last_passed_check + (50 MINUTES) < world.time) //If we spend a REALLY long time without being able to satisfy, then pity downgrade
 		required_mammons -= rand(10, 20)
-		to_chat(user, span_blue("Maybe a little less mammons is enough..."))
+		to_chat(user, span_blue("Maybe a little less casings is enough..."))
 	else
 		required_mammons += rand(25, 35) + extra_increment_value
 	required_mammons = min(required_mammons, 250) //Cap at 250 coins maximum
 	next_mammon_increase = world.time + rand(35 MINUTES, 40 MINUTES)
 	var/current_mammons = get_mammons_in_atom(user)
 	if(current_mammons >= required_mammons)
-		to_chat(user, span_blue("I'm quite happy with the amount of mammons I have..."))
+		to_chat(user, span_blue("I'm quite happy with the amount of casings I have..."))
 	else
-		to_chat(user, span_boldwarning("I need more mammons, what I have is not enough..."))
+		to_chat(user, span_boldwarning("I need more casings, what I have is not enough..."))
 
 	last_checked_mammons = current_mammons
 
@@ -402,7 +402,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	if(new_mammon_amount >= required_mammons)
 		// Feel better
 		if(user.has_stress(/datum/stressevent/vice))
-			to_chat(user, span_blue("[new_mammon_amount] mammons... That's more like it.."))
+			to_chat(user, span_blue("[new_mammon_amount] casings... That's more like it.."))
 		user.remove_stress(/datum/stressevent/vice)
 		user.remove_status_effect(/datum/status_effect/debuff/addiction)
 		last_passed_check = world.time
@@ -417,9 +417,9 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 	if(do_update_msg)
 		if(ascending)
-			to_chat(user, span_warning("Only [new_mammon_amount] mammons.. I need more..."))
+			to_chat(user, span_warning("Only [new_mammon_amount] casings.. I need more..."))
 		else
-			to_chat(user, span_boldwarning("No! My precious mammons..."))
+			to_chat(user, span_boldwarning("No! My precious casings..."))
 
 	last_checked_mammons = new_mammon_amount
 
@@ -541,13 +541,13 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /proc/get_mammons_in_atom(atom/movable/movable)
 	var/static/list/coins_types = typecacheof(/obj/item/coin)
-	var/mammons = 0
+	var/casings = 0
 	if(coins_types[movable.type])
 		var/obj/item/coin/coin = movable
-		mammons += coin.quantity * coin.sellprice
+		casings += coin.quantity * coin.sellprice
 	for(var/atom/movable/content in movable.contents)
-		mammons += get_mammons_in_atom(content)
-	return mammons
+		casings += get_mammons_in_atom(content)
+	return casings
 
 /datum/charflaw/pacifist
 	name = "Pacifist"

@@ -107,7 +107,7 @@
 		say("No target selected.")
 		return
 
-	var/amount = input(user, "How many mammons shall be stained red for their demise?", src) as null|num
+	var/amount = input(user, "How many casings shall be stained red for their demise?", src) as null|num
 	if(isnull(amount))
 		say("Invalid amount.")
 		return
@@ -173,12 +173,12 @@
 	switch(rand(1, 3))
 		if(1)
 			new_bounty.banner += "A dire bounty hangs upon the capture of [new_bounty.target], for '[new_bounty.reason]'.<BR>"
-			new_bounty.banner += "The patron, [new_bounty.employer], offers [new_bounty.amount] mammons for the task.<BR>"
+			new_bounty.banner += "The patron, [new_bounty.employer], offers [new_bounty.amount] casings for the task.<BR>"
 		if(2)
 			new_bounty.banner += "The capture of [new_bounty.target] is wanted for '[new_bounty.reason]''.<BR>"
-			new_bounty.banner += "The employer, [new_bounty.employer], offers [new_bounty.amount] mammons for the deed.<BR>"
+			new_bounty.banner += "The employer, [new_bounty.employer], offers [new_bounty.amount] casings for the deed.<BR>"
 		if(3)
-			new_bounty.banner += "[new_bounty.employer] hath offered to pay [new_bounty.amount] mammons for the capture of [new_bounty.target].<BR>"
+			new_bounty.banner += "[new_bounty.employer] hath offered to pay [new_bounty.amount] casings for the capture of [new_bounty.target].<BR>"
 			new_bounty.banner += "By reason of the following: '[new_bounty.reason]'.<BR>"
 	new_bounty.banner += "--------------<BR>"
 
@@ -187,8 +187,8 @@
 		say("No bounties are currently active.")
 		return
 
-	var/cost = 50
-	var/choice = alert(user, "Print a continously updated list of active bounties for [cost] mammons?", "Print Bounty Scroll", "Yes", "No")
+	var/cost = 5
+	var/choice = alert(user, "Print a continously updated list of active bounties for [cost] casings?", "Print Bounty Scroll", "Yes", "No")
 	if(choice != "Yes")
 		return
 
@@ -197,7 +197,7 @@
 		return
 
 	if(SStreasury.bank_accounts[user] < cost)
-		say("Insufficient funds. [cost] mammons required.")
+		say("Insufficient funds. [cost] casings required.")
 		return
 
 	SStreasury.bank_accounts[user] -= cost
@@ -370,39 +370,39 @@
 	M.apply_damage(25, BRUTE, BODY_ZONE_HEAD, FALSE)
 
 	sleep(2 SECONDS)
+	if(!M.age == AGE_CHILD) //skip entire violation if too young
+		say(pick(list("Performing [M.gender == FEMALE ? "intra-vaginal" : "penile"] inspection...", "Analyzing [M.gender == FEMALE ? "vaginal" : "penile"] structure...", "Commencing [M.gender == FEMALE ? "vaginal" : "penile"] punishment...")))
+		if(M.gender == FEMALE)
+			M.visible_message(span_alert("I FEEL A ROUGH, DRY METALLIC THING SCRAPING IN ME!"))
+		else
+			M.visible_message(span_alert("I FEEL A ROUGH, DRY METALLIC THING STROKING ME!"))
 
-	say(pick(list("Performing [M.gender == FEMALE ? "intra-vaginal" : "penile"] inspection...", "Analyzing [M.gender == FEMALE ? "vaginal" : "penile"] structure...", "Commencing [M.gender == FEMALE ? "vaginal" : "penile"] punishment...")))
-	if(M.gender == FEMALE)
-		M.visible_message(span_alert("I FEEL A ROUGH, DRY METALLIC THING SCRAPING IN ME!"))
-	else
-		M.visible_message(span_alert("I FEEL A ROUGH, DRY METALLIC THING STROKING ME!"))
+		var/list/asscrush = list('sound/vo/clap (3).ogg', 'sound/vo/clap (2).ogg', 'sound/vo/clap (1).ogg')
+		playsound(src, pick_n_take(asscrush), 100, FALSE, -1)
+		M.emote("gasp")
+		M.apply_damage(20, BRUTE, BODY_ZONE_PRECISE_GROIN, FALSE)
+		sleep(2 SECONDS)
+		playsound(src, pick(asscrush), 100, FALSE, -1)
+		M.emote("scream")
+		M.apply_damage(20, BRUTE, BODY_ZONE_PRECISE_GROIN, FALSE)
+		sleep(2 SECONDS)
+		playsound(src, pick(asscrush), 100, FALSE, -1)
+		M.emote("agony")
+		M.apply_damage(20, BRUTE, BODY_ZONE_PRECISE_GROIN, FALSE)
 
-	var/list/asscrush = list('sound/vo/clap (3).ogg', 'sound/vo/clap (2).ogg', 'sound/vo/clap (1).ogg')
-	playsound(src, pick_n_take(asscrush), 100, FALSE, -1)
-	M.emote("gasp")
-	M.apply_damage(20, BRUTE, BODY_ZONE_PRECISE_GROIN, FALSE)
-	sleep(2 SECONDS)
-	playsound(src, pick(asscrush), 100, FALSE, -1)
-	M.emote("scream")
-	M.apply_damage(20, BRUTE, BODY_ZONE_PRECISE_GROIN, FALSE)
-	sleep(2 SECONDS)
-	playsound(src, pick(asscrush), 100, FALSE, -1)
-	M.emote("agony")
-	M.apply_damage(20, BRUTE, BODY_ZONE_PRECISE_GROIN, FALSE)
+		M.emote("gasp")
+		if(M.gender == MALE)
+			var/obj/item/organ/filling_organ/testicles/balls = M.getorganslot(ORGAN_SLOT_TESTICLES)
+			say("Collecting all genetic samples.")
+			balls.reagents.remove_all(99999)
+			M.apply_damage(20, BRUTE, BODY_ZONE_PRECISE_GROIN, FALSE) //extra damage since they arent taking toxic cum.
+		else
+			var/obj/item/organ/filling_organ/vagina/forgan = M.getorganslot(ORGAN_SLOT_VAGINA)
+			forgan.reagents.add_reagent(/datum/reagent/consumable/cum/sterile/old, 20) //Toxic old cum
+			say("dispensing expired genetic material biohazard into subject.")
+		playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 
-	M.emote("gasp")
-	if(M.gender == MALE)
-		var/obj/item/organ/filling_organ/testicles/balls = M.getorganslot(ORGAN_SLOT_TESTICLES)
-		say("Collecting all genetic samples.")
-		balls.reagents.remove_all(99999)
-		M.apply_damage(20, BRUTE, BODY_ZONE_PRECISE_GROIN, FALSE) //extra damage since they arent taking toxic cum.
-	else
-		var/obj/item/organ/filling_organ/vagina/forgan = M.getorganslot(ORGAN_SLOT_VAGINA)
-		forgan.reagents.add_reagent(/datum/reagent/consumable/cum/sterile/old, 20) //Toxic old cum
-		say("dispensing expired genetic material biohazard into subject.")
-	playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-
-	sleep(2 SECONDS)
+		sleep(2 SECONDS)
 
 	if(correct_head)
 		say("A bounty has been sated.")

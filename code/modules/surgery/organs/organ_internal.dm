@@ -146,7 +146,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR, /datum/reagent/toxin/organpoison = 1)
 	grind_results = list(/datum/reagent/toxin/organpoison = 3)
-	foodtype = RAW | MEAT | GROSS
+	foodtype = RAW | MEAT | GROSS | CANNIBAL
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 	rotprocess = 5 MINUTES
 	var/obj/item/organ/organ_inside

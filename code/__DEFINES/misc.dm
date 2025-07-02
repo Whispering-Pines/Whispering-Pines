@@ -67,7 +67,7 @@
 #define BODY_FRONT_LAYER		8
 #define BODY_FRONT_FRONT_LAYER	7
 #define BODY_FRONT_FRONT_FRONT_LAYER	6
-#define BODY_FFFFRONT_LAYER	5
+#define BODY_FFFFRONT_LAYER		5
 #define BODY_FFFFFRONT_LAYER	4
 #define HALO_LAYER				3		//blood cult ascended halo, because there's currently no better solution for adding/removing
 #define FIRE_LAYER				2		//If you're on fire

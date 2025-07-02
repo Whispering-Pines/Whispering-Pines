@@ -550,6 +550,19 @@
 	if(!target.erpable && issimple(target))
 		to_chat(src, span_info("I can't do anything to this creature."))
 		return
+	//I was going to disable younglings as a whole but it will majorly fuck with family system, so this should do too. Sends admin messages for investigation regardless.
+	if(ishuman(user))
+		var/mob/living/carbon/human/user_human = user
+		if(user_human.age == AGE_CHILD)
+			to_chat(src, span_danger("What?"))
+			log_admin("Child [key_name(user_human)] tried to initiate sexcon on [key_name(target)]!")
+			return
+	if(ishuman(target))
+		var/mob/living/carbon/human/target_human = target
+		if(target_human.age == AGE_CHILD)
+			to_chat(src, span_danger("I can't do that, they are a child!"))
+			log_admin("[key_name(user)] tried to initiate sexcon on a child ([key_name(target)])!")
+			return
 	var/list/dat = list()
 	var/force_name = get_force_string()
 	var/speed_name = get_speed_string()

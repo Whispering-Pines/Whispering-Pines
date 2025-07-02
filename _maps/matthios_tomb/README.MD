@@ -3,7 +3,7 @@ General Tips
 - Make sure StrongDMM is set to save as TGM and not DMM
 - Larger map sizes mean they are less likely to appear in rotation due to it having issues finding space
 - When Loot Tables are in those are the preferred way to add loot to dungeons
-- Avoid using Mammons as Loot
+- Avoid using Casings as Loot
 
 - You will find the actual templates at: 'code\datums\dungeon_generator\dungeon_templates' or if you are using VSCode search: /datum/map_template/dungeon
 

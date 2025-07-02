@@ -20,8 +20,9 @@
 	icon = 'modular_whisper/icons/items/produce.dmi'
 	icon_state = "solvent"
 	base_icon_state = "solvent"
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_NUTRITIOUS)
 	tastes = list("dog shit" = 1)
-	foodtype = MEAT
+	foodtype = MEAT | CANNIBAL
 	faretype = FARE_IMPOVERISHED
 
 /obj/item/reagent_containers/food/snacks/raisins/Initialize(mapload)
@@ -155,6 +156,10 @@ GLOBAL_LIST_EMPTY(global_biomass_storage)
 /obj/structure/closet/crate/coffin/liquid_drainer/close(mob/living/user)
 	. = ..()
 	for(var/mob/living/carbon/human/victim in contents)
+		if(victim.age == AGE_CHILD)
+			say("ALERT! War crime detected: Harvesting of Children... Process halted... Error, Failed to send alert to united nations confederation, no connection available.", language = /datum/language/ancient_english)
+			open()
+			return
 		if(victim.stat != DEAD)
 			playsound(loc, 'sound/misc/machinelong.ogg', 100, FALSE, -1)
 			say("Live subject detected, Government identification database connection unavailable, foreigner precautionary pacification measures activated alongside stimulative blood-pumping increasers.", language = /datum/language/ancient_english)
@@ -257,14 +262,19 @@ GLOBAL_LIST_EMPTY(global_biomass_storage)
 	GLOB.cloning_bays += src
 
 /obj/machinery/fake_powered/cloning_pod/proc/send_manual_alert()
+	if(!toggled)
+		return
 	playsound(loc, 'sound/foley/industrial/machineoff.ogg', 50, FALSE, -1)
 	say("ALERT. A saved mind is trying to reclone, but there is Insufficent biomass stored!", language = /datum/language/ancient_english)
 
 /obj/machinery/fake_powered/cloning_pod/process()
 	. = ..()
+	if(!toggled)
+		return
 	if(world.time < last_alert+30 SECONDS)
 		return
 	if(GLOB.global_biomass_storage > 1)
 		return
-	playsound(loc, 'sound/foley/industrial/machineoff.ogg', 50, FALSE, -1)
+	last_alert = world.time
+	playsound(loc, 'sound/foley/industrial/pneumatic1.ogg', 50, FALSE, -1)
 	say("Warning; Insufficent biomass stored.", language = /datum/language/ancient_english)

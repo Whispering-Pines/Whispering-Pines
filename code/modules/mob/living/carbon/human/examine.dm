@@ -607,7 +607,7 @@
 					break
 
 	if(HAS_TRAIT(user, TRAIT_SEEPRICES) && sellprice)
-		. += "Is worth around [sellprice] mammons."
+		. += "Is worth around [sellprice] casings."
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 
 /mob/living/proc/status_effect_examines(pronoun_replacement) //You can include this in any mob's examine() to show the examine texts of status effects!

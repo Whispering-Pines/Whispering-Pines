@@ -49,7 +49,7 @@
 	chosen_one.mind.add_personal_objective(new_objective)
 
 	to_chat(chosen_one, span_userdanger("YOU ARE DISMAS' CHOSEN!"))
-	to_chat(chosen_one, span_notice("Accumulate [new_objective.target_mammons] mammons to prove your greed to Dismas!"))
+	to_chat(chosen_one, span_notice("Accumulate [new_objective.target_mammons] casings to prove your greed to Dismas!"))
 	chosen_one.playsound_local(chosen_one, 'sound/misc/gods/matthios_omen.ogg', 100)
 
 	chosen_one.mind.announce_personal_objectives()

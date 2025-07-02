@@ -794,7 +794,7 @@ GLOBAL_LIST_INIT(bounty_rep, list())  // ckey -> reputation score
 			html += {"
 							<div class="contract-header">
 								<span class="contract-type">[contract.contract_type]</span>
-								<span class="contract-payment">[contract.payment] Mammons</span>
+								<span class="contract-payment">[contract.payment] Casings</span>
 							</div>
 							<div class="contract-target">Target: [contract.target_name]</div>
 							<div class="contract-details">
@@ -923,7 +923,7 @@ GLOBAL_LIST_INIT(bounty_rep, list())  // ckey -> reputation score
 						</select>
 					</div>
 					<div class="form-group">
-						<label class="form-label">Mammons</label>
+						<label class="form-label">Casings</label>
 						<input type="number" class="form-input" id="payment" min="1" required>
 					</div>
 					<div class="form-group">
@@ -1650,7 +1650,7 @@ GLOBAL_LIST_INIT(bounty_rep, list())  // ckey -> reputation score
 			if(M.ckey == harlequinn_ckey && ishuman(M))
 				var/mob/living/carbon/human/H = M
 				add_mammons_to_atom(H, payment)
-				to_chat(H, span_notice("You have been paid [payment] Mammons for completing the contract!"))
+				to_chat(H, span_notice("You have been paid [payment] Casings for completing the contract!"))
 				break
 
 	// Remove from active contracts and add to completed
@@ -1672,7 +1672,7 @@ GLOBAL_LIST_INIT(bounty_rep, list())  // ckey -> reputation score
 			if(M.ckey == contractor_ckey && ishuman(M))
 				var/mob/living/carbon/human/H = M
 				add_mammons_to_atom(H, payment)
-				to_chat(H, span_notice("Your contract has failed. [payment] Mammons have been returned."))
+				to_chat(H, span_notice("Your contract has failed. [payment] Casings have been returned."))
 				break
 
 	// Remove from active contracts
@@ -1905,7 +1905,7 @@ GLOBAL_LIST_INIT(bounty_rep, list())  // ckey -> reputation score
 				remaining_mammons -= can_add * existing_coin.sellprice
 				existing_coin.update_appearance(UPDATE_ICON_STATE | UPDATE_NAME | UPDATE_DESC)
 
-	// If we still have mammons to add, create new coins
+	// If we still have casings to add, create new coins
 	while(remaining_mammons > 0)
 		// Determine best coin type to create (highest value that fits)
 		var/best_coin_type = null
@@ -1929,7 +1929,7 @@ GLOBAL_LIST_INIT(bounty_rep, list())  // ckey -> reputation score
 
 	return mammons_to_add - remaining_mammons // Return actual amount added
 
-// Remove mammons from an atom by modifying/deleting coins
+// Remove casings from an atom by modifying/deleting coins
 /proc/remove_mammons_from_atom(atom/movable/target, mammons_to_remove)
 	if(!target || mammons_to_remove <= 0)
 		return 0

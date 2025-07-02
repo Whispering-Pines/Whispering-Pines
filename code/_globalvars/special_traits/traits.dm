@@ -278,7 +278,7 @@
 
 /datum/special_trait/richpouch
 	name = "Rich Pouch"
-	greet_text = span_notice("I've recently found a pouch filled with mammons, probably belonging to some noble.")
+	greet_text = span_notice("I've recently found a pouch filled with casings, probably belonging to some noble.")
 	weight = 100
 
 /datum/special_trait/richpouch/on_apply(mob/living/carbon/human/character, silent)
