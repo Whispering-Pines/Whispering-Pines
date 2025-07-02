@@ -119,7 +119,7 @@
 	M.visible_message(span_warning("Blood runs from [M]'s nose."))
 
 /obj/item/reagent_containers/powder/ozium
-	name = "ozium"
+	name = "opium"
 	desc = "A potent drug that causes a state of euphoria, but can also arrest breathing."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "ozium"
@@ -156,7 +156,7 @@
 	M.visible_message(span_warning("Blood runs from [M]'s nose."))
 
 /obj/item/reagent_containers/powder/moondust
-	name = "moondust"
+	name = "cocaine"
 	desc = "Derived from the skins of certain pallid goblins. Makes folk quick to act and anger."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust"

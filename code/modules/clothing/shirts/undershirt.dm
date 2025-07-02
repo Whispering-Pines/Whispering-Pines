@@ -55,7 +55,7 @@
 
 /obj/item/clothing/shirt/undershirt/artificer
 	name = "heartfeltian suit"
-	desc = "Typical fashion of the best Heartfelt engineers."
+	desc = "Typical fashion of the best Glimmerfall engineers."
 	icon_state = "artishirt"
 
 /obj/item/clothing/shirt/undershirt/lowcut

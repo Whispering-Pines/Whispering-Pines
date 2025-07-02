@@ -17,9 +17,9 @@
 	var/map_name = "Phantom Kingdom"
 	var/map_path = "map_files/vanderlin"
 	var/map_file = "vanderlin.dmm"
-	var/immigrant_origin = "Kingsfield"
-	var/monarch_title = "King"
-	var/monarch_title_f = "Queen"
+	var/immigrant_origin = "No man's Land"
+	var/monarch_title = "Emperor"
+	var/monarch_title_f = "Empress"
 
 	var/traits = null
 	var/space_ruin_levels = 7

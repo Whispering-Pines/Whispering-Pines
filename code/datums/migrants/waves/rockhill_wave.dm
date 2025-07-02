@@ -1,6 +1,6 @@
 /datum/migrant_role/rockhill/mayor
-	name = "Mayor of Rockhill"
-	greet_text = "You are the mayor of Rockhill, you've come to Phantom Kingdom to discuss important matters with their Monarch."
+	name = "Mayor of Risena"
+	greet_text = "You are the mayor of Risena, you've come to Phantom Kingdom to discuss important matters with their Monarch."
 	outfit = /datum/outfit/job/rockhill/mayor
 	allowed_sexes = list(MALE,FEMALE)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
@@ -58,8 +58,8 @@
 	H.cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 
 /datum/migrant_role/rockhill_knight
-	name = "Knight of Rockhill"
-	greet_text = "You are a Knight of Rockhill, the notable of said town has taken the journey to your liege, you are to ensure their safety."
+	name = "Knight of Risena"
+	greet_text = "You are a Knight of Risena, the notable of said town has taken the journey to your liege, you are to ensure their safety."
 	outfit = /datum/outfit/job/rockhill/knight
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
@@ -128,8 +128,8 @@
 		H.name = "[honorary] [prev_name]"
 
 /datum/migrant_role/rockhill/sergeant_at_arms
-	name = "Rockhill Serjeant"
-	greet_text = "The Mayor of Rockhill has conscripted you and your mens to go see the rulers of Phantom Kingdom."
+	name = "Risena Serjeant"
+	greet_text = "The Mayor of Risena has conscripted you and your mens to go see the rulers of Phantom Kingdom."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
@@ -180,7 +180,7 @@
 	H.cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
 /datum/migrant_role/footman_guard
-	name = "Guardsmen of Rockhill"
+	name = "Guardsmen of Risena"
 	greet_text = "Your Serjeant has been conscripted by the mayor of rockhill to guard them as they visit the rulers of Phantom Kingdom. Ensure they live."
 	outfit = /datum/outfit/job/footman_bannerman
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED

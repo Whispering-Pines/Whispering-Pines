@@ -1,6 +1,6 @@
 /datum/migrant_role/jestertroupe
 	name = "Buffoon"
-	greet_text = "You were once part of a glorious circus from Heartfelt. Long gone are the days of mirth. New godst having been set ablaze so many years ago, you and your lot have been wandering. Here is the perfect town to start the next act. The circus is in town!"
+	greet_text = "You were once part of a glorious circus from Glimmerfall. Long gone are the days of mirth. New godst having been set ablaze so many years ago, you and your lot have been wandering. Here is the perfect town to start the next act. The circus is in town!"
 	outfit = /datum/outfit/job/jestertroupe
 
 	allowed_races = RACES_PLAYER_ALL

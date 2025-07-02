@@ -1483,7 +1483,7 @@ GLOBAL_LIST_INIT(natural_precursor_registry, list())
 	)
 
 /datum/natural_precursor/ozium
-	name = "ozium"
+	name = "opium"
 	essence_yields = list(
 		/datum/thaumaturgical_essence/air = 5,
 		/datum/thaumaturgical_essence/void = 10

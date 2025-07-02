@@ -141,7 +141,7 @@
 // WINES - Expensive, Nobleblooded
 /obj/item/reagent_containers/glass/bottle/wine
 	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 70)
-	desc = "A bottle that contains a generic red-wine, likely from Zaladin. It has a red-clay cork-seal."
+	desc = "A bottle that contains a generic red-wine, likely from Craterin. It has a red-clay cork-seal."
 	fancy = TRUE
 
 /obj/item/reagent_containers/glass/bottle/wine/sourwine
@@ -150,15 +150,15 @@
 
 /obj/item/reagent_containers/glass/bottle/redwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/redwine = 70)
-	desc = "A bottle with the Valorian Merchant Guild cork-seal. This one appears to be labelled as a relatively young red-wine from the coinlord state."
+	desc = "A bottle with the Zhaladuskn Merchant Guild cork-seal. This one appears to be labelled as a relatively young red-wine from the coinlord state."
 
 /obj/item/reagent_containers/glass/bottle/whitewine
 	list_reagents = list(/datum/reagent/consumable/ethanol/whitewine = 70)
-	desc = "A bottle with the Valorian Merchant Guild cork-seal. This one appears to be labelled as a sweet wine from the colder northern regions."
+	desc = "A bottle with the Zhaladuskn Merchant Guild cork-seal. This one appears to be labelled as a sweet wine from the colder northern regions."
 
 /obj/item/reagent_containers/glass/bottle/elfred
 	list_reagents = list(/datum/reagent/consumable/ethanol/elfred = 70)
-	desc = "A bottle gilded with a silver cork-seal. It appears to be labelled as a elvish red wine from Valoria. Likely worth more than what an entire village makes!"
+	desc = "A bottle gilded with a silver cork-seal. It appears to be labelled as a elvish red wine from Zhaladusk. Likely worth more than what an entire village makes!"
 
 /obj/item/reagent_containers/glass/bottle/elfblue
 	list_reagents = list(/datum/reagent/consumable/ethanol/elfblue = 70)

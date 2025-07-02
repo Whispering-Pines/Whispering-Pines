@@ -9,7 +9,7 @@
 	contains = /obj/item/reagent_containers/glass/bottle/beer
 
 /datum/supply_pack/food/spottedhen
-	name = "Rockhill Brewed"
+	name = "Risena Brewed"
 	cost = 10
 	contains = /obj/item/reagent_containers/glass/bottle/beer/spottedhen
 
@@ -64,12 +64,12 @@
 	contains = /obj/item/reagent_containers/glass/bottle/wine/sourwine
 
 /datum/supply_pack/food/winevalorred
-	name = "Valorian Red Wine"
+	name = "Zhaladuskn Red Wine"
 	cost = 45
 	contains = /obj/item/reagent_containers/glass/bottle/redwine
 
 /datum/supply_pack/food/winevalorwhite
-	name = "Valorian White Wine"
+	name = "Zhaladuskn White Wine"
 	cost = 35
 	contains = /obj/item/reagent_containers/glass/bottle/whitewine
 

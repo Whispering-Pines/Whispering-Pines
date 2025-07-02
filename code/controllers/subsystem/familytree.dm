@@ -20,7 +20,7 @@ SUBSYSTEM_DEF(familytree)
 	*/
 	var/datum/heritage/ruling_family
 	/*
-	* The other major houses of Rockhill.
+	* The other major houses of Risena.
 	* Id say think Shrouded Isle families but
 	* smaller.
 	*/

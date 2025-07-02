@@ -1,6 +1,6 @@
 /datum/migrant_role/gaoler
 	name = "Gaoler"
-	greet_text = "The lords of Vanderlins sent you to Heartfelt to rappatriate some prisoners that were in their prison, you are now on your way back."
+	greet_text = "The lords of Vanderlins sent you to Glimmerfall to rappatriate some prisoners that were in their prison, you are now on your way back."
 	allowed_sexes = list(MALE, FEMALE)
 	grant_lit_torch = TRUE
 	outfit = /datum/outfit/job/gaoler
@@ -55,7 +55,7 @@
 
 /datum/migrant_role/mig_prisoner
 	name = "Prisoner"
-	greet_text = "You had fled Phantom Kingdom, took refuge in Heartfelt yet the lords over there caught you and thus handed you over to those who seeked you before."
+	greet_text = "You had fled Phantom Kingdom, took refuge in Glimmerfall yet the lords over there caught you and thus handed you over to those who seeked you before."
 	outfit = /datum/outfit/job/mig_prisoner
 
 /datum/outfit/job/mig_prisoner/pre_equip(mob/living/carbon/human/H)
@@ -134,7 +134,7 @@
 		/datum/migrant_role/prisoner_guard = 2,
 		/datum/migrant_role/mig_prisoner = 4,
 	)
-	greet_text = "Nobody escape the rule of Phantom Kingdom's monarchs. Some have fled to the neighbouring kingdom, Heartfelt and got caught, they are now on their way back."
+	greet_text = "Nobody escape the rule of Phantom Kingdom's monarchs. Some have fled to the neighbouring kingdom, Glimmerfall and got caught, they are now on their way back."
 
 /datum/migrant_wave/prisoner_convoy_down
 	name = "The Prisoners' Convoy"
@@ -146,7 +146,7 @@
 		/datum/migrant_role/prisoner_guard = 1,
 		/datum/migrant_role/mig_prisoner = 3,
 	)
-	greet_text = "Nobody escape the rule of Phantom Kingdom's monarchs. Some have fled to the neighbouring kingdom, Heartfelt and got caught, they are now on their way back."
+	greet_text = "Nobody escape the rule of Phantom Kingdom's monarchs. Some have fled to the neighbouring kingdom, Glimmerfall and got caught, they are now on their way back."
 
 /datum/migrant_wave/prisoner_convoy_down_two
 	name = "The Prisoner Convoy"
@@ -156,4 +156,4 @@
 		/datum/migrant_role/gaoler = 1,
 		/datum/migrant_role/mig_prisoner = 1,
 	)
-	greet_text = "Nobody escape the rule of Phantom Kingdom's monarchs. Some have fled to the neighbouring kingdom, Heartfelt and got caught, they are now on their way back."
+	greet_text = "Nobody escape the rule of Phantom Kingdom's monarchs. Some have fled to the neighbouring kingdom, Glimmerfall and got caught, they are now on their way back."

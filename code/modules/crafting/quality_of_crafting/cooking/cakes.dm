@@ -204,7 +204,7 @@
 
 /datum/repeatable_crafting_recipe/cooking/unbaked_zybcake
 	category = "Cakes"
-	name = "Unbaked Zaladin Cake"
+	name = "Unbaked Craterin Cake"
 
 	requirements = list(
 		/obj/item/reagent_containers/food/snacks/spiderhoney = 1,

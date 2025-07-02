@@ -271,7 +271,7 @@
 
 /obj/item/dye_pack/royal
 	name = "royal dyes"
-	desc = "Dyes with powders hailing from all across the new world, from Kingsfield to Heartfelt. \
+	desc = "Dyes with powders hailing from all across the new world, from No man's Land to Glimmerfall. \
 		Vibrant and pleasing to the eyes, only the highest in the social hierarchy are seen with these colors."
 	icon_state = "luxury_dyes"
 	sellprice = 70

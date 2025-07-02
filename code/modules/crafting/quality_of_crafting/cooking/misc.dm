@@ -313,7 +313,7 @@
 	extra_chance = 100
 
 /datum/repeatable_crafting_recipe/cooking/valorian_omlette
-	name = "Valorian Omlette"
+	name = "Zhaladuskn Omlette"
 
 	requirements = list(
 		/obj/item/reagent_containers/food/snacks/cooked/twin_egg = 1,

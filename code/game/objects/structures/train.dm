@@ -96,6 +96,6 @@
 
 /obj/structure/train/carriage/not_train
 	name = "carriage"
-	desc = "A wooden carriage to carry passengers across land without the blessings of Heartfeltian underground train infrastructure."
+	desc = "A wooden carriage to carry passengers across land without the blessings of Glimmerfallian underground train infrastructure."
 	icon = 'icons/roguetown/underworld/enigma_carriage.dmi'
 	icon_state = "carriage_normal"

@@ -132,7 +132,7 @@
 
 /obj/item/clothing/head/leather/duelhat
 	name = "valorian duelist hat"
-	desc = "A dainty looking feathered hat that is actually quite heavy and thick, Duelists from Valoria are known to value winning fights without dirtying the white feather on top"
+	desc = "A dainty looking feathered hat that is actually quite heavy and thick, Duelists from Zhaladusk are known to value winning fights without dirtying the white feather on top"
 	icon_state = "duelisthat"
 	item_state = "duelisthat"
 	sewrepair = TRUE

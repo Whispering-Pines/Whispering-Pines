@@ -141,7 +141,7 @@
 /obj/item/clothing/armor/leather/jacket/artijacket
 	name = "artificer jacket"
 	icon_state = "artijacket"
-	desc = "A thick leather jacket adorned with fur and cog decals. The height of Heartfelt fashion."
+	desc = "A thick leather jacket adorned with fur and cog decals. The height of Glimmerfall fashion."
 
 /obj/item/clothing/armor/leather/jacket/gatemaster_jacket
 	name = "gatemaster's coat"
@@ -241,7 +241,7 @@
 
 /obj/item/clothing/armor/leather/jacket/leathercoat/duelcoat
 	name = "black leather coat"
-	desc = "A stylish coat worn by Duelists of Valoria. Light and flexible, it doesn't impede the complex movements they are known for, seems to be quite padded.A stylish coat worn by the Duelists of Valoria. Light and flexible, it doesn't impede the complex movements they are known for, Seems to be well-padded."
+	desc = "A stylish coat worn by Duelists of Zhaladusk. Light and flexible, it doesn't impede the complex movements they are known for, seems to be quite padded.A stylish coat worn by the Duelists of Zhaladusk. Light and flexible, it doesn't impede the complex movements they are known for, Seems to be well-padded."
 	icon_state = "bwleathercoat"
 	boobed = TRUE
 	armor = ARMOR_LEATHER_GOOD

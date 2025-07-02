@@ -23,7 +23,7 @@
 	salvage_result = /obj/item/natural/fibers
 
 /obj/item/clothing/head/articap
-	desc = "A sporting cap with a small gear adornment. Popular fashion amongst Heartfelt engineers."
+	desc = "A sporting cap with a small gear adornment. Popular fashion amongst Glimmerfall engineers."
 	icon_state = "articap"
 
 /obj/item/clothing/head/cookhat

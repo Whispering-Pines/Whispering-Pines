@@ -168,7 +168,7 @@
 /mob/living/simple_animal/hostile/retaliate/bull
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
 	name = "moo-beast bull"
-	desc = "Rambunctious as the war-saint himself, a depiction of the moo-beast bull looms on the standard of the Valorian city-state called Andalvia."
+	desc = "Rambunctious as the war-saint himself, a depiction of the moo-beast bull looms on the standard of the Zhaladuskn city-state called Andalvia."
 	icon_state = "bull"
 	icon_living = "bull"
 	icon_dead = "bull_dead"

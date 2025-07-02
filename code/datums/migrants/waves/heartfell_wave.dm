@@ -1,6 +1,6 @@
 /datum/migrant_role/heartfelt/lord
-	name = "Lord of Heartfelt"
-	greet_text = "You are the Lord of Heartfelt, ruler of a once-prosperous barony now in ruin. Guided by your Magos, you journey to Phantom Kingdom, seeking aid to restore your domain to its former glory, or perhaps claim a new throne."
+	name = "Lord of Glimmerfall"
+	greet_text = "You are the Lord of Glimmerfall, ruler of a once-prosperous barony now in ruin. Guided by your Magos, you journey to Phantom Kingdom, seeking aid to restore your domain to its former glory, or perhaps claim a new throne."
 	outfit = /datum/outfit/job/heartfelt/lord
 	allowed_sexes = list(MALE)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
@@ -47,8 +47,8 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	H.cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 /datum/migrant_role/heartfelt/lady
-	name = "Lady of Heartfelt"
-	greet_text = "You are the Lady of Heartfelt, once a respected noblewoman now struggling to survive in a desolate landscape. With your home in ruins, you look to Phantom Kingdom, hoping to find new purpose or refuge amidst the chaos."
+	name = "Lady of Glimmerfall"
+	greet_text = "You are the Lady of Glimmerfall, once a respected noblewoman now struggling to survive in a desolate landscape. With your home in ruins, you look to Phantom Kingdom, hoping to find new purpose or refuge amidst the chaos."
 	outfit = /datum/outfit/job/heartfelt/lady
 	allowed_sexes = list(FEMALE)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
@@ -90,8 +90,8 @@
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 	H.cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 /datum/migrant_role/heartfelt/hand
-	name = "Hand of Heartfelt"
-	greet_text = "You are the Hand of Heartfelt, burdened by the perception of failure in protecting your Lord's domain. Despite doubts from others, your loyalty remains steadfast as you journey to Phantom Kingdom, determined to fulfill your duties."
+	name = "Hand of Glimmerfall"
+	greet_text = "You are the Hand of Glimmerfall, burdened by the perception of failure in protecting your Lord's domain. Despite doubts from others, your loyalty remains steadfast as you journey to Phantom Kingdom, determined to fulfill your duties."
 	outfit = /datum/outfit/job/heartfelt/hand
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
@@ -131,8 +131,8 @@
 	H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander3.ogg'
 
 /datum/migrant_role/heartfelt/knight
-	name = "Knight of Heartfelt"
-	greet_text = "You are a Knight of Heartfelt, once part of a brotherhood in service to your Lord. Now, alone and committed to safeguarding what remains of your court, you ride to Phantom Kingdom, resolved to ensure their safe arrival."
+	name = "Knight of Glimmerfall"
+	greet_text = "You are a Knight of Glimmerfall, once part of a brotherhood in service to your Lord. Now, alone and committed to safeguarding what remains of your court, you ride to Phantom Kingdom, resolved to ensure their safe arrival."
 	outfit = /datum/outfit/job/heartfelt/knight
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
@@ -199,8 +199,8 @@
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
 /datum/migrant_role/heartfelt/magos
-	name = "Magos of Heartfelt"
-	greet_text = "You are the Magos of Heartfelt, renowned for your arcane knowledge yet unable to foresee the tragedy that befell your home. Drawn by a guiding star to Phantom Kingdom, you seek answers and perhaps a new purpose in the wake of destruction."
+	name = "Magos of Glimmerfall"
+	greet_text = "You are the Magos of Glimmerfall, renowned for your arcane knowledge yet unable to foresee the tragedy that befell your home. Drawn by a guiding star to Phantom Kingdom, you seek answers and perhaps a new purpose in the wake of destruction."
 	outfit = /datum/outfit/job/heartfelt/magos
 	allowed_races = list("Human")
 	grant_lit_torch = TRUE
@@ -254,8 +254,8 @@
 		for(var/S in spells)
 			H.mind.AddSpell(new S)
 /datum/migrant_role/heartfelt/prior
-	name = "Prior of Heartfelt"
-	greet_text = "The Prior of Heartfelt, you were destined for ascension within the Church, but fate intervened with the barony's downfall, delaying it indefinitely. Still guided by the blessings of Solaria, you journey to Phantom Kingdom, determined to offer what aid and solace you can."
+	name = "Prior of Glimmerfall"
+	greet_text = "The Prior of Glimmerfall, you were destined for ascension within the Church, but fate intervened with the barony's downfall, delaying it indefinitely. Still guided by the blessings of Solaria, you journey to Phantom Kingdom, determined to offer what aid and solace you can."
 	outfit = /datum/outfit/job/heartfelt/prior
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
@@ -298,7 +298,7 @@
 	H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 
 /datum/migrant_wave/heartfelt
-	name = "The Court of Heartfelt"
+	name = "The Court of Glimmerfall"
 	max_spawns = 1
 	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zalad_wave,/datum/migrant_wave/rockhill_wave,/datum/migrant_wave/heartfelt)
 	weight = 25
@@ -311,9 +311,9 @@
 		/datum/migrant_role/heartfelt/magos = 1,
 		/datum/migrant_role/heartfelt/prior = 1,
 	)
-	greet_text = "Fleeing disaster, you have come together as a court, united in a final effort to restore the former glory and promise of Heartfelt. Stay close and watch out for each other, for all of your sakes!"
+	greet_text = "Fleeing disaster, you have come together as a court, united in a final effort to restore the former glory and promise of Glimmerfall. Stay close and watch out for each other, for all of your sakes!"
 /datum/migrant_wave/heartfelt_down
-	name = "The Court of Heartfelt"
+	name = "The Court of Glimmerfall"
 	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zalad_wave,/datum/migrant_wave/rockhill_wave,/datum/migrant_wave/heartfelt)
 	can_roll = FALSE
 	roles = list(
@@ -321,4 +321,4 @@
 		/datum/migrant_role/heartfelt/lady = 1,
 		/datum/migrant_role/heartfelt/hand = 1,
 	)
-	greet_text = "Fleeing disaster, you have come together as a court, united in a final effort to restore the former glory and promise of Heartfelt. Stay close and watch out for each other, for all of your sakes! Your Knight, Magos and Prior died on the way here..."
+	greet_text = "Fleeing disaster, you have come together as a court, united in a final effort to restore the former glory and promise of Glimmerfall. Stay close and watch out for each other, for all of your sakes! Your Knight, Magos and Prior died on the way here..."

@@ -30,7 +30,7 @@
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_NORMAL
-	sellprice = 200 // This kind of equipment is very hard to come by in Rockhill.
+	sellprice = 200 // This kind of equipment is very hard to come by in Risena.
 	grid_height = 32
 	grid_width = 96
 	var/cocked = FALSE

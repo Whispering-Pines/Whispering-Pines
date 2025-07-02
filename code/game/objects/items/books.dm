@@ -798,7 +798,7 @@
 	bookfile = "tales2.json"
 
 /obj/item/book/tales3
-	name = "Myths & Legends of Rockhill & Beyond Volume I"
+	name = "Myths & Legends of Risena & Beyond Volume I"
 	desc = "Arbalius The Younger"
 	icon_state ="book3_0"
 	base_icon_state = "book3"

@@ -1,5 +1,5 @@
 /datum/advclass/combat/heartfelthand
-	name = "Hand of Heartfelt"
+	name = "Hand of Glimmerfall"
 	tutorial = "You serve your lord as hand, taking care of diplomatic actions within your realm, \
 	but why have you come to Phantom Kingdom?"
 	allowed_sexes = list(MALE)

@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/duelist
 	name = "Duelist"
-	tutorial = "A swordsman from Valoria, wielding a rapier with deadly precision and driven by honor and a thirst for coin, they duel with unmatched precision, seeking glory and wealth."
+	tutorial = "A swordsman from Zhaladusk, wielding a rapier with deadly precision and driven by honor and a thirst for coin, they duel with unmatched precision, seeking glory and wealth."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 	"Human",
@@ -47,7 +47,7 @@
 		if(1 to 2)
 			beltl = /obj/item/weapon/sword/rapier
 		if(3 to 4)
-			beltl = /obj/item/weapon/sword/rapier/silver //Correct, They have a chance to receive a silver rapier, due to them being from Valoria.
+			beltl = /obj/item/weapon/sword/rapier/silver //Correct, They have a chance to receive a silver rapier, due to them being from Zhaladusk.
 		if(5 to 6)
 			beltl = /obj/item/weapon/sword/rapier/dec
 

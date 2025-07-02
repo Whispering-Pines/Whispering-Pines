@@ -5,7 +5,7 @@
 	var/static/list/info = list(
 		"Negotiate trade agreements with merchants in Phantom Kingdom to facilitate the exchange of goods and resources between the two realms.",
 		"Explore the mysteries of peninsula of Phantom Kingdom, uncovering its secrets and hidden treasures.",
-		"Establish a diplomatic alliance with the Monarch of Phantom Kingdom to strengthen the relationship between Heartfelt and Phantom Kingdom.",
+		"Establish a diplomatic alliance with the Monarch of Phantom Kingdom to strengthen the relationship between Glimmerfall and Phantom Kingdom.",
 		"Our lands have long been forsaken by Blissrose, Our fields are failing and the famine is causing unrest in our realm. Seek royal largesse",
 	)
 	src.info = pick(info)

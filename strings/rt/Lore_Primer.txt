@@ -19,8 +19,8 @@ While it's not required reading, leadership roles may find this information usef
 	<details>
 		<summary><em> Points of Interest </em></summary>
 
-		<p><strong> - Town of Rockhill </strong><br>  A once-bustling trade center colloquially known as Roguetown. Now a warzone, the last-standing settlement against the armada of automatons. </p>
-		<p><strong> - Kingdom of Heartfelt </strong><br>  The prosperous head of technological progress within the Isle of Enigma, experiencing disaster as their automaton constructions turn against them and ravage their lands.  </p>
+		<p><strong> - Town of Risena </strong><br>  A once-bustling trade center colloquially known as Roguetown. Now a warzone, the last-standing settlement against the armada of automatons. </p>
+		<p><strong> - Kingdom of Glimmerfall </strong><br>  The prosperous head of technological progress within the Isle of Enigma, experiencing disaster as their automaton constructions turn against them and ravage their lands.  </p>
 	</details>
 	<br>
 
@@ -44,7 +44,7 @@ While it's not required reading, leadership roles may find this information usef
 	<details>
 		<summary><em> Points of Interest </em></summary>
 
-		<p><strong> - City of Kingsfield </strong><br>  Massive city built upon temperate forests far, far North to the Isle of Enigma. Kingsfield is the most prosperous and populated city of the world, not to mention the major cultural export. It is not to be confused with the state, Kingsfield, which encompasses it. Kingsfield rail systems span all across Western Faience, of no small part due to Heartfeltian artificers' effort. </p>
+		<p><strong> - City of Kingsfield </strong><br>  Massive city built upon temperate forests far, far North to the Isle of Enigma. Kingsfield is the most prosperous and populated city of the world, not to mention the major cultural export. It is not to be confused with the state, Kingsfield, which encompasses it. Kingsfield rail systems span all across Western Faience, of no small part due to Glimmerfallian artificers' effort. </p>
 	</details>
 	<br>
 
@@ -105,7 +105,7 @@ While it's not required reading, leadership roles may find this information usef
 		<br><br>
 		Kingsfield spans along the Northwest of Faience, housing the cultural center of the world in its massive cities and impressive population. Unlike many of the other humen-majority populations, its inhabitants and history are defined by kindness rather than conquest. A certain demographic of Kingsfieldians are identifiable by their odd pronunciation of certain Imperial words and inclusion of 'eh?' after a comment or question. Species from all over the world would visit and establish themselves within these cities, including a non-insignificant population of dark elves before Zizo's conquest. They are, perhaps, the most tolerant of half-drow as a result- and as such are subject to mockery by the rest of Faience.
 		<br><br>
-		Kingsfield's prominence was built from tactical allyship and infrastructure development through industrialization. Through close cooperation with Heartfelt, Kingsfield railways span across the Western side of the entire continent, stretching from the tip of Kingsfield's tundras to the bottom of Vanderlin's peninsula. Kingsfield's population, notable in arts and culture worldwide, is of course largely Eoran and Xylixian in patronage; however, scholars of Noc account for a close third.
+		Kingsfield's prominence was built from tactical allyship and infrastructure development through industrialization. Through close cooperation with Glimmerfall, Kingsfield railways span across the Western side of the entire continent, stretching from the tip of Kingsfield's tundras to the bottom of Vanderlin's peninsula. Kingsfield's population, notable in arts and culture worldwide, is of course largely Eoran and Xylixian in patronage; however, scholars of Noc account for a close third.
 		<br><br>
 	</details>
 
@@ -138,11 +138,11 @@ While it's not required reading, leadership roles may find this information usef
 		<br>
 		<em>The Red Sands, Empire of the Dunes, Merchants of the Pasha</em>
 		<br><br>
-		A grand-spanning, mercantilist empire which found prosperity and riches from spice export. Zaladin is home to some of the worlds greatest wonders, though the labourers who built them were directed by force and threats rather than passion. The dominant ideologies are Astratanism and Xylixianism. Xylixian freemen and Astratan order-keepers clash often in mortal representations of divine conflict. Zaladians have grown numb to the possibility of a civil war, and these skirmishes have simply become another aspect of daily life.
+		A grand-spanning, mercantilist empire which found prosperity and riches from spice export. Craterin is home to some of the worlds greatest wonders, though the labourers who built them were directed by force and threats rather than passion. The dominant ideologies are Astratanism and Xylixianism. Xylixian freemen and Astratan order-keepers clash often in mortal representations of divine conflict. Craterians have grown numb to the possibility of a civil war, and these skirmishes have simply become another aspect of daily life.
 		<br><br>
-		Zaladin was known as 'Zybantine' whilst under Grenzelhoftian occupation. It was a title forced upon them rather than chosen, and was violently rejected alongside the repellance of Grenzelhoft's Southern crusades by Zalad armies. In modern times, the term has become considered a grave and bigoted insult.
+		Zaladin was known as 'Zybantine' whilst under Grenzelhoftian occupation. It was a title forced upon them rather than chosen, and was violently rejected alongside the repellance of Grenzelhoft's Southern crusades by Crater armies. In modern times, the term has become considered a grave and bigoted insult.
 		<br><br>
-		Within desperation after the failed conquest, Zaladin's dwindling forces turned to conscription of prisoners-of-war, the first of their slave-armies, forcefully enlisting many captured Grenzelhoftians. These troops are sent to support the front lines of allied Valorian states to the North against Zizo's armies in the Barrows. Regardless of origin, Zaladin's signature "Desert Riders" are a force to reckon- especially when mounted atop their twain-humped pegasi.
+		Within desperation after the failed conquest, Craterin's dwindling forces turned to conscription of prisoners-of-war, the first of their slave-armies, forcefully enlisting many captured Grenzelhoftians. These troops are sent to support the front lines of allied Zhaladuskn states to the North against Zizo's armies in the Barrows. Regardless of origin, Craterin's signature "Desert Riders" are a force to reckon- especially when mounted atop their twain-humped pegasi.
 		<br><br>
 	</details>
 
@@ -163,11 +163,11 @@ While it's not required reading, leadership roles may find this information usef
 	<details>
 		<summary><strong> VALORIAN RUPUBLIAS </strong></summary>
 		<br>
-		<em> The Freestates, Vineyards of Valoria, The Lords of Coin </em>
+		<em> The Freestates, Vineyards of Zhaladusk, The Lords of Coin </em>
 		<br><br>
-		Valoria is a land of constant strife, bickering city-states with a number of conflicting interests. Yet they bear some pride of their lands, banding together to repel the invading Grenzelhoft Empire out of shared desire for freedom. With conflict comes innovation; the Valorian lands developed pride in their revolution of blade combat strategy and stance. Largely followers of Ravox, they value honour and duels as an expression of status.
+		Zhaladusk is a land of constant strife, bickering city-states with a number of conflicting interests. Yet they bear some pride of their lands, banding together to repel the invading Grenzelhoft Empire out of shared desire for freedom. With conflict comes innovation; the Zhaladuskn lands developed pride in their revolution of blade combat strategy and stance. Largely followers of Ravox, they value honour and duels as an expression of status.
 		<br><br>
-		Valoria is renown for their alcohol exports and trade, seconding only Zaladin as most-sought goods.
+		Zhaladusk is renown for their alcohol exports and trade, seconding only Craterin as most-sought goods.
 		<br><br>
 	</details>
 
@@ -176,7 +176,7 @@ While it's not required reading, leadership roles may find this information usef
 		<br>
 		<em> The Great Throngs, The Braided Confederacy, Seven Hammers </em>
 		<br><br>
-		Located in the mountains of continents all over Psydonia. The political aspects stem from federations bearing unique dwarven clans, leaderships, industries, and cultures. The largest establishment is within the great mountain range to the Southeast of Zaladin's deserts. Dwarves and humen empires have established a long history of allyship. Whilst dwarves often choose neutrality in humen-on-humen conflict, a dwarven face is a trusted face to most humens.
+		Located in the mountains of continents all over Psydonia. The political aspects stem from federations bearing unique dwarven clans, leaderships, industries, and cultures. The largest establishment is within the great mountain range to the Southeast of Craterin's deserts. Dwarves and humen empires have established a long history of allyship. Whilst dwarves often choose neutrality in humen-on-humen conflict, a dwarven face is a trusted face to most humens.
 		<br><br>
 	</details>
 
@@ -418,7 +418,7 @@ While it's not required reading, leadership roles may find this information usef
 	</details>
 
 	<details>
-		<summary><strong> Heartfeltian Horror </strong></summary>
+		<summary><strong> Glimmerfallian Horror </strong></summary>
 		<br>
 		Something stirs deep beneath the city. Rumours of a great machine, bidding the rabid automatons forth with purpose.
 		<br><br>
@@ -524,7 +524,7 @@ While it's not required reading, leadership roles may find this information usef
 	<details>
 		<summary><strong> Medicators / "Feculents" </strong></summary>
 		<br>
-		Medicators originate from the the fetid swamps and murk within the Isle of Enigma. Their species has historically been localized around the area, although the Brass Cataclysm of Heartfelt's fall has resulted in droves of their kind seeking refuge elsewhere. They are a newer form of sapience, with records dating back only after Zizo's ascension.
+		Medicators originate from the the fetid swamps and murk within the Isle of Enigma. Their species has historically been localized around the area, although the Brass Cataclysm of Glimmerfall's fall has resulted in droves of their kind seeking refuge elsewhere. They are a newer form of sapience, with records dating back only after Zizo's ascension.
 		<br><br>
 		Their appearance is gaunt, patches of bare skin riddled with feathers and pox scars, Medicators are a horrifying fusion of bird and men- unlike their far more appealing adversaries, the harpies. With long, hanging beaks which clatter as they breathe, other species find them displeasing at best and repulsive at worst. Despite this, their eyes betray great intelligence behind otherwise monstrosity.
 		<br><br>
@@ -619,7 +619,7 @@ While it's not required reading, leadership roles may find this information usef
 	<details>
 		<summary><strong> Matthios' Final Heist - 2001 </strong></summary>
 		<br>
-		During an otherwise peaceful early morning, Heartfeltians awoke to alarms raised and economic panic. A grand heist had taken place the night before, countless priceless artifacts, gemstones, and even debt records missing from vaults across the city. The entire reserve was missing, leaving only the bloodied coins typical of Matthiosan calling card and no otherwise visible signs of entry. As most heists of this era, this was attributed to the unknown figurehead thief Matthios, despite growing rumours of his death. Economy worldwide suffered after the sudden downturn of this center of trade. Heartfelt recovered only five decades later.
+		During an otherwise peaceful early morning, Glimmerfallians awoke to alarms raised and economic panic. A grand heist had taken place the night before, countless priceless artifacts, gemstones, and even debt records missing from vaults across the city. The entire reserve was missing, leaving only the bloodied coins typical of Matthiosan calling card and no otherwise visible signs of entry. As most heists of this era, this was attributed to the unknown figurehead thief Matthios, despite growing rumours of his death. Economy worldwide suffered after the sudden downturn of this center of trade. Glimmerfall recovered only five decades later.
 		<br><br>
 	</details>
 
@@ -651,7 +651,7 @@ While it's not required reading, leadership roles may find this information usef
 	<details>
 		<summary><strong> Graggar, The First Greenskin - 2053 </strong></summary>
 		<br>
-		As knaves and brigands descended upon the ruins of Baotha's lands, one warlord gained quick notoriety and power above them all. Graggar, feared by follower and foe alike for his habit of consuming the flesh of his fallen opponents, tore his way through the steppes and forests North of Zaladin, pillaging, destroying, and consuming in endless destruction and gluttony. None were surprised when his exterior grew as monstrous as interior. With feast after feast, conquest after conquest, the first orc's battle cries were soon heard by the heavens themselves, marking him the third mortal to reach ascendance.
+		As knaves and brigands descended upon the ruins of Baotha's lands, one warlord gained quick notoriety and power above them all. Graggar, feared by follower and foe alike for his habit of consuming the flesh of his fallen opponents, tore his way through the steppes and forests North of Craterin, pillaging, destroying, and consuming in endless destruction and gluttony. None were surprised when his exterior grew as monstrous as interior. With feast after feast, conquest after conquest, the first orc's battle cries were soon heard by the heavens themselves, marking him the third mortal to reach ascendance.
 		<br><br>
 	</details>
 
@@ -693,9 +693,9 @@ While it's not required reading, leadership roles may find this information usef
 	</details>
 
 	<details>
-		<summary><strong> Heartfelt's Hubris, The Brass Cataclysm- 2501 </strong></summary>
+		<summary><strong> Glimmerfall's Hubris, The Brass Cataclysm- 2501 </strong></summary>
 		<br>
-		Automaton servants created by Heartfelt's artificers haywire, ravaging their home city and surrounding lands as they engage in endless conquest for biomass to fuel themselves. The already-polluted Enigma only further fell into disarray and destruction. Rockhill fortified and established itself instead as a bastion against automaton forces in the growing Machine War.
+		Automaton servants created by Glimmerfall's artificers haywire, ravaging their home city and surrounding lands as they engage in endless conquest for biomass to fuel themselves. The already-polluted Enigma only further fell into disarray and destruction. Risena fortified and established itself instead as a bastion against automaton forces in the growing Machine War.
 		<br><br>
 	</details>
 

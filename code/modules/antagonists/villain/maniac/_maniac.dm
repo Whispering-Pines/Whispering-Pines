@@ -265,7 +265,7 @@ GLOBAL_VAR_INIT(maniac_highlander, 0) // THERE CAN ONLY BE ONE!
 		to_chat(trey_liam, span_deadsay("<span class='reallybig'>... WHERE AM I? ...</span>"))
 		sleep(1.5 SECONDS)
 		var/static/list/slop_lore = list(
-			span_deadsay("... Rockhill? Phantom Kingdom? No ... They don't exist ..."),
+			span_deadsay("... Risena? Phantom Kingdom? No ... They don't exist ..."),
 			span_deadsay("... My name is Trey. Trey Liam, Scientific Overseer ..."),
 			span_deadsay("... I'm on the Aeon, a self sustaining ship, used to preserve what remains of humanity ..."),
 			span_deadsay("... Launched into the stars, preserving their memories ... Their personalities ..."),

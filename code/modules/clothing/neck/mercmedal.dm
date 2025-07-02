@@ -46,5 +46,5 @@
 
 /obj/item/clothing/neck/mercmedal/duelist
 	name = "valorian blade pendant"
-	desc = "A silver pendant shaped as a rapier lined with gems, Worn by Valorian Duelists to honor their mastery of the blade and unyielding pursuit of glory in combat."
+	desc = "A silver pendant shaped as a rapier lined with gems, Worn by Zhaladuskn Duelists to honor their mastery of the blade and unyielding pursuit of glory in combat."
 	icon_state = "duelistcharm"
