@@ -96,6 +96,7 @@
 		"I AM DRAWN BY THE PULL OF THE TIDE!",
 	)
 	storyteller = /datum/storyteller/abyssor
+	preference_accessible = FALSE //not made into lore accurate god yet
 
 /datum/patron/divine/last_death
 	name = "Last Death"
@@ -167,6 +168,7 @@ accend to the astral plane as the god of the desert where he has watched over al
 		"MOONBEAM BRINGS US TOGETHER!",
 	)
 	storyteller = /datum/storyteller/xylix
+	preference_accessible = FALSE //not made into lore accurate god yet
 
 /datum/patron/divine/pestra
 	name = "Pestra"
@@ -187,6 +189,7 @@ accend to the astral plane as the god of the desert where he has watched over al
 		"MY AFFLICTION IS MY TESTAMENT!",
 	)
 	storyteller = /datum/storyteller/pestra
+	preference_accessible = FALSE //not made into lore accurate god yet
 
 /datum/patron/divine/malum
 	name = "Malum"
@@ -207,6 +210,7 @@ accend to the astral plane as the god of the desert where he has watched over al
 		"I AM AN INSTRUMENT OF CREATION!",
 	)
 	storyteller = /datum/storyteller/malum
+	preference_accessible = FALSE //not made into lore accurate god yet
 
 /datum/patron/divine/moonbeam
 	name = "Lady Moonbeam"

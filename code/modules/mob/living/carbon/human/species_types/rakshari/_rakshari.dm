@@ -93,7 +93,6 @@
 	..()
 	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	C.grant_language(/datum/language/common)
-	C.grant_language(/datum/language/zybantine)
 	to_chat(C, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 
 /datum/species/rakshari/check_roundstart_eligible()
@@ -102,7 +101,6 @@
 /datum/species/rakshari/after_creation(mob/living/carbon/C)
 	..()
 	C.grant_language(/datum/language/common)
-	C.grant_language(/datum/language/zybantine)
 
 /datum/species/rakshari/on_species_loss(mob/living/carbon/C)
 	. = ..()
