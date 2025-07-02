@@ -15,7 +15,7 @@
 	var/datum/bodypart_feature/underwear/undies_feature
 	var/covers_breasts = FALSE
 	sewrepair = TRUE
-	flags_inv = HIDEBOOB|HIDEBUTT|HIDECROTCH
+	flags_inv = HIDEBOOB|HIDECROTCH|HIDEBUTT|HIDECROTCH
 
 /obj/item/undies/attack(mob/M, mob/user, def_zone)
 	if(ishuman(M))

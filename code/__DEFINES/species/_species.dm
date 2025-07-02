@@ -13,6 +13,14 @@
 #define RACE_HARPY "Harpy"
 #define RACE_TRITON "Triton"
 #define RACE_RESURGENTIS "Resurgentis"
+#define RACE_AKULA "Akula"
+#define RACE_WILDKIN "Wild-Kin"
+#define RACE_VERMINVOLK "Verminvolk"
+#define RACE_DRACON "Dracon"
+#define RACE_LIZARDFOLK "Lizardfolk"
+#define RACE_LUPIAN "Lupian"
+#define RACE_TABAXI "Tabaxi"
+#define RACE_VULPKANIN "Vulpkanin"
 #define RACE_HUMAN_SPACE "Human"
 
 // ============ USING ID BECAUSE FUCK YOU
@@ -32,6 +40,14 @@
 	"kobold",\
 	"triton",\
 	"resurgentis",\
+	"akula",\
+	"anthromorph",\
+	"anthromorphsmall",\
+	"dracon",\
+	"lizardfolk",\
+	"lupian",\
+	"tabaxi",\
+	"vulpkanin",\
 	"humanspace",\
 	)
 
@@ -47,6 +63,14 @@
 	"zizombie",\
 	"elf",\
 	"resurgentis",\
+	"akula",\
+	"anthromorph",\
+	"anthromorphsmall",\
+	"dracon",\
+	"lizardfolk",\
+	"lupian",\
+	"tabaxi",\
+	"vulpkanin",\
 	"humanspace",\
 	)
 
@@ -61,6 +85,14 @@
 	"orc",\
 	"zizombie",\
 	"resurgentis",\
+	"akula",\
+	"anthromorph",\
+	"anthromorphsmall",\
+	"dracon",\
+	"lizardfolk",\
+	"lupian",\
+	"tabaxi",\
+	"vulpkanin",\
 	"humanspace",\
 	)
 
@@ -82,6 +114,14 @@
 	RACE_HOLLOWKIN,\
 	RACE_HALF_ORC,\
 	RACE_RESURGENTIS,\
+	RACE_AKULA,\
+	RACE_WILDKIN,\
+	RACE_VERMINVOLK,\
+	RACE_DRACON,\
+	RACE_LIZARDFOLK,\
+	RACE_LUPIAN,\
+	RACE_TABAXI,\
+	RACE_VULPKANIN,\
 )
 
 /// Races not considered discriminated against in Phantom Kingdom. Used for nobility, etc.
@@ -101,6 +141,14 @@
 	RACE_HOLLOWKIN,\
 	RACE_HALF_ORC,\
 	RACE_RESURGENTIS,\
+	RACE_AKULA,\
+	RACE_WILDKIN,\
+	RACE_VERMINVOLK,\
+	RACE_DRACON,\
+	RACE_LIZARDFOLK,\
+	RACE_LUPIAN,\
+	RACE_TABAXI,\
+	RACE_VULPKANIN,\
 )
 
 /// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Tenebrase. Used for church/faith roles.
@@ -121,6 +169,14 @@
 	RACE_HOLLOWKIN,\
 	RACE_HALF_ORC,\
 	RACE_RESURGENTIS,\
+	RACE_AKULA,\
+	RACE_WILDKIN,\
+	RACE_VERMINVOLK,\
+	RACE_DRACON,\
+	RACE_LIZARDFOLK,\
+	RACE_LUPIAN,\
+	RACE_TABAXI,\
+	RACE_VULPKANIN,\
 )
 
 /// Races who are non-exotic to Phantom Kingdom. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
@@ -139,6 +195,14 @@
 	RACE_HOLLOWKIN,\
 	RACE_HALF_ORC,\
 	RACE_RESURGENTIS,\
+	RACE_AKULA,\
+	RACE_WILDKIN,\
+	RACE_VERMINVOLK,\
+	RACE_DRACON,\
+	RACE_LIZARDFOLK,\
+	RACE_LUPIAN,\
+	RACE_TABAXI,\
+	RACE_VULPKANIN,\
 )
 
 /// Species that lack lux. Any who have no ties to divinity anymore, whether it be their creation story or otherwise taken from them (Hollow-kin)
@@ -192,6 +256,13 @@
 	RACE_HOLLOWKIN,\
 	RACE_HALF_ORC,\
 	RACE_RESURGENTIS,\
+	RACE_AKULA,\
+	RACE_WILDKIN,\
+	RACE_DRACON,\
+	RACE_LIZARDFOLK,\
+	RACE_LUPIAN,\
+	RACE_TABAXI,\
+	RACE_VULPKANIN,\
 )
 
 /// Foreigner Nobility Races
@@ -211,6 +282,14 @@
 	RACE_RESURGENTIS,\
 	RACE_TIEFLING,\
 	RACE_HOLLOWKIN,\
+	RACE_AKULA,\
+	RACE_WILDKIN,\
+	RACE_VERMINVOLK,\
+	RACE_DRACON,\
+	RACE_LIZARDFOLK,\
+	RACE_LUPIAN,\
+	RACE_TABAXI,\
+	RACE_VULPKANIN,\
 )
 
 /// Nonnative species - Anything not native to Psydonia.
