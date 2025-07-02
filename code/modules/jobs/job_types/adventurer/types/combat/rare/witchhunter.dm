@@ -43,7 +43,7 @@
 		H.change_stat(STATKEY_PER, 2)
 		H.change_stat(STATKEY_CON, 2)
 		switch(H.patron?.type)
-			if (/datum/patron/psydon, /datum/patron/psydon/progressive)
+			if (/datum/patron/old_gods, /datum/patron/old_gods/progressive)
 				wrists = /obj/item/clothing/neck/psycross/silver
 			if(/datum/patron/divine/solaria)
 				wrists = /obj/item/clothing/neck/psycross/silver/solaria

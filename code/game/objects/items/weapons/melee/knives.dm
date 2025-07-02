@@ -328,7 +328,7 @@
 	last_used = 0
 	is_silver = TRUE
 
-//................ Psydonian Dagger ............... //
+//................ Old Godsian Dagger ............... //
 /obj/item/weapon/knife/dagger/psydon
 	name = "psydonian dagger"
 	icon = 'modular_whisper/icons/weapons/weapons.dmi'
@@ -573,7 +573,7 @@
 
 /obj/item/weapon/knife/throwingknife/psydon
 	name = "psydonian tossblade"
-	desc = "An unconventional method of delivering silver to a heretic; but one PSYDON smiles at, all the same. Doubles as an 'actual' knife in a pinch."
+	desc = "An unconventional method of delivering silver to a heretic; but one OLD GODS smiles at, all the same. Doubles as an 'actual' knife in a pinch."
 	item_state = "bone_dagger"
 	force = 12
 	throwforce = 25

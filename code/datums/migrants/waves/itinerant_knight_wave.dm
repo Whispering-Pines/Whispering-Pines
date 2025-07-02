@@ -104,7 +104,7 @@
 		/datum/migrant_role/itinerant_knight = 1,
 		/datum/migrant_role/itinerant_squire = 1,
 	)
-	greet_text = "The weight of Psydon's cross is heavy, the vows you have undertaken heavier, a Knight and their squire has took to the road to fullfill them."
+	greet_text = "The weight of Old Gods' cross is heavy, the vows you have undertaken heavier, a Knight and their squire has took to the road to fullfill them."
 
 /datum/migrant_wave/knight_down
 	name = "The Knightly Journey"
@@ -114,4 +114,4 @@
 	roles = list(
 		/datum/migrant_role/itinerant_knight = 1,
 	)
-	greet_text = "The weight of Psydon's cross is heavy, the vows you have undertaken heavier, a Knight has took to the road to fullfill them."
+	greet_text = "The weight of Old Gods' cross is heavy, the vows you have undertaken heavier, a Knight has took to the road to fullfill them."

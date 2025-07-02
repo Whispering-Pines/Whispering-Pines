@@ -182,7 +182,7 @@
 	minstr = 10
 	wdefense = AVERAGE_PARRY
 
-//................ Psydonian Axe ............... //
+//................ Old Godsian Axe ............... //
 /obj/item/weapon/axe/psydon
 	force = DAMAGE_AXE
 	force_wielded = DAMAGE_AXE_WIELD

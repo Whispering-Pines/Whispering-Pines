@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			challenger_count++
 
 	if(astrata_count >= challenger_count)
-		priority_announce("Solaria's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as a true heir of Psydon!", "Solaria is VICTORIOUS!", 'sound/magic/ahh2.ogg')
+		priority_announce("Solaria's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as a true heir of Old Gods!", "Solaria is VICTORIOUS!", 'sound/magic/ahh2.ogg')
 		adjust_storyteller_influence("Solaria", 200)
 		adjust_storyteller_influence(challenger.name, -50)
 

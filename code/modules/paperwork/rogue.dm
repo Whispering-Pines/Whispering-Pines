@@ -262,7 +262,7 @@
 		var/fake = TRUE
 		if(confession_type == "patron")
 			var/list/divine_gods = list()
-			for(var/datum/patron/path as anything in GLOB.patrons_by_faith[/datum/faith/divine_pantheon] + GLOB.patrons_by_faith[/datum/faith/psydon])
+			for(var/datum/patron/path as anything in GLOB.patrons_by_faith[/datum/faith/divine_pantheon] + GLOB.patrons_by_faith[/datum/faith/old_gods])
 				if(!path.name)
 					continue
 				var/pref_name = path.display_name ? path.display_name : path.name

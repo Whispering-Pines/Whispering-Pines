@@ -169,9 +169,9 @@
 			H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-			H.set_patron(/datum/patron/psydon)
+			H.set_patron(/datum/patron/old_gods)
 			to_chat(H,span_info("\
-			New gods are false gods, and I loathe those that worship the true corpse god, Last Death. Psydon lives, my life for Psydon.")
+			New gods are false gods, and I loathe those that worship the true corpse god, Last Death. Old Gods lives, my life for Old Gods.")
 			)
 		if("Hide")
 			shirt = /obj/item/clothing/shirt/undershirt/uncolored

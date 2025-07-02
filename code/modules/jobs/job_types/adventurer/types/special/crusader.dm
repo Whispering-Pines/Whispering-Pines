@@ -2,14 +2,14 @@
 	name = "Totod Order Emissary"
 	tutorial = "The Crusaders are knights who have pledged their wealth and lands to the Church, \
 	taking up the banner of the Totod Order dedicated to retaking Valoria. \
-	Three cults provide knights for the Order: Solaria, Last Death and Psydon. \
+	Three cults provide knights for the Order: Solaria, Last Death and Old Gods. \
 	You were sent to Phantom Kingdom by the Order to get any and all assistance from the faithful for the Crusade."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Human",
 		"Dwarf"
 	)
-	allowed_patrons = list(/datum/patron/divine/solaria, /datum/patron/divine/last_death, /datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/divine/solaria, /datum/patron/divine/last_death, /datum/patron/old_gods)
 	outfit = /datum/outfit/job/adventurer/crusader
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 1
@@ -17,7 +17,7 @@
 	min_pq = 0
 
 /datum/outfit/job/adventurer/crusader
-	allowed_patrons = list(/datum/patron/divine/solaria, /datum/patron/divine/last_death, /datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/divine/solaria, /datum/patron/divine/last_death, /datum/patron/old_gods)
 
 /datum/outfit/job/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -104,7 +104,7 @@
 
 /obj/item/clothing/cloak/stabard/crusader
 	name = "surcoat of the golden order"
-	desc = "A surcoat drenched in charcoal water, golden thread stitched in the style of Psydon's Knights of Old the new world."
+	desc = "A surcoat drenched in charcoal water, golden thread stitched in the style of Old Gods' Knights of Old the new world."
 	icon_state = "crusader_surcoat"
 	icon = 'icons/roguetown/clothing/special/crusader.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
@@ -112,7 +112,7 @@
 
 /obj/item/clothing/cloak/stabard/crusader/t
 	name = "surcoat of the silver order"
-	desc = "A surcoat drenched in charcoal water, white cotton stitched in the symbol of Psydon."
+	desc = "A surcoat drenched in charcoal water, white cotton stitched in the symbol of Old Gods."
 	icon_state = "crusader_surcoatt2"
 
 /obj/item/clothing/cloak/cape/crusader
@@ -134,7 +134,7 @@
 	worn_y_dimension = 64
 
 /obj/item/clothing/head/helmet/heavy/crusader/t
-	desc = "A silver gilded bucket helm, inscriptions in old Psydonic are found embezzeled on every inch of silver. Frozen Empire specializes in these helmets, the Totod order has been purchasing them en-masse."
+	desc = "A silver gilded bucket helm, inscriptions in old Old Godsic are found embezzeled on every inch of silver. Frozen Empire specializes in these helmets, the Totod order has been purchasing them en-masse."
 	icon_state = "crusader_helmt2"
 	icon = 'icons/roguetown/clothing/special/crusader.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'

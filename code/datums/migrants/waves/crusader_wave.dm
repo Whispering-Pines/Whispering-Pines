@@ -1,6 +1,6 @@
 /datum/migrant_role/inquisitor
 	name = "Episcopal Inquisitor"
-	greet_text = "These lands have forfeited Psydon and new gods. You have come to restore the True faith to these people and tear out the rot festering within."
+	greet_text = "These lands have forfeited Old Gods and new gods. You have come to restore the True faith to these people and tear out the rot festering within."
 	antag_datum = /datum/antagonist/purishep
 	outfit = /datum/outfit/job/specialinquisitor
 	allowed_races = RACES_PLAYER_GRENZ
@@ -46,14 +46,13 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.set_patron(/datum/patron/psydon)
+		H.set_patron(/datum/patron/old_gods)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
-	to_chat(H,span_info("I can speak Old Psydonic with ,m before my speech."))
 	H.mind?.teach_crafting_recipe(/datum/repeatable_crafting_recipe/reading/confessional)
 
 /datum/migrant_role/crusader

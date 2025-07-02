@@ -784,7 +784,7 @@
 
 //player made books
 /obj/item/book/tales1
-	name = "Assorted Tales From Yester Yils"
+	name = "Assorted Tales From Yester Years"
 	desc = "By Alamere J Wevensworth"
 	icon_state ="book_0"
 	base_icon_state = "book"

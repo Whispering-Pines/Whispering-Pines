@@ -141,7 +141,7 @@
 #define RACES_PLAYER_LUXLESS list(\
 )
 
-/// Races who are affiliated with Grenzelhoft or Psydon specifically.
+/// Races who are affiliated with Grenzelhoft or Old Gods specifically.
 #define RACES_PLAYER_GRENZ list(\
 	RACE_HUMEN,\
 	RACE_DWARF,\

@@ -1,4 +1,4 @@
-/datum/patron/psydon
+/datum/patron/old_gods
 	name = "Old Gods"
 	display_name = "Old Gods"
 	domain = "Creation through sparks of holy war."
@@ -7,14 +7,14 @@
 	worshippers = "Old worlders, Historians"
 	sins = "Apostasy, Demon Worship"
 	boons = "None."
-	associated_faith = /datum/faith/psydon
+	associated_faith = /datum/faith/old_gods
 	confess_lines = list(
 		"THERE IS ONLY OLD GODS!",
 		"THE SUCCESSORS KILLED TRUE GODS!",
 		"THEY WILL RETURN!",
 	)
 
-/datum/patron/psydon/can_pray(mob/living/carbon/human/follower)
+/datum/patron/old_gods/can_pray(mob/living/carbon/human/follower)
 	//We just kind of assume the follower is a human here
 	if(istype(follower.wear_neck, /obj/item/clothing/neck/psycross))
 		return TRUE
@@ -22,7 +22,7 @@
 	to_chat(follower, span_danger("I can not talk to them... I need His cross on my neck!"))
 	return FALSE
 
-/datum/patron/psydon/progressive
+/datum/patron/old_gods/progressive
 	display_name = "Old Gods (Progressive)"
 	desc = "Last Death killed the old gods who would have unmade the universe through their never ending conflict, their descendants carry their spark of divinity and are part of them."
 	flaws = "Fatalistic, Sentimental, Acquiescent"

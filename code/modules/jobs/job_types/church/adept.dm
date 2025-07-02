@@ -2,7 +2,7 @@
 	title = "Adept"
 	tutorial = "You were a convicted criminal, the lowest scum of Phantom Kingdom. \
 	Your master, the Inquisitor, saved you from the gallows \
-	and has given you true purpose in service to Psydon. \
+	and has given you true purpose in service to Old Gods. \
 	You will not let him down."
 	flag = MONK
 	department_flag = CHURCHMEN
@@ -25,7 +25,7 @@
 /datum/outfit/job/adept
 	name = "Adept"
 	jobtype = /datum/job/adept
-	allowed_patrons = list(/datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/old_gods)
 	job_bitflag = BITFLAG_CHURCH
 
 /datum/outfit/job/adept // Base outfit for Adepts, before loadouts
@@ -39,7 +39,7 @@
 // Brutal Zealot, a class balanced to town guard, with 1 more strength but less intelligence and perception. Axe/Mace and shield focus.
 /datum/advclass/adept/bzealot
 	name = "Brutal Zealot"
-	tutorial = "You are a former thug who has been given a chance to redeem yourself by the Inquisitor. You serve him and Psydon with your physical strength and zeal."
+	tutorial = "You are a former thug who has been given a chance to redeem yourself by the Inquisitor. You serve him and Old Gods with your physical strength and zeal."
 	outfit = /datum/outfit/job/adept/bzealot
 
 	category_tags = list(CTAG_ADEPT)
@@ -85,7 +85,7 @@
 // Reformed Thief, a class balanced to rogue. Axe and crossbow focus.
 /datum/advclass/adept/rthief
 	name = "Reformed Thief"
-	tutorial = "You are a former thief who has been given a chance to redeem yourself by the Inquisitor. You serve him and Psydon with your stealth and cunning."
+	tutorial = "You are a former thief who has been given a chance to redeem yourself by the Inquisitor. You serve him and Old Gods with your stealth and cunning."
 	outfit = /datum/outfit/job/adept/rthief
 
 	category_tags = list(CTAG_ADEPT)
@@ -134,7 +134,7 @@
 // Vile Highwayman, utility and ranged focus. Whip and Bow user with a heavy disincentive to get into a direct fight.
 /datum/advclass/adept/highwayman
 	name = "Vile Renegade"
-	tutorial = "You were a former outlaw who has been given a chance to redeem yourself by the Inquisitor. You serve him and Psydon with your survival skills and deadly accuracy."
+	tutorial = "You were a former outlaw who has been given a chance to redeem yourself by the Inquisitor. You serve him and Old Gods with your survival skills and deadly accuracy."
 	outfit = /datum/outfit/job/adept/highwayman
 
 	category_tags = list(CTAG_ADEPT)
@@ -189,7 +189,7 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.set_patron(/datum/patron/psydon)
+		H.set_patron(/datum/patron/old_gods)
 		H.verbs |= /mob/living/carbon/human/proc/torture_victim
 		H.verbs |= /mob/living/carbon/human/proc/faith_test
 		H.mind?.teach_crafting_recipe(/datum/repeatable_crafting_recipe/reading/confessional)

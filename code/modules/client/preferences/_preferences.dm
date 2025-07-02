@@ -1113,7 +1113,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					log_character("[parent] changed their characters name to [new_name].")
 
 				if("age")
-					var/new_age = browser_input_list(user, "SELECT YOUR HERO'S AGE", "YILS DEAD", pref_species.possible_ages, age)
+					var/new_age = browser_input_list(user, "SELECT YOUR HERO'S AGE", "YEARS DEAD", pref_species.possible_ages, age)
 					if(new_age)
 						age = new_age
 						ResetJobs(user)

@@ -236,7 +236,7 @@
 	throwforce = DAMAGE_SPEAR_WIELD
 	icon_state = "gsspear"
 
-//................ Psydonian Spear ............... //
+//................ Old Godsian Spear ............... //
 /obj/item/weapon/polearm/spear/psydon
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_SPEAR_WIELD
@@ -285,7 +285,7 @@
 	force_wielded = DAMAGE_SPEAR+2
 	throwforce = DAMAGE_SPEAR
 	name = "simple spear"
-	desc = "With this weapon, the tribes of humenity became the chosen people of Psydon."
+	desc = "With this weapon, the tribes of humenity became the chosen people of Old Gods."
 	icon_state = "stonespear"
 	minstr = 6
 	max_blade_int = 50
@@ -355,7 +355,7 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-//................ Psydonian Halberd ............... //
+//................ Old Godsian Halberd ............... //
 /obj/item/weapon/polearm/halberd/psydon
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_HALBERD_WIELD

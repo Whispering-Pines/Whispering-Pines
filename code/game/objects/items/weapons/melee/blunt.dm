@@ -321,7 +321,7 @@
 /obj/item/weapon/mace/goden/steel
 	gripped_intents = list(/datum/intent/mace/smash/heavy) // It's a 2h flanged mace, not a goedendag.
 	name = "grand mace"
-	desc = "A casted polearm, rumored to be the weapon-design used by Psydon himself."
+	desc = "A casted polearm, rumored to be the weapon-design used by Old Gods himself."
 	icon_state = "polemace"
 	resistance_flags = FIRE_PROOF
 	melting_material = /datum/material/steel
@@ -350,7 +350,7 @@
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash/heavy)
 	max_integrity = 200
 
-//................ Psydonian Grand Mace ............... //
+//................ Old Godsian Grand Mace ............... //
 /obj/item/weapon/mace/goden/psydon
 	name = "psydonian grand mace"
 	desc = "A mighty mace which seems to be a large psycross with a handle, though no less effective at crushing the spirit and bones of the inhumen."

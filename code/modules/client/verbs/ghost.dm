@@ -76,11 +76,13 @@
 			if(!length(GLOB.cloning_bays)) //That cant be good.
 				to_chat(usr, span_danger("There is no cloning bays, notify an admin."))
 				return
-			var/mob/living/carbon/human/O = new /mob/living/carbon/human(spawn_loc.loc)
 			if(GLOB.global_biomass_storage < 1)
 				spawn_loc.send_manual_alert()
 				to_chat(usr, span_danger("The cloning bay network does not store enough biomass to make a new body. [GLOB.global_biomass_storage]/1. Machine alert sent."))
 				return
+			if(!spawn_loc.toggled)
+				spawn_loc.say("Warning, using reserve power for operation.", language = /datum/language/ancient_english)
+			var/mob/living/carbon/human/O = new /mob/living/carbon/human(spawn_loc.loc)
 			if(mob in SStreasury.bank_accounts)
 				var/amt = SStreasury.bank_accounts[mob]
 				if(amt < 0)
@@ -101,9 +103,12 @@
 					spawn_loc.say("Patient recloning fee transferred successfully.", language = /datum/language/ancient_english)
 			else
 				spawn_loc.say("Warning; PATIENT HAS ACCOUNT, 250c DEBT MUST BE ISSUED.", language = /datum/language/ancient_english)
+			GLOB.global_biomass_storage -= 1
+			spawn_loc.update_icon()
+			playsound(spawn_loc, 'sound/foley/industrial/machinechug.ogg', 50, FALSE, -1)
 			O.ckey = ckey
 			prefs.apply_prefs_to(O, TRUE)
-			O.Unconscious(15 SECONDS)
+			O.Unconscious(30 SECONDS)
 			to_chat(usr, span_danger("Your mind is pulled automatically to your new body..!"))
 			O.set_nutrition(0)
 			O.set_hydration(0)

@@ -49,7 +49,7 @@
 
 // Influence related statistics
 
-// Psydon
+// Old Gods
 #define STATS_HUMEN_DEATHS "humen_deaths"
 #define STATS_PSYCROSS_USERS "people_wearing_psycross"
 #define STATS_LUX_HARVESTED "lux_harvested"

@@ -8,11 +8,11 @@
 	. = ..()
 	user.visible_message("This produces [produced_thing] per biomass, and has [biomass_amount] biomass stored.")
 
-//solvent fab
+//solvent fab, takes various goods and gives out solvent bars.
 /obj/machinery/fake_powered/biofabricator/solvent
 	name = "Solvent Fabricator"
 	icon_state = "biofab_solvent"
-	desc = "A horrible machine of old desperativeness, turns natural matter into yucky but edible paste for the masses..."
+	desc = "A horrible machine of old desperativeness, turns natural matter into yucky but edible paste for the masses... right button dispenses solvent bars."
 	produced_thing = /obj/item/reagent_containers/food/snacks/raisins/solvent
 
 /obj/item/reagent_containers/food/snacks/raisins/solvent
@@ -85,7 +85,7 @@
 
 
 //biomass recycler, to make it easier for me i'll make this unpowered
-GLOBAL_LIST_EMPTY(global_biomass_storage)
+GLOBAL_VAR_INIT(global_biomass_storage, 3)
 
 /obj/structure/closet/crate/coffin/biomass_recycler
 	name = "Biomass Recycler"
@@ -142,9 +142,12 @@ GLOBAL_LIST_EMPTY(global_biomass_storage)
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Nothing processable is left.", language = /datum/language/ancient_english)
 			break
+		for(var/obj/machinery/fake_powered/cloning_pod/clonebays in GLOB.cloning_bays)
+			clonebays.update_icon()
 
 /obj/structure/closet/crate/coffin/liquid_drainer
 	name = "Liquid Drainer"
+	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "liquid_drainer"
 	desc = "Likely used to supply blood for the warriors of the great war of old, now it has other purposes aswell, thanks to modifications. Drains all of the blood and other fluids of living and the dead, leaving them weakened and likely to die without aid."
 	anchored = TRUE
@@ -245,13 +248,29 @@ GLOBAL_LIST_EMPTY(global_biomass_storage)
 	timeout = 7 MINUTES
 
 //cloning pod
-//wip
 /obj/machinery/fake_powered/cloning_pod
 	name = "Automated Cloning Pod"
 	desc = "Used to reclone people and defy old gods' way. Recloning is costly and tend to put people in debt to the kingdom."
-	icon = 'modular_whisper/icons/misc/machines.dmi'
-	icon_state = "clonepod"
+	icon = 'modular_whisper/icons/misc/cloning.dmi'
+	icon_state = "cell0"
+	density = FALSE
+	anchored = TRUE
+	layer = BELOW_MOB_LAYER
 	var/last_alert = 0
+
+/obj/machinery/fake_powered/cloning_pod/update_icon(updates)
+	. = ..()
+	switch(GLOB.global_biomass_storage)
+		if(0 to 0.24)
+			icon_state = "cell0"
+		if(0.25 to 0.49)
+			icon_state = "cell25"
+		if(0.50 to 0.74)
+			icon_state = "cell50"
+		if(0.75 to 0.99)
+			icon_state = "cell75"
+		if(1 to INFINITY)
+			icon_state = "cell100"
 
 /obj/machinery/fake_powered/cloning_pod/examine(mob/user)
 	. = ..()
@@ -261,9 +280,14 @@ GLOBAL_LIST_EMPTY(global_biomass_storage)
 	. = ..()
 	GLOB.cloning_bays += src
 
+/obj/machinery/fake_powered/cloning_pod/Destroy()
+	. = ..()
+	GLOB.cloning_bays -= src
+
 /obj/machinery/fake_powered/cloning_pod/proc/send_manual_alert()
 	if(!toggled)
 		return
+	update_icon()
 	playsound(loc, 'sound/foley/industrial/machineoff.ogg', 50, FALSE, -1)
 	say("ALERT. A saved mind is trying to reclone, but there is Insufficent biomass stored!", language = /datum/language/ancient_english)
 
@@ -278,3 +302,52 @@ GLOBAL_LIST_EMPTY(global_biomass_storage)
 	last_alert = world.time
 	playsound(loc, 'sound/foley/industrial/pneumatic1.ogg', 50, FALSE, -1)
 	say("Warning; Insufficent biomass stored.", language = /datum/language/ancient_english)
+
+
+//limb regrower (cannibals)
+/obj/structure/closet/crate/coffin/limb_regrower
+	name = "MEAT GOD"
+	icon = 'modular_whisper/icons/misc/machines.dmi'
+	icon_state = "regrower"
+	desc = "An old world limb-regrower, likely made to assist soldiers who lost their limbs, now a horrible cannibal food machine... Turns one's blood into living tissue, medical care advised. Takes almost all of one's blood for a single limb. Healthy victims can be put here to add into blood storage of the machine."
+	anchored = TRUE
+	var/blood_stored = 0
+
+/obj/structure/closet/crate/coffin/limb_regrower/examine(mob/user)
+	. = ..()
+	user.visible_message("This has [blood_stored]ml blood stored, 750ml required for a single limb.")
+
+/obj/structure/closet/crate/coffin/limb_regrower/close(mob/living/user)
+	. = ..()
+	for(var/mob/living/carbon/human/victim in contents)
+		if(victim.stat != DEAD)
+			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
+			say("Live subject confirmed, starting operation.", language = /datum/language/ancient_english)
+			playsound(src.loc, 'sound/items/beartrap.ogg', 100, TRUE, -1)
+			victim.visible_message(span_red("A metal restraint snap on me!"))
+			victim.SetParalyzed(3 SECONDS)
+		sleep(1 SECONDS)
+		regrowing_cycle(victim)
+
+/obj/structure/closet/crate/coffin/limb_regrower/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, /obj/item/reagent_containers/blood))
+		var/obj/item/reagent_containers/blood/bpack = I
+		blood_stored += bpack.reagents.get_reagent_amount(/datum/reagent/blood)
+		qdel(I)
+		playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
+		say("Added bloodpack into reserves.", language = /datum/language/ancient_english)
+
+/obj/structure/closet/crate/coffin/limb_regrower/proc/regrowing_cycle(mob/living/carbon/human/victim)
+	if(blood_stored < 750 && victim.blood_volume > BLOOD_VOLUME_SURVIVE)
+		victim.SetParalyzed(2.5 SECONDS)
+		blood_stored += 125
+		victim.blood_volume -= 125
+		sleep(2 SECONDS)
+		regrowing_cycle()
+	else if(blood_stored < 750 && victim.blood_volume < BLOOD_VOLUME_SURVIVE)
+		playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
+		say("Victim lacks sufficent blood, so does the reserves. Medical care advised.", language = /datum/language/ancient_english)
+		open()
+	else if(blood_stored > 750)
+		open()

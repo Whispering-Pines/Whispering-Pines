@@ -12,7 +12,7 @@
 /datum/species/human/northern
 	name = "Human"
 	id = "human"
-	desc = "Humenity, creation in Psydon's image. \
+	desc = "Humenity, creation in Old Gods' image. \
 	\n\n\
 	Humans are the first species ever, from the old world,\
 	they are descendants of the old worlders, their true languages, \

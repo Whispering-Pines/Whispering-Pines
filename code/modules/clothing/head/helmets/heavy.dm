@@ -73,7 +73,7 @@
 // Vampire Lord is no longer as OP, but the armor should protect against dreaded stabs or it makes the vitae spent on it pointless.
 /obj/item/clothing/head/helmet/heavy/savoyard
 	name = "savoyard"
-	desc = "A terrifying yet crude iron helmet shaped like a human skull. Commands the inspiring terror of inhumen tyrants from yils past."
+	desc = "A terrifying yet crude iron helmet shaped like a human skull. Commands the inspiring terror of inhumen tyrants from years past."
 	icon_state = "savoyard"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/iron

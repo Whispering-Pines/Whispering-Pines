@@ -1,6 +1,6 @@
 /datum/advclass/pilgrim/rare/preacher
 	name = "Preacher"
-	tutorial = "A devout follower of Psydon, you came to this land with nothing more than \
+	tutorial = "A devout follower of Old Gods, you came to this land with nothing more than \
 	the clothes on your back and the faith in your heart. \n\
 	Sway these nonbelievers to the right path!"
 	allowed_sexes = list(MALE, FEMALE)
@@ -29,5 +29,5 @@
 		H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-		H.set_patron(/datum/patron/psydon)
+		H.set_patron(/datum/patron/old_gods)
 	ADD_TRAIT(H, TRAIT_FOREIGNER, TRAIT_GENERIC)

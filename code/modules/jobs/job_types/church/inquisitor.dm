@@ -33,7 +33,7 @@
 /datum/outfit/job/inquisitor
 	name = "Inquisitor"
 	jobtype = /datum/job/inquisitor
-	allowed_patrons = list(/datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/old_gods)
 	job_bitflag = BITFLAG_CHURCH
 
 /datum/outfit/job/inquisitor/pre_equip(mob/living/carbon/human/H)
@@ -87,7 +87,7 @@
 		return
 	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 	H.mind?.add_antag_datum(new_antag)
-	H.set_patron(/datum/patron/psydon)
+	H.set_patron(/datum/patron/old_gods)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
@@ -250,12 +250,12 @@
 			var/datum/patron/interrogator_patron = interrogator.patron
 			var/datum/patron/victim_patron = patron
 			switch(interrogator_patron.associated_faith.type)
-				if(/datum/faith/psydon)
+				if(/datum/faith/old_gods)
 					if(ispath(victim_patron.type, /datum/patron/divine) && victim_patron.type != /datum/patron/divine/last_death) //lore
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
-					else if(victim_patron.type == /datum/patron/psydon/progressive)
+					else if(victim_patron.type == /datum/patron/old_gods/progressive)
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
-					else if(victim_patron.type == /datum/patron/psydon)
+					else if(victim_patron.type == /datum/patron/old_gods)
 						interrogator.add_stress(/datum/stressevent/torture_large_penalty)
 
 		if(length(confessions))

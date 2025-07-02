@@ -118,7 +118,7 @@
 		if("Paladin")
 			to_chat(H, span_warning("A holy warrior. Where others of the clergy may have spent their free time studying scriptures, you have instead honed your skills with a blade to defend the holy lands such as the church."))
 			switch(H.patron?.type)
-				if(/datum/patron/psydon, /datum/patron/psydon/progressive)
+				if(/datum/patron/old_gods, /datum/patron/old_gods/progressive)
 					head = /obj/item/clothing/head/helmet/heavy/bucket/gold
 					wrists = /obj/item/clothing/neck/psycross/g
 					H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'

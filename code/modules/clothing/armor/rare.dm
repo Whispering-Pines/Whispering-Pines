@@ -50,7 +50,7 @@
 
 /obj/item/clothing/armor/rare/grenzelplate
 	name = "grenzelhoftian plate regalia"
-	desc = "Engraved on this masterwork of human metallurgy lies \"Thrice Slain, Thrice Risen, Thrice Pronged\" alongside the symbol of Psydon in its neck guard."
+	desc = "Engraved on this masterwork of human metallurgy lies \"Thrice Slain, Thrice Risen, Thrice Pronged\" alongside the symbol of Old Gods in its neck guard."
 	icon_state = "human_swordchest"
 	allowed_race = list("human","aasimar")
 	allowed_sex = list(MALE)

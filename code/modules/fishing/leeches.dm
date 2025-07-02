@@ -264,7 +264,7 @@
 				"Cast Malum into the fires of hell!", \
 				"The only truth there is lies with the Dark Elves!", \
 				"I will defile Last Death's dead, a thousand times!", \
-				"I will butcher new gods like Last Death butchered Psydon!", \
+				"I will butcher new gods like Last Death butchered Old Gods!", \
 				"Snuff out the beating hearts of Moonbeam!"))
 		V.add_stress(/datum/stressevent/leechcult)
 

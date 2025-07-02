@@ -202,7 +202,7 @@
 
 /datum/thaumic_research_node/gnome_mastery
 	name = "Gnomish Perfection"
-	desc = "The pinnacle of life, Gnomes with Hats. It's said that Psydon is actually just a Gnome."
+	desc = "The pinnacle of life, Gnomes with Hats. It's said that Old Gods is actually just a Gnome."
 	icon_state = "node"
 	prerequisites = list(/datum/thaumic_research_node/gnome_speed_three, /datum/thaumic_research_node/gnome_efficeny_three)
 	required_essences = list(
