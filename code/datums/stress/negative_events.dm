@@ -404,7 +404,7 @@
 	desc = span_red("That voice.. That old thief is calling for me, what is it now?")
 
 /datum/stressevent/night_owl_dawn
-	desc = span_warning("I don't like the dae..")
+	desc = span_warning("I don't like the day..")
 	stressadd = 3
 	timer = 10 MINUTES
 

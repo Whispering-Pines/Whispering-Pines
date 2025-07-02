@@ -2,7 +2,7 @@
 	name = "Amazon"
 	tutorial = "A savage and deft warrior-women, you hail from one of the islands west of here. In your youth you learned to partake in the hunts amid the treetops and proved your worth through countless bouts."
 	allowed_sexes = list(FEMALE)
-	allowed_races = list(RACE_HUMEN, RACE_DROW, RACE_HALF_DROW, RACE_TRITON)
+	allowed_races = list(RACE_HUMEN, RACE_DROW, RACE_HALF_DROW, RACE_TRITON, RACE_RESURGENTIS)
 	outfit = /datum/outfit/job/adventurer/amazon
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	min_pq = 0

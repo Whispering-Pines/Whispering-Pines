@@ -1198,7 +1198,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				if("species")
 					var/list/selectable = get_selectable_species(patreon)
 
-					var/result = browser_input_list(user, "SELECT YOUR HERO'S PEOPLE:", "VANDERLIN FAUNA", selectable, pref_species)
+					var/result = browser_input_list(user, "SELECT YOUR HERO'S PEOPLE:", "WHISPERING PINES FAUNA", selectable, pref_species)
 
 					if(result)
 						var/species = GLOB.species_list[result]
@@ -1598,8 +1598,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		organ_eyes.old_eye_color = eye_color
 
 	character.skin_tone = skin_tone
-	character.underwear = underwear
-	character.undershirt = undershirt
 	character.detail = detail
 	character.socks = socks
 

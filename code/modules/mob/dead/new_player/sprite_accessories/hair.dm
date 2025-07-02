@@ -1,10 +1,3 @@
-/datum/sprite_accessory/hair/head
-	abstract_type = /datum/sprite_accessory/hair/head
-	icon = 'icons/mob/sprite_accessory/hair/human_hair.dmi'
-
-/datum/sprite_accessory/hair/head/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	return is_human_part_visible(owner, HIDEHAIR)
-
 /datum/sprite_accessory/hair/head/bald
 	name = "Bald"
 	icon_state = null

@@ -2,7 +2,7 @@
 
 /datum/advclass/pilgrim/mason
 	name = "Mason"
-	tutorial = "Despite the lack of a formal guild in Vanderlin, you've traveled there to hone your stonemasonry. \
+	tutorial = "Despite the lack of a formal guild in Phantom Kingdom, you've traveled there to hone your stonemasonry. \
 	You've known your entire life there are ancient secrets within stone, and now you must prove their value to others."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(

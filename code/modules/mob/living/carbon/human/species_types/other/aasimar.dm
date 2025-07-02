@@ -13,9 +13,9 @@
 /datum/species/aasimar
 	name = "Aasimar"
 	id = "aasimar"
-	desc = "Immortal offspring sculpted by the gods for use in servitude. \
+	desc = "Immortal offspring sculpted by the old or new gods for use in servitude. \
 	\n\n\
-	Aasimar roaming alone on Psydonia often are those abandoned after serving their purpose. \
+	Aasimar roaming alone on the new world often are those abandoned after serving their purpose. \
 	This species is often revered due to their celestial origin, \
 	but face great solitude as not many of their kind exist. \
 	Many an aasimar will detest the reverance in which they are greeted with, \
@@ -77,8 +77,8 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 2, STATKEY_CON = 1, STATKEY_END = 1, STATKEY_SPD = -1, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 2, STATKEY_CON = 1, STATKEY_END = 1, STATKEY_SPD = -1, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = -1, STATKEY_LCK = 1)
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = -1, STATKEY_LCK = 1)
 
 	enflamed_icon = "widefire"
 

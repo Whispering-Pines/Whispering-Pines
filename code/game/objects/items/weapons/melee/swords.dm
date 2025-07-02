@@ -632,7 +632,7 @@
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "tabi"
 	name = "kilij scimitar"
-	desc = "A curved blade of Zybantu origin meaning 'curved one'. The standard sword that saw the conquest of the Zybantine continent and peoples."
+	desc = "A curved blade of Zybantu origin meaning 'curved one'. The standard sword that saw the conquest of the Crater Emirate continent and peoples."
 	sellprice = 80
 
 /obj/item/weapon/sword/long/rider/getonmobprop(tag)
@@ -912,7 +912,7 @@
 	gripped_intents = list(/datum/intent/sword/chop)
 	icon_state = "exe"
 	name = "executioner's sword"
-	desc = "An ancient blade of ginormous stature, with a round ended tip. The pride and joy of Vanderlin's greatest pastime, executions."
+	desc = "An ancient blade of ginormous stature, with a round ended tip. The pride and joy of Phantom Kingdom's greatest pastime, executions."
 	minstr = 10
 	slot_flags = ITEM_SLOT_BACK
 

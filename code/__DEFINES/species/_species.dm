@@ -12,6 +12,7 @@
 #define RACE_HOLLOWKIN "Demihuman"
 #define RACE_HARPY "Harpy"
 #define RACE_TRITON "Triton"
+#define RACE_RESURGENTIS "Resurgentis"
 
 // ============ USING ID BECAUSE FUCK YOU
 /// List of all species
@@ -29,6 +30,7 @@
 	"zizombie",\
 	"kobold",\
 	"triton",\
+	"resurgentis",\
 	)
 
 /// Races where females get underwear, no underwear for kobold, rakshari and triton, dwarves handled seperately
@@ -42,6 +44,7 @@
 	"orc",\
 	"zizombie",\
 	"elf",\
+	"resurgentis",\
 	)
 
 /// Races where males get underwear, identical to above, elves handled seperately
@@ -54,6 +57,7 @@
 	"halforc",\
 	"orc",\
 	"zizombie",\
+	"resurgentis",\
 	)
 
 // ============ USING NAME
@@ -73,9 +77,10 @@
 	RACE_KOBOLD,\
 	RACE_HOLLOWKIN,\
 	RACE_HALF_ORC,\
+	RACE_RESURGENTIS,\
 )
 
-/// Races not considered discriminated against in Vanderlin. Used for nobility, etc.
+/// Races not considered discriminated against in Phantom Kingdom. Used for nobility, etc.
 #define RACES_PLAYER_NONDISCRIMINATED list(\
 	RACE_HUMEN,\
 	RACE_DWARF,\
@@ -91,6 +96,7 @@
 	RACE_KOBOLD,\
 	RACE_HOLLOWKIN,\
 	RACE_HALF_ORC,\
+	RACE_RESURGENTIS,\
 )
 
 /// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Tenebrase. Used for church/faith roles.
@@ -110,9 +116,10 @@
 	RACE_KOBOLD,\
 	RACE_HOLLOWKIN,\
 	RACE_HALF_ORC,\
+	RACE_RESURGENTIS,\
 )
 
-/// Races who are non-exotic to Vanderlin. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
+/// Races who are non-exotic to Phantom Kingdom. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
 #define RACES_PLAYER_NONEXOTIC list(\
 	RACE_HUMEN,\
 	RACE_DWARF,\
@@ -124,15 +131,14 @@
 	RACE_TIEFLING,\
 	RACE_HARPY,\
 	RACE_TRITON,\
+	RACE_KOBOLD,\
 	RACE_HOLLOWKIN,\
 	RACE_HALF_ORC,\
+	RACE_RESURGENTIS,\
 )
 
 ///Races that lack lux
 #define RACES_PLAYER_LUXLESS list(\
-	RACE_KOBOLD,\
-	RACE_HOLLOWKIN,\
-	RACE_RAKSHARI,\
 )
 
 /// Races who are affiliated with Grenzelhoft or Psydon specifically.
@@ -163,8 +169,6 @@
 
 /// Patreon only races.
 #define RACES_PLAYER_PATREON list(\
-	RACE_KOBOLD,\
-	RACE_HOLLOWKIN,\
 )
 
 /// Guard Races - No Orcs or Dark Elf
@@ -180,9 +184,12 @@
 	RACE_HARPY,\
 	RACE_RAKSHARI,\
 	RACE_TRITON,\
+	RACE_HOLLOWKIN,\
+	RACE_HALF_ORC,\
+	RACE_RESURGENTIS,\
 )
 
-/// Foreigner Nobility Races - No Tiefling (you know why) or hollow-kin
+/// Foreigner Nobility Races
 #define RACES_PLAYER_FOREIGNNOBLE list(\
 	RACE_HUMEN,\
 	RACE_DWARF,\
@@ -196,4 +203,7 @@
 	RACE_RAKSHARI,\
 	RACE_TRITON,\
 	RACE_KOBOLD,\
+	RACE_RESURGENTIS,\
+	RACE_TIEFLING,\
+	RACE_HOLLOWKIN,\
 )

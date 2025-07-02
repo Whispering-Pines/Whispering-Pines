@@ -120,7 +120,7 @@
 
 	INVOKE_ASYNC(world, TYPE_PROC_REF(/world, flush_byond_tracy))
 
-	to_chat(world, "<BR><BR><BR><span class='reallybig'>So ends this tale of Vanderlin.</span>")
+	to_chat(world, "<BR><BR><BR><span class='reallybig'>And so another week passed in the new world.</span>")
 	get_end_reason()
 
 	var/list/key_list = list()

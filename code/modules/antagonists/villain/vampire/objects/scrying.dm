@@ -35,7 +35,7 @@
 	for(var/area/A as anything in get_sorted_areas())
 		if(!A.hidden)
 			filtered += A
-	var/area/thearea  = input("Area to jump to", "VANDERLIN") as null|anything in filtered
+	var/area/thearea  = input("Area to jump to", "WHISPERING PINES") as null|anything in filtered
 
 	if(!thearea)
 		return

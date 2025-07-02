@@ -313,18 +313,19 @@
 				return
 			var/new_size = GLOB.named_breast_sizes[named_size]
 			breasts_entry.organ_size = sanitize_integer(new_size, MIN_BREASTS_SIZE, MAX_BREASTS_SIZE, DEFAULT_BREASTS_SIZE)
+			/* i couldnt do the nipple thing
 			if(isresurgentis(user))
 				var/mob/living/carbon/human/human_user = user
 				var/datum/bodypart_feature/hair/head/hairness = human_user.get_bodypart_feature_of_slot(BODYPART_FEATURE_HAIR)
 				var/datum/nipples/nippie = breasts_entry.nipples
-				nippie.nipple_color = hairness.hair_color
+				nippie.nipple_color = hairness.hair_color*/
 		if("refilling")
 			breasts_entry.refilling = !breasts_entry.refilling
 
 /datum/customizer_entry/organ/breasts
 	var/organ_size = DEFAULT_BREASTS_SIZE
 	var/refilling = FALSE
-	var/nipples = /datum/nipples
+	//var/nipples = /datum/nipples
 
 /datum/customizer/organ/breasts/human
 	customizer_choices = list(/datum/customizer_choice/organ/breasts/human)

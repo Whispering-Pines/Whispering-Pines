@@ -812,3 +812,9 @@
 		/datum/sprite_accessory/hair/head/triton/lion,
 		/datum/sprite_accessory/hair/head/triton/betta,
 	)
+
+/datum/customizer_choice/bodypart_feature/hair/head/humanoid/nonatgradient
+	allows_natural_gradient = FALSE
+
+/datum/customizer/bodypart_feature/hair/head/humanoid/nonatgradient
+	customizer_choices = list(/datum/customizer_choice/bodypart_feature/hair/head/humanoid/nonatgradient)

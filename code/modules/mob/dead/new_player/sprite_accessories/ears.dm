@@ -377,7 +377,7 @@
 	specuse = list("elf", "tiefling") //tiebs use these
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
-/datum/sprite_accessory/ears/elfh //halfelfs are humens techincally
+/datum/sprite_accessory/ears/elfh //halfelfs are humans techincally
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
 	name = "ElfH"
 	icon_state = "elf"

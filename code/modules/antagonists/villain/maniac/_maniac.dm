@@ -265,7 +265,7 @@ GLOBAL_VAR_INIT(maniac_highlander, 0) // THERE CAN ONLY BE ONE!
 		to_chat(trey_liam, span_deadsay("<span class='reallybig'>... WHERE AM I? ...</span>"))
 		sleep(1.5 SECONDS)
 		var/static/list/slop_lore = list(
-			span_deadsay("... Rockhill? Vanderlin? No ... They don't exist ..."),
+			span_deadsay("... Rockhill? Phantom Kingdom? No ... They don't exist ..."),
 			span_deadsay("... My name is Trey. Trey Liam, Scientific Overseer ..."),
 			span_deadsay("... I'm on the Aeon, a self sustaining ship, used to preserve what remains of humanity ..."),
 			span_deadsay("... Launched into the stars, preserving their memories ... Their personalities ..."),
@@ -276,7 +276,7 @@ GLOBAL_VAR_INIT(maniac_highlander, 0) // THERE CAN ONLY BE ONE!
 		for(var/slop in slop_lore)
 			to_chat(trey_liam, slop)
 			sleep(3 SECONDS)
-		to_chat(trey_liam, span_big(span_deadsay("I have to go back, I have to go back, I have to go back to Vanderlin.")))
+		to_chat(trey_liam, span_big(span_deadsay("I have to go back, I have to go back, I have to go back to Phantom Kingdom.")))
 	else
 		INVOKE_ASYNC(src, PROC_REF(cant_wake_up), dreamer)
 		cull_competitors(dreamer)
@@ -360,8 +360,8 @@ GLOBAL_VAR_INIT(maniac_highlander, 0) // THERE CAN ONLY BE ONE!
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /obj/structure/maniac_return_machine
-	name = "Vanderlin Program"
-	desc = "The Vanderlin Program was created by ██████████ in the year ████, allowing humans to explore hostile worlds and environments through remote-controlled bodies without danger to the user's life."
+	name = "Phantom Kingdom Program"
+	desc = "The Phantom Kingdom Program was created by ██████████ in the year ████, allowing humans to explore hostile worlds and environments through remote-controlled bodies without danger to the user's life."
 	icon_state = "pylon"
 	icon = 'icons/roguetown/misc/mana_pylon.dmi'
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF

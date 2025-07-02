@@ -25,9 +25,7 @@
 	that appear consistently in Tiefling biology make them considerably fragile. \
 	It is not uncommon for a tiefling to be generally unpleasant to look at in the eye of the commonfolk. \
 	If to make matters worse, their hellish progenitors have left them a destiny of misfortune, \
-	though perhaps their immunity to fire opens new opportunities... \
-	\n\n\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. <B>NOBLES EVEN MORE SO.</B> PLAY AT YOUR OWN RISK."
+	though perhaps their immunity to fire opens new opportunities..."
 
 	skin_tone_wording = "Progenitor"
 
@@ -82,8 +80,8 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 2, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = -1)
-	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 2, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = -1)
+	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 1, STATKEY_INT = 0, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = -1)
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 1, STATKEY_INT = 0, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = -1)
 
 	enflamed_icon = "widefire"
 

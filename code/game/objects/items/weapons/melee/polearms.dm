@@ -461,7 +461,7 @@
 /obj/item/weapon/polearm/spear/hoplite
 	force = DAMAGE_SPEARPLUS
 	name = "ancient spear"
-	desc = "A humble spear with a bronze head, a rare survivor from the battles long past that nearly destroyed Psydonia."
+	desc = "A humble spear with a bronze head, a rare survivor from the battles long past that nearly destroyed the new world."
 	icon_state = "bronzespear"
 	max_blade_int = 300
 	max_integrity = INTEGRITY_STRONG
@@ -471,7 +471,7 @@
 
 /obj/item/weapon/polearm/spear/hoplite/winged // Winged version has +1 weapon defence and sells for a bit more, but is identical otherwise
 	name = "ancient winged spear"
-	desc = "A spear with a winged bronze head, a rare survivor from the battles long past that nearly destroyed Psydonia."
+	desc = "A spear with a winged bronze head, a rare survivor from the battles long past that nearly destroyed the new world."
 	icon_state = "bronzespear_winged"
 	wdefense = ULTMATE_PARRY
 	sellprice = 150 // A noble collector would love to get his/her hands on one of these spears

@@ -20,11 +20,8 @@
 	Tenebrase's spawn, the last snow elves, integrated themselves- whether gleefully or resentfully- within the dark elf culture \
 	their grandmother had carved through conquest. \
 	\n\n\
-	To most in Psydonia, a dark elf is nothing more than a servant of Tenebrase waiting to betray for power, \
-	leading most dark elves to remain within their safe underground strongholds. Those who breach the surface \
-	rarely receive fair treatment. \
-	\n\n\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. <B>NOBLES EVEN MORE SO.</B> PLAY AT YOUR OWN RISK."
+	To most in the new world, a dark elf is nothing more than a servant of Tenebrase waiting to betray for power, \
+	leading most dark elves to remain within their safe underground strongholds. Those who breach the surface"
 
 	skin_tone_wording = "Parent House"
 
@@ -113,8 +110,9 @@
 		OFFSET_UNDIES = list(0,1),\
 	)
 
-	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = -1, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = 1, STATKEY_PER = -1, STATKEY_INT = 1, STATKEY_CON = 1, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = 1, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 1, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)
+
 	enflamed_icon = "widefire"
 	patreon_req = 0
 

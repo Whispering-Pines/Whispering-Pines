@@ -1,6 +1,6 @@
 /datum/advclass/pilgrim/rare/zybantine
-	name = "Zybantine Emir"
-	tutorial = "An Emir hailing from the Zybantu Ziggurat, here on business for the Mercator's Guild to Vanderlin."
+	name = "Crater Emirate Emir"
+	tutorial = "An Emir hailing from the The Great Desert, here on business for the Mercator's Guild to Phantom Kingdom."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Human",
@@ -57,9 +57,7 @@
 			honorary = "Amirah"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
-		if(!H.has_language(/datum/language/zybantine))
-			H.grant_language(/datum/language/zybantine)
-			to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
+
 		H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_END, 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

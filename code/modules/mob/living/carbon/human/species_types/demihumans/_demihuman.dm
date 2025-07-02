@@ -4,7 +4,7 @@
 /datum/species/demihuman
 	name = "Demihuman"
 	id = "demihuman"
-	desc = ""
+	desc = "Generally an offspring of an anthro and a human, or a human turned anthrolike by some other means."
 
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
@@ -59,8 +59,8 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	specstats_m = list(STAT_PERCEPTION = 1)
-	specstats_f = list(STAT_PERCEPTION = 1)
+	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
 
 	enflamed_icon = "widefire"
 
@@ -111,8 +111,6 @@
 		/datum/descriptor_choice/prominent_three_wild,
 		/datum/descriptor_choice/prominent_four_wild,
 	)
-
-	patreon_req = TRUE
 
 /datum/species/demihuman/get_hairc_list()
 	return sortList(list(

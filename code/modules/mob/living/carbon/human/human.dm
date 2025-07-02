@@ -758,9 +758,6 @@
 	lip_style = target.lip_style
 	lip_color = target.lip_color
 	age = target.age
-	underwear = target.underwear
-	underwear_color = target.underwear_color
-	undershirt = target.undershirt
 	shavelevel = target.shavelevel
 	socks = target.socks
 	advjob = target.advjob

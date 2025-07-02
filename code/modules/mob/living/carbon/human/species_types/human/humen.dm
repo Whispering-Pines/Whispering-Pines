@@ -14,12 +14,13 @@
 	id = "human"
 	desc = "Humenity, creation in Psydon's image. \
 	\n\n\
-	Humens come from a vast swathe of cultures and ethnicities all around Psydonia, most of which \
-	have historically been at odds with one another and other species. \
-	With their tenacity and overwhelming population, humens tend to outnumber the other species drastically. \
+	Humans are the first species ever, from the old world,\
+	they are descendants of the old worlders, their true languages, \
+	cultures and ideologies long lost along with the period after \
+	the great war where everyone lived hundred years in isolation.\
 	\n\n\
-	Humens tend to find fortune easier than the other species, and are so diverse that no other trait \
-	are dominant in their species..."
+	Their accents usually remain along with possibly altered version of their\
+	original languages taught by their parents, for those few lucky ones that still had them."
 
 	skin_tone_wording = "Ancestry"
 
@@ -73,8 +74,8 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 2, STATKEY_SPD = 0, STATKEY_LCK = 1)
-	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 2, STATKEY_SPD = 0, STATKEY_LCK = 1)
+	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = 0, STATKEY_LCK = 1)
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = 0, STATKEY_LCK = 1)
 
 	enflamed_icon = "widefire"
 

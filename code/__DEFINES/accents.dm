@@ -5,8 +5,8 @@
 #define ACCENT_ELF "Elf Accent"
 #define ACCENT_TIEFLING "Tiefling Accent"
 #define ACCENT_HORC "Half-Orc Accent"
-#define ACCENT_GRENZ "Grenzelhoft Acccent"
-#define ACCENT_ZYBANTINE "Zybantine Accent"
+#define ACCENT_GRENZ "Germanic Acccent"
+#define ACCENT_ZYBANTINE "Crater Emirate Accent"
 #define ACCENT_PIRATE "Pirate Accent"
 #define ACCENT_MIDDLE_SPEAK "Middle Speak (Old Half-Orc)"
 

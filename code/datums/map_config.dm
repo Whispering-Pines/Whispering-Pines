@@ -13,8 +13,8 @@
 	var/voteweight = 1
 	var/votable = FALSE
 
-	// Config actually from the JSON - should default to Vanderlin
-	var/map_name = "Vanderlin"
+	// Config actually from the JSON - should default to Phantom Kingdom
+	var/map_name = "Phantom Kingdom"
 	var/map_path = "map_files/vanderlin"
 	var/map_file = "vanderlin.dmm"
 	var/immigrant_origin = "Kingsfield"

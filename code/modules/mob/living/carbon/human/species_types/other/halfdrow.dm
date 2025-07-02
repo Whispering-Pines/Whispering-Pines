@@ -16,9 +16,7 @@
 	While similar in physicality and longevity to their non-drow cousins, their origins cause them to face discrimination akin to their elven side. \
 	\n\n\
 	Groups of half-elves and half-drow have been known to congregate together and consider themselves one species. \
-	According to some radical academic scholars, they might be one species indeed- yet the people of Psydonia certainly do not believe the same at large. \
-	\n\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. <B>NOBLES EVEN MORE SO.</B> PLAY AT YOUR OWN RISK."
+	According to some radical academic scholars, they might be one species indeed- yet the people of the new world certainly do not believe the same at large."
 
 	skin_tone_wording = "Half-Drow Identity"
 	default_color = "FFFFFF"
@@ -72,8 +70,8 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 1, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 1, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 0, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 1, STATKEY_LCK = 0)
 
 	enflamed_icon = "widefire"
 

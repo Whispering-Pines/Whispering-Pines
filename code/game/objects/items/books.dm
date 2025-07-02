@@ -1210,7 +1210,7 @@ ____________End of Example*/
 
 /obj/item/book/psybibleplayerbook
 	name = "Psybible"
-	desc = "An old tome, authored by Father Ambrose of Grenzelhoft."
+	desc = "An old tome, authored by Father Ambrose of Frozen Empire."
 	bookfile = "PsyBible.json"
 	random_cover = TRUE
 

@@ -16,7 +16,7 @@
 	max_integrity = INTEGRITY_STRONG
 	item_weight = 7 * STEEL_MULTIPLIER
 
-//................ Grenzelhoft Cuirass ............... //
+//................ Frozen Empire Cuirass ............... //
 /obj/item/clothing/armor/cuirass/grenzelhoft
 	name = "grenzelhoft cuirass"
 	desc = "Simple armor, but made from Grenzelhoftian black-steel, famed afar for its strength."

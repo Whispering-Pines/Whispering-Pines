@@ -141,7 +141,7 @@
 /*	..................   METT   ................... */
 /obj/item/reagent_containers/food/snacks/meat/mince/beef/mett
 	name = "grenzel mett"
-	desc = "A popular toping for bread in Grenzelhoft, while simply bizarr to people from vanderlin"
+	desc = "A popular toping for bread in Frozen Empire, while simply bizarr to people from vanderlin"
 	icon_state = "mett_minced"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_NUTRITIOUS)
 	bitesize = 3

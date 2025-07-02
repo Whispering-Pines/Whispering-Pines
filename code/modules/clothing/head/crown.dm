@@ -22,7 +22,7 @@
 
 
 /obj/item/clothing/head/crown/serpcrown
-	name = "crown of Vanderlin"
+	name = "crown of Phantom Kingdom"
 	desc = "Heavy is the weight of the crown, and even heavier the responsibility it infers to its wearer."
 	icon_state = "serpcrown"
 	sellprice = VALUE_EXTREME
@@ -44,7 +44,7 @@
 
 /obj/item/clothing/head/crown/serpcrown/surplus
 	name = "crown"
-	desc = "A replacement for the Crown of Vanderlin, every bit as valid as proof of sovereignity as the original."
+	desc = "A replacement for the Crown of Phantom Kingdom, every bit as valid as proof of sovereignity as the original."
 	icon_state = "serpcrowno"
 	sellprice = VALUE_GOLD_ITEM
 

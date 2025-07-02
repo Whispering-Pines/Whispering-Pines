@@ -9,18 +9,16 @@
 	desc = "Their origins trace back to nomadic desert tribes, \
 	whose survival in the harsh sands cultivated a culture steeped in resilience, cunning, and adaptability. \
 	\n\n\
-	Over centuries, the Rakshari united under the banners of powerful Zybantine merchant-kings and warlords,\
+	Over centuries, the Rakshari united under the banners of powerful Crater Emirate merchant-kings and warlords,\
 	transforming their scattered clans into a dominant slaver force across the region. \
 	They would often raid weaker settlements and rival caravans, \
 	capturing slaves to fuel their expanding cities and economies. \
 	Practice of this was justified through religious doctrines, \
 	venerating strength and dominance as divine virtues. \
 	\n\n\
-	As they further attached themselves to Zybantine, however, \
+	As they further attached themselves to Crater Emirate, however, \
 	their people would integrate more sophisticated forms of servitude, \
-	such as indentured contracts and debt bondage. \
-	\n\n\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	such as indentured contracts and debt bondage."
 
 	skin_tone_wording = "Tribal Identity"
 	use_skintones = TRUE
@@ -31,8 +29,8 @@
 	species_traits = list(EYECOLOR, OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_KITTEN_MOM)
 
-	specstats_m = list(STATKEY_STR = -2, STATKEY_PER = 2, STATKEY_INT = 0, STATKEY_CON = -2, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = -2, STATKEY_PER = 2, STATKEY_INT = 0, STATKEY_CON = -2, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = 2, STATKEY_INT = 0, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = -1, STATKEY_PER = 2, STATKEY_INT = 0, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)
 
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/rakshari.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/rakshari.dmi'

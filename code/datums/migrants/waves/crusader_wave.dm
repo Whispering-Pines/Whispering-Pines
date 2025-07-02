@@ -42,8 +42,6 @@
 		H.change_stat(STATKEY_PER, 2)
 		H.change_stat(STATKEY_SPD, 2)
 		H.change_stat(STATKEY_END, 1)
-		if(!H.has_language(/datum/language/oldpsydonic))
-			H.grant_language(/datum/language/oldpsydonic)
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
@@ -60,7 +58,7 @@
 
 /datum/migrant_role/crusader
 	name = "Crusader"
-	greet_text = "Crusader of the true faith, you came from Grenzelhoft under the command of the Inquisitor. Obey them as they lead you to smite the heathens."
+	greet_text = "Crusader of the true faith, you came from the central continents under the command of the Inquisitor. Obey them as they lead you to smite the heathens."
 	outfit = /datum/outfit/job/adventurer/crusader
 	allowed_races = RACES_PLAYER_GRENZ
 

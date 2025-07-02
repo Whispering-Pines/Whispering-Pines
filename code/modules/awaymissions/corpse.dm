@@ -164,8 +164,6 @@
 	if(mob_species)
 		H.set_species(mob_species)
 	H.cure_husk()
-	H.underwear = null
-	H.undershirt = "Nude"
 	H.socks = "Nude"
 	if(hairstyle)
 		H.set_hair_style(hairstyle, FALSE)

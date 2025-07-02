@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/verderer
 	name = "Hollow Verderer"
-	tutorial = "A halberd expert that has for one reason or another, forsaken Amber Hollow in favor of pursuing coin and glory in wider parts of Psydonia."
+	tutorial = "A halberd expert that has for one reason or another, forsaken Amber Hollow in favor of pursuing coin and glory in wider parts of the new world."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Hollow-Kin",

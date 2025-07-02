@@ -335,7 +335,7 @@
 	if(!signee)
 		. += span_info("Present to a Guild representative for signing.")
 	else
-		. += span_info("SIGNEE: [signee], [signeejob] of Vanderlin.")
+		. += span_info("SIGNEE: [signee], [signeejob] of Phantom Kingdom.")
 
 /obj/item/merctoken/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	if(istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
@@ -475,7 +475,7 @@
 
 	faction = faction_name
 	if(!faction)
-		faction = pick("Heartfelt", "Zybantine", "Grenzelhoft", "Kingsfield")
+		faction = pick("Heartfelt", "Crater Emirate", "Frozen Empire", "Kingsfield")
 
 	sell_prices = prices
 	if(!length(sell_prices))

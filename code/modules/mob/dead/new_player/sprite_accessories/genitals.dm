@@ -31,8 +31,6 @@
 		return "penis_[icon_state]_[pp.organ_size]_0"
 
 /datum/sprite_accessory/penis/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
-	if(owner.underwear)
-		return FALSE
 	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
@@ -102,8 +100,6 @@
 	return "[icon_state]_[organ.organ_size]"
 
 /datum/sprite_accessory/testicles/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
-	if(owner.underwear)
-		return FALSE
 	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
@@ -123,37 +119,21 @@
 	return "[icon_state]_[badonkers.organ_size]"
 
 /datum/sprite_accessory/breasts/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	var/list/appearances = appearance_list
-	var/mutable_appearance/standing
-	for(var/found in appearances)
-		standing = found
-		break
-	var/obj/item/organ/filling_organ/breasts/badonkers = organ
-	var/datum/nipples/nipple = /datum/nipples
-	var/icon/temp = icon(nipple.icon, "[icon_state]_[badonkers.organ_size]")
-	var/datum/sprite_accessory/accessory = src
-	var/icon/temp_nip
-	temp_nip = icon(accessory.icon, accessory.icon_state)
-
-	temp.Blend(temp_nip, ICON_ADD)
-	var/mutable_appearance/nipple_appearance = mutable_appearance(temp)
-	nipple_appearance.color = nipple.nipple_color
-	standing.overlays += nipple_appearance
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_RING)
 
 /datum/sprite_accessory/breasts/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
-	if(owner.underwear)
-		return FALSE
 	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT)
 
+/* I dont know shit about overlays
 /datum/nipples
 	abstract_type = /datum/nipples
 	var/name = "nipples"
 	var/icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/nipples.dmi'
 	var/icon_state
 	var/nipple_color = "ffc4e1"
+*/
 
 /datum/sprite_accessory/breasts/pair
 	icon_state = "pair"
@@ -193,11 +173,15 @@
 /datum/sprite_accessory/vagina/hairy
 	icon_state = "hairy"
 	name = "Hairy"
+	color_key_name = "Pubes"
+	use_static = FALSE
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 /datum/sprite_accessory/vagina/extrahairy
 	icon_state = "extrahairy"
 	name = "Extra Hairy"
+	color_key_name = "Pubes"
+	use_static = FALSE
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 /datum/sprite_accessory/vagina/spade
@@ -267,8 +251,6 @@
 	return "butt_[icon_state]_[buttie.organ_size]"
 
 /datum/sprite_accessory/butt/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
-	if(owner.underwear)
-		return FALSE
 	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDEBUTT)

@@ -1,6 +1,6 @@
 /datum/migrant_role/grenzelhoft/count
-	name = "Grenzelhoft Count"
-	greet_text = "A Count hailing from the Grenzelhoft Imperiate, here on an official visit to the Peninsula of Vanderlin alongside his beloved convoy and spouse."
+	name = "Frozen Empire Count"
+	greet_text = "A Count hailing from the Frozen Empire, here on an official visit to the Peninsula of Phantom Kingdom alongside his beloved convoy and spouse."
 	allowed_sexes = list(MALE)
 	allowed_races = RACES_PLAYER_GRENZ
 	outfit = /datum/outfit/job/grenzelhoft_migration/count
@@ -42,9 +42,6 @@
 		var/honorary = "Count"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
-		if(!H.has_language(/datum/language/oldpsydonic))
-			H.grant_language(/datum/language/oldpsydonic)
-			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 		H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_END, 2)
 		ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
@@ -53,8 +50,8 @@
 		H.cmode_music = 'sound/music/cmode/combat_grenzelhoft.ogg'
 
 /datum/migrant_role/grenzelhoft/countess
-	name = "Grenzelhoft Countess"
-	greet_text = "A Countess hailing from the Grenzelhoft Imperiate, here on an official visit to the Isle of the Enigma alongside her beloved convoy and husband."
+	name = "Frozen Empire Countess"
+	greet_text = "A Countess hailing from the Frozen Empire, here on an official visit to the eastern continent alongside her beloved convoy and husband."
 	allowed_sexes = list(FEMALE)
 	allowed_races = list(
 		"Human",
@@ -98,9 +95,6 @@
 		var/honorary = "Countess"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
-		if(!H.has_language(/datum/language/oldpsydonic))
-			H.grant_language(/datum/language/oldpsydonic)
-			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 		H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_END, 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
@@ -108,8 +102,8 @@
 		H.cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 
 /datum/migrant_role/grenzelhoft/grenzelhoft_knight
-	name = "Grenzelhoft Knight"
-	greet_text = "Your liege, the count and the countess have both took the duty gaved by the Kaiser itself to voyage to the Isle of Enigma, ensure their survival and obey their orders."
+	name = "Frozen Empire Knight"
+	greet_text = "Your liege, the count and the countess have both took the duty gaved by the Kaiser itself to voyage to the eastern continents, ensure their survival and obey their orders."
 	allowed_sexes = list(MALE)
 	allowed_races = list("Human")
 	outfit = /datum/outfit/job/grenzelhoft_migration/grenzelhoft_knight
@@ -148,16 +142,13 @@
 	head = /obj/item/clothing/head/rare/grenzelplate
 	wrists = /obj/item/clothing/wrists/bracers
 	neck = /obj/item/clothing/neck/chaincoif
-	if(!H.has_language(/datum/language/oldpsydonic))
-		H.grant_language(/datum/language/oldpsydonic)
-		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	H.cmode_music = 'sound/music/cmode/combat_grenzelhoft.ogg'
 
 /datum/migrant_role/grenzelhoft/grenzelhoft_men_at_arms
-	name = "Grenzelhoft Men-at-Arms"
-	greet_text = "You and your fellows are men at arms from Grenzelhoft, except your local liege has been sent to the Isle of Enigma, obey the Ritter and make sure the nobles goes home."
+	name = "Frozen Empire Men-at-Arms"
+	greet_text = "You and your fellows are men at arms from Frozen Empire, except your local liege has been sent to the eastern continents, obey the Ritter and make sure the nobles goes home."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Human",
@@ -182,11 +173,6 @@
 		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
-	if(H.gender == FEMALE)
-		H.underwear = null
-		H.underwear_color = CLOTHING_SOOT_BLACK
-		H.update_body()
-
 	beltr = /obj/item/storage/belt/pouch/coins/poor
 	neck = /obj/item/clothing/neck/chaincoif
 	pants = /obj/item/clothing/pants/grenzelpants
@@ -199,9 +185,6 @@
 	armor = /obj/item/clothing/armor/cuirass/grenzelhoft
 	backl = /obj/item/storage/backpack/satchel
 	backr = /obj/item/weapon/sword/long/greatsword/zwei
-	if(!H.has_language(/datum/language/oldpsydonic))
-		H.grant_language(/datum/language/oldpsydonic)
-		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 	H.change_stat(STATKEY_STR, 2)
 	H.change_stat(STATKEY_END, 1)
 	H.change_stat(STATKEY_CON, 2)
@@ -209,7 +192,7 @@
 	H.cmode_music = 'sound/music/cmode/combat_grenzelhoft.ogg'
 
 /datum/migrant_wave/grenzelhoft_visit
-	name = "The Grenzelhoft visit"
+	name = "The Frozen Empire visit"
 	max_spawns = 1
 	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zybantine_wave,/datum/migrant_wave/rockhill_wave,/datum/migrant_wave/heartfelt)
 	weight = 25
@@ -219,10 +202,10 @@
 		/datum/migrant_role/grenzelhoft/countess = 1,
 		/datum/migrant_role/grenzelhoft/grenzelhoft_knight = 1,
 		/datum/migrant_role/grenzelhoft/grenzelhoft_men_at_arms = 2)
-	greet_text = "The Kaiser of the Grenzelhoft Imperiate has sent a diplomatic envoy to engage into diplomacy within the Kingdom of Vanderlin."
+	greet_text = "The Kaiser of the Frozen Empire Imperiate has sent a diplomatic envoy to engage into diplomacy within the Kingdom of Phantom Kingdom."
 
 /datum/migrant_wave/grenzelhoft_visit_down
-	name = "The Grenzelhoft visit"
+	name = "The Frozen Empire visit"
 	max_spawns = 1
 	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zybantine_wave,/datum/migrant_wave/rockhill_wave,/datum/migrant_wave/heartfelt)
 	can_roll = FALSE
@@ -230,4 +213,4 @@
 		/datum/migrant_role/grenzelhoft/count = 1,
 		/datum/migrant_role/grenzelhoft/countess = 1,
 		/datum/migrant_role/grenzelhoft/grenzelhoft_knight = 1)
-	greet_text = "The Kaiser of the Grenzelhoft Imperiate has sent a diplomatic envoy to engage into diplomacy within the Kingdom of Vanderlin."
+	greet_text = "The Kaiser of the Frozen Empire Imperiate has sent a diplomatic envoy to engage into diplomacy within the Kingdom of Phantom Kingdom."

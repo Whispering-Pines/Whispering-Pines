@@ -3,7 +3,7 @@
 	tutorial = "The Crusaders are knights who have pledged their wealth and lands to the Church, \
 	taking up the banner of the Totod Order dedicated to retaking Valoria. \
 	Three cults provide knights for the Order: Solaria, Last Death and Psydon. \
-	You were sent to Vanderlin by the Order to get any and all assistance from the faithful for the Crusade."
+	You were sent to Phantom Kingdom by the Order to get any and all assistance from the faithful for the Crusade."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Human",
@@ -94,10 +94,6 @@
 		beltr = /obj/item/storage/belt/pouch/coins/rich
 	// Finally, grant us the language
 
-	if(!H.has_language(/datum/language/oldpsydonic))
-		H.grant_language(/datum/language/oldpsydonic)
-		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
-
 /datum/outfit/job/adventurer/crusader // Reminder message
 	var/tutorial = "<br><br><font color='#bdc34a'><span class='bold'>You have been sent from the Totod Order on a mission to aid your struggle against the Blood Barons somehow. The details of your mission may vary, perhaps to find allies, funding, or a agent of the enemy...</span></font><br><br>"
 
@@ -108,7 +104,7 @@
 
 /obj/item/clothing/cloak/stabard/crusader
 	name = "surcoat of the golden order"
-	desc = "A surcoat drenched in charcoal water, golden thread stitched in the style of Psydon's Knights of Old Psydonia."
+	desc = "A surcoat drenched in charcoal water, golden thread stitched in the style of Psydon's Knights of Old the new world."
 	icon_state = "crusader_surcoat"
 	icon = 'icons/roguetown/clothing/special/crusader.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
@@ -138,7 +134,7 @@
 	worn_y_dimension = 64
 
 /obj/item/clothing/head/helmet/heavy/crusader/t
-	desc = "A silver gilded bucket helm, inscriptions in old Psydonic are found embezzeled on every inch of silver. Grenzelhoft specializes in these helmets, the Totod order has been purchasing them en-masse."
+	desc = "A silver gilded bucket helm, inscriptions in old Psydonic are found embezzeled on every inch of silver. Frozen Empire specializes in these helmets, the Totod order has been purchasing them en-masse."
 	icon_state = "crusader_helmt2"
 	icon = 'icons/roguetown/clothing/special/crusader.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'

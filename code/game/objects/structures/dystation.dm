@@ -261,7 +261,7 @@
 
 /obj/item/dye_pack/luxury
 	name = "luxury dyes"
-	desc = "An assortment of rich, colorful dyes, hailing from all across Psydonia. This would certainly cost a pretty zenny."
+	desc = "An assortment of rich, colorful dyes, hailing from all across the new world. This would certainly cost a pretty zenny."
 	icon_state = "luxury_dyes"
 	sellprice = 30
 
@@ -271,7 +271,7 @@
 
 /obj/item/dye_pack/royal
 	name = "royal dyes"
-	desc = "Dyes with powders hailing from all across Psydonia, from Kingsfield to Heartfelt. \
+	desc = "Dyes with powders hailing from all across the new world, from Kingsfield to Heartfelt. \
 		Vibrant and pleasing to the eyes, only the highest in the social hierarchy are seen with these colors."
 	icon_state = "luxury_dyes"
 	sellprice = 70

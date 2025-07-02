@@ -9,7 +9,7 @@
 	/// The mob whose client sees the progress bar.
 	var/mob/user
 	/// The client seeing the progress bar.
-	var/client/user_client //! In VANDERLIN, this is unused.
+	var/client/user_client //! In WHISPERING PINES, this is unused.
 	/// Effectively the number of steps the progress bar will need to do before reaching completion.
 	var/goal = 1
 	/// Control check to see if the progress was interrupted before reaching its goal.

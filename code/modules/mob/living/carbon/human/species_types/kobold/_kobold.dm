@@ -17,9 +17,7 @@
 	their habit of hoarding grandiose amounts of trinkets and artifacts, and their opportunism.\
 	\n\n\
 	They are often in servitude to great beasts such as dragons and giants - trapping their lairs and utilizing pack tactics to dispose of ambitious adventurers and thieves alike. \
-	But in their lonesome, Kobolds are generally weak and quick to die, as they noticeably lack the meaningful amount of constitution, strength, and endurance that other species usually have. \
-	\n\n\
-	WARNING: THIS IS A HEAVILY DISCRIMINATED AGAINST CHALLENGE SPECIES WITH ACTIVE SPECIES DETRIMENTS. YOU CAN AND WILL DIE A LOT; PLAY AT YOUR OWN RISK!"
+	But in their lonesome, Kobolds are generally weak and quick to die, as they noticeably lack the meaningful amount of constitution, strength, and endurance that other species usually have."
 
 	skin_tone_wording = "Scale Color"
 	default_color = "FFFFFF"
@@ -27,8 +25,8 @@
 	species_traits = list(NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_TINY, TRAIT_DARKVISION)
 
-	specstats_m = list(STATKEY_STR = -4, STATKEY_PER = -2, STATKEY_INT = -2, STATKEY_CON = -4, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = -4, STATKEY_PER = -2, STATKEY_INT = -2, STATKEY_CON = -4, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = -2, STATKEY_PER = 1, STATKEY_INT = -1, STATKEY_CON = -1, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = -2, STATKEY_PER = 1, STATKEY_INT = -1, STATKEY_CON = -1, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
 
 	possible_ages = NORMAL_AGES_LIST
 	use_skintones = TRUE
@@ -39,7 +37,6 @@
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/kobold.dmi'
 
 	enflamed_icon = "widefire"
-	patreon_req = TRUE
 
 	soundpack_m = /datum/voicepack/male/dwarf
 	soundpack_f = /datum/voicepack/female/dwarf

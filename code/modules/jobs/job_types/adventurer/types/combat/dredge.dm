@@ -169,9 +169,6 @@
 			H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-			if(!H.has_language(/datum/language/oldpsydonic))
-				H.grant_language(/datum/language/oldpsydonic)
-				to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 			H.set_patron(/datum/patron/psydon)
 			to_chat(H,span_info("\
 			New gods are false gods, and I loathe those that worship the true corpse god, Last Death. Psydon lives, my life for Psydon.")
@@ -643,7 +640,6 @@
 			H.virginity = TRUE
 			H.grant_language(/datum/language/elvish)
 			H.grant_language(/datum/language/celestial)
-			H.grant_language(/datum/language/oldpsydonic)
 			to_chat(H,span_info("\
 			I was a scribe in my former years. I'm well-educated and can speak a couple languages.")
 			)

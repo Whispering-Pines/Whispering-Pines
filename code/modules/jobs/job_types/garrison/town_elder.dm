@@ -37,7 +37,7 @@
 		to_chat(src, "<span class='warning'>You must wait [time_left] more seconds before making another announcement.</span>")
 		return
 
-	var/inputty = input("Make an announcement", "VANDERLIN") as text|null
+	var/inputty = input("Make an announcement", "WHISPERING PINES") as text|null
 	if(inputty)
 		if(!istype(get_area(src), /area/rogue/indoors/town/tavern))
 			to_chat(src, "<span class='warning'>I need to do this from the tavern.</span>")
@@ -308,11 +308,6 @@
 					H.grant_language(/datum/language/hellspeak)
 					to_chat(H,span_info("\
 					I learned the tongue of the hellspawn.")
-					)
-				if("Zybantu")
-					H.grant_language(/datum/language/zybantine)
-					to_chat(H,span_info("\
-					I learned the tongue of Zybantu.")
 					)
 				if("Orcish")
 					H.grant_language(/datum/language/orcish)

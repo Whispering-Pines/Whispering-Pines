@@ -1,5 +1,5 @@
 /// designed as a drop in replacement for alert(); functions the same. (outside of needing User specified)
-/proc/browser_alert(mob/user, message = "", title = "VANDERLIN", list/buttons = list(CHOICE_OK), timeout = 0, autofocus = TRUE)
+/proc/browser_alert(mob/user, message = "", title = "WHISPERING PINES", list/buttons = list(CHOICE_OK), timeout = 0, autofocus = TRUE)
 	if(!user)
 		user = usr
 

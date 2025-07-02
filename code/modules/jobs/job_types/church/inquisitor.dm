@@ -1,9 +1,9 @@
 /datum/job/inquisitor
 	title = "Inquisitor"
-	tutorial = "A recent arrival from Grenzelhoft, \
-	you are a member of the secretive lodges that have held to the service of Psydon since the Apotheosis War. \
+	tutorial = "A recent arrival from central continents, \
+	you are a member of the secretive lodges that have held to the service of the old gods even before the great war and somehow survived through it. \
 	You have been sent by your leader, the Holy Bishop, \
-	to assign the local Priest in combatting the increasing number of heretics and monsters infiltrating Vanderlin."
+	to assign the local Priest in combatting the increasing number of heretics and monsters infiltrating Phantom Kingdom."
 	flag = PURITAN
 	department_flag = CHURCHMEN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -83,8 +83,6 @@
 	H.change_stat(STATKEY_PER, 2)
 	H.change_stat(STATKEY_SPD, 2)
 	H.change_stat(STATKEY_END, 1)
-	if(!H.has_language(/datum/language/oldpsydonic))
-		H.grant_language(/datum/language/oldpsydonic)
 	if(H.mind?.has_antag_datum(/datum/antagonist))
 		return
 	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
@@ -97,7 +95,6 @@
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	to_chat(H,span_info("\
-		-I can speak Old Psydonic with ,m before my speech.\n\
 		-The Holy Bishop of the Inquisition has sent you here on a task to root out evil within this town. Make The Holy Bishop proud!\n\
 		-You've also been gaven 10 favors to use at the mail machines, you can get more favor by sending signed confessions to The Holy Bishop. Spend your favors wisely.")
 		)
@@ -180,7 +177,7 @@
 	if(H.add_stress(/datum/stressevent/tortured))
 		SEND_SIGNAL(src, COMSIG_TORTURE_PERFORMED, H)
 		var/static/list/faith_lines = list(
-			"DO YOU DENY PSYDON AND NEW GODS?",
+			"DO YOU DENY GODS?",
 			"WHO IS YOUR GOD?",
 			"ARE YOU FAITHFUL?",
 			"TO WHICH SHEPHERD DO YOU FLOCK TO?",
@@ -312,7 +309,7 @@
 						held_confession.bad_type = "A SCION OF KAINE"
 						held_confession.antag = antag_type
 					if("Vampire Lord")
-						held_confession.bad_type = "THE BLOOD-LORD OF VANDERLIN"
+						held_confession.bad_type = "THE BLOOD-LORD OF WHISPERING PINES"
 						held_confession.antag = antag_type
 					if("Vampire Spawn")
 						held_confession.bad_type = "AN UNDERLING OF THE BLOOD-LORD"

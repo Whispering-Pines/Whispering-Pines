@@ -1,6 +1,6 @@
 /datum/job/adept
 	title = "Adept"
-	tutorial = "You were a convicted criminal, the lowest scum of Vanderlin. \
+	tutorial = "You were a convicted criminal, the lowest scum of Phantom Kingdom. \
 	Your master, the Inquisitor, saved you from the gallows \
 	and has given you true purpose in service to Psydon. \
 	You will not let him down."
@@ -192,9 +192,6 @@
 		H.set_patron(/datum/patron/psydon)
 		H.verbs |= /mob/living/carbon/human/proc/torture_victim
 		H.verbs |= /mob/living/carbon/human/proc/faith_test
-		if(!H.has_language(/datum/language/oldpsydonic))
-			H.grant_language(/datum/language/oldpsydonic)
-			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 		H.mind?.teach_crafting_recipe(/datum/repeatable_crafting_recipe/reading/confessional)
 		GLOB.outlawed_players += H.real_name // Lore
 

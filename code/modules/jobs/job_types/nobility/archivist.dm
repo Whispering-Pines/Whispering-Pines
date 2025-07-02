@@ -2,7 +2,7 @@
 	title = "Archivist"
 	tutorial = "A well-traveled and well-learned seeker of wisdom, the Archivist bears the mark of Lunaria's influence.\
 	Tasked with recording the court's events and educating the ungrateful whelps the monarch calls heirs.\
-	Your work may go unappreciated now, but one dae historians will sing of your dedication and insight."
+	Your work may go unappreciated now, but one day historians will sing of your dedication and insight."
 	flag = ARCHIVIST
 	department_flag = NOBLEMEN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -51,10 +51,8 @@
 
 	H.grant_language(/datum/language/elvish)
 	H.grant_language(/datum/language/dwarvish)
-	H.grant_language(/datum/language/zybantine)
 	H.grant_language(/datum/language/celestial)
 	H.grant_language(/datum/language/hellspeak)
-	H.grant_language(/datum/language/oldpsydonic)
 	H.grant_language(/datum/language/orcish)
 	H.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)

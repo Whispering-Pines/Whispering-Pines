@@ -154,7 +154,7 @@
 /*	.................   Bread   ................... */
 /obj/item/reagent_containers/food/snacks/bread
 	name = "bread loaf"
-	desc = "One of the staple foods of commoners. With the decline of magic, the loss of bread-duplication has led to mass famines around Psydonia."
+	desc = "One of the staple foods of commoners. With the decline of magic, the loss of bread-duplication has led to mass famines around the new world."
 	icon_state = "loaf"
 	base_icon_state = "loaf"
 	dropshrink = 0.8
@@ -194,7 +194,7 @@
 /*	.................   Breadslice & Toast   ................... */
 /obj/item/reagent_containers/food/snacks/breadslice
 	name = "sliced bread"
-	desc = "A bit of comfort to start your dae."
+	desc = "A bit of comfort to start your day."
 	icon_state = "loaf_slice"
 	list_reagents = list(/datum/reagent/consumable/nutriment = BREADSLICE_NUTRITION)
 	rotprocess = SHELFLIFE_LONG
@@ -368,7 +368,7 @@
 
 /obj/item/reagent_containers/food/snacks/grenzelbun
 	name = "grenzelbun"
-	desc = "Originally an elven cuisine composed of mortal races flesh and bread, the classic wiener in a bun, now modified and staple food of Grenzelhoft cuisine."
+	desc = "Originally an elven cuisine composed of mortal races flesh and bread, the classic wiener in a bun, now modified and staple food of Frozen Empire cuisine."
 	list_reagents = list(/datum/reagent/consumable/nutriment = SAUSAGE_NUTRITION+SMALLDOUGH_NUTRITION)
 	tastes = list("savory sausage" = 1)
 	icon_state = "grenzbun"
@@ -391,7 +391,7 @@
 
 /obj/item/reagent_containers/food/snacks/cheesebun
 	name = "cheese bun"
-	desc = "A treat from the Grenzelhoft kitchen."
+	desc = "A treat from the Frozen Empire kitchen."
 	icon_state = "cheesebun"
 	base_icon_state = "cheesebun"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SMALLDOUGH_NUTRITION+CHEESE_NUTRITION)
@@ -511,7 +511,7 @@
 
 /obj/item/reagent_containers/food/snacks/fritter
 	name = "apple fritter"
-	desc = "Having deep origins in the culture of Vanderlin, the humble fritter is perhaps the most patriotic pastry out there, long may it reign!"
+	desc = "Having deep origins in the culture of Phantom Kingdom, the humble fritter is perhaps the most patriotic pastry out there, long may it reign!"
 	icon_state = "applefritter"
 	dropshrink = 0.8
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_CHUNKY)
@@ -906,7 +906,7 @@
 
 /obj/item/reagent_containers/food/snacks/griddlecake
 	name = "griddlecake"
-	desc = "Enjoyed by mercenaries throughout Psydonia, though despite its prevelance no one quite knows its origin."
+	desc = "Enjoyed by mercenaries throughout the new world, though despite its prevelance no one quite knows its origin."
 	bitesize = 6
 	icon_state = "griddlecake"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR)
@@ -924,7 +924,7 @@
 
 /obj/item/reagent_containers/food/snacks/griddlecake/lemon
 	name = "lemon griddlecake"
-	desc = "Enjoyed by mercenaries throughout Psydonia, though despite its prevelance no one quite knows its origin."
+	desc = "Enjoyed by mercenaries throughout the new world, though despite its prevelance no one quite knows its origin."
 	bitesize = 6
 	icon_state = "griddlecakelemon"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR)
@@ -943,7 +943,7 @@
 
 /obj/item/reagent_containers/food/snacks/griddlecake/apple
 	name = "apple griddlecake"
-	desc = "Enjoyed by mercenaries throughout Psydonia, though despite its prevelance no one quite knows its origin."
+	desc = "Enjoyed by mercenaries throughout the new world, though despite its prevelance no one quite knows its origin."
 	bitesize = 6
 	icon_state = "griddlecakeapple"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR)
@@ -962,7 +962,7 @@
 
 /obj/item/reagent_containers/food/snacks/griddlecake/berry
 	name = "jacksberry griddlecake"
-	desc = "Enjoyed by mercenaries throughout Psydonia, though despite its prevelance no one quite knows its origin."
+	desc = "Enjoyed by mercenaries throughout the new world, though despite its prevelance no one quite knows its origin."
 	bitesize = 6
 	icon_state = "griddlecakeberry"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR)
@@ -979,7 +979,7 @@
 
 /obj/item/reagent_containers/food/snacks/griddlecake/berry_poison
 	name = "jacksberry griddlecake"
-	desc = "Enjoyed by mercenaries throughout Psydonia, though despite its prevelance no one quite knows its origin."
+	desc = "Enjoyed by mercenaries throughout the new world, though despite its prevelance no one quite knows its origin."
 	bitesize = 6
 	icon_state = "griddlecakeberry"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR, /datum/reagent/toxin/berrypoison = 12)

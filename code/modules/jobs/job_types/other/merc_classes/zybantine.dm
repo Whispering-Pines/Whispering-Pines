@@ -1,5 +1,5 @@
 /datum/advclass/mercenary/zybantine
-	name = "Zybantine"
+	name = "Crater Emirate"
 	tutorial = "A cutthroat from the western countries, you've headed into foreign lands to make even greater coin than you had prior."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -33,9 +33,7 @@
 	neck = /obj/item/clothing/neck/keffiyeh/red
 	backl = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor)
-	if(!H.has_language(/datum/language/zybantine))
-		H.grant_language(/datum/language/zybantine)
-		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
+
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)

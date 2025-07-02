@@ -1,10 +1,10 @@
 {
 
     "dwarf": {
-		"Vanderlin": "Vaenderin",
+		"Phantom": "Phantaghm",
 		"Rockhill": "Rokghil",
 		"Zybant": "Zaebant",
-		"Zybantine": "Zaebantin",
+		"Crater Emirate": "Zaebantin",
 		"Murderwood": "Mordawalt",
 		"Terrorbog": "Tairrorkeb",
 		"north": "faham",
@@ -300,7 +300,7 @@
 		"morning": "mownin'",
 		"evening": "ewenin'",
 		"tomorrow": "th'morra",
-		"today": "th'dae",
+		"today": "th'day",
 		"wizard": "hexenmaista'",
 		"dragon": "uslukh",
 		"orc": "rukh",

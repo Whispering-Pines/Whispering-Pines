@@ -385,22 +385,22 @@
 /obj/structure/fluff/clock/examine(mob/user)
 	. = ..()
 	if(!broke)
-		var/day = "... actually, WHAT dae is it?"
+		var/day = "... actually, WHAT day is it?"
 		switch(GLOB.dayspassed)
 			if(1)
-				day = "Moon's dae"
+				day = "Moon's day"
 			if(2)
-				day = "Tiw's dae"
+				day = "Tiw's day"
 			if(3)
-				day = "Wedding's dae"
+				day = "Wedding's day"
 			if(4)
-				day = "Thule's dae"
+				day = "Thule's day"
 			if(5)
-				day = "Freyja's dae"
+				day = "Freyja's day"
 			if(6)
-				day = "Saturn's dae"
+				day = "Saturn's day"
 			if(7)
-				day = "Sun's dae"
+				day = "Sun's day"
 		. += "Oh no, it's [station_time_timestamp("hh:mm")] on a [day]."
 		// . += span_info("(Round Time: [gameTimestamp("hh:mm:ss", REALTIMEOFDAY - SSticker.round_start_irl)].)")
 
@@ -452,22 +452,22 @@
 /obj/structure/fluff/wallclock/examine(mob/user)
 	. = ..()
 	if(!broke)
-		var/day = "... actually, WHAT dae is it?"
+		var/day = "... actually, WHAT day is it?"
 		switch(GLOB.dayspassed)
 			if(1)
-				day = "Moon's dae"
+				day = "Moon's day"
 			if(2)
-				day = "Tiw's dae"
+				day = "Tiw's day"
 			if(3)
-				day = "Wedding's dae"
+				day = "Wedding's day"
 			if(4)
-				day = "Thule's dae"
+				day = "Thule's day"
 			if(5)
-				day = "Freyja's dae"
+				day = "Freyja's day"
 			if(6)
-				day = "Saturn's dae"
+				day = "Saturn's day"
 			if(7)
-				day = "Sun's dae"
+				day = "Sun's day"
 		. += "Oh no, it's [station_time_timestamp("hh:mm")] on a [day]."
 		// . += span_info("(Round Time: [gameTimestamp("hh:mm:ss", REALTIMEOFDAY - SSticker.round_start_irl)].)")
 
@@ -809,7 +809,7 @@
 
 /obj/structure/fluff/globe
 	name = "globe"
-	desc = "A model representing the known world of Psydonia."
+	desc = "A model representing the known world of the new world."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "globe"
 	density = TRUE
@@ -820,7 +820,7 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	var/random_message = pick("You spin the globe!", "You land on Rockhill!", "You land on Vanderlin!", "You land on Heartfelt!", "You land on Zybantu!", "You land on Port Thornvale!", "You land on Grenzelhoft!", "You land on Valoria!", "You land on the Fog Islands!")
+	var/random_message = pick("You spin the globe!", "You land on Rockhill!", "You land on Phantom Kingdom!", "You land on Heartfelt!", "You land on Zybantu!", "You land on Port Thornvale!", "You land on Frozen Empire!", "You land on Valoria!", "You land on the Fog Islands!")
 	to_chat(H, "<span class='notice'>[random_message]</span>")
 
 /obj/structure/fluff/statue/femalestatue/Initialize()

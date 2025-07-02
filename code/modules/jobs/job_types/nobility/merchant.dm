@@ -16,6 +16,7 @@
 	cmode_music = 'sound/music/cmode/towner/CombatTowner2.ogg'
 
 	allowed_races = list(
+		RACE_RESURGENTIS,
 		RACE_HUMEN,
 		RACE_ELF,
 		RACE_HALF_ELF,

@@ -1,6 +1,6 @@
 /datum/migrant_role/rockhill/mayor
 	name = "Mayor of Rockhill"
-	greet_text = "You are the mayor of Rockhill, you've come to Vanderlin to discuss important matters with their Monarch."
+	greet_text = "You are the mayor of Rockhill, you've come to Phantom Kingdom to discuss important matters with their Monarch."
 	outfit = /datum/outfit/job/rockhill/mayor
 	allowed_sexes = list(MALE,FEMALE)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
@@ -129,7 +129,7 @@
 
 /datum/migrant_role/rockhill/sergeant_at_arms
 	name = "Rockhill Serjeant"
-	greet_text = "The Mayor of Rockhill has conscripted you and your mens to go see the rulers of Vanderlin."
+	greet_text = "The Mayor of Rockhill has conscripted you and your mens to go see the rulers of Phantom Kingdom."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
@@ -181,7 +181,7 @@
 
 /datum/migrant_role/footman_guard
 	name = "Guardsmen of Rockhill"
-	greet_text = "Your Serjeant has been conscripted by the mayor of rockhill to guard them as they visit the rulers of Vanderlin. Ensure they live."
+	greet_text = "Your Serjeant has been conscripted by the mayor of rockhill to guard them as they visit the rulers of Phantom Kingdom. Ensure they live."
 	outfit = /datum/outfit/job/footman_bannerman
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
@@ -199,7 +199,7 @@
 		/datum/migrant_role/rockhill/sergeant_at_arms = 1,
 		/datum/migrant_role/footman_guard = 4
 	)
-	greet_text = "The Mayor has it, something must be discussed with the rulers of Vanderlin which is why we're on our way over there."
+	greet_text = "The Mayor has it, something must be discussed with the rulers of Phantom Kingdom which is why we're on our way over there."
 
 /datum/migrant_wave/rockhill_wave_down
 	name = "The Mayor's Visit"
@@ -212,7 +212,7 @@
 		/datum/migrant_role/rockhill/sergeant_at_arms = 1,
 		/datum/migrant_role/footman_guard = 2
 	)
-	greet_text = "The Mayor has it, something must be discussed with the rulers of Vanderlin which is why we're on our way over there."
+	greet_text = "The Mayor has it, something must be discussed with the rulers of Phantom Kingdom which is why we're on our way over there."
 
 /datum/migrant_wave/rockhill_wave_down_one
 	name = "The Mayor's visit"
@@ -223,4 +223,4 @@
 		/datum/migrant_role/rockhill_knight = 1,
 		/datum/migrant_role/footman_guard = 2
 	)
-	greet_text = "The Mayor has it, something must be discussed with the rulers of Vanderlin which is why we're on our way over there."
+	greet_text = "The Mayor has it, something must be discussed with the rulers of Phantom Kingdom which is why we're on our way over there."

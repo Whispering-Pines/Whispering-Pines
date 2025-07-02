@@ -6,20 +6,7 @@
 	id = "triton"
 	changesource_flags = WABBAJACK
 
-	desc = "The Children of Abyssor, also known as Tritons or their coloqual name, \"Deep Folk,\" \
-	are a strange species of people that live under the waves of Psydonia. \
-	Born from the creatures of the deep with Abyssor's guidance, \
-	these aquatic wayfarers all share a few common traits. \
-	Similar to other creatures that dwell below the surface, their eyes are dull with disuse. \
-	Tritons feel pain when gazing upon that which direct light of Solaria herself illuminates. \
-	\n\n\
-	Unlike most of the people of Psydonia, their culture is often considered cold and dour by most, \
-	an apathetic attitude to most negative or positive news. For them, the depths of Psydonias oceans are cold and unforgiving. \
-	Large beasts travel the waters that swallow their kin whole... \
-	but the crushing depths have provided them a hearty disposition and resistance to most threats. \
-	Born of Abyssor, their normal placid experience can swing into a wild rage when they view injustice done upon their kin at the hands of a sapient being. \
-	\n\n\
-	Tritons seen on the surface are very important trade partners, mercenaries, and surprising academics. \
+	desc = "Deep ocean folk, Tritons seen on the surface are very important trade partners, mercenaries, and surprising academics. \
 	Merchants often spend vast amounts of coin to have them aboard their trade vessels, fending off pirates or guiding their boats through turbulent weather. \
 	Be it on or within the sea, they excel- on land, however, it is a different story. \
 	With their awkward and gangly fins, long, sharp talons, ghastly, lipless teeth, \

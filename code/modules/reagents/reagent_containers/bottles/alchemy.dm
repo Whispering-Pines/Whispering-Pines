@@ -116,7 +116,7 @@
 
 /obj/item/reagent_containers/glass/bottle/beer/hagwoodbitter
 	list_reagents = list(/datum/reagent/consumable/ethanol/hagwoodbitter = 70)
-	desc = "A bottle with the hagwood bitters cork-seal. The least bitter thing to be exported from the Grenzelhoft occupied state of Zorn."
+	desc = "A bottle with the hagwood bitters cork-seal. The least bitter thing to be exported from the Frozen Empire occupied state of Zorn."
 
 /obj/item/reagent_containers/glass/bottle/beer/aurorian
 	list_reagents = list(/datum/reagent/consumable/ethanol/aurorian = 70)

@@ -1,6 +1,6 @@
 /datum/advclass/combat/sorceress
 	name = "Sorceress"
-	tutorial = "In some places in Psydonia, women such as you are banned from the study of magic. However, in having overcome such discrimination to pursue magic, you have earned the title \"Sorceress\" in honor of your resolve."
+	tutorial = "In some places in the new world, women such as you are banned from the study of magic. However, in having overcome such discrimination to pursue magic, you have earned the title \"Sorceress\" in honor of your resolve."
 	allowed_sexes = list(FEMALE)
 
 	outfit = /datum/outfit/job/adventurer/sorceress

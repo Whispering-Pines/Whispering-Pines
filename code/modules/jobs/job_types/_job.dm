@@ -347,7 +347,6 @@
 					H.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
 				if(isharpy(H))
 					H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
-	H.underwear_color = null
 	H.update_body()
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

@@ -18,10 +18,10 @@
 	max_integrity = INTEGRITY_POOR
 	item_weight = 5.5 * IRON_MULTIPLIER
 
-//............... Grenzelhoft Plume Hat ............... // - worn over a skullcap
+//............... Frozen Empire Plume Hat ............... // - worn over a skullcap
 /obj/item/clothing/head/helmet/skullcap/grenzelhoft
 	name = "grenzelhoft plume hat"
-	desc = "Slaying foul creachers or fair maidens: Grenzelhoft stands. A stylish hat concealing an iron skullcap."
+	desc = "Slaying foul creachers or fair maidens: Frozen Empire stands. A stylish hat concealing an iron skullcap."
 	icon_state = "grenzelhat"
 	item_state = "grenzelhat"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
@@ -196,7 +196,7 @@
 //	icon_state = "elven_barbute_winged"
 //	item_state = "elven_barbute_winged"
 
-//................ Zybantine Kulah Khud ............... //
+//................ Crater Emirate Kulah Khud ............... //
 /obj/item/clothing/head/helmet/sallet/zybantine // Unique Zybantu merc kit
 	name = "kulah khud"
 	desc = "Known as devil masks amongst the Western Kingdoms, these serve part decorative headpiece, part protective helmet."

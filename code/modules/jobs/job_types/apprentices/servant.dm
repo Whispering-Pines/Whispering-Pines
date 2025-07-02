@@ -1,7 +1,7 @@
 /datum/job/servant
 	title = "Servant"
 	tutorial = "You are the faceless, nameless labor that keeps the royal court fed, washed, and attended to. \
-	You work your fingers to the bone nearly every dae, \
+	You work your fingers to the bone nearly every day, \
 	and have naught to show for it but boney fingers. \
 	Perhaps this week you will finally be recognized, or allowed some respite?"
 	flag = SERVANT

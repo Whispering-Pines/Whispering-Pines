@@ -48,21 +48,21 @@ GLOBAL_LIST_INIT(serf_positions, list(
 	/datum/job/matron::title,
 	/datum/job/feldsher::title,
 	/datum/job/apothecary::title,
-	/datum/job/scribe::title,
-	/datum/job/gaffer::title,
+	// /datum/job/scribe::title,
+	// /datum/job/gaffer::title,
 	/datum/job/butler::title,
 	))
 GLOBAL_PROTECT(serf_positions)
 
 GLOBAL_LIST_INIT(peasant_positions, list(
-	/datum/job/farmer::title,
-	/datum/job/miner::title,
-	/datum/job/butcher::title,
-	/datum/job/cook::title,
-	/datum/job/carpenter::title,
-	/datum/job/jester::title,
-	/datum/job/hunter::title,
-	/datum/job/fisher::title,
+	// /datum/job/farmer::title,
+	// /datum/job/miner::title,
+	// /datum/job/butcher::title,
+	// /datum/job/cook::title,
+	// /datum/job/carpenter::title,
+	// /datum/job/jester::title,
+	// /datum/job/hunter::title,
+	// /datum/job/fisher::title,
 	/datum/job/bard::title,
 	/datum/job/prisoner::title,
 	/datum/job/vagrant::title,
@@ -85,7 +85,7 @@ GLOBAL_PROTECT(apprentices_positions)
 GLOBAL_LIST_INIT(youngfolk_positions, list(
 	/datum/job/innkeep_son::title,
 	/datum/job/orphan::title,
-//	/datum/job/churchling::title,
+	/datum/job/churchling::title,
 ))
 GLOBAL_PROTECT(youngfolk_positions)
 
@@ -99,8 +99,8 @@ GLOBAL_PROTECT(company_positions)
 GLOBAL_LIST_INIT(allmig_positions, list(
 	/datum/job/pilgrim::title,
 	/datum/job/adventurer::title,
-	/datum/job/mercenary::title,
-	/datum/job/bandit::title,
+	// /datum/job/mercenary::title,
+	// /datum/job/bandit::title,
 	))
 
 GLOBAL_LIST_INIT(roguewar_positions, list(

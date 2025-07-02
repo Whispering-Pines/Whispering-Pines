@@ -101,7 +101,7 @@ SUBSYSTEM_DEF(ticker)
 		"Still no Ruler is readied..",
 		"I'm going to lose my mind if we don't get a Ruler readied up.",
 		"No. The game will not start because there is no Ruler.",
-		"What's the point of Vanderlin without a Ruler?"
+		"What's the point of Phantom Kingdom without a Ruler?"
 		)
 
 /datum/controller/subsystem/ticker/Initialize(timeofday)
@@ -208,17 +208,19 @@ SUBSYSTEM_DEF(ticker)
 				tipped = TRUE
 
 			if(timeLeft <= 0)
+			/* No need monarch
 				if(!checkreqroles())
 					current_state = GAME_STATE_STARTUP
 					start_at = world.time + timeDelayAdd
 					timeLeft = null
 					Master.SetRunLevel(RUNLEVEL_LOBBY)
 				else
-					send2chat(new /datum/tgs_message_content("New round starting on Vanderlin!"), CONFIG_GET(string/chat_announce_new_game))
-					current_state = GAME_STATE_SETTING_UP
-					Master.SetRunLevel(RUNLEVEL_SETUP)
-					if(start_immediately)
-						fire()
+				*/
+				send2chat(new /datum/tgs_message_content("New round starting on Whispering Pines!"), CONFIG_GET(string/chat_announce_new_game))
+				current_state = GAME_STATE_SETTING_UP
+				Master.SetRunLevel(RUNLEVEL_SETUP)
+				if(start_immediately)
+					fire()
 
 		if(GAME_STATE_SETTING_UP)
 			if(!setup())

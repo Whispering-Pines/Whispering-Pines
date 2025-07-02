@@ -214,7 +214,7 @@
 	config_entry_value = "https://wiki.monkestation.com/vanderlin/rules"
 
 /datum/config_entry/string/githuburl
-	config_entry_value = "https://github.com/Vanderlin-Tales-Of-Wine/Vanderlin"
+	config_entry_value = "https://github.com/Phantom Kingdom-Tales-Of-Wine/Phantom Kingdom"
 
 /datum/config_entry/string/roundstatsurl
 

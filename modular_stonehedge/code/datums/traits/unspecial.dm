@@ -258,8 +258,6 @@
 	H.grant_language(/datum/language/hellspeak)
 	H.grant_language(/datum/language/celestial)
 	H.grant_language(/datum/language/orcish)
-	H.grant_language(/datum/language/oldpsydonic)
-	H.grant_language(/datum/language/zybantine)
 
 /datum/quirk/mastercraftsmen // Named this way to absorb the old quirk. Keeps old saves cleaner without them needing to reset quirks.
 	name = "Jack of All Trades"

@@ -296,7 +296,7 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 /obj/structure/fake_machine/titan/proc/declare_outlaw(mob/living/carbon/human/user, message)
 	if(message in GLOB.outlawed_players)
 		GLOB.outlawed_players -= message
-		priority_announce("[message] is no longer an outlaw in Vanderlin lands.", "[user.real_name], The [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
+		priority_announce("[message] is no longer an outlaw in Phantom Kingdom lands.", "[user.real_name], The [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
 		reset_mode()
 		return
 	var/found = FALSE
@@ -333,7 +333,7 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 			return
 		newtax = CLAMP(newtax, 1, 99)
 		SStreasury.tax_value = newtax / 100
-		priority_announce("The new tax in Vanderlin shall be [newtax] percent.", "[user.real_name], The Generous [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
+		priority_announce("The new tax in Phantom Kingdom shall be [newtax] percent.", "[user.real_name], The Generous [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
 	reset_mode()
 
 /// Changes the job of a nearby mob

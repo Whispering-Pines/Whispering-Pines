@@ -81,17 +81,17 @@ GLOBAL_VAR(lordsecondary)
 		"TEAL"="#249589",
 		"WHITE"="#c7c0b5",
 		"ORANGE"="#b47011",
-		"MAJENTA"="#822b52",
+		"MAGENTA"="#822b52",
 	)
-	var/choice = browser_input_list(src, "Choose a Primary Color", "VANDERLIN", lordcolors)
+	var/choice = browser_input_list(src, "Choose a Primary Color", "WHISPERING PINES", lordcolors)
 	if(!choice)
-		choice = pick(lordcolors)
+		choice = "#865c9c" //phantom kingdom lore colors
 		return
 	GLOB.lordprimary = lordcolors[choice]
 	lordcolors -= choice
-	choice = browser_input_list(src, "Choose a Secondary Color", "VANDERLIN", lordcolors)
+	choice = browser_input_list(src, "Choose a Secondary Color", "WHISPERING PINES", lordcolors)
 	if(!choice)
-		choice = pick(lordcolors)
+		choice = "#2f352f"
 		return
 	GLOB.lordsecondary = lordcolors[choice]
 

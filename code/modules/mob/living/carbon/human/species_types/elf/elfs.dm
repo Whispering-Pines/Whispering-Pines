@@ -13,9 +13,9 @@
 /datum/species/elf/snow
 	name = "Elf"
 	id = "elf"
-	desc = "Psydonia's first.\
+	desc = "the new world's first new race.\
 	\n\n\
-	Elves, the first species of Psydonia, are characterized by lengthened age, \
+	Elves, the first species of the new world, are characterized by lengthened age, \
 	low fertility, and magical aptitude originating from a vast array of tribal cultures and sub-races. \
 	With the ascension of Tenebrase, the entire culture of snow-elves was all but destroyed, \
 	leading the remaining tribes to live in fear and paranoia of suffering the same fate. \
@@ -23,9 +23,7 @@
 	positioning themselves under the watchful guard of their stronger human counterparts. \
 	\n\n\
 	A longstanding fued remains between elves and dwarves. \
-	Elvenkind has yet to forgive the dwarves for their destruction of homeland \
-	and pillaging of natural resources within the former snow-elf territory. \n\
-	To elves, it was the greatest signifier of disrespect for those lost. "
+	Elvenkind's cultural and behavioral differences compared to dwarves cause them to conflict often."
 
 	skin_tone_wording = "Tribal Identity"
 

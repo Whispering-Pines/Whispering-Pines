@@ -3,7 +3,7 @@
 
 /datum/species/resurgentis
 	id = "resurgentis"
-	name = "Resurgentis (Resurrected)"
+	name = "Resurgentis"
 	desc = "The children of Last Death. \
 	\n\n\
 	Resurgentis are descendants of their immortal 'Ancestor', The resurgentis semi undead Monarch, \
@@ -16,6 +16,7 @@
 	Since their species are the natives of Phantom Kingdom and it's island, they have easier time here than most. \
 	They can safely consume raw meat like their ancestor, though it is considered absolutely disgusting by their society and likely themselves.\
 	Resurgentis generally have a hard time sneaking without proper coverage due their glowing eyes and hair, and their appetite is larger than most.\
+	Resurgentis live about as long as any human, but their fertility is nearly as bad as elves, therefore their libido tends to be a saving point.\
 	\n\n\
 	-Essence-\
 	White 'essence' (hair, eyes) resurgentis are the rarest of all, and are usually nobility or... premium slaves.\
@@ -25,7 +26,7 @@
 	Older resurgentis' essence grows dimmer, as it's directly connected to their blood and wellbeing.\
 	(Normally the nipples, pubes and inner bits must be same color as the essence but I couldn't figure out how.)"
 
-	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE, OLDGREY)
+	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE)
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_ORGAN_EATER)
 
 	use_skintones = 1
@@ -87,7 +88,7 @@
 
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
-		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid/nonatgradient,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,

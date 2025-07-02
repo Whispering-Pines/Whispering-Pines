@@ -1,7 +1,7 @@
 /datum/job/monk
 	title = "Acolyte"
 	tutorial = "Chores, exercise, prayer... and more chores. \
-	You are a humble acolyte at the temple in Vanderlin, \
+	You are a humble acolyte at the temple in Phantom Kingdom, \
 	not yet a trained guardian or an ordained priest. \
 	But who else would keep the fires lit and the floors clean?"
 	flag = MONK
@@ -82,11 +82,6 @@
 					H.grant_language(/datum/language/hellspeak)
 					to_chat(H,span_info("\
 					I learned the tongue of the hellspawn.")
-					)
-				if("Zybantu")
-					H.grant_language(/datum/language/zybantine)
-					to_chat(H,span_info("\
-					I learned the tongue of Zybantu.")
 					)
 				if("Orcish")
 					H.grant_language(/datum/language/orcish)

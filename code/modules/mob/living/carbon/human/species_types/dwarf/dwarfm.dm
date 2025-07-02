@@ -12,9 +12,7 @@
 /datum/species/dwarf/mountain
 	name = "Dwarf"
 	id = "dwarf"
-	desc = "Malum's chosen.\
-	\n\n\
-	A proud and robust species of stunted folk, \
+	desc = "A proud and robust species of stunted folk, \
 	the dwarves are known for their pride in martial strength \
 	and their tenacity towards their ancient customs. \
 	A Dwarf, much like the rock that they carve their fortress out of, is stubborn and ancient. \
@@ -84,8 +82,8 @@
 		OFFSET_UNDIES = list(0,0)\
 	)
 
-	specstats_m = list(STATKEY_STR = 1, STATKEY_PER = -2, STATKEY_INT = 0, STATKEY_CON = 2, STATKEY_END = 2, STATKEY_SPD = -1, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = 1, STATKEY_PER = -2, STATKEY_INT = 0, STATKEY_CON = 2, STATKEY_END = 2, STATKEY_SPD = -1, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = 1, STATKEY_PER = -2, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 1, STATKEY_SPD = -1, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = 1, STATKEY_PER = -2, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 1, STATKEY_SPD = -1, STATKEY_LCK = 0)
 
 	enflamed_icon = "widefire"
 

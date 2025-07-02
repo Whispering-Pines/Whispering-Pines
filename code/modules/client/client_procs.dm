@@ -370,7 +370,7 @@ GLOBAL_LIST_EMPTY(respawncounts)
 
 	// Right column
 	data += "<div style='display: table-cell; width: 50%; vertical-align: top; padding: 0 10px;'>"
-	data += "<font color='#8B4513'><span class='bold'>Humens:</span></font> [GLOB.vanderlin_round_stats[STATS_ALIVE_NORTHERN_HUMANS]]<br>"
+	data += "<font color='#8B4513'><span class='bold'>Humans:</span></font> [GLOB.vanderlin_round_stats[STATS_ALIVE_NORTHERN_HUMANS]]<br>"
 	data += "<font color='#808080'><span class='bold'>Dwarves:</span></font> [GLOB.vanderlin_round_stats[STATS_ALIVE_DWARVES]]<br>"
 	data += "<font color='#87CEEB'><span class='bold'>Pure Elves:</span></font> [GLOB.vanderlin_round_stats[STATS_ALIVE_SNOW_ELVES]]<br>"
 	data += "<font color='#9ACD32'><span class='bold'>Half-Elves:</span></font> [GLOB.vanderlin_round_stats[STATS_ALIVE_HALF_ELVES]]<br>"
@@ -729,7 +729,7 @@ GLOBAL_LIST_EMPTY(respawncounts)
 			selection_w_title["[real_name], [H.get_role_title()]"] = ckey
 	if(!selection_w_title)
 		ASYNC {
-			browser_alert(src, "this dude really playing VANDERLIN all by themself lmfaoooo")
+			browser_alert(src, "this dude really playing WHISPERING PINES all by themself lmfaoooo")
 		}
 	var/selection = browser_input_list(src, "WHO RECIEVES YOUR COMMENDATION?", null, shuffle(selection_w_title), pick(selection_w_title))
 	if(!selection)

@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/grenzelhoft
-	name = "Grenzelhoft"
-	tutorial = "A mercenary from the Grenzelhoft Empire's Mercenary Guild. Their only care is coin, and the procurement of coin."
+	name = "Frozen Empire"
+	tutorial = "A mercenary from the Frozen Empire Empire's Mercenary Guild. Their only care is coin, and the procurement of coin."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_GRENZ
 	outfit = /datum/outfit/job/mercenary/grenzelhoft
@@ -25,11 +25,6 @@
 		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
-	if(H.gender == FEMALE)
-		H.underwear = null
-		H.underwear_color = CLOTHING_SOOT_BLACK
-		H.update_body()
-
 	beltr = /obj/item/storage/belt/pouch/coins/poor
 	neck = /obj/item/clothing/neck/chaincoif
 	pants = /obj/item/clothing/pants/grenzelpants
@@ -42,9 +37,6 @@
 	armor = /obj/item/clothing/armor/cuirass/grenzelhoft
 	backl = /obj/item/storage/backpack/satchel
 	backr = /obj/item/weapon/sword/long/greatsword/zwei
-	if(!H.has_language(/datum/language/oldpsydonic))
-		H.grant_language(/datum/language/oldpsydonic)
-		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
 
 	H.merctype = 2
 

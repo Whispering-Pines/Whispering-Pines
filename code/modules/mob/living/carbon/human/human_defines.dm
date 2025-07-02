@@ -32,9 +32,6 @@
 
 	var/age = "Adult"		//Player's age
 
-	var/underwear_color
-	var/undershirt = "Nude" //Which undershirt the player wants
-
 	var/cached_underwear = null
 
 	var/accessory = "None"
