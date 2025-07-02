@@ -1,5 +1,5 @@
-/datum/migrant_role/zybantine/emir
-	name = "Crater Emirate Emir"
+/datum/migrant_role/zalad/emir
+	name = " Crater Emir"
 	greet_text = "An Emir hailing from the The Great Desert, here on business for the Mercator's Guild to the eastern continent."
 	allowed_sexes = list(MALE)
 	allowed_races = list(
@@ -9,10 +9,10 @@
 		"Half-Elf",
 		"Dwarf"
 	)
-	outfit = /datum/outfit/job/zybantine_migration/emir
+	outfit = /datum/outfit/job/zalad_migration/emir
 	grant_lit_torch = TRUE
 
-/datum/outfit/job/zybantine_migration/emir/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/zalad_migration/emir/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/shalal
 	gloves = /obj/item/clothing/gloves/leather
@@ -52,7 +52,6 @@
 			honorary = "Amirah"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
-
 		H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_END, 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
@@ -60,8 +59,8 @@
 		H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
 
-/datum/migrant_role/zybantine/amirah
-	name = "Crater Emirate Amirah"
+/datum/migrant_role/zalad/amirah
+	name = " Crater Amirah"
 	greet_text = "An Amirah hailing from the The Great Desert, here on business for the Mercator's Guild to the eastern continent."
 	allowed_sexes = list(FEMALE)
 	allowed_races = list(
@@ -71,10 +70,10 @@
 		"Half-Elf",
 		"Dwarf"
 	)
-	outfit = /datum/outfit/job/zybantine_migration/amirah
+	outfit = /datum/outfit/job/zalad_migration/amirah
 	grant_lit_torch = TRUE
 
-/datum/outfit/job/zybantine_migration/amirah/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/zalad_migration/amirah/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/shalal
 	gloves = /obj/item/clothing/gloves/leather
@@ -110,14 +109,13 @@
 		var/honorary = "Amirah"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
-
 		H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_END, 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 		H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
-/datum/migrant_role/zybantine/furusiyya
+/datum/migrant_role/zalad/furusiyya
 	name = "Furusiyya"
 	greet_text = "You are a furusiyya, pledged to the Emir and the Amirah. Make sure they come out alive of that place."
 	allowed_sexes = list(MALE)
@@ -128,10 +126,10 @@
 	"Dwarf",
 	"Rakshari"
 	)
-	outfit = /datum/outfit/job/zybantine_migration/furusiyya
+	outfit = /datum/outfit/job/zalad_migration/furusiyya
 	grant_lit_torch = TRUE
 
-/datum/outfit/job/zybantine_migration/furusiyya/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/zalad_migration/furusiyya/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
@@ -181,18 +179,18 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
-/datum/migrant_role/zybantine_guard
-	name = "Crater Emirate Soldier"
+/datum/migrant_role/zalad_guard
+	name = " Crater Soldier"
 	greet_text = "You are a slave soldier from the Ziggurat sent as an escort to the emirs on a foreign land, do not fail them."
 	allowed_sexes = list(MALE,FEMALE)
 	allowed_races = RACES_PLAYER_ALL
-	outfit = /datum/outfit/job/zybantine_migration/zybantine_guard
+	outfit = /datum/outfit/job/zalad_migration/zalad_guard
 	grant_lit_torch = TRUE
 
-/datum/outfit/job/zybantine_migration/zybantine_guard/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/zalad_migration/zalad_guard/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/shalal
-	head = /obj/item/clothing/head/helmet/sallet/zybantine
+	head = /obj/item/clothing/head/helmet/sallet/zalad
 	gloves = /obj/item/clothing/gloves/angle
 	belt = /obj/item/storage/belt/leather/shalal
 	armor = /obj/item/clothing/armor/brigandine/coatplates
@@ -236,9 +234,9 @@
 		"Tiefling",
 		"Dark Elf",
 	)
-	outfit = /datum/outfit/job/zybantine_migration/qatil
+	outfit = /datum/outfit/job/zalad_migration/qatil
 
-/datum/outfit/job/zybantine_migration/qatil/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/zalad_migration/qatil/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
@@ -274,30 +272,30 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander3.ogg'
 
-/datum/migrant_wave/zybantine_wave
-	name = "The Ziggurat Expedition"
+/datum/migrant_wave/zalad_wave
+	name = "The Deshret Expedition"
 	max_spawns = 1
-	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zybantine_wave,/datum/migrant_wave/rockhill_wave,/datum/migrant_wave/heartfelt)
+	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zalad_wave,/datum/migrant_wave/rockhill_wave,/datum/migrant_wave/heartfelt)
 	weight = 25
-	downgrade_wave = /datum/migrant_wave/zybantine_wave_down
+	downgrade_wave = /datum/migrant_wave/zalad_wave_down
 	roles = list(
-		/datum/migrant_role/zybantine/emir = 1,
-		/datum/migrant_role/zybantine/amirah = 1,
-		/datum/migrant_role/zybantine/furusiyya = 1,
+		/datum/migrant_role/zalad/emir = 1,
+		/datum/migrant_role/zalad/amirah = 1,
+		/datum/migrant_role/zalad/furusiyya = 1,
 		/datum/migrant_role/qatil = 1,
-		/datum/migrant_role/zybantine_guard = 2
+		/datum/migrant_role/zalad_guard = 2
 	)
 	greet_text = "The Mercator Guild sent you, respected Zybantinian to seek favorable business proposal within the Kingdom of Phantom Kingdom."
 
-/datum/migrant_wave/zybantine_wave_down
-	name = "The Ziggurat Expedition"
+/datum/migrant_wave/zalad_wave_down
+	name = "The Deshret Expedition"
 	max_spawns = 1
-	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zybantine_wave,/datum/migrant_wave/rockhill_wave,/datum/migrant_wave/heartfelt)
+	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zalad_wave,/datum/migrant_wave/rockhill_wave,/datum/migrant_wave/heartfelt)
 	can_roll = FALSE
 	roles = list(
-		/datum/migrant_role/zybantine/emir = 1,
-		/datum/migrant_role/zybantine/amirah = 1,
-		/datum/migrant_role/zybantine/furusiyya = 1,
+		/datum/migrant_role/zalad/emir = 1,
+		/datum/migrant_role/zalad/amirah = 1,
+		/datum/migrant_role/zalad/furusiyya = 1,
 		/datum/migrant_role/qatil = 1
 	)
 	greet_text = "The Mercator Guild sent you, respected Zybantinian to seek favorable business proposal within the Kingdom of Phantom Kingdom. Unfortunately most of your guards died on the way here."

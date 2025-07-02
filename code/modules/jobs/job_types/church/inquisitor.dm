@@ -2,7 +2,7 @@
 	title = "Inquisitor"
 	tutorial = "A recent arrival from central continents, \
 	you are a member of the secretive lodges that have held to the service of the old gods even before the great war and somehow survived through it. \
-	You have been sent by your leader, the Holy Bishop, \
+	You have been sent by your leader, the Orthodox Bishop, \
 	to assign the local Priest in combatting the increasing number of heretics and monsters infiltrating Phantom Kingdom."
 	flag = PURITAN
 	department_flag = CHURCHMEN
@@ -296,11 +296,11 @@
 					if("Tenebrase")
 						held_confession.bad_type = "A FOLLOWER OF THE FORBIDDEN ONE"
 						held_confession.antag = "worshiper of " + antag_type
-					if("Verewolf")
-						held_confession.bad_type = "A BEARER OF BLISSROSE'S CURSE"
+					if("Werevolf")
+						held_confession.bad_type = "A BEARER OF TENEBRASE'S CURSE"
 						held_confession.antag = antag_type
-					if("Lesser Verewolf")
-						held_confession.bad_type = "A BEARER OF BLISSROSE'S CURSE"
+					if("Lesser Werevolf")
+						held_confession.bad_type = "A BEARER OF TENEBRASE'S CURSE"
 						held_confession.antag = antag_type
 					if("Vampire")
 						held_confession.bad_type = "A SCION OF KAINE"

@@ -1,6 +1,6 @@
 /datum/advclass/adventurer/qatil
 	name = "Qatil"
-	tutorial = "Hailing from Crater Emirate lands, you are a killer for hire that is trained both in murdering unseen and seen with your trusty knife."
+	tutorial = "Hailing from Crater lands, you are a killer for hire that is trained both in murdering unseen and seen with your trusty knife."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Human",

@@ -13,9 +13,10 @@
 #define RACE_HARPY "Harpy"
 #define RACE_TRITON "Triton"
 #define RACE_RESURGENTIS "Resurgentis"
+#define RACE_HUMAN_SPACE "Human"
 
 // ============ USING ID BECAUSE FUCK YOU
-/// List of all species
+/// List of all species. "RACES" in code only, "SPECIES" everywhere else please!
 #define ALL_RACES_LIST list(\
 	"human",\
 	"demihuman",\
@@ -31,9 +32,10 @@
 	"kobold",\
 	"triton",\
 	"resurgentis",\
+	"humanspace",\
 	)
 
-/// Races where females get underwear, no underwear for kobold, rakshari and triton, dwarves handled seperately
+/// Species where females get underwear, no underwear for kobold, rakshari and triton, dwarves handled seperately
 #define RACES_UNDERWEAR_FEMALE list(\
 	"human",\
 	"demihuman",\
@@ -45,9 +47,10 @@
 	"zizombie",\
 	"elf",\
 	"resurgentis",\
+	"humanspace",\
 	)
 
-/// Races where males get underwear, identical to above, elves handled seperately
+/// Species where males get underwear, identical to above, elves handled seperately
 #define RACES_UNDERWEAR_MALE list(\
 	"human",\
 	"demihuman",\
@@ -58,10 +61,11 @@
 	"orc",\
 	"zizombie",\
 	"resurgentis",\
+	"humanspace",\
 	)
 
 // ============ USING NAME
-/// All playable races from character selection menu.
+/// All playable species from character selection menu.
 #define RACES_PLAYER_ALL list(\
 	RACE_HUMEN,\
 	RACE_DWARF,\
@@ -137,7 +141,7 @@
 	RACE_RESURGENTIS,\
 )
 
-///Races that lack lux
+/// Species that lack lux. Any who have no ties to divinity anymore, whether it be their creation story or otherwise taken from them (Hollow-kin)
 #define RACES_PLAYER_LUXLESS list(\
 )
 
@@ -154,6 +158,7 @@
 	RACE_HALF_ELF,\
 )
 
+/// Dark elves, half-drow
 #define RACES_PLAYER_DROW list(\
 	RACE_DROW,\
 	RACE_HALF_DROW,\
@@ -167,11 +172,11 @@
 	RACE_HALF_DROW,\
 )
 
-/// Patreon only races.
+/// Patreon only species.
 #define RACES_PLAYER_PATREON list(\
 )
 
-/// Guard Races - No Orcs or Dark Elf
+/// Guard Species - No Orcs or Dark Elf
 #define RACES_PLAYER_GUARD list(\
 	RACE_HUMEN,\
 	RACE_DWARF,\
@@ -206,4 +211,10 @@
 	RACE_RESURGENTIS,\
 	RACE_TIEFLING,\
 	RACE_HOLLOWKIN,\
+)
+
+/// Nonnative species - Anything not native to Psydonia.
+/// Probably only will ever contain humans pragmatically, as funny as ethereals pretending to be tieflings would be.
+#define RACES_PLAYER_ALIEN list(\
+	RACE_HUMAN_SPACE,\
 )

@@ -154,7 +154,7 @@
 /*	.................   Bread   ................... */
 /obj/item/reagent_containers/food/snacks/bread
 	name = "bread loaf"
-	desc = "One of the staple foods of commoners. With the decline of magic, the loss of bread-duplication has led to mass famines around the new world."
+	desc = "One of the staple foods of commoners. A simple meal, yet a luxury men will die for."
 	icon_state = "loaf"
 	base_icon_state = "loaf"
 	dropshrink = 0.8
@@ -558,7 +558,7 @@
 	rotprocess = SHELFLIFE_LONG
 
 /obj/item/reagent_containers/food/snacks/zybcake
-	name = "zybantu cake base"
+	name = "zaladin cake base"
 	desc = "With this sweet thing, you shall make them sing. Lacking spider-honey glazing."
 	icon_state = "cake_filled"
 	dropshrink = 0.8
@@ -566,9 +566,9 @@
 	foodtype = GRAIN | DAIRY
 	rotprocess = SHELFLIFE_LONG
 
-// -------------- SPIDER-HONEY CAKE (Zybantu) -----------------
+// -------------- SPIDER-HONEY CAKE (Zaladin) -----------------
 /obj/item/reagent_containers/food/snacks/zybcake_ready
-	name = "unbaked zybantu cake"
+	name = "unbaked zaladin cake"
 	icon_state = "honeycakeuncook"
 	dropshrink = 0.8
 	slices_num = 0
@@ -576,8 +576,8 @@
 	rotprocess = SHELFLIFE_DECENT
 
 /obj/item/reagent_containers/food/snacks/zybcake_cooked
-	name = "zybantine cake"
-	desc = "Cake glazed with honey, in the famous Zybantu fashion, a delicious sweet treat. Said to be very hard to poison, perhaps the honey counteracting such malicious concotions."
+	name = "zalad cake"
+	desc = "Cake glazed with honey, in the famous Craterin fashion, a delicious sweet treat. Said to be very hard to poison, perhaps the honey counteracting such malicious concotions."
 	icon_state = "honeycake"
 	dropshrink = 0.8
 	slices_num = 6
@@ -592,7 +592,7 @@
 	faretype = FARE_LAVISH
 
 /obj/item/reagent_containers/food/snacks/zybcake_slice
-	name = "zybantine cake slice"
+	name = "zalad cake slice"
 	icon_state = "hcake_slice"
 	base_icon_state = "hcake_slice"
 	dropshrink = 0.8
@@ -761,7 +761,7 @@
 
 /obj/item/reagent_containers/food/snacks/crimsoncake_cooked
 	name = "crimson pine cake"
-	desc = "A fusion of Crimson Elf and Grenzlehoftian cuisines, the cake originates from the Valorian Republics. Rumor has it that one of the many casus belli in the Republics was based upon a disagreement on the cakes exact recipe."
+	desc = "A fusion of Crimson Elf and Grenzlehoftian cuisines, the cake originates from the Zhaladuskn Republics. Rumor has it that one of the many casus belli in the Republics was based upon a disagreement on the cakes exact recipe."
 	icon_state = "crimsonpinecake"
 	slices_num = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/crimsoncake_slice
@@ -851,7 +851,7 @@
 
 /obj/item/reagent_containers/food/snacks/scone
 	name = "plain scone"
-	desc = "A delightfully fancy treat adored by the upper echelons of Kingsfield."
+	desc = "A delightfully fancy treat adored by the upper echelons of Phantom Kingdom."
 	icon_state = "cookedscone"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR)
 	tastes = list("crumbly butterdough" = 1, "sweet" = 1)
@@ -868,7 +868,7 @@
 
 /obj/item/reagent_containers/food/snacks/scone_tangerine
 	name = "tangerine scone"
-	desc = "A delightfully fancy treat adored by the upper echelons of Kingsfield, complete with tangerine frosting."
+	desc = "A delightfully fancy treat adored by the upper echelons of Phantom Kingdom, complete with tangerine frosting."
 	icon_state = "cookedtangerinescone"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR)
 	tastes = list("crumbly butterdough" = 1, "sweet" = 1, "tangerine" = 1)
@@ -885,7 +885,7 @@
 
 /obj/item/reagent_containers/food/snacks/scone_plum
 	name = "plum scone"
-	desc = "A delightfully fancy treat adored by the upper echelons of Kingsfield, complete with plum filling."
+	desc = "A delightfully fancy treat adored by the upper echelons of Phantom Kingdom, complete with plum filling."
 	icon_state = "cookedplumscone"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR)
 	tastes = list("crumbly butterdough" = 1, "sweet" = 1, "plum" = 1)

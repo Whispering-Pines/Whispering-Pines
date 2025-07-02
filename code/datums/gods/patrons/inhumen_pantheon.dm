@@ -52,7 +52,7 @@ creative punis- 'Tests' to her believers that are often lethal to the weak. Tene
 	desc = "Once an orc warlord who were gifted a fragment of Tenebrase's great power through being deemed worthy due to his pure evil \
 soul and too many atrocities to count. He was a red orc called.. 'Bad Green' but was named Sinius by Tenebrase who found that stupid."
 	flaws = "Rage, Hatred, Bloodthirst"
-	worshippers = "Greenskins, The Revenge-Driven, Sadists"
+	worshippers = "Greenskins, The Revenge-Driven, Sadists, Misogynists"
 	sins = "Compassion, Frailty, Servility"
 	boons = "You are drawn to the flavour of raw flesh and organs, and may consume without worry. Your weapons lose integrity slower."
 	added_traits = list(TRAIT_ORGAN_EATER, TRAIT_SHARPER_BLADES)
@@ -103,7 +103,7 @@ the power of a minor goddess.'"
 	)
 	storyteller = /datum/storyteller/lamashtu
 
-/// Maniac Patron
+/// Maniac Patron - Their mind is broken by secrets of Zizo/Graggar combined. They quite possibly know the reality of what happens outside the planet. They may think this is all a game. They are clearly insane.
 /datum/patron/inhumen/graggar_zizo
 	name = "Graggazo"
 	domain = "Ascended God who slaughtered Her kind in ascension, the Dark Sini-Star of Unnatural Beasts, Forbidden Magic, and Unbridled Hatred."

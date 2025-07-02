@@ -475,7 +475,7 @@
 
 	faction = faction_name
 	if(!faction)
-		faction = pick("Heartfelt", "Crater Emirate", "Frozen Empire", "Kingsfield")
+		faction = pick("Glimmerfall", "Zalad", "Grenzelhoft", "No man's Land")
 
 	sell_prices = prices
 	if(!length(sell_prices))

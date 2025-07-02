@@ -1,5 +1,5 @@
-/datum/advclass/mercenary/zybantine
-	name = "Crater Emirate"
+/datum/advclass/mercenary/zalad
+	name = "Red Sands"
 	tutorial = "A cutthroat from the western countries, you've headed into foreign lands to make even greater coin than you had prior."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -13,16 +13,16 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	outfit = /datum/outfit/job/mercenary/zybantine
+	outfit = /datum/outfit/job/mercenary/zalad
 	category_tags = list(CTAG_MERCENARY)
 	maximum_possible_slots = 5
 
 	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg' //Forgive me, Combat_DesertRider, I'm sorry, I'll miss you.
 
-/datum/outfit/job/mercenary/zybantine/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/mercenary/zalad/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/shalal
-	head = /obj/item/clothing/head/helmet/sallet/zybantine
+	head = /obj/item/clothing/head/helmet/sallet/zalad
 	gloves = /obj/item/clothing/gloves/angle
 	belt = /obj/item/storage/belt/leather/mercenary/shalal
 	armor = /obj/item/clothing/armor/brigandine/coatplates
@@ -33,7 +33,6 @@
 	neck = /obj/item/clothing/neck/keffiyeh/red
 	backl = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor)
-
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)

@@ -1,5 +1,5 @@
-/datum/advclass/pilgrim/rare/zybantine
-	name = "Crater Emirate Emir"
+/datum/advclass/pilgrim/rare/zalad
+	name = "Crater Emir"
 	tutorial = "An Emir hailing from the The Great Desert, here on business for the Mercator's Guild to Phantom Kingdom."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -9,7 +9,7 @@
 		"Half-Elf",
 		"Dwarf"
 	)
-	outfit = /datum/outfit/job/adventurer/zybantine
+	outfit = /datum/outfit/job/adventurer/zalad
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1
 	pickprob = 30
@@ -17,7 +17,7 @@
 
 	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
-/datum/outfit/job/adventurer/zybantine/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/adventurer/zalad/pre_equip(mob/living/carbon/human/H)
 	..()
 	shoes = /obj/item/clothing/shoes/shalal
 	gloves = /obj/item/clothing/gloves/leather
@@ -57,7 +57,6 @@
 			honorary = "Amirah"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
-
 		H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_END, 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

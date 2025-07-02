@@ -292,7 +292,7 @@
 		if(/datum/patron/divine/lunaria)
 			neck = /obj/item/clothing/neck/psycross/lunaria
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
-			var/language = pickweight(list("Dwarvish" = 1, "Elvish" = 1, "Hellspeak" = 1, "Zybantu" = 1, "Orcish" = 1,))
+			var/language = pickweight(list("Dwarvish" = 1, "Elvish" = 1, "Hellspeak" = 1, "Zaladin" = 1, "Orcish" = 1,))
 			switch(language)
 				if("Dwarvish")
 					H.grant_language(/datum/language/dwarvish)

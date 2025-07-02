@@ -171,7 +171,7 @@ accend to the astral plane as the god of the desert where he has watched over al
 /datum/patron/divine/pestra
 	name = "Pestra"
 	domain = "Goddess of Disease, Alchemy, and Medicine"
-	desc = "Crafted from Psydon's intestines left behind. She slithered out, bringing forth the cycle of life and decay."
+	desc = "A mistake; Psydon's intestines left behind. She slithered out, bringing forth the cycle of life and decay."
 	flaws = "Drunkenness, Crudeness, Irresponsibility"
 	worshippers = "The Ill and Infirm, Alchemists, Physicians"
 	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"
