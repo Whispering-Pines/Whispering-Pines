@@ -253,7 +253,7 @@ GLOBAL_LIST_EMPTY(thieves_guild_doors)
 		"lust",
 		"last death",
 		"lunaria",
-		"psydon"
+		"old gods"
 		)
 	return pick(magic_word)
 

@@ -54,7 +54,8 @@
 
 	ai_controller = /datum/ai_controller/bog_bug
 
-
+	erpable = TRUE
+	hornychance = 50
 
 /obj/effect/decal/remains/bogbug
 	name = "remains"

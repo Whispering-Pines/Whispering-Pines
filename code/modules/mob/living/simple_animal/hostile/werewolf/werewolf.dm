@@ -25,6 +25,8 @@
 	robust_searching = TRUE
 	stat_attack = UNCONSCIOUS
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	erpable = TRUE
+	hornychance = 50
 
 /mob/living/simple_animal/hostile/werewolf/Initialize()
 	. = ..()

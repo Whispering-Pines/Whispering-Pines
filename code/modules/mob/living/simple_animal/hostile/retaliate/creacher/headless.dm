@@ -56,6 +56,9 @@
 	var/swallow_cooldown = 0
 	var/swallow_cooldown_delay = 30 SECONDS
 
+	erpable = TRUE
+	hornychance = 50
+
 /mob/living/simple_animal/hostile/retaliate/headless/Initialize()
 	. = ..()
 	AddComponent(/datum/component/ai_aggro_system)

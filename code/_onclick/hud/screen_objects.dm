@@ -15,6 +15,7 @@
 	var/datum/hud/hud = null // A reference to the owner HUD, if any.
 	var/lastclick
 	var/category
+	alpha = 150
 
 /atom/movable/screen/Destroy()
 	master = null
@@ -1476,6 +1477,7 @@
 	screen_loc = ui_backhudl
 	plane = FULLSCREEN_PLANE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	alpha = 100
 
 /atom/movable/screen/backhudl/Click()
 	return

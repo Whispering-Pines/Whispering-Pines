@@ -31,7 +31,7 @@
 /obj/item/clothing/head/padded/deathshroud
 	name = "death shroud"
 	desc = "Worn by the faithful of Last Death, or less savory individuals."
-	icon_state = "last deathhood"
+	icon_state = "necrahood"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/padded/pestra

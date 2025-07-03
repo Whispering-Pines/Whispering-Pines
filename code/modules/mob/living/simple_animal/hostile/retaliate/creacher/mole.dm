@@ -68,6 +68,9 @@
 
 	ai_controller = /datum/ai_controller/mole
 
+	erpable = TRUE
+	hornychance = 50
+
 /obj/effect/decal/remains/mole
 	name = "remains"
 	gender = PLURAL

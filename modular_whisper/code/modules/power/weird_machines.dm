@@ -151,6 +151,13 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 	icon_state = "liquid_drainer"
 	desc = "Likely used to supply blood for the warriors of the great war of old, now it has other purposes aswell, thanks to modifications. Drains all of the blood and other fluids of living and the dead, leaving them weakened and likely to die without aid."
 	anchored = TRUE
+	var/working = FALSE
+
+/obj/structure/closet/crate/coffin/liquid_drainer/open(mob/living/user)
+	if(working)
+		balloon_alert_to_viewers("Working.")
+		return
+	. = ..()
 
 /obj/structure/closet/crate/coffin/liquid_drainer/Initialize()
 	. = ..()
@@ -159,6 +166,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 /obj/structure/closet/crate/coffin/liquid_drainer/close(mob/living/user)
 	. = ..()
 	for(var/mob/living/carbon/human/victim in contents)
+		working = TRUE
 		if(victim.age == AGE_CHILD)
 			say("ALERT! War crime detected: Harvesting of Children... Process halted... Error, Failed to send alert to united nations confederation, no connection available.", language = /datum/language/ancient_english)
 			open()
@@ -179,6 +187,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 				start_obj_sex(FEMALE, victim, /datum/sex_action/npc_vaginal_sex, SEX_FORCE_EXTREME, SEX_FORCE_MAX)
 			break
 		sleep(1 SECONDS)
+		working = FALSE
 		suckening_cycle(victim)
 
 /*if all fails try this ghetto way
@@ -191,12 +200,15 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 */
 
 /obj/structure/closet/crate/coffin/liquid_drainer/proc/suckening_cycle(mob/living/carbon/human/victim)
-	if(victim.blood_volume >= 0 && !opened && victim.loc == loc)
+	if(victim.blood_volume >= 0 && !opened)
 		if(victim.stat != DEAD)
 			victim.SetParalyzed(4 SECONDS)
-			sleep(3 SECONDS)
+			sleep(2 SECONDS)
 		else
-			sleep(6 SECONDS) //corpses have no heartbeat to help
+			sleep(4 SECONDS) //corpses have no heartbeat to help
+		if(victim.loc != loc) //incase they moved while sleep.
+			working = FALSE
+			return
 		victim.transfer_blood_to(src, 50, TRUE)
 		suckening_cycle()
 	else if(reagents.total_volume >= reagents.maximum_volume)
@@ -312,17 +324,37 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 	desc = "An old world limb-regrower, likely made to assist soldiers who lost their limbs, now a horrible cannibal food machine... Turns one's blood into living tissue, medical care advised. Takes almost all of one's blood for a single limb. Healthy victims can be put here to add into blood storage of the machine."
 	anchored = TRUE
 	var/blood_stored = 0
+	var/working = FALSE
 
 /obj/structure/closet/crate/coffin/limb_regrower/examine(mob/user)
 	. = ..()
-	user.visible_message("This has [blood_stored]ml blood stored, 750ml required for a single limb.")
+	user.visible_message("This has [blood_stored] units blood stored, 750 units required for a single limb.")
+
+/obj/structure/closet/crate/coffin/limb_regrower/open(mob/living/user)
+	if(working)
+		balloon_alert_to_viewers("Working.")
+		return
+	. = ..()
 
 /obj/structure/closet/crate/coffin/limb_regrower/close(mob/living/user)
 	. = ..()
 	for(var/mob/living/carbon/human/victim in contents)
 		if(victim.stat != DEAD)
+			var/cost = 0
+			var/static/list/body_zones = list(
+				BODY_ZONE_HEAD,
+				BODY_ZONE_CHEST,
+				BODY_ZONE_L_ARM,
+				BODY_ZONE_R_ARM,
+				BODY_ZONE_L_LEG,
+				BODY_ZONE_R_LEG,
+			)
+			for(var/body_zone in body_zones)
+				var/obj/item/bodypart/bodypart = victim.get_bodypart(body_zone)
+				if(!bodypart)
+					cost += 750
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
-			say("Live subject confirmed, starting operation.", language = /datum/language/ancient_english)
+			say("Live subject confirmed, starting operation, approximate blood required for full restoration: [cost]", language = /datum/language/ancient_english)
 			playsound(src.loc, 'sound/items/beartrap.ogg', 100, TRUE, -1)
 			victim.visible_message(span_red("A metal restraint snap on me!"))
 			victim.SetParalyzed(3 SECONDS)
@@ -339,15 +371,62 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 		say("Added bloodpack into reserves.", language = /datum/language/ancient_english)
 
 /obj/structure/closet/crate/coffin/limb_regrower/proc/regrowing_cycle(mob/living/carbon/human/victim)
-	if(blood_stored < 750 && victim.blood_volume > BLOOD_VOLUME_SURVIVE)
+	if(victim.loc != loc)
+		working = FALSE
+		return
+	var/cost = 0
+	var/static/list/body_zones = list(
+		BODY_ZONE_HEAD,
+		BODY_ZONE_CHEST,
+		BODY_ZONE_L_ARM,
+		BODY_ZONE_R_ARM,
+		BODY_ZONE_L_LEG,
+		BODY_ZONE_R_LEG,
+	)
+	for(var/body_zone in body_zones)
+		var/obj/item/bodypart/bodypart = victim.get_bodypart(body_zone)
+		if(!bodypart)
+			cost += 750
+	playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
+	say("[cost] units of blood required for full restoration.", language = /datum/language/ancient_english)
+	if(victim.blood_volume > BLOOD_VOLUME_SURVIVE)
 		victim.SetParalyzed(2.5 SECONDS)
 		blood_stored += 125
 		victim.blood_volume -= 125
 		sleep(2 SECONDS)
+		if(victim.loc != loc) //incase they moved while sleep.
+			working = FALSE
+			return
 		regrowing_cycle()
-	else if(blood_stored < 750 && victim.blood_volume < BLOOD_VOLUME_SURVIVE)
+	else if(victim.blood_volume < BLOOD_VOLUME_SURVIVE)
 		playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		say("Victim lacks sufficent blood, so does the reserves. Medical care advised.", language = /datum/language/ancient_english)
-		open()
-	else if(blood_stored > 750)
-		open()
+		if(!opened)
+			open()
+		victim.SetParalyzed(2 SECONDS)
+	if(blood_stored > cost && cost > 0)
+		working = TRUE
+		victim.SetParalyzed(2.5 SECONDS)
+		playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
+		say("Attempting restoration.", language = /datum/language/ancient_english)
+		sleep(2 SECONDS)
+		if(victim.loc != loc) //incase they moved while sleep.
+			working = FALSE
+			return
+		victim.SetParalyzed(2.5 SECONDS)
+		for(var/body_zone in body_zones)
+			var/obj/item/bodypart/bodypart = victim.get_bodypart(body_zone)
+			if(!bodypart)
+				if(blood_stored > 750)
+					blood_stored -= 750
+					say("[bodypart.name] grown, attaching.", language = /datum/language/ancient_english)
+					victim.regenerate_limb(bodypart.body_zone, FALSE)
+					playsound(loc, 'sound/misc/guillotine.ogg', 50, TRUE, -1)
+					sleep(1 SECONDS)
+					if(victim.loc != loc) //incase they moved while sleep.
+						break
+					working = FALSE
+				else
+					working = FALSE
+					regrowing_cycle()
+					break

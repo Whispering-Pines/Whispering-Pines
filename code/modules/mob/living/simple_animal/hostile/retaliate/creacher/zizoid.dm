@@ -43,7 +43,8 @@
 
 	ai_controller = /datum/ai_controller/zizoid
 
-
+	erpable = TRUE
+	hornychance = 50
 
 /mob/living/simple_animal/hostile/retaliate/blood/Initialize()
 	. = ..()

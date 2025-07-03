@@ -65,8 +65,10 @@
 
 	ai_controller = /datum/ai_controller/troll
 
-
 	var/range = 9
+
+	erpable = TRUE
+	hornychance = 50
 
 /mob/living/simple_animal/hostile/retaliate/troll/Initialize()
 	. = ..()

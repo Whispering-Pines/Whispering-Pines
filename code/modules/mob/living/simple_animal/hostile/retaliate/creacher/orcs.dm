@@ -38,6 +38,8 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	del_on_death = TRUE
 	ai_controller = /datum/ai_controller/orc
+	erpable = TRUE
+	hornychance = 50
 
 /mob/living/simple_animal/hostile/orc/Initialize()
 	. = ..()

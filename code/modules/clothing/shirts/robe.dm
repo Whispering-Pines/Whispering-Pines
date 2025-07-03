@@ -1,5 +1,5 @@
 /obj/item/clothing/shirt/robe
-	slot_flags = ITEM_SLOT_ARMOR
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
 	name = "robe"
 	desc = "A common robe, worn mostly by religious adepts."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
@@ -81,7 +81,7 @@
 /obj/item/clothing/shirt/robe/last_death
 	name = "mourning robe"
 	desc = "Black robes which cover the body not unlike those in depictions of the Carriageman himself."
-	icon_state = "last deathrobe"
+	icon_state = "necrarobe"
 
 /obj/item/clothing/shirt/robe/priest
 	name = "solar vestments"

@@ -149,10 +149,12 @@
 			playsound(T,'sound/items/empty_shovel.ogg', 100, TRUE)
 			update_appearance(UPDATE_ICON_STATE)
 			return
+		/* why not
 		if(istype(T, /turf/open/floor/grass))
 			to_chat(user, "<span class='warning'>There is grass in the way.</span>")
 			return
 		return
+		*/
 	. = ..()
 
 /obj/item/weapon/shovel/getonmobprop(tag)

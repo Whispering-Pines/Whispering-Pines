@@ -1,17 +1,16 @@
 /datum/job/undertaker
-	title = "Gravetender"
-	tutorial = "As a servant of Last Death, you embody the sanctity of her domain, \
-	ensuring the dead rest peacefully within the earth. \
-	You are the bane of grave robbers and necromancers, \
-	and your holy magic brings undead back into Last Death's embrace: \
-	the only rightful place for lost souls."
+	title = "Mortician"
+	tutorial = "While you are not directly connected to the church, as any mortician you are taught prayers \
+	and have a certain degree of religious connection to the Last Death, in order to properly perform your duties. \
+	You haul bodies off the streets and gutter, process them in the processing chamber, or give them a burial depending on the situation. \
+	...Sometimes there is need for live donors for the machines.. And you know how to use your hands. Good thing you are paid handsomely by the keep."
 	flag = GRAVETENDER
-	department_flag = CHURCHMEN
+	department_flag = SERFS
 	display_order = JDO_GRAVETENDER
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	min_pq = -10
 	bypass_lastclass = TRUE
 
@@ -32,26 +31,31 @@
 	head = /obj/item/clothing/head/padded/deathshroud
 	neck = /obj/item/clothing/neck/psycross/silver/last_death
 	pants = /obj/item/clothing/pants/trou/leather/mourning
-	armor = /obj/item/clothing/shirt/robe/last_death
+	shirt = /obj/item/clothing/armor/gambeson
+	armor = /obj/item/clothing/armor/chainmail
+	cloak = /obj/item/clothing/shirt/robe/last_death
+	wrists = /obj/item/clothing/wrists/bracers/iron
 	shoes = /obj/item/clothing/shoes/boots
 	belt = /obj/item/storage/belt/leather
 	beltl = /obj/item/storage/keyring/gravetender
-	beltr = /obj/item/storage/belt/pouch/coins/poor
+	beltr = /obj/item/storage/belt/pouch/coins/mid
 	backr = /obj/item/weapon/shovel
-	H.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE) // these are basically the acolyte skills with a bit of other stuff
-	H.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+	backl = /obj/item/storage/backpack/satchel/surgbag/shit
+	H.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE) // these are basically the acolyte skills with a bit of other stuff
+	H.adjust_skillrank(/datum/skill/misc/medicine, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/labor/mathematics, 2, TRUE)
-	H.change_stat(STATKEY_STR, 1)
-	H.change_stat(STATKEY_INT, 2)
+	H.change_stat(STATKEY_STR, 2)
+	H.change_stat(STATKEY_CON, 1)
+	H.change_stat(STATKEY_INT, 1)
 	H.change_stat(STATKEY_END, 2)
-	H.change_stat(STATKEY_PER, -1) // similar to acolyte's stats
+	H.change_stat(STATKEY_PER, -1)
 	H.change_stat(STATKEY_LCK, -1) // Tradeoff for never being cursed when unearthing graves.
 	if(!H.has_language(/datum/language/celestial)) // For discussing church matters with the other Clergy
 		H.grant_language(/datum/language/celestial)

@@ -49,7 +49,7 @@
 	gloves = /obj/item/clothing/gloves/angle
 	belt = /obj/item/storage/belt/leather
 	shirt = /obj/item/clothing/shirt/undershirt/random
-	armor = /obj/item/clothing/armor/chainmail/hauberk
+	armor = /obj/item/clothing/armor/chainmail
 	backl = /obj/item/weapon/polearm/spear
 	head = /obj/item/clothing/head/helmet/leather
 	neck = /obj/item/clothing/neck/chaincoif

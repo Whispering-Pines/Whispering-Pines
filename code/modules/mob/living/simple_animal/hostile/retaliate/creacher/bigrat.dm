@@ -75,6 +75,9 @@
 		/datum/pet_command/calm,
 	)
 
+	erpable = TRUE
+	hornychance = 50
+
 /obj/effect/decal/remains/bigrat
 	name = "remains"
 	gender = PLURAL

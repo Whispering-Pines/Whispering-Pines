@@ -45,7 +45,8 @@
 
 	ai_controller = /datum/ai_controller/lamia
 
-
+	erpable = TRUE
+	hornychance = 50
 
 /mob/living/simple_animal/hostile/retaliate/lamia/Initialize()
 	. = ..()

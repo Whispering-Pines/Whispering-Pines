@@ -37,6 +37,8 @@
 /mob/living/MiddleMouseDrop_T(mob/living/target, mob/living/user)
 	if(user.mmb_intent)
 		return ..()
+	if(!user.sexcon || !target.sexcon)
+		return
 	if(!istype(target))
 		return
 	if(target != user)

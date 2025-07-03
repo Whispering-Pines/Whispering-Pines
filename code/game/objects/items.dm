@@ -773,11 +773,11 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	item_flags |= IN_INVENTORY
 	if(!initial)
 		if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
-			if(pickup_sound && slot == ITEM_SLOT_HANDS)
+			if(slot & ITEM_SLOT_HANDS)
 				playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
-			if(sheathe_sound && slot == ITEM_SLOT_HIP | ITEM_SLOT_BACK_R | ITEM_SLOT_BACK_L)
+			if(slot & ITEM_SLOT_HIP | ITEM_SLOT_BACK_R | ITEM_SLOT_BACK_L)
 				playsound(src, sheathe_sound, SHEATHE_SOUND_VOLUME, ignore_walls = FALSE)
-			else if(equip_sound &&(slot_flags & slot))
+			else if(equip_sound && (slot_flags & slot))
 				playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
 	user.update_equipment_speed_mods()
 

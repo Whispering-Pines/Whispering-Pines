@@ -38,6 +38,7 @@
 	icon_state = "hauberk"
 	item_state = "hauberk"
 	sellprice = VALUE_STEEL_ARMOR_FINE
+	armor_class = AC_HEAVY
 
 	body_parts_covered = COVERAGE_FULL
 	item_weight = 6 * STEEL_MULTIPLIER

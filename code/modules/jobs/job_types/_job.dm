@@ -85,7 +85,7 @@
 	var/banned_leprosy = TRUE
 	var/banned_lunatic = TRUE
 
-	var/bypass_lastclass = FALSE
+	var/bypass_lastclass = TRUE
 
 	var/list/peopleiknow = list()
 	var/list/peopleknowme = list()

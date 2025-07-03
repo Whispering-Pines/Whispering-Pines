@@ -846,7 +846,11 @@
 	var/virginity = FALSE
 
 	var/can_do_sex = TRUE
-	var/datum/sex_controller/sexcon = null
+	var/datum/sex_controller/sexcon
+
+/mob/living/carbon/human/Initialize()
+	. = ..()
+	sexcon = new /datum/sex_controller(src)
 
 //other things necessary packed here
 /datum/stressevent/loinache
