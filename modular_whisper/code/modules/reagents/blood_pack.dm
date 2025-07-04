@@ -93,3 +93,14 @@
 	to_chat(user, span_notice("I was injected from \the [src]."))
 	addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
 */
+
+/obj/item/reagent_containers/blood/attack(mob/M, mob/user, obj/target)
+	if(M != user)
+		M.visible_message("<span class='danger'>[user] attempts to inject [M] from the bloodbag.</span>", \
+					"<span class='danger'>[user] attempts to inject you from the bloodbag.</span>")
+	if(!do_after(user, 4 SECONDS, M))
+		return
+	if(!reagents?.total_volume)
+		return
+	to_chat(user, span_notice("I was injected from \the [src]."))
+	addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, 50, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)

@@ -43,6 +43,7 @@
 	beltr = /obj/item/storage/magebag
 	backl = /obj/item/weapon/polearm/woodstaff
 	shoes = /obj/item/clothing/shoes/shortboots
+	ring = /obj/item/scomstone
 	backpack_contents = list(/obj/item/scrying = 1, /obj/item/chalk = 1,/obj/item/reagent_containers/glass/bottle/killersice = 1, /obj/item/book/granter/spellbook/master = 1, /obj/item/weapon/knife/dagger/silver/arcyne = 1, /obj/item/storage/keyring/mage = 1)
 	if(!(H.patron == /datum/patron/divine/lunaria || /datum/patron/inhumen/tenebrase))
 		H.set_patron(/datum/patron/divine/lunaria)

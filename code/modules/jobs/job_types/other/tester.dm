@@ -1,7 +1,7 @@
 /datum/job/tester
 	title = "Tester"
 	tutorial = "Try not to get obliterated by the Gods while they toy with you."
-	flag = GRAVETENDER
+	flag = MORTICIAN
 	department_flag = PEASANTS
 	job_flags = (JOB_EQUIP_RANK)
 	faction = FACTION_TOWN

@@ -44,6 +44,7 @@
 	beltr = /obj/item/book/granter/spellbook/apprentice
 	backl = /obj/item/storage/backpack/satchel
 	neck = /obj/item/clothing/neck/psycross/lunaria
+	ring = /obj/item/scomstone/bad
 	backpack_contents = list(/obj/item/textbook = 1, /obj/item/natural/feather)
 
 	if(H.patron != /datum/patron/divine/lunaria)

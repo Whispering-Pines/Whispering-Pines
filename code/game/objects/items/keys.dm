@@ -337,7 +337,7 @@
 	lockids = list(ACCESS_PRIEST)
 
 /obj/item/key/graveyard
-	desc = "This rusty key belongs to the Gravetenders."
+	desc = "This rusty key belongs to the Morticians."
 	icon_state = "rustkey"
 	lockids = list(ACCESS_GRAVE)
 

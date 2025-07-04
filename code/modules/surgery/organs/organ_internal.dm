@@ -5,7 +5,7 @@
 	var/status = ORGAN_ORGANIC
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 0
-	sellprice = 10
+	sellprice = 30
 
 	grid_width = 32
 	grid_height = 32

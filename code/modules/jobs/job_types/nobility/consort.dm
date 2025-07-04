@@ -45,6 +45,7 @@
 	belt = /obj/item/storage/belt/leather
 	beltl = /obj/item/storage/keyring/consort
 	beltr = /obj/item/storage/belt/pouch/coins/rich
+	l_hand = /obj/item/scomstone
 
 /* ! ! ! CONSORT CLASSES ! ! !
 - Highborn: The "default" class, a typical Enigman noble. Decent with swords and a knife. Can sew and read pretty good. A little squishy.

@@ -20,6 +20,7 @@
 	var/headprice = 0
 	var/headpricemin
 	var/headpricemax
+	sellprice = 0 //useless, also dont sell em
 
 /obj/item/bodypart/head/Initialize()
 	. = ..()

@@ -42,7 +42,7 @@
 			shoes = /obj/item/clothing/shoes/sandals
 			armor = /obj/item/clothing/shirt/robe/solaria
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
-		if(/datum/patron/divine/last_death) //last_death acolytes are now gravetenders
+		if(/datum/patron/divine/last_death) //last_death acolytes are now morticians
 			head = /obj/item/clothing/head/padded/deathshroud
 			neck = /obj/item/clothing/neck/psycross/silver/last_death
 			shoes = /obj/item/clothing/shoes/boots

@@ -20,10 +20,10 @@
 	set name = "Journey to the Underworld"
 	set category = "Spirit"
 
-	switch(alert("Try to possess your next body?",,"Yes","No", "To Final Death"))
+	switch(alert("Try to possess your next body?",,"Yes (250c)","No", "To Afterlife"))
 		if("No")
 			to_chat(usr, span_warning("You have second thoughts."))
-		if("To Final Death")
+		if("To Afterlife")
 			if(isroguespirit(mob)) //HONEYPOT CODE, REMOVE LATER
 				message_admins("[key] IS TRYING TO CRASH THE SERVER BY SPAWNING SPIRITS AS A SPIRIT!")
 				return
@@ -62,9 +62,18 @@
 			var/area/rogue/underworld/underworld = get_area(spawn_loc)
 			underworld.Entered(O, null)
 			verbs -= /client/proc/descend
-		if("Yes")
+		if("Yes (250c)")
 			if(mob.mind.has_antag_datum())
 				to_chat(mob, span_warning("I am not able to reclone!"))
+				return
+			if(mob.real_name in GLOB.outlawed_players)
+				to_chat(mob, span_warning("I am outlawed therefore blacklisted from cloners!"))
+				return
+			if(mob.real_name in GLOB.heretical_players)
+				to_chat(mob, span_warning("I am a heretic, the Last Death grips my soul!"))
+				return
+			if(mob.real_name in GLOB.excommunicated_players)
+				to_chat(mob, span_warning("I was excommunicated, the Last Death binds my soul!"))
 				return
 			if(isroguespirit(mob)) //HONEYPOT CODE, REMOVE LATER
 				message_admins("[key] IS TRYING TO CRASH THE SERVER BY SPAWNING BODIES WHILE A SPIRIT!")
@@ -87,9 +96,17 @@
 				var/amt = SStreasury.bank_accounts[mob]
 				if(amt < 0)
 					spawn_loc.say("Warning; PATIENT HAS NO FUNDS, 250c DEBT MUST BE ISSUED.", language = /datum/language/ancient_english)
+					for(var/obj/structure/fake_machine/scomm/S in SSroguemachine.scomm_machines)
+						S.repeat_message("[O.real_name] recloned, in 250c debt.")
+					for(var/obj/item/scomstone/S in SSroguemachine.scomm_machines)
+						S.repeat_message("[O.real_name] recloned, in 250c debt.")
 				else if(amt < 250)
 					SStreasury.give_money_treasury(amt, "Partial recloning debt of [O.real_name].")
 					spawn_loc.say("Warning; PATIENT HAS INSUFFICENT FUNDS AND STILL HAS [250-amt] IN DEBT.", language = /datum/language/ancient_english)
+					for(var/obj/structure/fake_machine/scomm/S in SSroguemachine.scomm_machines)
+						S.repeat_message("[O.real_name] recloned, in [250-amt]c debt.")
+					for(var/obj/item/scomstone/S in SSroguemachine.scomm_machines)
+						S.repeat_message("[O.real_name] recloned, in [250-amt]c debt.")
 					amt = 0
 					amt = SStreasury.bank_accounts[mob]
 					record_featured_stat(FEATURED_STATS_TAX_PAYERS, mob, amt)
@@ -101,8 +118,16 @@
 					record_featured_stat(FEATURED_STATS_TAX_PAYERS, mob, 250)
 					GLOB.vanderlin_round_stats[STATS_TAXES_COLLECTED] += 250
 					spawn_loc.say("Patient recloning fee transferred successfully.", language = /datum/language/ancient_english)
+					for(var/obj/structure/fake_machine/scomm/S in SSroguemachine.scomm_machines)
+						S.repeat_message("Someone recloned, fully paid.")
+					for(var/obj/item/scomstone/S in SSroguemachine.scomm_machines)
+						S.repeat_message("Someone recloned, fully paid.")
 			else
 				spawn_loc.say("Warning; PATIENT HAS ACCOUNT, 250c DEBT MUST BE ISSUED.", language = /datum/language/ancient_english)
+				for(var/obj/structure/fake_machine/scomm/S in SSroguemachine.scomm_machines)
+					S.repeat_message("[O.real_name] recloned without bank account, in 250c debt.")
+				for(var/obj/item/scomstone/S in SSroguemachine.scomm_machines)
+					S.repeat_message("[O.real_name] recloned without bank account, in 250c debt.")
 			GLOB.global_biomass_storage -= 1
 			spawn_loc.update_icon()
 			playsound(spawn_loc, 'sound/foley/industrial/machinechug.ogg', 50, FALSE, -1)

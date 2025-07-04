@@ -242,7 +242,7 @@
 /obj/item/storage/keyring/apothecary
 	keys = list(/obj/item/key/apothecary, /obj/item/key/bathhouse, /obj/item/key/clinic)
 
-/obj/item/storage/keyring/gravetender
+/obj/item/storage/keyring/mortician
 	keys = list(/obj/item/key/church, /obj/item/key/graveyard)
 
 /obj/item/storage/keyring/hand

@@ -103,7 +103,7 @@
 	domain = "Death, Souls, Afterlife, Necromancy"
 	desc = "The Kin-Killer, After the Holy War which created the universe out of it's ashes and fire. After only a handful of the ancient gods being left, He picked them off one by one to kill who he found old minded for a new time. It's said they forced old Goddess of Life in blade-point to give life to his undead creations, making an abomination at first.. half undead half living beings that gave birth to fully living 'resurgentis' in time."
 	flaws = "Pessimistic, Wrathful"
-	worshippers = "Resurgentis, Gravetenders, Mourners, Clerical Necromancers"
+	worshippers = "Resurgentis, Morticians, Mourners, Clerical Necromancers"
 	sins = "Heretical Magic, Disturbance of Rest for personal gains."
 	boons = "You may see the presence of a soul in a body and eat raw meat."
 	added_traits = list(TRAIT_SOUL_EXAMINE, TRAIT_ORGAN_EATER)

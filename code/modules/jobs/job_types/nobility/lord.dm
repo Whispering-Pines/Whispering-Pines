@@ -61,7 +61,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	head = /obj/item/clothing/head/crown/serpcrown
 	backr = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather/plaquegold
-	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1)
+	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1, /obj/item/scomstone = 1)
 	ring = /obj/item/clothing/ring/active/nomag
 	l_hand = /obj/item/weapon/lordscepter
 	H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)

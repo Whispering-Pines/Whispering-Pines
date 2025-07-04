@@ -78,7 +78,7 @@
 /obj/effect/decal/cleanable/coom
 	name = "mess"
 	desc = ""
-	icon = 'icons/roguetown/items/natural.dmi'
+	icon = 'modular_whisper/icons/items/natural.dmi'
 	icon_state = "mess1"
 	random_icon_states = list("mess1", "mess2", "mess3")
 	beauty = -100

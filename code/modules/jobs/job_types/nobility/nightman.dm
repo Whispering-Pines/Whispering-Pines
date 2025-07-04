@@ -42,6 +42,7 @@
 		pants = /obj/item/clothing/pants/tights/stockings/silk/black
 	beltl = /obj/item/weapon/whip
 	beltr = /obj/item/weapon/knife/dagger/steel/special
+	ring = /obj/item/scomstone
 
 	backl = /obj/item/storage/backpack/satchel
 	backpack_contents = list(/obj/item/reagent_containers/food/snacks/produce/swampweed_dried = 2, /obj/item/reagent_containers/powder/moondust = 2, /obj/item/reagent_containers/powder/spice = 1)
@@ -161,8 +162,8 @@
 		H.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 
-		H.change_stat(STATKEY_CON, 3)
-		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_SPD, 1)
+		H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_END, 2)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
@@ -203,8 +204,8 @@
 		H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
-		H.change_stat(STATKEY_PER, 3)
-		H.change_stat(STATKEY_STR, 1)
+
+		H.change_stat(STATKEY_SPD, 2)
 		H.change_stat(STATKEY_END, 2)
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
@@ -276,9 +277,10 @@
 		H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.change_stat(STATKEY_SPD, 3)
+
+		H.change_stat(STATKEY_SPD, 1)
+		H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_END, 2)
-		H.change_stat(STATKEY_PER, 1)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
@@ -307,7 +309,7 @@
 //to do
 /datum/advclass/nightmaiden/slave
 	name = "Slave"
-	tutorial = "You were either a criminal or indebted and are here to pay your debt, you lost all your rights and your dignity, as you are forced to perform heavy labor and let people use you in the whorehouse..."
+	tutorial = "You were either a petty criminal or indebted and are here to pay your debt, you lost all your rights and your dignity, as you are forced to perform heavy labor and let people use you in the whorehouse..."
 	outfit = /datum/outfit/job/nightmaiden/attendant
 	category_tags = list(CTAG_NIGHTMAIDEN)
 
@@ -345,8 +347,8 @@
 		H.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 
-		H.change_stat(STATKEY_CON, 3)
-		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_CON, 1)
+		H.change_stat(STATKEY_STR, -1)
 		H.change_stat(STATKEY_END, 2)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)

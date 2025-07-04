@@ -56,7 +56,7 @@
 	switch(H.patron?.type)
 		if(/datum/patron/divine/solaria)
 			neck = /obj/item/clothing/neck/psycross/silver/solaria
-		if(/datum/patron/divine/last_death) //last_death acolytes are now gravetenders
+		if(/datum/patron/divine/last_death) //last_death acolytes are now morticians
 			neck = /obj/item/clothing/neck/psycross/silver/last_death
 		if(/datum/patron/divine/moonbeam)
 			neck = /obj/item/clothing/neck/psycross/silver/moonbeam

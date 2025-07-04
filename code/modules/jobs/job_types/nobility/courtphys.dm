@@ -36,6 +36,7 @@
 	belt = /obj/item/storage/belt/leather
 	beltl = /obj/item/storage/keyring/physician
 	cloak = /obj/item/clothing/cloak/apron/brown
+	ring = /obj/item/scomstone/bad
 	if(H.gender == FEMALE)
 		pants = /obj/item/clothing/pants/skirt/green
 	else

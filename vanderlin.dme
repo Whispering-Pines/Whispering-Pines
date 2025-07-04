@@ -2860,4 +2860,5 @@
 #include "modular_whisper\code\modules\reagents\blood_pack.dm"
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
+#include "modular_whisper\code\modules\power\weird_items.dm"
 // END_INCLUDE

@@ -36,6 +36,7 @@
 	job_bitflag = BITFLAG_ROYALTY
 	shoes = /obj/item/clothing/shoes/nobleboot/thighboots
 	belt = /obj/item/storage/belt/leather/steel
+	ring = /obj/item/scomstone
 
 /datum/job/hand/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()

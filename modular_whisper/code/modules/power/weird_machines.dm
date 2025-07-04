@@ -25,11 +25,42 @@
 	foodtype = MEAT | CANNIBAL
 	faretype = FARE_IMPOVERISHED
 
+/datum/stock/stockpile/solvent
+	name = "solvent bar"
+	desc = "an edible bar, tastes terrible but it is nutritious."
+	item_type = /obj/item/reagent_containers/food/snacks/raisins/solvent
+	held_items = 2
+	payout_price = 3
+	withdraw_price = 6
+	export_price = 6
+	importexport_amt = 12
+
+/datum/stock/stockpile/manmeat
+	name = "mystery meat"
+	desc = "biomass in unprocessed form for the most part, or..."
+	item_type = /obj/item/reagent_containers/food/snacks/meat/human
+	held_items = 0
+	payout_price = 8
+	withdraw_price = 12
+	export_price = 10
+	importexport_amt = 20
+
+/datum/stock/stockpile/bloodbag
+	name = "bloodbag"
+	desc = "life essence that saves life."
+	item_type = /obj/item/reagent_containers/blood
+	held_items = 5
+	payout_price = 8
+	withdraw_price = 12
+	export_price = 10
+	importexport_amt = 20
+
+
 /obj/item/reagent_containers/food/snacks/raisins/Initialize(mapload)
 	. = ..()
 	color = pick(COLOR_GREEN,COLOR_RED,COLOR_BLUE,COLOR_PURPLE,COLOR_BEIGE,COLOR_ORANGE,null)
 
-/obj/machinery/fake_powered/biofabricator/solvent_fabricator/attackby(obj/item/I, mob/user, params)
+/obj/machinery/fake_powered/biofabricator/solvent/attackby(obj/item/I, mob/user, params)
 	. = ..()
 	user.changeNext_move(CLICK_CD_FAST)
 	if(toggled)
@@ -55,7 +86,7 @@
 	else
 		balloon_alert_to_viewers("Unpowered.")
 
-/obj/machinery/fake_powered/biofabricator/solvent_fabricator/attack_right(mob/user)
+/obj/machinery/fake_powered/biofabricator/solvent/attack_right(mob/user)
 	. = ..()
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
@@ -67,7 +98,7 @@
 	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, TRUE, -1)
 	start_processing_solvent()
 
-/obj/machinery/fake_powered/biofabricator/solvent_fabricator/proc/start_processing_solvent()
+/obj/machinery/fake_powered/biofabricator/solvent/proc/start_processing_solvent()
 	playsound(loc, 'sound/misc/guillotine.ogg', 50, TRUE, -1)
 	sleep(1.5 SECONDS)
 	playsound(loc, 'sound/misc/guillotine.ogg', 50, TRUE, -1)
@@ -89,6 +120,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 
 /obj/structure/closet/crate/coffin/biomass_recycler
 	name = "Biomass Recycler"
+	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "biomass_recycler"
 	desc = "Another byproduct of world ending war, generally used to turn emptied corpses or food into material for recloning or limb regrowers."
 	anchored = TRUE
@@ -146,9 +178,9 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 			clonebays.update_icon()
 
 /obj/structure/closet/crate/coffin/liquid_drainer
-	name = "Liquid Drainer"
+	name = "Blood drainer"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
-	icon_state = "liquid_drainer"
+	icon_state = "blood_drainer"
 	desc = "Likely used to supply blood for the warriors of the great war of old, now it has other purposes aswell, thanks to modifications. Drains all of the blood and other fluids of living and the dead, leaving them weakened and likely to die without aid."
 	anchored = TRUE
 	var/working = FALSE
@@ -430,3 +462,8 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 					working = FALSE
 					regrowing_cycle()
 					break
+
+//fluff ice chest
+/obj/structure/closet/crate/chest/neu_iron/refrigerated
+	name = "refrigerated chest"
+	desc = "a refrigerated chest."

@@ -66,7 +66,7 @@
 #define CLERIC		(1<<1)
 #define PURITAN		(1<<2)
 #define MONK		(1<<3)
-#define GRAVETENDER	(1<<4)
+#define MORTICIAN	(1<<4)
 
 #define SERFS			(1<<3)
 
@@ -170,7 +170,7 @@
 #define JDO_PRIEST 12
 #define JDO_CLERIC 13
 #define JDO_MONK 14
-#define JDO_GRAVETENDER 15
+#define JDO_MORTICIAN 15
 #define JDO_CHURCHLING 15.1
 
 #define JDO_PURITAN 16
