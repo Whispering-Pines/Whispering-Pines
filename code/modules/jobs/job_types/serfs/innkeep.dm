@@ -2,7 +2,8 @@
 	title = "Innkeep"
 	tutorial = "Liquor, lodging, and lavish meals... your business is the beating heart of Phantom Kingdom. \
 	You're the one who provides the the hardworking townsfolk with a place to eat and drink their sorrows away, \
-	and accommodations for weary travelers passing through."
+	and accommodations for weary travelers passing through. As an ex adventuerer,\
+	you can hire aspiring wanderers as mercenaries, your inn has some supplies and a head machine fit for it."
 	flag = INNKEEP
 	department_flag = SERFS
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -40,8 +41,6 @@
 		beltr = /obj/item/reagent_containers/glass/bottle/beer/blackgoat
 		neck = /obj/item/storage/keyring/innkeep
 		cloak = /obj/item/clothing/cloak/apron/waist
-		H.change_stat(STATKEY_STR, 1)
-		H.change_stat(STATKEY_END, 1)
 	else
 		armor = /obj/item/clothing/shirt/dress
 		shoes = /obj/item/clothing/shoes/shortboots
@@ -49,6 +48,10 @@
 		belt = /obj/item/storage/belt/leather
 		beltl = /obj/item/storage/keyring/innkeep
 		beltr = /obj/item/reagent_containers/glass/bottle/beer/blackgoat
-		H.change_stat(STATKEY_END, 1)
-		H.change_stat(STATKEY_CON, 1)
 	backpack_contents = list(/obj/item/recipe_book/cooking)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, type)
+	ADD_TRAIT(H, TRAIT_OLDPARTY, TRAIT_GENERIC)
+	H.change_stat(STATKEY_STR, 2)
+	H.change_stat(STATKEY_PER, 1)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_SPD, 1)

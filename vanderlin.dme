@@ -1493,6 +1493,7 @@
 #include "code\game\objects\structures\trench.dm"
 #include "code\game\objects\structures\walldeco.dm"
 #include "code\game\objects\structures\water_dam.dm"
+#include "code\game\objects\structures\watercloset.dm"
 #include "code\game\objects\structures\well.dm"
 #include "code\game\objects\structures\window.dm"
 #include "code\game\objects\structures\beds_chairs\bed.dm"
@@ -2857,9 +2858,9 @@
 #include "modular_whisper\code\modules\mob\living\carbon\human\species_types\tabaxi.dm"
 #include "modular_whisper\code\modules\mob\living\carbon\human\species_types\vulpkanin.dm"
 #include "modular_whisper\code\modules\power\basic_power.dm"
+#include "modular_whisper\code\modules\power\weird_items.dm"
 #include "modular_whisper\code\modules\power\weird_machines.dm"
 #include "modular_whisper\code\modules\reagents\blood_pack.dm"
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
-#include "modular_whisper\code\modules\power\weird_items.dm"
 // END_INCLUDE

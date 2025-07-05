@@ -9,7 +9,7 @@
 	"Humen")
 	outfit = /datum/outfit/job/adventurer/hollowranger
 	min_pq = 0
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/adventurer/hollowranger/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -24,7 +24,7 @@
 	beltl = /obj/item/ammo_holder/quiver/arrows
 	beltr = /obj/item/weapon/knife/cleaver/combat
 	armor = /obj/item/clothing/armor/leather/jacket
-	wrists = /obj/item/clothing/neck/psycross/silver/dendor
+	wrists = /obj/item/clothing/neck/psycross/silver/blissrose
 	gloves = /obj/item/clothing/gloves/fingerless
 	backpack_contents = list(/obj/item/weapon/knife/hunting)
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/black

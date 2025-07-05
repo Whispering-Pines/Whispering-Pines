@@ -21,7 +21,7 @@
 	can_roll = FALSE
 
 /datum/migrant_role/werewolf
-	name = "Adventurer"
+	name = "Wanderer"
 	antag_datum = /datum/antagonist/werewolf
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 5)
 
@@ -48,6 +48,6 @@
 	can_roll = FALSE
 
 /datum/migrant_role/vampire
-	name = "Adventurer"
+	name = "Wanderer"
 	antag_datum = /datum/antagonist/vampire
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 5)

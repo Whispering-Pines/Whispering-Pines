@@ -34,7 +34,7 @@
 		H.equipOutfit(outfit)
 
 	if(displays_adv_job)
-		H.advjob = "Adventurer"
+		H.advjob = "Wanderer"
 		if(name)
 			H.advjob = name
 

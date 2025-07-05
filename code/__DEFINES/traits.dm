@@ -147,6 +147,7 @@
 #define TRAIT_USEMAGIC "Use Magic"
 #define TRAIT_LEARNMAGIC "Learn Magic" //You dont need usemagic if you have learnmagic.
 #define TRAIT_SEA_DRINKER "Denizen of the Deep"
+#define TRAIT_EMBALMED "embalmed" //stops rotting
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
@@ -538,7 +539,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define MADE_UNCLONEABLE "made-uncloneable"
 #define TIMESTOP_TRAIT "timestop"
 #define PULLED_WHILE_SOFTCRIT_TRAIT "pulled-while-softcrit"
-#define ADVENTURER_TRAIT "adventurer"
+#define ADVENTURER_TRAIT "Wanderer"
 #define TRAIT_LONGSTRIDER "longstrider"
 #define TRAIT_GUIDANCE "guidance"
 

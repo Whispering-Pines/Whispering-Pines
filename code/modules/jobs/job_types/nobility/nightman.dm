@@ -412,7 +412,7 @@
 	is_silver = TRUE
 
 /obj/item/storage/keyring/nightman
-	keys = list(/obj/item/key/bathhouse, /obj/item/key/nightman)
+	keys = list(/obj/item/key/bathhouse, /obj/item/key/nightman, /obj/item/key/apothecary)
 
 /obj/item/key/nightman
 	name = "Nightmaster's key"

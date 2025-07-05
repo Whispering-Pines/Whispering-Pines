@@ -35,7 +35,7 @@
 	advclass_cat_rolls = list(CTAG_PILGRIM = 10)
 
 /datum/migrant_role/adventurer
-	name = "Adventurer"
+	name = "Wanderer"
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 5)
 
 /datum/migrant_role/bandit

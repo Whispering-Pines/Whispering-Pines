@@ -104,7 +104,7 @@ GLOBAL_LIST_INIT(allmig_positions, list(
 	))
 
 GLOBAL_LIST_INIT(roguewar_positions, list(
-	"Adventurer",
+	"Wanderer",
 	))
 
 GLOBAL_LIST_INIT(test_positions, list(

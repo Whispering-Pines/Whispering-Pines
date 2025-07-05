@@ -69,7 +69,7 @@
 	)
 
 	erpable = TRUE
-	hornychance = 50
+	hornychance = 25
 
 /mob/living/simple_animal/hostile/retaliate/spider/mutated
 	icon = 'icons/roguetown/mob/monster/spider.dmi'

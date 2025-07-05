@@ -78,7 +78,7 @@
 	)
 
 	erpable = TRUE
-	hornychance = 50
+	hornychance = 25
 
 /obj/effect/decal/remains/wolf
 	name = "remains"

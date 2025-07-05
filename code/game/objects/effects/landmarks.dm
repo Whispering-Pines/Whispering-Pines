@@ -82,7 +82,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/adventurerlate
 	name = "Adventurerlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Pilgrim", "Adventurer")
+	jobspawn_override = list("Pilgrim", "Wanderer")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vagrantlate
@@ -112,7 +112,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/combatlate
 	name = "Combatlate"
 	icon_state = "arrow"
-	jobspawn_override = list( "Pilgrim", "Adventurer", "Mercenary")
+	jobspawn_override = list( "Pilgrim", "Wanderer", "Mercenary")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/lord
@@ -206,11 +206,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightman
+	name = "Nightmaster"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/apothecary
 	name = "Apothecary"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightmaiden
-	name = "Nitemaiden"
+	name = "Nightswain"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/merchant
@@ -342,7 +346,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/adventurer
-	name = "Adventurer"
+	name = "Wanderer"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/feldsher

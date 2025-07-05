@@ -61,7 +61,7 @@
 
 #define EXP_TYPE_TOWNER			"Towner"
 #define EXP_TYPE_NOBLE			"Noble"
-#define EXP_TYPE_ADVENTURER		"Adventurer"
+#define EXP_TYPE_ADVENTURER		"Wanderer"
 #define EXP_TYPE_CHURCH			"Church"
 #define EXP_TYPE_GUARDS			"Guards"
 

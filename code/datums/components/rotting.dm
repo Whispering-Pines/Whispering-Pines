@@ -36,10 +36,13 @@
 /datum/component/rot/corpse/process()
 	var/time_elapsed = last_process ? (world.time - last_process)/10 : 1
 	..()
+	var/mob/living/carbon/C = parent
+	if(HAS_TRAIT(C, TRAIT_EMBALMED))
+		amount = 0
+		return
 	if(has_world_trait(/datum/world_trait/pestra_mercy))
 		amount -= 5 * time_elapsed
 
-	var/mob/living/carbon/C = parent
 	var/is_zombie
 	if(C.mind)
 		if(C.mind.has_antag_datum(/datum/antagonist/zombie))
