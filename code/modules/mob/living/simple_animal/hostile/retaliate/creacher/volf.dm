@@ -14,15 +14,15 @@
 	vision_range = 9
 	aggro_vision_range = 9
 
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 1,
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak/dangerous = 1,
 						/obj/item/natural/fur/volf = 1,
 						/obj/item/alch/bone = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 1,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak/dangerous = 1,
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 2,
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak/dangerous = 2,
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 3,
 						/obj/item/alch/sinew = 2,

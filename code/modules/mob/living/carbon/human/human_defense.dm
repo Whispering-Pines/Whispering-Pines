@@ -606,11 +606,15 @@
 			examination += "<span class='info'>☼ [capitalize(parse_zone(body_zone))]: <span class='deadsay'><b>MISSING</b></span></span>"
 			continue
 		examination += bodypart.check_for_injuries(user, deep_examination)
+	var/mob/living/carbon/userino = src
 	if(additional)
+		for(var/obj/item/organ/in_organ in userino.internal_organs)
+			if(in_organ.damage)
+				examination += span_info("[in_organ.name] DAMAGE: [in_organ.damage]")
+			continue
 		examination += span_info(span_green("[getToxLoss()] TOXIN"))
 		examination += span_info(span_blue("[getOxyLoss()] OXYGEN"))
 
-	var/mob/living/carbon/userino = src
 	examination += "ø ------------ ø" //automatically lists internal organs that have those functions
 	for(var/obj/item/organ/filling_organ/forgan in userino.internal_organs)
 		if(forgan.reagents.total_volume)

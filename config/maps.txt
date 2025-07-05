@@ -13,22 +13,26 @@ Format:
 	votable (is this map votable)
 endmap
 
-map vanderlin
+map phantom
 	default
 	votable
 endmap
 
+map vanderlin
+	disabled
+endmap
+
 map rosewood
 	minplayers 90
-	votable
+	disabled
 endmap
 
 map daftmarsh
 	maxplayers 75
-	votable
+	disabled
 endmap
 
 map whitepalacepass
 	maxplayers 90
-	votable
+	disabled
 endmap

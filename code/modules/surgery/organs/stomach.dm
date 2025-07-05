@@ -127,7 +127,7 @@
 	crystal_charge = CLAMP(crystal_charge + amount, ETHEREAL_CHARGE_NONE, ETHEREAL_CHARGE_FULL)
 
 /*
-/obj/item/organ/filling_organ/guts // relatively unimportant, just fluff :)
+/obj/item/organ/guts // relatively unimportant, just fluff :)
 	name = "guts"
 	icon_state = "guts"
 	w_class = WEIGHT_CLASS_SMALL

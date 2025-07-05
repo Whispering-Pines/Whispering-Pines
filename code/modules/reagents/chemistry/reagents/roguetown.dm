@@ -4,7 +4,7 @@
 	reagent_state = GAS
 	color = "#801E28" // rgb: 128, 30, 40
 	taste_description = "ugly"
-	metabolization_rate = 1
+	metabolization_rate = REAGENTS_METABOLISM
 
 /datum/reagent/miasmagas/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M, TRAIT_NOSTINK))
@@ -13,6 +13,9 @@
 		else
 			M.add_nausea(3)
 			M.add_stress(/datum/stressevent/miasmagas)
+			if(M.getorganslot(ORGAN_SLOT_LUNGS))
+				M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
+			M.reagents.add_reagent(/datum/reagent/toxin/organpoison, 1)
 	return ..()
 
 /datum/reagent/rogueacid

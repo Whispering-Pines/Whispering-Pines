@@ -145,8 +145,10 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 					say("Bad [skellybones], some biomass was lost due contamination.", language = /datum/language/ancient_english)
 				else
 					points_to_give += 0.1 //healthy limb in there.
+				continue
 			for(var/obj/item/organ/organie in victim.internal_organs)
 				points_to_give += 0.1 //organ in there.
+				continue
 			GLOB.global_biomass_storage += max(points_to_give,0.1)
 			victim.gib(TRUE,TRUE,TRUE)
 			continue
@@ -385,6 +387,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 3)
 				var/obj/item/bodypart/bodypart = victim.get_bodypart(body_zone)
 				if(!bodypart)
 					cost += 750
+					continue
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Live subject confirmed, starting operation, approximate blood required for full restoration: [cost]", language = /datum/language/ancient_english)
 			playsound(src.loc, 'sound/items/beartrap.ogg', 100, TRUE, -1)

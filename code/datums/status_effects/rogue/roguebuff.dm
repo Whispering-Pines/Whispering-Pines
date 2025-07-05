@@ -832,11 +832,11 @@
 	id = "lux_drained"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/lux_drained
 	effectedstats = list(STATKEY_LCK = -3, STATKEY_CON = -1, STATKEY_END = -1, STATKEY_INT = -1, STATKEY_PER = -1, STATKEY_SPD = -1, STATKEY_STR = -1)
-	duration = -1
+	duration = 2 HOURS
 
 /atom/movable/screen/alert/status_effect/buff/lux_drained
 	name = "Lux Drained"
-	desc = span_danger("I can't feel my soul, WHY CAN'T I FEEL MY SOUL!")
+	desc = span_danger("My very own life force was taken from me...")
 	icon_state = "buff"
 
 /datum/status_effect/buff/lux_drank

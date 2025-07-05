@@ -205,14 +205,14 @@
 	if(statforce)
 		next_attack_msg.Cut()
 		affecting.bodypart_attacked_by(user.used_intent.blade_class, statforce, crit_message = TRUE)
-		if(!can_see_cone(user) || user.alpha < 15)//Dreamkeep change -- Attacks from
+		if(!can_see_cone(user) || user.alpha < 15)//Dreamkeep change
 			if(user.mind && !HAS_TRAIT(src, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))
-				var/sneakmult = 2 + (user.get_skill_level(/datum/skill/misc/sneaking))
+				var/sneakmult = user.get_skill_level(/datum/skill/misc/sneaking)
 				user.used_intent.penfactor = 100
-				statforce *= sneakmult
+				statforce *= max(1,sneakmult)
 				user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
-				to_chat(src, span_userdanger("SNEAK ATTACK!!! MY ARMOR IS BYPASSED FOR MASSIVE DAMAGE!"))
-				to_chat(user, span_userdanger("SNEAK ATTACK!!! THEIR ARMOR IS BYPASSED FOR MASSIVE DAMAGE!"))
+				to_chat(src, span_userdanger("SNEAK ATTACK!!! MY ARMOR IS BYPASSED!"))
+				to_chat(user, span_userdanger("SNEAK ATTACK!!! THEIR ARMOR IS BYPASSED!"))
 				user.adjust_experience(/datum/skill/misc/sneaking, user.STAINT * 5, FALSE)
 			else
 				user.used_intent.penfactor = initial(user.used_intent.penfactor)//Sanity check to make sure intent penfactor gets reset when the attack isn't a sneak attack.

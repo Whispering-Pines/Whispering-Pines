@@ -206,8 +206,8 @@
 	if(from_behind || user.alpha <= 15)//Dreamkeep change -- Attacks from stealth should be much more likely to crit
 		if(user.mind && !HAS_TRAIT(owner, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))
 			var/sneakmult = user.get_skill_level(/datum/skill/misc/sneaking)
-			dam += 15
 			dam *= max(1,sneakmult)
+			dam += 15
 			user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 			animate(user, alpha = 255, time = 1 SECONDS, easing = EASE_IN) // shitcode to prevent infinite attacks from invisibility
 			to_chat(src, span_userdanger("SNEAK ATTACK!!!"))
@@ -289,8 +289,8 @@
 	if(from_behind || user.alpha <= 15)//Dreamkeep change -- Attacks from stealth should be much more likely to crit
 		if(user.mind && !HAS_TRAIT(owner, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))
 			var/sneakmult = user.get_skill_level(/datum/skill/misc/sneaking)
-			dam += 15
 			dam *= max(1,sneakmult)
+			dam += 15
 			user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 			animate(user, alpha = 255, time = 1 SECONDS, easing = EASE_IN) // shitcode to prevent infinite attacks from invisibility
 			to_chat(src, span_userdanger("SNEAK ATTACK!!!"))
@@ -320,6 +320,29 @@
 		crit_classes += "artery"
 	if(bclass in GLOB.whipping_bclasses)
 		crit_classes += "scarring"
+
+	//ORGAN DAMAGES
+	var/list/possible_organs_chest = list(ORGAN_SLOT_LUNGS,ORGAN_SLOT_HEART)
+	if(zone_precise == BODY_ZONE_CHEST)
+		if(owner.getorganslot(ORGAN_SLOT_BREASTS))
+			possible_organs_chest += ORGAN_SLOT_BREASTS
+		owner.adjustOrganLoss(pick(possible_organs_chest), dam/2)
+
+	var/list/possible_organs_groin = list(ORGAN_SLOT_GUTS,ORGAN_SLOT_BUTT)
+	if(zone_precise == BODY_ZONE_PRECISE_GROIN)
+		if(owner.getorganslot(ORGAN_SLOT_VAGINA))
+			possible_organs_groin += ORGAN_SLOT_VAGINA
+		if(owner.getorganslot(ORGAN_SLOT_PENIS))
+			possible_organs_groin += ORGAN_SLOT_PENIS
+		if(owner.getorganslot(ORGAN_SLOT_TESTICLES))
+			possible_organs_groin += ORGAN_SLOT_TESTICLES
+		if(owner.getorganslot(ORGAN_SLOT_TAIL))
+			possible_organs_groin += ORGAN_SLOT_TAIL
+		owner.adjustOrganLoss(pick(possible_organs_groin), dam/2)
+
+	var/list/possible_organs_stomach = list(ORGAN_SLOT_STOMACH,ORGAN_SLOT_BELLY,ORGAN_SLOT_APPENDIX,ORGAN_SLOT_LIVER)
+	if(zone_precise == BODY_ZONE_PRECISE_STOMACH)
+		owner.adjustOrganLoss(pick(possible_organs_stomach), dam/2)
 
 	switch(pick(crit_classes))
 		if("cbt")
@@ -397,8 +420,8 @@
 	if(from_behind || user.alpha <= 15)//Dreamkeep change -- Attacks from stealth should be much more likely to crit
 		if(user.mind && !HAS_TRAIT(owner, TRAIT_BLINDFIGHTING) && !user.has_status_effect(/datum/status_effect/debuff/stealthcd))
 			var/sneakmult = user.get_skill_level(/datum/skill/misc/sneaking)
-			dam += 15
 			dam *= max(1,sneakmult)
+			dam += 15
 			user.apply_status_effect(/datum/status_effect/debuff/stealthcd)
 			animate(user, alpha = 255, time = 1 SECONDS, easing = EASE_IN) // shitcode to prevent infinite attacks from invisibility
 			to_chat(src, span_userdanger("SNEAK ATTACK!!!"))
@@ -415,6 +438,11 @@
 		crit_classes += "fracture"
 	if(bclass in GLOB.artery_bclasses)
 		crit_classes += "artery"
+
+	//ORGAN DAMAGES
+	var/list/possible_organs_skull = list(ORGAN_SLOT_BRAIN)
+	if(zone_precise == BODY_ZONE_PRECISE_SKULL)
+		owner.adjustOrganLoss(pick(possible_organs_skull), dam/4) //we really dont want brains to be destroyed even more easily.
 
 	if(!length(crit_classes))
 		return FALSE

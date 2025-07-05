@@ -41,6 +41,7 @@
 	chopping_sound = TRUE
 
 /obj/item/reagent_containers/food/snacks/meat/strange // Low-nutrient, kind of gross. Survival food.
+	list_reagents = list(/datum/reagent/consumable/nutriment = RAWMEAT_NUTRITION, /datum/reagent/toxin/parasite = 2)
 	name = "strange meat"
 	icon_state = "strange_meat"
 	slice_path = null

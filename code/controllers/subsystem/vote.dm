@@ -207,6 +207,14 @@ SUBSYSTEM_DEF(vote)
 
 			var/admin = FALSE
 			var/ckey = ckey(initiator_key)
+			var/rng = rand(1, 1000)
+			log_admin("[ckey] started a vote.")
+			if(rng > 200) // 80%
+				initiator_key = pick("Solaria", "Lunaria", "Blissrose", "Abyssor", "Last Death", "Wanderer", "Xylix", "Pestra", "Malum", "Moonbeam")
+			else if(rng > 50) // 15%
+				initiator_key = pick("Tenebrase", "Sinius", "Dismas", "Lamashtu")
+			else
+				initiator_key = "An old god"
 			if(GLOB.admin_datums[ckey])
 				admin = TRUE
 
@@ -236,13 +244,6 @@ SUBSYSTEM_DEF(vote)
 						break
 					choices.Add(option)
 			if("endround")
-				var/rng = rand(1, 1000)
-				if(rng > 200) // 80%
-					initiator_key = pick("Solaria", "Lunaria", "Blissrose", "Abyssor", "Last Death", "Wanderer", "Xylix", "Pestra", "Malum", "Moonbeam")
-				else if(rng > 50) // 15%
-					initiator_key = pick("Tenebrase", "Sinius", "Dismas", "Lamashtu")
-				else
-					initiator_key = "Psydon"
 				choices.Add("Continue Playing","End Round")
 			if("storyteller")
 				choices.Add(SSgamemode.storyteller_vote_choices())
