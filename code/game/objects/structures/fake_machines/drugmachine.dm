@@ -148,7 +148,7 @@
 	if(href_list["buy"])
 		var/path = text2path(href_list["buy"])
 		if(!ispath(path, /datum/supply_pack))
-			message_admins("APOTHECARY [usr.key] IS TRYING TO BUY A [path] WITH THE GOLDFACE. THIS IS AN EXPLOIT.")
+			message_admins("[usr.key] IS TRYING TO BUY A [path] WITH THE GOLDFACE. THIS IS AN EXPLOIT.")
 			return
 		var/datum/supply_pack/PA = new path
 		var/cost = PA.cost
@@ -212,7 +212,7 @@
 	contents += "<a href='byond://?src=[REF(src)];change=1'>CASINGS LOADED:</a> [budget]<BR>"
 
 	var/mob/living/carbon/human/H = user
-	if(H.job == "Apothecary")
+	if(H.job == "Apothecary" || H.job == "Nightmaster")
 		if(canread)
 			contents += "<a href='byond://?src=[REF(src)];secrets=1'>Secrets</a>"
 		else

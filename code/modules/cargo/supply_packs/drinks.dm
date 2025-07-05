@@ -82,3 +82,13 @@
 	name = "Valmora Blue Wine"
 	cost = 305
 	contains = /obj/item/reagent_containers/glass/bottle/elfblue
+
+/datum/supply_pack/food/cum
+	name = "Male Ejaculate"
+	cost = 20
+	contains = /obj/item/reagent_containers/glass/bottle/cum
+
+/datum/supply_pack/food/femcum
+	name = "Female Ejaculate"
+	cost = 30
+	contains = /obj/item/reagent_containers/glass/bottle/pussyjuice
