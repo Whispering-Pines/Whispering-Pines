@@ -66,7 +66,7 @@
 	/obj/item/candle/yellow)
 
 /datum/supply_pack/tools/lamptern
-	name = "Iron Lamptern"
+	name = "Iron lantern"
 	cost = 20
 	contains = /obj/item/flashlight/flare/torch/lantern
 

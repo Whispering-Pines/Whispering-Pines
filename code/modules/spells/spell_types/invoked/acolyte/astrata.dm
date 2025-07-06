@@ -75,7 +75,7 @@
 		if(target.stat < DEAD)
 			to_chat(user, "<span class='warning'>Nothing happens.</span>")
 			return FALSE
-		if(HAS_TRAIT(target, TRAIT_LAST_DEATH_CURSE))
+		if(HAS_TRAIT(target, TRAIT_NECRA_CURSE))
 			to_chat(user, span_warning("Last Death's grasp prevents revival."))
 			return FALSE
 		if(GLOB.tod == "night")

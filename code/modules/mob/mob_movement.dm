@@ -427,6 +427,8 @@
 			next_in_line = BODY_ZONE_PRECISE_NOSE
 		if(BODY_ZONE_PRECISE_NOSE)
 			next_in_line = BODY_ZONE_PRECISE_MOUTH
+		if(BODY_ZONE_PRECISE_MOUTH)
+			next_in_line = BODY_ZONE_PRECISE_NECK
 		else
 			next_in_line = BODY_ZONE_HEAD
 

@@ -114,7 +114,7 @@
 
 //................ Tenebrase Armor ...............//
 
-/obj/item/clothing/armor/plate/full/tenebrase
+/obj/item/clothing/armor/plate/full/zizo
 	name = "darksteel fullplate"
 	desc = "Full plate. Called forth from the edge of what should be known. In Her name."
 	icon_state = "zizoplate"
@@ -125,7 +125,7 @@
 
 //................ Dismas Armor ...............//
 
-/obj/item/clothing/armor/plate/full/dismas
+/obj/item/clothing/armor/plate/full/matthios
 	name = "gilded fullplate"
 	desc = "Full plate. Tales told of men in armor such as this stealing many riches, or lives."
 	icon_state = "mattiosarmor"

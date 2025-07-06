@@ -137,8 +137,8 @@
 
 		if(length(GLOB.tennite_schisms))
 			var/datum/tennite_schism/S = GLOB.tennite_schisms[1]
-			var/user_side = (WEAKREF(user) in S.supporters_solaria) ? "solaria" : (WEAKREF(user) in S.supporters_challenger) ? "challenger" : null
-			var/mob_side = (WEAKREF(src) in S.supporters_solaria) ? "solaria" : (WEAKREF(src) in S.supporters_challenger) ? "challenger" : null
+			var/user_side = (WEAKREF(user) in S.supporters_astrata) ? "solaria" : (WEAKREF(user) in S.supporters_challenger) ? "challenger" : null
+			var/mob_side = (WEAKREF(src) in S.supporters_astrata) ? "solaria" : (WEAKREF(src) in S.supporters_challenger) ? "challenger" : null
 
 			if(user_side && mob_side)
 				var/datum/patron/their_god = (mob_side == "solaria") ? S.astrata_god.resolve() : S.challenger_god.resolve()
@@ -201,10 +201,12 @@
 
 		if(user.mind?.has_antag_datum(/datum/antagonist/vampire))
 			. += span_userdanger("Blood Volume: [blood_volume]")
-		if(HAS_TRAIT(user, TRAIT_DISMAS_EYES))
+		if(HAS_TRAIT(user, TRAIT_MATTHIOS_EYES))
 			var/atom/item = get_most_expensive()
 			if(item)
 				. += span_notice("You get the feeling [m2] most valuable possession is \a [item.name].")
+		if(HAS_TRAIT(user, TRAIT_EMBALMED))
+			. += span_notice("Looks to be embalmed, preventing rot...")
 
 	var/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))

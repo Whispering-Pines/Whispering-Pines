@@ -34,7 +34,7 @@
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
 	H.verbs |= /mob/living/carbon/human/proc/churchcurse
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
-	neck = /obj/item/clothing/neck/psycross/silver/solaria
+	neck = /obj/item/clothing/neck/psycross/silver/astrata
 	head = /obj/item/clothing/head/priestmask
 	shirt = /obj/item/clothing/shirt/undershirt/priest
 	pants = /obj/item/clothing/pants/tights/black
@@ -48,8 +48,8 @@
 	var/obj/item/weapon/polearm/woodstaff/aries/P = new()
 	H.put_in_hands(P, forced = TRUE)
 
-	if(H.patron != /datum/patron/divine/solaria) // For some stupid reason this was checking for Blissrose before.
-		H.set_patron(/datum/patron/divine/solaria)
+	if(H.patron != /datum/patron/divine/astrata) // For some stupid reason this was checking for Blissrose before.
+		H.set_patron(/datum/patron/divine/astrata)
 
 	H.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 	H.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)

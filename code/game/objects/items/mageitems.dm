@@ -297,7 +297,7 @@
 	desc = "A fluffy feather."
 
 /obj/item/flashlight/flare/torch/lantern/voidlamptern
-	name = "void lamptern"
+	name = "void lantern"
 	icon_state = "voidlamp"
 	item_state = "voidlamp"
 	desc = "An old lamptern that seems darker and darker the longer you look at it."
@@ -645,8 +645,8 @@
 
 
 /obj/structure/soul
-	name = "soul"
-	desc = "The soul of the dead"
+	name = "soul echoes"
+	desc = "The echoes of a soul, pulsing with remaining mana."
 
 	icon = 'icons/roguetown/misc/mana.dmi'
 	icon_state = "soul"

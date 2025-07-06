@@ -10,7 +10,7 @@
 	cmode_music = 'sound/music/cmode/adventurer/CombatSorcerer.ogg'
 
 /datum/outfit/job/adventurer/sorceress
-	allowed_patrons = list(/datum/patron/divine/lunaria, /datum/patron/inhumen/tenebrase)
+	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
 
 /datum/outfit/job/adventurer/sorceress/pre_equip(mob/living/carbon/human/H)
 	..()

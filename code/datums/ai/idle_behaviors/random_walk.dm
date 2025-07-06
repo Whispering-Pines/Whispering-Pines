@@ -17,9 +17,9 @@
 	if(controller.blackboard[BB_IS_BEING_RIDDEN])
 		return
 
-	var/mob/living/simple_animal/wanderer = controller.pawn
-	if(istype(wanderer))
-		if(wanderer.binded)
+	var/mob/living/simple_animal/ravox = controller.pawn
+	if(istype(ravox))
+		if(ravox.binded)
 			return
 
 	next_time = world.time + cooldown

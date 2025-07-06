@@ -2,7 +2,7 @@
 	id = "recloned"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/recloned
 	duration = 15 MINUTES
-	effectedstats = list(STATKEY_STR = -8, STATKEY_SPD = -4, STATKEY_END = -6, STATKEY_CON = -8)
+	effectedstats = list(STATKEY_STR = -5, STATKEY_SPD = -3, STATKEY_END = -3, STATKEY_CON = -4, STATKEY_INT = -4)
 
 /atom/movable/screen/alert/status_effect/debuff/recloned
 	name = "Cloning Sickness"
@@ -30,3 +30,13 @@
 		owner.toggle_rogmove_intent(MOVE_INTENT_WALK)
 		owner.update_sneak_invis()
 	return ..()
+
+//mirror buff
+/datum/stressevent/yourself
+	stressadd = -1
+	desc = span_green("I faced myself, good to do once in a while.")
+
+/obj/structure/mirror/examine(mob/user)
+	. = ..()
+	user.add_stress(/datum/stressevent/yourself)
+	. += "Despite everything, It's still me." //sorta undertale reference.

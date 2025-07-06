@@ -165,7 +165,7 @@
 /area/rogue/under/tomb/wilds)
 "gq" = (
 /obj/structure/table/wood/fine,
-/obj/item/book/lunaria,
+/obj/item/book/noc,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/under/tomb/indoors/royal)
 "gO" = (
@@ -926,8 +926,8 @@
 "Pd" = (
 /obj/machinery/light/fueled/wallfire/candle/weak/r,
 /obj/structure/closet/crate/crafted_closet/lord,
-/obj/item/clothing/neck/psycross/lunaria,
-/obj/item/clothing/ring/silver/lunaria,
+/obj/item/clothing/neck/psycross/noc,
+/obj/item/clothing/ring/silver/noc,
 /obj/item/reagent_containers/glass/bottle/stronghealthpot,
 /obj/item/reagent_containers/glass/bottle/stronghealthpot,
 /obj/item/reagent_containers/glass/bottle/strongmanapot,
@@ -1041,7 +1041,7 @@
 "SN" = (
 /obj/structure/table/wood/fine,
 /obj/item/clothing/head/crown/circlet,
-/obj/item/clothing/head/roguehood/moonbeam,
+/obj/item/clothing/head/roguehood/eora,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/under/tomb/indoors/royal)
 "SS" = (

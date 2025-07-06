@@ -130,35 +130,35 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/templar.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/templar.dmi'
 
-/obj/item/clothing/cloak/stabard/templar/solaria
+/obj/item/clothing/cloak/stabard/templar/astrata
 	name = "surcoat of the solar order"
 	icon_state = "tabard_solaria"
 	item_state = "tabard_solaria"
 
-/obj/item/clothing/cloak/stabard/templar/solaria/alt
+/obj/item/clothing/cloak/stabard/templar/astrata/alt
 	icon_state = "tabard_astrata_alt"
 	item_state = "tabard_astrata_alt"
 
-/obj/item/clothing/cloak/stabard/templar/last_death
+/obj/item/clothing/cloak/stabard/templar/necra
 	name = "surcoat of the necran order"
 	icon_state = "tabard_necra"
 	item_state = "tabard_necra"
 
-/obj/item/clothing/cloak/stabard/templar/last_death/alt
+/obj/item/clothing/cloak/stabard/templar/necra/alt
 	icon_state = "tabard_necra_alt"
 	item_state = "tabard_necra_alt"
 
-/obj/item/clothing/cloak/stabard/templar/blissrose
+/obj/item/clothing/cloak/stabard/templar/dendor
 	name = "surcoat of the dendorian order"
 	icon_state = "tabard_dendor"
 	item_state = "tabard_dendor"
 
-/obj/item/clothing/cloak/stabard/templar/lunaria
+/obj/item/clothing/cloak/stabard/templar/noc
 	name = "surcoat of the lunar order"
 	icon_state = "tabard_noc"
 	item_state = "tabard_noc"
 
-/obj/item/clothing/cloak/stabard/templar/lunaria/alt
+/obj/item/clothing/cloak/stabard/templar/noc/alt
 	icon_state = "tabard_noc_alt"
 	item_state = "tabard_noc_alt"
 
@@ -172,7 +172,7 @@
 	icon_state = "tabard_malum"
 	item_state = "tabard_malum"
 
-/obj/item/clothing/cloak/stabard/templar/moonbeam
+/obj/item/clothing/cloak/stabard/templar/eora
 	name = "surcoat of the moonbeamite order"
 	icon_state = "tabard_eora"
 	item_state = "tabard_eora"
@@ -182,7 +182,7 @@
 	icon_state = "tabard_pestra"
 	item_state = "tabard_pestra"
 
-/obj/item/clothing/cloak/stabard/templar/wanderer
+/obj/item/clothing/cloak/stabard/templar/ravox
 	name = "surcoat of the ravoxian order"
 	icon_state = "tabard_ravox"
 	item_state = "tabard_ravox"

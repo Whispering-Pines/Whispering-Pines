@@ -192,15 +192,3 @@
 		new /obj/item/organ/filling_organ/testicles(src)
 		new /obj/item/organ/penis(src)
 		new /obj/item/reagent_containers/glass/bottle/cum(src)
-
-/datum/stock/import/balms
-	name = "Bin of Balm"
-	desc = "Used in body preservation, usually by morticians."
-	item_type = /obj/item/bin/balms
-	export_price = 100
-	importexport_amt = 1
-
-/obj/item/bin/balms/Initialize()
-	. = ..()
-	for(var/i in 1 to 10)
-		new /obj/item/balm(src)

@@ -97,7 +97,7 @@
 	category = "Tools"
 
 /datum/artificer_recipe/tools/lamptern
-	name = "Bronze Lamptern"
+	name = "Bronze lantern"
 	required_item = /obj/item/ingot/bronze
 	created_item = /obj/item/flashlight/flare/torch/lantern/bronzelamptern
 	hammers_per_item = 9
@@ -328,24 +328,24 @@
 	hammers_per_item = 7
 	craftdiff = 3
 
-/datum/artificer_recipe/psycross/lunaria
+/datum/artificer_recipe/psycross/noc
 	name = "Lunaria Psycross"
 	required_item = /obj/item/natural/wood/plank
-	created_item = /obj/item/clothing/neck/psycross/lunaria
+	created_item = /obj/item/clothing/neck/psycross/noc
 	hammers_per_item = 5
 	craftdiff = 1
 
-/datum/artificer_recipe/psycross/solaria
+/datum/artificer_recipe/psycross/astrata
 	name = "Solaria Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/solaria
+	created_item = /obj/item/clothing/neck/psycross/silver/astrata
 	hammers_per_item = 5
 	craftdiff = 2
 
-/datum/artificer_recipe/psycross/blissrose
+/datum/artificer_recipe/psycross/dendor
 	name = "Blissrose Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/blissrose
+	created_item = /obj/item/clothing/neck/psycross/silver/dendor
 	hammers_per_item = 5
 	craftdiff = 2
 
@@ -356,17 +356,17 @@
 	hammers_per_item = 5
 	craftdiff = 2
 
-/datum/artificer_recipe/psycross/last_death
+/datum/artificer_recipe/psycross/necra
 	name = "Last Death Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/last_death
+	created_item = /obj/item/clothing/neck/psycross/silver/necra
 	hammers_per_item = 5
 	craftdiff = 2
 
-/datum/artificer_recipe/psycross/wanderer
+/datum/artificer_recipe/psycross/ravox
 	name = "Wanderer Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/wanderer
+	created_item = /obj/item/clothing/neck/psycross/silver/ravox
 	hammers_per_item = 5
 	craftdiff = 2
 
@@ -377,10 +377,10 @@
 	hammers_per_item = 5
 	craftdiff = 2
 
-/datum/artificer_recipe/psycross/moonbeam
+/datum/artificer_recipe/psycross/eora
 	name = "Moonbeam Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/moonbeam
+	created_item = /obj/item/clothing/neck/psycross/silver/eora
 	hammers_per_item = 5
 	craftdiff = 2
 

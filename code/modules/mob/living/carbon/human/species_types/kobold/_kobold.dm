@@ -23,7 +23,7 @@
 	default_color = "FFFFFF"
 
 	species_traits = list(NO_UNDERWEAR)
-	inherent_traits = list(TRAIT_TINY, TRAIT_DARKVISION)
+	inherent_traits = list(TRAIT_DARKVISION)
 
 	specstats_m = list(STATKEY_STR = -2, STATKEY_PER = 1, STATKEY_INT = -1, STATKEY_CON = -1, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
 	specstats_f = list(STATKEY_STR = -2, STATKEY_PER = 1, STATKEY_INT = -1, STATKEY_CON = -1, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)

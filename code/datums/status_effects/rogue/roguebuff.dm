@@ -333,7 +333,7 @@
 \---------------*/
 
 // ---------------------- DIVINE KNOWLEDGE ( LUNARIA ) ----------------------------
-/datum/status_effect/buff/lunaria
+/datum/status_effect/buff/noc
 	id = "nocbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/nocbuff
 	effectedstats = list(STATKEY_INT = 3)
@@ -347,7 +347,7 @@
 
 
 // ---------------------- DIVINE POWER ( WANDERER ) ----------------------------
-/datum/status_effect/buff/wanderer
+/datum/status_effect/buff/ravox
 	id = "ravoxbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/ravoxbuff
 	effectedstats = list(STATKEY_CON = 1, STATKEY_END = 1, STATKEY_SPD = 3)
@@ -575,13 +575,13 @@
 	name = "Inspiring"
 
 // TIER 5 - MASTER
-/datum/status_effect/bardicbuff/wanderer
+/datum/status_effect/bardicbuff/ravox
 	name = "Empowering (+1 STR, +1 PER)"
 	id = "bardbuff_str"
 	effectedstats = list(STATKEY_STR = 1, STATKEY_PER = 1)
-	alert_type = /atom/movable/screen/alert/status_effect/bardbuff/wanderer
+	alert_type = /atom/movable/screen/alert/status_effect/bardbuff/ravox
 
-/atom/movable/screen/alert/status_effect/bardbuff/wanderer
+/atom/movable/screen/alert/status_effect/bardbuff/ravox
 	name = "Empowering"
 
 // TIER 6 - LEGENDARY

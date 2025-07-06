@@ -364,8 +364,8 @@
 /obj/item/organ/filling_organ/guts,
 /obj/item/organ/heart,
 /obj/item/organ/liver,
-/obj/item/reagent_containers/food/snacks/meat/human,
-/obj/item/reagent_containers/food/snacks/meat/human,
+/obj/item/reagent_containers/food/snacks/meat/steak/human,
+/obj/item/reagent_containers/food/snacks/meat/steak/human,
 /turf/open/floor/blocks/newstone/alt,
 /area/rogue/under/tomb/indoors)
 "nB" = (

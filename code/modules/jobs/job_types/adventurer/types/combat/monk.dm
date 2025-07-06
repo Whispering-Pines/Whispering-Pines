@@ -15,7 +15,7 @@
 /datum/outfit/job/adventurer/monk/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguehood/brown
-	neck = /obj/item/clothing/neck/psycross/silver/wanderer
+	neck = /obj/item/clothing/neck/psycross/silver/ravox
 	shoes = /obj/item/clothing/shoes/shortboots
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 	armor = /obj/item/clothing/shirt/robe/plain

@@ -30,7 +30,7 @@
 
 	user.say("LAST DEATH, EMBRACE ME!", forced = "last death_ritual")
 	playsound(user, 'sound/magic/churn.ogg', 100)
-	ADD_TRAIT(user, TRAIT_LAST_DEATH_CURSE, "last death_ritual")
+	ADD_TRAIT(user, TRAIT_NECRA_CURSE, "last death_ritual")
 	ADD_TRAIT(user, TRAIT_BURIED_COIN_GIVEN, "last death_ritual")
 	user.death()
 

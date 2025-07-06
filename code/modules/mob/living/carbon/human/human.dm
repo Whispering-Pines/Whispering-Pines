@@ -811,7 +811,7 @@
 				GLOB.weatherproof_z_levels |= "[turf.z]"
 		if("[turf.z]" in GLOB.weatherproof_z_levels)
 			faction |= FACTION_DISMAS
-			SSmobs.dismas_mobs |= src
+			SSmobs.matthios_mobs |= src
 
 /**
  * Called when this human should be washed

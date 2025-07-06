@@ -184,7 +184,7 @@
 	icon_state = "hellgrass"
 	neighborlay = "hellgrass"
 
-/turf/open/floor/grass/moonbeam
+/turf/open/floor/grass/eora
 	icon_state = "hellgrass"
 	neighborlay = "hellgrass"
 /*	..................   Snow   ................... */

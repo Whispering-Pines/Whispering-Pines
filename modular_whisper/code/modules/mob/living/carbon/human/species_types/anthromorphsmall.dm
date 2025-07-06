@@ -120,7 +120,7 @@
 	)
 
 	exotic_bloodtype = /datum/blood_type/human/anthrosmall
-	meat = /obj/item/reagent_containers/food/snacks/meat/human
+	meat = /obj/item/reagent_containers/food/snacks/meat/steak/human
 
 /datum/blood_type/human/anthrosmall
 	name = "Verminvolk"

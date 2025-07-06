@@ -775,7 +775,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
 			if(slot & ITEM_SLOT_HANDS)
 				playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
-			if(slot & ITEM_SLOT_HIP | ITEM_SLOT_BACK_R | ITEM_SLOT_BACK_L)
+			else if(slot & ITEM_SLOT_HIP | ITEM_SLOT_BACK_R | ITEM_SLOT_BACK_L)
 				playsound(src, sheathe_sound, SHEATHE_SOUND_VOLUME, ignore_walls = FALSE)
 			else if(equip_sound && (slot_flags & slot))
 				playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)

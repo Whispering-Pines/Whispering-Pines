@@ -427,9 +427,9 @@
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /obj/item/weapon/shovel,
 /obj/item/clothing/pants/trou/leather/mourning,
-/obj/item/clothing/shirt/robe/last_death,
+/obj/item/clothing/shirt/robe/necra,
 /obj/item/clothing/head/padded/deathshroud,
-/obj/item/clothing/neck/psycross/silver/last_death,
+/obj/item/clothing/neck/psycross/silver/necra,
 /turf/open/floor/dirt/road,
 /area/rogue/under/tomb)
 "IB" = (
@@ -541,7 +541,7 @@
 /obj/item/clothing/head/padded/deathshroud,
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /obj/item/clothing/pants/trou/leather/mourning,
-/obj/item/clothing/shirt/robe/last_death,
+/obj/item/clothing/shirt/robe/necra,
 /turf/open/floor/dirt/road,
 /area/rogue/under/tomb)
 "WI" = (

@@ -1412,7 +1412,7 @@
 /turf/open/floor/grass/cold,
 /area/rogue/outdoors/woods)
 "FW" = (
-/obj/structure/fluff/statue/solaria/bling{
+/obj/structure/fluff/statue/astrata/bling{
 	pixel_x = -17;
 	pixel_y = 0;
 	name = "Statue of LUNARIA!?!?!?!?!?";

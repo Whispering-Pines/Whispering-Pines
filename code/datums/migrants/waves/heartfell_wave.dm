@@ -206,7 +206,7 @@
 	grant_lit_torch = TRUE
 
 /datum/outfit/job/heartfelt/magos
-	allowed_patrons = list(/datum/patron/divine/lunaria)
+	allowed_patrons = list(/datum/patron/divine/noc)
 /datum/outfit/job/heartfelt/magos/pre_equip(mob/living/carbon/human/H)
 	..()
 	neck = /obj/item/clothing/neck/talkstone
@@ -260,7 +260,7 @@
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
 /datum/outfit/job/heartfelt/prior
-	allowed_patrons = list(/datum/patron/divine/solaria)
+	allowed_patrons = list(/datum/patron/divine/astrata)
 /datum/outfit/job/heartfelt/prior/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE

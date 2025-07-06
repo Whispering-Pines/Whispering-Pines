@@ -81,4 +81,4 @@
 /datum/supply_pack/food/meat
 	name = "Manmeat"
 	cost = 10
-	contains = /obj/item/reagent_containers/food/snacks/meat/human
+	contains = /obj/item/reagent_containers/food/snacks/meat/steak/human

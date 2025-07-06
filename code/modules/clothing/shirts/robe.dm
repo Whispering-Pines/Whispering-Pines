@@ -45,13 +45,13 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/patron_robes.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/patron_robes.dmi'
 
-/obj/item/clothing/shirt/robe/solaria
+/obj/item/clothing/shirt/robe/astrata
 	name = "sun robe"
 	desc = "The cloth of a follower of Solaria."
 	icon_state = "astratarobe"
 	sleeved = null
 
-/obj/item/clothing/shirt/robe/lunaria
+/obj/item/clothing/shirt/robe/noc
 	name = "moon robe"
 	desc = "The cloth of a follower of Lunaria."
 	icon_state = "nocrobe"
@@ -63,22 +63,22 @@
 	icon_state = "warlock"
 	sleeved = null
 
-/obj/item/clothing/shirt/robe/blissrose
+/obj/item/clothing/shirt/robe/dendor
 	name = "briar robe"
 	desc = "Nature nurtures us and we, in turn, will nurture it back in the end."
 	icon_state = "dendorrobe"
 
-/obj/item/clothing/shirt/robe/moonbeam
+/obj/item/clothing/shirt/robe/eora
 	name = "moonbeamite robe"
 	desc = "Holy robes, intended for use by followers of Moonbeam"
 	icon_state = "eorarobes"
 
-/obj/item/clothing/shirt/robe/moonbeam/alt
+/obj/item/clothing/shirt/robe/eora/alt
 	name = "moonbeamite straps"
 	desc = "Sanctified, form fitting straps. Used by more radical followers of the Moonbeamite Church"
 	icon_state = "eorastraps"
 
-/obj/item/clothing/shirt/robe/last_death
+/obj/item/clothing/shirt/robe/necra
 	name = "mourning robe"
 	desc = "Black robes which cover the body not unlike those in depictions of the Carriageman himself."
 	icon_state = "necrarobe"

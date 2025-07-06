@@ -10,7 +10,7 @@ PROCESSING_SUBSYSTEM_DEF(roguemachine)
 	var/list/stock_machines = list()
 	var/hermailermaster
 	var/list/death_queue = list()
-	var/last_death_report
+	var/necra_report
 	var/obj/item/crown
 	var/obj/item/key
 	var/obj/structure/fake_machine/hailer/hailer
@@ -18,8 +18,8 @@ PROCESSING_SUBSYSTEM_DEF(roguemachine)
 /datum/controller/subsystem/processing/roguemachine/fire(resumed = 0)
 	. = ..()
 	if(death_queue.len)
-		if(world.time > last_death_report + 3 SECONDS)
-			last_death_report = world.time
+		if(world.time > necra_report + 3 SECONDS)
+			necra_report = world.time
 			if(SSroguemachine.hermailermaster)
 				var/obj/item/roguemachine/mastermail/X = SSroguemachine.hermailermaster
 				for(var/I in death_queue)

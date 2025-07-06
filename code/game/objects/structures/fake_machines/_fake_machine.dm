@@ -19,13 +19,13 @@
 	var/zenars_to_put
 	if(specify)
 		switch(specify)
-			if("GOLD")
+			if("LARGE")
 				zenars_to_put = budget/10
 				type_to_put = /obj/item/coin/gold
-			if("SILVER")
+			if("MEDIUM")
 				zenars_to_put = budget/5
 				type_to_put = /obj/item/coin/silver
-			if("BRONZE")
+			if("SMALL")
 				zenars_to_put = budget
 				type_to_put = /obj/item/coin/copper
 	else

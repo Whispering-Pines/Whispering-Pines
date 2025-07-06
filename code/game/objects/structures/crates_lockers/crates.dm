@@ -44,8 +44,8 @@
 	max_integrity = 70
 	icon = 'icons/roguetown/misc/structure.dmi'
 	material_drop_amount = 5
-	open_sound = 'sound/blank.ogg'
-	close_sound = 'sound/blank.ogg'
+	open_sound = 'sound/foley/doors/shittyopen.ogg'
+	close_sound = 'sound/foley/doors/shittyclose.ogg'
 	open_sound_volume = 25
 	close_sound_volume = 50
 
@@ -57,7 +57,5 @@
 	max_integrity = 70
 	icon = 'icons/roguetown/misc/structure.dmi'
 	material_drop_amount = 5
-	open_sound = 'sound/blank.ogg'
-	close_sound = 'sound/blank.ogg'
 	open_sound_volume = 25
 	close_sound_volume = 50

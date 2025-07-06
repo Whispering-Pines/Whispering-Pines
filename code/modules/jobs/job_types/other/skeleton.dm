@@ -169,7 +169,7 @@
 	var/mob/living/carbon/human/H = spawned
 	H.mind?.special_role = "Cult Summon"
 	H.mind?.current.job = null
-	H.set_patron(/datum/patron/inhumen/tenebrase)
+	H.set_patron(/datum/patron/inhumen/zizo)
 
 /datum/outfit/job/skeleton/zizoid/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -1,30 +1,39 @@
 //RAW ingredients
+
 /obj/item/reagent_containers/food/snacks/meat/human
 	name = "manflesh"
-	foodtype = RAW | MEAT | GROSS | CANNIBAL
+	foodtype = RAW | MEAT | CANNIBAL
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/meat/human
+
+/obj/item/reagent_containers/food/snacks/meat/steak/human
+	ingredient_size = 2
+	name = "raw manflesh"
+	slices_num = 2
+	foodtype = RAW | MEAT | CANNIBAL
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/mince/beef
+	slice_bclass = BCLASS_CHOP
 
 /obj/item/reagent_containers/food/snacks/meat/mince/human
 	name = "minced manflesh"
-	foodtype = RAW | MEAT | GROSS | CANNIBAL
+	foodtype = RAW | MEAT | CANNIBAL
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/mince/human
 
 /obj/item/reagent_containers/food/snacks/meat/mince/human/cooked
-	foodtype = MEAT | GROSS | CANNIBAL
+	foodtype = MEAT | CANNIBAL
 
 /obj/item/reagent_containers/food/snacks/meat/sausage/human
 	name = "raw manflesh sausage/human"
-	foodtype = RAW | MEAT | GROSS | CANNIBAL
+	foodtype = RAW | MEAT | CANNIBAL
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/sausage/human
 
 /obj/item/reagent_containers/food/snacks/meat/wiener/human
 	name = "raw manflesh wiener"
-	foodtype = RAW | MEAT | GROSS | CANNIBAL
+	foodtype = RAW | MEAT | CANNIBAL
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/sausage/human
 
 /obj/item/reagent_containers/food/snacks/foodbase/griddledog_raw/human
 	name = "uncooked human griddledog"
-	foodtype = GRAIN | GROSS | CANNIBAL
+	foodtype = GRAIN | CANNIBAL
 
 //rotten
 /obj/item/reagent_containers/food/snacks/rotten/meat/human
@@ -42,36 +51,36 @@
 //cooked
 /obj/item/reagent_containers/food/snacks/cooked/frysteak/human
 	name = "human frysteak"
-	foodtype = MEAT | GROSS | CANNIBAL
+	foodtype = MEAT | CANNIBAL
 
 /obj/item/reagent_containers/food/snacks/cooked/frysteak_tatos/human
 	name = "human frysteak and potato"
-	foodtype = MEAT | GROSS | CANNIBAL
+	foodtype = MEAT | CANNIBAL
 
 /obj/item/reagent_containers/food/snacks/cooked/frysteak_onion/human
 	name = "human frysteak and onions"
-	foodtype = MEAT | GROSS | CANNIBAL
+	foodtype = MEAT | CANNIBAL
 
 // Sausage & Wiener
 /obj/item/reagent_containers/food/snacks/cooked/sausage/human
 	name = "human sausage"
-	foodtype = MEAT | GROSS | CANNIBAL
+	foodtype = MEAT | CANNIBAL
 
 /obj/item/reagent_containers/food/snacks/cooked/sausage_cabbage/human
 	name = "human wiener on cabbage"
-	foodtype = MEAT | GROSS | CANNIBAL
+	foodtype = MEAT | CANNIBAL
 
 /obj/item/reagent_containers/food/snacks/cooked/sausage_potato/human
 	name = "human wiener on tato"
-	foodtype = MEAT | GROSS | CANNIBAL
+	foodtype = MEAT | CANNIBAL
 
 /obj/item/reagent_containers/food/snacks/cooked/sausage_onion/human
 	name = "human wiener and onions"
-	foodtype = MEAT | GROSS | CANNIBAL
+	foodtype = MEAT | CANNIBAL
 
 /obj/item/reagent_containers/food/snacks/cooked/sausage_sticked/human
 	name = "human sausage on a stick"
-	foodtype = MEAT | GROSS | CANNIBAL
+	foodtype = MEAT | CANNIBAL
 
 //recipes
 /datum/repeatable_crafting_recipe/cooking/frysteak_tato/human

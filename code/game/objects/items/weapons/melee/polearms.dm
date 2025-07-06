@@ -408,7 +408,7 @@
 	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_greatsword.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
 	. = ..()
 
-/obj/item/weapon/polearm/halberd/bardiche/blissrose
+/obj/item/weapon/polearm/halberd/bardiche/dendor
 	name = "summer scythe"
 	desc = "Summer's verdancy runs through the head of this scythe. All the more to sow."
 	icon_state = "dendorscythe"

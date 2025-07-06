@@ -6,7 +6,7 @@
 	earliest_start = 25 MINUTES
 	max_occurrences = 1
 	min_players = 30
-	allowed_storytellers = list(/datum/storyteller/wanderer)
+	allowed_storytellers = list(/datum/storyteller/ravox)
 
 /datum/round_event_control/ravox_resolve/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
@@ -22,7 +22,7 @@
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
 
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/wanderer))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/ravox))
 			continue
 
 		if(!weakest)

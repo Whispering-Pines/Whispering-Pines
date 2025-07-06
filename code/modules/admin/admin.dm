@@ -1026,7 +1026,7 @@
 	priest_job?.add_spells(M)
 	M.mind.set_assigned_role(/datum/job/priest)
 	M.job = "Priest"
-	M.set_patron(/datum/patron/divine/solaria)
+	M.set_patron(/datum/patron/divine/astrata)
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(M, M.patron)
 	C.grant_spells_priest(M)
 	M.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)

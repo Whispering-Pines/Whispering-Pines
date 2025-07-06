@@ -54,14 +54,14 @@
 	category = "Cloak"
 
 /datum/repeatable_crafting_recipe/sewing/weaving/nochood
-	name = "hood (moon/Lunaria)"
+	name = "hood (moon/noc)"
 	output = /obj/item/clothing/head/roguehood/nochood
 	requirements = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 1)
 	craftdiff = 3
 	category = "Hat"
 
-/datum/repeatable_crafting_recipe/sewing/weaving/last_deathhood
+/datum/repeatable_crafting_recipe/sewing/weaving/necrahood
 	name = "hood (Last Death)"
 	output = /obj/item/clothing/head/padded/deathshroud
 	requirements = list(/obj/item/natural/cloth = 2,
@@ -77,9 +77,9 @@
 	craftdiff = 3
 	category = "Hat"
 
-/datum/repeatable_crafting_recipe/sewing/weaving/solariahood
-	name = "hood (solar/Solaria)"
-	output = /obj/item/clothing/head/roguehood/solaria
+/datum/repeatable_crafting_recipe/sewing/weaving/astratahood
+	name = "hood (solar/astrata)"
+	output = /obj/item/clothing/head/roguehood/astrata
 	requirements = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 1)
 	craftdiff = 3
@@ -154,37 +154,37 @@
 	craftdiff = 4
 	category = "Pants"
 
-/datum/repeatable_crafting_recipe/sewing/weaving/solariarobe
+/datum/repeatable_crafting_recipe/sewing/weaving/astratarobe
 	name = "robes (Solaria)"
-	output = /obj/item/clothing/shirt/robe/solaria
+	output = /obj/item/clothing/shirt/robe/astrata
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
 	craftdiff = 4
 
 /datum/repeatable_crafting_recipe/sewing/weaving/eorarobe
 	name = "robes (Moonbeam)"
-	output = /obj/item/clothing/shirt/robe/moonbeam
+	output = /obj/item/clothing/shirt/robe/eora
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
 	craftdiff = 4
 
 /datum/repeatable_crafting_recipe/sewing/weaving/dendorrobe
 	name = "robes (Blissrose)"
-	output = /obj/item/clothing/shirt/robe/blissrose
+	output = /obj/item/clothing/shirt/robe/dendor
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
 	craftdiff = 4
 
-/datum/repeatable_crafting_recipe/sewing/weaving/last_deathrobe
+/datum/repeatable_crafting_recipe/sewing/weaving/necrarobe
 	name = "robes (Last Death)"
-	output = /obj/item/clothing/shirt/robe/last_death
+	output = /obj/item/clothing/shirt/robe/necra
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
 	craftdiff = 4
 
 /datum/repeatable_crafting_recipe/sewing/weaving/nocrobe
 	name = "robes (Lunaria)"
-	output = /obj/item/clothing/shirt/robe/lunaria
+	output = /obj/item/clothing/shirt/robe/noc
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
 	craftdiff = 4
@@ -221,7 +221,7 @@
 
 /datum/repeatable_crafting_recipe/sewing/weaving/eorastraps
 	name = "straps (moonbeam)"
-	output = /obj/item/clothing/shirt/robe/moonbeam/alt
+	output = /obj/item/clothing/shirt/robe/eora/alt
 	requirements = list(/obj/item/ingot/gold = 1,
 				/obj/item/natural/silk = 5,
 				)

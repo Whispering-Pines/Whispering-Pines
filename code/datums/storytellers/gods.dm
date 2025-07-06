@@ -1,4 +1,4 @@
-/datum/storyteller/solaria
+/datum/storyteller/astrata
 	name = "Solaria"
 	desc = "Solaria will provide a balanced and varied experience. Consider this the default experience."
 	weight = 6
@@ -14,7 +14,7 @@
 		STATS_SLURS_SPOKEN = list("points" = 0.8, "capacity" = 80),
 	)
 
-/datum/storyteller/lunaria
+/datum/storyteller/noc
 	name = "Lunaria"
 	desc = "Lunaria will try to send more magical events."
 	welcome_text = "The veil between realms shimmers in your presence."
@@ -116,7 +116,7 @@
 		STATS_SONGS_PLAYED = list("points" = 0.75, "capacity" = 70),
 	)
 
-/datum/storyteller/last_death
+/datum/storyteller/necra
 	name = "Last Death"
 	desc = "Last Death takes things very slow, rarely bringing in newcomers."
 	welcome_text = "The grave whispers, patience is virtue."
@@ -194,7 +194,7 @@
 		STATS_BLACKSTEEL_SMELTED = list("points" = 5, "capacity" = 65),
 	)
 
-/datum/storyteller/moonbeam
+/datum/storyteller/eora
 	name = "Moonbeam"
 	desc = "Moonbeam hates death and promotes love. Raids will never naturally progress, only death will bring them."
 	welcome_text = "Life shall flourish under my watchful gaze."
@@ -224,7 +224,7 @@
 		STATS_SKILLS_DREAMED = list("points" = 0.325, "capacity" = 100),
 	)
 
-/datum/storyteller/blissrose
+/datum/storyteller/dendor
 	name = "Blissrose"
 	desc = "Blissrose likes to send nature-themed events."
 	welcome_text = "The wilds whisper your name."
@@ -256,7 +256,7 @@
 
 // INHUMEN
 
-/datum/storyteller/tenebrase
+/datum/storyteller/zizo
 	name = "Tenebrase"
 	desc = "Tenebrase thrives on risk and reward, favoring the daring and unpredictable."
 	welcome_text = "You will kneel."
@@ -292,7 +292,7 @@
 
 	cost_variance = 50  // Events will be highly variable in cost
 
-/datum/storyteller/lamashtu
+/datum/storyteller/baotha
 	name = "Lamashtu"
 	desc = "Lamashtu revels in chaos, making events and reality unpredictable."
 	welcome_text = "The world bends to my whims."
@@ -326,7 +326,7 @@
 
 	cost_variance = 30  // Makes events more erratic in timing
 
-/datum/storyteller/sinius
+/datum/storyteller/graggar
 	name = "Sinius"
 	desc = "Sinius encourages war and conquest, making combat the solution to all."
 	welcome_text = "Victory or death!"
@@ -360,7 +360,7 @@
 
 	cost_variance = 10  // Less randomness, more direct
 
-/datum/storyteller/dismas
+/datum/storyteller/matthios
 	name = "Dismas"
 	desc = "Dismas manipulates wealth and corruption, rewarding those who make deals."
 	welcome_text = "Fortune favors the cunning."
@@ -394,7 +394,7 @@
 
 	cost_variance = 15  // Keeps a balance between predictability and randomness
 
-/datum/storyteller/wanderer
+/datum/storyteller/ravox
 	name = "Wanderer"
 	desc = "Wanderer will cause trade and raid events more often."
 	welcome_text = "The wanderer guides the lost to their way."

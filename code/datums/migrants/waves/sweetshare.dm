@@ -29,8 +29,8 @@
 	H.name = "[honorary] [prev_name]"
 
 	if(H.mind)
-		if(H.patron != /datum/patron/inhumen/lamashtu)
-			H.set_patron(/datum/patron/inhumen/lamashtu)
+		if(H.patron != /datum/patron/inhumen/baotha)
+			H.set_patron(/datum/patron/inhumen/baotha)
 
 		H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE) // Not a fighter, enough for self-defense
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)

@@ -5,7 +5,7 @@
 	outfit = /datum/outfit/job/adventurer/briar
 	category_tags = list(CTAG_PILGRIM)
 	tutorial = "Stoic gardeners or flesh-eating predators, all can follow Dendors path. <br>His Briars scorn civilized living, many embracing their animal nature, being fickle and temperamental."
-//	allowed_patrons = list(/datum/patron/divine/blissrose)		this doesn't work so long its a subclass type. Besides its preferable to forceswitch as it does to make selection less clunky.
+//	allowed_patrons = list(/datum/patron/divine/dendor)		this doesn't work so long its a subclass type. Besides its preferable to forceswitch as it does to make selection less clunky.
 	cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
 	maximum_possible_slots = 4	// to be lowered to 2? once testing is done
 
@@ -16,9 +16,9 @@
 
 	belt = /obj/item/storage/belt/leather/rope
 	mask = /obj/item/clothing/face/druid
-	neck = /obj/item/clothing/neck/psycross/silver/blissrose
+	neck = /obj/item/clothing/neck/psycross/silver/dendor
 	shirt = /obj/item/clothing/armor/leather/vest
-	armor = /obj/item/clothing/shirt/robe/blissrose
+	armor = /obj/item/clothing/shirt/robe/dendor
 	wrists = /obj/item/clothing/wrists/bracers/leather
 	beltl = /obj/item/weapon/knife/stone
 	backl = /obj/item/weapon/mace/goden/shillelagh
@@ -28,8 +28,8 @@
 	H.change_stat(STATKEY_INT, -1)
 
 	if(H.mind)
-		if(H.patron != /datum/patron/divine/blissrose)
-			H.set_patron(/datum/patron/divine/blissrose)
+		if(H.patron != /datum/patron/divine/dendor)
+			H.set_patron(/datum/patron/divine/dendor)
 
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
@@ -46,20 +46,20 @@
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/blissrose/shillelagh)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/blissrose/forestdelight)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/shillelagh)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/forestdelight)
 
 		if(H.age == AGE_OLD)
 			H.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
 
 		// the unique Blissrose crafting recipes. Blissrose shrines (pantheon cross) and alt cosmetic helmet
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/blissrose/visage)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/blissrose/shrine)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/blissrose/shrine/saiga)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/blissrose/shrine/volf)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/blissrose/sacrifice_growing)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/blissrose/sacrifice_stinging)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/blissrose/sacrifice_devouring)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/visage)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/shrine)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/shrine/saiga)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/shrine/volf)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/sacrifice_growing)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/sacrifice_stinging)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/dendor/sacrifice_devouring)
 
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
@@ -74,19 +74,19 @@
 
 
 /*	.................   Unique Blissrose recipes   ................... */
-/datum/crafting_recipe/blissrose
+/datum/crafting_recipe/dendor
 	always_availible = FALSE
 	craftdiff = 0
 	category = CAT_NONE
 	subtype_reqs = TRUE // so you can use any subtype of the items
 	req_table = FALSE
 
-/datum/crafting_recipe/blissrose/visage
+/datum/crafting_recipe/dendor/visage
 	name = "druids mask (unique)"
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	result = /obj/item/clothing/face/druid
 
-/datum/crafting_recipe/blissrose/shrine
+/datum/crafting_recipe/dendor/shrine
 	name = "growing shrine to Blissrose (unique)"
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/thorn = 3,
@@ -96,7 +96,7 @@
 	verbage_tp = "consecrates"
 	craftsound = 'sound/foley/Building-01.ogg'
 
-/datum/crafting_recipe/blissrose/shillelagh
+/datum/crafting_recipe/dendor/shillelagh
 	name = "Shillelagh (unique)"
 	result = /obj/item/weapon/mace/goden/shillelagh
 	reqs = list(/obj/item/grown/log/tree/small = 1,
@@ -104,28 +104,28 @@
 				/obj/item/reagent_containers/food/snacks/fat =1 )
 	craftdiff = 1
 
-/datum/crafting_recipe/blissrose/forestdelight
+/datum/crafting_recipe/dendor/forestdelight
 	name = "forest guardian offering (unique)"
 	reqs = list(/obj/item/bait/bloody = 1,
 				/obj/item/reagent_containers/food/snacks/produce/swampweed_dried = 1,
 				/obj/item/reagent_containers/food/snacks/raisins = 1 )
 	result = /obj/item/bait/forestdelight
 
-/datum/crafting_recipe/blissrose/shrine/saiga
+/datum/crafting_recipe/dendor/shrine/saiga
 	name = "stinging shrine to Blissrose (unique)"
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/thorn = 3,
 				/obj/item/natural/head/saiga = 1)
 	result = /obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
 
-/datum/crafting_recipe/blissrose/shrine/volf
+/datum/crafting_recipe/dendor/shrine/volf
 	name = "devouring shrine to Blissrose (unique)"
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/thorn = 3,
 				/obj/item/natural/head/volf = 1)
 	result = /obj/structure/fluff/psycross/crafted/shrine/dendor_volf
 
-/datum/crafting_recipe/blissrose/sacrifice_growing
+/datum/crafting_recipe/dendor/sacrifice_growing
 	name = "green sacrifice to Blissrose (unique)"
 	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_gote
 	reqs = list(/obj/item/natural/worms/grub_silk = 1,
@@ -136,7 +136,7 @@
 	verbage_tp = "make"
 	craftsound = 'sound/foley/burning_sacrifice.ogg'
 
-/datum/crafting_recipe/blissrose/sacrifice_stinging
+/datum/crafting_recipe/dendor/sacrifice_stinging
 	name = "yellow sacrifice to Blissrose (unique)"
 	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
 	reqs = list(/obj/item/reagent_containers/food/snacks/fish/eel = 1,
@@ -147,7 +147,7 @@
 	verbage_tp = "make"
 	craftsound = 'sound/foley/burning_sacrifice.ogg'
 
-/datum/crafting_recipe/blissrose/sacrifice_devouring
+/datum/crafting_recipe/dendor/sacrifice_devouring
 	name = "red sacrifice to Blissrose (unique)"
 	structurecraft = /obj/structure/fluff/psycross/crafted/shrine/dendor_volf
 	reqs = list(/obj/item/bait/bloody = 2)
@@ -167,7 +167,7 @@
 	anchored = TRUE
 
 /obj/item/blessing_of_dendor_growing/attack_hand(mob/living/carbon/human/user)
-	if(user.patron.type == /datum/patron/divine/blissrose)
+	if(user.patron.type == /datum/patron/divine/dendor)
 		icon_state = "dendor_grow_end"
 
 		if(!do_after(user, 3 SECONDS, target = user))
@@ -207,7 +207,7 @@
 	anchored = TRUE
 
 /obj/item/blessing_of_dendor_stinging/attack_hand(mob/living/carbon/human/user)
-	if(user.patron.type == /datum/patron/divine/blissrose)
+	if(user.patron.type == /datum/patron/divine/dendor)
 		icon_state = "dendor_sting_end"
 
 		if(!do_after(user, 3 SECONDS, target = user))
@@ -247,7 +247,7 @@
 	anchored = TRUE
 
 /obj/item/blessing_of_dendor_devouring/attack_hand(mob/living/carbon/human/user)
-	if(user.patron.type == /datum/patron/divine/blissrose)
+	if(user.patron.type == /datum/patron/divine/dendor)
 		icon_state = "dendor_consume_end"
 
 		if(!do_after(user, 3 SECONDS, target = user))

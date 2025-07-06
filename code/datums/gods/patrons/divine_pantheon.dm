@@ -17,7 +17,7 @@
 
 /* ----------------- */
 
-/datum/patron/divine/solaria
+/datum/patron/divine/astrata
 	name = "Lady Solaria"
 	domain = "Primordial Radiance, Stars, Good, Life"
 	desc = "Solaria the Primordial Radiance, old goddess of the stars therefore the sun and all goodness. One of the few live old gods remaining. She took the crown of new heaven through having no contestants left alive beside Tenebrase, and the new gods who are not of such power of old gods. She appears to be a female humanoid silhouette of pure blinding, hot starlight with long flowing hair."
@@ -35,9 +35,9 @@
 		"SOLARIA BRINGS LAW!",
 		"I SERVE THE GLORY OF THE SUN!",
 	)
-	storyteller = /datum/storyteller/solaria
+	storyteller = /datum/storyteller/astrata
 
-/datum/patron/divine/lunaria
+/datum/patron/divine/noc
 	name = "Lunaria"
 	domain = "Goddess of Moon, Moonlight and Clarity."
 	desc = "New goddess of night and moon, Said to be the one who gifted mankind with arcane knowledge and affinity of magic after her becoming of a new god. Her flowing hair looks as white as snow and her face divine. Those cold crystal clear eyes are a glowing icey blue  and such seems to be the theme for her body, cold, lithe, yet powerful. She has modest assets for a divine being of this world at least compared to everything else that exists. She appears consistently nude... Moonbeam is her best friend."
@@ -55,9 +55,9 @@
 		"LUNARIA SEES THE TRUTH!",
 		"I SEEK THE MYSTERIES OF THE MOON!",
 	)
-	storyteller = /datum/storyteller/lunaria
+	storyteller = /datum/storyteller/noc
 
-/datum/patron/divine/blissrose
+/datum/patron/divine/dendor
 	name = "Blissrose"
 	domain = "God of the forest and nature."
 	desc = "Blissrose the Plantmother,The first plantoid to ever exist, created by radiation mutating a certain narcotic plant, Blissrose is almost solely responsible for recovery of the world to be the 'new world' over raping (sometimes consensually mating) survivors for centuries, using the produced seeds to regrow whole forests in time, also mother or grandmother of -all- the rare plantpeople, taled to control the whole world's forests for this reason, she was considered powerful and significant enough to be a 'deity'. She represents instincts, animalism and true nature with her actions, generally worshipped and praised for everything the forest offers, as they all came from her in the end, causing travelers to sometimes leave gifts at the nudist village in heart of the forest."
@@ -75,7 +75,7 @@
 		"THE PLANTMOTHER BRINGS BOUNTY!",
 		"I ANSWER THE CALL OF THE WILD!",
 	)
-	storyteller = /datum/storyteller/blissrose
+	storyteller = /datum/storyteller/dendor
 
 /datum/patron/divine/abyssor
 	name = "Abyssor"
@@ -98,7 +98,7 @@
 	storyteller = /datum/storyteller/abyssor
 	preference_accessible = FALSE //not made into lore accurate god yet
 
-/datum/patron/divine/last_death
+/datum/patron/divine/necra
 	name = "Last Death"
 	domain = "Death, Souls, Afterlife, Necromancy"
 	desc = "The Kin-Killer, After the Holy War which created the universe out of it's ashes and fire. After only a handful of the ancient gods being left, He picked them off one by one to kill who he found old minded for a new time. It's said they forced old Goddess of Life in blade-point to give life to his undead creations, making an abomination at first.. half undead half living beings that gave birth to fully living 'resurgentis' in time."
@@ -116,9 +116,9 @@
 		"THE UNNAMED IS OUR FINAL REPOSE!",
 		"I FEAR NOT DEATH, HE AWAITS!",
 	)
-	storyteller = /datum/storyteller/last_death
+	storyteller = /datum/storyteller/necra
 
-/datum/patron/divine/wanderer
+/datum/patron/divine/ravox
 	name = "Wanderer"
 	domain = "God of the Desert, Travel, and Leadership"
 	desc = "The Nomad King. Before his acension to godhood the wanderer was a blind human, gifted with astral sight which he used to guide his tribe through the desert. \
@@ -141,7 +141,7 @@ accend to the astral plane as the god of the desert where he has watched over al
 		"BURNING SANDS AGAINST MY SKIN!",
 		"WANDERER PROTECTS!",
 	)
-	storyteller = /datum/storyteller/wanderer
+	storyteller = /datum/storyteller/ravox
 
 /datum/patron/divine/xylix
 	name = "Xylix"
@@ -212,10 +212,10 @@ accend to the astral plane as the god of the desert where he has watched over al
 	storyteller = /datum/storyteller/malum
 	preference_accessible = FALSE //not made into lore accurate god yet
 
-/datum/patron/divine/moonbeam
+/datum/patron/divine/eora
 	name = "Lady Moonbeam"
 	domain = "Goddess of Dreams, Illusion, Pleasure."
-	desc = "The Dream Goddess. Initially a human psion, she named herself 'Moonbeam', as her favorite thing in the mortal world that didn't leave her until her death. Eventually finding what's remaining of an old god in the astral plane with still strange traces of lewd energy... she takes it, being filled with all of the universe's secrets without -fully- losing her mind. She returned to the astral plane and began building her astral 'dreamland' empire out of people's sweetest dreams... Or wet, whatever pleases the wandering dreamer... she remains a bodiless, astral form taking on an ever-changing cosmic body when she must be seen. Often not speaking, but showing, finding that easier to express herself, her forms often have no mouth, but white glowing wide eyes to take attention, Her most common appearance would be that of a female humanoid shaped pattern of stars and cosmos with flowing hair. Lunaria is her best friend."
+	desc = "The Dream Goddess. Initially a human psion, she named herself 'Moonbeam', as her favorite thing in the mortal world that didn't leave her until her death. Eventually finding what's remaining of an old god in the astral plane with still strange traces of lewd energy... she takes it, being filled with all of the universe's secrets without -fully- losing her mind. She returned to the astral plane and began building her astral 'dreamland' empire out of people's sweetest dreams... Or wet, whatever pleases the wandering dreamer... she remains a bodiless, astral form taking on an ever-changing cosmic body when she must be seen. Often not speaking, but showing, finding that easier to express herself, her forms often have no mouth, but white glowing wide eyes to take attention, Her most common appearance would be that of a female humanoid shaped pattern of stars and cosmos with flowing hair."
 	flaws= "Naivete, Impulsiveness, Slight madness, libido"
 	worshippers = "Illusionists, Dreamers, Perverts"
 	sins = "Sadism, Abandonment, Spreading illness purposefully."
@@ -230,4 +230,4 @@ accend to the astral plane as the god of the desert where he has watched over al
 		"MOONBEAM, WAKE ME FROM THIS BAD DREAM!",
 		"LIFE IS INVALUABLE!",
 	)
-	storyteller = /datum/storyteller/moonbeam
+	storyteller = /datum/storyteller/eora

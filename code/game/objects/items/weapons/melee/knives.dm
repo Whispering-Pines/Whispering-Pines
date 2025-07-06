@@ -1,7 +1,6 @@
 /* KNIVES - Low damage, bad parry, ok AP
 ==========================================================*/
 	//flipping knives has a cooldown on to_chat to reduce chatspam
-	COOLDOWN_DECLARE(flip_cooldown)
 
 /obj/item/weapon/knife
 	name = "knife"
@@ -35,6 +34,7 @@
 	grid_width = 32
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg'
 	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_dagger.ogg'
+	COOLDOWN_DECLARE(flip_cooldown)
 
 /obj/item/weapon/knife/rmb_self(mob/user)
 	. = ..()

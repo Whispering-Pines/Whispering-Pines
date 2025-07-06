@@ -6,11 +6,11 @@
 /datum/status_effect/debuff/hungryt1
 	id = "hungryt1"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt1
-	effectedstats = list(STATKEY_SPD = -1, STATKEY_STR = -1, STATKEY_CON = -1, STATKEY_END = -1)
+	effectedstats = list()
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt1
-	name = "Peckish, stomach growling"
+	name = "Peckish"
 	desc = "<span class='warning'>I am getting hungry.</span>\n"
 	icon_state = "hunger1"
 
@@ -29,11 +29,11 @@
 /datum/status_effect/debuff/hungryt2
 	id = "hungryt2"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt2
-	effectedstats = list(STATKEY_SPD = -4, STATKEY_STR = -2, STATKEY_CON = -2, STATKEY_END = -1)
+	effectedstats = list(STATKEY_STR = -1, STATKEY_END = -1)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt2
-	name = "Hungry, need food"
+	name = "Hungry"
 	desc = "<span class='warning'>My stomach hurts, I need food.</span>\n"
 	icon_state = "hunger2"
 
@@ -52,7 +52,7 @@
 /datum/status_effect/debuff/hungryt3
 	id = "hungryt3"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt3
-	effectedstats = list(STATKEY_SPD = -6, STATKEY_STR = -6, STATKEY_CON = -6, STATKEY_END = -6)
+	effectedstats = list(STATKEY_SPD = -1, STATKEY_STR = -1, STATKEY_CON = -1, STATKEY_END = -1)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/hungryt3
@@ -105,7 +105,7 @@
 /datum/status_effect/debuff/thirstyt1
 	id = "thirsty1"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt1
-	effectedstats = list(STATKEY_END = -1, STATKEY_SPD = -1)
+	effectedstats = list()
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/thirstyt1
@@ -129,7 +129,7 @@
 /datum/status_effect/debuff/thirstyt2
 	id = "thirsty2"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt2
-	effectedstats = list(STATKEY_SPD = -4, STATKEY_END = -4)
+	effectedstats = list(STATKEY_SPD = -1, STATKEY_END = -1)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/thirstyt2
@@ -152,7 +152,7 @@
 /datum/status_effect/debuff/thirstyt3
 	id = "thirsty3"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt3
-	effectedstats = list(STATKEY_STR = -6, STATKEY_SPD = -6, STATKEY_END = -6)
+	effectedstats = list(STATKEY_STR = -1, STATKEY_SPD = -2, STATKEY_END = -2)
 	duration = 100
 
 /atom/movable/screen/alert/status_effect/debuff/thirstyt3
@@ -285,7 +285,7 @@
 /datum/status_effect/debuff/sleepytime
 	id = "sleepytime"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/sleepytime
-	effectedstats = list(STATKEY_SPD = -2, STATKEY_END = -2)
+	effectedstats = list(STATKEY_END = -1)
 
 /datum/status_effect/debuff/sleepytime/on_apply()
 	. = ..()

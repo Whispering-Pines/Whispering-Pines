@@ -2208,7 +2208,7 @@
 /area/rogue/indoors/lich)
 "ln" = (
 /obj/structure/mannequin/male,
-/obj/item/clothing/shirt/robe/lunaria,
+/obj/item/clothing/shirt/robe/noc,
 /obj/item/clothing/head/padded/deathface,
 /turf/open/floor/wood,
 /area/rogue)
@@ -3031,13 +3031,13 @@
 "qX" = (
 /obj/item/clothing/neck/horus,
 /obj/item/clothing/neck/shalal,
-/obj/item/clothing/neck/psycross/silver/solaria,
-/obj/item/clothing/neck/psycross/silver/blissrose,
-/obj/item/clothing/neck/psycross/silver/moonbeam,
+/obj/item/clothing/neck/psycross/silver/astrata,
+/obj/item/clothing/neck/psycross/silver/dendor,
+/obj/item/clothing/neck/psycross/silver/eora,
 /obj/item/clothing/neck/psycross/g,
-/obj/item/clothing/neck/psycross/silver/last_death,
-/obj/item/clothing/neck/psycross/lunaria,
-/obj/item/clothing/neck/psycross/silver/wanderer,
+/obj/item/clothing/neck/psycross/silver/necra,
+/obj/item/clothing/neck/psycross/noc,
+/obj/item/clothing/neck/psycross/silver/ravox,
 /turf/open/floor/wood,
 /area/rogue/indoors)
 "qY" = (
@@ -3951,8 +3951,8 @@
 /area/rogue/outdoors)
 "xs" = (
 /obj/structure/mannequin/male,
-/obj/item/clothing/shirt/robe/moonbeam/alt,
-/obj/item/clothing/head/roguehood/moonbeam,
+/obj/item/clothing/shirt/robe/eora/alt,
+/obj/item/clothing/head/roguehood/eora,
 /turf/open/floor/wood,
 /area/rogue)
 "xt" = (
@@ -4471,9 +4471,9 @@
 /obj/item/clothing/ring/gold/guild_mercator,
 /obj/item/clothing/ring/gold/guild_mercator,
 /obj/item/clothing/ring/gold/guild_mercator,
-/obj/item/clothing/ring/gold/wanderer,
-/obj/item/clothing/ring/gold/wanderer,
-/obj/item/clothing/ring/gold/wanderer,
+/obj/item/clothing/ring/gold/ravox,
+/obj/item/clothing/ring/gold/ravox,
+/obj/item/clothing/ring/gold/ravox,
 /obj/item/clothing/ring/silver,
 /obj/item/clothing/ring/silver,
 /obj/item/clothing/ring/silver,
@@ -5045,7 +5045,7 @@
 /area/rogue/indoors)
 "Fx" = (
 /obj/structure/mannequin/male,
-/obj/item/clothing/shirt/robe/blissrose,
+/obj/item/clothing/shirt/robe/dendor,
 /obj/item/clothing/head/padded/briarthorns,
 /turf/open/floor/wood,
 /area/rogue)
@@ -5121,7 +5121,7 @@
 /area/rogue/indoors)
 "Ge" = (
 /obj/structure/mannequin/male,
-/obj/item/clothing/shirt/robe/last_death,
+/obj/item/clothing/shirt/robe/necra,
 /turf/open/floor/wood,
 /area/rogue/indoors)
 "Gg" = (
@@ -6916,8 +6916,8 @@
 /area/rogue/outdoors/bog/inhumen_camp)
 "SW" = (
 /obj/structure/mannequin/male,
-/obj/item/clothing/shirt/robe/moonbeam,
-/obj/item/clothing/head/roguehood/moonbeam,
+/obj/item/clothing/shirt/robe/eora,
+/obj/item/clothing/head/roguehood/eora,
 /turf/open/floor/wood,
 /area/rogue)
 "Te" = (
@@ -7376,8 +7376,8 @@
 /area/rogue/indoors/vampire_manor)
 "VS" = (
 /obj/structure/mannequin/male,
-/obj/item/clothing/shirt/robe/solaria,
-/obj/item/clothing/head/roguehood/solaria,
+/obj/item/clothing/shirt/robe/astrata,
+/obj/item/clothing/head/roguehood/astrata,
 /turf/open/floor/wood,
 /area/rogue)
 "VU" = (
@@ -7537,8 +7537,8 @@
 /area/rogue/indoors/bandit_lair)
 "Xg" = (
 /obj/structure/mannequin/male,
-/obj/item/clothing/shirt/robe/last_death,
-/obj/item/clothing/head/helmet/heavy/necked/last_death,
+/obj/item/clothing/shirt/robe/necra,
+/obj/item/clothing/head/helmet/heavy/necked/necra,
 /turf/open/floor/wood,
 /area/rogue)
 "Xi" = (

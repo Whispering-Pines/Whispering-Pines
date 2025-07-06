@@ -846,14 +846,14 @@
 	base_icon_state = "book2"
 	bookfile = "tales8.json"
 
-/obj/item/book/last_death
+/obj/item/book/necra
 	name = "Burial Rites for Last Death"
 	desc = "By Hunlaf, Gravedigger. Revised by Lenore, Priest of Last Death."
 	icon_state ="book6_0"
 	base_icon_state = "book6"
 	bookfile = "tales9.json"
 
-/obj/item/book/lunaria
+/obj/item/book/noc
 	name = "Dreamseeker"
 	desc = "By Hunlaf, Gravedigger. Revised by Lenore, Priest of Last Death."
 	icon_state ="book6_0"

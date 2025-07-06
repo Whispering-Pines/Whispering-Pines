@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
-/area/rogue/outdoors/moonbeam
+/area/rogue/outdoors/eora
 	name = "moonbeamite grove"
 	icon_state = "eora"
 	ambientsounds = AMB_JUNGLEDAY

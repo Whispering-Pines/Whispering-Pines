@@ -113,7 +113,7 @@
 	max_integrity = 500
 	sellprice = 35
 
-/obj/item/weapon/flail/sflail/last_deathflail
+/obj/item/weapon/flail/sflail/necraflail
 	name = "swift journey"
 	desc = "The striking head resembles Last Death's original skull, striking true with a sculpted emblem of love and sacrifice. Perhaps one of the few Old Godsic-designed emblems of New gods left."
 	icon_state = "last deathflail"

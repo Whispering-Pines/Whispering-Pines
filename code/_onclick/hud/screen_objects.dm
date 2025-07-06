@@ -15,7 +15,6 @@
 	var/datum/hud/hud = null // A reference to the owner HUD, if any.
 	var/lastclick
 	var/category
-	alpha = 150
 
 /atom/movable/screen/Destroy()
 	master = null

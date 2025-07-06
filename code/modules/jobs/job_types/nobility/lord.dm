@@ -21,6 +21,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	spells = list(
 		/obj/effect/proc_holder/spell/self/grant_title,
 		/obj/effect/proc_holder/spell/self/grant_nobility,
+		/obj/effect/proc_holder/spell/self/convertrole/servant,
 	)
 
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
@@ -112,7 +113,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	var/classes = list(
 	"Monarch",
 	)
-	if(isdwarf(H))
+	if(isresurgentis(H))
 		classes += "Ancestor"
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 	switch(classchoice)
@@ -122,11 +123,27 @@ GLOBAL_LIST_EMPTY(lord_titles)
 			Ancestor(H)
 
 /datum/outfit/job/lord/proc/Monarch(mob/living/carbon/human/H)
+	//literally what you get from the parent
 
 /datum/outfit/job/lord/proc/Ancestor(mob/living/carbon/human/H)
 	H.dna.species.species_traits |= DRINKSBLOOD
-	H.dna.species.liked_food |= CANNIBAL
-	ADD_TRAIT(H, TRAIT_MISSING_NOSE, TRAIT_GENERIC)
+	H.dna.species.liked_food = CANNIBAL
+	H.dna.species.disliked_food = GROSS
+	H.dna.species.toxic_food = VEGETABLES|GRAIN|FRUIT|DAIRY|FRIED|PINEAPPLE|CLOTH
+	ADD_TRAIT(H, TRAIT_NOBREATH, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_UGLY, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DARKVISION, TRAIT_GENERIC)
+	if(H.wear_mask)
+		qdel(H.wear_mask)
+		mask = /obj/item/clothing/face/facemask/goldmask
+	to_chat(H, span_notice("I am ancient, one of the first Resurgentis to ever exist, I witnessed with my very own eyes when the Last Death himself made me out of whatever husk I was in my previous life. Unfortunately this semi undead body of mine rotted in time and is hideous... Also unfortunately, I am forced in a cannibal diet due to my strange body."))
+	H.AddComponent(/datum/component/rot/stinky_person)
+	//The true ruler, likely to have many idiots rising up against him for being so hideous and an undead.
+	H.change_stat(STATKEY_STR, 2) //4 after parent
+	H.change_stat(STATKEY_INT, 2) //5 after parent
+	H.change_stat(STATKEY_LCK, 2) //1 Compensation for ugly luck debuff + being chosen of last death
+	H.change_stat(STATKEY_END, 3)
+	H.change_stat(STATKEY_CON, 3)
 
 /datum/job/exlord //just used to change the lords title
 	title = "Ex-Monarch"
@@ -261,3 +278,13 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	recruiter.say("I HEREBY GRANT YOU, [uppertext(recruit.name)], NOBILITY!")
 	ADD_TRAIT(recruit, TRAIT_NOBLE, TRAIT_GENERIC)
 	return TRUE
+
+/obj/effect/proc_holder/spell/self/convertrole/servant
+	name = "Recruit Servant"
+	new_role = "Servant"
+	overlay_state = "recruit_servant"
+	recruitment_faction = "Servants"
+	recruitment_message = "Serve the crown, %RECRUIT!"
+	accept_message = "FOR THE CROWN!"
+	refuse_message = "I refuse."
+	recharge_time = 100

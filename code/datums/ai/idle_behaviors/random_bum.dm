@@ -13,9 +13,9 @@
 	if(controller.blackboard[BB_BASIC_MOB_FOOD_TARGET]) // this means we are likely eating a corpse
 		return
 
-	var/mob/living/simple_animal/wanderer = controller.pawn
-	if(istype(wanderer))
-		if(wanderer.binded)
+	var/mob/living/simple_animal/ravox = controller.pawn
+	if(istype(ravox))
+		if(ravox.binded)
 			return
 
 	next_time = world.time + cooldown

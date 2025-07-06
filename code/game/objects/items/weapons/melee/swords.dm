@@ -266,7 +266,7 @@
 	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
 	icon_state = "spidersaber"
 
-/obj/item/weapon/sword/sabre/lunaria
+/obj/item/weapon/sword/sabre/noc
 	name = "moonlight khopesh"
 	icon_state = "nockhopesh"
 	desc = "Glittering moonlight upon blued steel."
@@ -481,7 +481,7 @@
 	last_used = 0
 	is_silver = TRUE
 
-/obj/item/weapon/sword/rapier/moonbeam
+/obj/item/weapon/sword/rapier/eora
 	name = "The Heartstring"
 	desc = "For when soft words cannot be spoken more, and hearts are to be pierced."
 	icon_state = "eorarapier"
@@ -665,7 +665,7 @@
 	is_silver = TRUE
 
 
-/obj/item/weapon/sword/long/wanderer
+/obj/item/weapon/sword/long/ravox
 	name = "duel settler"
 	desc = "New godsets of ravoxian duels are enscribed upon the blade of this sword."
 	icon_state = "ravoxflamberge"
@@ -786,7 +786,7 @@
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
 //................ Tenebrase Sword ............... //
-/obj/item/weapon/sword/long/greatsword/tenebrase
+/obj/item/weapon/sword/long/greatsword/zizo
 	name = "darksteel kriegsmesser"
 	desc = "A dark red curved blade. Called forth from Her will, if you wield this blade you are to be feared, if you do not, you are dead."
 	icon_state = "zizosword"
@@ -794,7 +794,7 @@
 	minstr = 10
 	sellprice = 0 // Super evil Tenebrase sword, nobody wants this
 
-/obj/item/weapon/sword/long/greatsword/tenebrase/getonmobprop(tag)
+/obj/item/weapon/sword/long/greatsword/zizo/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
@@ -927,7 +927,7 @@
 			if("onback")
 				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
-/obj/item/weapon/sword/long/exe/solaria
+/obj/item/weapon/sword/long/exe/astrata
 	name = "solar judge"
 	desc = "This wicked executioner's blade calls for order."
 	icon_state = "astratasword"

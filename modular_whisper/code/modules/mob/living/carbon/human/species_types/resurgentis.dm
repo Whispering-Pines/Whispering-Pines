@@ -84,7 +84,7 @@
 	enflamed_icon = "widefire"
 
 	exotic_bloodtype = /datum/blood_type/human/resurgentis
-	meat = /obj/item/reagent_containers/food/snacks/meat/human
+	meat = /obj/item/reagent_containers/food/snacks/meat/steak/human
 
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
@@ -129,12 +129,12 @@
 
 /datum/species/human/resurgentis/get_skin_list()
 	return list(
-		"purple - pale" = "df78f9",
-		"purple - light" = "ba67cf",
-		"purple" = "9752a2",
-		"purple - tanned" = "83458d",
-		"purple - scorched" = "582560",
-		"purple - burnt" = "4d1255",
+		"purple - pale" = "#df78f9",
+		"purple - sunless" = "#ba67cf",
+		"purple - lightish" = "#9752a2",
+		"purple" = "#83458d",
+		"purple - tanned" = "#582560",
+		"purple - scorched" = "#4d1255",
 	)
 
 /datum/species/human/resurgentis/get_hairc_list()

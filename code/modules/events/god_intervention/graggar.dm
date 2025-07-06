@@ -84,7 +84,7 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 	earliest_start = 25 MINUTES
 	max_occurrences = 1
 	min_players = 40
-	allowed_storytellers = list(/datum/storyteller/sinius)
+	allowed_storytellers = list(/datum/storyteller/graggar)
 
 /datum/round_event_control/graggar_culling/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
@@ -99,7 +99,7 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
 
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/sinius))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/graggar))
 			continue
 
 		var/obj/item/organ/heart/heart = human_mob.getorganslot(ORGAN_SLOT_HEART)

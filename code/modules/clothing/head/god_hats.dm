@@ -60,7 +60,7 @@
 	dynamic_hair_suffix = ""
 	salvage_result = /obj/item/natural/silk
 
-/obj/item/clothing/head/roguehood/moonbeam
+/obj/item/clothing/head/roguehood/eora
 	name = "opera hood"
 	desc = "A silver opera mask worn by the faithful of Moonbeam, usually during their rituals. Comes with a hood that can be pulled up for warmth."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
@@ -73,7 +73,7 @@
 	armor = ARMOR_WEAK
 	salvage_result = NUTRITION_LEVEL_HUNGRY
 
-/obj/item/clothing/head/roguehood/solaria
+/obj/item/clothing/head/roguehood/astrata
 	name = "sun hood"
 	desc = "Worn by the faithful of Solaria."
 	icon_state = "astratahood"

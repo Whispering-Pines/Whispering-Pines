@@ -997,7 +997,7 @@ GLOBAL_LIST_INIT(natural_precursor_registry, list())
 		/datum/thaumaturgical_essence/void = 1
 	)
 	init_types = list(
-		/obj/item/reagent_containers/food/snacks/meat/human
+		/obj/item/reagent_containers/food/snacks/meat/steak/human
 	)
 
 /datum/natural_precursor/meat_fatty

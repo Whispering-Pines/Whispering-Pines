@@ -186,7 +186,7 @@
 	pants = /obj/item/clothing/pants/tights/stockings/silk
 	backpack_contents = list(
 		/obj/item/rope = 1,
-		/obj/item/candle/moonbeam = 1,
+		/obj/item/candle/eora = 1,
 		/obj/item/weapon/whip = 1,
 		/obj/item/clothing/face/blindfold = 1,
 	)

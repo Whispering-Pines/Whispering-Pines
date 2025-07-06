@@ -137,7 +137,7 @@
 
 //............... Evil Boots ............... //
 
-/obj/item/clothing/shoes/boots/armor/tenebrase
+/obj/item/clothing/shoes/boots/armor/zizo
 	name = "darksteel boots"
 	desc = "Plate boots. Called forth from the edge of what should be known. In Her name."
 	icon_state = "zizoboots"
@@ -147,7 +147,7 @@
 	sleeved = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sellprice = 0 // Incredibly evil Zizoid armor, this should be burnt, nobody wants this
 
-/obj/item/clothing/shoes/boots/armor/dismas
+/obj/item/clothing/shoes/boots/armor/matthios
 	name = "gilded boots"
 	desc = "Plate boots. A door kicked in, treasures to behold inside."
 	icon_state = "mattiosboots"

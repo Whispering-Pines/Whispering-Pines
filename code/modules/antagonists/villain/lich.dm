@@ -87,7 +87,7 @@
 	L.grant_undead_eyes()
 	L.skeletonize(FALSE)
 	L.equipOutfit(/datum/outfit/job/lich)
-	L.set_patron(/datum/patron/inhumen/tenebrase)
+	L.set_patron(/datum/patron/inhumen/zizo)
 
 /datum/outfit/job/lich/pre_equip(mob/living/carbon/human/H)
 	..()

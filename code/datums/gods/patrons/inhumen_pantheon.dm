@@ -19,7 +19,7 @@
 
 /* ----------------- */
 
-/datum/patron/inhumen/tenebrase
+/datum/patron/inhumen/zizo
 	name = "Lady Tenebrase"
 	domain = "Primordial Darkness, Evil, Chaos, Darkness, Undeath"
 	desc = "Tenebrase the Primordial Darkness. Tenebrase's history is a mystery to all, only way she shown her existence to the mortal \
@@ -40,13 +40,13 @@ creative punis- 'Tests' to her believers that are often lethal to the weak. Tene
 		"LONG LIVE THE DARK EMPRESS!",
 		"TENEBRASE SHOWED ME THE WAY!",
 	)
-	storyteller = /datum/storyteller/tenebrase
+	storyteller = /datum/storyteller/zizo
 	added_verbs = list(
 		/mob/living/carbon/human/proc/draw_sigil,
 		/mob/living/carbon/human/proc/praise,
 	)
 
-/datum/patron/inhumen/sinius
+/datum/patron/inhumen/graggar
 	name = "Sinius"
 	domain = "New God of Ultraviolence, Hatred and Cannibalism"
 	desc = "Once an orc warlord who were gifted a fragment of Tenebrase's great power through being deemed worthy due to his pure evil \
@@ -61,9 +61,9 @@ soul and too many atrocities to count. He was a red orc called.. 'Bad Green' but
 		"SINIUS WILL RAVAGE YOU!",
 		"SINIUS BRINGS UNHOLY DESTRUCTION!"
 	)
-	storyteller = /datum/storyteller/sinius
+	storyteller = /datum/storyteller/graggar
 
-/datum/patron/inhumen/dismas
+/datum/patron/inhumen/matthios
 	name = "Dismas"
 	domain = "God of Thievery, Ill-Gotten Gains, and Highwaymen"
 	desc = "Legendary human bandit whose greatest thievery was a spark of divinity through which He ascended himself to be a new god."
@@ -71,15 +71,15 @@ soul and too many atrocities to count. He was a red orc called.. 'Bad Green' but
 	worshippers = "Outlaws, Noble-Haters, Downtrodden Peasantry"
 	sins = "Clumsiness, Stupidity, Humility"
 	boons = "You can see the most expensive item someone is carrying."
-	added_traits = list(TRAIT_DISMAS_EYES)
+	added_traits = list(TRAIT_MATTHIOS_EYES)
 	confess_lines = list(
 		"DISMAS STEALS FROM THE WORTHLESS!",
 		"DISMAS IS JUSTICE FOR THE COMMON MAN!",
 		"DISMAS IS MY LORD, I SHALL BE HIS MARTYR!",
 	)
-	storyteller = /datum/storyteller/dismas
+	storyteller = /datum/storyteller/matthios
 
-/datum/patron/inhumen/lamashtu
+/datum/patron/inhumen/baotha
 	name = "Lamashtu"
 	domain = "Goddess of Monsters, Family, Breeding, Hedonism"
 	desc = "Mother of Monsters and demon-goddess of family. A demonic gnoll, she is primarily worshipped by \
@@ -101,7 +101,7 @@ the power of a minor goddess.'"
 		"MULTIPLY TO A HORDE FOR LAMASHTU!",
 		"LAMASHTU, MOTHER OF MONSTERS!",
 	)
-	storyteller = /datum/storyteller/lamashtu
+	storyteller = /datum/storyteller/baotha
 
 /// Maniac Patron - Their mind is broken by secrets of Zizo/Graggar combined. They quite possibly know the reality of what happens outside the planet. They may think this is all a game. They are clearly insane.
 /datum/patron/inhumen/graggar_zizo

@@ -3933,7 +3933,7 @@
 "dIE" = (
 /obj/structure/closet/crate/crafted_closet,
 /obj/item/clothing/head/roguehood/nochood,
-/obj/item/clothing/head/roguehood/moonbeam,
+/obj/item/clothing/head/roguehood/eora,
 /obj/item/clothing/head/roguehood/random,
 /obj/item/clothing/head/roguehood/random,
 /obj/item/clothing/head/roguehood/random,
@@ -6742,10 +6742,10 @@
 /obj/structure/closet/crate/crafted_closet/inn,
 /obj/item/clothing/head/roguehood/nochood,
 /obj/item/clothing/head/roguehood/nochood,
-/obj/item/clothing/shirt/robe/lunaria,
-/obj/item/clothing/shirt/robe/lunaria,
-/obj/item/clothing/shirt/robe/last_death,
-/obj/item/clothing/shirt/robe/last_death,
+/obj/item/clothing/shirt/robe/noc,
+/obj/item/clothing/shirt/robe/noc,
+/obj/item/clothing/shirt/robe/necra,
+/obj/item/clothing/shirt/robe/necra,
 /obj/item/clothing/head/padded/deathshroud,
 /obj/item/clothing/head/padded/deathshroud,
 /turf/open/floor/church,
@@ -8630,7 +8630,7 @@
 	pixel_x = 0;
 	pixel_y = 4
 	},
-/obj/structure/fluff/statue/solaria/bling{
+/obj/structure/fluff/statue/astrata/bling{
 	pixel_x = -16;
 	pixel_y = -1
 	},
@@ -11089,10 +11089,10 @@
 /area/rogue/indoors/lich)
 "kEF" = (
 /obj/structure/closet/crate/crafted_closet/inn,
-/obj/item/clothing/head/roguehood/moonbeam,
-/obj/item/clothing/head/roguehood/moonbeam,
-/obj/item/clothing/shirt/robe/moonbeam,
-/obj/item/clothing/shirt/robe/moonbeam,
+/obj/item/clothing/head/roguehood/eora,
+/obj/item/clothing/head/roguehood/eora,
+/obj/item/clothing/shirt/robe/eora,
+/obj/item/clothing/shirt/robe/eora,
 /turf/open/floor/churchrough,
 /area/rogue/indoors/town/church)
 "kEN" = (
@@ -13767,7 +13767,7 @@
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors/town/manor)
 "ncN" = (
-/obj/item/clothing/neck/psycross/silver/wanderer,
+/obj/item/clothing/neck/psycross/silver/ravox,
 /turf/open/floor/cobble,
 /area/rogue/indoors/town/church)
 "ndq" = (
@@ -14206,17 +14206,17 @@
 /area/rogue/indoors/town/manor)
 "ntn" = (
 /obj/structure/closet/crate/crafted_closet/inn,
-/obj/item/clothing/shirt/robe/solaria,
-/obj/item/clothing/shirt/robe/solaria,
-/obj/item/clothing/head/roguehood/solaria,
-/obj/item/clothing/head/roguehood/solaria,
+/obj/item/clothing/shirt/robe/astrata,
+/obj/item/clothing/shirt/robe/astrata,
+/obj/item/clothing/head/roguehood/astrata,
+/obj/item/clothing/head/roguehood/astrata,
 /obj/effect/decal/cleanable/dirt/cobweb{
 	icon_state = "cobweb2"
 	},
 /obj/item/clothing/head/padded/briarthorns,
 /obj/item/clothing/head/padded/briarthorns,
-/obj/item/clothing/shirt/robe/blissrose,
-/obj/item/clothing/shirt/robe/blissrose,
+/obj/item/clothing/shirt/robe/dendor,
+/obj/item/clothing/shirt/robe/dendor,
 /turf/open/floor/church,
 /area/rogue/indoors/town/church)
 "ntF" = (
@@ -15058,24 +15058,24 @@
 /area/rogue/indoors/soilsons)
 "ogV" = (
 /obj/structure/table/wood/crafted,
-/obj/item/clothing/neck/psycross/silver/moonbeam{
+/obj/item/clothing/neck/psycross/silver/eora{
 	pixel_x = 7;
 	pixel_y = -5
 	},
-/obj/item/clothing/neck/psycross/silver/moonbeam{
+/obj/item/clothing/neck/psycross/silver/eora{
 	pixel_x = 11;
 	pixel_y = 5
 	},
-/obj/item/clothing/neck/psycross/silver/moonbeam{
+/obj/item/clothing/neck/psycross/silver/eora{
 	pixel_x = -9;
 	pixel_y = -6
 	},
-/obj/item/clothing/neck/psycross/silver/solaria,
-/obj/item/clothing/neck/psycross/silver/solaria{
+/obj/item/clothing/neck/psycross/silver/astrata,
+/obj/item/clothing/neck/psycross/silver/astrata{
 	pixel_x = -11;
 	pixel_y = 11
 	},
-/obj/item/clothing/neck/psycross/silver/solaria{
+/obj/item/clothing/neck/psycross/silver/astrata{
 	pixel_x = 5;
 	pixel_y = 8
 	},
@@ -17446,15 +17446,15 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
-/obj/item/clothing/neck/psycross/silver/blissrose{
+/obj/item/clothing/neck/psycross/silver/dendor{
 	pixel_x = 11;
 	pixel_y = 13
 	},
-/obj/item/clothing/neck/psycross/silver/blissrose{
+/obj/item/clothing/neck/psycross/silver/dendor{
 	pixel_x = 7;
 	pixel_y = -3
 	},
-/obj/item/clothing/neck/psycross/silver/blissrose{
+/obj/item/clothing/neck/psycross/silver/dendor{
 	pixel_x = 11;
 	pixel_y = 5
 	},
@@ -18803,27 +18803,27 @@
 /area/rogue/outdoors/rtfield)
 "rBg" = (
 /obj/structure/table/wood/crafted,
-/obj/item/clothing/neck/psycross/silver/last_death{
+/obj/item/clothing/neck/psycross/silver/necra{
 	pixel_x = 8;
 	pixel_y = -5
 	},
-/obj/item/clothing/neck/psycross/silver/last_death{
+/obj/item/clothing/neck/psycross/silver/necra{
 	pixel_x = 11;
 	pixel_y = 7
 	},
-/obj/item/clothing/neck/psycross/silver/last_death{
+/obj/item/clothing/neck/psycross/silver/necra{
 	pixel_x = -6;
 	pixel_y = 11
 	},
-/obj/item/clothing/neck/psycross/lunaria{
+/obj/item/clothing/neck/psycross/noc{
 	pixel_x = -2;
 	pixel_y = -4
 	},
-/obj/item/clothing/neck/psycross/lunaria{
+/obj/item/clothing/neck/psycross/noc{
 	pixel_x = 7;
 	pixel_y = 5
 	},
-/obj/item/clothing/neck/psycross/lunaria{
+/obj/item/clothing/neck/psycross/noc{
 	pixel_x = -10;
 	pixel_y = 9
 	},
@@ -21404,15 +21404,15 @@
 /area/rogue/outdoors/river)
 "uaa" = (
 /obj/structure/table/wood/crafted,
-/obj/item/clothing/neck/psycross/silver/wanderer{
+/obj/item/clothing/neck/psycross/silver/ravox{
 	pixel_x = 0;
 	pixel_y = -5
 	},
-/obj/item/clothing/neck/psycross/silver/wanderer{
+/obj/item/clothing/neck/psycross/silver/ravox{
 	pixel_x = -9;
 	pixel_y = -1
 	},
-/obj/item/clothing/neck/psycross/silver/wanderer{
+/obj/item/clothing/neck/psycross/silver/ravox{
 	pixel_x = -6;
 	pixel_y = 12
 	},

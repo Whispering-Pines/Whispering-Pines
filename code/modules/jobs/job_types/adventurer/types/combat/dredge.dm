@@ -465,8 +465,8 @@
 			)
 		if("Mage")
 			H.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
-			if(!(H.patron == /datum/patron/divine/lunaria || /datum/patron/inhumen/tenebrase))	//Magicians must follow Noc or Zizo to have access to magic.
-				H.set_patron(/datum/patron/divine/lunaria)
+			if(!(H.patron == /datum/patron/divine/noc || /datum/patron/inhumen/zizo))	//Magicians must follow Noc or Zizo to have access to magic.
+				H.set_patron(/datum/patron/divine/noc)
 			r_hand = /obj/item/weapon/polearm/woodstaff
 			head = /obj/item/clothing/head/roguehood/mage
 			armor = /obj/item/clothing/shirt/robe/mage
@@ -724,7 +724,7 @@
 			)
 		if("Tenebrase")
 			H.change_stat(STATKEY_INT, 1)
-			H.set_patron(/datum/patron/inhumen/tenebrase)
+			H.set_patron(/datum/patron/inhumen/zizo)
 			to_chat(H,span_info("\
 			CHAOS REIGNS! HAIL TENEBRASE!")
 			)
@@ -737,7 +737,7 @@
 		if("Sinius")
 			H.change_stat(STATKEY_END, 1)
 			H.change_stat(STATKEY_CON, 1)
-			H.set_patron(/datum/patron/inhumen/sinius)
+			H.set_patron(/datum/patron/inhumen/graggar)
 			l_hand = /obj/item/clothing/head/helmet/heavy/sinistar
 			to_chat(H,span_info("\
 			FOR ALL WHO DENY THE STRUGGLE, THE TRIUMPHANT OVERCOME! SINIUS IS THE BEAST I WORSHIP!")

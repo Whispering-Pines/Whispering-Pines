@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 /datum/tennite_schism
 	var/datum/weakref/challenger_god
 	var/datum/weakref/astrata_god
-	var/list/supporters_solaria = list()
+	var/list/supporters_astrata = list()
 	var/list/supporters_challenger = list()
 	var/list/neutrals = list()
 	var/halfway_passed = FALSE
@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 /datum/tennite_schism/New(datum/patron/challenger)
 	. = ..()
 	src.challenger_god = WEAKREF(challenger)
-	src.astrata_god = WEAKREF(GLOB.patronlist[/datum/patron/divine/solaria])
+	src.astrata_god = WEAKREF(GLOB.patronlist[/datum/patron/divine/astrata])
 	GLOB.tennite_schisms += src
 
 /datum/tennite_schism/Destroy()
@@ -53,15 +53,15 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 
 /datum/tennite_schism/proc/process_winner()
 	var/datum/patron/challenger = challenger_god.resolve()
-	var/datum/patron/solaria = astrata_god.resolve()
+	var/datum/patron/astrata = astrata_god.resolve()
 
-	if(!challenger || !solaria)
+	if(!challenger || !astrata)
 		return
 
 	var/astrata_count = 0
 	var/challenger_count = 0
 
-	for(var/datum/weakref/supporter_ref in supporters_solaria)
+	for(var/datum/weakref/supporter_ref in supporters_astrata)
 		var/mob/living/carbon/human/supporter = supporter_ref.resolve()
 		if(supporter && supporter.stat != DEAD && is_tennite(supporter))
 			astrata_count++
@@ -73,12 +73,12 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 
 	if(astrata_count >= challenger_count)
 		priority_announce("Solaria's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as a true heir of Old Gods!", "Solaria is VICTORIOUS!", 'sound/magic/ahh2.ogg')
-		adjust_storyteller_influence("Solaria", 200)
+		adjust_storyteller_influence("astrata", 200)
 		adjust_storyteller_influence(challenger.name, -50)
 
-		for(var/datum/weakref/supporter_ref in supporters_solaria)
+		for(var/datum/weakref/supporter_ref in supporters_astrata)
 			var/mob/living/carbon/human/supporter = supporter_ref.resolve()
-			if(supporter && supporter.patron == solaria)
+			if(supporter && supporter.patron == astrata)
 				for(var/obj/effect/proc_holder/spell/self/choose_schism_side/spell in supporter.mind.spell_list)
 					if(spell.chose_early)
 						to_chat(supporter, span_notice("Solaria's light prevails! Your steadfast devotion is rewarded with many triumphs."))
@@ -93,8 +93,8 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			var/mob/living/carbon/human/supporter = supporter_ref.resolve()
 			if(supporter)
 				to_chat(supporter, span_userdanger("NEVER DEFY ME AGAIN!"))
-				supporter.electrocute_act(5, solaria)
-				supporter.add_curse(/datum/curse/solaria)
+				supporter.electrocute_act(5, astrata)
+				supporter.add_curse(/datum/curse/astrata)
 
 		cleanup_schism()
 
@@ -121,11 +121,11 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 					else
 						to_chat(supporter, span_notice("[challenger.name]'s challenge succeeds, but your late support goes unrewarded."))
 					break
-		for(var/datum/weakref/supporter_ref in supporters_solaria)
+		for(var/datum/weakref/supporter_ref in supporters_astrata)
 			var/mob/living/carbon/human/supporter = supporter_ref.resolve()
 			if(supporter)
 				to_chat(supporter, span_userdanger("INCOMPETENT IMBECILES!"))
-				supporter.electrocute_act(5, solaria)
+				supporter.electrocute_act(5, astrata)
 
 		if(GLOB.todoverride == null)
 			addtimer(CALLBACK(src, PROC_REF(astrata_scorn)), 15 SECONDS)
@@ -203,15 +203,15 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 /// Announces the current standings in the schism
 /datum/tennite_schism/proc/announce_standings()
 	var/datum/patron/challenger = challenger_god.resolve()
-	var/datum/patron/solaria = astrata_god.resolve()
+	var/datum/patron/astrata = astrata_god.resolve()
 
-	if(!challenger || !solaria)
+	if(!challenger || !astrata)
 		return
 
 	var/astrata_count = 0
 	var/challenger_count = 0
 
-	for(var/datum/weakref/supporter_ref in supporters_solaria)
+	for(var/datum/weakref/supporter_ref in supporters_astrata)
 		var/mob/living/carbon/human/supporter = supporter_ref.resolve()
 		if(supporter && supporter.stat != DEAD && is_tennite(supporter))
 			astrata_count++
@@ -229,13 +229,13 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	halfway_passed = TRUE
 
 /datum/tennite_schism/proc/change_side(mob/living/carbon/human/user, new_side)
-	supporters_solaria -= WEAKREF(user)
+	supporters_astrata -= WEAKREF(user)
 	supporters_challenger -= WEAKREF(user)
 	neutrals -= WEAKREF(user)
 
 	switch(new_side)
 		if("solaria")
-			supporters_solaria += WEAKREF(user)
+			supporters_astrata += WEAKREF(user)
 			to_chat(user, span_notice("You have declared your allegiance to Solaria!"))
 		if("challenger")
 			supporters_challenger += WEAKREF(user)
@@ -277,7 +277,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 
 	var/current_side
 	var/datum/weakref/user_ref = WEAKREF(user)
-	if(user_ref in current_schism.supporters_solaria)
+	if(user_ref in current_schism.supporters_astrata)
 		current_side = "solaria"
 	else if(user_ref in current_schism.supporters_challenger)
 		current_side = "challenger"
@@ -308,7 +308,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	max_occurrences = 1
 	min_players = 60
 	earliest_start = 20 MINUTES
-	allowed_storytellers = list(/datum/storyteller/lunaria, /datum/storyteller/wanderer, /datum/storyteller/last_death, /datum/storyteller/xylix, /datum/storyteller/pestra, /datum/storyteller/abyssor, /datum/storyteller/blissrose, /datum/storyteller/malum)
+	allowed_storytellers = list(/datum/storyteller/noc, /datum/storyteller/ravox, /datum/storyteller/necra, /datum/storyteller/xylix, /datum/storyteller/pestra, /datum/storyteller/abyssor, /datum/storyteller/dendor, /datum/storyteller/malum)
 
 /datum/round_event_control/schism_within_ten/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
@@ -387,7 +387,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	var/highest_influence = 0
 	var/astrata_influence = get_storyteller_influence("Solaria") || 0
 
-	for(var/type in subtypesof(/datum/patron/divine) - list(/datum/patron/divine/solaria, /datum/patron/divine/moonbeam))
+	for(var/type in subtypesof(/datum/patron/divine) - list(/datum/patron/divine/astrata, /datum/patron/divine/eora))
 		var/datum/patron/divine/god = GLOB.patronlist[type]
 		if(!god)
 			continue

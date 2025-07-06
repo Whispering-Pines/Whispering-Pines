@@ -1,24 +1,24 @@
-#define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/solaria, /datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/moonbeam,)
-#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/solaria, /datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/moonbeam, /datum/patron/inhumen/tenebrase, /datum/patron/inhumen/lamashtu, /datum/patron/inhumen/dismas, /datum/patron/inhumen/sinius)
-#define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/solaria, /datum/patron/divine/lunaria, /datum/patron/divine/moonbeam, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/blissrose,)
+#define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/eora,)
+#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/eora, /datum/patron/inhumen/zizo, /datum/patron/inhumen/baotha, /datum/patron/inhumen/matthios, /datum/patron/inhumen/graggar)
+#define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/dendor,)
 
 GLOBAL_LIST_INIT(curse_names, list())
 
 #define TEN_CURSES list(\
-	/datum/curse/solaria,\
-	/datum/curse/lunaria,\
-	/datum/curse/wanderer,\
-	/datum/curse/last_death,\
+	/datum/curse/astrata,\
+	/datum/curse/noc,\
+	/datum/curse/ravox,\
+	/datum/curse/necra,\
 	/datum/curse/xylix,\
 	/datum/curse/pestra,\
-	/datum/curse/moonbeam\
+	/datum/curse/eora\
 )
 
 #define INHUMEN_CURSES list(\
-	/datum/curse/tenebrase,\
-	/datum/curse/sinius,\
-	/datum/curse/dismas,\
-	/datum/curse/lamashtu\
+	/datum/curse/zizo,\
+	/datum/curse/graggar,\
+	/datum/curse/matthios,\
+	/datum/curse/baotha\
 )
 #define SPECIAL_CURSES list(\
 	/datum/curse/atheism\

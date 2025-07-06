@@ -244,9 +244,9 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	desc = "Perhaps the most well-known, and often many a mage's first study of the elements, pyromancy covers any heat or other flame related magic."
 
 	alignments = list(
-		/datum/patron/divine/solaria = 1,
-		/datum/patron/inhumen/tenebrase = 0.25,
-		/datum/patron/divine/lunaria = 0.15,
+		/datum/patron/divine/astrata = 1,
+		/datum/patron/inhumen/zizo = 0.25,
+		/datum/patron/divine/noc = 0.15,
 		/datum/patron/divine/malum = 1.2,
 	)
 
@@ -255,8 +255,8 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	desc = "Sibling and eternal rival of Pyromancy, Cryomancy centers on the manipulation of the cold, far beyond just water."
 
 	alignments = list(
-		/datum/patron/divine/lunaria = 1,
-		/datum/patron/inhumen/tenebrase = 0.4,
+		/datum/patron/divine/noc = 1,
+		/datum/patron/inhumen/zizo = 0.4,
 	)
 
 /datum/attunement/electric
@@ -264,8 +264,8 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	desc = "An element typically associated with weather, sometimes with divinity, and often technology."
 
 	alignments = list(
-		/datum/patron/divine/lunaria = 0.25,
-		/datum/patron/inhumen/tenebrase = 0.15,
+		/datum/patron/divine/noc = 0.25,
+		/datum/patron/inhumen/zizo = 0.15,
 		/datum/patron/divine/abyssor = 0.5,
 	)
 
@@ -276,9 +276,9 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	alignments = list(
 		/datum/patron/divine/abyssor = 2,
 		/datum/patron/divine/pestra = 0.5,
-		/datum/patron/divine/blissrose = 0.5,
-		/datum/patron/inhumen/tenebrase = 1,
-		/datum/patron/inhumen/sinius = 2,
+		/datum/patron/divine/dendor = 0.5,
+		/datum/patron/inhumen/zizo = 1,
+		/datum/patron/inhumen/graggar = 2,
 	)
 
 /datum/attunement/life
@@ -287,8 +287,8 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 
 	alignments = list(
 		/datum/patron/divine/pestra = 1,
-		/datum/patron/divine/solaria = 0.5,
-		/datum/patron/inhumen/lamashtu = 1,
+		/datum/patron/divine/astrata = 0.5,
+		/datum/patron/inhumen/baotha = 1,
 	)
 
 /datum/attunement/death
@@ -296,8 +296,8 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	desc = "The energy that fuels the end of effectively all living matter."
 
 	alignments = list(
-		/datum/patron/divine/last_death = 0.5,
-		/datum/patron/inhumen/tenebrase = 0.5,
+		/datum/patron/divine/necra = 0.5,
+		/datum/patron/inhumen/zizo = 0.5,
 	)
 
 
@@ -306,9 +306,9 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	desc = "The very ground you stand on, a raging earthquake, or an paven roads, earth is all encompassing."
 
 	alignments = list(
-		/datum/patron/divine/blissrose = 1.2,
+		/datum/patron/divine/dendor = 1.2,
 		/datum/patron/divine/malum = 0.5,
-		/datum/patron/divine/wanderer = 1,
+		/datum/patron/divine/ravox = 1,
 	)
 
 /datum/attunement/light
@@ -316,12 +316,12 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	desc = "Light is the natural enemy of the dark."
 
 	alignments = list(
-		/datum/patron/divine/solaria = 0.15,
-		/datum/patron/divine/lunaria = 0.15,
-		/datum/patron/divine/last_death = 0.15,
+		/datum/patron/divine/astrata = 0.15,
+		/datum/patron/divine/noc = 0.15,
+		/datum/patron/divine/necra = 0.15,
 		/datum/patron/divine/xylix = 0.15,
-		/datum/patron/divine/moonbeam = 0.15,
-		/datum/patron/divine/wanderer = 0.15,
+		/datum/patron/divine/eora = 0.15,
+		/datum/patron/divine/ravox = 0.15,
 	)
 
 /datum/attunement/dark
@@ -329,10 +329,10 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	desc = "Able to subtract Light, combine with other elements, and manifest on its own."
 
 	alignments = list(
-		/datum/patron/inhumen/tenebrase = 0.15,
-		/datum/patron/inhumen/lamashtu = 0.15,
-		/datum/patron/inhumen/sinius = 0.15,
-		/datum/patron/inhumen/dismas = 0.15,
+		/datum/patron/inhumen/zizo = 0.15,
+		/datum/patron/inhumen/baotha = 0.15,
+		/datum/patron/inhumen/graggar = 0.15,
+		/datum/patron/inhumen/matthios = 0.15,
 	)
 
 /datum/attunement/time
@@ -340,9 +340,9 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	desc = "A unique and nigh-impossible element to master by all but those with either endless lifespans, or non-euclidian existence. Measured by all civilizations, and the defining aspect of countless realms and systems."
 
 	alignments = list(
-		/datum/patron/divine/last_death = 1,
-		/datum/patron/divine/moonbeam = 0.6,
-		/datum/patron/inhumen/dismas = 0.75,
+		/datum/patron/divine/necra = 1,
+		/datum/patron/divine/eora = 0.6,
+		/datum/patron/inhumen/matthios = 0.75,
 	)
 
 /datum/attunement/aeromancy
@@ -358,8 +358,8 @@ GLOBAL_LIST_INIT(attunement_colors, list(
 	desc = ""
 
 	alignments = list(
-		/datum/patron/divine/lunaria = 2,
-		/datum/patron/inhumen/tenebrase = 1.2,
+		/datum/patron/divine/noc = 2,
+		/datum/patron/inhumen/zizo = 1.2,
 	)
 
 /datum/attunement/illusion

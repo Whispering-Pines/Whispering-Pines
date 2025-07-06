@@ -26,9 +26,9 @@
 	/// If we are switching states
 	var/switching_states = FALSE
 	/// Delay of auto closing, values 0 or below do not auto close.
-	var/close_delay = 0
+	var/close_delay = 0.5 SECONDS
 	/// How long should it take for the door to change states? Ideally matches the icon's animation length
-	var/animate_time = 1 SECONDS
+	var/animate_time = 0.3 SECONDS
 	var/open_sound = 'sound/foley/doors/creak.ogg'
 	var/close_sound = 'sound/foley/doors/shut.ogg'
 
@@ -186,7 +186,7 @@
 /obj/structure/door/attack_right(mob/user)
 	if(switching_states)
 		return
-	user.changeNext_move(CLICK_CD_FAST)
+	user.changeNext_move(CLICK_CD_RAPID)
 	if(!user.get_active_held_item())
 		if(has_bolt)
 			if(obj_broken)
@@ -218,7 +218,7 @@
 	. = ..()
 	if(obj_broken || switching_states)
 		return
-	if(world.time < last_bump + 20)
+	if(world.time < last_bump + 10)
 		return
 	last_bump = world.time
 	if(ismob(AM))
@@ -226,7 +226,7 @@
 		if(HAS_TRAIT(user, TRAIT_BASHDOORS))
 			if(locked())
 				user.visible_message(span_warning("[user] bashes into [src]!"))
-				take_damage(200, BRUTE, BCLASS_BLUNT, TRUE)
+				take_damage(100, BRUTE, BCLASS_BLUNT, TRUE)
 			else
 				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
 				force_open()
@@ -235,7 +235,7 @@
 		if(HAS_TRAIT(user, TRAIT_ROTMAN))
 			if(locked())
 				user.visible_message(span_warning("The deadite bashes into [src]!"))
-				take_damage(50, BRUTE, BCLASS_BLUNT, TRUE)
+				take_damage(25, BRUTE, BCLASS_BLUNT, TRUE)
 			else
 				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 90)
 				force_open()
@@ -468,7 +468,7 @@
 	lock = null
 	metalizer_result = /obj/structure/door/iron/bars
 	bump_closed = TRUE
-	close_delay =  1 SECONDS
+	close_delay =  0.4 SECONDS
 	animate_time = 0.4 SECONDS
 
 /obj/structure/door/weak

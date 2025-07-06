@@ -10,11 +10,11 @@
 	name = "Pestra's Mercy"
 	desc = "Makes corpses rot slower."
 
-/datum/world_trait/dismas_fingers
+/datum/world_trait/matthios_fingers
 	name = "Dismas' Fingers"
 	desc = "Improves thief's chance of a successful pickpocket."
 
-/datum/world_trait/last_death_requiem
+/datum/world_trait/necra_requiem
 	name = "Last Death's Requiem"
 	desc = "New corpses wont become deadites."
 

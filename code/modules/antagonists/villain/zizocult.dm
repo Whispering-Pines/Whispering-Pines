@@ -52,7 +52,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	. = ..()
 	var/mob/living/carbon/human/H = owner.current
 	SSmapping.retainer.cultists |= owner
-	H.set_patron(/datum/patron/inhumen/tenebrase)
+	H.set_patron(/datum/patron/inhumen/zizo)
 
 	owner.special_role = "Zizoid Lackey"
 	H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		H.change_stat(STATKEY_INT, -2)
 		return
 
-	add_objective(/datum/objective/tenebrase)
+	add_objective(/datum/objective/zizo)
 	owner.special_role = ROLE_ZIZOIDCULTIST
 	H.verbs |= /mob/living/carbon/human/proc/release_minion
 	if(!change_stats)
@@ -116,13 +116,13 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	cult_mind.add_antag_datum(/datum/antagonist/zizocultist)
 	return TRUE
 
-/datum/objective/tenebrase
+/datum/objective/zizo
 	name = "ASCEND"
 	explanation_text = "Ensure that I ascend."
 	team_explanation_text = "Ensure that I ascend."
 	triumph_count = 5
 
-/datum/objective/tenebrase/check_completion()
+/datum/objective/zizo/check_completion()
 	if(SSmapping.retainer.cult_ascended)
 		return TRUE
 
@@ -234,7 +234,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
-		if(human_user.patron.type == /datum/patron/inhumen/tenebrase)
+		if(human_user.patron.type == /datum/patron/inhumen/zizo)
 			to_chat(user, "It is of the [sigil_type] circle.")
 
 /obj/effect/decal/cleanable/sigil/Initialize(mapload)
@@ -278,7 +278,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/list/rituals = list()
 	if(icon_state != "center") // fucking awful but it has to be this way
 		return
-	if(user.patron.type != /datum/patron/inhumen/tenebrase)
+	if(user.patron.type != /datum/patron/inhumen/zizo)
 		return
 	for(var/G in GLOB.ritualslist)
 		var/datum/ritual/path = GLOB.ritualslist[G]
@@ -631,7 +631,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 /obj/item/corruptedheart/attack(mob/living/M, mob/living/user)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(user.patron.type == /datum/patron/inhumen/tenebrase)
+		if(user.patron.type == /datum/patron/inhumen/zizo)
 			H.blood_volume = BLOOD_VOLUME_MAXIMUM
 			to_chat(H, "<span class='notice'>My elixir of life is stagnant once again.</span>")
 			qdel(src)

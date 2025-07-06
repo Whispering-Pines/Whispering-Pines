@@ -8,7 +8,7 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	sound = 'sound/magic/churn.ogg'
-	req_items = list(/obj/item/clothing/neck/psycross/lunaria)
+	req_items = list(/obj/item/clothing/neck/psycross/noc)
 	invocation = "Lunaria blinds thee of thy sins!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	antimagic_allowed = TRUE
@@ -27,7 +27,7 @@
 	range = 3
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
-	req_items = list(/obj/item/clothing/neck/psycross/lunaria)
+	req_items = list(/obj/item/clothing/neck/psycross/noc)
 	invocation_type = "none"
 	sound = 'sound/misc/area.ogg'
 	associated_skill = /datum/skill/magic/holy
@@ -49,7 +49,7 @@
 	name = "Moonlit Dagger"
 	desc = "Fire off a piercing moonlit-dagger, smiting unholy creechers!"
 	overlay_state = "moondagger"
-	req_items = list(/obj/item/clothing/neck/psycross/lunaria)
+	req_items = list(/obj/item/clothing/neck/psycross/noc)
 	invocation = "Begone foul beasts!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	associated_skill = /datum/skill/magic/holy

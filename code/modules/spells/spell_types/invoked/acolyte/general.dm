@@ -45,17 +45,17 @@
 		switch(user.patron.type)
 			if(/datum/patron/old_gods)
 				target.visible_message(span_info("A strange stirring feeling pours from [target]!"), span_notice("Sentimental thoughts drive away my pains!"))
-			if(/datum/patron/divine/solaria)
+			if(/datum/patron/divine/astrata)
 				target.visible_message(span_info("A wreath of gentle light passes over [target]!"), span_notice("I'm bathed in holy light!"))
 				// during the day, heal 10 more (basic as fuck)
 				if (GLOB.tod == "day")
 					conditional_buff = TRUE
-			if(/datum/patron/divine/lunaria)
+			if(/datum/patron/divine/noc)
 				target.visible_message(span_info("A shroud of soft moonlight falls upon [target]!"), span_notice("I'm shrouded in gentle moonlight!"))
 				// during the night, heal 10 more (i wish this was more interesting but they're twins so whatever)
 				if (GLOB.tod == "night")
 					conditional_buff = TRUE
-			if(/datum/patron/divine/blissrose)
+			if(/datum/patron/divine/dendor)
 				target.visible_message(span_info("A rush of primal energy spirals about [target]!"), span_notice("I'm infused with primal energies!"))
 				var/list/natural_stuff = list(/obj/structure/flora/grass, /obj/structure/flora/tree, /obj/structure/flora/shroom_tree, /obj/structure/fluff/clodpile)
 				situational_bonus = 0
@@ -71,14 +71,14 @@
 				if (istype(get_turf(target), /turf/open/water) || istype(get_turf(user), /turf/open/water))
 					conditional_buff = TRUE
 					situational_bonus = 15
-			if(/datum/patron/divine/wanderer)
+			if(/datum/patron/divine/ravox)
 				target.visible_message(span_info("An air of righteous defiance rises near [target]!"), span_notice("I'm filled with an urge to fight on!"))
 				situational_bonus = 0
 				// the bloodier the area around our target is, the more we heal
 				for (var/obj/effect/decal/cleanable/blood/O in oview(5, target))
 					situational_bonus = min(situational_bonus + 1, 25)
 				conditional_buff = TRUE
-			if(/datum/patron/divine/last_death)
+			if(/datum/patron/divine/necra)
 				target.visible_message(span_info("A sense of quiet respite radiates from [target]!"), span_notice("I feel the Nameless Death's gaze turn from me for now!"))
 				if (iscarbon(target))
 					var/mob/living/carbon/C = target
@@ -108,14 +108,14 @@
 					situational_bonus = min(situational_bonus + 3, 25)
 				if (situational_bonus > 0)
 					conditional_buff = TRUE
-			if(/datum/patron/divine/moonbeam)
+			if(/datum/patron/divine/eora)
 				target.visible_message(span_info("An eminence of love blossoms around [target]!"), span_notice("I'm filled with the restorative warmth of love!"))
 				// if they're wearing an moonbeamite bud (or are a pacifist), pretty much double the healing.
 				situational_bonus = 0
 				if (HAS_TRAIT(target, TRAIT_PACIFISM))
 					conditional_buff = TRUE
 					situational_bonus = 25
-			if(/datum/patron/inhumen/tenebrase)
+			if(/datum/patron/inhumen/zizo)
 				target.visible_message(span_info("Vital energies are sapped towards [target]!"), span_notice("The life around me pales as I am restored!"))
 				// set up a ritual pile of bones (or just cast near a stack of bones whatever) around us for massive bonuses, cap at 50 for 75 healing total (wowie)
 				situational_bonus = 0
@@ -123,7 +123,7 @@
 					situational_bonus = min(situational_bonus + 5, 50)
 				if (situational_bonus > 0)
 					conditional_buff = TRUE
-			if(/datum/patron/inhumen/sinius)
+			if(/datum/patron/inhumen/graggar)
 				target.visible_message(span_info("Foul fumes billow outward as [target] is restored!"), span_notice("A noxious scent burns my nostrils, but I feel better!"))
 				// if you've got lingering toxin damage, you get healed more, but your bonus healing doesn't affect toxin
 				var/toxloss = target.getToxLoss()
@@ -131,7 +131,7 @@
 					conditional_buff = TRUE
 					situational_bonus = 25
 					target.adjustToxLoss(situational_bonus) // remember we do a global toxloss adjust down below so this is okay
-			if(/datum/patron/inhumen/dismas)
+			if(/datum/patron/inhumen/matthios)
 				target.visible_message(span_info("A wreath of... strange light passes over [target]?"), span_notice("I'm bathed in a... strange holy light?"))
 				// COMRADES! WE MUST BAND TOGETHER!
 				if (HAS_TRAIT(target, TRAIT_BANDITCAMP))

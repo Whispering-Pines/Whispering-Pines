@@ -1,7 +1,7 @@
-/datum/round_event_control/last_death_embrace
+/datum/round_event_control/necra_embrace
 	name = "Last Death's Embrace"
 	track = EVENT_TRACK_PERSONAL
-	typepath = /datum/round_event/last_death_embrace
+	typepath = /datum/round_event/necra_embrace
 	weight = 5
 	earliest_start = 40 MINUTES
 	max_occurrences = 1
@@ -11,7 +11,7 @@
 		TAG_HAUNTED,
 	)
 
-/datum/round_event_control/last_death_embrace/canSpawnEvent(players_amt, gamemode, fake_check)
+/datum/round_event_control/necra_embrace/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -27,8 +27,8 @@
 
 	return FALSE
 
-/datum/round_event/last_death_embrace/start()
-	var/list/last_death_targets = list()
+/datum/round_event/necra_embrace/start()
+	var/list/necra_targets = list()
 	var/list/tennite_targets = list()
 
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
@@ -39,12 +39,12 @@
 		if(!human_mob.patron || !is_tennite(human_mob))
 			continue
 
-		if(istype(human_mob.patron, /datum/patron/divine/last_death))
-			last_death_targets += human_mob
+		if(istype(human_mob.patron, /datum/patron/divine/necra))
+			necra_targets += human_mob
 		else
 			tennite_targets += human_mob
 
-	var/list/valid_targets = last_death_targets.len ? last_death_targets : tennite_targets
+	var/list/valid_targets = necra_targets.len ? necra_targets : tennite_targets
 
 	if(!length(valid_targets))
 		return

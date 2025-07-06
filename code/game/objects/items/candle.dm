@@ -129,7 +129,7 @@
 	start_lit = TRUE
 	icon_state = "darkskullcandle_lit"
 
-/obj/item/candle/moonbeam
+/obj/item/candle/eora
 	icon = 'icons/roguetown/items/lighting.dmi'
 	name = "moonbeam's candle"
 	desc = ""
@@ -137,7 +137,7 @@
 	light_color = "#ff13d8ff"
 	infinite = TRUE
 
-/obj/item/candle/moonbeam/lit
+/obj/item/candle/eora/lit
 	start_lit = TRUE
 	icon_state = "candle1_lit"
 

@@ -138,7 +138,7 @@
 	stressadd = -3
 	desc = span_green("This music is divine.")
 
-/datum/stressevent/moonbeam
+/datum/stressevent/eora
 	stressadd = -4
 	timer = INFINITY
 	desc = span_boldgreen("Moonbeam brings me peace.")

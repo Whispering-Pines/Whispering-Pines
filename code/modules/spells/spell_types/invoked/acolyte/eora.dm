@@ -1,11 +1,11 @@
-//moonbeam
+//eora
 
 /obj/effect/proc_holder/spell/invoked/instill_perfection
 	name = "Instill Perfection"
 	desc = "Grants target a super-natural illusory beauty for a time, increasing their mood."
 	overlay_state = "perfume"
 	recharge_time = 2 MINUTES
-	req_items = list(/obj/item/clothing/neck/psycross/silver/moonbeam)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/eora)
 	invocation = "Moonbeam, lend some of your devine beauty!"
 	invocation_type = "shout"
 	releasedrain = 30
@@ -45,7 +45,7 @@
 	if(slot & ITEM_SLOT_HEAD)
 		RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
 		ADD_TRAIT(user, TRAIT_PACIFISM, "peaceflower_[REF(src)]")
-		user.add_stress(/datum/stressevent/moonbeam)
+		user.add_stress(/datum/stressevent/eora)
 
 /obj/item/clothing/head/peaceflower/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
 	SIGNAL_HANDLER
@@ -53,7 +53,7 @@
 		return
 	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
 	REMOVE_TRAIT(wearer, TRAIT_PACIFISM, "peaceflower_[REF(src)]")
-	wearer.remove_stress(/datum/stressevent/moonbeam)
+	wearer.remove_stress(/datum/stressevent/eora)
 
 /obj/item/clothing/head/peaceflower/proc/peace_check(mob/living/user)
 	// return true if we should be unequippable, return false if not
@@ -96,7 +96,7 @@
 	. = ..()
 	if(slot & ITEM_SLOT_HEAD)
 		ADD_TRAIT(user, TRAIT_CRACKHEAD, "corruptflower_[REF(src)]")
-		user.add_curse(/datum/curse/lamashtu)
+		user.add_curse(/datum/curse/baotha)
 		to_chat(user, "<span class='userdanger'>FUCK YES. Party on!</b></span>")
 
 /obj/item/clothing/head/corruptflower/proc/item_removed(mob/living/carbon/human/wearer, obj/item/dropped_item)
@@ -104,8 +104,8 @@
 	if(dropped_item != src)
 		return
 	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
-	wearer.remove_curse(/datum/curse/lamashtu)
-	if(wearer.patron != /datum/patron/inhumen/lamashtu)
+	wearer.remove_curse(/datum/curse/baotha)
+	if(wearer.patron != /datum/patron/inhumen/baotha)
 		REMOVE_TRAIT(wearer, TRAIT_CRACKHEAD, "corruptflower_[REF(src)]")
 
 /obj/item/clothing/head/corruptflower/proc/cursed_check(mob/living/user)
@@ -131,7 +131,7 @@
 	range = 2
 	overlay_state = "pflower"
 	sound = list('sound/magic/magnet.ogg')
-	req_items = list(/obj/item/clothing/neck/psycross/silver/moonbeam)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/eora)
 	releasedrain = 40
 	chargetime = 40
 	warnie = "spellwarning"
@@ -168,11 +168,11 @@
 	releasedrain = 50
 	chargetime = 20
 	range = 7
-	projectile_type = /obj/projectile/magic/moonbeam
+	projectile_type = /obj/projectile/magic/eora
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
-	req_items = list(/obj/item/clothing/neck/psycross/silver/moonbeam)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/eora)
 	sound = 'sound/magic/whiteflame.ogg'
 	invocation = "Nulla felicitas sine amore!"
 	invocation_type = "shout"
@@ -182,7 +182,7 @@
 	miracle = TRUE
 	devotion_cost = 60
 
-/obj/projectile/magic/moonbeam
+/obj/projectile/magic/eora
 	name = "wine bubble"
 	icon_state = "leaper"
 	paralyze = 0
@@ -192,7 +192,7 @@
 	nondirectional_sprite = TRUE
 	impact_effect_type = /obj/effect/temp_visual/wine_projectile_impact
 
-/obj/projectile/magic/moonbeam/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/magic/eora/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
@@ -210,7 +210,7 @@
 //		L.adjustHealth(25)
 	on_range()
 
-/obj/projectile/magic/moonbeam/on_range()
+/obj/projectile/magic/eora/on_range()
 	var/turf/T = get_turf(src)
 	..()
 	new /obj/structure/wine_bubble(T)
@@ -265,7 +265,7 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = /datum/looping_sound/invokegen
-	req_items = list(/obj/item/clothing/neck/psycross/silver/moonbeam)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/eora)
 	sound = list('sound/magic/whiteflame.ogg')
 	invocation = "Experiamur vim amoris!"
 	invocation_type = "shout"

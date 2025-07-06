@@ -4296,7 +4296,7 @@
 /area/rogue/outdoors/bog)
 "yX" = (
 /obj/structure/closet/crate/drawer,
-/obj/item/clothing/ring/gold/wanderer,
+/obj/item/clothing/ring/gold/ravox,
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/indoors/lich)
 "yY" = (
@@ -4308,7 +4308,7 @@
 	pixel_x = 2;
 	pixel_y = 8
 	},
-/obj/item/clothing/neck/psycross/silver/last_death,
+/obj/item/clothing/neck/psycross/silver/necra,
 /obj/effect/decal/remains/human,
 /turf/open/water/blood,
 /area/rogue/indoors/lich)
@@ -4684,8 +4684,8 @@
 	pixel_x = 2;
 	pixel_y = 7
 	},
-/obj/item/clothing/neck/psycross/silver/solaria,
-/obj/item/clothing/neck/psycross/silver/moonbeam{
+/obj/item/clothing/neck/psycross/silver/astrata,
+/obj/item/clothing/neck/psycross/silver/eora{
 	pixel_x = -20;
 	pixel_y = 13
 	},
@@ -6694,8 +6694,8 @@
 	pixel_x = -6;
 	pixel_y = 6
 	},
-/obj/item/clothing/neck/psycross/silver/wanderer,
-/obj/item/clothing/neck/psycross/lunaria{
+/obj/item/clothing/neck/psycross/silver/ravox,
+/obj/item/clothing/neck/psycross/noc{
 	pixel_x = 15;
 	pixel_y = -2
 	},

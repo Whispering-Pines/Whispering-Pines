@@ -1030,7 +1030,7 @@
 /obj/structure/closet/crate/crafted_closet/lord,
 /obj/item/storage/fancy/candle_box,
 /obj/effect/spawner/map_spawner/loot/armor,
-/obj/item/clothing/head/helmet/heavy/necked/lunaria,
+/obj/item/clothing/head/helmet/heavy/necked/noc,
 /turf/open/floor/carpet,
 /area/rogue/under/tomb/indoors/royal)
 "vf" = (

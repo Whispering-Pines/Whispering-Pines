@@ -2063,7 +2063,7 @@
 /area/rogue/under/mountains/anvil/lower)
 "qD" = (
 /obj/structure/table/stone_small,
-/obj/item/clothing/ring/silver/lunaria,
+/obj/item/clothing/ring/silver/noc,
 /turf/open/floor/herringbone,
 /area/rogue/under/mountains/anvil/upper)
 "qG" = (

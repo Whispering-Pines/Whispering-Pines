@@ -210,7 +210,7 @@
 			zombie_part.update_disabled()
 	zombie.update_body()
 	zombie.cmode_music = 'sound/music/cmode/combat_weird.ogg'
-	zombie.set_patron(/datum/patron/inhumen/tenebrase)
+	zombie.set_patron(/datum/patron/inhumen/zizo)
 
 	for(var/datum/status_effect/effect in zombie.status_effects) //necessary to prevent exploits
 		zombie.remove_status_effect(effect)

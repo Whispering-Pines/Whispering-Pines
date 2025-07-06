@@ -240,7 +240,7 @@
 /turf/open/floor/dirt,
 /area/rogue/under/tomb/wilds)
 "xg" = (
-/obj/structure/fluff/statue/solaria,
+/obj/structure/fluff/statue/astrata,
 /obj/structure/trap/fire,
 /turf/open/floor/blocks/stonered,
 /area/rogue/under/tomb/indoors/church)

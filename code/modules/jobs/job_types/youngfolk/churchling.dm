@@ -54,22 +54,22 @@
 	beltl = /obj/item/storage/keyring/priest
 	neck = /obj/item/clothing/neck/psycross/silver
 	switch(H.patron?.type)
-		if(/datum/patron/divine/solaria)
-			neck = /obj/item/clothing/neck/psycross/silver/solaria
-		if(/datum/patron/divine/last_death) //last_death acolytes are now morticians
-			neck = /obj/item/clothing/neck/psycross/silver/last_death
-		if(/datum/patron/divine/moonbeam)
-			neck = /obj/item/clothing/neck/psycross/silver/moonbeam
-		if(/datum/patron/divine/lunaria)
-			neck = /obj/item/clothing/neck/psycross/lunaria
+		if(/datum/patron/divine/astrata)
+			neck = /obj/item/clothing/neck/psycross/silver/astrata
+		if(/datum/patron/divine/necra) //necra acolytes are now morticians
+			neck = /obj/item/clothing/neck/psycross/silver/necra
+		if(/datum/patron/divine/eora)
+			neck = /obj/item/clothing/neck/psycross/silver/eora
+		if(/datum/patron/divine/noc)
+			neck = /obj/item/clothing/neck/psycross/noc
 		if(/datum/patron/divine/pestra)
 			neck = /obj/item/clothing/neck/psycross/silver/pestra
-		if(/datum/patron/divine/blissrose)
-			neck = /obj/item/clothing/neck/psycross/silver/blissrose
+		if(/datum/patron/divine/dendor)
+			neck = /obj/item/clothing/neck/psycross/silver/dendor
 		if(/datum/patron/divine/abyssor)
 			neck = /obj/item/clothing/neck/psycross/silver/abyssor
-		if(/datum/patron/divine/wanderer)
-			neck = /obj/item/clothing/neck/psycross/silver/wanderer
+		if(/datum/patron/divine/ravox)
+			neck = /obj/item/clothing/neck/psycross/silver/ravox
 		if(/datum/patron/divine/xylix)
 			neck = /obj/item/clothing/neck/psycross/silver/xylix
 		if(/datum/patron/divine/malum)

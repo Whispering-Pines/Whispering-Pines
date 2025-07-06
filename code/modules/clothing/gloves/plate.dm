@@ -48,7 +48,7 @@
 
 	//............... Evil Gloves ............... //
 
-/obj/item/clothing/gloves/plate/tenebrase
+/obj/item/clothing/gloves/plate/zizo
 	name = "darksteel gauntlets"
 	desc = "darksteel plate gauntlets. Called forth from the edge of what should be known. In Her name."
 	icon_state = "zizogauntlets"
@@ -57,7 +57,7 @@
 	sleeved = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sellprice = 0 // Incredibly evil Zizoid armor, this should be burnt, nobody wants this
 
-/obj/item/clothing/gloves/plate/dismas
+/obj/item/clothing/gloves/plate/matthios
 	name = "gilded gauntlets"
 	desc = "Shimmering plate gauntelts. Many riches have been taken with these, and just as many lives."
 	icon_state = "mattiosgloves"

@@ -79,8 +79,8 @@
 // Inhumen patron trait bonuses:
 #define TRAIT_ORGAN_EATER				"Raw eater"//Can eat organs (duh.) and raw meat
 #define TRAIT_CRACKHEAD					"Blessing of Lamashtu" //No overdose on drugs.
-#define TRAIT_CABAL                     "Of the Cabal" //Tenebrase cultists recognize each other too
-#define TRAIT_DISMAS_EYES				"Eyes of Dismas" //Examine to see the most expensive item someone has
+#define TRAIT_CABAL                     "Of the Cabal" //zizo cultists recognize each other too
+#define TRAIT_MATTHIOS_EYES				"Eyes of Dismas" //Examine to see the most expensive item someone has
 
 //DREAMKEEP traits
 #define TRAIT_BLINDFIGHTING "Blind Fighting"
@@ -127,7 +127,7 @@
 #define TRAIT_ASTRATA_CURSE "Solaria's Curse"
 #define TRAIT_NOC_CURSE "Lunaria's Curse"
 #define TRAIT_RAVOX_CURSE "Wanderer's Curse"
-#define TRAIT_LAST_DEATH_CURSE "Last Death's Curse"
+#define TRAIT_NECRA_CURSE "Last Death's Curse"
 #define TRAIT_XYLIX_CURSE "Xylix's Curse"
 #define TRAIT_PESTRA_CURSE "Pestra's Curse"
 #define TRAIT_EORA_CURSE "Eora's Curse"

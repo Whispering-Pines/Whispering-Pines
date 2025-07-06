@@ -142,7 +142,7 @@
 		/datum/descriptor_choice/prominent_four,
 	)
 	exotic_bloodtype = /datum/blood_type/human/lupian
-	meat = /obj/item/reagent_containers/food/snacks/meat/human
+	meat = /obj/item/reagent_containers/food/snacks/meat/steak/human
 
 /datum/blood_type/human/lupian
 	name = "Lupian"

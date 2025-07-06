@@ -74,7 +74,7 @@
 /turf/open/floor/churchrough,
 /area/rogue/underworld)
 "xe" = (
-/obj/structure/underworld/last_death{
+/obj/structure/underworld/necra{
 	pixel_x = -64
 	},
 /obj/structure/underworld/barrier,
@@ -153,7 +153,7 @@
 /turf/closed/indestructible/wooddark/mast,
 /area/rogue)
 "GV" = (
-/obj/structure/underworld/wanderer{
+/obj/structure/underworld/ravox{
 	layer = 4.82;
 	pixel_x = 7;
 	pixel_y = -6

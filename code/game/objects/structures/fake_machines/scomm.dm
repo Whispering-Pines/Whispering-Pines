@@ -268,3 +268,6 @@
 
 /obj/item/scomstone/bad/Hear()
 	return
+
+/obj/item/scomstone/bad/attack_right(mob/user)
+	return

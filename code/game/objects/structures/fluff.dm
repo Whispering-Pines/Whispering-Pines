@@ -662,7 +662,7 @@
 		qdel(carving_block)
 	update_appearance(UPDATE_ICON_STATE)
 
-/obj/structure/fluff/statue/solaria
+/obj/structure/fluff/statue/astrata
 	name = "statue of Solaria"
 	desc = "Solaria, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure."
 	max_integrity = 100 // You wanted descructible statues, you'll get them.
@@ -672,11 +672,11 @@
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
-/obj/structure/fluff/statue/solaria/OnCrafted(dirin, mob/user)
+/obj/structure/fluff/statue/astrata/OnCrafted(dirin, mob/user)
 	. = ..()
 	pixel_x = -16
 
-/obj/structure/fluff/statue/solaria/bling
+/obj/structure/fluff/statue/astrata/bling
 	icon_state = "astrata_bling"
 
 /obj/structure/fluff/statue/knight/r
@@ -1079,7 +1079,7 @@
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/living/carbon/human/user, params)
 	if(user.mind)
 		if((is_priest_job(user.mind.assigned_role)) \
-			|| (is_monk_job(user.mind.assigned_role) && (user.patron.type == /datum/patron/divine/moonbeam)))
+			|| (is_monk_job(user.mind.assigned_role) && (user.patron.type == /datum/patron/divine/eora)))
 
 			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/fruit/apple))
 				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))

@@ -74,7 +74,7 @@
 
 //............... Evil Pants ............... //
 
-/obj/item/clothing/pants/platelegs/tenebrase
+/obj/item/clothing/pants/platelegs/zizo
 	name = "darksteel garments"
 	desc = "Leg garments worn by true anointed of the Dame of Progress. In Her name."
 	icon_state = "zizocloth"
@@ -83,7 +83,7 @@
 	sleeved = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sellprice = 0 // Incredibly evil Zizoid armor, this should be burnt, nobody wants this
 
-/obj/item/clothing/pants/platelegs/dismas
+/obj/item/clothing/pants/platelegs/matthios
 	name = "gilded leggings"
 	desc = "Plate leggings. perfect for sprinting away after a theft of mammon, or life."
 	icon_state = "mattioslegs"

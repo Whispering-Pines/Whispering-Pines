@@ -34,7 +34,8 @@
 			choicez += "LARGE"
 		if(amt >= 5)
 			choicez += "MEDIUM"
-		if(amt > 1) choicez += "SMALL"
+		if(amt > 1)
+			choicez += "SMALL"
 		var/selection = input(user, "Make a Selection", src) as null|anything in choicez
 		if(!selection)
 			return
@@ -44,7 +45,8 @@
 			mod = 10
 		if(selection == "MEDIUM")
 			mod = 5
-		if(selection == "SMALL") mod = 1
+		if(selection == "SMALL")
+			mod = 1
 		var/coin_amt = input(user, "There is [SStreasury.treasury_value] casings in the treasury. You may withdraw [amt/mod] [selection] CALS from your account.", src) as null|num
 		coin_amt = round(coin_amt)
 		if(coin_amt < 1)

@@ -7,7 +7,7 @@
 /obj/effect/proc_holder/spell/invoked/avert
 	name = "Borrowed Time"
 	desc = "Shield someone from the Nameless Death's gaze, preventing them from slipping into death for as long as your faith and fatigue may muster."
-	req_items = list(/obj/item/clothing/neck/psycross/silver/last_death)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/necra)
 	associated_skill = /datum/skill/magic/holy
 	miracle = TRUE
 	healing_miracle = TRUE

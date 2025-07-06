@@ -47,7 +47,7 @@
 		OFFSET_NECK = list(0,-5), OFFSET_MOUTH = list(0,-5), OFFSET_PANTS = list(0,0), \
 		OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_BUTT = list(0,-4),\ OFFSET_UNDIES = list(0,-4)
 		)
-	inherent_traits = list(TRAIT_TINY, TRAIT_DARKVISION)
+	inherent_traits = list(TRAIT_DARKVISION)
 	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = 0, STATKEY_INT = -1, STATKEY_CON = 0, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
 	specstats_f = list(STATKEY_STR = -1, STATKEY_PER = 0, STATKEY_INT = -1, STATKEY_CON = 0, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
 	enflamed_icon = "widefire"
@@ -83,7 +83,7 @@
 	)
 
 	exotic_bloodtype = /datum/blood_type/human/goblin
-	meat = /obj/item/reagent_containers/food/snacks/meat/human
+	meat = /obj/item/reagent_containers/food/snacks/meat/steak/human
 
 /datum/blood_type/human/goblin
 	name = "Goblin"

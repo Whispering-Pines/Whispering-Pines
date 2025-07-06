@@ -99,7 +99,7 @@
 
 //............... Tenebrase Frog Helmet ............... //
 
-/obj/item/clothing/head/helmet/heavy/tenebrase
+/obj/item/clothing/head/helmet/heavy/zizo
 	name = "darksteel frog helmet"
 	desc = "A darksteel frog helmet. This one has an adjustable visor. Called forth from the edge of what should be known. In Her name."
 	adjustable = CAN_CADJUST
@@ -114,7 +114,7 @@
 
 //............... Dismas Helmet ............... //
 
-/obj/item/clothing/head/helmet/heavy/dismas
+/obj/item/clothing/head/helmet/heavy/matthios
 	name = "gilded visage"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	desc = "A sinister visage. So that your crimes are never brought to you."
@@ -153,14 +153,14 @@
 
 //............... Temple heavy helmets ......................//
 //............... Solaria Helmet ............... //
-/obj/item/clothing/head/helmet/heavy/necked/solaria
+/obj/item/clothing/head/helmet/heavy/necked/astrata
 	name = "solaria helmet"
 	desc = "A great helmet decorated with a golden sigil of the solar order and a maille neck cover. The dependable companion of many holy warriors of Solaria."
 	icon_state = "astratahelm"
 	item_weight = 6 * GOLD_MULITPLIER
 
 //............... Lunaria Helmet ............... //
-/obj/item/clothing/head/helmet/heavy/necked/lunaria
+/obj/item/clothing/head/helmet/heavy/necked/noc
 	name = "lunaria helmet"
 	desc = "A sleek and rounded heavy helmet with a maille neck cover. Its unique craft is said to allow holy warriors of Lunaria additional insight before battle."
 	icon_state = "nochelm"
@@ -168,7 +168,7 @@
 	flags_inv = HIDEEARS
 
 //............... Last Death Helmet ............... //
-/obj/item/clothing/head/helmet/heavy/necked/last_death
+/obj/item/clothing/head/helmet/heavy/necked/necra
 	name = "last death helmet"
 	desc = "A reinforced helmet shaped into the visage of a skull with a maille neck cover under the cloth. A symbol of authority for the battle servants of the Nameless Death."
 	icon_state = "last deathhelm"
@@ -183,7 +183,7 @@
 	item_weight = 6 * IRON_MULTIPLIER
 
 //............... Moonbeam Helmet ............... //
-/obj/item/clothing/head/helmet/sallet/moonbeamite
+/obj/item/clothing/head/helmet/sallet/eoraite
 	name = "moonbeam helmet"
 	desc = "A standard helmet forged in the style typical of Moonbeamite worshippers, a simple yet practical protective piece of equipment. Upon it lays several laurels of flowers and other colorful ornaments, followed by several symbols and standards of the user's chapter, accomplishments or even punishment"
 	icon_state = "eorahelm"
@@ -207,7 +207,7 @@
 	item_state = "malumhelm"
 	item_weight = 6 * IRON_MULTIPLIER
 
-/obj/item/clothing/head/helmet/heavy/necked/wanderer
+/obj/item/clothing/head/helmet/heavy/necked/ravox
 	name = "ravoxian helmet"
 	desc = "Headwear commonly worn by Templars in service to Wanderer. It resembles an heavily adorned visored sallet."
 	icon_state = "ravoxhelm"

@@ -21,20 +21,20 @@
 
 // PANTHEON SILVER PSYCROSSES START
 
-/obj/item/clothing/neck/psycross/silver/solaria
+/obj/item/clothing/neck/psycross/silver/astrata
 	name = "amulet of Solaria"
 	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
 	icon_state = "astrata"
 	resistance_flags = FIRE_PROOF
 
 // Only non-refactored psycross because Lunaria likes vamps. Neeeerd!
-/obj/item/clothing/neck/psycross/lunaria
+/obj/item/clothing/neck/psycross/noc
 	name = "amulet of Lunaria"
 	desc = "Moonlight continues to bathe all even when sun has to go."
 	icon_state = "noc"
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/neck/psycross/silver/blissrose
+/obj/item/clothing/neck/psycross/silver/dendor
 	name = "amulet of Blissrose"
 	desc = "Nature is a body of which we are but its entrails."
 	icon_state = "dendor"
@@ -46,13 +46,13 @@
 	icon_state = "abyssor"
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/neck/psycross/silver/last_death
+/obj/item/clothing/neck/psycross/silver/necra
 	name = "amulet of Last Death"
 	desc = "We are but souls in a husk of flesh, all we achieve is ours forever."
 	icon_state = "necra"
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/neck/psycross/silver/wanderer
+/obj/item/clothing/neck/psycross/silver/ravox
 	name = "amulet of The Wanderer"
 	desc = "Lead the lost to their righteous way.."
 	icon_state = "ravox"
@@ -64,7 +64,7 @@
 	icon_state = "xylix"
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/neck/psycross/silver/moonbeam
+/obj/item/clothing/neck/psycross/silver/eora
 	name = "amulet of Moonbeam"
 	desc = "Where can you go when it's all in your mind? Enjoy life for it is chaos that takes without warning."
 	icon = 'modular_whisper/icons/clothing/neck.dmi'
@@ -72,13 +72,13 @@
 	icon_state = "moonbeam"
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/neck/psycross/silver/holy/moonbeam
+/obj/item/clothing/neck/psycross/silver/holy/eora
 	name = "Moonbeam's love potion"
 	desc = "Moonbeam's blessing is upon thy, use me on someone else and you shall be soulbond, but will fall asleep through it for a while."
 	icon_state = "eora"
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/neck/psycross/silver/holy/moonbeam/attack(mob/living/love_target, mob/user)
+/obj/item/clothing/neck/psycross/silver/holy/eora/attack(mob/living/love_target, mob/user)
 	if(!isliving(love_target) || love_target.stat == DEAD)
 		to_chat(user, span_warning("The love potion only works on living things, sicko!"))
 		return ..()

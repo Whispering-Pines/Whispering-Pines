@@ -7,7 +7,7 @@
 	max_occurrences = 1
 	min_players = 20
 	todreq = list("dusk", "dawn", "day")
-	allowed_storytellers = list(/datum/storyteller/solaria)
+	allowed_storytellers = list(/datum/storyteller/astrata)
 
 /datum/round_event_control/astrata_grandeur/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
@@ -21,7 +21,7 @@
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
 
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/solaria))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/astrata))
 			continue
 
 		// Only for solarian clergy and nobles

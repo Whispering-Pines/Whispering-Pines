@@ -50,7 +50,7 @@
 	craftdiff = 2
 
 /datum/repeatable_crafting_recipe/arcyne/voidlamptern
-	name = "void lamptern"
+	name = "void lantern"
 	reagent_requirements = list()
 	tool_usage = list()
 	requirements = list(

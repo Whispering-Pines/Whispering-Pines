@@ -7,7 +7,7 @@
 				GLOB.weatherproof_z_levels |= "[turf.z]"
 		if("[turf.z]" in GLOB.weatherproof_z_levels)
 			faction |= FACTION_DISMAS
-			SSmobs.dismas_mobs |= src
+			SSmobs.matthios_mobs |= src
 
 /mob/living/Initialize()
 	. = ..()
@@ -25,7 +25,7 @@
 
 /mob/living/Destroy()
 	if(FACTION_DISMAS in faction)
-		SSmobs.dismas_mobs -= src
+		SSmobs.matthios_mobs -= src
 	surgeries = null
 	if(LAZYLEN(status_effects))
 		for(var/s in status_effects)
@@ -2531,8 +2531,8 @@
 
 	SEND_SIGNAL(src, COMSIG_LIVING_BEFRIENDED, new_friend)
 
-	if(src in SSmobs.dismas_mobs)
-		SSmobs.dismas_mobs -= src
+	if(src in SSmobs.matthios_mobs)
+		SSmobs.matthios_mobs -= src
 
 	return TRUE
 

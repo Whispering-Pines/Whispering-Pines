@@ -53,7 +53,7 @@
 			O.ckey = ckey
 			ADD_TRAIT(O, TRAIT_PACIFISM, TRAIT_GENERIC)
 			O.set_patron(prefs.selected_patron)
-			SSdeath_arena.add_fighter(O, mind?.last_death)
+			SSdeath_arena.add_fighter(O, mind?.necra)
 
 			if(HAS_TRAIT(mind?.current, TRAIT_BURIED_COIN_GIVEN))
 				O.paid = TRUE
@@ -63,9 +63,10 @@
 			underworld.Entered(O, null)
 			verbs -= /client/proc/descend
 		if("Yes (250c)")
-			if(mob.mind.has_antag_datum())
+			/* I guess undiscovered antags could reclone.
+			if(mob.mind.has_antag_datum(/datum/antagonist))
 				to_chat(mob, span_warning("I am not able to reclone!"))
-				return
+				return */
 			if(mob.real_name in GLOB.outlawed_players)
 				to_chat(mob, span_warning("I am outlawed therefore blacklisted from cloners!"))
 				return
@@ -90,7 +91,9 @@
 				to_chat(usr, span_danger("The cloning bay network does not store enough biomass to make a new body. [GLOB.global_biomass_storage]/1. Machine alert sent."))
 				return
 			if(!spawn_loc.toggled)
-				spawn_loc.say("Warning, using reserve power for operation.", language = /datum/language/ancient_english)
+				to_chat(usr, span_danger("The cloning bay is unpowered... Machine alert sent."))
+				spawn_loc.say("Warning: Signal received but lacking main power.", language = /datum/language/ancient_english)
+				return
 			var/mob/living/carbon/human/O = new /mob/living/carbon/human(spawn_loc.loc)
 			if(mob in SStreasury.bank_accounts)
 				var/amt = SStreasury.bank_accounts[mob]

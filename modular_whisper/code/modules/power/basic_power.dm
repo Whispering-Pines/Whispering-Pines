@@ -7,11 +7,7 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "nuclear"
 	desc = "A mysterious old world machine capable of remotely making every ancient tech in the area start working again."
-	var/toggled = TRUE
-
-/obj/machinery/mini_nuclear_generator/Initialize()
-	. = ..()
-	toggle_power()
+	var/toggled = FALSE
 
 /obj/machinery/mini_nuclear_generator/Destroy()
 	if(toggled)
@@ -26,7 +22,7 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 	to_chat(user, "<span class='warning'>[src] is too complex to move!</span>")
 	return FAILED_UNFASTEN
 
-/obj/machinery/mini_nuclear_generator/attack_right(mob/user)
+/obj/machinery/mini_nuclear_generator/attack_hand(mob/living/user)
 	. = ..()
 	toggle_power()
 
@@ -35,14 +31,16 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 	var/area/current_area = get_area(src)
 	if(toggled)
 		current_area.fake_power += 1 //hopefully should handle multiples
-		icon = "[initial(icon)]_on"
+		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
+		icon_state = "[initial(icon_state)]_on"
 		for(var/obj/machinery/fake_powered/power_checker in GLOB.fake_powered_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
 
 	else
 		current_area.fake_power -= 1
-		icon = "[initial(icon)]_off"
+		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
+		icon_state = "[initial(icon_state)]_off"
 		for(var/obj/machinery/fake_powered/power_checker in GLOB.fake_powered_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
@@ -51,12 +49,13 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 /obj/machinery/fake_powered
 	name = "Template fake power machine"
 	desc = "sex"
-	var/toggled = TRUE
+	var/toggled = FALSE
 
 /obj/machinery/fake_powered/LateInitialize()
 	. = ..()
 	GLOB.fake_powered_machines += src
 	check_fake_power()
+	update_icon()
 
 /obj/machinery/fake_powered/Destroy()
 	GLOB.fake_powered_machines -= src
@@ -66,10 +65,12 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 	var/area/current_area = get_area(src)
 	if(current_area.fake_power)
 		toggled = TRUE
+		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
 		balloon_alert_to_viewers("whirrs to life.")
-		icon = "[initial(icon)]_on"
+		icon_state = "[initial(icon_state)]_on"
 	else
 		toggled = FALSE
+		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		balloon_alert_to_viewers("dies down.")
-		icon = "[initial(icon)]_off	"
+		icon_state = "[initial(icon_state)]_off	"
 

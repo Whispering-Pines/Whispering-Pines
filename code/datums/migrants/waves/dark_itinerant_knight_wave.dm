@@ -9,16 +9,16 @@
 
 /datum/outfit/job/dark_itinerant_knight/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/helmet/heavy/tenebrase
-	gloves = /obj/item/clothing/gloves/plate/tenebrase
-	pants = /obj/item/clothing/pants/platelegs/tenebrase
+	head = /obj/item/clothing/head/helmet/heavy/zizo
+	gloves = /obj/item/clothing/gloves/plate/zizo
+	pants = /obj/item/clothing/pants/platelegs/zizo
 	shirt = /obj/item/clothing/shirt/shadowshirt
-	armor = /obj/item/clothing/armor/plate/full/tenebrase
-	shoes = /obj/item/clothing/shoes/boots/armor/tenebrase
+	armor = /obj/item/clothing/armor/plate/full/zizo
+	shoes = /obj/item/clothing/shoes/boots/armor/zizo
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	belt = /obj/item/storage/belt/leather/steel
 	backr = /obj/item/storage/backpack/satchel
-	backl = /obj/item/weapon/sword/long/greatsword/tenebrase
+	backl = /obj/item/weapon/sword/long/greatsword/zizo
 
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)

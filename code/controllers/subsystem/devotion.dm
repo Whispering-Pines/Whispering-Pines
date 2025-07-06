@@ -30,12 +30,12 @@
 	holder_mob = holder
 	holder.cleric = src
 	patron = god
-	if(patron.type == /datum/patron/inhumen/tenebrase || patron.type == /datum/patron/divine/last_death)
+	if(patron.type == /datum/patron/inhumen/zizo || patron.type == /datum/patron/divine/necra)
 		ADD_TRAIT(holder_mob, TRAIT_DEATHSIGHT, "devotion")
 
 /datum/devotion/cleric_holder/Destroy(force)
 	. = ..()
-	if(patron.type == /datum/patron/inhumen/tenebrase || patron.type == /datum/patron/divine/last_death)
+	if(patron.type == /datum/patron/inhumen/zizo || patron.type == /datum/patron/divine/necra)
 		REMOVE_TRAIT(holder_mob, TRAIT_DEATHSIGHT, "devotion")
 	holder_mob?.cleric = null
 	holder_mob = null
@@ -127,7 +127,7 @@
 
 	var/datum/patron/A = H.patron
 	var/list/spelllist = list(A.t0, A.t1)
-	if(istype(A, /datum/patron/divine/last_death))
+	if(istype(A, /datum/patron/divine/necra))
 		spelllist += /obj/effect/proc_holder/spell/invoked/avert
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
@@ -143,7 +143,7 @@
 
 	var/datum/patron/A = H.patron
 	var/list/spelllist = list(/obj/effect/proc_holder/spell/targeted/abrogation, A.t0, A.t1)
-	if(istype(A, /datum/patron/divine/last_death))
+	if(istype(A, /datum/patron/divine/necra))
 		spelllist += /obj/effect/proc_holder/spell/invoked/avert
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
@@ -161,7 +161,7 @@
 		return
 
 	var/datum/patron/A = H.patron
-	if(istype(A, /datum/patron/divine/last_death))
+	if(istype(A, /datum/patron/divine/necra))
 		var/list/spelllist = list(
 			/obj/effect/proc_holder/spell/targeted/churn = A.t3,
 			/obj/effect/proc_holder/spell/invoked/lesser_heal = A.t0

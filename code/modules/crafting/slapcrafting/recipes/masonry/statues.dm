@@ -147,7 +147,7 @@
 
 /* tallandwide.dmi */
 
-/datum/slapcraft_recipe/masonry/structure/statue/solaria
+/datum/slapcraft_recipe/masonry/structure/statue/astrata
 	name = "solaria statue"
 	steps = list(
 		/datum/slapcraft_step/structure/carving_block,
@@ -161,10 +161,10 @@
 		/datum/slapcraft_step/use_item/masonry/hammer/second,
 		/datum/slapcraft_step/use_item/masonry/chisel/third,
 		)
-	result_type = /obj/structure/fluff/statue/solaria
+	result_type = /obj/structure/fluff/statue/astrata
 	craftdiff = 5
 
-/datum/slapcraft_recipe/masonry/structure/statue/solariabling
+/datum/slapcraft_recipe/masonry/structure/statue/astratabling
 	name = "solaria statue (bling)"
 	steps = list(
 		/datum/slapcraft_step/structure/carving_block,
@@ -179,7 +179,7 @@
 		/datum/slapcraft_step/use_item/masonry/hammer/second,
 		/datum/slapcraft_step/use_item/masonry/chisel/third,
 		)
-	result_type = /obj/structure/fluff/statue/solaria/bling
+	result_type = /obj/structure/fluff/statue/astrata/bling
 	craftdiff = 5
 
 /* ay.dmi */

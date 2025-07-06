@@ -647,7 +647,7 @@
 /area/rogue/under/tomb/indoors/church)
 "xM" = (
 /obj/structure/closet/crate/chest/crate,
-/obj/item/clothing/neck/psycross/lunaria,
+/obj/item/clothing/neck/psycross/noc,
 /turf/open/floor/churchmarble,
 /area/rogue/under/tomb/indoors/church)
 "yc" = (
@@ -731,7 +731,7 @@
 /area/rogue/under/tomb/indoors/church)
 "Cl" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/cloak/stabard/templar/moonbeam,
+/obj/item/clothing/cloak/stabard/templar/eora,
 /turf/open/floor/churchmarble,
 /area/rogue/under/tomb/indoors/church)
 "Cp" = (
@@ -850,16 +850,16 @@
 /area/rogue/under/tomb/indoors/church)
 "Hu" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/cloak/stabard/templar/solaria/alt,
-/obj/item/clothing/cloak/stabard/templar/solaria/alt,
-/obj/item/clothing/cloak/stabard/templar/solaria,
-/obj/item/clothing/cloak/stabard/templar/solaria,
-/obj/item/clothing/neck/psycross/silver/solaria,
-/obj/item/clothing/neck/psycross/silver/solaria,
-/obj/item/clothing/shirt/robe/solaria,
-/obj/item/clothing/shirt/robe/solaria,
-/obj/item/clothing/head/helmet/heavy/necked/solaria,
-/obj/item/clothing/head/helmet/heavy/necked/solaria,
+/obj/item/clothing/cloak/stabard/templar/astrata/alt,
+/obj/item/clothing/cloak/stabard/templar/astrata/alt,
+/obj/item/clothing/cloak/stabard/templar/astrata,
+/obj/item/clothing/cloak/stabard/templar/astrata,
+/obj/item/clothing/neck/psycross/silver/astrata,
+/obj/item/clothing/neck/psycross/silver/astrata,
+/obj/item/clothing/shirt/robe/astrata,
+/obj/item/clothing/shirt/robe/astrata,
+/obj/item/clothing/head/helmet/heavy/necked/astrata,
+/obj/item/clothing/head/helmet/heavy/necked/astrata,
 /obj/machinery/light/fueled/torchholder/l,
 /obj/effect/spawner/map_spawner/loot/medium,
 /turf/open/floor/churchmarble,
@@ -1046,8 +1046,8 @@
 /area/rogue/under/tomb/indoors/church)
 "OD" = (
 /obj/structure/closet/crate/chest/crate,
-/obj/item/clothing/neck/psycross/silver/last_death,
-/obj/item/clothing/neck/psycross/silver/solaria,
+/obj/item/clothing/neck/psycross/silver/necra,
+/obj/item/clothing/neck/psycross/silver/astrata,
 /turf/open/floor/churchmarble,
 /area/rogue/under/tomb/indoors/church)
 "OM" = (

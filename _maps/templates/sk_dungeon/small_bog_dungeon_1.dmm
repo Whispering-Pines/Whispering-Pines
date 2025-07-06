@@ -134,7 +134,7 @@
 /area/rogue/outdoors/bog)
 "vG" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/shirt/robe/last_death,
+/obj/item/clothing/shirt/robe/necra,
 /obj/item/clothing/head/padded/deathshroud,
 /turf/open/floor/blocks,
 /area/rogue/outdoors/bog)
@@ -207,7 +207,7 @@
 /area/rogue/outdoors/bog)
 "CW" = (
 /obj/structure/table/church,
-/obj/item/clothing/head/helmet/heavy/necked/last_death,
+/obj/item/clothing/head/helmet/heavy/necked/necra,
 /turf/open/floor/blocks,
 /area/rogue/outdoors/bog)
 "CZ" = (
@@ -280,7 +280,7 @@
 /area/rogue/outdoors/bog)
 "ON" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/neck/psycross/silver/last_death,
+/obj/item/clothing/neck/psycross/silver/necra,
 /turf/open/floor/blocks,
 /area/rogue/outdoors/bog)
 "OQ" = (
@@ -344,7 +344,7 @@
 /area/rogue/outdoors/bog)
 "Wo" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/neck/psycross/lunaria,
+/obj/item/clothing/neck/psycross/noc,
 /turf/open/floor/blocks/paving,
 /area/rogue/outdoors/bog)
 "WF" = (
@@ -357,7 +357,7 @@
 /area/rogue/outdoors/bog)
 "YA" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/neck/psycross/silver/wanderer,
+/obj/item/clothing/neck/psycross/silver/ravox,
 /turf/open/floor/blocks/paving,
 /area/rogue/outdoors/bog)
 

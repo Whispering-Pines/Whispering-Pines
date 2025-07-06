@@ -152,7 +152,7 @@
 	)
 
 	exotic_bloodtype = /datum/blood_type/human/tabaxi
-	meat = /obj/item/reagent_containers/food/snacks/meat/human
+	meat = /obj/item/reagent_containers/food/snacks/meat/steak/human
 
 /datum/blood_type/human/tabaxi
 	name = "Tabaxi"

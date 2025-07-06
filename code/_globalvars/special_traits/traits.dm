@@ -562,7 +562,7 @@
 	name = "The Thinker"
 	greet_text = span_notice("Physique, Endurance, Constitution. The trinity of what builds a great leader and an even greater kingdom... or whatever those nimrods were yapping about! <b>I cast FIREBALL!!!</b>")
 	req_text = "Monarch, worship Lunaria or Tenebrase"
-	allowed_patrons = list(/datum/patron/divine/lunaria, /datum/patron/inhumen/tenebrase)
+	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
 	allowed_jobs = list(/datum/job/lord)
 	weight = 25 //Should be fine.
 

@@ -57,3 +57,5 @@ GLOBAL_LIST_EMPTY(fires_list)
 GLOBAL_LIST_EMPTY(streetlamp_list)
 
 GLOBAL_LIST_EMPTY(cloning_bays) //Where people respawn
+
+GLOBAL_LIST_EMPTY(biochute_exit) //Where biochute goes out to

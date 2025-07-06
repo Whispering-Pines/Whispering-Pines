@@ -80,9 +80,9 @@ SUBSYSTEM_DEF(death_arena)
 
 	first_skeleton.forceMove(get_turf(first_spawn))
 	second_skeleton.forceMove(get_turf(second_spawn))
-	var/last_deathmessage = span_boldannounce("DECAPITATE YOUR OPPONENT AND BRING IT TO THE ALTAR ABOVE.")
-	to_chat(first_skeleton,last_deathmessage)
-	to_chat(second_skeleton,last_deathmessage)
+	var/necramessage = span_boldannounce("DECAPITATE YOUR OPPONENT AND BRING IT TO THE ALTAR ABOVE.")
+	to_chat(first_skeleton,necramessage)
+	to_chat(second_skeleton,necramessage)
 
 	qdel(first)
 	qdel(second)
@@ -200,7 +200,7 @@ SUBSYSTEM_DEF(death_arena)
 	GLOB.vanderlin_round_stats[STATS_UNDERWORLD_DUELS]++
 	SSdeath_arena.process_fight_end(item, user)
 
-/obj/structure/underworld/wanderer
+/obj/structure/underworld/ravox
 	name = "Ravox"
 	desc = "Ravox, God of Warfare, Justice, and Bravery. He finds solice in his friendship with Last Death and his retreat to the Underworld. Upon your gaze, he gives you a respectful nod. Damn, he's cool.."
 	icon = 'icons/roguetown/underworld/ravox.dmi'
@@ -213,7 +213,7 @@ SUBSYSTEM_DEF(death_arena)
 	resistance_flags = INDESTRUCTIBLE
 
 
-/obj/structure/underworld/last_death
+/obj/structure/underworld/necra
 	name = "Necra"
 	desc = "The Nameless Death herself, in her true form. The most ancient of living gods. She observes your battles gleefully, gratitude in her eyes to be relieved from the arduousness of eternity. Her close friend and confidant, Wanderer, sits by her side. The two must have worked hard to restructure the underworld like this. They seem pleased with their work."
 	icon = 'icons/roguetown/underworld/necra.dmi'
@@ -225,6 +225,6 @@ SUBSYSTEM_DEF(death_arena)
 	max_integrity = 1000000000
 	resistance_flags = INDESTRUCTIBLE
 
-/obj/structure/underworld/last_death/Initialize()
+/obj/structure/underworld/necra/Initialize()
 	. = ..()
 	set_light(5, 4, 30, l_color = LIGHT_COLOR_BLUE)

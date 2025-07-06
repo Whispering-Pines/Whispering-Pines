@@ -23,6 +23,7 @@
 	var/last_pain = 0
 	var/msg_signature = ""
 	var/last_msg_signature = 0
+	var/last_crit_attempt = 0
 
 /datum/sex_controller/New(mob/living/owner)
 	user = owner
@@ -174,6 +175,24 @@
 		else
 			after_ejaculation()
 		return
+	if(issimple(user) && user.gender == MALE && ishuman(target))//simple target just spawn the coom.
+		if(oral)
+			playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
+			target.reagents.add_reagent(/datum/reagent/consumable/cum, 15)
+		else
+			var/obj/item/organ/filling_organ/cameloc
+			if(vaginal)
+				cameloc = target.getorganslot(ORGAN_SLOT_VAGINA)
+			if(anal)
+				cameloc = target.getorganslot(ORGAN_SLOT_GUTS)
+			if(nipple)
+				cameloc = target.getorganslot(ORGAN_SLOT_BREASTS)
+			if(vaginal || anal || nipple)
+				cameloc.reagents.add_reagent(/datum/reagent/consumable/cum, 15)
+			else
+				target.reagents.add_reagent(/datum/reagent/consumable/cum, 15)
+		after_ejaculation()
+		return
 	if(issimple(target))
 		if(testes) //simple target just remove the coom.
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
@@ -314,18 +333,40 @@
 	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
 		if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 			pain_amt *= 2.5
+	//SEX CRITS START
+	if(user != action_target && (last_crit_attempt + 2 SECONDS >= world.time))
+		var/chance = 1
+		var/used_power
+		last_crit_attempt = world.time
+		if(force > speed)
+			used_power = STATKEY_STR
+		else if(force <  speed)
+			used_power = STATKEY_SPD
+		else if(force == speed)
+			used_power = STATKEY_PER //fallback ig
+		if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+			chance += 1
+		if(prob(chance*user.get_stat_level(used_power))) //a guy with usual 10 base str would have 10% chance to crit.
+			if(force > SEX_FORCE_MID)
+				pain_amt *= user.get_stat_level(used_power) * 0.2
+			arousal_amt *= user.get_stat_level(used_power) * 0.2
+			var/crit_message
+			if(used_power == STATKEY_STR)
+				crit_message = pick("Ough- They are like an animal!","Ah, too intense!","Holy fuck they should calm down!","It's like they are trying to rip me apart!")
+			else if(used_power == STATKEY_SPD)
+				crit_message = pick("Ahh! They are like a blur!","Shit I might get chaffed!","Fuck, the speed!","Do I smell smoke?!","So fast, are they are trying to light a fire?!")
+			else if(used_power == STATKEY_PER)
+				crit_message = pick("Damn, It's like they are aiming!","Shit, they hit the spot!","Are they trained?!","I think they found my weak spot!","Shit, they know where to hit!")
+			to_chat(action_target, span_crit(crit_message))
+			playsound(action_target, pick('sound/foley/footsteps/FTMUD (1).ogg','sound/foley/footsteps/FTMUD (2).ogg','sound/foley/footsteps/FTMUD (3).ogg','sound/foley/footsteps/FTMUD (4).ogg','sound/foley/footsteps/FTMUD (5).ogg'), 50, TRUE, -1)
+			action_target.flash_fullscreen("redflash3")
+	//SEX CRITS END
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
 	arousal_amt *= get_force_pleasure_multiplier(applied_force, giving)
 	pain_amt *= get_force_pain_multiplier(applied_force)
 	pain_amt *= get_speed_pain_multiplier(applied_speed)
-	var/manual_arousal_name = get_manual_arousal_string()
-	if(HAS_TRAIT(user, TRAIT_GOODLOVER)) //only pros get control
-		if(!user.getorganslot(ORGAN_SLOT_PENIS))
-			dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
-		else
-			dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a> ~|~ <a href='?src=[REF(src)];task=manual_arousal_down'>\<</a> [manual_arousal_name] <a href='?src=[REF(src)];task=manual_arousal_up'>\></a></center>"
 
 	if(user.stat == DEAD)
 		if(prob(2)) //since there is no proper diseases....
@@ -577,7 +618,14 @@
 	var/list/dat = list()
 	var/force_name = get_force_string()
 	var/speed_name = get_speed_string()
-	dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
+	var/manual_arousal_name = get_manual_arousal_string()
+	if(HAS_TRAIT(user, TRAIT_GOODLOVER)) //only pros get control
+		if(!user.getorganslot(ORGAN_SLOT_PENIS))
+			dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
+		else
+			dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a> ~|~ <a href='?src=[REF(src)];task=manual_arousal_down'>\<</a> [manual_arousal_name] <a href='?src=[REF(src)];task=manual_arousal_up'>\></a></center>"
+	else
+		dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
 	dat += "<center>| <a href='?src=[REF(src)];task=toggle_finished'>[do_until_finished ? "UNTIL IM FINISHED" : "UNTIL I STOP"]</a> |</center>"
 	if(target == user)
 		dat += "<center>Doing unto yourself</center>"
@@ -889,83 +937,6 @@
 	stressadd = -3
 	desc = list(span_green("My loins took a GOOD beating!~"),span_green("My loins got slammed GOOD!"),span_green("My loins got beaten GOOD!"))
 
-/datum/reagent/water/pussjuice
-	name = "pussy juice"
-	description = "A strange slightly gooey substance."
-
-/datum/reagent/consumable/cum
-	name = "Semen"
-	description = "A strange white liquid produced by testicles..."
-	color = "#c6c6c6"
-	taste_description = "salty slime"
-	glass_icon_state = "glass_white"
-	glass_name = "glass of semen"
-	glass_desc = ""
-	var/virile = TRUE
-
-
-/datum/reagent/consumable/cum/on_transfer(atom/A, method, trans_volume)
-	. = ..()
-	if(istype(A, /obj/item/organ/filling_organ/vagina) && virile)
-		var/obj/item/organ/filling_organ/vagina/forgan = A
-		if(forgan.fertility && !forgan.pregnant)
-			if(prob(20))
-				forgan.be_impregnated() //boom
-
-/datum/reagent/consumable/cum/on_mob_life(mob/living/carbon/M)
-	if(M.getBruteLoss() && prob(20))
-		M.heal_bodypart_damage(2,0, 0)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
-			H.adjust_hydration(5)
-			H.adjust_nutrition(5)
-		if(H.blood_volume < BLOOD_VOLUME_NORMAL)
-			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
-	. = 1
-	..()
-
-/obj/item/reagent_containers/glass/bottle/milk
-	list_reagents = list(/datum/reagent/consumable/milk = 45)
-
-/obj/item/reagent_containers/glass/bottle/cum
-	list_reagents = list(/datum/reagent/consumable/cum = 45)
-
-/obj/item/reagent_containers/glass/bottle/pussyjuice
-	list_reagents = list(/datum/reagent/water/pussjuice = 45)
-
-/datum/reagent/consumable/cum/sterile
-	virile = FALSE
-
-/datum/reagent/consumable/cum/sterile/old //used in statue fountain.
-	name = "Old Semen"
-	description = "Disgusting... smelly slime... And somewhat yellow. This was magically, barely preserved through decades... It used to be fine, even clear as water until I severed it from it's home."
-	color = "#c7c49e"
-	taste_description = "salty, disgusting moldy slime"
-	glass_icon_state = "glass_white"
-	glass_name = "glass of old semen"
-
-/datum/reagent/consumable/cum/sterile/old/on_mob_life(mob/living/carbon/M)
-	if(M.getBruteLoss() && prob(20))
-		M.heal_bodypart_damage(1,0, 0)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
-			H.adjust_hydration(5)
-			H.adjust_nutrition(5)
-		if(!HAS_TRAIT(H, TRAIT_ROT_EATER))
-			H.adjustToxLoss(2, TRUE) //this shit is toxic.
-			H.add_nausea(3)
-			if(prob(5))
-				to_chat(M, span_notice("[pick("God, I am going to puke...","My stomach is crying for help...","I feel sick...","That was disgusting... I feel sick...")]"))
-
-	. = 1
-	..()
-
-/mob/living/carbon/human/proc/has_breasts()
-	RETURN_TYPE(/obj/item/organ/filling_organ/breasts)
-	return getorganslot(ORGAN_SLOT_BREASTS)
-
 /mob/living/carbon/human/proc/is_fertile()
 	var/obj/item/organ/filling_organ/vagina/vagina = getorganslot(ORGAN_SLOT_VAGINA)
 	return vagina.fertility
@@ -1005,43 +976,12 @@
 	desc = "<span class='green'>Pain makes it better.</span>"
 
 
-/mob/living/simple_animal/fuck_npc
-	name = "fucknpc"
-	desc = "used to hide in objects to fuck the user."
-	icon = null //invis
-	gender = MALE
-	erpable = TRUE
-	wander = FALSE
-	density = FALSE
-	var/cleanup_timer
-
-/mob/living/simple_animal/fuck_npc/Exit(atom/movable/AM, atom/newLoc)
-	return FALSE //dont move.
-
-/mob/living/simple_animal/fuck_npc/fem
-	gender = FEMALE
-
-/obj/proc/start_obj_sex(gendero = MALE, mob/living/victim, datum/sex_action/sexaction, speed, force)
-	var/mob/living/simple_animal/fuck_npc/fuckero
-	if(gendero == MALE)
-		fuckero = new /mob/living/simple_animal/fuck_npc(contents)
-	else
-		fuckero = new /mob/living/simple_animal/fuck_npc/fem(contents)
-	fuckero.name = name //disguise
-	fuckero.sexcon.force = force
-	fuckero.sexcon.speed = speed
-	fuckero.sexcon.current_action = sexaction
-	fuckero.sexcon.do_until_finished = TRUE
-	fuckero.sexcon.target = victim
-	fuckero.sexcon.try_start_action(sexaction)
-	sleep(0.5 SECONDS)
-	if(!fuckero.sexcon.current_action)
-		log_runtime("[src] failed to start object sex.")
-	fuckero.cleanup_timer = addtimer(CALLBACK(src, PROC_REF(stop_obj_sex), fuckero, victim), 8 MINUTES, TIMER_STOPPABLE) //clean it up no matter after 5 mins incase.
-
-/obj/proc/stop_obj_sex()
-	for(var/mob/living/simple_animal/fuck_npc/fuckero in contents)
-		if(fuckero.sexcon.current_action)
-			fuckero.sexcon.try_stop_current_action()
-			sleep(2)
-			qdel(fuckero)
+/obj/proc/start_obj_sex(gendero = MALE, mob/living/victim, speed, force)
+	//fake sex basically
+	playsound(get_turf(src), pick('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 100, FALSE, -1)
+	while(do_after(victim, 0.825 SECONDS, src))
+		victim.sexcon.perform_sex_action(victim, rand(1,speed), rand(0,force-1), TRUE)
+		if(prob(5*(speed+force)))
+			if(gendero == MALE)
+				playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+				add_cum_floor(get_turf(src))

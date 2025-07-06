@@ -183,7 +183,7 @@
 						steaks = 4 // the steaks have never been higher
 				var/amt2raise = user.STAINT/3
 				if(do_after(user, used_time, src))
-					var/obj/item/reagent_containers/food/snacks/meat/steak/steak
+					var/obj/item/reagent_containers/food/snacks/meat/steak/human/steak
 					for(steaks, steaks>0, steaks--)
 						steak = new S.meat(get_turf(src))	//Meat depends on species.
 						if(rotted)

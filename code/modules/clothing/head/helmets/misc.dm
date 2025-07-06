@@ -367,7 +367,7 @@
 
 //................. Tenebrase Barbute .............. //
 
-/obj/item/clothing/head/helmet/visored/tenebrase
+/obj/item/clothing/head/helmet/visored/zizo
 	name = "darksteel barbute"
 	desc = "A darksteel barbute. This one has an adjustable visor. Called forth from the edge of what should be known. In Her name."
 	icon_state = "zizobarbute"

@@ -1,7 +1,7 @@
 /datum/round_event_control/matthios_hoard
 	name = "Casing Desire"
 	track = EVENT_TRACK_PERSONAL
-	typepath = /datum/round_event/dismas_hoard
+	typepath = /datum/round_event/matthios_hoard
 	weight = 10
 	earliest_start = 5 MINUTES
 	max_occurrences = 1
@@ -12,7 +12,7 @@
 		TAG_CORRUPTION,
 	)
 
-/datum/round_event_control/dismas_hoard/canSpawnEvent(players_amt, gamemode, fake_check)
+/datum/round_event_control/matthios_hoard/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -20,7 +20,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/dismas))
+		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/matthios))
 			continue
 		if(H.is_noble())
 			continue
@@ -28,13 +28,13 @@
 
 	return FALSE
 
-/datum/round_event/dismas_hoard/start()
+/datum/round_event/matthios_hoard/start()
 	var/list/valid_targets = list()
 
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/dismas))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/matthios))
 			continue
 		if(human_mob.is_noble())
 			continue

@@ -35,36 +35,36 @@
 	backl = /obj/item/weapon/polearm/woodstaff/quarterstaff
 	backpack_contents = list(/obj/item/needle)
 	switch(H.patron?.type)
-		if(/datum/patron/divine/solaria)
-			head = /obj/item/clothing/head/roguehood/solaria
-			neck = /obj/item/clothing/neck/psycross/silver/solaria
+		if(/datum/patron/divine/astrata)
+			head = /obj/item/clothing/head/roguehood/astrata
+			neck = /obj/item/clothing/neck/psycross/silver/astrata
 			wrists = /obj/item/clothing/wrists/wrappings
 			shoes = /obj/item/clothing/shoes/sandals
-			armor = /obj/item/clothing/shirt/robe/solaria
+			armor = /obj/item/clothing/shirt/robe/astrata
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
-		if(/datum/patron/divine/last_death) //last_death acolytes are now morticians
+		if(/datum/patron/divine/necra) //necra acolytes are now morticians
 			head = /obj/item/clothing/head/padded/deathshroud
-			neck = /obj/item/clothing/neck/psycross/silver/last_death
+			neck = /obj/item/clothing/neck/psycross/silver/necra
 			shoes = /obj/item/clothing/shoes/boots
 			pants = /obj/item/clothing/pants/trou/leather/mourning
-			armor = /obj/item/clothing/shirt/robe/last_death
+			armor = /obj/item/clothing/shirt/robe/necra
 			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
-		if(/datum/patron/divine/moonbeam)
+		if(/datum/patron/divine/eora)
 			head = /obj/item/clothing/head/padded/operavisage
-			neck = /obj/item/clothing/neck/psycross/silver/moonbeam
+			neck = /obj/item/clothing/neck/psycross/silver/eora
 			shoes = /obj/item/clothing/shoes/sandals
-			armor = /obj/item/clothing/shirt/robe/moonbeam
+			armor = /obj/item/clothing/shirt/robe/eora
 			H.cmode_music = 'sound/music/cmode/church/CombatEora.ogg'
 			ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 			H.virginity = FALSE
 			H.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
-		if(/datum/patron/divine/lunaria)
+		if(/datum/patron/divine/noc)
 			head = /obj/item/clothing/head/roguehood/nochood
-			neck = /obj/item/clothing/neck/psycross/lunaria
+			neck = /obj/item/clothing/neck/psycross/noc
 			wrists = /obj/item/clothing/wrists/nocwrappings
 			shoes = /obj/item/clothing/shoes/sandals
-			armor = /obj/item/clothing/shirt/robe/lunaria
+			armor = /obj/item/clothing/shirt/robe/noc
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			var/language = pickweight(list("Dwarvish" = 1, "Elvish" = 1, "Hellspeak" = 1, "Zaladin" = 1, "Orcish" = 1,))
 			switch(language)
@@ -95,11 +95,11 @@
 			armor = /obj/item/clothing/shirt/robe/pestra
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			backpack_contents = list(/obj/item/needle/blessed)
-		if(/datum/patron/divine/blissrose)
+		if(/datum/patron/divine/dendor)
 			head = /obj/item/clothing/head/padded/briarthorns
-			neck = /obj/item/clothing/neck/psycross/silver/blissrose
+			neck = /obj/item/clothing/neck/psycross/silver/dendor
 			shoes = /obj/item/clothing/shoes/sandals
-			armor = /obj/item/clothing/shirt/robe/blissrose
+			armor = /obj/item/clothing/shirt/robe/dendor
 			H.cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
 			H.adjust_skillrank(/datum/skill/labor/farming, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/labor/taming, 1, TRUE)
@@ -111,9 +111,9 @@
 			armor = /obj/item/clothing/shirt/robe/abyssor
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			H.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE)
-		if(/datum/patron/divine/wanderer)
+		if(/datum/patron/divine/ravox)
 			head = /obj/item/clothing/head/roguehood/random
-			neck = /obj/item/clothing/neck/psycross/silver/wanderer
+			neck = /obj/item/clothing/neck/psycross/silver/ravox
 			shoes = /obj/item/clothing/shoes/boots
 			armor = /obj/item/clothing/shirt/robe/plain
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'

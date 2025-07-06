@@ -13,7 +13,7 @@
 	overlay_state = "blesscrop"
 	releasedrain = 30
 	recharge_time = 30 SECONDS
-	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
@@ -52,7 +52,7 @@
 	desc = "Grants the Dendorite a keen sense of smell and excellent vision, to better hunt with."
 	overlay_state = "bestialsense"
 	recharge_time = 12 MINUTES
-	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
 	invocation = "Beast-Lord, lend me the eyes of the zad, the nose of the volf."
 	invocation_type = "whisper"
 	cooldown_min = 10 MINUTES
@@ -87,7 +87,7 @@
 	overlay_state = "tamebeast"
 	releasedrain = 30
 	recharge_time = 6 MINUTES
-	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
@@ -253,7 +253,7 @@
 	cast_without_targets = TRUE
 	sound = 'sound/items/dig_shovel.ogg'
 	associated_skill = /datum/skill/magic/holy
-	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
 	invocation = "Plantmother light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	attunements = list(
@@ -286,7 +286,7 @@
 	desc = "Borrow power from the Troll, his favored beast."
 	overlay_state = "trollshape"
 	recharge_time = 12 MINUTES // cast once every 30 minutes, lasts for 3 minutes || Monkey station edit, changed it down from 30 to 12!
-	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
 	invocation = "BLISSROSE; LEND ME YOUR POWER!!"
 	invocation_type = "shout"
 	cooldown_min = 6 MINUTES

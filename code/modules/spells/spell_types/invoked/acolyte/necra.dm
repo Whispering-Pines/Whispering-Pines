@@ -41,7 +41,7 @@
 	overlay_state = "speakwithdead"
 	releasedrain = 30
 	recharge_time = 75 SECONDS
-	req_items = list(/obj/item/clothing/neck/psycross/silver/last_death)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/necra)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
@@ -126,7 +126,7 @@
 	soul.status_flags &= ~GODMODE
 	soul.update_cone()
 	soul.density = initial(soul.density)
-	SSdeath_arena.add_fighter(soul, soul.mind?.last_death)
+	SSdeath_arena.add_fighter(soul, soul.mind?.necra)
 
 /obj/effect/proc_holder/spell/targeted/churn
 	name = "Churn Undead"
@@ -136,7 +136,7 @@
 	recharge_time = 30 SECONDS
 	max_targets = 0
 	cast_without_targets = TRUE
-	req_items = list(/obj/item/clothing/neck/psycross/silver/last_death)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/necra)
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
 	invocation = "The Nameless Death rebukes!"

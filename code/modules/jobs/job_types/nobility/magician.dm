@@ -29,7 +29,7 @@
 
 /datum/outfit/job/magician
 	job_bitflag = BITFLAG_ROYALTY
-	allowed_patrons = list(/datum/patron/divine/lunaria, /datum/patron/inhumen/tenebrase)
+	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
 
 /datum/outfit/job/magician/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -45,8 +45,8 @@
 	shoes = /obj/item/clothing/shoes/shortboots
 	ring = /obj/item/scomstone
 	backpack_contents = list(/obj/item/scrying = 1, /obj/item/chalk = 1,/obj/item/reagent_containers/glass/bottle/killersice = 1, /obj/item/book/granter/spellbook/master = 1, /obj/item/weapon/knife/dagger/silver/arcyne = 1, /obj/item/storage/keyring/mage = 1)
-	if(!(H.patron == /datum/patron/divine/lunaria || /datum/patron/inhumen/tenebrase))
-		H.set_patron(/datum/patron/divine/lunaria)
+	if(!(H.patron == /datum/patron/divine/noc || /datum/patron/inhumen/zizo))
+		H.set_patron(/datum/patron/divine/noc)
 
 	H.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 	H.adjust_skillrank(/datum/skill/magic/arcane, pick(6,5), TRUE)

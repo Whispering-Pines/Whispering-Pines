@@ -8,7 +8,7 @@
 /datum/outfit/job/daywalker/pre_equip(mob/living/carbon/human/H)
 	..()
 	wrists = /obj/item/clothing/wrists/bracers/leather
-	neck = /obj/item/clothing/neck/psycross/silver/solaria
+	neck = /obj/item/clothing/neck/psycross/silver/astrata
 	gloves = /obj/item/clothing/gloves/fingerless/shadowgloves // Would give em Fingerless, but parrying with fists sounds funny as fuck
 	pants = /obj/item/clothing/pants/trou/shadowpants
 	shirt = /obj/item/clothing/shirt/tunic/black
@@ -23,8 +23,8 @@
 	H.virginity = TRUE
 
 	if(H.mind)
-		if(H.patron != /datum/patron/divine/solaria)
-			H.set_patron(/datum/patron/divine/solaria)
+		if(H.patron != /datum/patron/divine/astrata)
+			H.set_patron(/datum/patron/divine/astrata)
 
 		H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)

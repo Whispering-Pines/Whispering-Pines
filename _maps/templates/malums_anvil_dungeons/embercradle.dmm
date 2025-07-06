@@ -2455,8 +2455,8 @@
 /turf/open/floor/grass,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Hw" = (
-/obj/item/clothing/head/helmet/heavy/necked/lunaria,
-/obj/item/clothing/cloak/stabard/templar/lunaria,
+/obj/item/clothing/head/helmet/heavy/necked/noc,
+/obj/item/clothing/cloak/stabard/templar/noc,
 /obj/item/clothing/armor/chainmail/hauberk,
 /obj/item/clothing/gloves/chain,
 /obj/item/clothing/pants/chainlegs,
@@ -2465,9 +2465,9 @@
 /obj/item/weapon/shield/tower/metal,
 /obj/item/weapon/sword,
 /obj/item/storage/belt/leather/plaquesilver,
-/obj/item/clothing/ring/silver/lunaria,
+/obj/item/clothing/ring/silver/noc,
 /obj/item/clothing/wrists/nocwrappings,
-/obj/item/clothing/neck/psycross/lunaria,
+/obj/item/clothing/neck/psycross/noc,
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /mob/living/carbon/human/species/skeleton/npc/no_equipment,
 /turf/open/floor/carpet/purple,
@@ -2586,7 +2586,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "II" = (
 /obj/structure/table/church/m,
-/obj/item/book/lunaria,
+/obj/item/book/noc,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "IK" = (
@@ -3452,7 +3452,7 @@
 /area/rogue/under/mountains/anvil/dungeon)
 "Uf" = (
 /obj/structure/table/church,
-/obj/item/clothing/neck/psycross/lunaria,
+/obj/item/clothing/neck/psycross/noc,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Ui" = (
@@ -3712,8 +3712,8 @@
 /area/rogue/under/mountains/anvil/dungeon)
 "Xr" = (
 /mob/living/carbon/human/species/skeleton/npc/no_equipment,
-/obj/item/clothing/shirt/robe/lunaria,
-/obj/item/clothing/neck/psycross/lunaria,
+/obj/item/clothing/shirt/robe/noc,
+/obj/item/clothing/neck/psycross/noc,
 /obj/item/clothing/head/roguehood/nochood,
 /obj/item/clothing/gloves/leather/black,
 /obj/item/clothing/shoes/boots/leather,

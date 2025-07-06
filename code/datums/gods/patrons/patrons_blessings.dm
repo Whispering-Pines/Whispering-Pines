@@ -16,8 +16,8 @@
 	switch(category)
 		if("Divine")
 			blessing_path = input("Choose Divine Blessing") as null|anything in list( \
-				/datum/status_effect/buff/lunaria, \
-				/datum/status_effect/buff/wanderer, \
+				/datum/status_effect/buff/noc, \
+				/datum/status_effect/buff/ravox, \
 				/datum/status_effect/buff/beastsense, \
 				/datum/status_effect/buff/trollshape, \
 				/datum/status_effect/buff/divine_beauty, \
@@ -180,7 +180,7 @@
 
 		/// (Repeat this block, tailored for each god)
 		/// Solaria - The Sun Queen
-		/datum/patron/divine/solaria = list(
+		/datum/patron/divine/astrata = list(
 			/datum/status_effect/buff/beastsense = "Solaria commandeth: \"LET THY SIGHT BE CLEARED. THE LIGHT REVEALETH ALL.\"",
 			/datum/status_effect/buff/trollshape = "Solaria proclaimeth: \"BECOME THE HAMMER OF MINE WILL. STRIKE WITH PURPOSE.\"",
 			/datum/status_effect/buff/divine_beauty = "Solaria speaketh: \"RADIATE THY DUTY. LET NONE AVERT THEIR GAZE.\"",
@@ -196,7 +196,7 @@
 		),
 
 		/// Lamashtu - The Mad God
-		/datum/patron/inhumen/lamashtu = list(
+		/datum/patron/inhumen/baotha = list(
 			/datum/status_effect/buff/beastsense = "Lamashtu shrieks: \"See it! Smell it! Rip it apart! Or hug it! Both are valid!\"",
 			/datum/status_effect/buff/trollshape = "Lamashtu howls: \"Big. Ugly. Perfect. You’re gonna cause SUCH a scene!\"",
 			/datum/status_effect/buff/divine_beauty = "Lamashtu swoons: \"Beauty fit for a queen. I'd know.\"",
@@ -212,7 +212,7 @@
 		),
 
 		/// Blissrose - The Wildfather
-		/datum/patron/divine/blissrose = list(
+		/datum/patron/divine/dendor = list(
 			/datum/status_effect/buff/beastsense = "Blissrose growls: \"The hunt begins. Death follows.\"",
 			/datum/status_effect/buff/trollshape = "Blissrose mutters: \"Flesh grows thick, bone bends. Still, rot awaits.\"",
 			/datum/status_effect/buff/divine_beauty = "Blissrose sighs: \"Bloom... then wilt.\"",
@@ -228,7 +228,7 @@
 		),
 
 		/// Moonbeam - The Heart of Psydon
-		/datum/patron/divine/moonbeam = list(
+		/datum/patron/divine/eora = list(
 			/datum/status_effect/buff/beastsense = "Moonbeam whispers: \"Even the beasts know love's call.\"",
 			/datum/status_effect/buff/trollshape = "Moonbeam coos: \"Strong arms, tender heart.\"",
 			/datum/status_effect/buff/divine_beauty = "Moonbeam smiles: \"You shine, beloved. All gaze upon you with wonder.\"",
@@ -244,7 +244,7 @@
 		),
 
 		/// Sinius - The Warborn Beast
-		/datum/patron/inhumen/sinius = list(
+		/datum/patron/inhumen/graggar = list(
 			/datum/status_effect/buff/beastsense = "Sinius growls: \"Sniff it. Smell the fear, thu fool.\"",
 			/datum/status_effect/buff/trollshape = "Sinius roars: \"Meat swells. Thu strong. Thu crush now.\"",
 			/datum/status_effect/buff/divine_beauty = "Sinius spits: \"Pah! Pretty? WASTE! Git bloody, thu fole!\"",
@@ -276,7 +276,7 @@
 		),
 
 		/// Dismas - The Bandit God
-		/datum/patron/inhumen/dismas = list(
+		/datum/patron/inhumen/matthios = list(
 			/datum/status_effect/buff/beastsense = "Dismas laughs: \"Sniff it out, lad. Something worth stealing.\"",
 			/datum/status_effect/buff/trollshape = "Dismas grins: \"Ugly sells well in some towns, friend.\"",
 			/datum/status_effect/buff/divine_beauty = "Dismas smirks: \"Pretty coin, pretty face... both stolen easy.\"",
@@ -292,7 +292,7 @@
 		),
 
 		/// Last Death - The Nameless Death
-		/datum/patron/divine/last_death = list(
+		/datum/patron/divine/necra = list(
 			/datum/status_effect/buff/beastsense = "Last Death murmurs: \"The grave knows your scent... and waits.\"",
 			/datum/status_effect/buff/trollshape = "Last Death hums: \"Mass returns to earth. Let the soil remember you.\"",
 			/datum/status_effect/buff/divine_beauty = "Last Death whispers: \"Even beauty rots. But for now... wear it.\"",
@@ -308,7 +308,7 @@
 		),
 
 		/// Lunaria - The Shadow Walker
-		/datum/patron/divine/lunaria = list(
+		/datum/patron/divine/noc = list(
 			/datum/status_effect/buff/beastsense = "Lunaria whispers: \"The dark sees what the day fears.\"",
 			/datum/status_effect/buff/trollshape = "Lunaria hisses: \"Shadows swell your shape... for now.\"",
 			/datum/status_effect/buff/divine_beauty = "Lunaria murmurs: \"Beauty hidden. Power unseen.\"",
@@ -340,7 +340,7 @@
 		),
 
 		/// Wanderer - The Warlord
-		/datum/patron/divine/wanderer = list(
+		/datum/patron/divine/ravox = list(
 			/datum/status_effect/buff/beastsense = "Wanderer growls: \"Smell your enemy. Hunt him down with purpose.\"",
 			/datum/status_effect/buff/trollshape = "Wanderer commands: \"Let might serve justice. Let strength carry duty.\"",
 			/datum/status_effect/buff/divine_beauty = "Wanderer declares: \"Wear your glory well, warrior. Let honor shine brighter.\"",
@@ -372,7 +372,7 @@
 		),
 
 		/// Tenebrase - The Ascended Goddess
-		/datum/patron/inhumen/tenebrase = list(
+		/datum/patron/inhumen/zizo = list(
 			/datum/status_effect/buff/beastsense = "Tenebrase hisses: \"Zey crawl. Zey beg. Zey are prey. Hunt zem.\"",
 			/datum/status_effect/buff/trollshape = "Tenebrase croons: \"Zis form? Power. Ztrength. Zat is mine gift.\"",
 			/datum/status_effect/buff/divine_beauty = "Tenebrase sneers: \"Zey shall kneel before zis visage. Et zey shall weep.\"",

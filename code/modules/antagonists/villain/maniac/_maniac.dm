@@ -117,7 +117,7 @@ GLOBAL_VAR_INIT(maniac_highlander, 0) // THERE CAN ONLY BE ONE!
 				heart.maniacs2wonder_ids = list()
 				heart.maniacs = list()
 			dreamer.remove_stress(/datum/stressevent/saw_wonder)
-			dreamer.remove_curse(/datum/curse/tenebrase)
+			dreamer.remove_curse(/datum/curse/zizo)
 		//	dreamer.remove_client_colour(/datum/client_colour/maniac_marked)
 		hallucinations = owner.current.overlay_fullscreen("maniac", /atom/movable/screen/fullscreen/maniac)
 	LAZYINITLIST(owner.learned_recipes)
@@ -136,7 +136,7 @@ GLOBAL_VAR_INIT(maniac_highlander, 0) // THERE CAN ONLY BE ONE!
 			to_chat(owner.current,span_danger("I am no longer a MANIAC!"))
 		if(ishuman(owner.current))
 			var/mob/living/carbon/human/dreamer = owner.current
-			dreamer.set_patron(/datum/patron/inhumen/tenebrase)
+			dreamer.set_patron(/datum/patron/inhumen/zizo)
 			dreamer.cmode_music = old_cm
 			dreamer.remove_stat_modifier("[type]")
 			var/client/clinet = dreamer?.client

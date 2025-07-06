@@ -144,8 +144,8 @@
 	craftdiff = 0
 
 /datum/anvil_recipe/tools/lamptern
-	name = "Iron Lamptern"
-	recipe_name = "a Lamptern"
+	name = "Iron lantern"
+	recipe_name = "a lantern"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/flashlight/flare/torch/lantern
 
@@ -327,8 +327,8 @@
 	i_type = "Tools"
 
 /datum/anvil_recipe/tools/lamptern/copper
-	name = "Copper Lamptern"
-	recipe_name = "a Lamptern"
+	name = "Copper Lantern"
+	recipe_name = "a Lantern"
 	req_bar = /obj/item/ingot/copper
 	created_item = /obj/item/flashlight/flare/torch/lantern/copper
 

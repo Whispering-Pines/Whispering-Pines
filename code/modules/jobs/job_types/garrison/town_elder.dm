@@ -277,20 +277,20 @@
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/mid = 1, /obj/item/needle = 1 )
 
 	switch(H.patron?.type)
-		if(/datum/patron/divine/solaria)
-			neck = /obj/item/clothing/neck/psycross/silver/solaria
+		if(/datum/patron/divine/astrata)
+			neck = /obj/item/clothing/neck/psycross/silver/astrata
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
-		if(/datum/patron/divine/last_death)
-			neck = /obj/item/clothing/neck/psycross/silver/last_death
+		if(/datum/patron/divine/necra)
+			neck = /obj/item/clothing/neck/psycross/silver/necra
 			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
-		if(/datum/patron/divine/moonbeam)
-			neck = /obj/item/clothing/neck/psycross/silver/moonbeam
+		if(/datum/patron/divine/eora)
+			neck = /obj/item/clothing/neck/psycross/silver/eora
 			H.cmode_music = 'sound/music/cmode/church/CombatEora.ogg'
 			ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 			H.virginity = FALSE
-		if(/datum/patron/divine/lunaria)
-			neck = /obj/item/clothing/neck/psycross/lunaria
+		if(/datum/patron/divine/noc)
+			neck = /obj/item/clothing/neck/psycross/noc
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			var/language = pickweight(list("Dwarvish" = 1, "Elvish" = 1, "Hellspeak" = 1, "Zaladin" = 1, "Orcish" = 1,))
 			switch(language)
@@ -318,8 +318,8 @@
 			neck = /obj/item/clothing/neck/psycross/silver/pestra
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			backpack_contents += /obj/item/needle/blessed
-		if(/datum/patron/divine/blissrose)
-			neck = /obj/item/clothing/neck/psycross/silver/blissrose
+		if(/datum/patron/divine/dendor)
+			neck = /obj/item/clothing/neck/psycross/silver/dendor
 			H.cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
 			H.adjust_skillrank(/datum/skill/labor/farming, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/labor/taming, 1, TRUE)
@@ -328,8 +328,8 @@
 			neck = /obj/item/clothing/neck/psycross/silver/abyssor
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			H.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE)
-		if(/datum/patron/divine/wanderer)
-			neck = /obj/item/clothing/neck/psycross/silver/wanderer
+		if(/datum/patron/divine/ravox)
+			neck = /obj/item/clothing/neck/psycross/silver/ravox
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 			H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		if(/datum/patron/divine/xylix)
@@ -449,11 +449,11 @@
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/satchel
 	wrists = /obj/item/clothing/wrists/nocwrappings
-	neck = /obj/item/clothing/neck/psycross/lunaria
+	neck = /obj/item/clothing/neck/psycross/noc
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor = 1, /obj/item/needle = 1 )
 
-	if(H.patron != /datum/patron/divine/lunaria)
-		H.set_patron(/datum/patron/divine/lunaria)
+	if(H.patron != /datum/patron/divine/noc)
+		H.set_patron(/datum/patron/divine/noc)
 
 	H.apply_status_effect(/datum/status_effect/buff/nocblessed)
 	// 3 INT and 2 PER buff, stats will be lowered because of that

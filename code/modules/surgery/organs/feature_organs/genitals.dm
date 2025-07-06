@@ -147,7 +147,7 @@
 /obj/item/organ/filling_organ/vagina/proc/handle_preggoness()
 	if(owner.getorganslot(ORGAN_SLOT_BELLY))
 		var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
-		if(bellyussy.organ_size < 4)
+		if(bellyussy.organ_size <= 2) //dont go above size 3
 			to_chat(owner, span_lovebold("I notice my belly has grown due to pregnancy...")) //dont need to repeat this probably if size cant grow anyway.
 			bellyussy.organ_size = bellyussy.organ_size + 1
 			owner.update_body_parts(TRUE)
@@ -223,7 +223,7 @@
 	icon = 'modular_stonehedge/licensed-eaglephntm/icons/obj/surgery.dmi'
 	icon_state = "butt"
 	visible_organ = TRUE
-	zone = BODY_ZONE_PRECISE_STOMACH
+	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_BUTT
 	organ_dna_type = /datum/organ_dna/butt
 	accessory_type = /datum/sprite_accessory/butt/pair

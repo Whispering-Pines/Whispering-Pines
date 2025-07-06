@@ -271,7 +271,7 @@
 				qdel(src)
 
 /obj/item/flashlight/flare/torch/lantern
-	name = "iron lamptern"
+	name = "iron lantern"
 	icon_state = "lamp"
 	desc = "A light to guide the way."
 	light_outer_range = 7
@@ -314,7 +314,7 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/flashlight/flare/torch/lantern/bronzelamptern
-	name = "bronze lamptern"
+	name = "bronze lantern"
 	icon_state = "bronzelamp"
 	item_state = "bronzelamp"
 	desc = "A marvel of engineering that emits a strange green glow."
@@ -327,7 +327,7 @@
 	melt_amount = 75
 
 /obj/item/flashlight/flare/torch/lantern/copper
-	name = "copper lamptern"
+	name = "copper lantern"
 	icon_state = "clamp"
 	desc = "A simple and cheap lamptern."
 	light_outer_range = 7

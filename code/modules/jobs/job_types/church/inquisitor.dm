@@ -251,7 +251,7 @@
 			var/datum/patron/victim_patron = patron
 			switch(interrogator_patron.associated_faith.type)
 				if(/datum/faith/old_gods)
-					if(ispath(victim_patron.type, /datum/patron/divine) && victim_patron.type != /datum/patron/divine/last_death) //lore
+					if(ispath(victim_patron.type, /datum/patron/divine) && victim_patron.type != /datum/patron/divine/necra) //lore
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
 					else if(victim_patron.type == /datum/patron/old_gods/progressive)
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)

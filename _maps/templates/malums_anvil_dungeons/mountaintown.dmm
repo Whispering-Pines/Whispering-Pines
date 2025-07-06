@@ -1227,7 +1227,7 @@
 /obj/structure/table/wood/large/corner_blue{
 	dir = 10
 	},
-/obj/item/clothing/neck/psycross/silver/wanderer,
+/obj/item/clothing/neck/psycross/silver/ravox,
 /turf/open/floor/churchmarble,
 /area/rogue/under/mountains/anvil/dungeon)
 "qN" = (
@@ -1923,7 +1923,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Ba" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/ring/gold/wanderer,
+/obj/item/clothing/ring/gold/ravox,
 /obj/item/skull,
 /obj/item/alch/bone{
 	name = "bone";
@@ -3091,7 +3091,7 @@
 "Sq" = (
 /obj/structure/closet/crate/chest,
 /obj/effect/spawner/map_spawner/loot/magic{
-	spawned = list(/obj/item/clothing/ring/active/nomag = 20, /obj/item/clothing/ring/gold/protection = 16, /obj/item/clothing/ring/silver/calm = 20, /obj/item/clothing/ring/silver/lunaria = 6, /obj/item/clothing/head/crown/circlet/vision = 3, /obj/item/clothing/head/crown/circlet/sleepless = 3, /obj/item/clothing/neck/talkstone = 15)
+	spawned = list(/obj/item/clothing/ring/active/nomag = 20, /obj/item/clothing/ring/gold/protection = 16, /obj/item/clothing/ring/silver/calm = 20, /obj/item/clothing/ring/silver/noc = 6, /obj/item/clothing/head/crown/circlet/vision = 3, /obj/item/clothing/head/crown/circlet/sleepless = 3, /obj/item/clothing/neck/talkstone = 15)
 	},
 /turf/open/floor/churchrough,
 /area/rogue/under/mountains/anvil/dungeon/lower)
