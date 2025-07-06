@@ -1,22 +1,3 @@
-/// Divine pantheon storytellers
-#define DIVINE_STORYTELLERS list( \
-	/datum/storyteller/solaria, \
-	/datum/storyteller/lunaria, \
-	/datum/storyteller/wanderer, \
-	/datum/storyteller/last_death, \
-	/datum/storyteller/moonbeam, \
-	/datum/storyteller/blissrose, \
-)
-
-/// Inhumen pantheon storytellers
-#define INHUMEN_STORYTELLERS list( \
-	/datum/storyteller/tenebrase, \
-	/datum/storyteller/lamashtu, \
-)
-
-/// All storytellers
-#define STORYTELLERS_ALL (DIVINE_STORYTELLERS + INHUMEN_STORYTELLERS)
-
 /datum/storyteller/solaria
 	name = "Solaria"
 	desc = "Solaria will provide a balanced and varied experience. Consider this the default experience."
