@@ -13,6 +13,8 @@
 	var/force = SEX_FORCE_MID
 	/// Our arousal
 	var/arousal = 0
+	///Makes genital arousal automatic by default
+	var/manual_arousal = SEX_MANUAL_AROUSAL_DEFAULT
 	/// Whether we want to screw until finished, or non stop
 	var/do_until_finished = TRUE
 	var/last_arousal_increase_time = 0
@@ -75,6 +77,9 @@
 
 /datum/sex_controller/proc/adjust_force(amt)
 	force = clamp(force + amt, SEX_FORCE_MIN, SEX_FORCE_MAX)
+
+/datum/sex_controller/proc/adjust_arousal_manual(amt)
+	manual_arousal = clamp(manual_arousal + amt, SEX_MANUAL_AROUSAL_MIN, SEX_MANUAL_AROUSAL_MAX)
 
 /datum/sex_controller/proc/update_pink_screen()
 	var/severity = 0
@@ -315,6 +320,12 @@
 	arousal_amt *= get_force_pleasure_multiplier(applied_force, giving)
 	pain_amt *= get_force_pain_multiplier(applied_force)
 	pain_amt *= get_speed_pain_multiplier(applied_speed)
+	var/manual_arousal_name = get_manual_arousal_string()
+	if(HAS_TRAIT(user, TRAIT_GOODLOVER)) //only pros get control
+		if(!user.getorganslot(ORGAN_SLOT_PENIS))
+			dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
+		else
+			dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a> ~|~ <a href='?src=[REF(src)];task=manual_arousal_down'>\<</a> [manual_arousal_name] <a href='?src=[REF(src)];task=manual_arousal_up'>\></a></center>"
 
 	if(user.stat == DEAD)
 		if(prob(2)) //since there is no proper diseases....
@@ -621,6 +632,10 @@
 			adjust_force(1)
 		if("force_down")
 			adjust_force(-1)
+		if("manual_arousal_up")
+			adjust_arousal_manual(1)
+		if("manual_arousal_down")
+			adjust_arousal_manual(-1)
 		if("toggle_finished")
 			do_until_finished = !do_until_finished
 	show_ui()
@@ -808,6 +823,17 @@
 			return "<font color='#f05ee1'>QUICK</font>"
 		if(SEX_SPEED_EXTREME)
 			return "<font color='#d146f5'>UNRELENTING</font>"
+
+/datum/sex_controller/proc/get_manual_arousal_string()
+	switch(manual_arousal)
+		if(SEX_MANUAL_AROUSAL_DEFAULT)
+			return "<font color='#eac8de'>NATURAL</font>"
+		if(SEX_MANUAL_AROUSAL_UNAROUSED)
+			return "<font color='#e9a8d1'>UNAROUSED</font>"
+		if(SEX_MANUAL_AROUSAL_PARTIAL)
+			return "<font color='#f05ee1'>PARTIALLY ERECT</font>"
+		if(SEX_MANUAL_AROUSAL_FULL)
+			return "<font color='#d146f5'>FULLY ERECT</font>"
 
 /datum/sex_controller/proc/get_generic_force_adjective()
 	switch(force)
