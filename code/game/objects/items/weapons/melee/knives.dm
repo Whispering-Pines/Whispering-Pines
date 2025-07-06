@@ -1,5 +1,7 @@
 /* KNIVES - Low damage, bad parry, ok AP
 ==========================================================*/
+	//flipping knives has a cooldown on to_chat to reduce chatspam
+	COOLDOWN_DECLARE(flip_cooldown)
 
 /obj/item/weapon/knife
 	name = "knife"
@@ -33,6 +35,38 @@
 	grid_width = 32
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg'
 	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_dagger.ogg'
+
+/obj/item/weapon/knife/rmb_self(mob/user)
+	. = ..()
+	if(.)
+		return
+
+	SpinAnimation(4, 2) // The spin happens regardless of the cooldown
+
+	if(!COOLDOWN_FINISHED(src, flip_cooldown))
+		return
+
+	COOLDOWN_START(src, flip_cooldown, 3 SECONDS)
+	if((user.get_skill_level(/datum/skill/combat/knives) < 3) && prob(40))
+		user.visible_message(
+			span_danger("While trying to flip [src] [user] drops it instead!"),
+			span_userdanger("While trying to flip [src] you drop it instead!"),
+		)
+		var/mob/living/carbon/human/unfortunate_idiot = user
+		var/dropped_knife_target = pick(
+			BODY_ZONE_PRECISE_L_FOOT,
+			BODY_ZONE_PRECISE_R_FOOT,
+			)
+		unfortunate_idiot.apply_damage(src.force, BRUTE, dropped_knife_target)
+		user.dropItemToGround(src, TRUE)
+	else
+		user.visible_message(
+			span_notice("[user] spins [src] around [user.p_their()] finger"),
+			span_notice("You spin [src] around your finger"),
+		)
+		playsound(src, 'sound/foley/equip/swordsmall1.ogg', 20, FALSE)
+
+	return
 
 /obj/item/weapon/knife/equipped(mob/user, slot, initial = FALSE)
 	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg", "modular_helmsguard/sound/sheath_sounds/draw_dagger2.ogg", "sound/foley/equip/swordsmall2.ogg")

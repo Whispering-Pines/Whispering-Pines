@@ -3,7 +3,8 @@
 	tutorial = "While you are not directly connected to the church, as any mortician you are taught prayers \
 	and have a certain degree of religious connection to the Last Death, in order to properly perform your duties. \
 	You haul bodies off the streets and gutter, process them in the processing chamber, or give them a burial depending on the situation. \
-	...Sometimes there is need for live donors for the machines.. And you know how to use your hands. Good thing you are paid handsomely by the keep."
+	...Sometimes there is need for live donors for the machines.. And you know how to use your hands. Good thing you are paid handsomely by the keep.\
+	You are also expected to clean the streets, or hire someone to do it for you."
 	flag = MORTICIAN
 	department_flag = SERFS
 	display_order = JDO_MORTICIAN
@@ -19,7 +20,7 @@
 	allowed_patrons = list(/datum/patron/divine/last_death)
 
 	outfit = /datum/outfit/job/undertaker
-	give_bank_account = TRUE
+	give_bank_account = 100
 	cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 
 /datum/outfit/job/undertaker
@@ -65,6 +66,7 @@
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Operating with corpses every day.
 	ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC) // In case they need to move tombs or anything.
+	ADD_TRAIT(H, TRAIT_DEATHSIGHT, TRAIT_GENERIC)
 
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
