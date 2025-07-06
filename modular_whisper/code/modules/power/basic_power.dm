@@ -48,7 +48,7 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 //fake powered machine
 /obj/machinery/fake_powered
 	name = "Template fake power machine"
-	desc = "sex"
+	icon = 'modular_whisper/icons/misc/machines.dmi'
 	var/toggled = FALSE
 
 /obj/machinery/fake_powered/LateInitialize()
@@ -72,5 +72,33 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 		toggled = FALSE
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		balloon_alert_to_viewers("dies down.")
-		icon_state = "[initial(icon_state)]_off	"
+		icon_state = "[initial(icon_state)]_off"
 
+
+//coffin type for lids
+/obj/structure/closet/crate/coffin/fake_powered
+	name = "Template lidded fake power machine"
+	icon = 'modular_whisper/icons/misc/machines.dmi'
+	var/toggled = FALSE
+	var/working = FALSE
+
+/obj/structure/closet/crate/coffin/fake_powered/LateInitialize()
+	. = ..()
+	GLOB.fake_powered_machines += src
+	check_fake_power()
+	update_icon()
+
+/obj/structure/closet/crate/coffin/fake_powered/Destroy()
+	GLOB.fake_powered_machines -= src
+	. = ..()
+
+/obj/structure/closet/crate/coffin/fake_powered/proc/check_fake_power()
+	var/area/current_area = get_area(src)
+	if(current_area.fake_power)
+		toggled = TRUE
+		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
+		balloon_alert_to_viewers("whirrs to life.")
+	else
+		toggled = FALSE
+		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
+		balloon_alert_to_viewers("dies down.")

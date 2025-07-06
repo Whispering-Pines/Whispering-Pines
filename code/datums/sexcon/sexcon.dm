@@ -976,12 +976,24 @@
 	desc = "<span class='green'>Pain makes it better.</span>"
 
 
-/obj/proc/start_obj_sex(gendero = MALE, mob/living/victim, speed, force)
+/obj/proc/start_obj_sex(mob/living/victim, speed, force, can_cum = FALSE)
 	//fake sex basically
 	playsound(get_turf(src), pick('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 100, FALSE, -1)
-	while(do_after(victim, 0.825 SECONDS, src))
+	while(do_after(victim, (3.3 SECONDS / victim.sexcon.get_speed_multiplier()), src))
 		victim.sexcon.perform_sex_action(victim, rand(1,speed), rand(0,force-1), TRUE)
-		if(prob(5*(speed+force)))
-			if(gendero == MALE)
-				playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-				add_cum_floor(get_turf(src))
+		if(victim.sexcon.do_message_signature("objectsex"))
+			if(victim.getorganslot(ORGAN_SLOT_PENIS))
+				to_chat(victim, span_love("[name] works [victim.name]'s cock."))
+			else if(victim.getorganslot(ORGAN_SLOT_VAGINA))
+				to_chat(victim, span_love("[name] fucks [victim.name]'s cunt."))
+			else
+				to_chat(victim, span_love("[name] fucks [victim.name]'s ass."))
+		if(prob(5*(speed+force)) && can_cum)
+			if(victim.getorganslot(ORGAN_SLOT_PENIS))
+				to_chat(victim, span_love("[victim.name] cums inside [name]!"))
+			else if(victim.getorganslot(ORGAN_SLOT_VAGINA))
+				to_chat(victim, span_love("[name] cums in [victim.name]'s cunt!"))
+			else
+				to_chat(victim, span_love("[name] cums [victim.name]'s ass!"))
+			playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+			add_cum_floor(get_turf(src))

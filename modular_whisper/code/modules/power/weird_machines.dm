@@ -1,3 +1,5 @@
+//by vide noir cause why not.
+//parent types
 /obj/machinery/fake_powered/biofabricator
 	name = "Fake Fabricator"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
@@ -141,30 +143,33 @@
 //biomass recycler, to make it easier for me i'll make this unpowered
 GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
-/obj/structure/closet/crate/coffin/biomass_recycler
+/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler
 	name = "Biomass Recycler"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "biomass_recycler"
 	desc = "Another byproduct of world ending war, generally used to turn emptied corpses or food etc into material for recloning or limb regrowers."
 	anchored = TRUE
-	var/working = FALSE
+
 	open_sound = 'sound/foley/doors/shittyopen.ogg'
 	close_sound = 'sound/foley/doors/shittyclose.ogg'
 
-/obj/structure/closet/crate/coffin/biomass_recycler/examine(mob/user)
+/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler/examine(mob/user)
 	. = ..()
 	. += "<span class='warning'>There is enough biomass to make [GLOB.global_biomass_storage] bodies.</span>"
 
-/obj/structure/closet/crate/coffin/biomass_recycler/open(mob/living/user)
+/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/crate/coffin/biomass_recycler/close(mob/living/user)
+/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler/close(mob/living/user)
 	. = ..()
 	update_icon_state()
+	if(!toggled)
+		balloon_alert_to_viewers("Unpowered.")
+		return
 	working = TRUE
 	for(var/content in contents)
 		if(ishuman(content))
@@ -253,30 +258,34 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			continue
 		for(var/obj/machinery/fake_powered/cloning_pod/clonebays in GLOB.cloning_bays)
 			clonebays.update_icon()
+	open()
 	working = FALSE
 
-/obj/structure/closet/crate/coffin/liquid_drainer
+/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer
 	name = "Blood drainer"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "blood_drainer"
 	desc = "Likely used to supply blood for the warriors of the great war of old, now it has other purposes aswell, thanks to modifications. Drains all of the blood and other fluids of living and the dead, leaving them weakened and likely to die without aid."
 	anchored = TRUE
-	var/working = FALSE
 
-/obj/structure/closet/crate/coffin/liquid_drainer/open(mob/living/user)
+
+/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/crate/coffin/liquid_drainer/Initialize()
+/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/Initialize()
 	. = ..()
 	create_reagents(2000)
 
-/obj/structure/closet/crate/coffin/liquid_drainer/close(mob/living/user)
+/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/close(mob/living/user)
 	. = ..()
 	update_icon_state()
+	if(!toggled)
+		balloon_alert_to_viewers("Unpowered.")
+		return
 	for(var/mob/living/carbon/human/victim in contents)
 		working = TRUE
 		if(victim.age == AGE_CHILD)
@@ -293,15 +302,17 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			to_chat(victim, span_red("I feel several stings on my back!"))
 			sleep(0.3 SECONDS)
 			to_chat(victim, span_red("something starts working my [victim.gender == MALE ? "shaft" : "pussy"] violently..!"))
-			if(victim.gender == MALE)
-				start_obj_sex(MALE, victim, /datum/sex_action/npc_blowjob, SEX_FORCE_EXTREME, SEX_FORCE_MAX)
-			else
-				start_obj_sex(FEMALE, victim, /datum/sex_action/npc_vaginal_sex, SEX_FORCE_EXTREME, SEX_FORCE_MAX)
+			start_obj_sex(victim, SEX_FORCE_EXTREME, SEX_FORCE_MAX, FALSE)
 		sleep(1 SECONDS)
 		working = FALSE
 		suckening_cycle(victim)
 
-/obj/structure/closet/crate/coffin/liquid_drainer/proc/suckening_cycle(mob/living/carbon/human/victim)
+/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/proc/suckening_cycle(mob/living/carbon/human/victim)
+	if(!toggled)
+		balloon_alert_to_viewers("Unpowered.")
+		working = FALSE
+		open()
+		return
 	if(victim.blood_volume >= 0 && !opened)
 		if(victim.stat != DEAD)
 			victim.SetParalyzed(4 SECONDS)
@@ -331,8 +342,11 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		if(!opened)
 			open()
 
-/obj/structure/closet/crate/coffin/liquid_drainer/attack_right(mob/user)
+/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/attack_right(mob/user)
 	. = ..()
+	if(!toggled)
+		balloon_alert_to_viewers("Unpowered.")
+		return
 	playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 	say("Dispensing blood pack.", language = /datum/language/ancient_english)
 	sleep(1 SECONDS)
@@ -381,11 +395,13 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
 		balloon_alert_to_viewers("whirrs to life.")
 		set_light_on(TRUE)
+		update_light()
 	else
 		toggled = FALSE
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		balloon_alert_to_viewers("dies down.")
 		set_light_on(FALSE)
+		update_light()
 
 /obj/machinery/fake_powered/cloning_pod/update_icon(updates)
 	. = ..()
@@ -434,29 +450,31 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 
 //limb regrower (cannibals)
-/obj/structure/closet/crate/coffin/limb_regrower
+/obj/structure/closet/crate/coffin/fake_powered/limb_regrower
 	name = "MEAT GOD"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "regrower"
 	desc = "An old world limb-regrower, likely made to assist soldiers who lost their limbs, now a horrible cannibal food machine... Turns one's blood into living tissue, medical care advised. Takes almost all of one's blood for a single limb. Healthy victims can be put here to add into blood storage of the machine."
 	anchored = TRUE
 	var/blood_stored = 0
-	var/working = FALSE
 
-/obj/structure/closet/crate/coffin/limb_regrower/examine(mob/user)
+/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/examine(mob/user)
 	. = ..()
 	user.visible_message("This has [blood_stored] units blood stored, 750 units required for a single limb.")
 
-/obj/structure/closet/crate/coffin/limb_regrower/open(mob/living/user)
+/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/crate/coffin/limb_regrower/close(mob/living/user)
+/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/close(mob/living/user)
 	. = ..()
 	update_icon_state()
+	if(!toggled)
+		balloon_alert_to_viewers("Unpowered.")
+		return
 	for(var/mob/living/carbon/human/victim in contents)
 		if(victim.stat != DEAD)
 			var/cost = 0
@@ -481,7 +499,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		sleep(1 SECONDS)
 		regrowing_cycle(victim)
 
-/obj/structure/closet/crate/coffin/limb_regrower/attackby(obj/item/I, mob/user, params)
+/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/attackby(obj/item/I, mob/user, params)
 	. = ..()
 	if(istype(I, /obj/item/reagent_containers/blood))
 		var/obj/item/reagent_containers/blood/bpack = I
@@ -490,7 +508,11 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		say("Added bloodpack into reserves.", language = /datum/language/ancient_english)
 
-/obj/structure/closet/crate/coffin/limb_regrower/proc/regrowing_cycle(mob/living/carbon/human/victim)
+/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/proc/regrowing_cycle(mob/living/carbon/human/victim)
+	if(!toggled)
+		balloon_alert_to_viewers("Unpowered.")
+		open()
+		return
 	if(victim.loc != contents)
 		working = FALSE
 		return
@@ -558,14 +580,14 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 
 //biomass chute
-/obj/structure/closet/crate/coffin/bio_chute
+/obj/structure/closet/crate/coffin/fake_powered/bio_chute
 	name = "corpse disposal"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "chute"
 	desc = "body goes in, money comes out."
-	var/working = FALSE
 
-/obj/structure/closet/crate/coffin/bio_chute/open(mob/living/user)
+
+/obj/structure/closet/crate/coffin/fake_powered/bio_chute/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
@@ -573,7 +595,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	update_icon_state()
 
 
-/obj/structure/closet/crate/coffin/bio_chute/close(mob/living/user)
+/obj/structure/closet/crate/coffin/fake_powered/bio_chute/close(mob/living/user)
 	. = ..()
 	update_icon_state()
 	working = TRUE
