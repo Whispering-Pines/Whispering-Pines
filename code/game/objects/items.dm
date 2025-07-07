@@ -282,6 +282,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 	var/sheathe_sound = "rustle"
 
+	var/leashable = FALSE // More elegant solution to leash checks
+
 /obj/item/Initialize()
 	. = ..()
 

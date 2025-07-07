@@ -297,6 +297,7 @@
 		/obj/item/weapon/surgery/cautery,
 		/obj/item/natural/worms/leech/parasite,
 		/obj/item/weapon/surgery/hammer,
+		/obj/item/reagent_containers/syringe,
 	)
 	component_type = /datum/component/storage/concrete/grid/surgery_bag
 
@@ -314,6 +315,7 @@
 		/obj/item/natural/worms/leech,
 		/obj/item/weapon/surgery/hammer,
 		/obj/item/natural/bundle/fibers/full,
+		/obj/item/reagent_containers/syringe,
 	)
 
 /obj/item/storage/belt/leather/knifebelt

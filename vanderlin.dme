@@ -2877,7 +2877,6 @@
 #include "modular_azure\code\statpacks\physical.dm"
 #include "modular_azure\code\statpacks\wildcard.dm"
 #include "modular_hearthstone\code\game\objects\effects\track.dm"
-#include "modular_hearthstone\code\game\objects\items\clothes\neck.dm"
 #include "modular_hearthstone\code\game\objects\items\clothes\stockings.dm"
 #include "modular_hearthstone\code\game\objects\items\clothes\strapless_dress.dm"
 #include "modular_hearthstone\code\game\objects\structures\canopy.dm"
@@ -2917,4 +2916,9 @@
 #include "modular_whisper\code\modules\reagents\blood_pack.dm"
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
+#include "modular_whisper\code\game\objects\items\leash.dm"
+#include "modular_whisper\code\game\objects\items\util.dm"
+#include "modular_whisper\code\modules\cargo\supply_packs\apparel.dm"
+#include "modular_whisper\code\modules\clothing\neck.dm"
+#include "modular_whisper\code\modules\crafting\crafting.dm"
 // END_INCLUDE

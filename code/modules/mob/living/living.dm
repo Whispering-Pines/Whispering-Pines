@@ -946,7 +946,7 @@
 		return FALSE
 
 
-/mob/living/carbon/human/can_be_revived()
+/mob/living/carbon/can_be_revived()
 	. = ..()
 	var/obj/item/bodypart/head/H = get_bodypart(BODY_ZONE_HEAD)
 	if(H)
@@ -1122,6 +1122,9 @@
 	else if(!HAS_TRAIT(src, TRAIT_IMMOBILIZED))
 		if(on_fire)
 			resist_fire() //stop, drop, and roll
+		else if(has_status_effect(/datum/status_effect/leash_pet))
+			if(istype(src, /mob/living/carbon))
+				resist_leash()
 		else if(last_special <= world.time)
 			resist_restraints() //trying to remove cuffs.
 
@@ -2579,4 +2582,7 @@
 	return
 
 /mob/proc/get_punch_dmg()
+	return
+
+/mob/living/proc/resist_leash()
 	return

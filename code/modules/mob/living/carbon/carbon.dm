@@ -1285,6 +1285,17 @@
 	if(istype(loc, /turf/open/water) && body_position == LYING_DOWN)
 		return FALSE
 
+/mob/living/carbon/resist_leash()
+	to_chat(src, span_notice("I reach for the hook on my collar..."))
+	//Determine how long it takes to remove the leash
+	var/deleash = 5 SECONDS
+	if(src.handcuffed)
+		deleash = 20 SECONDS
+	if(do_after(src, deleash, 0, target = src))
+		if(!QDELETED(src))
+			to_chat(src, "<span class='warning'>[src] has removed their leash!</span>")
+			src.remove_status_effect(/datum/status_effect/leash_pet)
+
 ///Returns a list of all body_zones covered by clothing
 /mob/living/carbon/proc/get_covered_body_zones()
 	RETURN_TYPE(/list)

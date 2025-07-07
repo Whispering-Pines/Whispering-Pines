@@ -4,6 +4,9 @@
 /datum/examine_effect/proc/get_examine_line(mob/user)
 	return
 
+/obj/item/proc/has_status_effect(type)
+	return FALSE
+
 /obj/item/examine(mob/user) //This might be spammy. Remove?
 	. = ..()
 	var/price_text = get_displayed_price(user)
@@ -25,6 +28,8 @@
 //	if(has_inspect_verb || (obj_integrity < max_integrity))
 //		. += "<span class='notice'><a href='byond://?src=[REF(src)];inspect=1'>Inspect</a></span>"
 
+	if(has_status_effect(/datum/status_effect/leash_pet))
+		. += "<A href='?src=[REF(src)];'><span class='warning'>A leash is hooked to a collar!</span></A>"
 	if(price_text)
 		. += price_text
 

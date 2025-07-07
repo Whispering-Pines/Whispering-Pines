@@ -337,7 +337,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!valid_nsfw_headshot_link(null, nsfw_headshot_link, TRUE))
 		nsfw_headshot_link = null
 
-	S["statpack"] >> statpack.type
+	S["statpack"] = statpack.type
 
 	//Load flavor text
 	S["flavortext"] >> flavortext

@@ -12,6 +12,8 @@
 	var/proj_piercing = 0 //does it pierce through thick clothes when shot with syringe gun
 	reagent_flags = TRANSPARENT
 	smeltresult = null
+	grid_height = 32
+	grid_width = 32
 
 /obj/item/reagent_containers/syringe/steel
 	name = "steel syringe"
