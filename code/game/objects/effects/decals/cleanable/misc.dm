@@ -201,6 +201,7 @@
 	desc = ""
 	icon = 'icons/obj/objects.dmi'
 	beauty = -20
+	max_integrity = 5
 
 /obj/effect/decal/cleanable/debris/Initialize()
 	. = ..()
