@@ -187,6 +187,38 @@
 	set category = "Priest"
 	if(stat)
 		return
+	var/curse_to_use = /datum/curse/xylix
+	switch(patron?.type)
+		if(/datum/patron/old_gods, /datum/patron/old_gods/progressive)
+			//missing
+		if(/datum/patron/divine/astrata)
+			curse_to_use = /datum/curse/astrata
+		if(/datum/patron/divine/noc)
+			curse_to_use = /datum/curse/noc
+		if(/datum/patron/divine/dendor)
+			//missing
+		if(/datum/patron/divine/abyssor)
+			//missing
+		if(/datum/patron/divine/necra)
+			curse_to_use = /datum/curse/necra
+		if(/datum/patron/divine/ravox)
+			curse_to_use = /datum/curse/ravox
+		if(/datum/patron/divine/xylix)
+			//default
+		if(/datum/patron/divine/pestra)
+			curse_to_use = /datum/curse/pestra
+		if(/datum/patron/divine/malum)
+			//missing
+		if(/datum/patron/divine/eora)
+			curse_to_use = /datum/curse/eora
+		if(/datum/patron/inhumen/graggar) // Heretical Patrons
+			curse_to_use = /datum/curse/graggar
+		if(/datum/patron/inhumen/zizo)
+			curse_to_use = /datum/curse/zizo
+		if(/datum/patron/inhumen/matthios)
+			curse_to_use = /datum/curse/matthios
+		if(/datum/patron/inhumen/baotha)
+			curse_to_use = /datum/curse/baotha
 	var/inputty = input("Curse someone as a heretic. (curse them again to remove it)", "Sinner Name") as text|null
 	if(inputty)
 		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
@@ -195,9 +227,10 @@
 		if(inputty in GLOB.heretical_players)
 			GLOB.heretical_players -= inputty
 			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the light!", title = "Hail new gods!", sound = 'sound/misc/bell.ogg')
-			for(var/mob/living/carbon/H in GLOB.player_list)
+			for(var/mob/living/carbon/human/H in GLOB.player_list)
 				if(H.real_name == inputty)
 					H.remove_stress(/datum/stressevent/psycurse)
+					H.remove_curse(curse_to_use)
 			return
 		if(length(GLOB.tennite_schisms))
 			to_chat(src, span_warning("I cannot curse anyone during the schism!"))
@@ -208,11 +241,11 @@
 					to_chat(src, span_danger("I wasn't able to do that!"))
 					return FALSE
 				H.add_stress(/datum/stressevent/psycurse)
+				GLOB.heretical_players += inputty
+				H.add_curse(curse_to_use)
+				priority_announce("[real_name] has put [patron.name]'s curse on [inputty] for offending the church!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 				break
 			return FALSE
-
-		GLOB.heretical_players += inputty
-		priority_announce("[real_name] has put Xylix's curse of woe on [inputty] for offending the church!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 
 /mob/living/carbon/human/proc/churchannouncement()
 	set name = "Announcement"

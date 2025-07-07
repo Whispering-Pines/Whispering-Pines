@@ -63,21 +63,17 @@
 			underworld.Entered(O, null)
 			verbs -= /client/proc/descend
 		if("Yes (250c)")
-			/* I guess undiscovered antags could reclone.
 			if(mob.mind.has_antag_datum(/datum/antagonist))
-				to_chat(mob, span_warning("I am not able to reclone!"))
-				return */
-			if(mob.real_name in GLOB.outlawed_players)
+				to_chat(mob, span_warning("I am incompatible with cloners!"))
+				return
+			if(mob.real_name in GLOB.outlawed_players) //was going to prevent heretics too but church dont really have any control over keep's cloners beyond necra curse.
 				to_chat(mob, span_warning("I am outlawed therefore blacklisted from cloners!"))
 				return
-			if(mob.real_name in GLOB.heretical_players)
-				to_chat(mob, span_warning("I am a heretic, the Last Death grips my soul!"))
-				return
-			if(mob.real_name in GLOB.excommunicated_players)
-				to_chat(mob, span_warning("I was excommunicated, the Last Death binds my soul!"))
+			if(HAS_TRAIT(mob, TRAIT_NECRA_CURSE))
+				to_chat(mob, span_warning("I can't, Last Death grasps my soul!"))
 				return
 			if(isroguespirit(mob)) //HONEYPOT CODE, REMOVE LATER
-				message_admins("[key] IS TRYING TO CRASH THE SERVER BY SPAWNING BODIES WHILE A SPIRIT!")
+				message_admins("[key] IS TRYING TO CRASH THE SERVER BY SPAWNING A TRILLION BODIES WHILE A SPIRIT!")
 				return
 			if((mob.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(mob, TRAIT_ZIZOID_HUNTED)) && !MOBTIMER_FINISHED(mob, MT_LASTDIED, 60 SECONDS))
 				to_chat(mob, span_warning("Sinius's influence is currently preventing me from fleeing to a new body or to the underworld!"))

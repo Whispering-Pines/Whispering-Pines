@@ -2,8 +2,7 @@
 	title = "Mortician"
 	tutorial = "While you are not directly connected to the church, as any mortician you are taught the burial rite incase you need it, \
 	You haul bodies off the streets and gutter, process them in the processing chamber, or give them a burial depending on the situation. \
-	...Sometimes there is need for live donors for the machines.. And you know how to use your hands. Good thing you are paid handsomely by the keep.\
-	You are also expected to clean the streets, or hire someone to do it for you."
+	...Sometimes there is need for live donors for the machines.. And you know how to use your hands. Good thing you are paid handsomely by the keep."
 	flag = MORTICIAN
 	department_flag = SERFS
 	display_order = JDO_MORTICIAN

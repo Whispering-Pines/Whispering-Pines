@@ -90,7 +90,7 @@
 	trait = TRAIT_NECRA_CURSE
 
 /datum/curse/xylix
-	name = "Xylix's Curse"
+	name = "Fortune Curse" //rename when we got a fortune god
 	description = "Fortune is no longer on my side."
 	trait = TRAIT_XYLIX_CURSE
 
