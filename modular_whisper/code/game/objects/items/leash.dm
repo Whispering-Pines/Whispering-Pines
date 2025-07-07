@@ -96,9 +96,9 @@
 		leash_pet.remove_status_effect(/datum/status_effect/leash_pet)
 
 	if(!leash_pet.has_status_effect(/datum/status_effect/leash_pet)) //If there is no pet, there is no dom. Loop breaks.
-		UnregisterSignal(leash_master, COMSIG_MOVABLE_MOVED)
-		UnregisterSignal(leash_pet, COMSIG_MOVABLE_MOVED)
-		UnregisterSignal(leash_freepet, COMSIG_MOVABLE_MOVED)
+		if(leash_master) UnregisterSignal(leash_master, COMSIG_MOVABLE_MOVED)
+		if(leash_pet) UnregisterSignal(leash_pet, COMSIG_MOVABLE_MOVED)
+		if(leash_freepet) UnregisterSignal(leash_freepet, COMSIG_MOVABLE_MOVED)
 		leash_pet?.remove_status_effect(/datum/status_effect/leash_freepet)
 //		leash_pet.remove_movespeed_modifier(/datum/movespeed_modifier/leash)
 		leash_master?.remove_status_effect(/datum/status_effect/leash_owner)
@@ -108,8 +108,9 @@
 		return PROCESS_KILL
 
 //Called when someone is clicked with the leash
-/obj/item/leash/attack(mob/living/carbon/C, mob/living/user) //C is the pet, user is the one with the leash
-	if(C.has_status_effect(/datum/status_effect/leash_pet)) //If the pet is already leashed, do not leash them. For the love of god.
+/obj/item/leash/attack(mob/living/carbon/C, mob/living/user)
+	var/obj/item/collar = C.get_item_by_slot(ITEM_SLOT_NECK)
+	if(C.has_status_effect(/datum/status_effect/leash_pet))
 		to_chat(user, span_notice("[C] has already been leashed."))
 		return
 
@@ -121,9 +122,7 @@
 		to_chat(user, span_warning("This leash is already attached to [leash_pet]!"))
 		return
 
-	var/obj/item/collar = C.get_item_by_slot(ITEM_SLOT_NECK)
-
-	if((istype(collar, /obj/item/clothing/neck/roguetown/leathercollar) && ("leashable" in collar) && collar:leashable == TRUE) || istype(C.get_item_by_slot(ITEM_SLOT_HANDCUFFED), /obj/item/rope/chain))
+	if((collar && collar:leashable == TRUE) || istype(C.get_item_by_slot(ITEM_SLOT_HANDCUFF), /obj/item/rope/chain))
 		var/leash_attempt_message = "[user] raises \the [src] to [C]'s neck!"
 		for(var/mob/viewing in viewers(C, null))
 			if(viewing == C)
@@ -326,7 +325,7 @@
 		leash_pet.apply_status_effect(/datum/status_effect/leash_freepet)
 		RegisterSignal(leash_freepet, COMSIG_MOVABLE_MOVED, PROC_REF(on_freepet_move))
 		leash_master?.remove_status_effect(/datum/status_effect/leash_owner) //No dom with no leash. We will get a new dom if the leash is picked back up.
-		UnregisterSignal(leash_master, COMSIG_MOVABLE_MOVED)
+		if(leash_master) UnregisterSignal(leash_master, COMSIG_MOVABLE_MOVED)
 		leash_master = null
 
 /obj/item/leash/equipped(mob/user, slot, initial = FALSE, silent = FALSE)
