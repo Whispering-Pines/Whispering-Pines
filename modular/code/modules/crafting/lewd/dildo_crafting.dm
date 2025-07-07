@@ -1,12 +1,27 @@
-/datum/crafting_recipe/roguetown/wood_dildo
+/datum/repeatable_crafting_recipe/survival/wood_dildo
 	name = "wooden dildo"
-	result = /obj/item/dildo/wood
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	requirements = list(
+		/obj/item/grown/log/tree/small = 1,
+	)
+	tool_usage = list(
+		/obj/item/weapon/knife = list("starts to carve", "start to carve")
+	)
+	starting_atom = /obj/item/weapon/knife
+	attacked_atom = /obj/item/grown/log/tree/small
+	output = /obj/item/dildo/wood
+	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/stone_dildo
-	name = "stone dildo"
-	result = /obj/item/dildo/stone
-	reqs = list(/obj/item/natural/stone = 2)
+/datum/repeatable_crafting_recipe/survival/stone_dildo
+	requirements = list(
+		/obj/item/natural/stone = 1,
+	)
+	tool_usage = list(
+		/obj/item/natural/stone = list("starts to chip", "start to chip")
+	)
+	starting_atom = /obj/item/natural/stone
+	attacked_atom = /obj/item/natural/stone
+	output = /obj/item/dildo/stone
+	craftdiff = 1
 
 /datum/anvil_recipe/iron_dildo
 	name = "Iron dildo 3x"
@@ -38,25 +53,23 @@
 	created_item = list(/obj/item/dildo/gold, /obj/item/dildo/gold, /obj/item/dildo/gold)
 	i_type = "Utilities"
 
-/* No glass here unfortunately.
 /datum/anvil_recipe/glass_dildo
 	name = "Glass dildo 3x"
-	req_bar = /obj/item/ingot/glass
+	req_bar = /obj/item/natural/glass
 	created_item = list(/obj/item/dildo/glass, /obj/item/dildo/glass, /obj/item/dildo/glass)
 	i_type = "Utilities"
-*/
 
 //plugs
 
-/datum/crafting_recipe/roguetown/wood_plug
+/datum/repeatable_crafting_recipe/survival/wood_plug
 	name = "wooden plug"
-	result = /obj/item/dildo/plug/wood
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	output = /obj/item/dildo/plug/wood
+	requirements = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/stone_plug
+/datum/repeatable_crafting_recipe/survival/stone_plug
 	name = "stone plug"
-	result = /obj/item/dildo/plug/stone
-	reqs = list(/obj/item/natural/stone = 1)
+	output = /obj/item/dildo/plug/stone
+	requirements = list(/obj/item/natural/stone = 1)
 
 /datum/anvil_recipe/iron_plug
 	name = "Iron plug 3x"

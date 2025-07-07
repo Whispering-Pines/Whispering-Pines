@@ -48,29 +48,29 @@
 
 ///Crafting
 
-/datum/crafting_recipe/roguetown/structure/littlebanners
+/datum/crafting_recipe/structure/littlebanners
 	name = "fair banners red-white"
 	result = list(/obj/structure/fluff/littlebanners)
 	reqs = list(/obj/item/natural/cloth = 4, /obj/item/natural/fibers)
 	verbage = "construct"
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/structure/littlebanners/greenblue
+/datum/crafting_recipe/structure/littlebanners/greenblue
 	name = "fair banners green-blue"
 	result = list(/obj/structure/fluff/littlebanners/greenblue)
 
-/datum/crafting_recipe/roguetown/structure/littlebanners/greenred
+/datum/crafting_recipe/structure/littlebanners/greenred
 	name = "fair banners green-red"
 	result = list(/obj/structure/fluff/littlebanners/greenred)
 
-/datum/crafting_recipe/roguetown/structure/littlebanners/bluewhite
+/datum/crafting_recipe/structure/littlebanners/bluewhite
 	name = "fair banners blue-white"
 	result = list(/obj/structure/fluff/littlebanners/bluewhite)
 
-/datum/crafting_recipe/roguetown/structure/littlebanners/greenwhite
+/datum/crafting_recipe/structure/littlebanners/greenwhite
 	name = "fair banners green-white"
 	result = list(/obj/structure/fluff/littlebanners/greenwhite)
 
-/datum/crafting_recipe/roguetown/structure/littlebanners/bluered
+/datum/crafting_recipe/structure/littlebanners/bluered
 	name = "fair banners blue-red"
 	result = list(/obj/structure/fluff/littlebanners/bluered)

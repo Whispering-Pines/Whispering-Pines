@@ -122,7 +122,7 @@
 		to_chat(user, span_warning("This leash is already attached to [leash_pet]!"))
 		return
 
-	if((collar && collar:leashable == TRUE) || istype(C.get_item_by_slot(ITEM_SLOT_HANDCUFF), /obj/item/rope/chain))
+	if((collar && collar:leashable == TRUE) || istype(C.get_item_by_slot(ITEM_SLOT_HANDCUFFED), /obj/item/rope/chain))
 		var/leash_attempt_message = "[user] raises \the [src] to [C]'s neck!"
 		for(var/mob/viewing in viewers(C, null))
 			if(viewing == C)

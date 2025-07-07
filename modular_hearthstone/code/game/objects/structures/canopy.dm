@@ -46,7 +46,7 @@
 
 ///Crafting
 
-/datum/crafting_recipe/roguetown/structure/display_booth01
+/datum/crafting_recipe/structure/display_booth01
 	name = "display booth"
 	result = list(/obj/structure/fluff/canopy, /obj/structure/table/wood/crafted)
 	reqs = list(/obj/item/grown/log/tree/small = 2,
@@ -54,7 +54,7 @@
 
 	verbage = "constructs"
 
-/datum/crafting_recipe/roguetown/structure/display_booth02
+/datum/crafting_recipe/structure/display_booth02
 	name = "display booth green"
 	result = list(/obj/structure/fluff/canopy/green, /obj/structure/table/wood/crafted)
 	reqs = list(/obj/item/grown/log/tree/small = 2,
@@ -63,7 +63,7 @@
 	verbage = "constructs"
 
 
-/datum/crafting_recipe/roguetown/structure/booth
+/datum/crafting_recipe/structure/booth
 	name = "market booth"
 	result = list(/obj/structure/fluff/canopy/booth)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
@@ -72,7 +72,7 @@
 	verbage = "constructs"
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/structure/booth02
+/datum/crafting_recipe/structure/booth02
 	name = "market booth"
 	result = list(/obj/structure/fluff/canopy/booth/booth02)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
@@ -81,7 +81,7 @@
 	verbage = "constructs"
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/structure/booth_green
+/datum/crafting_recipe/structure/booth_green
 	name = "green market booth"
 	result = list(/obj/structure/fluff/canopy/booth/booth_green)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
@@ -90,7 +90,7 @@
 	verbage = "constructs"
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/structure/booth_green_02
+/datum/crafting_recipe/structure/booth_green_02
 	name = "green market booth02"
 	result = list(/obj/structure/fluff/canopy/booth/booth_green02)
 	reqs = list(/obj/item/grown/log/tree/small = 1,

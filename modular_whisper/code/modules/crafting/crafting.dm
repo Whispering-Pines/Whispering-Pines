@@ -1,38 +1,42 @@
-/datum/crafting_recipe/roguetown/survival/collar
+/datum/repeatable_crafting_recipe/leather/collar
 	name = "collar"
-	category = "Clothes"
-	result = /obj/item/clothing/neck/roguetown/leathercollar
-	reqs = list(/obj/item/natural/hide/cured = 1)
+	output = /obj/item/clothing/neck/leathercollar
+	requirements = list(/obj/item/natural/hide/cured = 1)
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/survival/bell_collar
+/datum/repeatable_crafting_recipe/leather/bell_collar
 	name = "bell collar"
-	category = "Clothes"
-	result = /obj/item/clothing/neck/roguetown/catbellcollar
-	reqs = list(
+	output = /obj/item/clothing/neck/catbellcollar
+	requirements = list(
 		/obj/item/natural/hide/cured = 1,
-		/obj/item/jingle_bells = 1,
+		/obj/item/ingot/iron = 1,
 		)
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/chainleash
-	name = "chain leash"
-	category = "Tools"
-	result = /obj/item/leash/chain
-	reqs = list(
-		/obj/item/ingot/iron = 1,	)
-	tools = list(/obj/item/rogueweapon/hammer)
-	skillcraft = /datum/skill/craft/blacksmithing
-	craftdiff = 2
-
-/datum/crafting_recipe/roguetown/sewing/leash
-	name = "rope leash"
-	result = /obj/item/leash
-	reqs = list(/obj/item/rope = 1)
+/datum/repeatable_crafting_recipe/leather/cowbell_collar
+	name = "cow bell collar"
+	output = /obj/item/clothing/neck/cowbellcollar
+	requirements =  list(
+		/obj/item/natural/hide/cured = 1,
+		/obj/item/ingot/iron = 1,
+		)
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/hunting/lleash
+/datum/anvil_recipe/cleash
+	name = "chain leash"
+	category = "Misc"
+	created_item = /obj/item/leash/chain
+	req_bar = /obj/item/ingot/iron
+	craftdiff = 1
+
+/datum/repeatable_crafting_recipe/sewing/leash
+	name = "rope leash"
+	output = /obj/item/leash
+	requirements = list(/obj/item/rope = 1)
+	craftdiff = 0
+
+/datum/repeatable_crafting_recipe/leather/lleash
 	name = "leather leash"
-	result = /obj/item/leash/leather
-	reqs = list(/obj/item/natural/hide/cured = 1)
+	output = /obj/item/leash/leather
+	requirements = list(/obj/item/natural/hide/cured = 1)
 	craftdiff = 0

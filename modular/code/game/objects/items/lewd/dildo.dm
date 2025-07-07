@@ -172,7 +172,6 @@
 /obj/item/dildo/glass
 	color = "#9ffcff"
 	dildo_material = "glass"
-	sellprice = 5
 	alpha = 123
 	desc = "Don't break. Don't break. Don't break. Don't break."
 
