@@ -20,7 +20,7 @@
 	belt = /obj/item/storage/belt/leather/steel
 	backr = /obj/item/storage/backpack/satchel
 	ring = /obj/item/clothing/ring/silver
-	H.virginity = TRUE
+
 
 	if(H.mind)
 		if(H.patron != /datum/patron/divine/astrata)

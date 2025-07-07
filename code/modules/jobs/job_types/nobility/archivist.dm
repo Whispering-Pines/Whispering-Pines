@@ -37,7 +37,7 @@
 			shirt = /obj/item/clothing/shirt/undershirt/puritan
 			armor = /obj/item/clothing/shirt/robe/archivist
 			pants = /obj/item/clothing/pants/tights/black
-	H.virginity = TRUE
+
 	shoes = /obj/item/clothing/shoes/boots
 	belt = /obj/item/storage/belt/leather/plaquesilver
 	beltl = /obj/item/storage/keyring/archivist

@@ -8,6 +8,7 @@
 	var/unique_blood = null
 	var/labelled = 0
 	fill_icon_thresholds = list(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+	possible_item_intents = list(/datum/intent/use, INTENT_POUR, INTENT_FILL, INTENT_GENERIC)
 
 /obj/item/reagent_containers/blood/Initialize()
 	. = ..()
@@ -98,7 +99,7 @@
 	if(M != user)
 		M.visible_message("<span class='danger'>[user] attempts to inject [M] from the bloodbag.</span>", \
 					"<span class='danger'>[user] attempts to inject you from the bloodbag.</span>")
-	if(!do_after(user, 4 SECONDS, M))
+	if(!do_after(user, 3 SECONDS, M))
 		return
 	if(!reagents?.total_volume)
 		return

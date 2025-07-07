@@ -160,35 +160,3 @@
 	new /obj/item/neuFarm/seed/apple(src)
 	new /obj/item/neuFarm/seed/wheat(src)
 	new /obj/item/neuFarm/seed/berry(src)
-
-/datum/stock/import/humangoods
-	name = "Humanoid goods Crate"
-	desc = "A crate full of humanoid goods such as various fluids, organs and meat, all pre-processed."
-	item_type = /obj/structure/closet/crate/chest/steward/humangoods
-	export_price = 400
-	importexport_amt = 1
-
-/obj/structure/closet/crate/chest/steward/humangoods/Initialize()
-	. = ..()
-	new /obj/item/organ/brain(src)
-	new /obj/item/organ/eyes(src)
-	new /obj/item/organ/ears(src)
-	new /obj/item/organ/tongue(src)
-	new /obj/item/organ/stomach(src)
-	new /obj/item/organ/liver(src)
-	new /obj/item/organ/appendix(src)
-	new /obj/item/organ/belly(src)
-	new /obj/item/organ/heart(src)
-	new /obj/item/organ/lungs(src)
-	new /obj/item/organ/butt(src)
-	new /obj/item/organ/filling_organ/guts(src)
-	if(prob(50))
-		new /obj/item/organ/filling_organ/vagina(src)
-		new /obj/item/organ/filling_organ/breasts(src)
-		new /obj/item/reagent_containers/glass/bottle/milk(src)
-		new /obj/item/reagent_containers/glass/bottle/milk(src)
-		new /obj/item/reagent_containers/glass/bottle/pussyjuice(src)
-	else
-		new /obj/item/organ/filling_organ/testicles(src)
-		new /obj/item/organ/penis(src)
-		new /obj/item/reagent_containers/glass/bottle/cum(src)

@@ -34,5 +34,8 @@
 	H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
 	H.change_stat(STATKEY_INT, -1)
 	H.change_stat(STATKEY_SPD, 1)
+	if(!H.has_language(/datum/language/ancient_english))
+		H.grant_partial_language(/datum/language/ancient_english)
+		to_chat(H, "<span class='info'>I have a basic understanding of Ancient English with ,n before my speech.</span>")
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)

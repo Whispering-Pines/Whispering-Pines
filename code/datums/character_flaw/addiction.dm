@@ -145,3 +145,12 @@
 	desc = "I got one high maintenance genital..!"
 	time = 1 HOURS
 	needsate_text = "Time to get fuckin'!"
+
+///NECRO
+//pretty vile but sorta crucial for setting and lifewebness i guess
+
+/datum/charflaw/addiction/necro
+	name = "Necrophile"
+	desc = "I crave the cold."
+	time = 1 HOURS
+	needsate_text = "Time to find something cold to fuck."

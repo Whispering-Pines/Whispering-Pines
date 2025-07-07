@@ -120,6 +120,8 @@
 	show_ui()
 
 /datum/sex_controller/proc/cum_onto()
+	if(target.stat == DEAD && user.has_flaw(/datum/charflaw/addiction/necro))
+		user.sate_addiction()
 	if(!issimple(target) && target.mind)
 		log_combat(user, target, "Came onto [target]")
 		if(HAS_TRAIT(target, TRAIT_GOODLOVER))
@@ -146,6 +148,8 @@
 
 /datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE, girljuice = FALSE)
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
+	if(target.stat == DEAD && user.has_flaw(/datum/charflaw/addiction/necro))
+		user.sate_addiction()
 	if(target.mind)
 		if(!issimple(target))
 			log_combat(user, target, "Came inside [target]")
@@ -239,7 +243,7 @@
 			if(sexhealmult < 2) //so its never below 2 for ones with trait.
 				sexhealmult = 2
 			sexhealrand *= sexhealmult
-			to_chat(user, span_green("I feel Viiritri's blessing."))
+			to_chat(user, span_green("I feel Moonbeam's blessing."))
 	user.adjustBruteLoss(-sexhealrand)
 	sexhealrand *= 0.5
 	user.adjustFireLoss(-sexhealrand)
@@ -267,7 +271,18 @@
 	after_ejaculation()
 
 /datum/sex_controller/proc/after_ejaculation()
-	set_arousal(40)
+	if(ishuman(user))
+		var/mob/living/carbon/human/humanuser = user
+		for(var/obj/structure/chair/fake_powered/milker/milkmachine in range(0,user))
+			milkmachine.balloon_alert_to_viewers("Sucks up [humanuser.name]'s juices!")
+			for(var/obj/item/organ/filling_organ/forgan in humanuser.internal_organs)
+				forgan.reagents.trans_to(milkmachine, forgan.reagents.maximum_volume/4)
+				if(forgan.reagents.total_volume <= 15 && forgan.refilling)
+					milkmachine.say("Low fluids remaining in [forgan.name]", language = /datum/language/ancient_english)
+	if(user.gender == FEMALE)
+		set_arousal(40)
+	else
+		set_arousal(0)
 	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
 		user.sate_addiction()
 	if(!user.rogue_sneaking && user.alpha > 100) //stealth sex, keep your voice down.
@@ -325,14 +340,54 @@
 		action_target.emote("gasp", forced = TRUE)
 
 /datum/sex_controller/proc/perform_sex_action(mob/living/action_target, arousal_amt, pain_amt, giving)
-	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+	if(HAS_TRAIT(user, TRAIT_GOODLOVER) && user != action_target)
 		arousal_amt *= 1.5
 		if(prob(10)) //10 perc chance each action to emit the message so they know who the fuckin' wituser.
 			var/lovermessage = pick("This feels so good!","I am in nirvana!","This is too good to be possible!","By the Gods!","I can't stop, too good!~")
 			to_chat(action_target, span_love(lovermessage))
-	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
+	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO) && user != action_target)
 		if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 			pain_amt *= 2.5
+	//SEX HEALING
+	var/sexhealrand = rand(0.2, 0.4)
+	//go go gadget sex healing.. magic?
+	if(user.buckled?.sleepy) //gooder healing in bed
+		sexhealrand *= 4
+	if(user.bruteloss||user.fireloss||user.has_wound()) //so its not spammy
+		if(HAS_TRAIT(user, TRAIT_SEXDEVO))
+			var/sexhealmult = user.get_skill_level(/datum/skill/magic/holy)
+			if(sexhealmult < 2) //so its never below 2 for ones with trait.
+				sexhealmult = 2
+			sexhealrand *= sexhealmult
+			if(prob(4))
+				to_chat(user, span_green("I feel Moonbeam's miracle upon me."))
+				sexhealrand *= 2
+		if(!prob(1)) //surprise heal burst at 1% chance
+			to_chat(user, span_greentextbig("I suddenly feel much better..."))
+			sexhealrand *= 5
+	user.heal_wounds(sexhealrand)
+	user.heal_overall_damage(sexhealrand, sexhealrand/2, updating_health = TRUE)
+	//heals action_target unless user zaping.
+	if(!user.cmode)
+		if(!issimple(action_target) && (action_target.bruteloss||action_target.fireloss||action_target.has_wound()))
+			action_target.heal_wounds(sexhealrand)
+			action_target.heal_overall_damage(sexhealrand, sexhealrand/2, updating_health = TRUE)
+		else if(action_target.health < action_target.maxHealth)
+			action_target.health = min((action_target.health+sexhealrand), action_target.maxHealth)
+
+	//grant devotion through sex because who needs praying.
+	if(!issimple(user))
+		var/mob/living/carbon/human/devouser = user
+		var/datum/devotion/cleric_holder/C = devouser.cleric
+		if(devouser && C?.devotion)
+			if(devouser.get_skill_level(/datum/skill/magic/holy))
+				if(C.devotion < C.max_devotion)
+					C.update_devotion(rand(1,2))
+					if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
+						C.update_devotion(rand(4,8))
+						if(prob(3))
+							to_chat(devouser, span_info("I feel Moonbeam guide me."))
+	//SEX HEALING END
 	//SEX CRITS START
 	if(user != action_target && (last_crit_attempt + 2 SECONDS >= world.time))
 		var/chance = 1
@@ -368,48 +423,9 @@
 	pain_amt *= get_force_pain_multiplier(applied_force)
 	pain_amt *= get_speed_pain_multiplier(applied_speed)
 
-	if(user.stat == DEAD)
-		if(prob(2)) //since there is no proper diseases....
-			target.reagents.add_reagent(/datum/reagent/toxin/organpoison, 1)
-
-	var/sexhealrand = rand(0.2, 0.4)
-	//go go gadget sex healing.. magic?
-	if(user.buckled?.sleepy) //gooder healing in bed
-		sexhealrand *= 4
-	if(user.bruteloss||user.fireloss||user.has_wound()) //so its not spammy
-		if(HAS_TRAIT(user, TRAIT_SEXDEVO))
-			var/sexhealmult = user.get_skill_level(/datum/skill/magic/holy)
-			if(sexhealmult < 2) //so its never below 2 for ones with trait.
-				sexhealmult = 2
-			sexhealrand *= sexhealmult
-			if(prob(4))
-				to_chat(user, span_green("I feel Moonbeam's miracle upon me."))
-				sexhealrand *= 2
-		if(!prob(1)) //surprise heal burst at 1% chance
-			to_chat(user, span_greentextbig("I suddenly feel much better..."))
-			sexhealrand *= 5
-	user.heal_wounds(sexhealrand)
-	user.heal_overall_damage(sexhealrand, sexhealrand/2, updating_health = TRUE)
-	//heals target unless user zaping.
-	if(!user.cmode)
-		if(!issimple(target) && (target.bruteloss||target.fireloss||target.has_wound()))
-			target.heal_wounds(sexhealrand)
-			target.heal_overall_damage(sexhealrand, sexhealrand/2, updating_health = TRUE)
-		else if(target.health < target.maxHealth)
-			target.health = min((target.health+sexhealrand), target.maxHealth)
-
-	//grant devotion through sex because who needs praying.
-	if(!issimple(user))
-		var/mob/living/carbon/human/devouser = user
-		var/datum/devotion/cleric_holder/C = devouser.cleric
-		if(devouser && C?.devotion)
-			if(devouser.get_skill_level(/datum/skill/magic/holy))
-				if(C.devotion < C.max_devotion)
-					C.update_devotion(rand(1,2))
-					if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
-						C.update_devotion(rand(4,8))
-						if(prob(3))
-							to_chat(devouser, span_info("I feel Moonbeam guide me."))
+	if(user.mind && user.stat == DEAD && !user.mind.has_antag_datum(/datum/antagonist/zombie))
+		arousal_amt = 0
+		pain_amt = 0
 
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
@@ -978,16 +994,49 @@
 
 /obj/proc/start_obj_sex(mob/living/victim, speed, force, can_cum = FALSE)
 	//fake sex basically
+	if(!Adjacent(victim))
+		return
 	playsound(get_turf(src), pick('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 100, FALSE, -1)
-	while(do_after(victim, (3.3 SECONDS / victim.sexcon.get_speed_multiplier()), src))
-		victim.sexcon.perform_sex_action(victim, rand(1,speed), rand(0,force-1), TRUE)
+	var/force_span
+	var/force_adj
+	var/speed_mult
+	switch(force)
+		if(SEX_FORCE_LOW)
+			force_span = "<span class='love_low'>"
+			force_adj = pick(list("gently", "carefully", "tenderly", "gingerly", "delicately", "lazingly"))
+		if(SEX_FORCE_MID)
+			force_span = "<span class='love_mid'>"
+			force_adj = pick(list("firmly", "vigorously", "eagerly", "steadily", "intently"))
+		if(SEX_FORCE_HIGH)
+			force_span = "<span class='love_high'>"
+			force_adj = pick(list("roughly", "carelessly", "forcefully", "fervently", "fiercely"))
+		if(SEX_FORCE_EXTREME)
+			force_span = "<span class='love_extreme'>"
+			force_adj = pick(list("brutally", "violently", "relentlessly", "savagely", "mercilessly"))
+	switch(speed)
+		if(SEX_SPEED_LOW)
+			speed_mult = 1.5
+		if(SEX_SPEED_MID)
+			speed_mult = 2.5
+		if(SEX_SPEED_HIGH)
+			speed_mult = 3
+		if(SEX_SPEED_EXTREME)
+			speed_mult = 4
+
+
+	while(do_after(victim, (3.3 SECONDS / speed_mult), src, IGNORE_INCAPACITATED, max_interact_count = 3))
+		playsound(src, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
+		do_thrust_animate(src, src) //thrust towards itself incase the thing is in contents.
+		victim.do_jitter_animation(5*force)
+		victim.sexcon.perform_sex_action(victim, 2.4*victim.sexcon.get_force_pleasure_multiplier(force, FALSE), ((7*victim.sexcon.get_force_pain_multiplier(force))*victim.sexcon.get_speed_pain_multiplier(speed)), TRUE)
 		if(victim.sexcon.do_message_signature("objectsex"))
 			if(victim.getorganslot(ORGAN_SLOT_PENIS))
-				to_chat(victim, span_love("[name] works [victim.name]'s cock."))
+				to_chat(victim, "[force_span][name] [force_adj] works [victim.name]'s cock.</span>")
 			else if(victim.getorganslot(ORGAN_SLOT_VAGINA))
-				to_chat(victim, span_love("[name] fucks [victim.name]'s cunt."))
+				to_chat(victim, "[force_span][name] [force_adj] fucks [victim.name]'s cunt.</span>")
 			else
-				to_chat(victim, span_love("[name] fucks [victim.name]'s ass."))
+				to_chat(victim, "[force_span][name] [force_adj] fucks [victim.name]'s ass.</span>")
+		victim.sexcon.handle_passive_ejaculation()
 		if(prob(5*(speed+force)) && can_cum)
 			if(victim.getorganslot(ORGAN_SLOT_PENIS))
 				to_chat(victim, span_love("[victim.name] cums inside [name]!"))

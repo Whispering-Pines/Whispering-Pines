@@ -11,7 +11,7 @@
 
 /datum/outfit/job/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.virginity = TRUE
+
 
 	switch(H.patron?.type)
 		if(/datum/patron/old_gods, /datum/patron/old_gods/progressive)

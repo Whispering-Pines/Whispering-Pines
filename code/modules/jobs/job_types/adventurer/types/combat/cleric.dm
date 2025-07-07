@@ -15,7 +15,7 @@
 
 /datum/outfit/job/adventurer/cleric/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.virginity = TRUE
+
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	// CLASS ARCHETYPES
 	H.adjust_blindness(-3)

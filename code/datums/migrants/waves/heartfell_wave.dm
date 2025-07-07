@@ -263,7 +263,7 @@
 	allowed_patrons = list(/datum/patron/divine/astrata)
 /datum/outfit/job/heartfelt/prior/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.virginity = TRUE
+
 	neck = /obj/item/clothing/neck/psycross/silver
 	shirt = /obj/item/clothing/shirt/undershirt/priest
 	pants = /obj/item/clothing/pants/tights/black

@@ -2891,6 +2891,7 @@
 #include "modular_stonehedge\unlicensed-eaglephntm\code\modules\surgery\organs\filling_organ.dm"
 #include "modular_stonehedge\unlicensed-eaglephntm\code\modules\surgery\organs\lewdai.dm"
 #include "modular_whisper\code\datums\status_effects\status_effects.dm"
+#include "modular_whisper\code\datums\stock\import.dm"
 #include "modular_whisper\code\game\objects\weird_items.dm"
 #include "modular_whisper\code\game\objects\structures\whisp_things.dm"
 #include "modular_whisper\code\game\objects\weapons\melee\whisper_weapons.dm"
@@ -2911,5 +2912,4 @@
 #include "modular_whisper\code\modules\reagents\blood_pack.dm"
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
-#include "modular_whisper\code\datums\stock\import.dm"
 // END_INCLUDE

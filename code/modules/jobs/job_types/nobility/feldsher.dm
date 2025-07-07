@@ -43,7 +43,7 @@
 
 	H.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/medicine, 5, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
@@ -51,6 +51,9 @@
 
 	if(H.age == AGE_OLD)
 		H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+	if(!H.has_language(/datum/language/ancient_english))
+		H.grant_partial_language(/datum/language/ancient_english)
+		to_chat(H, "<span class='info'>I have a basic understanding of Ancient English with ,n before my speech.</span>")
 	H.change_stat(STATKEY_STR, -1)
 	H.change_stat(STATKEY_INT, 4)
 	H.change_stat(STATKEY_CON, -1)

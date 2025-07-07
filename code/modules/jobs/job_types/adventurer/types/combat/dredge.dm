@@ -639,7 +639,7 @@
 			H.change_stat(STATKEY_INT, 3)
 			H.change_stat(STATKEY_CON, -1)
 			H.change_stat(STATKEY_PER, -2)
-			H.virginity = TRUE
+
 			H.grant_language(/datum/language/elvish)
 			H.grant_language(/datum/language/celestial)
 			to_chat(H,span_info("\

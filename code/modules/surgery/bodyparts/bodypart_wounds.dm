@@ -187,20 +187,9 @@
 /obj/item/bodypart/proc/try_crit(bclass, dam, mob/living/user, zone_precise, silent = FALSE, crit_message = FALSE)
 	if(!bclass || !dam || (owner.status_flags & GODMODE))
 		return FALSE
-	var/list/attempted_wounds = list()
-	var/used
-	var/total_dam = get_damage()
-	var/damage_dividend = (total_dam / max_damage)
-	if(user && dam)
-		if(user.stat_roll(STATKEY_LCK,2,10))
-			dam += 10
-	var/crit_classes = list()
 	var/from_behind = FALSE
 	if(user && (owner.dir == turn(get_dir(owner,user), 180)))
 		from_behind = TRUE
-	if (user && dam)
-		if(user.goodluck(2))
-			dam += 10
 	if(owner.resting)
 		dam += 15
 	if(user && (from_behind || user.alpha <= 15))//Dreamkeep change -- Attacks from stealth should be much more likely to crit
@@ -312,26 +301,6 @@
 			to_chat(src, span_userdanger("SNEAK ATTACK!!!"))
 			to_chat(user, span_userdanger("SNEAK ATTACK!!!"))
 			user.adjust_experience(/datum/skill/misc/sneaking, user.STAINT * 5, TRUE)
-	if((bclass in GLOB.cbt_classes) && (zone_precise == BODY_ZONE_PRECISE_GROIN))
-		var/cbt_multiplier = 1
-		if(user && HAS_TRAIT(user, TRAIT_NUTCRACKER))
-			cbt_multiplier = 2
-		if(!resistance && prob(round(dam/5) * cbt_multiplier))
-			attempted_wounds += /datum/wound/cbt
-		if(prob(dam * cbt_multiplier))
-			owner.emote("groin", TRUE)
-			owner.Stun(10)
-	if((bclass in GLOB.fracture_bclasses) && (zone_precise != BODY_ZONE_PRECISE_STOMACH))
-		used = round(damage_dividend * 20 + (dam / 3) - 10 * resistance, 1)
-		if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
-			used += 10
-		if(HAS_TRAIT(src, TRAIT_BRITTLE))
-			used += 10
-		var/fracture_type = /datum/wound/fracture/chest
-		if(zone_precise == BODY_ZONE_PRECISE_GROIN)
-			fracture_type = /datum/wound/fracture/groin
-		if(prob(used))
-			attempted_wounds += fracture_type
 	if(bclass in GLOB.cbt_classes)
 		LAZYADD(crit_classes, "cbt")
 	if(bclass in GLOB.fracture_bclasses)
@@ -453,13 +422,6 @@
 			to_chat(src, span_userdanger("SNEAK ATTACK!!!"))
 			to_chat(user, span_userdanger("SNEAK ATTACK!!!"))
 			user.adjust_experience(/datum/skill/misc/sneaking, user.STAINT * 5, TRUE)
-	if((bclass in GLOB.dislocation_bclasses) && (total_dam >= max_damage))
-		used = round(damage_dividend * 20 + (dam / 3) - 10 * resistance, 1)
-		if(prob(used))
-			if(HAS_TRAIT(src, TRAIT_BRITTLE))
-				attempted_wounds += /datum/wound/fracture/neck
-			else if (!resistance)
-				attempted_wounds += /datum/wound/dislocation/neck
 	if(bclass in GLOB.dislocation_bclasses)
 		LAZYADD(crit_classes, "dislocation")
 	if(bclass in GLOB.fracture_bclasses)

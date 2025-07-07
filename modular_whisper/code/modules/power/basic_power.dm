@@ -49,16 +49,20 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 /obj/machinery/fake_powered
 	name = "Template fake power machine"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
-	var/toggled = FALSE
+	anchored = TRUE
+	var/toggled = TRUE
+	var/self_powered = FALSE
 
-/obj/machinery/fake_powered/LateInitialize()
+/obj/machinery/fake_powered/Initialize()
 	. = ..()
-	GLOB.fake_powered_machines += src
-	check_fake_power()
+	if(!self_powered)
+		GLOB.fake_powered_machines += src
+		check_fake_power()
 	update_icon()
 
 /obj/machinery/fake_powered/Destroy()
-	GLOB.fake_powered_machines -= src
+	if(!self_powered)
+		GLOB.fake_powered_machines -= src
 	. = ..()
 
 /obj/machinery/fake_powered/proc/check_fake_power()
@@ -79,20 +83,61 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 /obj/structure/closet/crate/coffin/fake_powered
 	name = "Template lidded fake power machine"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
-	var/toggled = FALSE
+	anchored = TRUE
+	var/toggled = TRUE
 	var/working = FALSE
+	var/self_powered = FALSE
 
-/obj/structure/closet/crate/coffin/fake_powered/LateInitialize()
+/obj/structure/closet/crate/coffin/fake_powered/Initialize()
 	. = ..()
-	GLOB.fake_powered_machines += src
-	check_fake_power()
+	if(!self_powered)
+		GLOB.fake_powered_machines += src
+		check_fake_power()
+	else
+		toggled = TRUE
 	update_icon()
 
 /obj/structure/closet/crate/coffin/fake_powered/Destroy()
-	GLOB.fake_powered_machines -= src
+	if(!self_powered)
+		GLOB.fake_powered_machines -= src
 	. = ..()
 
 /obj/structure/closet/crate/coffin/fake_powered/proc/check_fake_power()
+	var/area/current_area = get_area(src)
+	if(current_area.fake_power)
+		toggled = TRUE
+		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
+		balloon_alert_to_viewers("whirrs to life.")
+	else
+		toggled = FALSE
+		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
+		balloon_alert_to_viewers("dies down.")
+
+//chair type
+/obj/structure/chair/fake_powered
+	name = "Template chair fake power machine"
+	icon = 'modular_whisper/icons/misc/machines.dmi'
+	anchored = TRUE
+	item_chair = null
+	var/toggled = TRUE
+	var/working = FALSE
+	var/self_powered = FALSE
+
+/obj/structure/chair/fake_powered/Initialize()
+	. = ..()
+	if(!self_powered)
+		GLOB.fake_powered_machines += src
+		check_fake_power()
+	else
+		toggled = TRUE
+	update_icon()
+
+/obj/structure/chair/fake_powered/Destroy()
+	if(!self_powered)
+		GLOB.fake_powered_machines -= src
+	. = ..()
+
+/obj/structure/chair/fake_powered/proc/check_fake_power()
 	var/area/current_area = get_area(src)
 	if(current_area.fake_power)
 		toggled = TRUE

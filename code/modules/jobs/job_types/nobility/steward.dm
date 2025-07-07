@@ -27,7 +27,7 @@
 
 /datum/outfit/job/steward/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.virginity = TRUE
+
 	if(H.gender == FEMALE)
 		shirt = /obj/item/clothing/shirt/dress/stewarddress
 	else

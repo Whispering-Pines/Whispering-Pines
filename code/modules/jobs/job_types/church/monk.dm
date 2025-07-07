@@ -28,7 +28,7 @@
 
 /datum/outfit/job/monk/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.virginity = TRUE
+
 	belt = /obj/item/storage/belt/leather/rope
 	beltr = /obj/item/storage/belt/pouch/coins/poor
 	beltl = /obj/item/key/church
