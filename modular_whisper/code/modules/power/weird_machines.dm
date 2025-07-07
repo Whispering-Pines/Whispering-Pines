@@ -527,14 +527,14 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	say("[cost] units of blood required for full restoration.", language = /datum/language/ancient_english)
 	if(victim.blood_volume > BLOOD_VOLUME_SURVIVE)
 		victim.SetParalyzed(2.5 SECONDS)
-		blood_stored += 125
-		victim.blood_volume -= 125
+		balloon_alert_to_viewers("pumps [victim]'s blood.")
+		victim.transfer_blood_to(src, 50)
 		sleep(2 SECONDS)
 		if(!(victim in contents)) //incase they moved while sleep.
 			working = FALSE
 			return
 		regrowing_cycle()
-	else if(victim.blood_volume < BLOOD_VOLUME_SURVIVE)
+	else if(victim.blood_volume <= BLOOD_VOLUME_SURVIVE)
 		playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		say("Victim lacks sufficent blood, so does the reserves. Medical care advised.", language = /datum/language/ancient_english)
 		if(!opened)
