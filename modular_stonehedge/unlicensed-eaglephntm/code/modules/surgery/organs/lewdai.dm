@@ -110,10 +110,10 @@
 						playsound(src, pick(attack_sound), 100, TRUE, -1)
 					ai_controller.PauseAi(8 MINUTES)
 					if(L.cmode)
-						L.SetImmobilized(40)
+						L.SetStun(40)
 						L.SetKnockdown(40)
 					else //sneak attacked i guess.
-						L.SetImmobilized(60)
+						L.SetStun(60)
 						L.SetKnockdown(60)
 					if((L.mobility_flags & MOBILITY_STAND))
 						L.emote("gasp")
@@ -184,7 +184,7 @@
 	seekboredom = 0
 	ai_controller.PauseAi(8 SECONDS) //You get some time to get up.
 	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
-		fuckcd = rand(50,350)
+		fuckcd = rand(50,150)
 	else
 		fuckcd = rand(20,40)
 		if(health < maxHealth)
@@ -193,7 +193,7 @@
 			fuckcd = rand(10,20)
 
 /mob/living/simple_animal/hostile/retaliate/Life()
-	if(seeksfuck)
+	if(seeksfuck && stat == CONSCIOUS)
 		Lewd_Tick()
 	. = ..()
 
@@ -234,8 +234,6 @@
 		var/list/around = oview(7, src)
 		for(var/mob/living/carbon/human/fucktarg in around)
 			if(fucktarg == src)
-				continue
-			if(!(health < maxHealth) && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
 			if(fucktarg.age == AGE_CHILD)
 				continue
@@ -286,10 +284,10 @@
 				if(iscarbon(L))
 					chasesfuck = FALSE
 					if(L.cmode)
-						L.SetImmobilized(40)
+						L.SetStun(40)
 						L.SetKnockdown(40)
 					else //sneak attacked i guess.
-						L.SetImmobilized(60)
+						L.SetStun(60)
 						L.SetKnockdown(60)
 					if((L.mobility_flags & MOBILITY_STAND)) //i guess if already targeted but got up somehow.
 						L.emote("gasp")
@@ -379,7 +377,7 @@
 	seekboredom = 0
 	ai_controller.PauseAi(1)
 	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
-		fuckcd = rand(50,350)
+		fuckcd = rand(50,150)
 	else
 		fuckcd = rand(20,40)
 		if(health < maxHealth)
@@ -389,7 +387,7 @@
 
 /mob/living/carbon/human/Life()
 	. = ..()
-	if(seeksfuck)
+	if(seeksfuck && stat == CONSCIOUS)
 		Lewd_Tick()
 
 /mob/living/carbon/human/Initialize()

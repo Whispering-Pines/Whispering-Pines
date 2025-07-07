@@ -2,7 +2,7 @@
 	name = "Miasma"
 	description = "."
 	reagent_state = GAS
-	color = "#801E28" // rgb: 128, 30, 40
+	color = "#7e1692" // rgb: 128, 30, 40
 	taste_description = "ugly"
 	metabolization_rate = REAGENTS_METABOLISM
 

@@ -32,7 +32,7 @@
 
 	faction = list("mimic", "hostile")
 	wander = 0
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 
 	food_type = list(/obj/item/reagent_containers/food/snacks/meat, /obj/item/bodypart, /obj/item/organ)
 	food = 0

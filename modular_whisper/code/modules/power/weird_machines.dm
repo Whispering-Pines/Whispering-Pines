@@ -290,7 +290,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			if(victim.getorganslot(ORGAN_SLOT_VAGINA))
 				sleep(0.3 SECONDS)
 				victim.visible_message(span_love("The machine starts to work [victim]'s pussy."), span_red("something starts working my pussy violently..!"))
-			start_obj_sex(victim, SEX_FORCE_EXTREME, SEX_FORCE_MAX, FALSE)
+			start_obj_sex(victim, SEX_SPEED_EXTREME, SEX_FORCE_EXTREME, FALSE)
 		else
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Obstruction on groin detected, blood pumping enhancement not available.", language = /datum/language/ancient_english)
@@ -486,7 +486,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 					cost += 750
 					continue
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
-			say("Live subject confirmed, starting operation, approximate blood required for full restoration: [cost]", language = /datum/language/ancient_english)
+			say("Live subject confirmed, starting operation.", language = /datum/language/ancient_english)
 			playsound(src.loc, 'sound/items/beartrap.ogg', 100, TRUE, -1)
 			to_chat(victim, span_red("A metal restraint snap on me!"))
 			victim.SetParalyzed(3 SECONDS)
@@ -523,6 +523,10 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		var/obj/item/bodypart/bodypart = victim.get_bodypart(body_zone)
 		if(!bodypart)
 			cost += 750
+	sleep(1 SECONDS)
+	if(!(victim in contents)) //incase got out while sleeping
+		working = FALSE
+		return
 	playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 	say("[cost] units of blood required for full restoration.", language = /datum/language/ancient_english)
 	if(victim.blood_volume > BLOOD_VOLUME_SURVIVE)
@@ -533,7 +537,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		if(!(victim in contents)) //incase they moved while sleep.
 			working = FALSE
 			return
-		regrowing_cycle()
+		regrowing_cycle(victim)
 	else if(victim.blood_volume <= BLOOD_VOLUME_SURVIVE)
 		playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		say("Victim lacks sufficent blood, so does the reserves. Medical care advised.", language = /datum/language/ancient_english)
@@ -564,7 +568,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 					working = FALSE
 				else
 					working = FALSE
-					regrowing_cycle()
+					regrowing_cycle(victim)
 					break
 
 
@@ -661,6 +665,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			return
 		playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		say("Analyzing cattle specifications...", language = /datum/language/ancient_english)
+		sleep(2 SECONDS)
 		if(!get_location_accessible(victim, BODY_ZONE_CHEST))
 			playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			say("Obstruction on udder detected, remove obstructions and try again.", language = /datum/language/ancient_english)
@@ -677,7 +682,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			if(victim.getorganslot(ORGAN_SLOT_VAGINA))
 				sleep(0.3 SECONDS)
 				victim.visible_message(span_love("The machine starts to work [victim]'s pussy."), span_red("something starts working my pussy violently..!"))
-			start_obj_sex(victim, SEX_FORCE_EXTREME, SEX_FORCE_MAX, FALSE)
+			start_obj_sex(victim, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, FALSE)
 		else
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Obstruction on groin detected, milking speed enhancement not available.", language = /datum/language/ancient_english)
@@ -720,10 +725,10 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	var/obj/item/reagent_containers/glass/bottlening = I
 	playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 	say("Dispensing reagents.", language = /datum/language/ancient_english)
-	sleep(1 SECONDS)
 	if(reagents.total_volume > 0)
 		playsound(loc, 'sound/items/fillbottle.ogg', 100)
 		reagents.trans_to(bottlening, bottlening.reagents.maximum_volume, FALSE, TRUE, FALSE)
+		bottlening.update_appearance(UPDATE_ICON_STATE)
 	else
 		playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		say("Nothing stored.", language = /datum/language/ancient_english)

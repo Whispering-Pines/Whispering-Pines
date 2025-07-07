@@ -9,25 +9,25 @@
 	list_reagents = list(/datum/reagent/additive = 10)
 
 /obj/item/reagent_containers/glass/bottle/minorhealthpot
-	list_reagents = list(/datum/reagent/medicine/minorhealthpot = 45)
+	list_reagents = list(/datum/reagent/medicine/minorhealthpot = 70)
 
 /obj/item/reagent_containers/glass/bottle/healthpot
-	list_reagents = list(/datum/reagent/medicine/healthpot = 45)
+	list_reagents = list(/datum/reagent/medicine/healthpot = 70)
 
 /obj/item/reagent_containers/glass/bottle/stronghealthpot
-	list_reagents = list(/datum/reagent/medicine/stronghealth = 45)
+	list_reagents = list(/datum/reagent/medicine/stronghealth = 70)
 
 /obj/item/reagent_containers/glass/bottle/manapot
-	list_reagents = list(/datum/reagent/medicine/manapot = 45)
+	list_reagents = list(/datum/reagent/medicine/manapot = 70)
 
 /obj/item/reagent_containers/glass/bottle/strongmanapot
-	list_reagents = list(/datum/reagent/medicine/strongmana = 45)
+	list_reagents = list(/datum/reagent/medicine/strongmana = 70)
 
 /obj/item/reagent_containers/glass/bottle/stampot
-	list_reagents = list(/datum/reagent/medicine/stampot = 45)
+	list_reagents = list(/datum/reagent/medicine/stampot = 70)
 
 /obj/item/reagent_containers/glass/bottle/strongstampot
-	list_reagents = list(/datum/reagent/medicine/strongstam = 45)
+	list_reagents = list(/datum/reagent/medicine/strongstam = 70)
 
 /obj/item/reagent_containers/glass/bottle/poison
 	list_reagents = list(/datum/reagent/toxin/berrypoison = 15)
@@ -45,16 +45,16 @@
 	list_reagents = list(/datum/reagent/toxin/killersice = 15)
 
 /obj/item/reagent_containers/glass/bottle/wine
-	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 45)
+	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 70)
 
 /obj/item/reagent_containers/glass/bottle/water
-	list_reagents = list(/datum/reagent/water = 45)
+	list_reagents = list(/datum/reagent/water = 70)
 
 /obj/item/reagent_containers/glass/bottle/antidote
-	list_reagents = list(/datum/reagent/medicine/antidote = 45)
+	list_reagents = list(/datum/reagent/medicine/antidote = 70)
 
 /obj/item/reagent_containers/glass/bottle/diseasecure
-	list_reagents = list(/datum/reagent/medicine/diseasecure = 45)
+	list_reagents = list(/datum/reagent/medicine/diseasecure = 70)
 
 /obj/item/reagent_containers/glass/bottle/vial/strpot
 	list_reagents = list(/datum/reagent/buff/strength = 30)
@@ -135,7 +135,7 @@
 	desc = "A bottle with the House Stoutenson cork-seal. Stonebeards Reserve is one of the most legendary beers in existence, with only a few hundred barrels made every year."
 
 /obj/item/reagent_containers/glass/bottle/beer/voddena
-	list_reagents = list(/datum/reagent/consumable/ethanol/voddena = 45)
+	list_reagents = list(/datum/reagent/consumable/ethanol/voddena = 70)
 	desc = "A bottle with the House Stoutenson cork-seal. This strange liquid is considered as the most spicy and alcoholic drink in all the Mountainhomes. Bought by nobles of all ages, mostly those with a deathwish."
 
 // WINES - Expensive, Nobleblooded
@@ -165,4 +165,4 @@
 	desc = "A bottle gilded with a golden cork-seal. This is the legendary Valmora Blue from the Vineyard of Valmora, headed by a sainted Dark-Elf swordsmaster. This bottle would swoon Gods over!"
 
 /obj/item/reagent_containers/glass/bottle/tiefling_wine
-	list_reagents = list(/datum/reagent/consumable/ethanol/tiefling/aged = 45)
+	list_reagents = list(/datum/reagent/consumable/ethanol/tiefling/aged = 70)

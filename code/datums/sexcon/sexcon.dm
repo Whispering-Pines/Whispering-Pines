@@ -234,7 +234,7 @@
 /datum/sex_controller/proc/ejaculate()
 	if(!issimple(user))
 		log_combat(user, user, "Ejaculated")
-	user.visible_message(span_lovebold("[user] makes a mess!"))
+	user.visible_message(span_lovebold("[user] cums all over!"))
 	//small heal burst, this should not happen often due the delay on how often one can cum.
 	var/sexhealrand = rand(5, 15)
 	if(!issimple(user))
@@ -418,7 +418,7 @@
 	//SEX CRITS END
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
 
-/datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
+/datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed, damage_organ_slot)
 	arousal_amt *= get_force_pleasure_multiplier(applied_force, giving)
 	pain_amt *= get_force_pain_multiplier(applied_force)
 	pain_amt *= get_speed_pain_multiplier(applied_speed)
@@ -432,14 +432,20 @@
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
 	try_do_pain_effect(pain_amt, giving)
 
-/datum/sex_controller/proc/damage_from_pain(pain_amt)
+/datum/sex_controller/proc/damage_from_pain(pain_amt, damage_organ_slot)
 	if(pain_amt < PAIN_MINIMUM_FOR_DAMAGE)
 		return
 	var/damage = (pain_amt / PAIN_DAMAGE_DIVISOR)
-	var/obj/item/bodypart/part = user.get_bodypart(BODY_ZONE_CHEST)
-	if(!part)
-		return
-	user.apply_damage(damage, BRUTE, part)
+	if(!damage_organ_slot)
+		var/obj/item/bodypart/part = user.get_bodypart(BODY_ZONE_PRECISE_GROIN)
+		if(!part)
+			return
+		user.apply_damage(damage, BRUTE, part)
+	else
+		var/obj/item/organ/part = user.getorganslot(damage_organ_slot)
+		if(!part)
+			return
+		user.adjustOrganLoss(part, damage)
 	update_aching(pain_amt)
 
 /datum/sex_controller/proc/try_do_moan(arousal_amt, pain_amt, applied_force, giving)
@@ -719,7 +725,6 @@
 
 /datum/sex_controller/proc/try_start_action(action_type)
 	if(action_type == current_action)
-		try_stop_current_action()
 		return
 	if(current_action != null)
 		try_stop_current_action()
@@ -806,9 +811,9 @@
 		if(SEX_SPEED_MID)
 			return 2.5
 		if(SEX_SPEED_HIGH)
-			return 3
+			return 3.5
 		if(SEX_SPEED_EXTREME)
-			return 4
+			return 4.5
 
 /datum/sex_controller/proc/get_stamina_cost_multiplier()
 	switch(force)
@@ -932,7 +937,6 @@
 /mob/living
 	var/show_genitals = FALSE
 	var/mouth_blocked = FALSE
-	// Boolean. Usually set only to TRUE for non-Moonbeamite church roles.
 	var/virginity = FALSE
 
 	var/can_do_sex = TRUE
@@ -1019,16 +1023,16 @@
 		if(SEX_SPEED_MID)
 			speed_mult = 2.5
 		if(SEX_SPEED_HIGH)
-			speed_mult = 3
+			speed_mult = 3.5
 		if(SEX_SPEED_EXTREME)
-			speed_mult = 4
+			speed_mult = 4.5
 
 
 	while(do_after(victim, (3.3 SECONDS / speed_mult), src, IGNORE_INCAPACITATED, max_interact_count = 3))
 		playsound(src, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 		do_thrust_animate(src, src) //thrust towards itself incase the thing is in contents.
 		victim.do_jitter_animation(5*force)
-		victim.sexcon.perform_sex_action(victim, 2.4*victim.sexcon.get_force_pleasure_multiplier(force, FALSE), ((7*victim.sexcon.get_force_pain_multiplier(force))*victim.sexcon.get_speed_pain_multiplier(speed)), TRUE)
+		victim.sexcon.perform_sex_action(victim, 2.4*victim.sexcon.get_force_pleasure_multiplier(force, FALSE), ((2*victim.sexcon.get_force_pain_multiplier(force))*victim.sexcon.get_speed_pain_multiplier(speed)), TRUE)
 		if(victim.sexcon.do_message_signature("objectsex"))
 			if(victim.getorganslot(ORGAN_SLOT_PENIS))
 				to_chat(victim, "[force_span][name] [force_adj] works [victim.name]'s cock.</span>")

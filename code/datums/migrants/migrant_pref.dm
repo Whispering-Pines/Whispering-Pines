@@ -120,7 +120,6 @@
 	status_flags &= ~GODMODE
 	REMOVE_TRAIT(src, TRAIT_PACIFISM, "hugbox")
 	to_chat(src, span_danger("My joy is gone! Danger surrounds me."))
-	SSquirks.AssignQuirks(src, client, TRUE) //only way to make sure they got their class skills in prior i think.
 
 /mob/living/carbon/human/proc/adv_hugboxing_cancel()
 	adv_hugboxing_end()

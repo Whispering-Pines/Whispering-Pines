@@ -280,7 +280,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	/// angle of the icon, these are used for attack animations
 	var/icon_angle = 50 // most of our icons are angled
 
-	var/sheathe_sound = 'sound/items/wood_sharpen.ogg'
+	var/sheathe_sound = "rustle"
 
 /obj/item/Initialize()
 	. = ..()
@@ -775,7 +775,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
 			if(slot & ITEM_SLOT_HANDS)
 				playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
-			else if(slot & ITEM_SLOT_HIP | ITEM_SLOT_BACK_R | ITEM_SLOT_BACK_L)
+			else if(slot & ITEM_SLOT_HIP || slot & ITEM_SLOT_BACK_R || slot & ITEM_SLOT_BACK_L)
 				playsound(src, sheathe_sound, SHEATHE_SOUND_VOLUME, ignore_walls = FALSE)
 			else if(equip_sound && (slot_flags & slot))
 				playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)

@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
-	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay, it's still harmful to my lungs however."),
+	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay, so are my lungs."),
 	TRAIT_ZJUMP = "Time to reach a new height.",
 	TRAIT_JESTERPHOBIA = span_warning("I have a severe irrational fear of Jesters"),
 	TRAIT_XENOPHOBIC = span_warning("Lesser races pollute our land"),

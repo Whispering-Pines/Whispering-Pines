@@ -45,7 +45,7 @@
 	defdrain = 5
 	retreat_health = 0.3
 	aggressive = TRUE
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	remains_type = /obj/effect/decal/remains/bigrat
 	body_eater = TRUE
 

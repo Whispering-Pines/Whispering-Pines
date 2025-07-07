@@ -156,10 +156,12 @@
 	zombie.copy_known_languages_from(prev_language)
 	zombie.toggle_cmode()
 
+	/*
 	// Bandaid to fix the zombie ghostizing not allowing you to re-enter
 	var/mob/dead/observer/ghost = zombie.get_ghost(TRUE)
 	if(ghost)
 		ghost.can_reenter_corpse = TRUE
+	*/
 	return ..()
 
 /datum/antagonist/zombie/proc/transform_zombie()
@@ -226,7 +228,7 @@
 	zombie.vitae_pool = 0 // Again, just in case.
 
 	// zombies cant rp, thus shouldnt be playable for most people
-	zombie.ghostize()
+	//zombie.ghostize()
 
 /datum/antagonist/zombie/greet()
 	to_chat(owner.current, "<span class='userdanger'>Death is not the end...</span>")

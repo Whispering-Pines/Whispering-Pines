@@ -55,7 +55,7 @@
 	retreat_health = 0.2
 
 	aggressive = TRUE
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	body_eater = TRUE
 	can_buckle = TRUE
 

@@ -348,6 +348,8 @@
 				if(prob(dam * cbt_multiplier))
 					owner.emote("groin", TRUE)
 					owner.Stun(10)
+					if(owner.getorganslot(ORGAN_SLOT_TESTICLES))
+						owner.adjustOrganLoss(ORGAN_SLOT_TESTICLES, dam/4)
 		if("fracture")
 			if(zone_precise != BODY_ZONE_PRECISE_STOMACH)
 				if(damage_dividend < 0.4)

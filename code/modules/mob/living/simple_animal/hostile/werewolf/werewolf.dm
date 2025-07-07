@@ -23,7 +23,7 @@
 //	base_intents = list(INTENT_HELP, INTENT_GRAB, /datum/intent/simple/claw/wwolf)
 	faction = list("wolves")
 	robust_searching = TRUE
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	erpable = TRUE
 	hornychance = 50

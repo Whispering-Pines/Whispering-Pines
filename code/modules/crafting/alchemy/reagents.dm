@@ -53,7 +53,6 @@
 	name = "Health Potion"
 	description = "Gradually regenerates all types of damage."
 	reagent_state = LIQUID
-	random_reagent_color = TRUE
 	color = "#ff0000"
 	taste_description = "lifeblood"
 	scent_description = "metal"
@@ -86,8 +85,7 @@
 /datum/reagent/medicine/stronghealth
 	name = "Strong Health Potion"
 	description = "Quickly regenerates all types of damage."
-	random_reagent_color = TRUE
-	color = "#820000be"
+	color = "#820000"
 	taste_description = "rich lifeblood"
 	scent_description = "metal"
 	metabolization_rate = REAGENTS_METABOLISM * 3
@@ -141,7 +139,6 @@
 	description = "Change the user's gender."
 	reagent_state = LIQUID
 	color = "#FF33FF"
-	random_reagent_color = TRUE
 	taste_description = "organic scent"
 	overdose_threshold = 0
 	metabolization_rate = REAGENTS_METABOLISM * 5
@@ -169,7 +166,6 @@
 	description = "Gradually regenerates energy."
 	reagent_state = LIQUID
 	color = "#000042"
-	random_reagent_color = TRUE
 	taste_description = "sweet mana"
 	scent_description = "berries"
 	overdose_threshold = 0
@@ -191,7 +187,6 @@
 	name = "Strong Mana Potion"
 	description = "Rapidly regenerates energy."
 	color = "#0000ff"
-	random_reagent_color = TRUE
 	taste_description = "raw power"
 	scent_description = "berries"
 	metabolization_rate = REAGENTS_METABOLISM * 3
@@ -206,7 +201,6 @@
 	description = "Gradually regenerates stamina."
 	reagent_state = LIQUID
 	color = "#129c00"
-	random_reagent_color = TRUE
 	taste_description = "sweet tea"
 	scent_description = "grass"
 	overdose_threshold = 0
@@ -222,7 +216,6 @@
 	name = "Strong Stamina Potion"
 	description = "Rapidly regenerates stamina."
 	color = "#13df00"
-	random_reagent_color = TRUE
 	taste_description = "sparkly static"
 	scent_description = "grass"
 	metabolization_rate = REAGENTS_METABOLISM * 3
@@ -237,7 +230,6 @@
 	description = ""
 	reagent_state = LIQUID
 	color = "#00ff00"
-	random_reagent_color = TRUE
 	taste_description = "sickly sweet"
 	scent_description = "medicine"
 	metabolization_rate = REAGENTS_METABOLISM
@@ -255,7 +247,6 @@
 	description = ""
 	reagent_state = LIQUID
 	color = "#004200"
-	random_reagent_color = TRUE
 	taste_description = "dirt"
 	metabolization_rate = REAGENTS_METABOLISM * 3
 
@@ -278,7 +269,6 @@
 /datum/reagent/buff/strength
 	name = "Strength"
 	color = "#ff9000"
-	random_reagent_color = TRUE
 	taste_description = "old meat"
 	scent_description = "meat"
 
@@ -293,7 +283,6 @@
 /datum/reagent/buff/perception
 	name = "Perception"
 	color = "#ffff00"
-	random_reagent_color = TRUE
 	taste_description = "cat piss"
 	scent_description = "urine"
 
@@ -308,7 +297,6 @@
 /datum/reagent/buff/intelligence
 	name = "Intelligence"
 	color = "#438127"
-	random_reagent_color = TRUE
 	taste_description = "bog water"
 	scent_description = "moss"
 
@@ -323,7 +311,6 @@
 /datum/reagent/buff/constitution
 	name = "Constitution"
 	color = "#130604"
-	random_reagent_color = TRUE
 	taste_description = "bile"
 	scent_description = "vomit"
 
@@ -338,7 +325,6 @@
 /datum/reagent/buff/endurance
 	name = "Endurance"
 	color = "#ffff00"
-	random_reagent_color = TRUE
 	taste_description = "gote urine"
 	scent_description = "urine"
 
@@ -353,7 +339,7 @@
 /datum/reagent/buff/speed
 	name = "Speed"
 	color = "#ffff00"
-	random_reagent_color = TRUE
+
 	taste_description = "raw egg yolk"
 	scent_description = "sweat"
 
@@ -368,7 +354,7 @@
 /datum/reagent/buff/fortune
 	name = "Fortune"
 	color = "#ffff00"
-	random_reagent_color = TRUE
+
 	taste_description = "pig urine"
 	scent_description = "urine"
 
@@ -392,7 +378,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	description = "Contains a poisonous thick, dark purple liquid."
 	reagent_state = LIQUID
 	color = "#47b2e0"
-	random_reagent_color = TRUE
+
 	taste_description = "bitterness"
 	scent_description = "berry"
 	toxpwr = 2
@@ -406,7 +392,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	description = ""
 	reagent_state = LIQUID
 	color = "#1a1616"
-	random_reagent_color = TRUE
+
 	taste_description = "burning"
 	scent_description = "something spicy"
 	toxpwr = 4.5
@@ -418,8 +404,8 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	name = "Organ Poison"
 	description = "A viscous black liquid clings to the glass."
 	reagent_state = LIQUID
-	color = "#2c1818"
-	random_reagent_color = TRUE
+	color = "#683647"
+
 	taste_description = "sour meat"
 	scent_description = "rancid meat"
 	metabolization_rate = REAGENTS_SLOW_METABOLISM
@@ -444,7 +430,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	description = ""
 	reagent_state = LIQUID
 	color = "#083b1c"
-	random_reagent_color = TRUE
+
 	taste_description = "breathlessness"
 	scent_description = "dust"
 	metabolization_rate = REAGENTS_SLOW_METABOLISM * 3
@@ -465,7 +451,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	description = ""
 	reagent_state = LIQUID
 	color = "#041d0e"
-	random_reagent_color = TRUE
+
 	taste_description = "frozen air"
 	scent_description = "mint"
 	metabolization_rate = REAGENTS_SLOW_METABOLISM * 9

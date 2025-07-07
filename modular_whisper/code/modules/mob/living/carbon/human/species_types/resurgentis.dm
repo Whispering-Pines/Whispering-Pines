@@ -187,12 +187,15 @@
 	glows = TRUE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 
-/datum/species/human/resurgentis/on_species_gain(mob/living/carbon/C, datum/species/old_species)
-	..()
-	var/datum/bodypart_feature/hair/feature = C.get_bodypart_feature_of_slot(BODYPART_FEATURE_HAIR)
-	var/datum/blood_type/bloodening =  C.dna.human_blood_type
-	//match blood color to essence color.
-	bloodening.color = feature.hair_color
+/* doesnt work
+/datum/species/human/resurgentis/after_creation(mob/living/carbon/human/H)
+	. = ..()
+	if(ishuman(H))
+		var/datum/bodypart_feature/hair/feature = H.get_bodypart_feature_of_slot(BODYPART_FEATURE_HAIR)
+		var/datum/blood_type/human/bloodening = H.dna.human_blood_type
+		//match blood color to essence color.
+		bloodening.color = feature.hair_color
+*/
 
 /datum/blood_type/human/resurgentis
 	name = "Resurgentis"

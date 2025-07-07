@@ -30,7 +30,7 @@
 	maxHealth = 50
 	health = 50
 	spacewalk = TRUE
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	robust_searching = 1
 	speed = 1
 	move_to_delay = 5 //delay for the automated movement.

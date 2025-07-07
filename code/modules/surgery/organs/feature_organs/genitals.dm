@@ -12,11 +12,18 @@
 	organ_size = DEFAULT_PENIS_SIZE
 	organ_dna_type = /datum/organ_dna/penis
 	accessory_type = /datum/sprite_accessory/penis/human
+	low_threshold_passed = "<span class='info'>My cock starts to burn a bit.</span>"
+	high_threshold_passed = "<span class='info'>My cock feels like it's on a stove...</span>"
+	now_failing = "<span class='warning'>My cock burns agonizingly! It's messed up!</span>"
+	now_fixed = "<span class='info'>My cock isn't totally chaffed anymore.</span>"
+	high_threshold_cleared = "<span class='info'>My cock burns not so agonizingly now.</span>"
+	low_threshold_cleared = "<span class='info'>My cock feels alright now.</span>"
 	var/sheath_type = SHEATH_TYPE_NONE
 	var/erect_state = ERECT_STATE_NONE
 	var/penis_type = PENIS_TYPE_PLAIN
 	var/always_hard = FALSE
 	var/strapon = FALSE
+
 
 /obj/item/organ/penis/proc/update_erect_state()
 	if(istype(src, /obj/item/organ/penis/internal))
@@ -109,6 +116,13 @@
 	spiller = TRUE
 	blocker = ITEM_SLOT_PANTS
 	bloatable = TRUE
+	low_threshold_passed = "<span class='info'>My pussy burns a bit...</span>"
+	high_threshold_passed = "<span class='info'>My pussy is all bruised up and red...</span>"
+	now_failing = "<span class='warning'>My pussy... is torn apart!</span>"
+	now_fixed = "<span class='info'>My pussy isn't absolutely torn up anymore.</span>"
+	high_threshold_cleared = "<span class='info'>My pussy is less beaten up now.</span>"
+	low_threshold_cleared = "<span class='info'>My pussy is alright now!</span>"
+
 	var/preggotimer //dumbass timer
 	var/pre_pregnancy_size = 0
 
@@ -173,6 +187,12 @@
 	altnames = list("breasts", "tits", "milkers", "tiddies", "badonkas", "boobas") //used in thought messages.
 	startsfilled = TRUE
 	blocker = ITEM_SLOT_SHIRT
+	low_threshold_passed = "<span class='info'>My tits are getting hurt...</span>"
+	high_threshold_passed = "<span class='info'>My tits are torn up...</span>"
+	now_failing = "<span class='warning'>My tits are fully torn apart..!</span>"
+	now_fixed = "<span class='info'>My tits are not fully torn up anymore.</span>"
+	high_threshold_cleared = "<span class='info'>My tits are less torn up now.</span>"
+	low_threshold_cleared = "<span class='info'>My tits are okay now.</span>"
 
 /obj/item/organ/filling_organ/breasts/Insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
@@ -209,6 +229,12 @@
 	altnames = list("balls", "testicles", "testes", "orbs", "cum tanks", "seed tanks") //used in thought messages.
 	startsfilled = TRUE
 	blocker = ITEM_SLOT_PANTS
+	low_threshold_passed = "<span class='info'>My balls are bruised...</span>"
+	high_threshold_passed = "<span class='info'>My balls are almost busted up..!</span>"
+	now_failing = "<span class='warning'>My balls are torn..!</span>"
+	now_fixed = "<span class='info'>My balls are not torn up anymore.</span>"
+	high_threshold_cleared = "<span class='info'>My balls are less beaten now.</span>"
+	low_threshold_cleared = "<span class='info'>My balls are okay now.</span>"
 	var/virility = TRUE
 
 /obj/item/organ/filling_organ/testicles/Insert(mob/living/carbon/M, special, drop_if_replaced)

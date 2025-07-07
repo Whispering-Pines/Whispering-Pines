@@ -42,13 +42,12 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(badquirk)
 		cli.prefs.save_character()
 
-/* worst case.
 /mob/living/carbon/human/Initialize()
 	. = ..()
 	//we do this so we know they did all the class setup bullshit for sure else they wouldnt be able to move anyway.
 	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(assign_my_damn_quirks))
 
 /mob/living/carbon/human/proc/assign_my_damn_quirks()
+	SIGNAL_HANDLER
 	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	SSquirks.AssignQuirks(src, client, TRUE) //only way to make sure they got their skills in prior i think.
-*/

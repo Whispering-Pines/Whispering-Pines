@@ -1,5 +1,5 @@
 /mob/living/carbon/human/species/zizombie
-	name = "rotten zizombie"
+	name = "rotten zombie"
 
 	icon = 'icons/roguetown/mob/monster/zizombie.dmi'
 	icon_state = "zizombie"
@@ -134,8 +134,8 @@
 		QDEL_NULL(src.charflaw)
 	update_body()
 	faction = list(FACTION_UNDEAD)
-	name = "zizombie"
-	real_name = "zizombie"
+	name = "zombie"
+	real_name = "zombie"
 	mob_biotypes |= MOB_UNDEAD
 	ADD_TRAIT(src, TRAIT_NOSTAMINA, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
@@ -150,8 +150,8 @@
 //			equipOutfit(O)
 
 /datum/species/zizombie
-	name = "zizombie"
-	id = "zizombie"
+	name = "zombie"
+	id = "zombie"
 	species_traits = list()
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE)
 	nojumpsuit = 1

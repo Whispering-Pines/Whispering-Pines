@@ -112,6 +112,7 @@
 		chem_splash(M.loc, 2, list(reagents))
 		playsound(M.loc, pick('sound/foley/water_land1.ogg','sound/foley/water_land2.ogg', 'sound/foley/water_land3.ogg'), 100, FALSE)
 		log_combat(user, M, "splashed", R)
+		update_appearance(UPDATE_OVERLAYS)
 		return
 	if(user.used_intent.type == INTENT_POUR)
 		if(!canconsume(M, user))

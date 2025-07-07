@@ -3,6 +3,9 @@
 /obj/item/organ/filling_organ
 	name = "self filling organ"
 
+	healing_factor = 0.5 //massive heal speed but they get damaged from sex so
+	decay_factor = STANDARD_ORGAN_DECAY
+
 	//self generating liquid stuff, dont use with absorbing stuff
 	var/storage_per_size = 100 //added per organ size
 	var/datum/reagent/reagent_to_make = /datum/reagent/consumable/nutriment //naturally generated reagent
@@ -294,7 +297,7 @@
 					continue
 				return equipped_item
 
-//not genital but guts redone
+//not genital but guts redone as if anus
 /obj/item/organ/filling_organ/guts
 	//absorbs faster than womb, less capacity.
 	name = "guts"
