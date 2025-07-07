@@ -162,6 +162,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	//Quirk list
 	var/list/all_quirks = list()
+	var/datum/statpack/statpack	= new /datum/statpack/wildcard/fated
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -330,6 +331,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 
 	dat += "<b>Flaw:</b> <a href='?_src_=prefs;preference=charflaw;task=input'>[charflaw]</a><BR>"
+	dat += "<b>Statpack:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
 	var/datum/faith/selected_faith = GLOB.faithlist[selected_patron?.associated_faith]
 	dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
 	dat += "<b>Patron:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
@@ -1129,6 +1131,22 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						age = new_age
 						ResetJobs(user)
 
+				// LETHALSTONE EDIT: add statpack selection
+				if ("statpack")
+					var/list/statpacks_available = list()
+					for (var/path as anything in GLOB.statpacks)
+						var/datum/statpack/statpack = GLOB.statpacks[path]
+						if (!statpack.name)
+							continue
+						statpacks_available[statpack.name] = statpack
+
+					var/statpack_input = input(user, "Choose your character's statpack", "Statpack") as null|anything in statpacks_available
+					if (statpack_input)
+						var/datum/statpack/statpack_chosen = statpacks_available[statpack_input]
+						statpack = statpack_chosen
+						to_chat(user, "<font color='purple'>[statpack.name]</font>")
+						to_chat(user, "<font color='purple'>[statpack.description_string()]</font>")
+
 				if("faith")
 					var/list/faiths_named = list()
 					for(var/path as anything in GLOB.preference_faiths)
@@ -1617,6 +1635,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	/* V: */
 
+	character.statpack = statpack
 	character.headshot_link = headshot_link
 	character.nsfw_headshot_link = nsfw_headshot_link
 	character.flavortext = flavortext
