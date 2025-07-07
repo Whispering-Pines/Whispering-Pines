@@ -8,7 +8,7 @@
 
 	//You can use this with any living.
 	///Will this mob be given genitals and sexcontroller, therefore enabling erp panel, and basically enables everything else, key variable. Does not make em aggressively seek it.
-	var/erpable = FALSE
+	var/erpable = TRUE
 
 	//You can not use the vars below with anything less than retaliate simple mobs, anything less dont have retaliate ai and required vars.
 	///Is this a horny goober that periodically tries to get in people.
@@ -26,6 +26,26 @@
 	var/fuckcd = 0
 	var/chasesfuck = FALSE
 	var/seekboredom = 0
+
+	///npc organs to use
+	var/ball_organ = /obj/item/organ/filling_organ/testicles
+	var/ball_min = MIN_TESTICLES_SIZE
+	var/ball_max = MAX_TESTICLES_SIZE
+	var/breast_organ = /obj/item/organ/filling_organ/breasts
+	var/breast_min = MIN_BREASTS_SIZE
+	var/breast_max = MAX_BREASTS_SIZE
+	var/ass_organ = /obj/item/organ/butt
+	var/ass_min = MIN_BUTT_SIZE
+	var/ass_max = MAX_BUTT_SIZE
+	var/penis_organ = /obj/item/organ/penis
+	var/penis_min = MIN_PENIS_SIZE
+	var/penis_max = MAX_PENIS_SIZE
+	var/butt_organ = /obj/item/organ/butt
+	var/butt_min = MIN_BUTT_SIZE
+	var/butt_max = MAX_BUTT_SIZE
+	var/vagina_organ = /obj/item/organ/filling_organ/vagina
+	var/show_genitals = FALSE
+	var/no_random_gender = FALSE
 
 //--------------simple mobs ----------------
 //sex stuff brainrot for things like werevolves --vide noir
@@ -208,7 +228,8 @@
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	if(erpable)
-		gender = pick(MALE, FEMALE)
+		if(!no_random_gender)
+			gender = pick(MALE, FEMALE)
 		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 1) //stupid should_not_sleep on init and organ removal death sleep issues.
 	if(prob(hornychance))
 		seeksfuck = TRUE
@@ -399,10 +420,8 @@
 		seeksfuck = TRUE
 		fuckcd = rand(0,20)
 
-//maybe if we make some monsters that would be similiar to werewolves as is, These will take existing gender var on src and use it to assign genitals.
-//internal organs so sixtuplet or whatever the fuck breasts etc shouldnt matter probably, no graphic. Maybe can use for monstergirls or something too.
 //Call this proc to give genitals automatically where needed.
-//hidden organs are on by default due to coloring issues.
+//hidden organs are on by default due to coloring issues, otherwise set on each mob.
 /mob/living/proc/give_genitals()
 	erpable = TRUE
 	if(!sexcon)
@@ -411,60 +430,73 @@
 		var/mob/living/carbon/human/species/user = src
 		if(gender == MALE)
 			var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
-			if(!testicles)
-				if(!show_genitals)
-					testicles = new /obj/item/organ/filling_organ/testicles/internal
-				else
-					testicles = new /obj/item/organ/filling_organ/testicles
 			if(testicles)
-				testicles.organ_size = rand(MAX_TESTICLES_SIZE)
-				testicles.Insert(user, TRUE)
+				testicles.Remove(src,1)
+				QDEL_NULL(testicles)
+			if(!show_genitals)
+				testicles = new /obj/item/organ/filling_organ/testicles/internal
+			else
+				testicles = new ball_organ
+			testicles.organ_size = rand(ball_min, ball_max)
+			testicles.Insert(user, TRUE)
 			var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
-			if(!penis)
-				if(!show_genitals)
-					penis = new /obj/item/organ/penis/internal
-				else
-					penis = new /obj/item/organ/penis
 			if(penis)
-				penis.organ_size = rand(MAX_PENIS_SIZE)
-				penis.Insert(user, TRUE)
+				penis.Remove(src,1)
+				QDEL_NULL(penis)
+			if(!show_genitals)
+				penis = new /obj/item/organ/penis/internal
+			else
+				penis = new penis_organ
+			penis.organ_size = rand(penis_min, penis_max)
+			penis.Insert(user, TRUE)
 		if(gender == FEMALE)
 			var/obj/item/organ/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
 			if(buttie)
-				buttie.organ_size = rand(MAX_BUTT_SIZE)
-				buttie.Insert(user, TRUE)
+				buttie.Remove(src,1)
+				QDEL_NULL(buttie)
+			if(!show_genitals)
+				buttie = new /obj/item/organ/butt/internal
+			else
+				buttie = new butt_organ
+			buttie.organ_size = rand(butt_min, butt_max)
+			buttie.Insert(user, TRUE)
 			var/obj/item/organ/filling_organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
-			if(!breasts)
-				if(!show_genitals)
-					breasts = new /obj/item/organ/filling_organ/breasts/internal
-				else
-					breasts = new /obj/item/organ/filling_organ/breasts
 			if(breasts)
-				breasts.organ_size = rand(MAX_BREASTS_SIZE)
-				breasts.Insert(user, TRUE)
+				breasts.Remove(src,1)
+				QDEL_NULL(breasts)
+			if(!show_genitals)
+				breasts = new /obj/item/organ/filling_organ/breasts/internal
+			else
+				breasts = new breast_organ
+			breasts.organ_size = rand(breast_min,breast_max)
+			breasts.Insert(user, TRUE)
 			var/obj/item/organ/filling_organ/vagina/vagina = user.getorganslot(ORGAN_SLOT_VAGINA)
-			if(!vagina)
-				if(!show_genitals)
-					vagina = new /obj/item/organ/filling_organ/vagina/internal
-				else
-					vagina = new /obj/item/organ/filling_organ/vagina
-				vagina.Insert(user, TRUE)
-			if(prob(3)) //3 chance to be dickgirl.
+			if(vagina)
+				vagina.Remove(src,1)
+				QDEL_NULL(vagina)
+			if(!show_genitals)
+				vagina = new /obj/item/organ/filling_organ/vagina/internal
+			else
+				vagina = new vagina_organ
+			vagina.Insert(user, TRUE)
+			if(prob(5)) //5 chance to be dickgirl.
 				var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
-				if(!testicles)
-					if(!show_genitals)
-						testicles = new /obj/item/organ/filling_organ/testicles/internal
-					else
-						testicles = new /obj/item/organ/filling_organ/testicles
 				if(testicles)
-					testicles.organ_size = rand(MAX_TESTICLES_SIZE)
-					testicles.Insert(user, TRUE)
+					testicles.Remove(src,1)
+					QDEL_NULL(testicles)
+				if(!show_genitals)
+					testicles = new /obj/item/organ/filling_organ/testicles/internal
+				else
+					testicles = new ball_organ
+				testicles.organ_size = rand(ball_min, ball_max)
+				testicles.Insert(user, TRUE)
 				var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
-				if(!penis)
-					if(!show_genitals)
-						penis = new /obj/item/organ/penis/internal
-					else
-						penis = new /obj/item/organ/penis
 				if(penis)
-					penis.organ_size = rand(MAX_PENIS_SIZE)
-					penis.Insert(user, TRUE)
+					penis.Remove(src,1)
+					QDEL_NULL(penis)
+				if(!show_genitals)
+					penis = new /obj/item/organ/penis/internal
+				else
+					penis = new penis_organ
+				penis.organ_size = rand(penis_min, penis_max)
+				penis.Insert(user, TRUE)

@@ -34,7 +34,7 @@
 			continue
 
 	for(var/mob/living/living_target in filtered_targets)
-		if(living_target.stat == DEAD)
+		if(living_target.stat >= CONSCIOUS)
 			filtered_targets -= living_target
 			continue
 		if(!living_target.rogue_sneaking)

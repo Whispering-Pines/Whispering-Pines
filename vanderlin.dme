@@ -2921,4 +2921,5 @@
 #include "modular_whisper\code\modules\cargo\supply_packs\apparel.dm"
 #include "modular_whisper\code\modules\clothing\neck.dm"
 #include "modular_whisper\code\modules\crafting\crafting.dm"
+#include "modular_whisper\code\datums\loadout.dm"
 // END_INCLUDE

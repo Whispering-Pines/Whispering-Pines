@@ -935,7 +935,6 @@
 			}
 
 /mob/living
-	var/show_genitals = FALSE
 	var/mouth_blocked = FALSE
 	var/virginity = FALSE
 

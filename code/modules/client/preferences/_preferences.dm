@@ -164,6 +164,10 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/list/all_quirks = list()
 	var/datum/statpack/statpack	= new /datum/statpack/wildcard/fated
 
+	var/datum/loadout_item/loadout
+	var/datum/loadout_item/loadout2
+	var/datum/loadout_item/loadout3
+
 /datum/preferences/New(client/C)
 	parent = C
 
@@ -379,6 +383,11 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		dat += "<br><img src='[nsfw_headshot_link]' width='125px' height='175px'>"
 	dat += "<br><b>Flavortext:</b> <a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"
 	dat += "<br><b>OOC Notes:</b> <a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
+	dat += "<br><b>Loadout Item I:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"]</a>"
+
+	dat += "<br><b>Loadout Item II:</b> <a href='?_src_=prefs;preference=loadout_item2;task=input'>[loadout2 ? loadout2.name : "None"]</a>"
+
+	dat += "<br><b>Loadout Item III:</b> <a href='?_src_=prefs;preference=loadout_item3;task=input'>[loadout3 ? loadout3.name : "None"]</a>"
 	dat += "<br></td>"
 
 	dat += "</tr></table>"
@@ -1282,6 +1291,70 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					ooc_notes = new_ooc_notes
 					to_chat(user, "<span class='notice'>Successfully updated ooc notes</span>")
 					log_game("[user] has set their ooc notes'.")
+
+				if("loadout_item")
+					var/list/loadouts_available = list("None")
+					for (var/path as anything in GLOB.loadout_items)
+						var/datum/loadout_item/loadout = GLOB.loadout_items[path]
+						var/donoritem = loadout.donoritem
+						if(donoritem && !loadout.donator_ckey_check(user.ckey))
+							continue
+						if (!loadout.name)
+							continue
+						loadouts_available[loadout.name] = loadout
+
+					var/loadout_input = input(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK") as null|anything in loadouts_available
+					if(loadout_input)
+						if(loadout_input == "None")
+							loadout = null
+							to_chat(user, "Who needs stuff anyway?")
+						else
+							loadout = loadouts_available[loadout_input]
+							to_chat(user, "<font color='yellow'><b>[loadout.name]</b></font>")
+							if(loadout.desc)
+								to_chat(user, "[loadout.desc]")
+				if("loadout_item2")
+					var/list/loadouts_available = list("None")
+					for (var/path as anything in GLOB.loadout_items)
+						var/datum/loadout_item/loadout2 = GLOB.loadout_items[path]
+						var/donoritem = loadout2.donoritem
+						if(donoritem && !loadout2.donator_ckey_check(user.ckey))
+							continue
+						if (!loadout2.name)
+							continue
+						loadouts_available[loadout2.name] = loadout2
+
+					var/loadout_input2 = input(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK") as null|anything in loadouts_available
+					if(loadout_input2)
+						if(loadout_input2 == "None")
+							loadout2 = null
+							to_chat(user, "Who needs stuff anyway?")
+						else
+							loadout2 = loadouts_available[loadout_input2]
+							to_chat(user, "<font color='yellow'><b>[loadout2.name]</b></font>")
+							if(loadout2.desc)
+								to_chat(user, "[loadout2.desc]")
+				if("loadout_item3")
+					var/list/loadouts_available = list("None")
+					for (var/path as anything in GLOB.loadout_items)
+						var/datum/loadout_item/loadout3 = GLOB.loadout_items[path]
+						var/donoritem = loadout3.donoritem
+						if(donoritem && !loadout3.donator_ckey_check(user.ckey))
+							continue
+						if (!loadout3.name)
+							continue
+						loadouts_available[loadout3.name] = loadout3
+
+					var/loadout_input3 = input(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK") as null|anything in loadouts_available
+					if(loadout_input3)
+						if(loadout_input3 == "None")
+							loadout3 = null
+							to_chat(user, "Who needs stuff anyway?")
+						else
+							loadout3 = loadouts_available[loadout_input3]
+							to_chat(user, "<font color='yellow'><b>[loadout3.name]</b></font>")
+							if(loadout3.desc)
+								to_chat(user, "[loadout3.desc]")
 
 				if("s_tone")
 					var/listy = pref_species.get_skin_list()

@@ -14,6 +14,7 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 	possible_rmb_intents = list()
 	vitae_pool = 200
 	erpable = TRUE
+	show_genitals = TRUE
 	hornychance = 50
 
 /mob/living/carbon/human/species/rousman/Initialize()

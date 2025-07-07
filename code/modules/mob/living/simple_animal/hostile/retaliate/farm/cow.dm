@@ -1,8 +1,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/cow
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
-	name = "moo-beast"
-	desc = "The grail of many farmers. Commonfolk associate the motherly sow with Moonbeam, and the raging bull with Wanderer."
+	name = "cow"
+	desc = "The grail of many farmers."
 	icon_state = "cow"
 	icon_living = "cow"
 	icon_dead = "cow_dead"
@@ -11,6 +11,7 @@
 	animal_species = /mob/living/simple_animal/hostile/retaliate/bull
 	faction = list("cows")
 	gender = FEMALE
+	no_random_gender = TRUE
 	footstep_type = FOOTSTEP_MOB_SHOE
 	emote_hear = list("brays.")
 	emote_see = list("shakes its head.", "chews her cud.")
@@ -167,8 +168,10 @@
 
 /mob/living/simple_animal/hostile/retaliate/bull
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
-	name = "moo-beast bull"
-	desc = "Rambunctious as the war-saint himself, a depiction of the moo-beast bull looms on the standard of the Zhaladuskn city-state called Andalvia."
+	name = "bull"
+	desc = "Angry male cow."
+	gender = MALE
+	no_random_gender = TRUE
 	icon_state = "bull"
 	icon_living = "bull"
 	icon_dead = "bull_dead"

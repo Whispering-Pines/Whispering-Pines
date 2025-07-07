@@ -18,10 +18,21 @@
 	var/should_have_aggro = TRUE
 	erpable = TRUE
 	hornychance = 50
-	var/ball_organ = /obj/item/organ/filling_organ/testicles/skeleton
-	var/breast_organ = /obj/item/organ/filling_organ/breasts/skeleton
-	var/ass_organ = /obj/item/organ/butt/skeleton
-	var/penis_organ = /obj/item/organ/penis/skeleton
+	//organ bs
+	show_genitals = TRUE
+	ball_organ = /obj/item/organ/filling_organ/testicles/skeleton
+	breast_organ = /obj/item/organ/filling_organ/breasts/skeleton
+	ass_organ = /obj/item/organ/butt/skeleton
+	penis_organ = /obj/item/organ/penis/skeleton
+	vagina_organ = /obj/item/organ/filling_organ/vagina
+	breast_min = 3
+	breast_max = 4
+	penis_min = 2
+	penis_max = 2
+	ball_min = 3
+	ball_max = 3
+	butt_min = 0
+	butt_max = 0
 
 /mob/living/carbon/human/species/skeleton/npc/no_equipment
 	skel_outfit = null
@@ -347,44 +358,6 @@
 	return
 
 //skeleton bits, sans blue dick meme go.
-
-/mob/living/carbon/human/species/skeleton/give_genitals()
-	erpable = TRUE
-	if(!sexcon)
-		sexcon = new /datum/sex_controller(src)
-	if(!issimple(src))
-		var/mob/living/carbon/human/species/user = src
-		if(!user.getorganslot(ORGAN_SLOT_GUTS))
-			var/obj/item/organ/filling_organ/guts/ass = user.getorganslot(ORGAN_SLOT_GUTS)
-			ass = new /obj/item/organ/filling_organ/guts
-			ass.Insert(user, TRUE)
-		if(gender == MALE)
-			var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
-			testicles = new  ball_organ
-			testicles.Insert(user, TRUE)
-			var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
-			penis = new penis_organ
-			penis.Insert(user, TRUE)
-		if(gender == FEMALE)
-			if(!user.getorganslot(ORGAN_SLOT_GUTS))
-				var/obj/item/organ/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
-				buttie = new ass_organ
-				buttie.organ_size = 0
-				buttie.Insert(user, TRUE)
-			var/obj/item/organ/filling_organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
-			breasts = new breast_organ
-			breasts.organ_size = rand(3,4)
-			breasts.Insert(user, TRUE)
-			var/obj/item/organ/filling_organ/vagina/vagina = user.getorganslot(ORGAN_SLOT_VAGINA)
-			vagina = new /obj/item/organ/filling_organ/vagina
-			vagina.Insert(user, TRUE)
-			if(prob(3)) //3 chance to be dickgirl.
-				var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
-				testicles = new ball_organ
-				testicles.Insert(user, TRUE)
-				var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
-				penis = new penis_organ
-				penis.Insert(user, TRUE)
 
 /obj/item/organ/butt/skeleton
 	name = "skeleton butt"

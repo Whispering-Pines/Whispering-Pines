@@ -198,8 +198,8 @@ window "popupwindow"
 window "stonekeep_prefwin"
 	elem "stonekeep_prefwin"
 		type = MAIN
-		pos = 291,0
-		size = 700x700
+		pos = 291,-100
+		size = 700x800
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = none
@@ -211,13 +211,13 @@ window "stonekeep_prefwin"
 		icon = 'icons\\tg_32.png'
 		outer-size = 716x716
 		outer-pos = 291,0
-		inner-size = 700x700
+		inner-size = 700x800
 		inner-pos = 8,31
 		screen-size = 1920x1032
 	elem "preferences_browser"
 		type = BROWSER
 		pos = 0,0
-		size = 700x750
+		size = 700x850
 		anchor1 = 0,0
 		anchor2 = 75,100
 		background-color = none

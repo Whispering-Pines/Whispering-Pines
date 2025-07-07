@@ -20,11 +20,23 @@
 	erpable = TRUE
 	hornychance = 50
 	skin_tone = "e8b59b"
-	var/ball_organ = /obj/item/organ/filling_organ/testicles/goblin
-	var/breast_organ = /obj/item/organ/filling_organ/breasts/goblin
-	var/ass_organ = /obj/item/organ/butt/goblin
-	var/penis_organ = /obj/item/organ/penis/goblin
 	var/bounty = 30
+
+	//genital slop
+	show_genitals = TRUE
+	ball_organ = /obj/item/organ/filling_organ/testicles/goblin
+	breast_organ = /obj/item/organ/filling_organ/breasts/goblin
+	ass_organ = /obj/item/organ/butt/goblin
+	penis_organ = /obj/item/organ/penis/goblin
+	vagina_organ = /obj/item/organ/filling_organ/vagina/goblin
+	breast_min = 3
+	breast_max = 4
+	penis_min = 2
+	penis_max = 2
+	ball_min = 3
+	ball_max = 3
+	butt_min = 0
+	butt_max = 0
 
 /mob/living/carbon/human/species/goblin/npc
 	ai_controller = /datum/ai_controller/human_npc
@@ -534,44 +546,6 @@
 	. = ..()
 
 //custom genital slop, could not do it a better way.
-
-//gotta not randomize the sizes cuz bandaid fix, also to give them their proper organs.
-/mob/living/carbon/human/species/goblin/give_genitals()
-	erpable = TRUE
-	if(!sexcon)
-		sexcon = new /datum/sex_controller(src)
-	if(!issimple(src))
-		var/mob/living/carbon/human/species/user = src
-		if(!user.getorganslot(ORGAN_SLOT_GUTS))
-			var/obj/item/organ/filling_organ/guts/ass = user.getorganslot(ORGAN_SLOT_GUTS)
-			ass = new /obj/item/organ/filling_organ/guts
-			ass.Insert(user, TRUE)
-		if(gender == MALE)
-			var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
-			testicles = new  ball_organ
-			testicles.Insert(user, TRUE)
-			var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
-			penis = new penis_organ
-			penis.Insert(user, TRUE)
-		if(gender == FEMALE)
-			var/obj/item/organ/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
-			buttie = new ass_organ
-			buttie.organ_size = 0
-			buttie.Insert(user, TRUE)
-			var/obj/item/organ/filling_organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
-			breasts = new breast_organ
-			breasts.organ_size = rand(3,4)
-			breasts.Insert(user, TRUE)
-			var/obj/item/organ/filling_organ/vagina/vagina = user.getorganslot(ORGAN_SLOT_VAGINA)
-			vagina = new /obj/item/organ/filling_organ/vagina/goblin
-			vagina.Insert(user, TRUE)
-			if(prob(3)) //3 chance to be dickgirl.
-				var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
-				testicles = new ball_organ
-				testicles.Insert(user, TRUE)
-				var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
-				penis = new penis_organ
-				penis.Insert(user, TRUE)
 
 /obj/item/organ/butt/goblin
 	name = "goblin butt"

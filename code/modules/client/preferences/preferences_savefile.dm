@@ -304,6 +304,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	_load_statpack(S)
 
+	_load_loadout(S)
+
 	//Character
 	_load_appearence(S)
 
@@ -338,6 +340,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		nsfw_headshot_link = null
 
 	S["statpack"] = statpack.type
+
+	if(loadout)
+		S["loadout"] = loadout.type
+	else
+		S["loadout"] = null
+	if(loadout2)
+		S["loadout2"] = loadout2.type
+	else
+		S["loadout2"] = null
+	if(loadout3)
+		S["loadout3"] = loadout3.type
+	else
+		S["loadout3"] = null
 
 	//Load flavor text
 	S["flavortext"] >> flavortext
@@ -510,3 +525,21 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		statpack = pick(GLOB.statpacks)
 		statpack = GLOB.statpacks[statpack]
 		//statpack = new statpack
+
+/datum/preferences/proc/_load_loadout(S)
+	var/loadout_type
+	S["loadout"] >> loadout_type
+	if (loadout_type)
+		loadout = new loadout_type()
+
+/datum/preferences/proc/_load_loadout2(S)
+	var/loadout_type2
+	S["loadout2"] >> loadout_type2
+	if (loadout_type2)
+		loadout2 = new loadout_type2()
+
+/datum/preferences/proc/_load_loadout3(S)
+	var/loadout_type3
+	S["loadout3"] >> loadout_type3
+	if (loadout_type3)
+		loadout3 = new loadout_type3()

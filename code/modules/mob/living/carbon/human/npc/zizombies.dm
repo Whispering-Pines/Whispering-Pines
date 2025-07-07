@@ -12,6 +12,7 @@
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
 	possible_rmb_intents = list()
 	erpable = TRUE
+	show_genitals = TRUE
 
 /mob/living/carbon/human/species/zizombie/npc
 	ai_controller = /datum/ai_controller/human_npc

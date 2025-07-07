@@ -18,7 +18,7 @@
 		var/mob/living/living_target = current_target
 
 		// Check if target is dead
-		if(living_target.stat == DEAD)
+		if(living_target.stat >= CONSCIOUS)
 			controller.clear_blackboard_key(BB_HIGHEST_THREAT_MOB)
 			current_target = null
 		else
@@ -68,7 +68,7 @@
 	var/list/filtered_targets = list()
 	for(var/mob/living/pot_target in potential_targets)
 		// Skip dead mobs
-		if(pot_target.stat == DEAD)
+		if(pot_target.stat >= CONSCIOUS)
 			continue
 		if (!targetting_datum.can_attack(living_mob, pot_target))
 			continue
