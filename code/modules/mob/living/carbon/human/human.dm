@@ -843,3 +843,5 @@
 		bloody_hands = 0
 		update_inv_gloves()
 		. = TRUE
+/mob/living/carbon/human/Topic(href, href_list)
+	..()
