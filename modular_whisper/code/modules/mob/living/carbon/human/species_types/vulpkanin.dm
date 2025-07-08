@@ -6,6 +6,8 @@
 	id = "vulpkanin"
 	desc = "Foxy creatures known for their cleverness and mischief. In ancient history they were Dendor's original champions, but as His madness grew the connect became frey and forgotten, leaving them to their own devices. Or, at least, that's what they say."
 	default_color = "444"
+	skin_tone_wording = "Color"
+	use_skintones = TRUE
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,
@@ -14,6 +16,9 @@
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	inherent_traits = list(TRAIT_NOMOBSWAP)
+	default_color = "444"
+	skin_tone_wording = "Color"
+	use_skintones = TRUE
 	liked_food = GROSS | MEAT | FRIED
 	changesource_flags = WABBAJACK
 	possible_ages = NORMAL_AGES_LIST_CHILD

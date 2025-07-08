@@ -11,6 +11,9 @@
 	They also have sharp claws and teeth."
 	skin_tone_wording = "Skin Colors"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
+	default_color = "444"
+	skin_tone_wording = "Color"
+	use_skintones = TRUE
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = NORMAL_AGES_LIST_CHILD
 	changesource_flags = WABBAJACK

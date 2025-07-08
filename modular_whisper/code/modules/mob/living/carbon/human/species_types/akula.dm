@@ -14,6 +14,9 @@
 	find their sanity being clawed away as they find themselves stuck in one place.<br>\
 	(+1 Constitution, +1 Endurance)"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
+	default_color = "444"
+	skin_tone_wording = "Color"
+	use_skintones = TRUE
 	inherent_traits = list(TRAIT_WATER_BREATHING,TRAIT_GOOD_SWIM, TRAIT_SEA_DRINKER)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = NORMAL_AGES_LIST_CHILD

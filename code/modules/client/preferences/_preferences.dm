@@ -1390,6 +1390,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						new_s_tone = color_pick_sanitized(user, "CHOOSE YOUR HERO'S [uppertext(pref_species.skin_tone_wording)]", "THE SUN", skin_tone)
 					if(new_s_tone)
 						skin_tone = listy[new_s_tone]
+						features["mcolor"] = listy[new_s_tone]
 						try_update_mutant_colors()
 
 				if("selected_accent")

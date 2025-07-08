@@ -5,6 +5,9 @@
 	name = "Verminvolk"
 	id = "anthromorphsmall"
 	desc = "A race akin to wild-kin, except afflicted with significantly smaller stature. A bit less respected than their kin due to their closer resemblance to vermin, like the dichotomy between Kobold and Sissean.<br>"
+	default_color = "444"
+	skin_tone_wording = "Color"
+	use_skintones = TRUE
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,
