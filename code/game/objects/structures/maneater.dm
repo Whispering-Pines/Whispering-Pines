@@ -11,6 +11,7 @@
 	return
 
 /obj/structure/flora/grass/maneater/real
+
 	var/aggroed = 0
 	max_integrity = 100
 	integrity_failure = 0.15

@@ -23,6 +23,7 @@
 				C.reagents.add_reagent(/datum/reagent/toxin, reac_volume * 0.5)
 			else
 				C.blood_volume = min(C.blood_volume + round(reac_volume, 0.1), BLOOD_VOLUME_MAXIMUM)
+				L.adjustOxyLoss(round(reac_volume*REM, 0.1))
 
 
 /datum/reagent/blood/on_merge(list/mix_data)

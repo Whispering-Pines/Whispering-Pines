@@ -30,9 +30,9 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	return ..()
 
 /obj/item/reagent_containers/glass/bottle/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum, do_splash = TRUE)
+	..()
 	playsound(loc, 'sound/foley/glassbreak.ogg', 100)
 	shatter(get_turf(src))
-	..()
 
 /obj/item/reagent_containers/glass/bottle/proc/shatter(turf/T)
 	if(istransparentturf(T))

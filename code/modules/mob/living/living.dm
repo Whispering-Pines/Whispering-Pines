@@ -1095,7 +1095,7 @@
 
 ///proc extender of [/mob/living/verb/resist] meant to make the process queable if the server is overloaded when the verb is called
 /mob/living/proc/execute_resist()
-	if(!can_resist() || surrendering)
+	if(!can_resist() || surrendering || IsParalyzed() || IsStun() || IsSleeping() || IsUnconscious())
 		return
 
 	changeNext_move(CLICK_CD_RESIST)

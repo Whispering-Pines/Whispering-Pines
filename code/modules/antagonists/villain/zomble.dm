@@ -156,12 +156,9 @@
 	zombie.copy_known_languages_from(prev_language)
 	zombie.toggle_cmode()
 
-	/*
-	// Bandaid to fix the zombie ghostizing not allowing you to re-enter
 	var/mob/dead/observer/ghost = zombie.get_ghost(TRUE)
 	if(ghost)
 		ghost.can_reenter_corpse = TRUE
-	*/
 	return ..()
 
 /datum/antagonist/zombie/proc/transform_zombie()

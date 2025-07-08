@@ -92,11 +92,51 @@
 		desc = initial(desc)
 		icon_state = "maneater-hidden"
 
+/obj/structure/flora/grass/maneater/real/elfbane/HasProximity(atom/movable/AM)
+	if(has_buckled_mobs())
+		return
+	if(world.time > last_eat + 50)
+		var/list/around = view(src, 1) // scan for enemies
+		if(!(AM in around))
+			return
+		if(istype(AM, /mob/living/carbon/human))
+			var/mob/living/carbon/human/L = AM
+			if(!aggroed)
+				if(L.m_intent != MOVE_INTENT_RUN)
+					return
+			var/liquids_remaining = 0 //vibe check
+			for(var/obj/item/organ/filling_organ/forgan in L.internal_organs)
+				if(forgan.refilling && forgan.reagents)
+					liquids_remaining += forgan.reagents.get_reagent_amount(forgan.reagent_to_make)
+			if(liquids_remaining <= 30) //pathetic total remaining, not worth our time.
+				return
+			aggroed = world.time
+			last_eat = world.time
+			update_icon()
+			buckle_mob(L, TRUE, check_loc = FALSE)
+			START_PROCESSING(SSobj, src)
+			if(!HAS_TRAIT(L, TRAIT_NOPAIN))
+				L.emote("scream", forced = TRUE)
+			visible_message(span_love("[src] snatches and injects [L] with a tendril!"), span_red("I feel a sting on my arm!"))
+			L.reagents.add_reagent(/datum/reagent/medicine/soporpot/fast_acting, 30)
+			L.reagents.add_reagent(/datum/reagent/medicine/inaprovaline, 30) //incase there are goblins or some shit also attacking the poor soul etc.
+			L.Paralyze(15 SECONDS)
+			playsound(src.loc, list('sound/vo/mobs/plant/attack (1).ogg','sound/vo/mobs/plant/attack (2).ogg','sound/vo/mobs/plant/attack (3).ogg','sound/vo/mobs/plant/attack (4).ogg'), 100, FALSE, -1)
+		if(istype(AM, /obj/item))
+			if(is_type_in_list(AM, eatablez))
+				aggroed = world.time
+				last_eat = world.time
+				START_PROCESSING(SSobj, src)
+				update_icon()
+				playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+				qdel(AM)
+
 /obj/structure/flora/grass/maneater/real/elfbane/process()
 	if(seednutrition >= max_seednutrition)
 		produce_seed()
 		seednutrition = 0
 	if(!has_buckled_mobs())
+		is_fucking = FALSE
 		if(world.time > last_eat + 50)
 			var/list/around = view(1, src)
 			for(var/mob/living/M in around)
@@ -118,15 +158,12 @@
 	for(var/mob/living/L in buckled_mobs)
 		if(world.time > last_eat + 30)
 			last_eat = world.time
-			playsound(src.loc, list('sound/vo/mobs/plant/attack (1).ogg','sound/vo/mobs/plant/attack (2).ogg','sound/vo/mobs/plant/attack (3).ogg','sound/vo/mobs/plant/attack (4).ogg'), 100, FALSE, -1)
 			if(!L.mind || !iscarbon(L)) // we got no business with mindless fuckos
 				maneater_spit_out(L)
 				return
+			var/mob/living/carbon/C = L
 			if(!is_fucking)
-				var/mob/living/carbon/C = L
 				is_fucking = TRUE
-				visible_message(span_love("[src]'s injects [L] with a tendril!"), span_red("I feel a sting on my arm!"))
-				L.reagents.add_reagent(/datum/reagent/medicine/soporpot, 30)
 				if(L.getorganslot(ORGAN_SLOT_BREASTS))
 					visible_message(span_love("[src]'s tendrils latch onto [L]'s breasts!"), span_red("I feel tendrils suck on my breasts!"))
 				if(L.getorganslot(ORGAN_SLOT_PENIS))
@@ -134,23 +171,46 @@
 					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_PENIS, /datum/reagent/consumable/cum/plant, 5), 0.1 SECONDS, TIMER_STOPPABLE)
 				if(L.getorganslot(ORGAN_SLOT_VAGINA))
 					visible_message(span_love("[src]'s tendrils slam inside [L]'s pussy!"), span_red("a tendril slams in my pussy violently..!"))
-					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_VAGINA, /datum/reagent/consumable/cum/plant, 5), 0.1 SECONDS, TIMER_STOPPABLE)
+					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_VAGINA, /datum/reagent/consumable/cum/plant, 5), 0.2 SECONDS, TIMER_STOPPABLE)
 				if(L.getorganslot(ORGAN_SLOT_GUTS) && C.gender == FEMALE) //no good way of knowing their prefs so imma just make it non homo.
 					visible_message(span_love("[src]'s tendrils slam inside [L]'s ass!"), span_red("a tendril slams in my ass violently..!"))
-					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_GUTS, /datum/reagent/consumable/cum/plant, 5), 0.1 SECONDS, TIMER_STOPPABLE)
+					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_GUTS, /datum/reagent/consumable/cum/plant, 5), 0.3 SECONDS, TIMER_STOPPABLE)
 				if(C.gender == FEMALE)
 					visible_message(span_love("[src]'s tendrils slam inside [L]'s throat!"), span_red("a tendril slams in my mouth..!"))
-					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, "mouth", /datum/reagent/consumable/cum/plant, 5), 0.1 SECONDS, TIMER_STOPPABLE)
+					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, "mouth", /datum/reagent/medicine/soporpot, 15), 0.4 SECONDS, TIMER_STOPPABLE)
 			else
+				if(prob(10))
+					L.AdjustParalyzed(5 SECONDS) //make it harder to escape.
 				var/liquids_remaining = 0
-				for(var/obj/item/organ/filling_organ/forgan in L.internal_organs)
+				for(var/obj/item/organ/filling_organ/forgan in C.internal_organs)
 					if(forgan.refilling && forgan.reagents) //gotta not get plant cum here.
 						liquids_remaining += forgan.reagents.get_reagent_amount(forgan.reagent_to_make)
-				if(liquids_remaining >= 30) //not a pathetic total remaining
-					maneater_spit_out(L)
+				if(liquids_remaining <= 30) //pathetic total remaining
+					L.apply_status_effect(/datum/status_effect/debuff/fluid_drained)
+					L.add_stress(/datum/mood_event/fluid_drained)
+					maneater_spit_out(C)
 					return
-				playsound(src, pick('modular_whisper/sound/gulp.ogg','modular_whisper/sound/slurp.ogg'), 50, TRUE, ignore_walls = FALSE) //funny noises
-				var/obj/item/organ/filling_organ/breasts/boobers = L.getorganslot(ORGAN_SLOT_BREASTS)
-				if(boobers)
+				var/obj/item/organ/filling_organ/breasts/boobers = C.getorganslot(ORGAN_SLOT_BREASTS)
+				if(boobers && boobers.reagents.total_volume >= 10)
 					boobers.reagents.remove_reagent(boobers.reagent_to_make, boobers.reagents.maximum_volume/20)
-					seednutrition += boobers.reagents.maximum_volume/20
+					seednutrition += (boobers.reagents.maximum_volume/20)/2
+					balloon_alert_to_viewers("sucks in [C]'s [boobers.name] [boobers.reagent_to_make.name]!")
+					playsound(src, pick('modular_whisper/sound/gulp.ogg','modular_whisper/sound/slurp.ogg'), 50, TRUE, ignore_walls = FALSE) //funny noises
+				else if(boobers)
+					balloon_alert_to_viewers("struggles to suck more of [C]'s [boobers.name] [boobers.reagent_to_make.name]!")
+
+/datum/status_effect/debuff/fluid_drained
+	id = "cum_drained"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/fluid_drained
+	effectedstats = list(STATKEY_SPD = -1, STATKEY_END = -1)
+	duration = 5 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/fluid_drained
+	name = "Drained of fluids."
+	desc = "<span class='warning'>My bits sure ache after that.</span>\n"
+	icon_state = "muscles"
+
+/datum/mood_event/fluid_drained
+	description = "<span class='nicered'>All my bits were drained dry, phew. I feel a bit lightheaded.</span>\n"
+	mood_change = 4
+	timeout = 5 MINUTES

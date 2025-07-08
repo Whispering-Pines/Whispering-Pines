@@ -614,6 +614,9 @@
 			continue
 		examination += span_info(span_green("[getToxLoss()] TOXIN"))
 		examination += span_info(span_blue("[getOxyLoss()] OXYGEN"))
+		examination += span_info("Reagents in blood:")
+		for(var/datum/reagent/regge in userino.reagents.reagent_list)
+			examination += span_info(span_red("[regge.name] - [regge.volume] | [regge.description]"))
 
 	examination += "ø ------------ ø" //automatically lists internal organs that have those functions
 	for(var/obj/item/organ/filling_organ/forgan in userino.internal_organs)

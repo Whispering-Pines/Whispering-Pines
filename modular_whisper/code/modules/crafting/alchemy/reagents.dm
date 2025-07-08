@@ -35,3 +35,24 @@
 	L.Unconscious(40 SECONDS)
 	var/obj/item/organ/heart/E = L.getorganslot(ORGAN_SLOT_HEART)
 	E.take_damage(0.5, TRUE)
+
+/datum/reagent/medicine/soporpot/fast_acting
+	name = "Fast acting soporific poison"
+	description = "Quick working sedative, but also quicker to metabolize off."
+	reagent_state = LIQUID
+	color = "#22a383"
+	taste_description = "sleepiness"
+	overdose_threshold = 0
+	metabolization_rate = 1 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/soporpot/fast_acting/on_mob_life(mob/living/carbon/M)
+	M.confused += 4
+	M.dizziness += 4
+	M.adjust_energy(-50)
+	if(M.stamina > 75)
+		M.drowsyness += 8
+	else
+		M.adjust_stamina(15)
+	..()
+	. = 1

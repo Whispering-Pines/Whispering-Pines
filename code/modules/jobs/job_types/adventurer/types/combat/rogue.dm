@@ -70,6 +70,7 @@
 		H.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 		H.change_stat(STATKEY_STR, 1)
 		H.change_stat(STATKEY_PER, 2)
 		H.change_stat(STATKEY_INT, 1)
@@ -100,22 +101,25 @@
 		H.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
-	shirt = /obj/item/clothing/armor/gambeson
-	if(H.gender == FEMALE) //funny
-		shirt = /obj/item/clothing/armor/chainmail/bikini
+	if(H.gender == FEMALE)
+		armor = /obj/item/clothing/armor/leather/bikini
+		shirt = /obj/item/clothing/armor/gambeson/bikini
 	else
-		shirt = /obj/item/clothing/armor/chainmail
+		armor = /obj/item/clothing/armor/leather
+		shirt = /obj/item/clothing/armor/gambeson
 	gloves = /obj/item/clothing/gloves/fingerless
 	pants = /obj/item/clothing/pants/trou/leather
 	shoes = /obj/item/clothing/shoes/boots
@@ -159,7 +163,10 @@
 	head = /obj/item/clothing/head/leather/duelhat
 	cloak = /obj/item/clothing/cloak/half/duelcape
 	armor = /obj/item/clothing/armor/leather/jacket/leathercoat
-	shirt = /obj/item/clothing/armor/gambeson
+	if(H.gender == FEMALE)
+		shirt = /obj/item/clothing/armor/gambeson/bikini
+	else
+		shirt = /obj/item/clothing/armor/gambeson
 	gloves = /obj/item/clothing/gloves/leather/black
 	pants = /obj/item/clothing/pants/trou/leather
 	shoes = /obj/item/clothing/shoes/nobleboot
@@ -200,10 +207,14 @@
 	H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 	pants = /obj/item/clothing/pants/trou/leather
-	shirt = /obj/item/clothing/armor/gambeson
 	gloves = /obj/item/clothing/gloves/fingerless
 	belt = /obj/item/storage/belt/leather
-	armor = /obj/item/clothing/armor/leather
+	if(H.gender == FEMALE)
+		armor = /obj/item/clothing/armor/leather/bikini
+		shirt = /obj/item/clothing/armor/gambeson/bikini
+	else
+		armor = /obj/item/clothing/armor/leather
+		shirt = /obj/item/clothing/armor/gambeson
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	backl = /obj/item/storage/backpack/satchel
 	beltr = /obj/item/weapon/knife/dagger/steel

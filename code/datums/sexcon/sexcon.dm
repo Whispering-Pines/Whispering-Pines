@@ -994,7 +994,7 @@
 	desc = "<span class='green'>Pain makes it better.</span>"
 
 
-/obj/proc/start_obj_sex(mob/living/victim, speed, force, can_cum = FALSE, organ_slot, /datum/reagent/cum_type = /datum/reagent/consumable/cum, cum_amt = 20)
+/obj/proc/start_obj_sex(mob/living/victim, speed, force, can_cum = FALSE, organ_slot, datum/reagent/cum_type = /datum/reagent/consumable/cum, cum_amt = 20)
 	//fake sex basically
 	if(!Adjacent(victim))
 		return
@@ -1027,7 +1027,7 @@
 
 	RegisterSignal(victim.sexcon, COMSIG_MOB_EJACULATED, PROC_REF(obj_sex_cum), victim)
 	var/obj/item/organ/filling_organ/cameloc = victim.getorganslot(organ_slot)
-	while(do_after(victim, (3.3 SECONDS / speed_mult), src, IGNORE_INCAPACITATED, max_interact_count = 5))
+	while(do_after(victim, (3.3 SECONDS / speed_mult), src, IGNORE_INCAPACITATED|IGNORE_USER_DOING, max_interact_count = 5))
 		playsound(src, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 		do_thrust_animate(src, src) //thrust towards itself incase the thing is in contents.
 		victim.do_jitter_animation(5*force)
@@ -1037,20 +1037,22 @@
 			if(cameloc && victim.getorganslot(organ_slot))
 				to_chat(victim, "[force_span][name] [force_adj] works [victim.name]'s [pick(cameloc.altnames)].</span>")
 				if(prob(5*(speed+force)) && can_cum)
-					to_chat(victim, span_love("[name] cums [victim.name]'s [pick(cameloc.altnames)]!"))
+					to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [pick(cameloc.altnames)]!"))
 					cameloc.reagents.add_reagent(cum_type, cum_amt)
 			else
 				to_chat(victim, "[force_span][name] [force_adj] fucks [victim.name]'s [organ_slot].</span>") //fake message basically for unknown organs, such as mouth.
 				if(prob(5*(speed+force)) && can_cum)
-					to_chat(victim, span_love("[name] cums in [victim.name]'s [organ_slot]!"))
+					to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [organ_slot]!"))
 					victim.reagents.add_reagent(cum_type, cum_amt)
 			playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 			add_cum_floor(get_turf(src))
 	//ending
 	if(cameloc && victim.getorganslot(organ_slot))
 		balloon_alert_to_viewers("Disconnects from [victim]'s [pick(cameloc.altnames)]")
+		visible_message("[src] disconnects from [victim]'s [pick(cameloc.altnames)]")
 	else
 		balloon_alert_to_viewers("Disconnects from [victim]'s [organ_slot]")
+		visible_message("[src] disconnects from [victim]'s [organ_slot]")
 	playsound(loc, pick('modular_whisper/sound/cork_pop.ogg','modular_whisper/sound/cork_pop (2).ogg'), 50, TRUE, ignore_walls = FALSE) //funny noises
 	UnregisterSignal(victim.sexcon, COMSIG_MOB_EJACULATED)
 
@@ -1069,6 +1071,8 @@
 		for(var/obj/structure/flora/grass/maneater/real/elfbane/elfy in range(0,user))
 			elfy.balloon_alert_to_viewers("Sucks up [humanuser.name]'s juices!")
 			playsound(src, pick('modular_whisper/sound/gulp.ogg','modular_whisper/sound/slurp.ogg'), 50, TRUE, ignore_walls = FALSE) //funny noises
+			if(user.getorganslot(ORGAN_SLOT_VAGINA)) //since no pussyjuice
+				elfy.seednutrition += 10
 			for(var/obj/item/organ/filling_organ/forgan in humanuser.internal_organs)
 				var/amount_taken = forgan.reagents.maximum_volume/4
 				elfy.seednutrition += amount_taken
