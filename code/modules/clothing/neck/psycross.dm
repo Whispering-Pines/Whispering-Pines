@@ -27,7 +27,7 @@
 	icon_state = "astrata"
 	resistance_flags = FIRE_PROOF
 
-// Only non-refactored psycross because Lunaria likes vamps. Neeeerd!
+// Not silver because in old lore, Noc liked vamps. He does not here! TODO: Needs to change!
 /obj/item/clothing/neck/psycross/noc
 	name = "amulet of Lunaria"
 	desc = "Moonlight continues to bathe all even when sun has to go."

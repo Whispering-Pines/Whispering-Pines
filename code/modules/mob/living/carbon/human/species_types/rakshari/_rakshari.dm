@@ -6,7 +6,7 @@
 	id = "rakshari"
 	changesource_flags = WABBAJACK
 
-	desc = "Their origins trace back to nomadic desert tribes, \
+	desc = "Rakshari origins trace back to nomadic desert tribes, \
 	whose survival in the harsh sands cultivated a culture steeped in resilience, cunning, and adaptability. \
 	\n\n\
 	Over centuries, the Rakshari united under the banners of powerful Crater Emirate merchant-kings and warlords,\
