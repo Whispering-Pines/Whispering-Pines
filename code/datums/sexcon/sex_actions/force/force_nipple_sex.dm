@@ -15,7 +15,6 @@
 		if(issimple(target) && target.gender == MALE && target.sexcon)
 		else
 			return FALSE
-		return FALSE
 	return TRUE
 
 /datum/sex_action/force_nipple_sex/can_perform(mob/living/user, mob/living/target)

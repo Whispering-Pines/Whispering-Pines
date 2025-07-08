@@ -1131,7 +1131,7 @@
 /mob/living/verb/submit()
 	set name = "Yield"
 	set category = "IC"
-	set hidden = 1
+	set hidden = 0
 	if(surrendering)
 		return
 	if(stat)
@@ -1146,11 +1146,14 @@
 		flaggy.pixel_y = 12
 		flick_overlay_view(flaggy, 150)
 		drop_all_held_items()
-		Stun(150)
+		Paralyze(150)
+		status_flags |= GODMODE
+		reagents.add_reagent(/datum/reagent/medicine/inaprovaline, 14)
 		src.visible_message("<span class='notice'>[src] yields!</span>")
 		playsound(src, 'sound/misc/surrender.ogg', 100, FALSE, -1)
 		toggle_cmode()
 		sleep(150)
+		status_flags &= ~GODMODE
 	surrendering = 0
 
 

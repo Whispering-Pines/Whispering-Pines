@@ -13,7 +13,6 @@
 		if(issimple(target) && target.sexcon)
 		else
 			return FALSE
-		return FALSE
 	return TRUE
 
 /datum/sex_action/ear_sex/can_perform(mob/living/user, mob/living/target)
@@ -30,7 +29,6 @@
 		if(issimple(target) && target.sexcon)
 		else
 			return FALSE
-		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
 	if(!user.sexcon.can_use_penis())

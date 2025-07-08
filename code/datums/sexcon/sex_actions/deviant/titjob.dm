@@ -33,7 +33,9 @@
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/titjob/on_start(mob/living/user, mob/living/target)

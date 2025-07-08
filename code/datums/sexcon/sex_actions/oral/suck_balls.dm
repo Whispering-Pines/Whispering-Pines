@@ -10,6 +10,9 @@
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_TESTICLES))
+		if(issimple(target) && target.gender == MALE && target.sexcon)
+		else
+			return FALSE
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_TINY))	//Someone else can figure out how a full sized human gives a tiny seelie a ball sucking...
 		return FALSE
@@ -28,6 +31,9 @@
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_TESTICLES))
+		if(issimple(target) && target.gender == MALE && target.sexcon)
+		else
+			return FALSE
 		return FALSE
 	return TRUE
 

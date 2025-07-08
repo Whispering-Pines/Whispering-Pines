@@ -11,7 +11,9 @@
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
 		return
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	if((HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY))) || (HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))) //Big check to make sure only seelie<->seelie can do this, not seelie<->human
 		return FALSE
 	return TRUE
@@ -36,7 +38,9 @@
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/scissoring/on_start(mob/living/user, mob/living/target)

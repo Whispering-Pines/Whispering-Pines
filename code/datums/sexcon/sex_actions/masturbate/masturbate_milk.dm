@@ -25,7 +25,9 @@
 				if(shirtsies.genital_access == FALSE)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/milk_container/on_start(mob/living/user, mob/living/target)

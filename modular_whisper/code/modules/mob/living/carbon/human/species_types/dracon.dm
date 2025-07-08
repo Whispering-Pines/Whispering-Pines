@@ -6,7 +6,8 @@
 	id = "dracon"
 	desc = "Mighty scaled individuals who claim to be descendants of the dragons."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	possible_ages = ALL_AGES_LIST
+	inherent_traits = list(TRAIT_NOMOBSWAP)
+	possible_ages = NORMAL_AGES_LIST_CHILD
 	changesource_flags = WABBAJACK
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mta.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fma.dmi'

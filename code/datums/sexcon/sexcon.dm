@@ -234,6 +234,8 @@
 /datum/sex_controller/proc/ejaculate()
 	if(!issimple(user))
 		log_combat(user, user, "Ejaculated")
+	if(user.erpable && prob(10) && (!user.client && !user.mind) && !user.seeksfuck) //chance to start being horny.
+		user.seeksfuck = TRUE
 	user.visible_message(span_lovebold("[user] cums all over!"))
 	//small heal burst, this should not happen often due the delay on how often one can cum.
 	var/sexhealrand = rand(5, 15)
@@ -552,8 +554,9 @@
 /datum/sex_controller/proc/can_ejaculate()
 	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
 		return TRUE
-	if(!user.getorganslot(ORGAN_SLOT_TESTICLES) && !user.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+	if(!issimple(user))
+		if(!user.getorganslot(ORGAN_SLOT_TESTICLES) && !user.getorganslot(ORGAN_SLOT_VAGINA))
+			return FALSE
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
 		return FALSE
 	return TRUE
@@ -749,8 +752,9 @@
 	while(TRUE)
 		if(!user.adjust_energy(-(action.stamina_cost * get_stamina_cost_multiplier())))
 			break
-		if(user.mind)
-			user.adjust_experience(/datum/skill/misc/athletics, (user.STAINT*0.04)*get_stamina_cost_multiplier()) //endurance training boiii
+		if(ishuman(user))
+			var/mob/living/carbon/human/humanuser = user
+			humanuser.adjust_experience(/datum/skill/misc/athletics, (user.STAINT*0.04)*get_stamina_cost_multiplier()) //endurance training boiii
 		if(!do_after(user, (action.do_time / get_speed_multiplier()), target = target))
 			break
 		if(current_action == null || performed_action_type != current_action)

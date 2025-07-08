@@ -55,7 +55,7 @@
 	return ensure_skills().get_skill_speed_modifier(skill)
 
 /mob/proc/adjust_experience(skill, amt, silent=FALSE, check_apprentice=TRUE)
-	return ensure_skills().adjust_experience(skill, amt, silent, check_apprentice)
+	return adjust_experience(skill, amt, silent, check_apprentice)
 
 /**
  * adjusts the skill level

@@ -8,7 +8,7 @@
 
 	//You can use this with any living.
 	///Will this mob be given genitals and sexcontroller, therefore enabling erp panel, and basically enables everything else, key variable. Does not make em aggressively seek it.
-	var/erpable = TRUE
+	var/erpable = FALSE
 
 	//You can not use the vars below with anything less than retaliate simple mobs, anything less dont have retaliate ai and required vars.
 	///Is this a horny goober that periodically tries to get in people.
@@ -153,7 +153,7 @@
 					else
 						sexcon.force = SEX_FORCE_MID
 					if(!Adjacent(L) || loc != L.loc) //are we at the same tile?
-						walk_to(src, get_turf(Adjacent(L)), 1, move_to_delay) //get on them.
+						walk_to(src, get_turf(Adjacent(L)), 0, 5) //get on them.
 					visible_message(span_danger("[src] starts to breed [L]!"))
 					if(sexcon.force == SEX_FORCE_MAX)
 						visible_message(span_danger("[src] pins [L] down for a savage fucking!"))
@@ -195,7 +195,7 @@
 					sexcon.try_start_action(current_action)
 			else
 				var/turf/T = get_turf(L)
-				walk_to(src, T, move_to_delay)
+				walk_to(src, T, 0, 5)
 
 /mob/living/simple_animal/hostile/retaliate/proc/stoppedfucking(mob/living/carbon/target, timedout = FALSE)
 	walk_away(src, get_turf(loc), 1, move_to_delay)
@@ -204,7 +204,7 @@
 	seekboredom = 0
 	ai_controller.PauseAi(8 SECONDS) //You get some time to get up.
 	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
-		fuckcd = rand(50,150)
+		fuckcd = rand(50,250)
 	else
 		fuckcd = rand(20,40)
 		if(health < maxHealth)
@@ -224,6 +224,9 @@
 			stoppedfucking()
 			if(!ai_controller.able_to_run())
 				ai_controller.PauseAi(1) //override pauses.
+
+/mob/living/simple_animal
+	erpable = FALSE
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -326,7 +329,7 @@
 					else
 						sexcon.force = SEX_FORCE_MID
 					if(!Adjacent(L) || loc != L.loc) //are we at the same tile?
-						walk_towards(src, L.loc, 1)
+						walk_to(src, L.loc, 0, 5)
 					if(!pulling)
 						start_pulling(L)
 					visible_message(span_danger("[src] starts to breed [L]!"))
@@ -370,7 +373,7 @@
 					sexcon.try_start_action(current_action)
 			else
 				var/turf/T = get_turf(L)
-				walk_towards(src, T, 1)
+				walk_to(src, T, 0, 5)
 
 /mob/living/carbon/human/proc/stoppedfucking(mob/living/carbon/target, timedout = FALSE)
 	//try to bind after sex.
@@ -398,7 +401,7 @@
 	seekboredom = 0
 	ai_controller.PauseAi(1)
 	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
-		fuckcd = rand(50,150)
+		fuckcd = rand(50,250)
 	else
 		fuckcd = rand(20,40)
 		if(health < maxHealth)
@@ -423,7 +426,6 @@
 //Call this proc to give genitals automatically where needed.
 //hidden organs are on by default due to coloring issues, otherwise set on each mob.
 /mob/living/proc/give_genitals()
-	erpable = TRUE
 	if(!sexcon)
 		sexcon = new /datum/sex_controller(src)
 	if(!issimple(src))

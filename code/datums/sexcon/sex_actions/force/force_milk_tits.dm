@@ -9,7 +9,9 @@
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/force_milk_tits/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -26,7 +28,9 @@
 				if(shirtsies.genital_access == FALSE)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/force_milk_tits/on_start(mob/living/user, mob/living/target)

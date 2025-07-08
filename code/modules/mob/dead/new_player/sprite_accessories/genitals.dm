@@ -29,6 +29,8 @@
 /datum/sprite_accessory/penis/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(!organ.visible_organ)
 		return FALSE
+	if(owner.age == AGE_CHILD)
+		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
 
 /datum/sprite_accessory/penis/human
@@ -98,6 +100,8 @@
 /datum/sprite_accessory/testicles/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(!organ.visible_organ)
 		return FALSE
+	if(owner.age == AGE_CHILD)
+		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
 
 /datum/sprite_accessory/testicles/pair
@@ -121,15 +125,6 @@
 	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT)
-
-/* I dont know shit about overlays
-/datum/nipples
-	abstract_type = /datum/nipples
-	var/name = "nipples"
-	var/icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/nipples.dmi'
-	var/icon_state
-	var/nipple_color = "ffc4e1"
-*/
 
 /datum/sprite_accessory/breasts/pair
 	icon_state = "pair"
@@ -155,9 +150,9 @@
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT)
 
 /datum/sprite_accessory/vagina/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
-	if(owner.underwear)
-		return FALSE
 	if(!organ.visible_organ)
+		return FALSE
+	if(owner.age == AGE_CHILD)
 		return FALSE
 	return is_human_part_visible(owner, HIDECROTCH|HIDEBUTT|HIDEJUMPSUIT)
 
@@ -225,6 +220,8 @@
 /datum/sprite_accessory/belly/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	if(!organ.visible_organ)
 		return FALSE
+	/*if(owner.age == AGE_CHILD) I guess this isn't a nsfw organ..?
+		return FALSE*/
 	return is_human_part_visible(owner, HIDEBELLY|HIDEJUMPSUIT)
 
 /datum/sprite_accessory/belly

@@ -53,7 +53,7 @@
  * @return Hit chance percentage
  */
 /proc/calculate_hit_chance(zone, mob/living/user, mob/living/target, associated_skill, datum/intent/used_intent, obj/item/I)
-	var/chance2hit = 0
+	var/chance2hit = 10
 
 	if(check_zone(zone) == zone)
 		chance2hit += 10
@@ -67,8 +67,12 @@
 		else if(used_intent.blade_class == BCLASS_CUT)
 			chance2hit += 12
 
-	if(I && I.wlength == WLENGTH_SHORT)
+	if(I && I.wlength == WLENGTH_SHORT)	//easy to hit where you intend.
 		chance2hit += 10
+	if(I && I.wlength == WLENGTH_LONG)
+		chance2hit -= 5
+	if(I && I.wlength == WLENGTH_GREAT) //hard to hit where you intend.
+		chance2hit -= 10
 
 	if(user.STAPER > 10)
 		chance2hit += ((user.STAPER - 10) * 3)
@@ -78,6 +82,11 @@
 	if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 		chance2hit += 20
 	else if(istype(user.rmb_intent, /datum/rmb_intent/swift))
-		chance2hit -= 40
+		chance2hit -= 30
+
+	if(!target.cmode || (target.dir == turn(get_dir(target,user), 180)) || user.alpha <= 15 || target.stat > CONSCIOUS)
+		chance2hit += 15
+	if(target.resting)
+		chance2hit += 15
 
 	return CLAMP(chance2hit, 5, 99)

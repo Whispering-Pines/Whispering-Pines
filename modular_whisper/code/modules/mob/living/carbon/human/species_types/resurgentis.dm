@@ -20,13 +20,17 @@
 	\n\n\
 	-Essence-\
 	White 'essence' (hair, eyes) resurgentis are the rarest of all, and are usually nobility or... premium slaves.\
-	It is abominable to sport different eye colors than your hair, and so on. It means your essence is murked and you are not pureblooded.\
+	<bold>It is abominable to sport different eye, beard etc essence colors than your hair, and so on. It means your essence is murked and you are not pureblooded or are deformed</bold>.\
 	Half-resurgentis are still fullblooded resurgentis due their oppressive genes, except with likely disabilities and murked essence,\
 	still taking subtle physical traits of other species,\
 	Older resurgentis' essence grows dimmer, as it's directly connected to their blood and wellbeing.\
-	(Normally the nipples, pubes and inner bits must be same color as the essence but I couldn't figure out how.)"
+	\n\n\
+	Their cannibal immoral sort are called 'reapers', for their history is related to undeath and are similiar to vultures thanks to their ability to feed on corpses.\
+	It is the most common slur towards all of Resurgentis kind.\
+	\n\n\
+	(Couldn't very well express the true species, through actual hair glow, and other bits glow they normally have unfortunately. Code help welcome.)"
 
-	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE)
+	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE, OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_ORGAN_EATER)
 
 	use_skintones = 1
@@ -129,12 +133,12 @@
 
 /datum/species/human/resurgentis/get_skin_list()
 	return list(
-		"purple - pale" = "#df78f9",
-		"purple - sunless" = "#ba67cf",
-		"purple - lightish" = "#9752a2",
-		"purple" = "#83458d",
-		"purple - tanned" = "#582560",
-		"purple - scorched" = "#4d1255",
+		"purple - pale" = "df78f9",
+		"purple - sunless" = "ba67cf",
+		"purple - lightish" = "9752a2",
+		"purple" = "83458d",
+		"purple - tanned" = "582560",
+		"purple - scorched" = "4d1255"
 	)
 
 /datum/species/human/resurgentis/get_hairc_list()
@@ -187,16 +191,6 @@
 	glows = TRUE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 
-/* doesnt work
-/datum/species/human/resurgentis/after_creation(mob/living/carbon/human/H)
-	. = ..()
-	if(ishuman(H))
-		var/datum/bodypart_feature/hair/feature = H.get_bodypart_feature_of_slot(BODYPART_FEATURE_HAIR)
-		var/datum/blood_type/human/bloodening = H.dna.human_blood_type
-		//match blood color to essence color.
-		bloodening.color = feature.hair_color
-*/
-
 /datum/blood_type/human/resurgentis
 	name = "Resurgentis"
 	compatible_types = list(
@@ -208,3 +202,5 @@
 /datum/reagent/blood/resurgentis
 	name = "Resurgentis Blood"
 	glows = TRUE
+
+//need beard and hair emissives, nipple emissives according to tiddy size (sprites done.) and vagina emissive if not hairy. I couldn't code those.

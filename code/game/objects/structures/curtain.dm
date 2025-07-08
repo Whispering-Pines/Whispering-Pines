@@ -5,7 +5,8 @@
 	icon_state = "bathroom-open"
 	var/icon_type = "bathroom"//used in making the icon state
 	color = "#ACD1E9" //Default color, didn't bother hardcoding other colors, mappers can and should easily change it.
-	alpha = 200 //Mappers can also just set this to 255 if they want curtains that can't be seen through
+	alpha = 255 // Mappers can set this to 200 if they want it slightly see-through
+	layer = ABOVE_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 	anchored = TRUE
 	opacity = FALSE
@@ -20,10 +21,12 @@
 		return
 	if(open)
 		set_opacity(TRUE)
+		layer = ABOVE_MOB_LAYER
 		icon_state = "[icon_type]-open"
 		open = FALSE
 	else
 		set_opacity(FALSE)
+		layer = ABOVE_MOB_LAYER
 		icon_state = "[icon_type]-closed"
 		open = TRUE
 	update_appearance(UPDATE_ICON_STATE)
@@ -49,6 +52,7 @@
 	. = ..()
 	if(.)
 		return
+	playsound(loc, 'sound/foley/doors/curtain.ogg', 50, TRUE)
 	toggle(user)
 
 /obj/structure/curtain/deconstruct(disassembled = TRUE)

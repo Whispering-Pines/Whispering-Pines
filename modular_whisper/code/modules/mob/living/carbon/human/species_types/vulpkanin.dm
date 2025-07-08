@@ -13,9 +13,10 @@
 		HAIR,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	inherent_traits = list(TRAIT_NOMOBSWAP)
 	liked_food = GROSS | MEAT | FRIED
 	changesource_flags = WABBAJACK
-	possible_ages = ALL_AGES_LIST
+	possible_ages = NORMAL_AGES_LIST_CHILD
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mta.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fma.dmi'
 	dam_icon_m = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'

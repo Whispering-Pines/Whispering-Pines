@@ -23,7 +23,9 @@
 				if(!pantsies.genital_access)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_PENIS))
-		return FALSE
+		if(issimple(target) && target.gender == MALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/masturbate_penis_other/on_start(mob/living/user, mob/living/target)

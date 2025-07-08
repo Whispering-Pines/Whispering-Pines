@@ -14,9 +14,9 @@
 	find their sanity being clawed away as they find themselves stuck in one place.<br>\
 	(+1 Constitution, +1 Endurance)"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_WATER_BREATHING,TRAIT_GOOD_SWIM, TRAIT_SEA_DRINKER)
-	possible_ages = ALL_AGES_LIST
+	inherent_traits = list(TRAIT_NOMOBSWAP)
+	possible_ages = NORMAL_AGES_LIST_CHILD
 	changesource_flags = WABBAJACK
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mta.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fma.dmi'

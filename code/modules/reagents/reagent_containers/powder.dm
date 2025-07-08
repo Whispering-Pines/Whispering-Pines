@@ -180,7 +180,7 @@
 	sellprice = 16
 
 /datum/reagent/moondust
-	name = "Moondust"
+	name = "cocaine"
 	description = ""
 	taste_description = "gunpowder"
 	color = "#bfc3b5"
@@ -215,8 +215,8 @@
 	M.visible_message(span_warning("Blood runs from [M]'s nose."))
 
 /obj/item/reagent_containers/powder/moondust_purest
-	name = "pure moondust"
-	desc = "This moondust glitters even in the dark. It seems to have certain pure properties."
+	name = "pure cocaine"
+	desc = "This cocaine glitters even in the dark. It seems to have certain pure properties."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust_purest"
 	volume = 18

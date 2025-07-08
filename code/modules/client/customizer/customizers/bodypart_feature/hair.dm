@@ -109,7 +109,8 @@
 		hairs = species.get_oldhc_list()
 	else
 		hairs = species.get_hairc_list()
-	new_color = hairs[pick(hairs)]
+	if(length(hairs))
+		new_color = hairs[pick(hairs)]
 	return sanitize_hexcolor(new_color, 6, TRUE)
 
 /datum/customizer_choice/bodypart_feature/hair/set_accessory_colors(datum/preferences/prefs, datum/customizer_entry/entry, color)
@@ -896,4 +897,5 @@
 	allows_natural_gradient = FALSE
 
 /datum/customizer/bodypart_feature/hair/head/humanoid/nonatgradient
+	name = "Essence" //for resurgentis
 	customizer_choices = list(/datum/customizer_choice/bodypart_feature/hair/head/humanoid/nonatgradient)

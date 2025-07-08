@@ -9,7 +9,9 @@
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/masturbate_other_breasts/can_perform(mob/living/user, mob/living/target)
@@ -23,7 +25,9 @@
 				if(shirtsies.genital_access == FALSE)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/masturbate_other_breasts/on_start(mob/living/user, mob/living/target)

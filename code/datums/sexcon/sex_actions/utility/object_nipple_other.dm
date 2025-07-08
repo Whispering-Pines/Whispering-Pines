@@ -10,7 +10,9 @@
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	if(!get_funobject_in_hand(user))
 		return FALSE
 	return TRUE
@@ -26,7 +28,9 @@
 				if(!shirtsies.genital_access)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	if(!get_funobject_in_hand(user))
 		return FALSE
 	if(target.cmode)

@@ -438,7 +438,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 
 /datum/species/proc/get_skin_list() as /list
 	RETURN_TYPE(/list)
-	return GLOB.skin_tones
+	return list() //edited to null so it turns to free color picker.
 
 /datum/species/proc/get_hairc_list()
 	return null //edited to null so it turns to free color picker.

@@ -367,6 +367,12 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		//dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SKIN_TONE]'>[(randomise[RANDOM_SKIN_TONE]) ? "Lock" : "Unlock"]</A>"
 		dat += "<br>"
 
+	if((MUTCOLORS in pref_species.species_traits) || (MUTCOLORS_PARTSONLY in pref_species.species_traits))
+
+		dat += "<b>Mutant Color #1:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
+		dat += "<b>Mutant Color #2:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Change</a><BR>"
+		dat += "<b>Mutant Color #3:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
+
 	dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 	dat += "<br><b>Accent:</b> <a href='?_src_=prefs;preference=selected_accent;task=input'>[selected_accent]</a>"
 	dat += "<br>"
@@ -1255,7 +1261,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						randomize_all_customizer_accessories()
 						randomise_appearance_prefs(~(RANDOMIZE_SPECIES))
 						accessory = "Nothing"
-
+						reset_descriptors()
 				if("charflaw")
 					var/list/flawslist = GLOB.character_flaws.Copy()
 					var/result = browser_input_list(user, "SELECT YOUR HERO'S FLAW", "PERFECTION IS IMPOSSIBLE", flawslist, FALSE)
@@ -1265,6 +1271,25 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						charflaw = C
 						if(charflaw.desc)
 							to_chat(user, "<span class='info'>[charflaw.desc]</span>")
+
+				if("mutant_color")
+					var/new_mutantcolor = color_pick_sanitized(user, "Choose your character's mutant #1 color:", "Character Preference","#"+features["mcolor"])
+					if(new_mutantcolor)
+
+						features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
+						try_update_mutant_colors()
+
+				if("mutant_color2")
+					var/new_mutantcolor = color_pick_sanitized(user, "Choose your character's mutant #2 color:", "Character Preference","#"+features["mcolor2"])
+					if(new_mutantcolor)
+						features["mcolor2"] = sanitize_hexcolor(new_mutantcolor)
+						try_update_mutant_colors()
+
+				if("mutant_color3")
+					var/new_mutantcolor = color_pick_sanitized(user, "Choose your character's mutant #3 color:", "Character Preference","#"+features["mcolor3"])
+					if(new_mutantcolor)
+						features["mcolor3"] = sanitize_hexcolor(new_mutantcolor)
+						try_update_mutant_colors()
 
 				if("flavortext")
 					to_chat(user, "<span class='notice'>["<span class='bold'>Flavortext should not include nonphysical nonsense and should be kept used for short, first-glance notable things.</span>"]</span>")
@@ -1358,9 +1383,14 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 				if("s_tone")
 					var/listy = pref_species.get_skin_list()
-					var/new_s_tone = browser_input_list(user, "CHOOSE YOUR HERO'S [uppertext(pref_species.skin_tone_wording)]", "THE SUN", listy)
+					var/new_s_tone
+					if(length(listy))
+						new_s_tone = browser_input_list(user, "CHOOSE YOUR HERO'S [uppertext(pref_species.skin_tone_wording)]", "THE SUN", listy)
+					else
+						new_s_tone = color_pick_sanitized(user, "CHOOSE YOUR HERO'S [uppertext(pref_species.skin_tone_wording)]", "THE SUN", skin_tone)
 					if(new_s_tone)
 						skin_tone = listy[new_s_tone]
+						try_update_mutant_colors()
 
 				if("selected_accent")
 					if(!patreon)
@@ -1925,3 +1955,8 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 			to_chat(usr, "<span class='warning'>The image must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
 		return FALSE
 	return TRUE
+
+/datum/preferences/proc/try_update_mutant_colors()
+	if(update_mutant_colors)
+		reset_body_marking_colors()
+		reset_all_customizer_accessory_colors()

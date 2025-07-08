@@ -11,7 +11,8 @@
 	They also have sharp claws and teeth."
 	skin_tone_wording = "Skin Colors"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	possible_ages = ALL_AGES_LIST
+	inherent_traits = list(TRAIT_NOMOBSWAP)
+	possible_ages = NORMAL_AGES_LIST_CHILD
 	changesource_flags = WABBAJACK
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mta.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fma.dmi'

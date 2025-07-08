@@ -7,7 +7,9 @@
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	var/obj/item/organ/filling_organ/vagina/targetvag = target.getorgan(/obj/item/organ/filling_organ/vagina)
 	if(!targetvag)
 		return FALSE

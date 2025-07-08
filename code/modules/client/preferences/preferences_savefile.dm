@@ -339,21 +339,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!valid_nsfw_headshot_link(null, nsfw_headshot_link, TRUE))
 		nsfw_headshot_link = null
 
-	S["statpack"] = statpack.type
-
-	if(loadout)
-		S["loadout"] = loadout.type
-	else
-		S["loadout"] = null
-	if(loadout2)
-		S["loadout2"] = loadout2.type
-	else
-		S["loadout2"] = null
-	if(loadout3)
-		S["loadout3"] = loadout3.type
-	else
-		S["loadout3"] = null
-
 	//Load flavor text
 	S["flavortext"] >> flavortext
 	S["ooc_notes"] >> ooc_notes
@@ -442,7 +427,20 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["family"]			, 	family)
 	WRITE_FILE(S["setspouse"]			, 	setspouse)
 	WRITE_FILE(S["selected_accent"], selected_accent)
+	WRITE_FILE(S["statpack"] , statpack.type)
 
+	if(loadout)
+		WRITE_FILE(S["loadout"] , loadout.type)
+	else
+		WRITE_FILE(S["loadout"] , null)
+	if(loadout2)
+		WRITE_FILE(S["loadout2"] , loadout2.type)
+	else
+		WRITE_FILE(S["loadout2"] , null)
+	if(loadout3)
+		WRITE_FILE(S["loadout3"] , loadout3.type)
+	else
+		WRITE_FILE(S["loadout3"] , null)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)

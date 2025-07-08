@@ -10,7 +10,6 @@
 	creating a diverse race of people who may not even empathise with one another. And whilst Dendor is considered the main culprit for Wild-kin, there are those created through other means, \
 	akin to Noc's stolen knowledge that created lupians and other abstract experimentation or circumstance. \
 	(Wild-kin are not a template race to play your own custom race. If you play a wild-kin, you are expected to roleplay to the setting and the race's lore.)<br>"
-	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,
@@ -18,8 +17,9 @@
 		HAIR,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	inherent_traits = list(TRAIT_NOMOBSWAP)
 	changesource_flags = WABBAJACK
-	possible_ages = ALL_AGES_LIST
+	possible_ages = NORMAL_AGES_LIST_CHILD
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mta.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fma.dmi'
 	dam_icon_m = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'

@@ -10,7 +10,9 @@
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/cunnilingus/can_perform(mob/living/user, mob/living/target)
@@ -26,7 +28,9 @@
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	return TRUE
 
 /datum/sex_action/cunnilingus/on_start(mob/living/user, mob/living/target)

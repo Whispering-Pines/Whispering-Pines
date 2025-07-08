@@ -39,7 +39,9 @@
 				if(shirtsies.genital_access == FALSE)
 					return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
-		return FALSE
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
 	var/obj/item/organ/filling_organ/breasts/targetbreasts = target.getorgan(/obj/item/organ/filling_organ/breasts)
 	var/obj/item/heldstuff = target.get_active_held_item()
 

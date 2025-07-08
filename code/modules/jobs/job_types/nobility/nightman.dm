@@ -403,7 +403,7 @@
 
 /obj/item/lockpick/goldpin/silver
 	name = "silver hairpin"
-	desc = "Often used by wealthy courtesans and nobility to keep hair and clothing in place. This one's silver - a rarity."
+	desc = "Often used by wealthy courtesans and nobility to keep hair and clothing in place. This one's silver."
 	icon_state = "silverpin"
 	item_state = "silverpin"
 	icon = 'modular_azure/icons/clothing/head.dmi'
