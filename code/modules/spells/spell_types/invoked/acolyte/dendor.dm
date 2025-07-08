@@ -267,7 +267,7 @@
 	var/already_grown = locate(/obj/structure/kneestingers) in (T)
 	var/area/area = get_area(T)
 	if(!area.outdoors)
-		to_chat(user, span_notice("The open air is more suited for Dendors miracles..."))
+		to_chat(user, span_notice("The open air is more suited for Blissrose's miracles..."))
 		return FALSE
 	if(already_grown)
 		to_chat(user, span_notice("There are too many mycelia here already..."))

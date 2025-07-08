@@ -12,7 +12,6 @@
 	(Wild-kin are not a template race to play your own custom race. If you play a wild-kin, you are expected to roleplay to the setting and the race's lore.)<br>"
 	default_color = "444"
 	skin_tone_wording = "Color"
-	skin_tone_wording = "Color"
 	use_skintones = TRUE
 	species_traits = list(
 		MUTCOLORS,

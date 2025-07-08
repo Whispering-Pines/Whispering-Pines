@@ -147,6 +147,14 @@
 		pre_pregnancy_size = belly.organ_size
 		addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 30 MINUTES, TIMER_STOPPABLE)
 
+/obj/item/organ/filling_organ/vagina/proc/be_itempregnated(var/obj/item/pregitem, max_amount = 1)
+	if(owner.has_quirk(/datum/quirk/selfawaregeni))
+		to_chat(owner, span_lovebold("I feel a strange surge in my [src.name]..?"))
+	sleep(5 MINUTES)
+	to_chat(owner, span_red("I feel there is something unnatural grown inside my womb..."))
+	for(var/index in 1 to rand(1,max_amount))
+		new pregitem(contents)
+
 /obj/item/organ/filling_organ/vagina/proc/undo_preggoness()
 	if(!pregnant)
 		return

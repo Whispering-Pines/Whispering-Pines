@@ -155,6 +155,41 @@
 	. = 1
 	..()
 
+/datum/reagent/consumable/cum/plant
+	name = "Floral reproductive juice"
+	description = "A strange sap like liquid produced by plants... Used to crossbreed, also has tiny healing properties. Good for genital health somehow."
+	color = "#ffc157"
+	taste_description = "sweet slime"
+	glass_name = "glass of floral reproductive juice"
+
+/datum/reagent/consumable/cum/on_transfer(atom/A, method, trans_volume)
+	. = ..()
+	if(istype(A, /obj/item/organ/filling_organ/vagina) && virile)
+		var/obj/item/organ/filling_organ/vagina/forgan = A
+		if(forgan.fertility && !forgan.pregnant)
+			if(prob(trans_volume))
+				forgan.be_itempregnated(/obj/item/maneaterseed, 4) //boom
+
+/datum/reagent/consumable/cum/on_mob_life(mob/living/carbon/M)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
+			H.adjust_hydration(8)
+			H.adjust_nutrition(8)
+	var/list/wCount = M.get_wounds()
+	if(M.blood_volume < BLOOD_VOLUME_NORMAL) //can not overfill
+		M.blood_volume = min(M.blood_volume+3, BLOOD_VOLUME_MAXIMUM)
+	if(wCount.len > 0)
+		M.heal_wounds(10)
+		M.update_damage_overlays()
+	M.adjustBruteLoss(-1, 0)
+	M.adjustFireLoss(-1, 0)
+	M.adjustToxLoss(-1, 0)
+	for(var/obj/item/organ/filling_organ/organny in M.internal_organs)
+		M.adjustOrganLoss(organny.slot, -8) //alot of genital repair, elfbane will rip em apart anyway.
+	. = 1
+	..()
+
 /obj/item/reagent_containers/glass/bottle/milk
 	list_reagents = list(/datum/reagent/consumable/milk = 45)
 
