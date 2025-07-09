@@ -1,8 +1,8 @@
 /datum/job/innkeep_son
 	title = "Innkeepers Son"
 	f_title = "Innkeepers Daughter"
-	tutorial = "One nite the Innkeeper took you in during a harsh winter, \
-	you've been thankful ever since." //rewrite probably?
+	tutorial = "You are offspring of the innkeep and his wife, you grew up serving drinks, learning to cook and watching for pickpockets \
+	until finally you hit young adulthood, hoping the inn will be inherited to you someday, you press on helping your parents."
 	flag = INNKEEPCHILD
 	department_flag = YOUNGFOLK
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -14,7 +14,7 @@
 	bypass_lastclass = TRUE
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	allowed_races = RACES_PLAYER_ALL
 
 	outfit = /datum/outfit/job/innkeep_son

@@ -1,9 +1,8 @@
 /datum/job/churchling
 	title = "Churchling"
-	tutorial = "Your family were zealots. \
-	They scolded you with a studded belt and prayed like sinners \
-	every waking hour of the day they weren’t toiling in the fields. \
-	You escaped them by becoming a churchling-- and a guaranteed education isn't so bad."
+	tutorial = "Your family likely left you to die as a baby until someone took you to a church where \
+	you were dropped into the only life you ever knew, striving to become a cleric in the hands of the god \
+	or goddess who took you in long ago by fate."
 	flag = CHURCHLING
 	department_flag = YOUNGFOLK
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -15,7 +14,7 @@
 	bypass_lastclass = TRUE
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_ages = list(AGE_CHILD)
+	allowed_ages = list(AGE_ADULT)
 	allowed_races = RACES_PLAYER_ALL
 	allowed_patrons = ALL_TEMPLE_PATRONS
 
@@ -56,7 +55,7 @@
 	switch(H.patron?.type)
 		if(/datum/patron/divine/astrata)
 			neck = /obj/item/clothing/neck/psycross/silver/astrata
-		if(/datum/patron/divine/necra) //necra acolytes are now morticians
+		if(/datum/patron/divine/necra)
 			neck = /obj/item/clothing/neck/psycross/silver/necra
 		if(/datum/patron/divine/eora)
 			neck = /obj/item/clothing/neck/psycross/silver/eora

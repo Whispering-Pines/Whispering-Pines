@@ -2,8 +2,7 @@
 	title = "Apothecary"
 	tutorial = "You know every plant growing on these grounds and in the woods like the back of your hand. \
 	You are tasked with mixing tinctures and supplying the town and Feldsher with medicine for pain... or pleasure. \
-	For a price, of course. \
-	You have been known to kill men who cross you or your work-partner."
+	For a price, of course. You work together with the nightmaster in supplying drugs to the brothel's vicinity."
 	flag = APOTHECARY
 	department_flag = SERFS
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)

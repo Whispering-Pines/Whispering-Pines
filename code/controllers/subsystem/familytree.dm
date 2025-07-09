@@ -104,7 +104,7 @@ SUBSYSTEM_DEF(familytree)
 /datum/controller/subsystem/familytree/proc/CanBeParentOf(parent_age, child_age)
 	// Parent must be at least one age category higher than child
 	// Exception: Adults can have Youngling children
-	if(parent_age == AGE_ADULT && child_age == AGE_CHILD)
+	if(parent_age == AGE_ADULT && (child_age == AGE_CHILD || child_age == AGE_ADULT)) //Whisper edit due to disabled child age.
 		return TRUE
 	if(parent_age == AGE_MIDDLEAGED && (child_age == AGE_CHILD || child_age == AGE_ADULT))
 		return TRUE

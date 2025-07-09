@@ -72,7 +72,7 @@
 				continue
 			if(!target && fucktarg.cmode) //skip if the target has cmode on and the mob is not targeting anyone so probably not aggressive...
 				continue
-			if(fucktarg.age == AGE_CHILD)
+			if(fucktarg.age == AGE_CHILD) //hard skip
 				continue
 			if(fucktarg.alpha <= 100)
 				continue
@@ -259,7 +259,7 @@
 		for(var/mob/living/carbon/human/fucktarg in around)
 			if(fucktarg == src)
 				continue
-			if(fucktarg.age == AGE_CHILD)
+			if(fucktarg.age == AGE_CHILD) //hard skip
 				continue
 			if(fucktarg.alpha <= 100)
 				continue

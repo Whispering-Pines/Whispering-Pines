@@ -21,8 +21,8 @@
 		to_chat(H, span_warning("You cannot adopt yourself!"))
 		return FALSE
 
-	if(target.age != AGE_CHILD)
-		to_chat(H, span_warning("You can only adopt children!"))
+	if(target.age != AGE_CHILD || target.age != AGE_ADULT)
+		to_chat(H, span_warning("You can only adopt children and young adults!"))
 		return FALSE
 
 	if(target.family_datum && target.family_member_datum?.parents.len)

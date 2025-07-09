@@ -103,16 +103,16 @@
 #define RANDOMIZE_HAIR_ALL (RANDOMIZE_HAIR_FEATURES | RANDOMIZE_HAIR_COLORS)
 
 //Age ranges
-#define AGE_CHILD			"Youngling"
-#define AGE_ADULT			"Adult"
-#define AGE_MIDDLEAGED		"Middle-Aged"
-#define AGE_OLD				"Old"
+#define AGE_CHILD			"Youngling" //disabled for safety due to nsfw conversion of code.
+#define AGE_ADULT			"Adult (18-39)"
+#define AGE_MIDDLEAGED		"Middle-Aged (40-59)"
+#define AGE_OLD				"Old (60+)"
 #define AGE_IMMORTAL		"Immortal"
 
 #define NORMAL_AGES_LIST			list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-#define NORMAL_AGES_LIST_CHILD		list(AGE_CHILD, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+#define NORMAL_AGES_LIST_CHILD		list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD) //AGE_CHILD, was removed from here.
 #define ALL_AGES_LIST				list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
-#define ALL_AGES_LIST_CHILD			list(AGE_CHILD, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
+#define ALL_AGES_LIST_CHILD			list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL) //here too
 
 //alignment
 #define ALIGNMENT_LG		"Lawful Good"
