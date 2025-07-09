@@ -394,11 +394,11 @@ GLOBAL_LIST_EMPTY(loadout_items)
 
 /datum/loadout_item/feldcollar
 	name = "Feldcollar"
-	path = /obj/item/clothing/neck/feldcollar
+	path = /obj/item/clothing/neck/feld
 
 /datum/loadout_item/surcollar
 	name = "Surgeon's Collar"
-	path = /obj/item/clothing/neck/surcollar
+	path = /obj/item/clothing/neck/phys
 
 /datum/loadout_item/rope_leash
 	name = "Rope Leash"

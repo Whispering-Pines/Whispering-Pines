@@ -363,7 +363,7 @@
 	icon_state = "s1"
 	sellprice = 5
 	base_type = CTYPE_SILV
-	plural_name = "mi-cals"
+	plural_name = "med-cals"
 
 // COPPER
 /obj/item/coin/copper

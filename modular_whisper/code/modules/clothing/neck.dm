@@ -32,16 +32,6 @@
 	body_parts_covered = NECK|FACE
 	leashable = TRUE
 
-/obj/item/clothing/neck/feldcollar
-	name = "feldsher's collar"
-	desc = "A simple cloth collar, typically worn by medical staff."
-	icon_state = "feldcollar"
-
-/obj/item/clothing/neck/surcollar
-	name = "surgeon's collar"
-	desc = "A utilitarian collar for surgeons, not meant for leashing."
-	icon_state = "surcollar"
-
 // Activate the devotion prayer verb from MMB
 /obj/item/clothing/neck/psycross/MiddleClick(mob/user)
 	if (.)

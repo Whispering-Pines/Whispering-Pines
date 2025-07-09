@@ -64,14 +64,16 @@
 	sewrepair = TRUE
 	flags_inv = null
 	slot_flags = ITEM_SLOT_SHIRT
-	flags_inv = HIDECROTCH
-	mob_overlay_icon = 'modular_azure/icons/clothing/onmob/shirts.dmi'
 	boobed = TRUE
 
 /obj/item/storage/belt/leather/exoticsilkbelt
 	name = "exotic silk belt"
 	desc = "A gold adorned belt with the softest of silks barely concealing one's bits."
+	icon = 'modular_azure/icons/clothing/belts.dmi'
+	mob_overlay_icon = 'modular_azure/icons/clothing/onmob/belts.dmi'
 	icon_state = "exoticsilkbelt"
+	item_state = "exoticsilkbelt"
+	flags_inv = HIDECROTCH
 	var/max_storage = 5
 	sewrepair = TRUE
 
@@ -458,7 +460,7 @@ Reel teleports the attached atom to the grabbed turf.
 	icon = 'modular_azure/icons/items/lighting.dmi'
 	icon_state = "gcandelabra"
 	infinite = TRUE
-	sellprice = 40
+	sellprice = 60
 
 /obj/item/candle/candlestick/gold/update_icon_state()
 	. = ..()
@@ -473,7 +475,7 @@ Reel teleports the attached atom to the grabbed turf.
 	icon = 'modular_azure/icons/items/lighting.dmi'
 	icon_state = "scandelabra"
 	infinite = TRUE
-	sellprice = 60
+	sellprice = 40
 
 /obj/item/candle/candlestick/silver/update_icon_state()
 	. = ..()
@@ -488,7 +490,7 @@ Reel teleports the attached atom to the grabbed turf.
 	icon = 'modular_azure/icons/items/lighting.dmi'
 	icon_state = "singlegcandelabra"
 	infinite = TRUE
-	sellprice = 30
+	sellprice = 50
 
 /obj/item/candle/candlestick/gold/single/update_icon_state()
 	. = ..()
@@ -503,7 +505,7 @@ Reel teleports the attached atom to the grabbed turf.
 	icon = 'modular_azure/icons/items/lighting.dmi'
 	icon_state = "singlescandelabra"
 	infinite = TRUE
-	sellprice = 50
+	sellprice = 30
 
 /obj/item/candle/candlestick/silver/single/update_icon_state()
 	. = ..()
@@ -518,7 +520,7 @@ Reel teleports the attached atom to the grabbed turf.
 	icon = 'modular_azure/icons/items/lighting.dmi'
 	icon_state = "gcandle"
 	infinite = TRUE
-	sellprice = 30
+	sellprice = 50
 
 /obj/item/candle/gold/update_icon_state()
 	. = ..()
@@ -533,7 +535,7 @@ Reel teleports the attached atom to the grabbed turf.
 	icon = 'modular_azure/icons/items/lighting.dmi'
 	icon_state = "scandle"
 	infinite = TRUE
-	sellprice = 50
+	sellprice = 30
 
 /obj/item/candle/silver/update_icon_state()
 	. = ..()
