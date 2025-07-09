@@ -268,6 +268,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEARNMAGIC = span_info("I can memorize spells long as my intellect allow me."),
 	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming, If i am in high awareness, I can even prevent sneak attacks."),
 	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely."),
+	TRAIT_ENDOWMENT = span_danger("I got massive bits that slow me down and don't fit in most clothes or armor."),
 	))
 
 /// value -> trait name, generated on use from trait_by_type global

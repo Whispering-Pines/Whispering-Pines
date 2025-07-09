@@ -276,4 +276,8 @@
 			adjective = "a large"
 		if(3)
 			adjective = "a massive"
+		if(4)
+			adjective = "an enormous"
+		if(5)
+			adjective = "a gigantic"
 	return "[adjective] belly"

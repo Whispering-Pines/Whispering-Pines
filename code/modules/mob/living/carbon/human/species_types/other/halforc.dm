@@ -145,7 +145,7 @@
 /datum/species/halforc/get_hairc_list()
 	return sortList(list(
 	"brown - minotaur" = "58433b",
-	"brown - volf" = "48322a",
+	"brown - wolf" = "48322a",
 	"brown - bark" = "2d1300",
 
 	"green - maneater" = "458745",

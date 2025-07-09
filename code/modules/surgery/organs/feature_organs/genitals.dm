@@ -1,6 +1,86 @@
 /obj/item/organ
 	///for genitals mostly
 	var/organ_size = 0
+	//size debuffs
+	var/size_debuff_min = null
+
+//size debuff stuff
+/obj/item/organ/Insert(mob/living/carbon/M, special, drop_if_replaced)
+	. = ..()
+	if(size_debuff_min)
+		if(organ_size > size_debuff_min)
+			to_chat(M, span_red("My [name] is massive and heavy... It may hinder me greatly."))
+
+/obj/item/organ/on_life()
+	. = ..()
+	if(size_debuff_min)
+		if(organ_size > size_debuff_min)
+			if(!owner.has_status_effect(/datum/status_effect/debuff/bigboobs) && owner.get_stat_level(STATKEY_STR) < 13)
+				owner.apply_status_effect(/datum/status_effect/debuff/bigboobs)
+			else if(!owner.has_status_effect(/datum/status_effect/debuff/bigboobs) && owner.get_stat_level(STATKEY_STR) >= 13)
+				owner.apply_status_effect(/datum/status_effect/debuff/bigboobs/lite)
+
+/datum/status_effect/debuff/bigboobs
+	id = "bigboobs"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/bigboobs
+	examine_text = span_notice("They have massive GOODS!")
+	effectedstats = list(STATKEY_CON = 1, STATKEY_END = -2, STATKEY_SPD = -1)
+	duration = 1 MINUTES //should wear off if organ is removed, so.
+
+/datum/status_effect/debuff/bigboobs/lite
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/bigboobs/lite
+	examine_text = span_notice("They have massive GOODS!")
+	effectedstats = list(STATKEY_CON = 1)
+
+/atom/movable/screen/alert/status_effect/debuff/bigboobs
+	name = "Oversized Genitals"
+	desc = "They feel as heavy as gold and are massive... My back hurts."
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/mob/screen_alert.dmi'
+	icon_state = "bigboobs"
+
+/atom/movable/screen/alert/status_effect/debuff/bigboobs/lite
+	name = "Oversized Genitals (Supported)"
+	desc = "They feel as heavy as gold and are massive... But my body is strong enough to support them."
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/mob/screen_alert.dmi'
+	icon_state = "bigboobslite"
+
+/obj/item
+	var/can_hold_endowed = FALSE
+
+/obj/item/clothing/armor/chainmail
+	can_hold_endowed = TRUE
+
+/obj/item/clothing/armor/gambeson
+	can_hold_endowed = TRUE
+
+/obj/item/clothing/armor/leather
+	can_hold_endowed = TRUE
+
+/obj/item/clothing/pants/trou
+	can_hold_endowed = TRUE
+
+/datum/status_effect/debuff/bigboobs/on_apply()
+	. = ..()
+	var/mob/living/carbon/human/species/user = owner
+	if(!user)
+		return
+	ADD_TRAIT(user, TRAIT_ENDOWMENT, id)
+	var/obj/item/clothing/thepants = user.wear_pants
+	if(thepants && !thepants?.can_hold_endowed)
+		user.dropItemToGround(thepants)
+	var/obj/item/clothing/theshirt = user.wear_shirt
+	var/obj/item/clothing/thearmor = user.wear_armor
+	if(theshirt && !theshirt?.can_hold_endowed)
+		user.dropItemToGround(theshirt)
+	if(thearmor && !thearmor?.can_hold_endowed)
+		user.dropItemToGround(thearmor)
+
+/datum/status_effect/debuff/bigboobs/on_remove()
+	. = ..()
+	var/mob/living/carbon/human/species/user = owner
+	if(!user)
+		return
+	REMOVE_TRAIT(user, TRAIT_ENDOWMENT, id)
 
 /obj/item/organ/penis
 	name = "penis"
@@ -10,6 +90,7 @@
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_PENIS
 	organ_size = DEFAULT_PENIS_SIZE
+	size_debuff_min = PENIS_DEBUFF_SIZE
 	organ_dna_type = /datum/organ_dna/penis
 	accessory_type = /datum/sprite_accessory/penis/human
 	low_threshold_passed = "<span class='info'>My cock starts to burn a bit.</span>"
@@ -188,6 +269,7 @@
 	organ_dna_type = /datum/organ_dna/breasts
 	accessory_type = /datum/sprite_accessory/breasts/pair
 	organ_size = DEFAULT_BREASTS_SIZE
+	size_debuff_min = BREASTS_DEBUFF_SIZE
 	reagent_to_make = /datum/reagent/consumable/milk
 	hungerhelp = TRUE
 	organ_sizeable = TRUE
@@ -217,6 +299,7 @@
 	organ_dna_type = /datum/organ_dna/belly
 	accessory_type = /datum/sprite_accessory/belly
 	organ_size = DEFAULT_BELLY_SIZE
+	size_debuff_min = BELLY_DEBUFF_SIZE
 
 /obj/item/organ/filling_organ/testicles
 	name = "testicles"
@@ -229,6 +312,7 @@
 	organ_dna_type = /datum/organ_dna/testicles
 	accessory_type = /datum/sprite_accessory/testicles/pair
 	organ_size = DEFAULT_TESTICLES_SIZE
+	size_debuff_min = TESTICLES_DEBUFF_SIZE
 	reagent_to_make = /datum/reagent/consumable/cum
 	refilling = TRUE
 	reagent_generate_rate = 6

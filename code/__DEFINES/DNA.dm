@@ -103,7 +103,8 @@
 
 #define DEFAULT_PENIS_SIZE 2
 #define MIN_PENIS_SIZE 1
-#define MAX_PENIS_SIZE 3 //5 available, above 3 are HYPER.
+#define PENIS_DEBUFF_SIZE 3
+#define MAX_PENIS_SIZE 5 //above 3 are HYPER.
 #define TOTAL_PENIS_SIZE 5
 
 #define PENIS_TYPE_PLAIN 1
@@ -126,19 +127,22 @@
 
 #define DEFAULT_TESTICLES_SIZE 3
 #define MIN_TESTICLES_SIZE 1
-#define MAX_TESTICLES_SIZE 3 //5 available, above 3 are hyper and are not selectable but used for potion effect.
+#define TESTICLES_DEBUFF_SIZE 4
+#define MAX_TESTICLES_SIZE 5
 #define TOTAL_TESTICLES_SIZE 5
 
 #define DEFAULT_BELLY_SIZE 0
 #define MIN_BELLY_SIZE 0
-#define MAX_BELLY_SIZE 3
+#define BELLY_DEBUFF_SIZE 3
+#define MAX_BELLY_SIZE 5 //10 available but its all fucking cursed
 
-#define DEFAULT_BREASTS_SIZE 3
+#define DEFAULT_BREASTS_SIZE 6
 #define MIN_BREASTS_SIZE 0
-#define MAX_BREASTS_SIZE 13 //16 available, above 13 is hyper-er.
+#define BREASTS_DEBUFF_SIZE 14
+#define MAX_BREASTS_SIZE 16
 #define TOTAL_BREASTS_SIZE 16
 
 #define DEFAULT_BUTT_SIZE 0
 #define MIN_BUTT_SIZE 0
-#define MAX_BUTT_SIZE 5 //5 available, above 4 may be too big. This is recommended max size.
+#define MAX_BUTT_SIZE 5
 #define TOTAL_BUTT_SIZE 5

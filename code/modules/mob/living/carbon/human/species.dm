@@ -853,6 +853,18 @@ GLOBAL_LIST_EMPTY(patreon_races)
 		if(ITEM_SLOT_ARMOR)
 			if(H.wear_armor)
 				return FALSE
+			var/obj/item/organ/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
+			if(HAS_TRAIT(H, TRAIT_ENDOWMENT) && !I.can_hold_endowed && breasts.organ_size > breasts.size_debuff_min)
+				if(!disable_warning)
+					to_chat(H, span_warning("I can't squeeze MY TITS in!.."))
+					H.dropItemToGround(I)
+				return FALSE
+			var/obj/item/organ/belly = H.getorganslot(ORGAN_SLOT_BELLY)
+			if(HAS_TRAIT(H, TRAIT_ENDOWMENT) && !I.can_hold_endowed && belly.organ_size > belly.size_debuff_min)
+				if(!disable_warning)
+					to_chat(H, span_warning("I can't squeeze MY BELLY in!.."))
+					H.dropItemToGround(I)
+				return FALSE
 			if(I.blocking_behavior & BULKYBLOCKS)
 				if(H.cloak)
 					return FALSE
@@ -920,6 +932,24 @@ GLOBAL_LIST_EMPTY(patreon_races)
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_PANTS)
 			if(H.wear_pants)
+				return FALSE
+			var/obj/item/organ/cock = H.getorganslot(ORGAN_SLOT_PENIS)
+			if(HAS_TRAIT(H, TRAIT_ENDOWMENT) && !I.can_hold_endowed && cock.organ_size > cock.size_debuff_min)
+				if(!disable_warning)
+					to_chat(H, span_warning("I can't squeeze MY COCK in!.."))
+					H.dropItemToGround(I)
+				return FALSE
+			var/obj/item/organ/balls = H.getorganslot(ORGAN_SLOT_TESTICLES)
+			if(HAS_TRAIT(H, TRAIT_ENDOWMENT) && !I.can_hold_endowed && balls.organ_size > balls.size_debuff_min)
+				if(!disable_warning)
+					to_chat(H, span_warning("I can't squeeze MY BALLS in!.."))
+					H.dropItemToGround(I)
+				return FALSE
+			var/obj/item/organ/butt = H.getorganslot(ORGAN_SLOT_BUTT)
+			if(HAS_TRAIT(H, TRAIT_ENDOWMENT) && !I.can_hold_endowed && butt.organ_size > butt.size_debuff_min)
+				if(!disable_warning)
+					to_chat(H, span_warning("I can't squeeze MY ASS in!.."))
+					H.dropItemToGround(I)
 				return FALSE
 			if( !(I.slot_flags & ITEM_SLOT_PANTS) )
 				return FALSE

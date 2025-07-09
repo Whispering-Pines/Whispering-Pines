@@ -81,6 +81,16 @@
 	},
 /turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/bath)
+"adp" = (
+/obj/machinery/light/fueled/wallfire/candle{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/obj/structure/closet/crate/chest/old_crate{
+	name = "meat crate"
+	},
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "adx" = (
 /obj/effect/decal/cleanable/dirt/cobweb{
 	icon_state = "cobweb2"
@@ -28230,7 +28240,7 @@
 /area/rogue/indoors/town/church)
 "vVn" = (
 /obj/structure/door/window{
-	name = "Bathhouse"
+	name = "The Cum Chalice Brothel"
 	},
 /obj/effect/mapping_helpers/access/keyset/town/bathhouse,
 /turf/open/floor/tile/bfloorz,
@@ -31093,6 +31103,10 @@
 /obj/item/coin/copper/pile,
 /turf/open/floor/tile/checker,
 /area/rogue/under/town/basement)
+"yfE" = (
+/obj/structure/fluff/statue/gaffer,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/town/tavern)
 "yfK" = (
 /obj/machinery/light/fueled/torchholder/l{
 	dir = 8
@@ -43814,7 +43828,7 @@ eyL
 eyL
 eyL
 eyL
-eyL
+bnh
 bnh
 uIF
 eqk
@@ -85322,7 +85336,7 @@ eqk
 eqk
 fAl
 brL
-jCQ
+edx
 edx
 edx
 edx
@@ -85513,7 +85527,7 @@ edx
 edx
 edx
 edx
-bPU
+jCQ
 edx
 fAl
 eWQ
@@ -85697,9 +85711,9 @@ eqk
 eqk
 eqk
 fAl
-edx
-jCQ
-edx
+yfE
+adp
+bPU
 mNT
 vVt
 wrz

@@ -591,9 +591,6 @@
 			msg += "<span class='info'><img src=[headshot_link] width=100 height=150/></span>"
 		if(nsfw_headshot_link && !wear_armor && !wear_shirt && (gender == FEMALE || !wear_pants)) //topless male barbarians shouldnt show nsfw pics
 			msg += "<span class='info'><img src=[nsfw_headshot_link] width=125 height=175/></span>"
-	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
-	for(var/line in lines)
-		. += span_info(line)
 
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))

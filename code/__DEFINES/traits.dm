@@ -148,6 +148,7 @@
 #define TRAIT_LEARNMAGIC "Learn Magic" //You dont need usemagic if you have learnmagic.
 #define TRAIT_SEA_DRINKER "Denizen of the Deep"
 #define TRAIT_EMBALMED "embalmed" //stops rotting
+#define TRAIT_ENDOWMENT "Oversized Genitals"
 
 #define TRAIT_STATUS_EFFECT(effect_id) "[effect_id]-trait"
 #define SIGNAL_ADDTRAIT(trait_ref) ("addtrait " + trait_ref)

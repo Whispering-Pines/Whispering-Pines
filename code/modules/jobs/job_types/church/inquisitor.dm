@@ -296,10 +296,10 @@
 					if("Tenebrase")
 						held_confession.bad_type = "A FOLLOWER OF THE FORBIDDEN ONE"
 						held_confession.antag = "worshiper of " + antag_type
-					if("Werevolf")
+					if("Werewolf")
 						held_confession.bad_type = "A BEARER OF TENEBRASE'S CURSE"
 						held_confession.antag = antag_type
-					if("Lesser Werevolf")
+					if("Lesser Werewolf")
 						held_confession.bad_type = "A BEARER OF TENEBRASE'S CURSE"
 						held_confession.antag = antag_type
 					if("Vampire")

@@ -54,6 +54,8 @@
 	bleed_mod = 0.2
 	pain_mod = 0.2
 
+	var/wwbreastsize = 2
+
 /datum/species/halforc/get_span_language(datum/language/message_language)
 	if(!message_language)
 		return
@@ -65,19 +67,48 @@
 	playsound(get_turf(H), pick('sound/vo/mobs/wwolf/wolftalk1.ogg','sound/vo/mobs/wwolf/wolftalk2.ogg'), 100, TRUE, -1)
 
 /datum/species/werewolf/regenerate_icons(mob/living/carbon/human/H)
-	H.icon = 'icons/roguetown/mob/monster/werewolf.dmi'
+	H.icon = 'modular_whisper/icons/mob/monster/werewolf.dmi'
 	H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/simple/wereclaw, /datum/intent/simple/werebite)
-	if(H.gender == MALE)
-		if(H.sexcon.arousal >= 20 && H.sexcon.manual_arousal == 1 || H.sexcon.manual_arousal == 4)
+
+	 //checks if the person has genitals, for sprites.
+	var/obj/item/organ/penis/penis = H.stored_mob.getorganslot(ORGAN_SLOT_PENIS)
+	var/obj/item/organ/filling_organ/breasts/breasts = H.stored_mob.getorganslot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/filling_organ/vagina/vagina = H.stored_mob.getorganslot(ORGAN_SLOT_VAGINA)
+	if(breasts)
+		if(breasts.organ_size <= 2)
+			wwbreastsize = 1
+		else if(breasts.organ_size >= 4)
+			wwbreastsize = 3
+		else
+			wwbreastsize = 2
+	if(!H.sexcon)
+		H.sexcon = new /datum/sex_controller(src)
+
+	if(penis && !breasts && !vagina) //basic male
+		if(H.sexcon.arousal >= 20)
 			H.icon_state = "wwolf_m-e"
-		else if(H.sexcon.arousal >= 10 && H.sexcon.manual_arousal == 1 || H.sexcon.manual_arousal == 3)
+		else if (H.sexcon.arousal >= 10)
 			H.icon_state = "wwolf_m-p"
 		else
 			H.icon_state = "wwolf_m"
-	else
-		H.icon_state = "wwolf_f"
-	if(H.age == AGE_CHILD)
-		H.icon_state = "wwolf_c"
+	else if(!penis && breasts && vagina) //basic female
+		H.icon_state = "wwolf_f-[wwbreastsize]"
+	else if (penis && breasts && !vagina) //dicked female without vagina
+		if(H.sexcon.arousal >= 20)
+			H.icon_state = "wwolf_g-e-[wwbreastsize]"
+		else if (H.sexcon.arousal >= 10)
+			H.icon_state = "wwolf_g-p-[wwbreastsize]"
+		else
+			H.icon_state = "wwolf_g-[wwbreastsize]"
+	else if(penis && vagina) //dicked female with vagina
+		if(H.sexcon.arousal >= 20)
+			H.icon_state = "wwolf_g-e-[wwbreastsize]"
+		else if (H.sexcon.arousal >= 10)
+			H.icon_state = "wwolf_g-p-[wwbreastsize]"
+		else
+			H.icon_state = "wwolf_g-[wwbreastsize]"
+	else //you got no tools, sorry, or you're andro.
+		H.icon_state = "wwolf_n"
 	H.update_damage_overlays()
 	return TRUE
 
@@ -119,7 +150,7 @@
 	return TRUE
 
 /datum/species/werewolf/random_name(gender,unique,lastname)
-	return "WEREVOLF"
+	return "WEREWOLF"
 
 /datum/species/werewolf/check_species_weakness(obj/item, mob/living/attacker, mob/living/parent)
 	if(parent.has_status_effect(/datum/status_effect/debuff/silver_curse))
