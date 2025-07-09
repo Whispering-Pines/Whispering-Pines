@@ -8,6 +8,7 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
+	flags_inv = HIDECROTCH
 	boobed = TRUE
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
 	var/picked

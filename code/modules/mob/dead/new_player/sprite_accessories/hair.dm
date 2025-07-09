@@ -1216,7 +1216,18 @@
 	icon = 'icons/mob/sprite_accessory/hair/human_facial_hair.dmi'
 
 /datum/sprite_accessory/hair/facial/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	update_overlay(organ, owner)
 	return is_human_part_visible(owner, HIDEFACIALHAIR)
+
+/datum/sprite_accessory/hair/facial/proc/update_overlay(obj/item/organ/organ, mob/living/carbon/human/owner)
+	if(!owner || !ishuman(owner))
+		return
+	owner.cut_overlay(owner.fhair_overlay)
+	if(is_human_part_visible(owner, HIDEFACIALHAIR))
+		if(isresurgentis(owner))
+			owner.fhair_overlay = mutable_appearance(icon, icon_state, HAIR_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.get_hair_color())
+		owner.add_overlay(owner.fhair_overlay)
+
 
 /datum/sprite_accessory/hair/facial/shaved
 	name = "Shaved"

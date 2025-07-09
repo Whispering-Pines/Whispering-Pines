@@ -369,6 +369,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 
 //cloning pod
+//todo add emissive overlay
 /obj/machinery/fake_powered/cloning_pod
 	name = "Automated Cloning Pod"
 	desc = "Used to reclone people and defy old gods' way. Recloning is costly and tend to put people in debt to the kingdom."

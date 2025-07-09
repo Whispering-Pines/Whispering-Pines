@@ -60,7 +60,17 @@
 	return icon_state
 
 /datum/sprite_accessory/hair/head/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	update_overlay(organ, owner)
 	return is_human_part_visible(owner, HIDEHAIR)
+
+/datum/sprite_accessory/hair/head/proc/update_overlay(obj/item/organ/organ, mob/living/carbon/human/owner)
+	if(!owner || !ishuman(owner))
+		return
+	owner.cut_overlay(owner.hair_overlay)
+	if(is_human_part_visible(owner, HIDEHAIR))
+		if(isresurgentis(owner))
+			owner.hair_overlay = mutable_appearance(icon, icon_state, HAIR_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.get_hair_color())
+		owner.add_overlay(owner.hair_overlay)
 
 /datum/sprite_accessory/hair/head/bald
 	name = "Bald"

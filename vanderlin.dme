@@ -2931,4 +2931,5 @@
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
 #include "modular_whisper\code\modules\surgery\surgeries\resize_surgery.dm"
+#include "code\modules\mob\living\ssd_indicator.dm"
 // END_INCLUDE

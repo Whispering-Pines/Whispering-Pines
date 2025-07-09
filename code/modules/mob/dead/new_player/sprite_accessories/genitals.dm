@@ -124,7 +124,20 @@
 /datum/sprite_accessory/breasts/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(!organ.visible_organ)
 		return FALSE
+	update_nipple_overlay(organ, owner)
 	return is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT)
+
+/datum/sprite_accessory/breasts/proc/update_nipple_overlay(obj/item/organ/organ, mob/living/carbon/human/owner)
+	if(!owner || !ishuman(owner))
+		return
+	owner.cut_overlay(owner.nipple_overlay)
+	if(is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT))
+		if(isresurgentis(owner))
+			owner.nipple_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/nipples.dmi', "pair_[organ.organ_size]_FRONT", BODY_FFFFFRONT_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.get_hair_color()) //someone plz figure a way to put this behind fovs
+		else
+			owner.nipple_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/nipples.dmi', "pair_[organ.organ_size]_FRONT", BODY_FFFFFRONT_LAYER, GAME_PLANE_FOV_HIDDEN, 100, "#ffa0a2ff") //low alpha so it merges with skin color
+			owner.nipple_overlay.alpha = 100 //for some reason it isnt semi transparent anyway.
+		owner.add_overlay(owner.nipple_overlay)
 
 /datum/sprite_accessory/breasts/pair
 	icon_state = "pair"
@@ -154,7 +167,17 @@
 		return FALSE
 	if(owner.age == AGE_CHILD)
 		return FALSE
+	update_overlay(organ, owner)
 	return is_human_part_visible(owner, HIDECROTCH|HIDEBUTT|HIDEJUMPSUIT)
+
+/datum/sprite_accessory/vagina/proc/update_overlay(obj/item/organ/organ, mob/living/carbon/human/owner)
+	if(!owner || !ishuman(owner))
+		return
+	owner.cut_overlay(owner.vag_overlay)
+	if(is_human_part_visible(owner, HIDECROTCH|HIDEBUTT|HIDEJUMPSUIT))
+		if(isresurgentis(owner))
+			owner.vag_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/vagina.dmi', "[icon_state]_FRONT", BODY_FRONT_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.get_hair_color())
+		owner.add_overlay(owner.vag_overlay)
 
 /datum/sprite_accessory/vagina/human
 	icon_state = "human"

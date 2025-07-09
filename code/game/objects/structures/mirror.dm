@@ -35,7 +35,6 @@
 	var/list/options = list("hairstyle", "facial hairstyle", "hair color")
 	if(H.getorganslot(ORGAN_SLOT_VAGINA))
 		options += "vagina"
-		return
 	var/chosen = browser_input_list(user, "Change what?", "WHISPERING PINES", options)
 	var/should_update
 	switch(chosen)

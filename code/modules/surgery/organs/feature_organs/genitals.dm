@@ -24,13 +24,13 @@
 	id = "bigboobs"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/bigboobs
 	examine_text = span_notice("They have massive GOODS!")
-	effectedstats = list(STATKEY_CON = 1, STATKEY_END = -2, STATKEY_SPD = -1)
+	effectedstats = list(STATKEY_CON = 1, STATKEY_END = -2, STATKEY_SPD = -2)
 	duration = 1 MINUTES //should wear off if organ is removed, so.
 
 /datum/status_effect/debuff/bigboobs/lite
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/bigboobs/lite
 	examine_text = span_notice("They have massive GOODS!")
-	effectedstats = list(STATKEY_CON = 1)
+	effectedstats = list(STATKEY_CON = 1, STATKEY_END = -1, STATKEY_SPD = -1)
 
 /atom/movable/screen/alert/status_effect/debuff/bigboobs
 	name = "Oversized Genitals"
@@ -40,7 +40,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/bigboobs/lite
 	name = "Oversized Genitals (Supported)"
-	desc = "They feel as heavy as gold and are massive... But my body is strong enough to support them."
+	desc = "They feel as heavy as gold and are massive... But my body is strong enough to support them somewhat."
 	icon = 'modular_stonehedge/licensed-eaglephntm/icons/mob/screen_alert.dmi'
 	icon_state = "bigboobslite"
 

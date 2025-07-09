@@ -28,7 +28,7 @@
 	Their cannibal immoral sort are called 'reapers', for their history is related to undeath and are similiar to vultures thanks to their ability to feed on corpses.\
 	It is the most common slur towards all of Resurgentis kind.\
 	\n\n\
-	(Couldn't very well express the true species, through actual hair glow, and other bits glow they normally have unfortunately. Code help welcome.)"
+	(IF YOUR GLOWING BITS ARE EXPOSED THEY CAN BE SEEN THROUGH FOV BLOCKERS, I COULD NOT FIGURE A WAY AROUND. This is a coder cry for help.)"
 
 	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE, OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_ORGAN_EATER)
@@ -82,7 +82,7 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	specstats_m = list(STATKEY_STR = 1, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 0, STATKEY_SPD = -1, STATKEY_LCK = 0)
+	specstats_m = list(STATKEY_STR = 2, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 0, STATKEY_SPD = -1, STATKEY_LCK = 0)
 	specstats_f = list(STATKEY_STR = 1, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 0, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
 
 	enflamed_icon = "widefire"

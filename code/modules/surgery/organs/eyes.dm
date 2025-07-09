@@ -66,7 +66,7 @@
 		iris_overlay.color = used_color
 		. += iris_overlay
 		if(glows)
-			iris_overlay = mutable_appearance(icon, "[icon_state]-iris", plane = EMISSIVE_PLANE)
+			iris_overlay = mutable_appearance(icon, "[icon_state]-iris", plane = EMISSIVE_LAYER_UNBLOCKABLE)
 			iris_overlay.color = used_color
 			. += iris_overlay
 
