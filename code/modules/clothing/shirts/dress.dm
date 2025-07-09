@@ -7,6 +7,7 @@
 	item_state = "dress"
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
+	flags_inv = HIDEUNDIES|HIDEBELLY|HIDEBOOB|HIDECROTCH|HIDEBUTT
 	genital_access = TRUE
 
 /obj/item/clothing/shirt/dress/gen

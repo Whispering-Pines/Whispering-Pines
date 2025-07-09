@@ -14,6 +14,7 @@
 
 /mob/living/carbon/human/species/werewolf/child
 	age = AGE_CHILD
+	erpable = FALSE
 
 /datum/species/werewolf
 	name = "werewolf"
