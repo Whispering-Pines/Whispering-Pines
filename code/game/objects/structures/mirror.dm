@@ -32,8 +32,10 @@
 		return
 	var/mob/living/carbon/human/H = user
 
-
-	var/list/options = list("hairstyle", "facial hairstyle", "hair color", "skin", "detail", "eye color")
+	var/list/options = list("hairstyle", "facial hairstyle", "hair color")
+	if(H.getorganslot(ORGAN_SLOT_VAGINA))
+		options += "vagina"
+		return
 	var/chosen = browser_input_list(user, "Change what?", "WHISPERING PINES", options)
 	var/should_update
 	switch(chosen)
@@ -155,239 +157,22 @@
 			if(new_eyes)
 				eyes.eye_color = sanitize_hexcolor(new_eyes)
 				should_update = TRUE
-		if("penis")
-			var/list/valid_penis_types = list("none")
-			for(var/penis_path in subtypesof(/datum/sprite_accessory/penis))
-				var/datum/sprite_accessory/penis/penis = new penis_path()
-				valid_penis_types[penis.name] = penis_path
-
-			var/new_style = input(user, "Choose your penis type", "Penis Customization") as null|anything in valid_penis_types
-			if(new_style)
-				if(new_style == "none")
-					var/obj/item/organ/penis/penis = H.getorganslot(ORGAN_SLOT_PENIS)
-					if(penis)
-						penis.Remove(H)
-						qdel(penis)
-						H.update_body()
-						should_update = TRUE
-				else
-					var/obj/item/organ/penis/penis = H.getorganslot(ORGAN_SLOT_PENIS)
-					if(!penis)
-						penis = new()
-						penis.Insert(H, TRUE, FALSE)
-					penis.accessory_type = valid_penis_types[new_style]
-					penis.color = H.dna.features["mcolor"]
-					H.update_body()
-					should_update = TRUE
-
-		if("testicles")
-			var/list/valid_testicle_types = list("none")
-			for(var/testicle_path in subtypesof(/datum/sprite_accessory/testicles))
-				var/datum/sprite_accessory/testicles/testicles = new testicle_path()
-				valid_testicle_types[testicles.name] = testicle_path
-
-			var/new_style = input(user, "Choose your testicles type", "Testicles Customization") as null|anything in valid_testicle_types
-			if(new_style)
-				if(new_style == "none")
-					var/obj/item/organ/filling_organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
-					if(testicles)
-						testicles.Remove(H)
-						qdel(testicles)
-						H.update_body()
-						should_update = TRUE
-				else
-					var/obj/item/organ/filling_organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
-					if(!testicles)
-						testicles = new()
-						testicles.Insert(H, TRUE, FALSE)
-					testicles.accessory_type = valid_testicle_types[new_style]
-					testicles.color = H.dna.features["mcolor"]
-					H.update_body()
-					should_update = TRUE
-
-		if("breasts")
-			var/list/valid_breast_types = list("none")
-			for(var/breast_path in subtypesof(/datum/sprite_accessory/breasts))
-				var/datum/sprite_accessory/breasts/breasts = new breast_path()
-				valid_breast_types[breasts.name] = breast_path
-
-			var/new_style = input(user, "Choose your breast type", "Breast Customization") as null|anything in valid_breast_types
-
-			if(new_style)
-				if(new_style == "none")
-					var/obj/item/organ/filling_organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
-					if(breasts)
-						breasts.Remove(H)
-						qdel(breasts)
-						H.update_body()
-						should_update = TRUE
-				else
-					var/obj/item/organ/filling_organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
-					if(!breasts)
-						breasts = new()
-						breasts.Insert(H, TRUE, FALSE)
-
-					breasts.accessory_type = valid_breast_types[new_style]
-					breasts.color = H.dna.features["mcolor"]
-					H.update_body()
-					should_update = TRUE
 
 		if("vagina")
-			var/list/valid_vagina_types = list("none", "human", "hairy", "spade", "furred", "gaping", "cloaca")
-			var/new_style = input(user, "Choose your vagina type", "Vagina Customization") as null|anything in valid_vagina_types
+			var/list/valid_vagina_types = list("human" = /datum/sprite_accessory/vagina/human, "hairy" = /datum/sprite_accessory/vagina/hairy, "extra hairy" = /datum/sprite_accessory/vagina/extrahairy, "furred" = /datum/sprite_accessory/vagina/furred, "gaping" = /datum/sprite_accessory/vagina/gaping,)
+			var/new_style = input(user, "Choose your vagina type", "Vagina Customization") as anything in valid_vagina_types
 
 			if(new_style)
-				if(new_style == "none")
-					var/obj/item/organ/filling_organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
-					if(vagina)
-						vagina.Remove(H)
-						qdel(vagina)
-						H.update_body()
-						should_update = TRUE
-				else
-					var/obj/item/organ/filling_organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
-					if(!vagina)
-						vagina = new()
-						vagina.Insert(H, TRUE, FALSE)
-					vagina.accessory_type = valid_vagina_types[new_style]
-
-					var/new_color = color_pick_sanitized(user, "Choose your vagina color", "Vagina Color", vagina.color || H.dna.features["mcolor"])
-					if(new_color)
-						vagina.color = sanitize_hexcolor(new_color, 6, TRUE)
-					else
-						vagina.color = H.dna.features["mcolor"]
-
-					H.update_body()
-					should_update = TRUE
-
-		if("breast size")
-			var/list/breast_sizes = list("flat", "very small", "small", "average", "large", "enormous")
-			var/new_size = input(user, "Choose your breast size", "Breast Size") as null|anything in breast_sizes
-			if(new_size)
-				var/obj/item/organ/filling_organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
-				if(breasts)
-					var/size_num
-					switch(new_size)
-						if("flat")
-							size_num = 0
-						if("very small")
-							size_num = 1
-						if("small")
-							size_num = 2
-						if("average")
-							size_num = 3
-						if("large")
-							size_num = 4
-						if("enormous")
-							size_num = 5
-
-					breasts.organ_size = size_num
-					H.update_body()
-					should_update = TRUE
-
-		if("penis size")
-			var/list/penis_sizes = list("small", "average", "large")
-			var/new_size = input(user, "Choose your penis size", "Penis Size") as null|anything in penis_sizes
-			if(new_size)
-				var/obj/item/organ/penis/penis = H.getorganslot(ORGAN_SLOT_PENIS)
-				if(penis)
-					var/size_num
-					switch(new_size)
-						if("small")
-							size_num = 1
-						if("average")
-							size_num = 2
-						if("large")
-							size_num = 3
-
-					penis.organ_size = size_num
-					H.update_body()
-					should_update = TRUE
-
-		if("testicle size")
-			var/list/testicle_sizes = list("small", "average", "large")
-			var/new_size = input(user, "Choose your testicle size", "Testicle Size") as null|anything in testicle_sizes
-			if(new_size)
-				var/obj/item/organ/filling_organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
-				if(testicles)
-					var/size_num
-					switch(new_size)
-						if("small")
-							size_num = 1
-						if("average")
-							size_num = 2
-						if("large")
-							size_num = 3
-
-					testicles.organ_size = size_num
-					H.update_body()
-					should_update = TRUE
-
-		if("tail")
-			var/list/valid_tails = list("none")
-			for(var/tail_path in subtypesof(/datum/sprite_accessory/tail))
-				var/datum/sprite_accessory/tail/tail = new tail_path()
-				valid_tails[tail.name] = tail_path
-
-			var/new_style = input(user, "Choose your tail", "Tail Customization") as null|anything in valid_tails
-			if(new_style)
-				if(new_style == "none")
-					var/obj/item/organ/tail/tail = H.getorganslot(ORGAN_SLOT_TAIL)
-					if(tail)
-						tail.Remove(H)
-						qdel(tail)
-						H.update_body()
-						should_update = TRUE
-				else
-					var/obj/item/organ/tail/tail = H.getorganslot(ORGAN_SLOT_TAIL)
-					if(!tail)
-						tail = new /obj/item/organ/tail/anthro()
-						tail.Insert(H, TRUE, FALSE)
-					tail.accessory_type = valid_tails[new_style]
-					var/datum/sprite_accessory/tail/tail_type = SPRITE_ACCESSORY(tail.accessory_type)
-					tail.accessory_colors = tail_type.get_default_colors(list())
-					H.update_body()
-					should_update = TRUE
-
-		if("tail color one")
-			var/obj/item/organ/tail/tail = H.getorganslot(ORGAN_SLOT_TAIL)
-			if(tail)
-				var/new_color = color_pick_sanitized(user, "Choose your primary tail color", "Tail Color One", "#FFFFFF")
+				var/obj/item/organ/filling_organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
+				var/new_color = color_pick_sanitized(user, "Choose your vagina color", "Vagina Color", vagina.color || H.dna.features["mcolor"])
 				if(new_color)
-					tail.Remove(H)
-					var/list/colors = list()
-					if(tail.accessory_colors)
-						colors = color_string_to_list(tail.accessory_colors)
-					if(!length(colors))
-						colors = list("#FFFFFF", "#FFFFFF") // Default colors if none set
-					colors[1] = sanitize_hexcolor(new_color, 6, TRUE)
-					tail.accessory_colors = color_list_to_string(colors)
-					tail.Insert(H, TRUE, FALSE)
-					H.dna.features["tail_color"] = colors[1]  // Update DNA features
-					H.update_body()
-					should_update = TRUE
-			else
-				to_chat(user, span_warning("You don't have a tail!"))
+					vagina.color = sanitize_hexcolor(new_color, 6, TRUE)
+				else
+					vagina.color = H.dna.features["mcolor"]
 
-		if("tail color two")
-			var/obj/item/organ/tail/tail = H.getorganslot(ORGAN_SLOT_TAIL)
-			if(tail)
-				var/new_color = color_pick_sanitized(user, "Choose your secondary tail color", "Tail Color Two", "#FFFFFF")
-				if(new_color)
-					tail.Remove(H)
-					var/list/colors = list()
-					if(tail.accessory_colors)
-						colors = color_string_to_list(tail.accessory_colors)
-					if(!length(colors))
-						colors = list("#FFFFFF", "#FFFFFF") // Default colors if none set
-					colors[2] = sanitize_hexcolor(new_color, 6, TRUE)
-					tail.accessory_colors = color_list_to_string(colors)
-					tail.Insert(H, TRUE, FALSE)
-					H.dna.features["tail_color2"] = colors[2]  // Update DNA features
-					H.update_body()
-					should_update = TRUE
-			else
-				to_chat(user, span_warning("You don't have a tail!"))
+				vagina.set_accessory_type(valid_vagina_types[new_style], vagina.color)
+				H.update_body_parts(TRUE)
+				should_update = TRUE
 
 	if(should_update)
 		H.update_body()

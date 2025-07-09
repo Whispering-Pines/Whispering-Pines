@@ -79,8 +79,8 @@
 	if(!mind)
 		log_runtime("NO MIND ON [src.name] WHEN TRANSFORMING")
 	Paralyze(1, ignore_canstun = TRUE)
-	for(var/obj/item/W in src)
-		dropItemToGround(W)
+	for(var/obj/item/stuff in src)
+		dropItemToGround(stuff)
 	icon = null
 	var/oldinv = invisibility
 	invisibility = INVISIBILITY_MAXIMUM
@@ -219,7 +219,7 @@
 		vagina = new /obj/item/organ/filling_organ/vagina/internal
 		vagina.Insert(W, TRUE)
 
-	regenerate_icons()
+	W.regenerate_icons()
 
 	invisibility = oldinv
 

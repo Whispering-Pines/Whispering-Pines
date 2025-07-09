@@ -40,3 +40,21 @@
 	output = /obj/item/leash/leather
 	requirements = list(/obj/item/natural/hide/cured = 1)
 	craftdiff = 0
+
+/datum/anvil_recipe/tools/isyringe
+	name = "iron syringe (x3)"
+	i_type = "Utilities"
+	created_item = /obj/item/reagent_containers/syringe/iron
+	req_bar = /obj/item/ingot/iron
+	createmultiple = TRUE
+	createditem_num = 2
+	craftdiff = 1
+
+/datum/anvil_recipe/tools/ssyringe
+	name = "steel syringe (x3)"
+	i_type = "Utilities"
+	created_item = /obj/item/reagent_containers/syringe/steel
+	req_bar = /obj/item/ingot/steel
+	createmultiple = TRUE
+	createditem_num = 2
+	craftdiff = 1

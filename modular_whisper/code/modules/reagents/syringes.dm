@@ -18,6 +18,10 @@
 /obj/item/reagent_containers/syringe/steel
 	name = "steel syringe"
 
+/obj/item/reagent_containers/syringe/iron
+	name = "iron syringe"
+	color = "#998ea4"
+
 /obj/item/reagent_containers/syringe/Initialize()
 	. = ..()
 	if(list_reagents) //syringe starts in inject mode if its already got something inside
