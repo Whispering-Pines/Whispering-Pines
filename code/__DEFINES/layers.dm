@@ -161,7 +161,7 @@
 /// The render target used by the emissive layer.
 #define EMISSIVE_RENDER_TARGET "*EMISSIVE_RENDER_TARGET"
 /// The layer you should use if you _really_ don't want an emissive overlay to be blocked.
-#define EMISSIVE_LAYER_UNBLOCKABLE 9999
+#define EMISSIVE_LAYER_UNBLOCKABLE 210
 
 //---------------- MISC -----------------------
 ///AI Camera Static

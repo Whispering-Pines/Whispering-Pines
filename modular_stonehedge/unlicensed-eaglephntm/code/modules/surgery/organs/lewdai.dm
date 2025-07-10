@@ -50,6 +50,8 @@
 	var/mutable_appearance/vag_overlay
 	var/mutable_appearance/hair_overlay
 	var/mutable_appearance/fhair_overlay
+	var/mutable_appearance/eye_overlay
+	var/mutable_appearance/eye_overlay2
 
 //--------------simple mobs ----------------
 //sex stuff brainrot for things like werevolves --vide noir

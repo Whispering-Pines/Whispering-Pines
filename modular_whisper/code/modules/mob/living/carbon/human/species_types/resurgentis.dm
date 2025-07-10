@@ -19,8 +19,8 @@
 	Resurgentis live about as long as any human, but their fertility is nearly as bad as elves, therefore their libido tends to be a saving point.\
 	\n\n\
 	-Essence-\
-	White 'essence' (hair, eyes) resurgentis are the rarest of all, and are usually nobility or... premium slaves.\
-	<bold>It is abominable to sport different eye, beard etc essence colors than your hair, and so on. It means your essence is murked and you are not pureblooded or are deformed</bold>.\
+	White 'essence' resurgentis are the rarest of all, and are usually nobility or... premium slaves.\
+	<bold>It is abominable to have a mixed essence color. It means your essence is murked, you are not pureblooded or are deformed</bold>.\
 	Half-resurgentis are still fullblooded resurgentis due their oppressive genes, except with likely disabilities and murked essence,\
 	still taking subtle physical traits of other species,\
 	Older resurgentis' essence grows dimmer, as it's directly connected to their blood and wellbeing.\
@@ -28,7 +28,7 @@
 	Their cannibal immoral sort are called 'reapers', for their history is related to undeath and are similiar to vultures thanks to their ability to feed on corpses.\
 	It is the most common slur towards all of Resurgentis kind.\
 	\n\n\
-	(IF YOUR GLOWING BITS ARE EXPOSED THEY CAN BE SEEN THROUGH FOV BLOCKERS, I COULD NOT FIGURE A WAY AROUND. This is a coder cry for help.)"
+	<i>(IF YOUR GLOWING BITS ARE EXPOSED THEY CAN BE SEEN THROUGH FOV BLOCKERS, I COULD NOT FIGURE A WAY AROUND. This is a coder cry for help.)</i>"
 
 	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE, OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_ORGAN_EATER)
@@ -82,6 +82,7 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
+	//i guess more than usual stats for having major visibility disadvantage. (4)
 	specstats_m = list(STATKEY_STR = 2, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 0, STATKEY_SPD = -1, STATKEY_LCK = 0)
 	specstats_f = list(STATKEY_STR = 1, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 0, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
 

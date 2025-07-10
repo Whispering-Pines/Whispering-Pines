@@ -204,6 +204,15 @@
 	else
 		return "FFFFFF"
 
+/datum/preferences/proc/get_eye_second_color()
+	var/datum/customizer_entry/organ/eyes/entry = get_customizer_entry_of_type(/datum/customizer_entry/organ/eyes)
+	if(entry)
+		if(!entry.heterochromia)
+			return entry.eye_color
+		return entry.second_color
+	else
+		return "FFFFFF"
+
 /datum/preferences/proc/get_chest_color()
 	var/list/zone_list = body_markings[BODY_ZONE_CHEST]
 	if(!zone_list)

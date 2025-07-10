@@ -302,6 +302,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		working = FALSE
 		open()
 		return
+	working = FALSE
 	if(victim.blood_volume > 0 && !opened)
 		if(victim.stat != DEAD)
 			victim.SetParalyzed(5 SECONDS)
@@ -309,22 +310,20 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		else
 			sleep(3 SECONDS) //corpses have no heartbeat to help
 		if(!(victim in contents)) //incase they moved while sleep.
-			working = FALSE
-			open()
 			return
 		balloon_alert_to_viewers("pumps [victim]'s blood.")
-		victim.transfer_blood_to(src, 50, TRUE)
+		victim.transfer_blood_to(src, 25, TRUE)
 		addtimer(CALLBACK(src, PROC_REF(suckening_cycle), victim), 1 SECONDS, TIMER_STOPPABLE) //so the parent proc can keep going.
 	else if(reagents.total_volume >= reagents.maximum_volume)
 		playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		say("Blood tank is full and must be emptied before proceeding.", language = /datum/language/ancient_english)
 		if(!opened)
 			open()
-	else if(victim.blood_volume <= 0)
+	else if(victim.blood_volume <= BLOOD_VOLUME_SURVIVE)
 		victim.apply_status_effect(/datum/status_effect/debuff/blood_drained)
 		victim.add_stress(/datum/mood_event/blood_drained)
 		playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
-		say("No blood remaining in subject.", language = /datum/language/ancient_english)
+		say("Subject blood in critical levels.", language = /datum/language/ancient_english)
 		if(!opened)
 			open()
 	else if(!(victim in contents))
@@ -354,8 +353,8 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 /datum/status_effect/debuff/blood_drained
 	id = "blood_drained"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/blood_drained
-	effectedstats = list(STATKEY_SPD = -2, STATKEY_STR = -2, STATKEY_CON = -2, STATKEY_END = -2, STATKEY_PER = -2, STATKEY_LCK = -2)
-	duration = 10 MINUTES
+	effectedstats = list(STATKEY_SPD = -2, STATKEY_STR = -2, STATKEY_CON = -2, STATKEY_END = -2, STATKEY_PER = -2)
+	duration = 5 MINUTES
 
 /atom/movable/screen/alert/status_effect/debuff/blood_drained
 	name = "Drained of lifeblood."
@@ -363,9 +362,9 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	icon_state = "muscles"
 
 /datum/mood_event/blood_drained
-	description = "<span class='nicered'>All my blood was taken....</span>\n"
-	mood_change = -4
-	timeout = 7 MINUTES
+	description = "<span class='nicered'>All my blood was taken...</span>\n"
+	mood_change = -3
+	timeout = 5 MINUTES
 
 
 //cloning pod
@@ -534,7 +533,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	if(victim.blood_volume > BLOOD_VOLUME_SURVIVE)
 		victim.SetParalyzed(2.5 SECONDS)
 		balloon_alert_to_viewers("pumps [victim]'s blood.")
-		victim.transfer_blood_to(src, 50)
+		victim.transfer_blood_to(src, 25)
 		sleep(2 SECONDS)
 		if(!(victim in contents)) //incase they moved while sleep.
 			working = FALSE

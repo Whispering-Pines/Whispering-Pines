@@ -1225,8 +1225,23 @@
 	owner.cut_overlay(owner.fhair_overlay)
 	if(is_human_part_visible(owner, HIDEFACIALHAIR))
 		if(isresurgentis(owner))
-			owner.fhair_overlay = mutable_appearance(icon, icon_state, HAIR_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.get_hair_color())
-		owner.add_overlay(owner.fhair_overlay)
+			owner.fhair_overlay = mutable_appearance(icon, icon_state, HAIR_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 100, owner.get_hair_color())
+			owner.fhair_overlay.alpha = 100
+		if(owner.fhair_overlay)
+			var/use_female_sprites = FALSE
+			if(owner.dna.species?.sexes)
+				if(owner.gender == FEMALE && !owner.dna.species.swap_female_clothes || owner.gender == MALE && owner.dna.species.swap_male_clothes)
+					use_female_sprites = FEMALE_SPRITES
+			var/list/offsets
+			if(use_female_sprites)
+				offsets = owner.dna.species.offset_features_f
+			else
+				offsets = owner.dna.species.offset_features_m
+
+			if(LAZYACCESS(offsets, OFFSET_HEAD))
+				owner.fhair_overlay.pixel_x += offsets[OFFSET_HEAD][1]
+				owner.fhair_overlay.pixel_y += offsets[OFFSET_HEAD][2]
+			owner.add_overlay(owner.fhair_overlay)
 
 
 /datum/sprite_accessory/hair/facial/shaved

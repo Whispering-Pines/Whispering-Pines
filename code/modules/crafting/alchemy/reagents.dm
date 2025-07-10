@@ -17,7 +17,9 @@
 
 /datum/reagent/medicine/minorhealthpot/on_mob_life(mob/living/carbon/M) // Heals half as much as health potion, but not wounds.
 	var/list/wCount = M.get_wounds()
-	if(M.blood_volume < BLOOD_VOLUME_NORMAL) //can not overfill
+	if(M.blood_volume < BLOOD_VOLUME_SURVIVE)
+		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
+	else
 		M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
 	if(wCount.len > 0)
 		M.heal_wounds(10)
@@ -62,11 +64,10 @@
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
 	var/list/wCount = M.get_wounds()
-	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
+	if(M.blood_volume < BLOOD_VOLUME_SURVIVE)
 		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
 	else
-		//can overfill you with blood, but at a slower rate
-		M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_MAXIMUM)
+		M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
 	if(wCount.len > 0)
 		//some peeps dislike the church, this allows an alternative thats not a doctor or sleep.
 		M.heal_wounds(20)
@@ -92,10 +93,10 @@
 
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
 	var/list/wCount = M.get_wounds()
-	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
+	if(M.blood_volume < BLOOD_VOLUME_SURVIVE)
 		M.blood_volume = min(M.blood_volume+40, BLOOD_VOLUME_MAXIMUM)
 	else
-		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
+		M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_MAXIMUM)
 	if(wCount.len > 0)
 		M.heal_wounds(30)
 		M.update_damage_overlays()

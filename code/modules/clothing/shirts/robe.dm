@@ -7,7 +7,7 @@
 	icon = 'icons/roguetown/clothing/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
-	flags_inv = HIDEBOOB
+	flags_inv = HIDEBOOB|HIDEBELLY|HIDECROTCH|HIDEBUTT
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	resistance_flags = FLAMMABLE
