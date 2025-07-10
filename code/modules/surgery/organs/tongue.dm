@@ -18,8 +18,9 @@
 		/datum/language/celestial,
 		/datum/language/hellspeak,
 		/datum/language/beast,
-		/datum/language/orcish,
 		/datum/language/ancient_english
+		/datum/language/thievescant,
+		/datum/language/orcish
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
