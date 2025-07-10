@@ -35,7 +35,10 @@
 
 	if(randomise_flags & RANDOMIZE_SKIN_TONE)
 		var/list/skin_list = pref_species.get_skin_list()
-		skin_tone = pick_assoc(skin_list)
+		if(length(skin_list))
+			skin_tone = pick_assoc(skin_list)
+		else
+			skin_tone = random_color()
 
 	if(randomise_flags & RANDOMIZE_EYE_COLOR)
 		eye_color = random_eye_color()

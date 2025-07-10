@@ -1,5 +1,3 @@
-#define COMSIG_MOB_EJACULATED "mob_ejaculated"
-
 /datum/sex_controller
 	/// The user and the owner of the controller
 	var/mob/living/user
@@ -235,7 +233,7 @@
 
 /datum/sex_controller/proc/ejaculate()
 	if(!issimple(user))
-		SEND_SIGNAL(user, COMSIG_MOB_EJACULATED)
+		user.obj_sex_cum()
 		log_combat(user, user, "Ejaculated")
 	if(user.erpable && prob(10) && (!user.client && !user.mind) && !user.seeksfuck) //chance to start being horny.
 		user.seeksfuck = TRUE
@@ -727,6 +725,7 @@
 
 /datum/sex_controller/proc/try_start_action(action_type)
 	if(action_type == current_action)
+		try_stop_current_action()
 		return
 	if(current_action != null)
 		try_stop_current_action()
@@ -1029,27 +1028,28 @@
 		if(SEX_SPEED_EXTREME)
 			speed_mult = 4.5
 
-	RegisterSignal(victim.sexcon, COMSIG_MOB_EJACULATED, PROC_REF(obj_sex_cum), victim)
 	var/obj/item/organ/filling_organ/cameloc = victim.getorganslot(organ_slot)
 	while(do_after(victim, (3.3 SECONDS / speed_mult), src, IGNORE_INCAPACITATED|IGNORE_USER_DOING, max_interact_count = 5))
 		playsound(src, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 		do_thrust_animate(src, src) //thrust towards itself incase the thing is in contents.
 		victim.do_jitter_animation(5*force)
-		victim.sexcon.perform_sex_action(victim, 2.4*victim.sexcon.get_force_pleasure_multiplier(force, FALSE), ((2*victim.sexcon.get_force_pain_multiplier(force))*victim.sexcon.get_speed_pain_multiplier(speed)), TRUE)
+		victim.sexcon.perform_sex_action(victim, 2.4*victim.sexcon.get_force_pleasure_multiplier(force, FALSE), ((4*victim.sexcon.get_force_pain_multiplier(force))*victim.sexcon.get_speed_pain_multiplier(speed)), TRUE)
 		victim.sexcon.handle_passive_ejaculation()
 		if(victim.sexcon.do_message_signature("objectsex"))
 			if(cameloc && victim.getorganslot(organ_slot))
-				to_chat(victim, "[force_span][name] [force_adj] works [victim.name]'s [pick(cameloc.altnames)].</span>")
+				to_chat(victim, "[force_span][name] [force_adj] fucks [victim.name]'s [pick(cameloc.altnames)].</span>")
 				if(prob(5*(speed+force)) && can_cum)
 					to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [pick(cameloc.altnames)]!"))
 					cameloc.reagents.add_reagent(cum_type, cum_amt)
+					playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+					add_cum_floor(get_turf(src))
 			else
 				to_chat(victim, "[force_span][name] [force_adj] fucks [victim.name]'s [organ_slot].</span>") //fake message basically for unknown organs, such as mouth.
 				if(prob(5*(speed+force)) && can_cum)
 					to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [organ_slot]!"))
 					victim.reagents.add_reagent(cum_type, cum_amt)
-			playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-			add_cum_floor(get_turf(src))
+					playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+					add_cum_floor(get_turf(src))
 	//ending
 	if(cameloc && victim.getorganslot(organ_slot))
 		balloon_alert_to_viewers("Disconnects from [victim]'s [pick(cameloc.altnames)]")
@@ -1058,26 +1058,42 @@
 		balloon_alert_to_viewers("Disconnects from [victim]'s [organ_slot]")
 		visible_message("[src] disconnects from [victim]'s [organ_slot]")
 	playsound(loc, pick('modular_whisper/sound/cork_pop.ogg','modular_whisper/sound/cork_pop (2).ogg'), 50, TRUE, ignore_walls = FALSE) //funny noises
-	UnregisterSignal(victim.sexcon, COMSIG_MOB_EJACULATED)
 
-/obj/proc/obj_sex_cum(mob/living/user)
-	SIGNAL_HANDLER
-	if(ishuman(user))
-		var/mob/living/carbon/human/humanuser = user
-		//milker checks
-		for(var/obj/structure/chair/fake_powered/milker/milkmachine in range(0,user))
-			milkmachine.balloon_alert_to_viewers("Sucks up [humanuser.name]'s juices!")
+/mob/living/proc/obj_sex_cum()
+	//checks for said objects under mob
+	if(!ishuman(src))
+		return
+	var/mob/living/carbon/human/humanuser = src
+	//milker checks
+	for(var/obj/structure/chair/fake_powered/milker/milkmachine in range(0,src))
+		milkmachine.balloon_alert_to_viewers("Sucks up [name]'s juices!")
+		if(getorganslot(ORGAN_SLOT_VAGINA)) //since no pussyjuice
+			milkmachine.reagents.add_reagent(/datum/reagent/water/pussjuice, 15)
+		for(var/obj/item/organ/filling_organ/forgan in humanuser.internal_organs)
+			forgan.reagents.trans_to(milkmachine, forgan.reagents.maximum_volume/6)
+			if(forgan.reagents.total_volume <= 15 && forgan.refilling)
+				milkmachine.say("Low fluids remaining in [forgan.name]", language = /datum/language/ancient_english)
+	//elfbane checks
+	for(var/obj/structure/flora/grass/maneater/real/elfbane/elfy in range(0,src))
+		elfy.balloon_alert_to_viewers("Sucks up [name]'s juices!")
+		playsound(src, pick('modular_whisper/sound/gulp.ogg','modular_whisper/sound/slurp.ogg'), 50, TRUE, ignore_walls = FALSE) //funny noises
+		if(getorganslot(ORGAN_SLOT_VAGINA)) //since no pussyjuice
+			elfy.seednutrition += 10
+		for(var/obj/item/organ/filling_organ/forgan in humanuser.internal_organs)
+			var/amount_taken = forgan.reagents.maximum_volume/6
+			elfy.seednutrition += amount_taken
+			forgan.reagents.remove_any(amount_taken)
+	//Sexgenerator
+	for(var/obj/structure/chair/sexgenerator/sexgen in range(0,src))
+		if(sexgen.toggled && sexgen.charge_stored)
 			for(var/obj/item/organ/filling_organ/forgan in humanuser.internal_organs)
-				forgan.reagents.trans_to(milkmachine, forgan.reagents.maximum_volume/4)
-				if(forgan.reagents.total_volume <= 15 && forgan.refilling)
-					milkmachine.say("Low fluids remaining in [forgan.name]", language = /datum/language/ancient_english)
-		//elfbane checks
-		for(var/obj/structure/flora/grass/maneater/real/elfbane/elfy in range(0,user))
-			elfy.balloon_alert_to_viewers("Sucks up [humanuser.name]'s juices!")
-			playsound(src, pick('modular_whisper/sound/gulp.ogg','modular_whisper/sound/slurp.ogg'), 50, TRUE, ignore_walls = FALSE) //funny noises
-			if(user.getorganslot(ORGAN_SLOT_VAGINA)) //since no pussyjuice
-				elfy.seednutrition += 10
-			for(var/obj/item/organ/filling_organ/forgan in humanuser.internal_organs)
-				var/amount_taken = forgan.reagents.maximum_volume/4
-				elfy.seednutrition += amount_taken
-				forgan.reagents.remove_any(amount_taken)
+				to_chat(src, "I feel lightnings burn through my [forgan.name]!")
+				forgan.applyOrganDamage(sexgen.charge_stored, 100)
+			sexgen.balloon_alert_to_viewers("Short circuits due to [name]'s juices!")
+			sexgen.unbuckle_mob(src)
+			var/turf/target = get_ranged_target_turf(src, pick(GLOB.alldirs), 3)
+			explosion(sexgen.loc,0,0,2,1, flame_range = 1, hotspot_range = 1)
+			electrocute_act(min(sexgen.charge_stored, 100), sexgen) //you could get hit with 1k+ damage if the generator is fully charged so i cap it at 100
+			throw_at(target, 3, 2)
+			sexgen.charge_stored = 2
+			emote("painscream")

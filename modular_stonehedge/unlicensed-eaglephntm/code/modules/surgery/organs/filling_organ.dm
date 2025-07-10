@@ -240,7 +240,7 @@
 //added and removed by filling_organs
 /datum/status_effect/debuff/bloatone
 	id = "bloatone"
-	duration = 5 MINUTES
+	duration = 1 MINUTES
 	alert_type = /atom/movable/screen/alert/status_effect/bloatone
 	examine_text = span_notice("Their belly is bulging...")
 	effectedstats = list("constitution" = 1, "speed" = -1)
@@ -253,7 +253,7 @@
 
 /datum/status_effect/debuff/bloattwo
 	id = "bloattwo"
-	duration = 5 MINUTES
+	duration = 1 MINUTES
 	alert_type = /atom/movable/screen/alert/status_effect/bloattwo
 	examine_text = span_notice("Their belly is bulging largely...")
 	effectedstats = list("constitution" = 2, "speed" = -2)
@@ -316,7 +316,7 @@
 	high_threshold_cleared = "<span class='info'>The pain in my guts die down for now.</span>"
 	low_threshold_cleared = "<span class='info'>The last bouts of pain in my guts have died out.</span>"
 
-	max_reagents = 20 //less size than vagene in turn for more effective absorbtion
+	max_reagents = 150 //more size than vagene and more absorbtion speed cuz built for it
 	absorbing = TRUE
 	absorbmult = 1.5 //more effective absorb than others i guess.
 	altnames = list("ass", "asshole", "butt", "butthole", "guts") //used in thought messages.

@@ -330,7 +330,7 @@
 				return
 			if(INTENT_JUMP)
 				jump_action(A)
-				check_funny_knockdown(A)
+				check_funny_knockdown(src)
 			if(INTENT_BITE)
 				if(!A.Adjacent(src))
 					return

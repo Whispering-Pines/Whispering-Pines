@@ -35,14 +35,20 @@
 	description = "A parasite."
 	harmful = TRUE
 	metabolization_rate = REAGENTS_SLOW_METABOLISM
-	toxpwr = 1.5
-	nausea = 1
+	//silent bitches except... status effect.
+	dwarf_toxpwr = 0
+	dwarf_nausea = 0
+	toxpwr = 0
+	nausea = 0
 
 /datum/reagent/toxin/parasite/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	if(prob(50))
-		M.apply_status_effect(/datum/status_effect/debuff/parasite)
-		to_chat(M, span_warning("Ough...I feel sick."))
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(HAS_TRAIT(H, TRAIT_ROT_EATER) || HAS_TRAIT(H, TRAIT_ORGAN_EATER))
+			return
+		if(prob(25)) //some got a chance not to survive ig
+			H.apply_status_effect(/datum/status_effect/debuff/parasite)
 
 /datum/status_effect/debuff/parasite
 	id = "parasite"

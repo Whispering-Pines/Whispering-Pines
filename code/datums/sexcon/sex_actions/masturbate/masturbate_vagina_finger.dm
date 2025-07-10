@@ -27,7 +27,7 @@
 
 /datum/sex_action/masturbate_vagina_finger/on_start(mob/living/user, mob/living/target)
 	..()
-	user.visible_message(span_warning("[user] starts stroking her clit..."))
+	user.visible_message(span_warning("[user] starts fingering her [pick("slit","cunt","pussy","snatch")]..."))
 
 /datum/sex_action/masturbate_vagina_finger/on_perform(mob/living/user, mob/living/target)
 	if(user.sexcon.do_message_signature("[type]"))

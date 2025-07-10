@@ -29,10 +29,10 @@
 	target.virginity = FALSE
 
 	if(user.sexcon.considered_limp())
-		user.sexcon.perform_sex_action(user, 8, 0, TRUE)
+		user.sexcon.perform_sex_action(user, 4, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 2, 3, FALSE)
 	else
-		user.sexcon.perform_sex_action(user, 8, 0, TRUE)
+		user.sexcon.perform_sex_action(user, 4, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 4, 7, FALSE)
 	target.sexcon.handle_passive_ejaculation()
 

@@ -190,7 +190,7 @@
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_VAGINA
 	accessory_type = /datum/sprite_accessory/vagina/human
-	max_reagents = 40 //big cap, ordinary absorbtion.
+	max_reagents = 60 //big cap, ordinary absorbtion.
 	absorbing = TRUE
 	fertility = TRUE
 	altnames = list("vagina", "cunt", "womb", "pussy", "slit", "kitty", "snatch") //used in thought messages.
@@ -316,7 +316,7 @@
 	reagent_to_make = /datum/reagent/consumable/cum
 	refilling = TRUE
 	reagent_generate_rate = 6
-	storage_per_size = 200 //more size since they have so little size selections.
+	storage_per_size = 60 //more size since they have so little size selections.
 	organ_sizeable = TRUE
 	altnames = list("balls", "testicles", "testes", "orbs", "cum tanks", "seed tanks") //used in thought messages.
 	startsfilled = TRUE

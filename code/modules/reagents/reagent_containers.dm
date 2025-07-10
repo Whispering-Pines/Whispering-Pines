@@ -34,6 +34,8 @@
 	var/short_cooktime = FALSE
 	/// Long cooktime, when low cooking skill
 	var/long_cooktime = FALSE
+	///breaks when thrown
+	var/fragile = FALSE
 
 	COOLDOWN_DECLARE(weather_act_cooldown)
 
@@ -105,6 +107,7 @@
 /obj/item/reagent_containers/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	SplashReagents(hit_atom, TRUE)
+	try_shatter(hit_atom)
 
 /obj/item/reagent_containers/proc/bartender_check(atom/target)
 	. = FALSE
@@ -112,7 +115,10 @@
 		. = TRUE
 
 /obj/item/reagent_containers/proc/SplashReagents(atom/target, thrown = FALSE)
-	if(!reagents || !reagents.total_volume || !spillable)
+	if(!reagents || !reagents.total_volume)
+		return
+
+	if(!fragile && !spillable && thrown) //fragile stuff break and spill anyway.
 		return
 
 	if(ismob(target) && target.reagents)
@@ -143,11 +149,11 @@
 				log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 				message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
 		visible_message("<span class='notice'>[src] spills its contents all over [target].</span>")
-		reagents.reaction(target, TOUCH)
 		if(QDELETED(src))
 			return
 
 	reagents.clear_reagents()
+	update_appearance(UPDATE_OVERLAYS)
 
 /obj/item/reagent_containers/heating_act()
 	reagents.expose_temperature(1000)
@@ -191,3 +197,14 @@
 	var/datum/reagent/master = reagents.get_master_reagent()
 	if(master?.glows)
 		. += emissive_appearance(filling.icon, filling.icon_state, alpha = filling.alpha)
+
+/obj/item/reagent_containers/proc/try_shatter(turf/T)
+	if(!fragile)
+		return
+	if(istransparentturf(T))
+		try_shatter(GET_TURF_BELOW(T))
+		return
+	playsound(loc, 'sound/foley/glassbreak.ogg', 100)
+	new /obj/item/natural/glass/shard(get_turf(T))
+	new /obj/effect/decal/cleanable/debris/glass(get_turf(T))
+	qdel(src)

@@ -21,7 +21,7 @@
 		segsovolume *= 0.5
 	playsound(target, 'sound/misc/mat/segso.ogg', segsovolume, TRUE, -2, ignore_walls = FALSE)
 
-	user.sexcon.perform_sex_action(user, 4, 0, TRUE)
+	user.sexcon.perform_sex_action(user, 8, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into(oral = TRUE)

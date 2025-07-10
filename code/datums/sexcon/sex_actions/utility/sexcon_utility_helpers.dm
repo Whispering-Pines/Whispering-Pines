@@ -92,7 +92,7 @@
 
 /mob/living/proc/check_funny_knockdown(mob/living/user)
 	var/mob/living/carbon/human/funnyuser = user
-	if(!issimple(funnyuser))
+	if(!issimple(funnyuser) && ishuman(funnyuser))
 		for(var/obj/item/organ/filling_organ/forgan in funnyuser.internal_organs)
 			forgan.organ_jumped()
 

@@ -21,6 +21,7 @@
 	var/gags_user = FALSE
 	var/gags_target = FALSE
 	var/segsovolume = 50 //volume for plaps
+	var/pull_out_volume = 50
 
 /datum/sex_action/proc/can_perform(mob/living/user, mob/living/target)
 	return TRUE
@@ -39,6 +40,10 @@
 		user.mouth_blocked = FALSE
 	if(gags_target)
 		target.mouth_blocked = FALSE
+	 //funny noises
+	if(user.rogue_sneaking || user.alpha <= 100)
+		pull_out_volume *= 0.5
+	playsound(user.loc, pick('modular_whisper/sound/cork_pop.ogg','modular_whisper/sound/cork_pop (2).ogg'), pull_out_volume, TRUE, ignore_walls = FALSE)
 
 /datum/sex_action/proc/is_finished(mob/living/user, mob/living/target)
 	return FALSE

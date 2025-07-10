@@ -55,8 +55,6 @@
 	color = pick(COLOR_GREEN,COLOR_RED,COLOR_BLUE,COLOR_PURPLE,COLOR_BEIGE,COLOR_ORANGE,null)
 
 /obj/machinery/fake_powered/biofabricator/solvent/attackby(obj/item/I, mob/user, params)
-	. = ..()
-	user.changeNext_move(CLICK_CD_FAST)
 	if(toggled)
 		if (istype(I, /obj/item/natural/poo))
 			biomass_amount += 1
@@ -81,6 +79,7 @@
 			playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 	else
 		balloon_alert_to_viewers("Unpowered.")
+	. = ..()
 
 /obj/machinery/fake_powered/biofabricator/solvent/attack_right(mob/user)
 	. = ..()
@@ -115,28 +114,27 @@
 //biomass recycler
 GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
-/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler
+/obj/structure/closet/fake_powered/biomass_recycler
 	name = "Biomass Recycler"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "biomass_recycler"
+	base_icon_state = "biomass_recycler"
 	desc = "Another byproduct of world ending war, generally used to turn emptied corpses or food etc into material for recloning or limb regrowers."
-
-
 	open_sound = 'sound/foley/doors/shittyopen.ogg'
 	close_sound = 'sound/foley/doors/shittyclose.ogg'
 
-/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler/examine(mob/user)
+/obj/structure/closet/fake_powered/biomass_recycler/examine(mob/user)
 	. = ..()
 	. += "<span class='warning'>There is enough biomass to make [GLOB.global_biomass_storage] bodies.</span>"
 
-/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler/open(mob/living/user)
+/obj/structure/closet/fake_powered/biomass_recycler/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler/close(mob/living/user)
+/obj/structure/closet/fake_powered/biomass_recycler/close(mob/living/user)
 	. = ..()
 	update_icon_state()
 	if(!toggled)
@@ -163,11 +161,6 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			victim.take_overall_damage(50, 0, TRUE)
 			sleep(2 SECONDS)
 		else
-			sleep(2 SECONDS)
-			playsound(loc, 'sound/misc/guillotine.ogg', 100, TRUE, -1)
-			sleep(2 SECONDS)
-			playsound(loc, 'sound/misc/guillotine.ogg', 100, TRUE, -1)
-			sleep(2 SECONDS)
 			playsound(loc, 'sound/misc/guillotine.ogg', 100, TRUE, -1)
 			sleep(2 SECONDS)
 		if(ishuman(content))
@@ -231,40 +224,43 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Animal matter is difficult to process and yields less therefore.", language = /datum/language/ancient_english)
 			continue
-		for(var/obj/machinery/fake_powered/cloning_pod/clonebays in GLOB.cloning_bays)
-			clonebays.update_icon()
-	open()
+	for(var/obj/machinery/fake_powered/cloning_pod/clonebays in GLOB.cloning_bays)
+		clonebays.update_appearance(UPDATE_ICON_STATE)
 	working = FALSE
+	open()
 
 
 //BLOOD DRAINER
-/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer
+/obj/structure/closet/fake_powered/liquid_drainer
 	name = "Blood drainer"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "blood_drainer"
+	base_icon_state = "blood_drainer"
 	desc = "Likely used to supply blood for the warriors of the great war of old, now it has other purposes aswell, thanks to modifications. Drains all of the blood and other fluids of living and the dead, leaving them weakened and likely to die without aid."
+	var/suck_bonus
 
-/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/examine(mob/user)
+/obj/structure/closet/fake_powered/liquid_drainer/examine(mob/user)
 	. = ..()
 	. += "It seems [reagents.total_volume/3]/[reagents.maximum_volume] oz full."
 
-/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/open(mob/living/user)
+/obj/structure/closet/fake_powered/liquid_drainer/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/Initialize()
+/obj/structure/closet/fake_powered/liquid_drainer/Initialize()
 	. = ..()
 	create_reagents(2000)
 
-/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/close(mob/living/user)
+/obj/structure/closet/fake_powered/liquid_drainer/close(mob/living/user)
 	. = ..()
 	update_icon_state()
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
 		return
+	suck_bonus = 0
 	for(var/mob/living/carbon/human/victim in contents)
 		working = TRUE
 		if(victim.age == AGE_CHILD)
@@ -286,17 +282,24 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		if(!victim.wear_pants || victim.wear_pants.genital_access)
 			if(victim.getorganslot(ORGAN_SLOT_PENIS))
 				sleep(0.3 SECONDS)
-				victim.visible_message(span_love("The machine starts to work [victim]'s shaft."), span_red("something starts working my shaft violently..!"))
+				victim.visible_message(span_love("The machine starts to work [victim]'s shaft."), span_red("something metallic starts work my shaft violently..!"))
 				addtimer(CALLBACK(src, PROC_REF(start_obj_sex), victim, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, FALSE, ORGAN_SLOT_PENIS), 0.1 SECONDS, TIMER_STOPPABLE)
+				suck_bonus += 10
 			if(victim.getorganslot(ORGAN_SLOT_VAGINA))
 				sleep(0.3 SECONDS)
-				victim.visible_message(span_love("The machine starts to work [victim]'s pussy."), span_red("something starts working my pussy violently..!"))
+				victim.visible_message(span_love("The machine starts to fuck [victim]'s pussy."), span_red("something metallic starts fucking my pussy violently..!"))
 				addtimer(CALLBACK(src, PROC_REF(start_obj_sex), victim, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, FALSE, ORGAN_SLOT_VAGINA), 0.2 SECONDS, TIMER_STOPPABLE)
+				suck_bonus += 10
+			if(victim.gender == FEMALE)
+				sleep(0.3 SECONDS)
+				victim.visible_message(span_love("The machine starts to fuck [victim]'s ass."), span_red("something metallic starts fucking my ass roughly..!"))
+				addtimer(CALLBACK(src, PROC_REF(start_obj_sex), victim, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, FALSE, ORGAN_SLOT_GUTS), 0.3 SECONDS, TIMER_STOPPABLE)
+				suck_bonus += 5
 		else
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Obstruction on groin detected, blood pumping enhancement not available.", language = /datum/language/ancient_english)
 
-/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/proc/suckening_cycle(mob/living/carbon/human/victim)
+/obj/structure/closet/fake_powered/liquid_drainer/proc/suckening_cycle(mob/living/carbon/human/victim)
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
 		working = FALSE
@@ -332,7 +335,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		if(!opened)
 			open()
 
-/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer/attack_right(mob/user)
+/obj/structure/closet/fake_powered/liquid_drainer/attack_right(mob/user)
 	. = ..()
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
@@ -381,6 +384,8 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	light_power = 1
 	light_color = "#0d7f00"
 	var/last_alert = 0
+	var/mutable_appearance/emiss
+	var/growing = FALSE
 
 /obj/machinery/fake_powered/cloning_pod/check_fake_power()
 	//no icon changes but instead emit green light
@@ -398,20 +403,6 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		set_light_on(FALSE)
 		update_light()
 
-/obj/machinery/fake_powered/cloning_pod/update_icon(updates)
-	. = ..()
-	switch(GLOB.global_biomass_storage)
-		if(0 to 0.24)
-			icon_state = "cell_0"
-		if(0.25 to 0.49)
-			icon_state = "cell_25"
-		if(0.50 to 0.74)
-			icon_state = "cell_50"
-		if(0.75 to 0.99)
-			icon_state = "cell_75"
-		if(1 to INFINITY)
-			icon_state = "cell_100"
-
 /obj/machinery/fake_powered/cloning_pod/examine(mob/user)
 	. = ..()
 	. += "<span class='warning'>There is enough biomass to make [GLOB.global_biomass_storage] bodies.</span>"
@@ -427,7 +418,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 /obj/machinery/fake_powered/cloning_pod/proc/send_manual_alert()
 	if(!toggled)
 		return
-	update_icon()
+	update_appearance(UPDATE_ICON_STATE)
 	playsound(loc, 'sound/foley/industrial/machineoff.ogg', 50, FALSE, -1)
 	say("ALERT. A saved mind is trying to reclone, but there is Insufficent biomass stored!", language = /datum/language/ancient_english)
 
@@ -443,9 +434,41 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	playsound(loc, 'sound/foley/industrial/pneumatic1.ogg', 50, FALSE, -1)
 	say("Warning; Insufficent biomass stored.", language = /datum/language/ancient_english)
 
+/obj/machinery/fake_powered/cloning_pod/update_icon_state()
+	. = ..()
+	switch(GLOB.global_biomass_storage)
+		if(0 to 0.24)
+			icon_state = "cell_0"
+		if(0.25 to 0.49)
+			icon_state = "cell_25"
+		if(0.50 to 0.74)
+			icon_state = "cell_50"
+		if(0.75 to 0.99)
+			icon_state = "cell_75"
+		if(1 to INFINITY)
+			icon_state = "cell_100"
+	if(growing)
+		icon_state = "cell_growing"
+	cut_overlay(emiss)
+	if(toggled)
+		emiss = mutable_appearance(icon, "[icon_state]_emissive", layer, EMISSIVE_PLANE, 255, color, EMISSIVE_APPEARANCE_FLAGS)
+		add_overlay(emiss)
+
+/obj/machinery/fake_powered/cloning_pod/proc/finish_growing(mob/ghost_guy, mob/living/carbon/human/new_body)
+	growing = FALSE
+	if(ghost_guy.client)
+		new_body.ckey = ghost_guy.client.ckey
+	ghost_guy.client.prefs.apply_prefs_to(new_body, TRUE)
+	to_chat(new_body, span_danger("Your mind is pulled to your new body..!"))
+	new_body.set_nutrition(0)
+	new_body.set_hydration(0)
+	new_body.apply_status_effect(/datum/status_effect/debuff/recloned)
+	new_body.forceMove(loc)
+	playsound(loc, pick('sound/foley/water_land1.ogg','sound/foley/water_land2.ogg','sound/foley/water_land3.ogg'), 100, FALSE)
+	update_appearance(UPDATE_ICON_STATE)
 
 //limb regrower (cannibals)
-/obj/structure/closet/crate/coffin/fake_powered/limb_regrower
+/obj/structure/closet/fake_powered/limb_regrower
 	name = "MEAT GOD"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "regrower"
@@ -453,18 +476,18 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 	var/blood_stored = 0
 
-/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/examine(mob/user)
+/obj/structure/closet/fake_powered/limb_regrower/examine(mob/user)
 	. = ..()
 	user.visible_message("This has [blood_stored] units blood stored, 750 units required for a single limb.")
 
-/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/open(mob/living/user)
+/obj/structure/closet/fake_powered/limb_regrower/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/close(mob/living/user)
+/obj/structure/closet/fake_powered/limb_regrower/close(mob/living/user)
 	. = ..()
 	update_icon_state()
 	if(!toggled)
@@ -494,16 +517,16 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		sleep(1 SECONDS)
 		regrowing_cycle(victim)
 
-/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/attackby(obj/item/I, mob/user, params)
-	. = ..()
+/obj/structure/closet/fake_powered/limb_regrower/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/blood))
 		var/obj/item/reagent_containers/blood/bpack = I
 		blood_stored += bpack.reagents.get_reagent_amount(/datum/reagent/blood)
 		qdel(I)
 		playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		say("Added bloodpack into reserves.", language = /datum/language/ancient_english)
+	. = ..()
 
-/obj/structure/closet/crate/coffin/fake_powered/limb_regrower/proc/regrowing_cycle(mob/living/carbon/human/victim)
+/obj/structure/closet/fake_powered/limb_regrower/proc/regrowing_cycle(mob/living/carbon/human/victim)
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
 		open()
@@ -580,20 +603,21 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 
 //biomass chute
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute
+/obj/structure/closet/fake_powered/bio_chute
 	name = "corpse disposal"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "chute"
+	base_icon_state = "chute"
 	desc = "body goes in, money comes out."
 
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute/open(mob/living/user)
+/obj/structure/closet/fake_powered/bio_chute/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute/close(mob/living/user)
+/obj/structure/closet/fake_powered/bio_chute/close(mob/living/user)
 	. = ..()
 	update_icon_state()
 	working = TRUE
@@ -642,6 +666,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	desc = "A strange machine that used to milk livestock in the old world, now modified to milk people..."
 	breakoutextra = 4 MINUTES
 	self_powered = TRUE
+	var/suck_bonus
 
 /obj/structure/chair/fake_powered/milker/examine(mob/user)
 	. = ..()
@@ -649,14 +674,14 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 /obj/structure/chair/fake_powered/milker/Initialize()
 	. = ..()
-	mutable_appearance('modular_whisper/icons/misc/chairs.dmi', "milker_over", OBJ_LAYER, src, appearance_flags = KEEP_APART)
 	create_reagents(5000)
 
-/obj/structure/chair/fake_powered/milker/buckle_mob(mob/living/M, force, check_loc)
+/obj/structure/chair/fake_powered/milker/post_buckle_mob(mob/living/M)
 	. = ..()
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
 		return
+	suck_bonus = 0
 	for(var/mob/living/carbon/human/victim in buckled_mobs)
 		working = TRUE
 		if(victim.age == AGE_CHILD)
@@ -672,19 +697,30 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			say("Obstruction on udder detected, remove obstructions and try again.", language = /datum/language/ancient_english)
 			unbuckle_mob(victim)
 			return
+		if(victim.getorganslot(ORGAN_SLOT_BREASTS))
+			sleep(0.5 SECONDS)
+			victim.visible_message(span_love("Suction cups latch onto [victim]'s breasts."), span_red("I feel suction cups latch on my breasts!"))
+		else
+			say("Udder not found, please adjust cattle and try again.", language = /datum/language/ancient_english)
+			unbuckle_mob(victim)
+			return
 		addtimer(CALLBACK(src, PROC_REF(suckening_cycle), victim), 1 SECONDS, TIMER_STOPPABLE) //so the parent proc can keep going.
 		if(!victim.wear_pants || victim.wear_pants.genital_access)
-			if(victim.getorganslot(ORGAN_SLOT_BREASTS))
-				sleep(0.5 SECONDS)
-				victim.visible_message(span_love("Suction cups latch onto [victim]'s breasts."), span_red("I feel suction cups latch on my breasts!"))
 			if(victim.getorganslot(ORGAN_SLOT_PENIS))
 				sleep(0.3 SECONDS)
 				victim.visible_message(span_love("The machine starts to work [victim]'s shaft."), span_red("something starts working my shaft violently..!"))
 				addtimer(CALLBACK(src, PROC_REF(start_obj_sex), victim, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, FALSE, ORGAN_SLOT_PENIS), 0.1 SECONDS, TIMER_STOPPABLE)
+				suck_bonus += 10
 			if(victim.getorganslot(ORGAN_SLOT_VAGINA))
 				sleep(0.3 SECONDS)
-				victim.visible_message(span_love("The machine starts to work [victim]'s pussy."), span_red("something starts working my pussy violently..!"))
+				victim.visible_message(span_love("The machine starts to fuck [victim]'s pussy."), span_red("something starts fucking my pussy roughly..!"))
 				addtimer(CALLBACK(src, PROC_REF(start_obj_sex), victim, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, FALSE, ORGAN_SLOT_VAGINA), 0.2 SECONDS, TIMER_STOPPABLE)
+				suck_bonus += 10
+			if(victim.gender == FEMALE)
+				sleep(0.3 SECONDS)
+				victim.visible_message(span_love("The machine starts to work [victim]'s ass."), span_red("something starts fucking my ass roughly..!"))
+				addtimer(CALLBACK(src, PROC_REF(start_obj_sex), victim, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, FALSE, ORGAN_SLOT_GUTS), 0.3 SECONDS, TIMER_STOPPABLE)
+				suck_bonus += 10
 		else
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Obstruction on groin detected, milking speed enhancement not available.", language = /datum/language/ancient_english)
@@ -701,11 +737,11 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		return
 	var/obj/item/organ/filling_organ/breasts/forgan = victim.getorganslot(ORGAN_SLOT_BREASTS)
 	if(forgan)
-		forgan.reagents.trans_to(src, forgan.reagents.maximum_volume/50) //bit by bit it milks
+		forgan.reagents.trans_to(src, 10+suck_bonus) //bit by bit it milks
 		if(forgan.reagents.total_volume <= 15)
 			balloon_alert_to_viewers("struggles to suck any more.")
 		else
-			balloon_alert_to_viewers("pumps [victim]'s breasts.")
+			balloon_alert_to_viewers("pumps [victim]'s [forgan.name] [forgan.reagent_to_make.name].")
 	if(reagents.total_volume >= reagents.maximum_volume)
 		playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		say("Tank is full and must be emptied before proceeding.", language = /datum/language/ancient_english)
@@ -718,7 +754,6 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	addtimer(CALLBACK(src, PROC_REF(suckening_cycle), victim), 1 SECONDS, TIMER_STOPPABLE)
 
 /obj/structure/chair/fake_powered/milker/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
 	if(!istype(I, /obj/item/reagent_containers/glass))
 		return
 	if(!toggled)
@@ -728,18 +763,12 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 	say("Dispensing reagents.", language = /datum/language/ancient_english)
 	if(reagents.total_volume > 0)
-		playsound(loc, 'sound/items/fillbottle.ogg', 100)
-		reagents.trans_to(bottlening, bottlening.reagents.maximum_volume, FALSE, TRUE, FALSE)
-		bottlening.update_appearance(UPDATE_ICON_STATE)
+		var/datum/reagents/reagentening = input(user, "What to dispense?", "MILKER") as null|anything in reagents.reagent_list
+		if(reagentening)
+			playsound(loc, 'sound/items/fillbottle.ogg', 100)
+			reagents.trans_id_to(bottlening, reagentening.type, bottlening.reagents.maximum_volume, TRUE)
+			bottlening.update_appearance(UPDATE_ICON_STATE)
 	else
 		playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		say("Nothing stored.", language = /datum/language/ancient_english)
-
-/obj/structure/chair/e_chair/attackby(obj/item/W, mob/user, list/modifiers, list/attack_modifiers)
-	if(W.tool_behaviour == TOOL_WRENCH)
-		var/obj/structure/chair/C = new /obj/structure/chair(loc)
-		W.play_tool_sound(src)
-		C.setDir(dir)
-		qdel(src)
-		return
 	. = ..()

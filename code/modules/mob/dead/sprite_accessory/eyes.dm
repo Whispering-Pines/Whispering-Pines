@@ -16,7 +16,7 @@
 	generic_gender_feature_adjust(appearance_list, eyes, bodypart, owner, OFFSET_FACE)
 
 /datum/sprite_accessory/eyes/proc/update_overlay(obj/item/organ/eyes/organ, mob/living/carbon/human/owner)
-	if(!owner || !ishuman(owner))
+	if(!owner || !ishuman(owner) || !owner.client)
 		return
 	owner.cut_overlay(owner.eye_overlay)
 	owner.cut_overlay(owner.eye_overlay2)

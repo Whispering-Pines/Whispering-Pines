@@ -26,7 +26,7 @@
 		user.sexcon.perform_sex_action(user, 4, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 2, 3, TRUE)
 	else
-		user.sexcon.perform_sex_action(user, 8, 0, TRUE)
+		user.sexcon.perform_sex_action(user, 4, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 4, 7, TRUE)
 	user.sexcon.handle_passive_ejaculation()
 

@@ -486,7 +486,7 @@
 /obj/structure/fluff/railing/wood{
 	dir = 4
 	},
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/dirt,
 /area/rogue/indoors/butchershop)
 "atS" = (
@@ -4154,7 +4154,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church/inquisition)
 "dac" = (
-/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler,
+/obj/structure/closet/fake_powered/biomass_recycler,
 /turf/open/floor/metal/barograte,
 /area/rogue/under/town/basement)
 "dal" = (
@@ -4641,7 +4641,7 @@
 /turf/open/floor/wood,
 /area/rogue/indoors/town/orphanage)
 "dtO" = (
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/wood,
 /area/rogue/under/cave)
 "duf" = (
@@ -5866,7 +5866,7 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/smithy)
 "esP" = (
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
 "esU" = (
@@ -6924,7 +6924,7 @@
 /area/rogue/indoors/town)
 "fmK" = (
 /obj/machinery/light/fueled/wallfire/candle/blue,
-/obj/structure/closet/crate/coffin/fake_powered/limb_regrower{
+/obj/structure/closet/fake_powered/limb_regrower{
 	name = "Regrower Pod"
 	},
 /turf/open/floor/churchmarble,
@@ -10640,7 +10640,7 @@
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
 "inj" = (
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/dirt,
 /area/rogue/under/cave)
 "inl" = (
@@ -11405,7 +11405,7 @@
 /turf/open/floor/twig,
 /area/rogue/indoors/town/clinic_large)
 "iSJ" = (
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/cobblerock,
 /area/rogue/outdoors/town)
 "iTM" = (
@@ -14431,7 +14431,7 @@
 /turf/open/floor/dirt,
 /area/rogue/under/cave)
 "lbA" = (
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/woods)
 "lbO" = (
@@ -19121,7 +19121,7 @@
 	dir = 1;
 	icon_state = "borderfall"
 	},
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/dirt/road,
 /area/rogue/under/cave)
 "otG" = (
@@ -19155,7 +19155,7 @@
 /turf/open/floor/wood,
 /area/rogue/under/cave)
 "ouA" = (
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/dirt/road,
 /area/rogue/under/cave)
 "ouW" = (
@@ -21921,7 +21921,7 @@
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/smithy)
 "qvY" = (
-/obj/structure/closet/crate/coffin/fake_powered/biomass_recycler,
+/obj/structure/closet/fake_powered/biomass_recycler,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/clinic_large)
 "qwo" = (
@@ -31522,7 +31522,7 @@
 /turf/open/floor/hexstone,
 /area/rogue/indoors/town/shop)
 "xLA" = (
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/woods_safe)
 "xMe" = (
@@ -31828,7 +31828,7 @@
 /turf/open/floor/dirt,
 /area/rogue/indoors/town/shop)
 "xUu" = (
-/obj/structure/closet/crate/coffin/fake_powered/bio_chute,
+/obj/structure/closet/fake_powered/bio_chute,
 /turf/open/floor/cobble,
 /area/rogue/under/town/basement)
 "xUL" = (
@@ -32003,7 +32003,7 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/orphanage)
 "yah" = (
-/obj/structure/closet/crate/coffin/fake_powered/liquid_drainer,
+/obj/structure/closet/fake_powered/liquid_drainer,
 /turf/open/floor/metal/barograte,
 /area/rogue/under/town/basement)
 "yaM" = (

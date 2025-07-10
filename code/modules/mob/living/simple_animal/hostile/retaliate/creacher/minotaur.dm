@@ -1,8 +1,8 @@
 /mob/living/simple_animal/hostile/retaliate/minotaur
-	icon = 'icons/mob/newminotaur.dmi'
+	icon = 'modular_stonehedge/icons/mob/newminotaur.dmi'
 	name = "Minotaur"
-	icon_state = "MinotaurMale"
-	icon_living = "MinotaurMale"
+	icon_state = "MinotaurMale_Lewd"
+	icon_living = "MinotaurMale_Lewd"
 	icon_dead = "MinotaurMale_dead"
 	gender = MALE
 	emote_hear = null
@@ -53,8 +53,8 @@
 	AddComponent(/datum/component/ai_aggro_system)
 
 /mob/living/simple_animal/hostile/retaliate/minotaur/female
-	icon_state = "MinotaurFem"
-	icon_living = "MinotaurFem"
+	icon_state = "MinotaurFem_Lewd"
+	icon_living = "MinotaurFem_Lewd"
 	icon_dead = "MinotaurFem_dead"
 
 /mob/living/simple_animal/hostile/retaliate/minotaur/axe

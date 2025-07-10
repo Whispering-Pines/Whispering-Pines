@@ -548,7 +548,10 @@ GLOBAL_LIST_EMPTY(patreon_races)
 	H.real_name = random_name(H.gender,1)
 //	H.age = pick(possible_ages)
 	var/list/skins = get_skin_list()
-	H.skin_tone = skins[pick(skins)]
+	if(length(skins))
+		H.skin_tone = skins[pick(skins)]
+	else
+		H.skin_tone = "#ffffff"
 	H.accessory = "Nothing"
 	if(H.dna)
 		H.dna.real_name = H.real_name
@@ -1538,7 +1541,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 										"<span class='danger'>I'm stomped by [user]![target.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening kick!</span>", COMBAT_MESSAGE_RANGE, user)
 						to_chat(user, "<span class='danger'>I stomp on [target]![target.next_attack_msg.Join()]</span>")
 					if(selzone == BODY_ZONE_PRECISE_STOMACH)
-						target.check_funny_knockdown()
+						target.check_funny_knockdown(user)
 			target.next_attack_msg.Cut()
 			log_combat(user, target, "kicked")
 			user.OffBalance(balance)

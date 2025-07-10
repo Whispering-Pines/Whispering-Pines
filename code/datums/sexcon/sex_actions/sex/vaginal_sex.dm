@@ -67,7 +67,6 @@
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s cunt."))
 
-
 	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
 		user.sexcon.try_pelvis_crush(target)
 

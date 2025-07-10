@@ -19,6 +19,7 @@
 	grid_width = 32
 	grid_height = 64
 	can_label_bottle = FALSE
+	fragile = FALSE
 
 /obj/item/reagent_containers/glass/bottle/waterskin/Initialize()
 	. = ..()

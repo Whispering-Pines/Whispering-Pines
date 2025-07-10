@@ -47,6 +47,10 @@
 	slice_path = null
 	slices_num = 0
 
+/obj/item/reagent_containers/food/snacks/meat/strange/spider
+	name = "spider meat"
+	grind_results = list(/datum/reagent/consumable/nutriment = RAWMEAT_NUTRITION, /datum/reagent/toxin/venom = 3)
+
 /obj/item/reagent_containers/food/snacks/meat/poultry
 	name = "plucked bird"
 	icon_state = "poultry"

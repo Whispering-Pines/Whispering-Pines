@@ -24,24 +24,11 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	experimental_onhip = TRUE
 	var/can_label_bottle = TRUE	// Determines if the bottle can be labeled with paper
 	var/fancy		// for bottles with custom descriptors that you don't want to change when bottle manipulated
+	fragile = TRUE
 
 /obj/item/reagent_containers/glass/bottle/Initialize()
 	icon_state = "clear_bottle[rand(1,4)]"
 	return ..()
-
-/obj/item/reagent_containers/glass/bottle/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum, do_splash = TRUE)
-	..()
-	playsound(loc, 'sound/foley/glassbreak.ogg', 100)
-	shatter(get_turf(src))
-
-/obj/item/reagent_containers/glass/bottle/proc/shatter(turf/T)
-	if(istransparentturf(T))
-		shatter(GET_TURF_BELOW(T))
-		return
-	new /obj/item/natural/glass/shard(get_turf(T))
-	new /obj/effect/decal/cleanable/debris/glass(get_turf(T))
-	qdel(src)
-
 
 /obj/item/reagent_containers/glass/bottle/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/paper/scroll))

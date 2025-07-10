@@ -86,11 +86,13 @@
 		..()
 
 /datum/reagent/water/gross/on_mob_life(mob/living/carbon/M)
-	..()
 	if(HAS_TRAIT(M, TRAIT_NASTY_EATER )) // lets orcs and goblins drink bogwater
 		return
+	if(prob(50))
+		M.reagents.add_reagent(/datum/reagent/toxin/parasite, 2)
 	M.adjustToxLoss(1)
 	M.add_nausea(12) //Over 8 units will cause puking
+	..()
 
 /datum/reagent/water/salty
 	taste_description = "salt"

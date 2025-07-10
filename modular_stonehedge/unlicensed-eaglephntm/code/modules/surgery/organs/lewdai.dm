@@ -167,7 +167,7 @@
 						visible_message(span_info("[src] climbs on [L] to breed."))
 					sexcon.speed = SEX_SPEED_MAX
 					log_admin("[src] is trying to init sex on [L]")
-					var/current_action = /datum/sex_action/npc_rimming
+					var/datum/sex_action/current_action = /datum/sex_action/npc_rimming
 					if(gender == FEMALE && L.gender == MALE)
 						switch(rand(1,2))
 							if(1) //anal
@@ -345,7 +345,7 @@
 						visible_message(span_info("[src] climbs on [L] to breed."))
 					sexcon.speed = SEX_SPEED_MAX
 					log_admin("[src] is trying to init sex on [L]")
-					var/current_action = /datum/sex_action/npc_rimming
+					var/datum/sex_action/current_action = /datum/sex_action/npc_rimming
 					if(gender == FEMALE && L.gender == MALE)
 						switch(rand(1,2))
 							if(1) //anal

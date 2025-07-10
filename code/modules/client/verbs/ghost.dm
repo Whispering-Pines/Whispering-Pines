@@ -80,17 +80,23 @@
 				return
 			var/obj/machinery/fake_powered/cloning_pod/spawn_loc = pick(GLOB.cloning_bays)
 			if(!length(GLOB.cloning_bays)) //That cant be good.
-				to_chat(usr, span_danger("There is no cloning bays, notify an admin."))
+				to_chat(mob, span_danger("There is no cloning bays, notify an admin."))
 				return
 			if(GLOB.global_biomass_storage < 1)
 				spawn_loc.send_manual_alert()
-				to_chat(usr, span_danger("The cloning bay network does not store enough biomass to make a new body. [GLOB.global_biomass_storage]/1. Machine alert sent."))
+				to_chat(mob, span_danger("The cloning bay network does not store enough biomass to make a new body. [GLOB.global_biomass_storage]/1. Machine alert sent."))
 				return
 			if(!spawn_loc.toggled)
-				to_chat(usr, span_danger("The cloning bay is unpowered... Machine alert sent."))
+				to_chat(mob, span_danger("The cloning bay is unpowered... Machine alert sent."))
 				spawn_loc.say("Warning: Signal received but lacking main power.", language = /datum/language/ancient_english)
 				return
-			var/mob/living/carbon/human/O = new /mob/living/carbon/human(spawn_loc.loc)
+			if(spawn_loc.growing)
+				to_chat(mob, span_danger("The cloning bay is busy... Try again later."))
+				return
+			var/mob/living/carbon/human/O = new /mob/living/carbon/human(spawn_loc.contents) //hide body in contents of clone pod
+			O.Unconscious(1 MINUTES)
+			mob.orbit(spawn_loc) //get ghost on clone pod
+			spawn_loc.growing = TRUE
 			if(mob in SStreasury.bank_accounts)
 				var/amt = SStreasury.bank_accounts[mob]
 				if(amt < 0)
@@ -129,13 +135,7 @@
 					S.repeat_message("[O.real_name] recloned without bank account, in 250c debt.")
 			GLOB.global_biomass_storage -= 1
 			spawn_loc.update_icon()
+			addtimer(CALLBACK(spawn_loc, TYPE_PROC_REF(/obj/machinery/fake_powered/cloning_pod, finish_growing), mob, O), 30 SECONDS)
 			playsound(spawn_loc, 'sound/foley/industrial/machinechug.ogg', 50, FALSE, -1)
-			O.ckey = ckey
-			prefs.apply_prefs_to(O, TRUE)
-			O.Unconscious(30 SECONDS)
-			to_chat(usr, span_danger("Your mind is pulled automatically to your new body..!"))
-			O.set_nutrition(0)
-			O.set_hydration(0)
-			O.apply_status_effect(/datum/status_effect/debuff/recloned)
 
 			verbs -= /client/proc/descend

@@ -8,7 +8,7 @@
 	density = TRUE
 	anchored = TRUE
 	opacity = FALSE
-	max_integrity = 100
+	max_integrity = 25
 	integrity_failure = 0.1
 	blade_dulling = DULLING_BASHCHOP
 	pass_flags = LETPASSTHROW
@@ -93,7 +93,7 @@
 
 /obj/structure/window/stained
 	icon_state = "stained-silver"
-	max_integrity = 100
+	max_integrity = 25
 	integrity_failure = 0.75
 	repair_cost_first = /obj/item/natural/glass
 	repair_cost_second = /obj/item/natural/stone
@@ -101,7 +101,7 @@
 /obj/structure/window/stained/silver
 	desc = "A stained-glass window filigreed in silver."
 	icon_state = "stained-silver"
-	max_integrity = 100
+	max_integrity = 25
 	integrity_failure = 0.75
 
 /obj/structure/window/stained/silver/alt
@@ -118,7 +118,7 @@
 /obj/structure/window/openclose
 	desc = "It opens and closes."
 	icon_state = MAP_SWITCH("woodwindow", "woodwindowdir")
-	max_integrity = 100
+	max_integrity = 25
 	integrity_failure = 0.5
 
 /obj/structure/window/openclose/Initialize()
@@ -171,7 +171,7 @@
 /obj/structure/window/openclose/reinforced
 	desc = "A glass window. This one looks reinforced with a metal mesh."
 	icon_state = MAP_SWITCH("reinforcedwindow", "reinforcedwindowdir")
-	max_integrity = 800
+	max_integrity = 400
 	integrity_failure = 0.1
 	metalizer_result = null
 	smeltresult = /obj/item/ingot/iron
