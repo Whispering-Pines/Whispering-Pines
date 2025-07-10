@@ -57,6 +57,7 @@
 							/obj/structure/flora/grass/pyroclasticflowers = 1,
 							/obj/structure/flora/grass/maneater = 1,
 							/obj/structure/flora/grass/maneater/real = 0.1,
+							/obj/structure/flora/grass/maneater/real/elfbane = 0.1,
 							/obj/structure/chair/bench/ancientlog = 0.25,
 							/obj/item/restraints/legcuffs/beartrap/armed/camouflage = 0.1,
 							/obj/item/natural/stone = 2,
@@ -156,7 +157,8 @@
 	excluded_turfs = list(/turf/open/water/river)
 	spawnableAtoms = list(/obj/structure/flora/grass/water = 20,
 		                    /obj/structure/flora/grass/water/reeds = 30,
-	                        /obj/structure/kneestingers = 20,
+	                        /obj/structure/kneestingers = 10,
+							/obj/structure/glowshroom = 10,
 							/obj/structure/roguerock = 5)
 	allowed_areas = list(/area/rogue/outdoors/woods,
 							/area/rogue/outdoors/woods_safe,

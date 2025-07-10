@@ -861,7 +861,7 @@
 
 /obj/structure/fluff/statue/scare
 	name = "scarecrow"
-	desc = "An effigy made to drive away zad and other pesky birds from a farm."
+	desc = "An effigy made to drive away crow and other pesky birds from a farm."
 	icon_state = "td"
 
 /obj/structure/fluff/statue/tdummy

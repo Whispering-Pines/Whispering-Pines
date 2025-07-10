@@ -19,6 +19,7 @@
 #define RACE_DRACON "Dracon"
 #define RACE_LIZARDFOLK "Lizardfolk"
 #define RACE_LUPIAN "Lupian"
+#define RACE_AXIAN "Axian"
 #define RACE_TABAXI "Tabaxi"
 #define RACE_VULPKANIN "Vulpkanin"
 #define RACE_CONSTRUCT "Metal Construct"
@@ -49,6 +50,7 @@
 	"lupian",\
 	"tabaxi",\
 	"vulpkanin",\
+	"axian",\
 	"humanspace",\
 	"constructm",\
 	)
@@ -73,6 +75,7 @@
 	"lupian",\
 	"tabaxi",\
 	"vulpkanin",\
+	"axian",\
 	"humanspace",\
 	)
 
@@ -95,6 +98,7 @@
 	"lupian",\
 	"tabaxi",\
 	"vulpkanin",\
+	"axian",\
 	"humanspace",\
 	)
 
@@ -122,6 +126,7 @@
 	RACE_DRACON,\
 	RACE_LIZARDFOLK,\
 	RACE_LUPIAN,\
+	RACE_AXIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
 	RACE_CONSTRUCT,\
@@ -150,6 +155,7 @@
 	RACE_DRACON,\
 	RACE_LIZARDFOLK,\
 	RACE_LUPIAN,\
+	RACE_AXIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
 	RACE_CONSTRUCT,\
@@ -179,6 +185,7 @@
 	RACE_DRACON,\
 	RACE_LIZARDFOLK,\
 	RACE_LUPIAN,\
+	RACE_AXIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
 	RACE_CONSTRUCT,\
@@ -206,6 +213,7 @@
 	RACE_DRACON,\
 	RACE_LIZARDFOLK,\
 	RACE_LUPIAN,\
+	RACE_AXIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
 )
@@ -266,6 +274,7 @@
 	RACE_DRACON,\
 	RACE_LIZARDFOLK,\
 	RACE_LUPIAN,\
+	RACE_AXIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
 	RACE_CONSTRUCT,\
@@ -294,6 +303,7 @@
 	RACE_DRACON,\
 	RACE_LIZARDFOLK,\
 	RACE_LUPIAN,\
+	RACE_AXIAN,\
 	RACE_TABAXI,\
 	RACE_VULPKANIN,\
 )

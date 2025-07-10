@@ -22,6 +22,7 @@
 							/obj/structure/flora/grass/swampweed = 30,
 							/obj/item/grown/log/tree/stick = 4,
 							/obj/structure/flora/grass/maneater/real = 1,
+							/obj/structure/flora/grass/maneater/real/elfbane = 1,
 							/obj/item/restraints/legcuffs/beartrap/armed/camouflage = 0)
 	spawnableTurfs = list(/turf/open/water/swamp = 5,
 	                     /turf/open/floor/dirt = 80)
@@ -31,7 +32,8 @@
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	spawnableAtoms = list(/obj/structure/flora/grass/water = 5,
 						/obj/structure/flora/grass/water/reeds = 80,
-						/obj/structure/kneestingers = 60)
+						/obj/structure/kneestingers = 30,
+						/obj/structure/glowshroom = 30,)
 	allowed_turfs = list(/turf/open/water/swamp,
 						/turf/open/water/swamp/deep)
 	allowed_areas = list(/area/rogue/outdoors/bog)

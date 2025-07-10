@@ -47,4 +47,4 @@
 	H.change_stat(STATKEY_PER, 1)
 	H.change_stat(STATKEY_SPD, 2) // Speedy out of necessity! Get the hell outta there
 
-	ADD_TRAIT(H, TRAIT_BESTIALSENSE, TRAIT_GENERIC) // Dendor influence in nature blesses them with the Eyes of the Zad
+	ADD_TRAIT(H, TRAIT_BESTIALSENSE, TRAIT_GENERIC) // Dendor influence in nature blesses them with the Eyes of the crow

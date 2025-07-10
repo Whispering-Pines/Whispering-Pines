@@ -281,7 +281,7 @@
 	importexport_amt = 12
 
 /datum/stock/stockpile/bloodbag
-	name = "bloodbag"
+	name = "blood bag"
 	desc = "life essence that saves life."
 	item_type = /obj/item/reagent_containers/blood
 	held_items = 5

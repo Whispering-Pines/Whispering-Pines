@@ -1393,8 +1393,9 @@
 /mob/living/carbon/proc/skeletonize(lethal = TRUE)
 	for(var/obj/item/bodypart/B in bodyparts)
 		B.skeletonize(lethal)
+	if(!lethal)
+		give_genitals()
 	update_body_parts()
-	give_genitals()
 
 /// grant undead eyes to a carbon mob.
 /mob/living/carbon/proc/grant_undead_eyes()

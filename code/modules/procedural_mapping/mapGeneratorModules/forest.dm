@@ -55,6 +55,7 @@
 							/obj/structure/flora/grass/herb/random = 7,
 							/obj/structure/flora/grass/maneater = 0.1,
 							/obj/structure/flora/grass/maneater/real = 0.1,
+							/obj/structure/flora/grass/maneater/real/elfbane = 0.1,
 							/obj/item/restraints/legcuffs/beartrap/armed/camouflage = 0.1,
 							/obj/item/natural/stone = 6,
 							/obj/item/natural/rock = 5,
@@ -68,7 +69,8 @@
 	allowed_areas = list(/area/rogue/outdoors/woods)
 	spawnableAtoms = list(/obj/structure/flora/grass/water = 20,
 	                        /obj/structure/flora/grass/water/reeds = 25,
-	                        /obj/structure/kneestingers = 25)
+	                        /obj/structure/kneestingers = 25,
+							/obj/structure/glowshroom = 25,)
 
 /datum/mapGeneratorModule/forestswampwaterturf
 	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS
@@ -77,4 +79,5 @@
 	allowed_areas = list(/area/rogue/outdoors/woods)
 	spawnableAtoms = list(/obj/structure/flora/grass/water = 20,
 		                    /obj/structure/flora/grass/water/reeds = 30,
-	                        /obj/structure/kneestingers = 30)
+	                        /obj/structure/kneestingers = 25,
+							/obj/structure/glowshroom = 25,)

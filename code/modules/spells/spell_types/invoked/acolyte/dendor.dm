@@ -53,7 +53,7 @@
 	overlay_state = "bestialsense"
 	recharge_time = 12 MINUTES
 	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
-	invocation = "Beast-Lord, lend me the eyes of the zad, the nose of the volf."
+	invocation = "Beast-Lord, lend me the eyes of the crow, the nose of the volf."
 	invocation_type = "whisper"
 	cooldown_min = 10 MINUTES
 	releasedrain = 30

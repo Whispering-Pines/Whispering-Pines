@@ -55,6 +55,7 @@
 	allowed_turfs = list(/turf/open/water/cleanshallow)
 	excluded_turfs = list()
 	spawnableAtoms = list(/obj/structure/kneestingers = 3,
+							/obj/structure/glowshroom = 3,
 							/obj/structure/flora/grass/water = 4,
 							/obj/structure/flora/grass/water/reeds = 8)
 	spawnableTurfs = list()

@@ -14,6 +14,7 @@ PROCESSING_SUBSYSTEM_DEF(roguemachine)
 	var/obj/item/crown
 	var/obj/item/key
 	var/obj/structure/fake_machine/hailer/hailer
+	var/list/noticeboards = list()
 
 /datum/controller/subsystem/processing/roguemachine/fire(resumed = 0)
 	. = ..()

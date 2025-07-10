@@ -63,4 +63,5 @@
 	allowed_areas = list(/area/rogue/outdoors/woods)
 	spawnableAtoms = list(/obj/structure/flora/grass/water = 20,
 	                        /obj/structure/flora/grass/water/reeds = 30,
-	                        /obj/structure/kneestingers = 55)
+	                        /obj/structure/kneestingers = 20,
+							/obj/structure/glowshroom = 20,)

@@ -60,7 +60,8 @@
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 	spawnableAtoms = list(/obj/structure/flora/grass/water = 20,
 	                        /obj/structure/flora/grass/water/reeds = 12,
-	                        /obj/structure/kneestingers = 6)
+	                        /obj/structure/kneestingers = 6,
+							/obj/structure/glowshroom = 6,)
 
 /datum/mapGeneratorModule/roguetownswampwaterturf
 	clusterCheckFlags = CLUSTER_CHECK_NONE
@@ -69,4 +70,5 @@
 	allowed_areas = list(/area/rogue/outdoors/rtfield)
 	spawnableAtoms = list(/obj/structure/flora/grass/water = 20,
 		                    /obj/structure/flora/grass/water/reeds = 12,
-	                        /obj/structure/kneestingers = 3)
+	                        /obj/structure/kneestingers = 3,
+							/obj/structure/glowshroom = 3,)
