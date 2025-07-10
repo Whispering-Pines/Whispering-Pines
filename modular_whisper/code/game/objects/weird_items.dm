@@ -289,3 +289,10 @@
 	withdraw_price = 12
 	export_price = 10
 	importexport_amt = 20
+
+/obj/item/weapon/hammer/stone
+	name = "stone hammer"
+	icon_state = "stonehammer"
+	force = 8
+	smeltresult = null
+	max_integrity = 20

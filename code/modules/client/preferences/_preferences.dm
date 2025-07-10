@@ -1666,6 +1666,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					if(choice)
 						choice = choices[choice]
 						if(!load_character(choice))
+							user.cut_overlays()
 							randomise_appearance_prefs(include_patreon = patreon)
 							save_character()
 

@@ -58,3 +58,16 @@
 	createmultiple = TRUE
 	createditem_num = 2
 	craftdiff = 1
+
+/datum/repeatable_crafting_recipe/survival/stone_hammer
+	name = "stone hammer"
+	requirements = list(
+		/obj/item/natural/stone = 2,
+		/obj/item/grown/log/tree/stick = 1,
+	)
+
+	attacked_atom = /obj/item/natural/stone
+	starting_atom = /obj/item/grown/log/tree/stick
+	output = /obj/item/weapon/hammer/stone
+	craftdiff = 0
+	uses_attacked_atom = TRUE

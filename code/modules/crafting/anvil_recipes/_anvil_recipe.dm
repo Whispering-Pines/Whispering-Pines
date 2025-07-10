@@ -73,6 +73,10 @@
 		additional_items -= needed_item
 		progress = 0
 
+	var/obj/item/weapon/heldstuff = user.get_active_held_item()
+	if(istype(heldstuff, /obj/item/weapon/hammer/stone))
+		heldstuff.take_damage(1, BRUTE)
+
 	if(!moveup)
 		if(!prob(proab)) // Roll again, this time negatively, for consequences.
 			user.visible_message("<span class='warning'>[user] ruins the bar!</span>")

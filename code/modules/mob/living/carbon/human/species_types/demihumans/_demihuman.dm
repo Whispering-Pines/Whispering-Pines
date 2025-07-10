@@ -4,8 +4,6 @@
 	*				   *
 	*==================*/
 
-// ( -1 STR, +2 PER, +1 INT, -1 CON, +1 SPD, -1 FOR)
-
 /mob/living/carbon/human/species/demihuman
 	race = /datum/species/demihuman
 
