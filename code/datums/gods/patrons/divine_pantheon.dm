@@ -1,7 +1,7 @@
 /datum/patron/divine
 	name = null
 	associated_faith = /datum/faith/divine_pantheon
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t0 = /datum/action/cooldown/spell/healing
 
 /datum/patron/divine/can_pray(mob/living/follower)
 	//you can pray anywhere inside a church
@@ -26,10 +26,10 @@
 	sins = "Betrayal, Sloth, Witchcraft"
 	boons = "Your stamina regeneration delay is lowered during daytime and your weapons lose less integrity."
 	added_traits = list(TRAIT_APRICITY, TRAIT_SHARPER_BLADES)
-	t0 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
-	t1 = /obj/effect/proc_holder/spell/invoked/heal
-	t2 = /obj/effect/proc_holder/spell/invoked/projectile/fireball
-	t3 = /obj/effect/proc_holder/spell/invoked/revive
+	t0 = /datum/action/cooldown/spell/sacred_flame
+	t1 = /datum/action/cooldown/spell/healing/greater
+	t2 = /datum/action/cooldown/spell/invoked/projectile/fireball
+	t3 = /datum/action/cooldown/spell/revive
 	confess_lines = list(
 		"SOLARIA IS MY LIGHT!",
 		"SOLARIA BRINGS LAW!",
@@ -46,10 +46,10 @@
 	sins = "Suppressing Truth, Becoming addicted."
 	boons = "You enjoy night time more than others."
 	added_traits = list(TRAIT_NIGHT_OWL)
-	t0 = /obj/effect/proc_holder/spell/invoked/vigorouscraft
-	t1 = /obj/effect/proc_holder/spell/invoked/invisibility
-	t2 = /obj/effect/proc_holder/spell/invoked/blindness/miracle
-	t3 = /obj/effect/proc_holder/spell/invoked/projectile/moondagger
+	t0 = /datum/action/cooldown/spell/status/vigorous_craft
+	t1 = /datum/action/cooldown/spell/status/invisibility
+	t2 = /datum/action/cooldown/spell/blindness/miracle
+	t3 = /datum/action/cooldown/spell/projectile/moonlit_dagger
 	confess_lines = list(
 		"LUNARIA IS NIGHT!",
 		"LUNARIA SEES THE TRUTH!",
@@ -66,10 +66,10 @@
 	sins = "Deforestation, Disrespecting Nature"
 	boons = "You are immune to kneestingers, and drug overdoses."
 	added_traits = list(TRAIT_KNEESTINGER_IMMUNITY, TRAIT_CRACKHEAD)
-	t0 = /obj/effect/proc_holder/spell/targeted/blesscrop
-	t1 = /obj/effect/proc_holder/spell/self/beastsense
+	t0 = /datum/action/cooldown/spell/undirected/bless_crops
+	t1 = /datum/action/cooldown/spell/undirected/beast_sense
 	t2 = /obj/effect/proc_holder/spell/invoked/cure_rot
-	t3 = /obj/effect/proc_holder/spell/targeted/beasttame
+	t3 = /datum/action/cooldown/spell/beast_tame
 	confess_lines = list(
 		"BLISSROSE PROVIDES!",
 		"THE PLANTMOTHER BRINGS BOUNTY!",
@@ -86,10 +86,9 @@
 	sins = "Fear, Hubris, Forgetfulness"
 	boons = "Leeches will drain very little of your blood."
 	added_traits = list(TRAIT_LEECHIMMUNE)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/projectile/swordfish
-	t2 = /obj/effect/proc_holder/spell/self/summon_trident
-	t3 = /obj/effect/proc_holder/spell/invoked/ocean_embrace
+	t1 = /datum/action/cooldown/spell/projectile/swordfish
+	t2 = /datum/action/cooldown/spell/undirected/conjure_item/summon_trident
+	t3 = /datum/action/cooldown/spell/ocean_embrace
 	confess_lines = list(
 		"ABYSSOR COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",
@@ -107,10 +106,10 @@
 	sins = "Heretical Magic, Disturbance of Rest for personal gains."
 	boons = "You may see the presence of a soul in a body and eat raw meat."
 	added_traits = list(TRAIT_SOUL_EXAMINE, TRAIT_ORGAN_EATER)
-	t0 = /obj/effect/proc_holder/spell/targeted/burialrite
-	t1 = /obj/effect/proc_holder/spell/targeted/soulspeak
-	t2 = /obj/effect/proc_holder/spell/targeted/churn
-	t3 = /obj/effect/proc_holder/spell/invoked/revive
+	t0 = /datum/action/cooldown/spell/burial_rites
+	t1 = /datum/action/cooldown/spell/undirected/soul_speak
+	t2 = /datum/action/cooldown/spell/aoe/churn_undead
+	t3 = /datum/action/cooldown/spell/revive
 	confess_lines = list(
 		"ALL SOULS FIND THEIR WAY TO THE LAST DEATH!",
 		"THE UNNAMED IS OUR FINAL REPOSE!",
@@ -132,10 +131,10 @@ accend to the astral plane as the god of the desert where he has watched over al
 	sins = "Tyranny, Cruelty"
 	boons = "Your used weapons dull slower."
 	added_traits = list(TRAIT_SHARPER_BLADES)
-	t0 = /obj/effect/proc_holder/spell/self/call_to_arms
-	t1 = /obj/effect/proc_holder/spell/self/divine_strike
-	t2 = /obj/effect/proc_holder/spell/invoked/persistence
-	t3 = /obj/effect/proc_holder/spell/invoked/heatmetal
+	t0 = /datum/action/cooldown/spell/undirected/call_to_arms
+	t1 = /datum/action/cooldown/spell/undirected/divine_strike
+	t2 = /datum/action/cooldown/spell/persistence
+	t3 = /datum/action/cooldown/spell/heat_metal
 	confess_lines = list(
 		"WANDERER GUIDE ME!",
 		"BURNING SANDS AGAINST MY SKIN!",
@@ -152,9 +151,8 @@ accend to the astral plane as the god of the desert where he has watched over al
 	sins = "Boredom, Predictability, Routine"
 	boons = "You can rig different forms of gambling in your favor."
 	added_traits = list(TRAIT_BLACKLEG)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/vicious_mimicry
-	t2 = /obj/effect/proc_holder/spell/invoked/wheel
+	t1 = /datum/action/cooldown/spell/undirected/list_target/vicious_mimicry
+	t2 = /datum/action/cooldown/spell/status/wheel
 	confess_lines = list(
 		"SOLARIA IS MY LIGHT!",
 		"LUNARIA IS NIGHT!",
@@ -179,10 +177,10 @@ accend to the astral plane as the god of the desert where he has watched over al
 	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"
 	boons = "You may consume rotten food without being sick."
 	added_traits = list(TRAIT_ROT_EATER)
-	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
-	t1 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t2 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
-	t3 = /obj/effect/proc_holder/spell/invoked/cure_rot
+	t0 = /datum/action/cooldown/spell/diagnose/holy
+	t1 = /datum/action/cooldown/spell/healing
+	t2 = /datum/action/cooldown/spell/attach_bodypart
+	t3 = /datum/action/cooldown/spell/cure_rot
 	confess_lines = list(
 		"PESTRA SOOTHES ALL ILLS!",
 		"DECAY IS A CONTINUATION OF LIFE!",
@@ -200,10 +198,9 @@ accend to the astral plane as the god of the desert where he has watched over al
 	sins = "Cheating, Shoddy Work, Suicide"
 	boons = "You recover more energy when sleeping."
 	added_traits = list(TRAIT_BETTER_SLEEP)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/vigorouscraft
-	t2 = /obj/effect/proc_holder/spell/invoked/hammerfall
-	t3 = /obj/effect/proc_holder/spell/invoked/heatmetal
+	t1 = /datum/action/cooldown/spell/status/vigorous_craft
+	t2 = /datum/action/cooldown/spell/hammer_fall
+	t3 = /datum/action/cooldown/spell/heat_metal
 	confess_lines = list(
 		"MALUM IS MY FORGE!",
 		"TRUE VALUE IS IN THE TOIL!",
@@ -221,10 +218,10 @@ accend to the astral plane as the god of the desert where he has watched over al
 	sins = "Sadism, Abandonment, Spreading illness purposefully."
 	boons = "You gain more sleep experience, you are better in bed."
 	added_traits = list(TRAIT_TUTELAGE, TRAIT_GOODLOVER, TRAIT_SEXDEVO)
-	t0 = /obj/effect/proc_holder/spell/invoked/instill_perfection
-	t1 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
-	t2 = /obj/effect/proc_holder/spell/invoked/invisibility
-	t3 = /obj/effect/proc_holder/spell/invoked/blindness/miracle
+	t0 = /datum/action/cooldown/spell/instill_perfection
+	t1 = /datum/action/cooldown/spell/projectile/eora_curse
+	t2 = /datum/action/cooldown/spell/status/invisibility
+	t3 = /datum/action/cooldown/spell/blindness/miracle
 	confess_lines = list(
 		"TAKE ME TO YOUR ASTRAL EMBRACE!",
 		"MOONBEAM, WAKE ME FROM THIS BAD DREAM!",
