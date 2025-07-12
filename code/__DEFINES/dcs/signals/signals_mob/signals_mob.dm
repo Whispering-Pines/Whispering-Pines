@@ -19,3 +19,7 @@
 ///from base of mob/can_block_magic(): (mob/user, casted_magic_flags, charge_cost)
 #define COMSIG_MOB_RECEIVE_MAGIC "mob_receive_magic"
 	#define COMPONENT_MAGIC_BLOCKED (1<<0)
+
+/// Called from the base of '/obj/item/bodypart/proc/drop_limb(special)' ()
+#define COMSIG_MOB_DISMEMBER "mob_drop_limb"
+	#define COMPONENT_CANCEL_DISMEMBER (1<<0) //cancel the drop limb

@@ -29,7 +29,7 @@
 	if(!isnull(space))
 		.["space"] = space
 
-/proc/displacement_map_filter(icon, render_source, x, y, size = 32)
+/proc/displacement_map_filter(icon, render_source, x, y, size = world.icon_size)
 	. = list("type" = "displace")
 	if(!isnull(icon))
 		.["icon"] = icon

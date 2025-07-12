@@ -162,7 +162,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(in_critical)
 		if(!(crit_allowed_modes[message_mode]))
 			return
-	else if(stat == UNCONSCIOUS)
+	else if(stat == UNCONSCIOUS && !forced)
 		if(!(unconscious_allowed_modes[message_mode]))
 			return
 

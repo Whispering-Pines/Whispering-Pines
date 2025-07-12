@@ -23,7 +23,7 @@
 		if(world.time > last_identify_attempt + 3 MINUTES)
 			last_identify_attempt = world.time
 			var/the_roll = 2*huser.STAINT*max(1,huser.get_skill_level(/datum/skill/misc/lore))-identify_difficulty
-			if(type in identified_items)
+			if(type in huser.identified_items)
 				to_chat(huser, span_green("I seen this before..."))
 				the_roll += 50
 				identify_difficulty = 0 //eliminate exp bonus.
@@ -35,6 +35,8 @@
 				update_appearance(UPDATE_ICON_STATE)
 				to_chat(huser, span_green("I figure that this should be a [name]."))
 				huser.adjust_experience(/datum/skill/misc/lore, huser.STAINT * 2 + identify_difficulty, FALSE, TRUE)
+				if(!type in huser.identified_items)
+					huser.identified_items += type
 			else
 				to_chat(huser, span_red("I can't quite figure out what this is, I should ponder again later... [the_roll]%"))
 		return

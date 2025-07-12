@@ -40,6 +40,9 @@
 		if(human_owner.checkcritarmor(zone_precise, bclass))
 			return FALSE
 
+	if(SEND_SIGNAL(src, COMSIG_MOB_DISMEMBER, src) & COMPONENT_CANCEL_DISMEMBER)
+		return FALSE //signal handled the dropping
+
 	var/obj/item/bodypart/affecting = C.get_bodypart(BODY_ZONE_CHEST)
 	if(affecting && dismember_wound)
 		affecting.add_wound(dismember_wound)

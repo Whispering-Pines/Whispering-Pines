@@ -320,6 +320,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ROTMAN "rotman" //you are a rotman and need occasional maintenance
 #define TRAIT_ZOMBIE_IMMUNE "zombie_immune" //immune to zombie infection
 #define TRAIT_NO_BITE "no_bite" //prevents biting
+#define TRAIT_STUCKITEMS "stuck_items" // Prevents removing items except for hand slots
 #define TRAIT_HARDDISMEMBER		"hard_dismember"
 #define TRAIT_FOREIGNER "foreigner" // is this guy a foreigner?
 #define TRAIT_NOAMBUSH "no_ambush" //! mob cannot be ambushed for any reason
