@@ -1,5 +1,5 @@
 
-/obj/item/book/granter/spell/spells5e/
+/obj/item/book/granter/spell/spells/
 	desc = "A scroll of potential known only to those that can decipher its secrets."
 	icon = 'icons/roguetown/items/misc.dmi'
 	oneuse = TRUE
@@ -8,297 +8,278 @@
 	remarks = list("Fascinating!", "Is that so...", "Like this?", "Really now...", "There's a little schmutz on this section...")
 	sellprice = 30
 
-/obj/item/book/granter/spell/spells5e/get_real_price()
+/obj/item/book/granter/spell/spells/get_real_price()
 	return sellprice
 
-/obj/item/book/granter/spell/spells5e/onlearned(mob/living/carbon/user)
+/obj/item/book/granter/spell/spells/onlearned(mob/living/carbon/user)
 	..()
 	if(oneuse == TRUE)
 		qdel(src) //no need this trash.
 		user.visible_message(span_warning("[src] has had its magic ink ripped from the scroll, it disintegrates to dust!"))
 
-// Containers and Special Items
-//backpack prepacked with scrolls for testing
-/obj/item/storage/backpack/rogue/backpack/spells5e/PopulateContents()
-	new /obj/item/book/granter/spell/spells5e/acidsplash5e(src)
-	new /obj/item/book/granter/spell/spells5e/bladeward5e(src)
-	new /obj/item/book/granter/spell/spells5e/createbonfire5e(src)
-	new /obj/item/book/granter/spell/spells5e/chilltouch5e(src)
-	new /obj/item/book/granter/spell/spells5e/frostbite5e(src)
-	new /obj/item/book/granter/spell/spells5e/guidance5e(src)
-	new /obj/item/book/granter/spell/spells5e/infestation5e(src)
-	new /obj/item/book/granter/spell/spells5e/light5e(src)
-	new /obj/item/book/granter/spell/spells5e/lightninglure5e(src)
-
 // Cantrips (Level 0)
-/obj/item/book/granter/spell/spells5e/acidsplash5e
+/obj/item/book/granter/spell/spells/acidsplash
 	name = "Scroll of Acid Splash"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/acidsplash5e
+	spell = /datum/action/cooldown/spell/projectile/acid_splash
 	spellname = "acid splash"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/bladeward5e
+/obj/item/book/granter/spell/spells/bladeward
 	name = "Scroll of Blade Ward"
-	spell = /obj/effect/proc_holder/spell/self/bladeward5e
+	spell = /datum/action/cooldown/spell/undirected/blade_ward
 	spellname = "blade ward"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/boomingblade5e
+/obj/item/book/granter/spell/spells/boomingblade
 	name = "Scroll of Booming Blade"
-	spell = /obj/effect/proc_holder/spell/invoked/boomingblade5e
+	spell = /datum/action/cooldown/spell/status/booming_blade
 	spellname = "booming blade"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/chilltouch5e
+/obj/item/book/granter/spell/spells/chilltouch
 	name = "Scroll of Chill Touch"
-	spell = /obj/effect/proc_holder/spell/invoked/chilltouch5e
+	spell = /datum/action/cooldown/spell/chill_touch
 	spellname = "chill touch"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/createbonfire5e
+/obj/item/book/granter/spell/spells/createbonfire
 	name = "Scroll of Create Bonfire"
-	spell = /obj/effect/proc_holder/spell/aoe_turf/conjure/createbonfire5e
+	spell = /datum/action/cooldown/spell/conjure/bonfire
 	spellname = "create bonfire"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/decompose5e
+/obj/item/book/granter/spell/spells/decompose
 	name = "Scroll of Decompose"
-	spell = /obj/effect/proc_holder/spell/invoked/decompose5e
+	spell = /datum/action/cooldown/spell/decompose
 	spellname = "decompose"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/encodethoughts5e
+/obj/item/book/granter/spell/spells/encodethoughts
 	name = "Scroll of Encode Thoughts"
-	spell = /obj/effect/proc_holder/spell/targeted/encodethoughts5e
+	spell = /datum/action/cooldown/spell/undirected/list_target/encode_thoughts
 	spellname = "encode thoughts"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/frostbite5e
+/obj/item/book/granter/spell/spells/frostbite
 	name = "Scroll of Frostbite"
-	spell = /obj/effect/proc_holder/spell/invoked/frostbite5e
+	spell = /datum/action/cooldown/spell/status/frostbite
 	spellname = "frostbite"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/greenflameblade5e
+/obj/item/book/granter/spell/spells/greenflameblade
 	name = "Scroll of Green-Flame Blade"
-	spell = /obj/effect/proc_holder/spell/invoked/greenflameblade5e
+	spell = /datum/action/cooldown/spell/enchantment/green_flame
 	spellname = "green-flame blade"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/guidance5e
+/obj/item/book/granter/spell/spells/guidance
 	name = "Scroll of Guidance"
-	spell = /obj/effect/proc_holder/spell/invoked/guidance
+	spell = /datum/action/cooldown/spell/status/guidance
 	spellname = "guidance"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/infestation5e
+/obj/item/book/granter/spell/spells/infestation
 	name = "Scroll of Infestation"
-	spell = /obj/effect/proc_holder/spell/invoked/infestation5e
+	spell = /datum/action/cooldown/spell/status/infestation
 	spellname = "infestation"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/light5e
-	name = "Scroll of Light"
-	spell = /obj/effect/proc_holder/spell/self/light5e
+/obj/item/book/granter/spell/spells/light
+	name = "Scroll of Illuminate"
+	spell = /datum/action/cooldown/spell/essence/illuminate
 	spellname = "light"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/lightninglure5e
+/obj/item/book/granter/spell/spells/lightninglure
 	name = "Scroll of Lightning Lure"
-	spell = /obj/effect/proc_holder/spell/targeted/lightninglure
+	spell = /datum/action/cooldown/spell/aoe/lightning_lure
 	spellname = "lightning lure"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/mending5e
-	name = "Scroll of Mending"
-	spell = /obj/effect/proc_holder/spell/invoked/mending
+/obj/item/book/granter/spell/spells/mending
+	name = "Scroll of Minor Mend"
+	spell = /datum/action/cooldown/spell/essence/mend
 	spellname = "mending"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/mindsliver5e
-	name = "Scroll of Mind Sliver"
-	spell = /obj/effect/proc_holder/spell/invoked/mindsliver5e
+/obj/item/book/granter/spell/spells/mindsliver
+	name = "Scroll of Mind Spike"
+	spell = /datum/action/cooldown/spell/mind_spike
 	spellname = "mind sliver"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/poisonspray5e
+/obj/item/book/granter/spell/spells/poisonspray
 	name = "Scroll of Poison Spray"
-	spell = /obj/effect/proc_holder/spell/invoked/poisonspray5e
+	spell = /datum/action/cooldown/spell/undirected/create_cloud
 	spellname = "poison spray"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/primalsavagery5e
+/obj/item/book/granter/spell/spells/primalsavagery
 	name = "Scroll of Primal Savagery"
-	spell = /obj/effect/proc_holder/spell/self/primalsavagery5e
+	spell = /datum/action/cooldown/spell/status/primal_savagery
 	spellname = "primal savagery"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/rayoffrost5e
+/obj/item/book/granter/spell/spells/rayoffrost
 	name = "Scroll of Ray of Frost"
-	spell = /obj/effect/proc_holder/spell/invoked/beam/rayoffrost5e
+	spell = /datum/action/cooldown/spell/beam/ray_of_frost
 	spellname = "ray of frost"
 	icon_state = "scrollred"
 
 // Level 1 Spells - Cost 400
-/obj/item/book/granter/spell/spells5e/bladeburst5e
+/obj/item/book/granter/spell/spells/bladeburst
 	name = "Scroll of Blade Burst"
-	spell = /obj/effect/proc_holder/spell/invoked/blade_burst
+	spell = /datum/action/cooldown/spell/blade_burst
 	spellname = "blade burst"
 	icon_state = "scrollblue"
 
-/obj/item/book/granter/spell/spells5e/darkvision5e
+/obj/item/book/granter/spell/spells/darkvision
 	name = "Scroll of Darkvision"
-	spell = /obj/effect/proc_holder/spell/targeted/touch/darkvision
+	spell = /datum/action/cooldown/spell/undirected/touch/darkvision
 	spellname = "darkvision"
 	icon_state = "scrollblue"
 
-/obj/item/book/granter/spell/spells5e/featherfall5e
-	name = "Scroll of Featherfall"
-	spell = /obj/effect/proc_holder/spell/invoked/featherfall
+/obj/item/book/granter/spell/spells/featherfall
+	name = "Scroll of Feather Falling"
+	spell = /datum/action/cooldown/spell/undirected/feather_falling
 	spellname = "featherfall"
 	icon_state = "scrollblue"
 
-/obj/item/book/granter/spell/spells5e/fetch5e
+/obj/item/book/granter/spell/spells/fetch
 	name = "Scroll of Fetch"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/fetch
+	spell = /datum/action/cooldown/spell/projectile/fetch
 	spellname = "fetch"
 	icon_state = "scrollblue"
 
-/obj/item/book/granter/spell/spells5e/forcewall5e
+/obj/item/book/granter/spell/spells/forcewall
 	name = "Scroll of Force Wall"
-	spell = /obj/effect/proc_holder/spell/invoked/forcewall_weak
+	spell = /datum/action/cooldown/spell/undirected/forcewall/breakable
 	spellname = "force wall"
 	icon_state = "scrollblue"
 
-/obj/item/book/granter/spell/spells5e/haste5e
+/obj/item/book/granter/spell/spells/haste
 	name = "Scroll of Haste"
-	spell = /obj/effect/proc_holder/spell/invoked/haste
+	spell = /datum/action/cooldown/spell/status/haste
 	spellname = "haste"
 	icon_state = "scrollblue"
 
-/obj/item/book/granter/spell/spells5e/message5e
+/obj/item/book/granter/spell/spells/message
 	name = "Scroll of Message"
-	spell = /obj/effect/proc_holder/spell/self/message
+	spell = /datum/action/cooldown/spell/undirected/message
 	spellname = "message"
 	icon_state = "scrollblue"
 
-/obj/item/book/granter/spell/spells5e/prestidigitation5e
+/obj/item/book/granter/spell/spells/prestidigitation
 	name = "Scroll of Prestidigitation"
-	spell = /obj/effect/proc_holder/spell/targeted/touch/prestidigitation
+	spell = /datum/action/cooldown/spell/undirected/touch/prestidigitation
 	spellname = "prestidigitation"
 	icon_state = "scrollblue"
 
-/obj/item/book/granter/spell/spells5e/push5e
+/obj/item/book/granter/spell/spells/push
 	name = "Scroll of Repulse"
-	spell = /obj/effect/proc_holder/spell/invoked/push_spell
+	spell = /datum/action/cooldown/spell/aoe/repulse
 	spellname = "repulse"
 	icon_state = "scrollblue"
 
-/obj/item/book/granter/spell/spells5e/slowdown5e
+/obj/item/book/granter/spell/spells/slowdown
 	name = "Scroll of Slowdown"
-	spell = /obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe
+	spell = /datum/action/cooldown/spell/aoe/on_turf/ensnare
 	spellname = "slowdown"
 	icon_state = "scrollblue"
 
 // Level 2 Spells - Cost 800
 
-/obj/item/book/granter/spell/spells5e/greaterfireball5e
+/obj/item/book/granter/spell/spells/t2
+	spell_slot_cost = 2
+
+/obj/item/book/granter/spell/spells/t2/greaterfireball
 	name = "Scroll of Greater Fireball"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater
+	spell = /datum/action/cooldown/spell/projectile/fireball/greater
 	spellname = "greater fireball"
 	icon_state = "scrollgreen"
 
-/obj/item/book/granter/spell/spells5e/instantsummons5e
-	name = "Scroll of Item Summons"
-	spell = /obj/effect/proc_holder/spell/targeted/summonitem
-	spellname = "item summons"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/lightningbolt5e
+/obj/item/book/granter/spell/spells/t2/lightningbolt
 	name = "Scroll of Lightning Bolt"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt
+	spell = /datum/action/cooldown/spell/projectile/lightning
 	spellname = "lightning bolt"
 	icon_state = "scrollgreen"
 
-/obj/item/book/granter/spell/spells5e/nondetection5e
+/obj/item/book/granter/spell/spells/t2/nondetection
 	name = "Scroll of Nondetection"
-	spell = /obj/effect/proc_holder/spell/targeted/touch/nondetection
+	spell = /datum/action/cooldown/spell/undirected/touch/non_detection
 	spellname = "nondetection"
 	icon_state = "scrollgreen"
 
 // Level 3 Spells - Cost 1600
-/obj/item/book/granter/spell/spells5e/bloodbolt5e
+/obj/item/book/granter/spell/spells/t3
+	spell_slot_cost = 3
+
+/obj/item/book/granter/spell/spells/t3/bloodbolt
 	name = "Scroll of Blood Bolt"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning
+	spell = /datum/action/cooldown/spell/projectile/blood_bolt
 	spellname = "blood bolt"
 	icon_state = "scrollpurple"
 
-/obj/item/book/granter/spell/spells5e/bloodsteal5e
+/obj/item/book/granter/spell/spells/t3/bloodsteal
 	name = "Scroll of Blood Steal"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/bloodsteal
+	spell = /datum/action/cooldown/spell/projectile/blood_steal
 	spellname = "blood steal"
 	icon_state = "scrollpurple"
 
-/obj/item/book/granter/spell/spells5e/commandundead5e
+/obj/item/book/granter/spell/spells/t3/commandundead
 	name = "Scroll of Command Undead"
-	spell = /obj/effect/proc_holder/spell/self/command_undead
+	spell = /datum/action/cooldown/spell/undirected/command_undead
 	spellname = "command undead"
 	icon_state = "scrollpurple"
 
-/obj/item/book/granter/spell/spells5e/eyebite5e
+/obj/item/book/granter/spell/spells/t3/eyebite
 	name = "Scroll of Eyebite"
-	spell = /obj/effect/proc_holder/spell/invoked/eyebite
+	spell = /datum/action/cooldown/spell/eyebite
 	spellname = "eyebite"
 	icon_state = "scrollpurple"
 
-/obj/item/book/granter/spell/spells5e/findfamiliar5e
+/obj/item/book/granter/spell/spells/t3/findfamiliar
 	name = "Scroll of Find Familiar"
-	spell = /obj/effect/proc_holder/spell/invoked/findfamiliar
+	spell = /datum/action/cooldown/spell/conjure/familiar
 	spellname = "find familiar"
 	icon_state = "scrollpurple"
 
 // Really powerful BUT it works
 
-/obj/item/book/granter/spell/spells5e/lifesteal5e
-	name = "Scroll of Life Steal"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/lifesteal
-	spellname = "life steal"
-	icon_state = "scrollpurple"
-
-/obj/item/book/granter/spell/spells5e/mistystep5e
-	name = "Scroll of Misty Step"
-	spell = /obj/effect/proc_holder/spell/targeted/ethereal_jaunt
+/obj/item/book/granter/spell/spells/t3/mistystep
+	name = "Scroll of Ethereal Jaunt"
+	spell = /datum/action/cooldown/spell/undirected/jaunt/ethereal_jaunt
 	spellname = "misty step"
 	icon_state = "scrollpurple"
 
-/obj/item/book/granter/spell/spells5e/raiseundead5e
+/obj/item/book/granter/spell/spells/t3/raiseundead
 	name = "Scroll of Raise Undead"
-	spell = /obj/effect/proc_holder/spell/invoked/raise_undead
+	spell = /datum/action/cooldown/spell/raise_undead
 	spellname = "raise undead"
 	icon_state = "scrollpurple"
 
-/obj/item/book/granter/spell/spells5e/rayofsickness5e
+/obj/item/book/granter/spell/spells/t3/rayofsickness
 	name = "Scroll of Ray of Sickness"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/sickness
+	spell = /datum/action/cooldown/spell/projectile/sickness
 	spellname = "ray of sickness"
 	icon_state = "scrollpurple"
 
-/obj/item/book/granter/spell/spells5e/strengthenundead5e
+/obj/item/book/granter/spell/spells/t3/strengthenundead
 	name = "Scroll of Infuse Unlife"
-	spell = /obj/effect/proc_holder/spell/invoked/strengthen_undead
+	spell = /datum/action/cooldown/spell/strengthen_undead
 	spellname = "infuse unlife"
 	icon_state = "scrollpurple"
 	remarks = list("Mediolanum ventis..", "Sana damnatorum..", "Frigidus ossa mortuorum..")
 
 // Mapping only
-/obj/item/book/granter/spell/spells5e/random
+/obj/item/book/granter/spell/spells/random
 	name = "random spell scroll spawner"
-	desc = "This item spawns a random 5e spell scroll on roundstart. Mapping only!"
+	desc = "This item spawns a random  spell scroll on roundstart. Mapping only!"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/random/Initialize()
+/obj/item/book/granter/spell/spells/random/Initialize()
 	. = ..()
-	var/list/scroll_types = subtypesof(/obj/item/book/granter/spell/spells5e) - list(/obj/item/book/granter/spell/spells5e/random)
+	var/list/scroll_types = subtypesof(/obj/item/book/granter/spell/spells) - list(/obj/item/book/granter/spell/spells/random)
 	var/chosen_type = pick(scroll_types)
 	var/obj/structure/bookcase/B = locate() in get_turf(src)
 	var/obj/item/spawned_scroll = new chosen_type(B ? B : get_turf(src))

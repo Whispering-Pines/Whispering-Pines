@@ -678,7 +678,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	icon_state = "psysword"
-	name = "psydonian longsword"
+	name = "old goddean longsword"
 	desc = "A large silver longsword forged in the shape of a psycross."
 	smeltresult = /obj/item/ingot/silver
 	sellprice = 100
@@ -715,7 +715,7 @@
 /obj/item/weapon/sword/long/greatsword/psydon
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	force_wielded = DAMAGE_LONGSWORD_WIELD
-	name = "psydonian greatsword"
+	name = "old goddean greatsword"
 	desc = "A mighty silver greatsword made to strike fear into the heart of even archdevils."
 	icon_state = "psygsword"
 	smeltresult = /obj/item/ingot/silver

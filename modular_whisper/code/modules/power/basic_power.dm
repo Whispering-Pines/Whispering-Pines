@@ -1,4 +1,4 @@
-GLOBAL_LIST_EMPTY(fake_powered_machines)
+GLOBAL_LIST_EMPTY(basic_power_machines)
 
 //this is just cosmetic since i cant possibly return power code.
 //this has a toggle which sets area as a ghetto powered state to be checked rather than having to search every tile of an area by machines.
@@ -13,13 +13,13 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 	if(toggled)
 		var/area/current_area = get_area(src)
 		current_area.fake_power -= 1
-		for(var/obj/machinery/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/machinery/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/closet/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/closet/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/chair/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/chair/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
 	. = ..()
@@ -39,13 +39,13 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 		current_area.fake_power += 1 //hopefully should handle multiples
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
 		icon_state = "[initial(icon_state)]_on"
-		for(var/obj/machinery/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/machinery/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/closet/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/closet/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/chair/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/chair/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
 
@@ -53,37 +53,37 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 		current_area.fake_power -= 1
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		icon_state = "[initial(icon_state)]_off"
-		for(var/obj/machinery/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/machinery/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/closet/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/closet/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/chair/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/chair/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
 
 //fake powered machine
-/obj/machinery/fake_powered
+/obj/machinery/basic_power
 	name = "Template fake power machine"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	anchored = TRUE
 	var/toggled = TRUE
 	var/self_powered = FALSE
 
-/obj/machinery/fake_powered/Initialize()
+/obj/machinery/basic_power/Initialize()
 	. = ..()
 	if(!self_powered)
-		GLOB.fake_powered_machines += src
+		GLOB.basic_power_machines += src
 		check_fake_power()
 	update_icon()
 
-/obj/machinery/fake_powered/Destroy()
+/obj/machinery/basic_power/Destroy()
 	if(!self_powered)
-		GLOB.fake_powered_machines -= src
+		GLOB.basic_power_machines -= src
 	. = ..()
 
-/obj/machinery/fake_powered/proc/check_fake_power()
+/obj/machinery/basic_power/proc/check_fake_power()
 	var/area/current_area = get_area(src)
 	if(current_area.fake_power)
 		toggled = TRUE
@@ -98,7 +98,7 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 
 
 //coffin type for lids
-/obj/structure/closet/fake_powered
+/obj/structure/closet/basic_power
 	name = "Template lidded fake power machine"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	anchored = TRUE
@@ -106,21 +106,21 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 	var/working = FALSE
 	var/self_powered = FALSE
 
-/obj/structure/closet/fake_powered/Initialize()
+/obj/structure/closet/basic_power/Initialize()
 	if(!self_powered)
-		GLOB.fake_powered_machines += src
+		GLOB.basic_power_machines += src
 		check_fake_power()
 	else
 		toggled = TRUE
 	update_appearance(UPDATE_ICON_STATE)
 	. = ..()
 
-/obj/structure/closet/fake_powered/Destroy()
+/obj/structure/closet/basic_power/Destroy()
 	if(!self_powered)
-		GLOB.fake_powered_machines -= src
+		GLOB.basic_power_machines -= src
 	. = ..()
 
-/obj/structure/closet/fake_powered/proc/check_fake_power()
+/obj/structure/closet/basic_power/proc/check_fake_power()
 	var/area/current_area = get_area(src)
 	if(current_area.fake_power)
 		toggled = TRUE
@@ -132,7 +132,7 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 		balloon_alert_to_viewers("dies down.")
 
 //chair type
-/obj/structure/chair/fake_powered
+/obj/structure/chair/basic_power
 	name = "Template chair fake power machine"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	anchored = TRUE
@@ -141,21 +141,21 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 	var/working = FALSE
 	var/self_powered = FALSE
 
-/obj/structure/chair/fake_powered/Initialize()
+/obj/structure/chair/basic_power/Initialize()
 	. = ..()
 	if(!self_powered)
-		GLOB.fake_powered_machines += src
+		GLOB.basic_power_machines += src
 		check_fake_power()
 	else
 		toggled = TRUE
 	update_icon()
 
-/obj/structure/chair/fake_powered/Destroy()
+/obj/structure/chair/basic_power/Destroy()
 	if(!self_powered)
-		GLOB.fake_powered_machines -= src
+		GLOB.basic_power_machines -= src
 	. = ..()
 
-/obj/structure/chair/fake_powered/proc/check_fake_power()
+/obj/structure/chair/basic_power/proc/check_fake_power()
 	var/area/current_area = get_area(src)
 	if(current_area.fake_power)
 		toggled = TRUE
@@ -197,18 +197,18 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 	if(toggled)
 		var/area/current_area = get_area(src)
 		current_area.fake_power -= 1
-		for(var/obj/machinery/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/machinery/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/closet/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/closet/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/chair/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/chair/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
 	. = ..()
 
-/obj/structure/chair/sexgenerator/attack_right(mob/user)
+/obj/structure/chair/sexgenerator/attack_hand_secondary(mob/user)
 	if(!charge_stored)
 		balloon_alert_to_viewers("No charge.")
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
@@ -222,26 +222,26 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 		current_area.fake_power += 1 //hopefully should handle multiples
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
 		icon_state = "milker_gen_on"
-		for(var/obj/machinery/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/machinery/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/closet/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/closet/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/chair/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/chair/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
 	else
 		current_area.fake_power -= 1
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		icon_state = "milker_gen"
-		for(var/obj/machinery/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/machinery/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/closet/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/closet/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
-		for(var/obj/structure/chair/fake_powered/power_checker in GLOB.fake_powered_machines)
+		for(var/obj/structure/chair/basic_power/power_checker in GLOB.basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
 

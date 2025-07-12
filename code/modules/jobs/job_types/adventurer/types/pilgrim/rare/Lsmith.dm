@@ -34,7 +34,7 @@
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/swimming, pick(0,1,1), TRUE)
+		H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/climbing, pick(1,1,2), TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
@@ -46,8 +46,8 @@
 		H.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/craft/cooking, pick(0,1,1), TRUE)
-		H.adjust_skillrank(/datum/skill/craft/carpentry, pick(0,1,1), TRUE) // 66% over 50% of normal smith
+		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE) // 66% over 50% of normal smith
 		H.adjust_skillrank(/datum/skill/craft/blacksmithing, 6, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/armorsmithing, 6, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/weaponsmithing, 6, TRUE)

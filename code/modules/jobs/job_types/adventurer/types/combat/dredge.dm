@@ -15,8 +15,8 @@
 	H.adjust_skillrank(/datum/skill/combat/unarmed, pick (1,2), TRUE)
 	H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/knives, pick(0,0,0,0,0,1,1,1,1,2,), TRUE)
-	H.adjust_skillrank(/datum/skill/combat/shields, pick(1,2,3), TRUE)
-	H.adjust_skillrank(/datum/skill/misc/swimming, pick(0,1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/climbing, pick(0,0,1,2,3), TRUE)
 	H.adjust_skillrank(/datum/skill/misc/riding, pick(0,1,1,2), TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, pick(0,0,1), TRUE)
@@ -169,7 +169,7 @@
 			H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-			H.set_patron(/datum/patron/old_gods)
+			H.set_patron(/datum/patron/psydon)
 			to_chat(H,span_info("\
 			New gods are false gods, and I loathe those that worship the true corpse god, Last Death. Old Gods lives, my life for Old Gods.")
 			)
@@ -232,7 +232,7 @@
 			neck = /obj/item/clothing/neck/chaincoif/iron
 			head = /obj/item/clothing/head/fancyhat
 			ring = /obj/item/clothing/ring/silver
-			H.adjust_skillrank(/datum/skill/misc/reading, pick(2,3), TRUE)
+			H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
 			H.change_stat(STATKEY_INT, 2)
 			H.change_stat(STATKEY_END, -1)
@@ -656,7 +656,7 @@
 			)
 		if("Alch")
 			H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
-			H.adjust_skillrank(/datum/skill/magic/arcane, pick(1,2), TRUE)
+			H.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			H.change_stat(STATKEY_PER, 1)
 			H.change_stat(STATKEY_INT, 1)

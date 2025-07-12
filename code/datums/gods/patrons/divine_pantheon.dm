@@ -28,7 +28,7 @@
 	added_traits = list(TRAIT_APRICITY, TRAIT_SHARPER_BLADES)
 	t0 = /datum/action/cooldown/spell/sacred_flame
 	t1 = /datum/action/cooldown/spell/healing/greater
-	t2 = /datum/action/cooldown/spell/invoked/projectile/fireball
+	t2 = /datum/action/cooldown/spell/projectile/fireball
 	t3 = /datum/action/cooldown/spell/revive
 	confess_lines = list(
 		"SOLARIA IS MY LIGHT!",
@@ -68,7 +68,7 @@
 	added_traits = list(TRAIT_KNEESTINGER_IMMUNITY, TRAIT_CRACKHEAD)
 	t0 = /datum/action/cooldown/spell/undirected/bless_crops
 	t1 = /datum/action/cooldown/spell/undirected/beast_sense
-	t2 = /obj/effect/proc_holder/spell/invoked/cure_rot
+	t2 = /datum/action/cooldown/spell/attach_bodypart
 	t3 = /datum/action/cooldown/spell/beast_tame
 	confess_lines = list(
 		"BLISSROSE PROVIDES!",

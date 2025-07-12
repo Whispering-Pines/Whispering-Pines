@@ -425,7 +425,7 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	if(src.mob)
 		if(isliving(src.mob))
 			var/mob/living/living_user_mob = src.mob
-			if(istype(living_user_mob.patron, /datum/patron/old_gods))
+			if(istype(living_user_mob.patron, /datum/patron/psydon))
 				psydonite_user = TRUE
 
 	var/psydon_followers = GLOB.patron_follower_counts["Psydon"] || 0

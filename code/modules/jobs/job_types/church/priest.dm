@@ -189,7 +189,7 @@
 		return
 	var/curse_to_use = /datum/curse/xylix
 	switch(patron?.type)
-		if(/datum/patron/old_gods, /datum/patron/old_gods/progressive)
+		if(/datum/patron/psydon, /datum/patron/psydon/progressive)
 			//missing
 		if(/datum/patron/divine/astrata)
 			curse_to_use = /datum/curse/astrata

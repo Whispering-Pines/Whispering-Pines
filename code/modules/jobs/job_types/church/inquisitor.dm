@@ -1,9 +1,6 @@
 /datum/job/inquisitor
 	title = "Inquisitor"
-	tutorial = "A recent arrival from central continents, \
-	you are a member of the secretive lodges that have held to the service of the old gods even before the great war and somehow survived through it. \
-	You have been sent by your leader, the Orthodox Bishop, \
-	to assign the local Priest in combatting the increasing number of heretics and monsters infiltrating Phantom Kingdom."
+	tutorial = "Your church, whether from central continent or here, tasked you to identify and destroy extremists, cultists, supernatural creatures and other threats to the grasp of divinity on these lands and their followers.."
 	flag = PURITAN
 	department_flag = CHURCHMEN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -11,14 +8,13 @@
 	faction = FACTION_TOWN
 	total_positions = 1
 	spawn_positions = 1
-	min_pq = 15
+	min_pq = 10
 	bypass_lastclass = TRUE
 
 	allowed_races = list(MALE, FEMALE)
-	allowed_races = list("Human")
+	allowed_patrons = ALL_TEMPLE_PATRONS
 
 	outfit = /datum/outfit/job/inquisitor
-	is_foreigner = TRUE
 	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 
 /datum/job/inquisitor/after_spawn(mob/living/spawned, client/player_client)
@@ -33,11 +29,34 @@
 /datum/outfit/job/inquisitor
 	name = "Inquisitor"
 	jobtype = /datum/job/inquisitor
-	allowed_patrons = list(/datum/patron/old_gods)
 	job_bitflag = BITFLAG_CHURCH
 
 /datum/outfit/job/inquisitor/pre_equip(mob/living/carbon/human/H)
 	..()
+
+	switch(H.patron?.type)
+		if(/datum/patron/divine/astrata)
+			neck = /obj/item/clothing/neck/psycross/silver/astrata
+		if(/datum/patron/divine/dendor)
+			neck = /obj/item/clothing/neck/psycross/silver/dendor
+		if(/datum/patron/divine/necra)
+			neck = /obj/item/clothing/neck/psycross/silver/necra
+		if(/datum/patron/divine/eora)
+			neck = /obj/item/clothing/neck/psycross/silver/eora
+			H.virginity = FALSE
+		if(/datum/patron/divine/ravox)
+			neck = /obj/item/clothing/neck/psycross/silver/ravox
+		if(/datum/patron/divine/noc)
+			neck = /obj/item/clothing/neck/psycross/noc
+		if(/datum/patron/divine/pestra)
+			neck = /obj/item/clothing/neck/psycross/silver/pestra
+		if(/datum/patron/divine/abyssor)
+			neck = /obj/item/clothing/neck/psycross/silver/abyssor
+		if(/datum/patron/divine/malum)
+			neck = /obj/item/clothing/neck/psycross/silver/malum
+		if(/datum/patron/divine/xylix)
+			neck = /obj/item/clothing/neck/psycross/silver/xylix
+
 	shirt = /obj/item/clothing/armor/gambeson/heavy/dark
 	belt = /obj/item/storage/belt/leather/black
 	shoes = /obj/item/clothing/shoes/otavan/inqboots
@@ -87,7 +106,6 @@
 		return
 	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 	H.mind?.add_antag_datum(new_antag)
-	H.set_patron(/datum/patron/old_gods)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
@@ -95,8 +113,8 @@
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	to_chat(H,span_info("\
-		-The Holy Bishop of the Inquisition has sent you here on a task to root out evil within this town. Make The Holy Bishop proud!\n\
-		-You've also been gaven 10 favors to use at the mail machines, you can get more favor by sending signed confessions to The Holy Bishop. Spend your favors wisely.")
+		-Your church of [H.patron.name] sent you here to vanquish evil and enemies of the new gods here, do not disappoint. \n\
+		-You've also been gaven 10 favors to use at the mail machines for your cause, you can get more favor by sending signed confessions to your church. Spend your favors wisely.")
 		)
 	H.mind?.teach_crafting_recipe(/datum/repeatable_crafting_recipe/reading/confessional)
 
@@ -213,6 +231,7 @@
 		"WHY ME?!",
 		"I'M INNOCENT!",
 		"I AM NO SINNER!",
+		"WHY GODS?!"
 	)
 	var/resist_chance = 0
 	if(resist)
@@ -253,9 +272,9 @@
 				if(/datum/faith/old_gods)
 					if(ispath(victim_patron.type, /datum/patron/divine) && victim_patron.type != /datum/patron/divine/necra) //lore
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
-					else if(victim_patron.type == /datum/patron/old_gods/progressive)
+					else if(victim_patron.type == /datum/patron/psydon/progressive)
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
-					else if(victim_patron.type == /datum/patron/old_gods)
+					else if(victim_patron.type == /datum/patron/psydon)
 						interrogator.add_stress(/datum/stressevent/torture_large_penalty)
 
 		if(length(confessions))

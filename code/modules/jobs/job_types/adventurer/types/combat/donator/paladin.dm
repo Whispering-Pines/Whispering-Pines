@@ -14,7 +14,7 @@
 
 
 	switch(H.patron?.type)
-		if(/datum/patron/old_gods, /datum/patron/old_gods/progressive)
+		if(/datum/patron/psydon, /datum/patron/psydon/progressive)
 			head = /obj/item/clothing/head/helmet/heavy/bucket/gold
 			wrists = /obj/item/clothing/neck/psycross/g
 			H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'

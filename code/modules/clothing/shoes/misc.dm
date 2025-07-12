@@ -155,7 +155,7 @@
 	icon_state = "inqboots"
 	item_state = "inqboots"
 
-//Zhaladuskn Duelist Merc - On par with grenzelhoftian's stats.
+//Zhaladuskn Duelist Merc - On par with frozener's stats.
 /obj/item/clothing/shoes/nobleboot/duelboots
 	desc = "Boots custom fit for a Zhaladuskn Duelist. Footwork is paramount in a duel, so good boots are a must."
 	armor = list("blunt" = 25, "slash" = 25, "stab" = 25,  "piercing" = 15, "fire" = 0, "acid" = 0)

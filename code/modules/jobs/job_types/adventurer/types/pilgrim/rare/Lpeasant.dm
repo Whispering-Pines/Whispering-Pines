@@ -22,7 +22,7 @@
 	H.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/swimming, pick(0,1,1), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/labor/farming, 6, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)

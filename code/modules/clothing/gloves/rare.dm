@@ -41,7 +41,7 @@
 	item_weight = 7 * STEEL_MULTIPLIER
 
 /obj/item/clothing/gloves/rare/grenzelplate
-	name = "grenzelhoftian plate gauntlets"
+	name = "frozener plate gauntlets"
 	desc = "Battling the Craterins led to the exchange of military ideas. The Frozen Empire adopted refined chain and plate armaments to better allow their knights unmatchable resilience against the enemies of their Empire."
 	icon_state = "human_swordhand"
 	allowed_race = list("human","aasimar")

@@ -275,5 +275,6 @@
 /obj/item/scomstone/bad/Hear()
 	return
 
-/obj/item/scomstone/bad/attack_right(mob/user)
+/obj/item/scomstone/bad/attack_secondary(mob/living/victim, mob/living/user, params)
+	. = ..()
 	return

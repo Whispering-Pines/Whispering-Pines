@@ -104,7 +104,7 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 	/// did this mind use the late join button?
 	var/late_joiner = FALSE
 	/// time of the last death of the mob this mind controlled
-	var/necra = 0
+	var/last_death = 0
 
 	var/force_escaped = FALSE  // Set by Into The Sunset command of the shuttle manipulator
 
@@ -316,7 +316,7 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 
 /// set the /necra time of a mind to the current world time
 /datum/mind/proc/set_death_time()
-	necra = world.time
+	last_death = world.time
 
 /**
  * add a new memory to a mind

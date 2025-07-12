@@ -70,6 +70,7 @@
 	if(has_rolled_for_stats)
 		return FALSE
 
+	/* fuck rng
 	base_strength += (prob(33) && pick(-1, 1))
 	base_perception += (prob(33) && pick(-1, 1))
 	base_endurance += (prob(33) && pick(-1, 1))
@@ -77,6 +78,7 @@
 	base_intelligence += (prob(33) && pick(-1, 1))
 	base_speed += (prob(33) && pick(-1, 1))
 	base_fortune += (prob(33) && pick(-1, 1))
+	*/
 
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src

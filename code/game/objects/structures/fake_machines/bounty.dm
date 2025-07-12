@@ -243,7 +243,7 @@
 /obj/structure/chair/freedomchair/crafted
 	desc = "A chair-shaped machine normally used to place cursed masks onto a prisoner's head. This one's clearly been tampered with, and looks suspicious."
 
-/obj/structure/chair/freedomchair/crafted/attack_right(mob/living/carbon/human/A)
+/obj/structure/chair/freedomchair/crafted/attack_hand_secondary(mob/living/carbon/human/A)
 	var/mob/living/carbon/human/M = null
 	for(var/l in buckled_mobs)
 		M = l
@@ -274,7 +274,7 @@
 		say("ANALYSIS COMPLETE. NO CURSED MASK FOUND. ABORT.")
 		return
 
-/obj/structure/chair/freedomchair/attack_right(mob/living/carbon/human/A)
+/obj/structure/chair/freedomchair/attack_hand_secondary(mob/living/carbon/human/A)
 	var/mob/living/carbon/human/M = null
 	for(var/l in buckled_mobs)
 		M = l
@@ -312,7 +312,7 @@
 	anchored = TRUE
 	max_integrity = 999999
 
-/obj/structure/chair/arrestchair/attack_right(mob/living/carbon/human/A)
+/obj/structure/chair/arrestchair/attack_hand_secondary(mob/living/carbon/human/A)
 	. = ..()
 	var/mob/living/carbon/human/M = null
 	for(var/l in buckled_mobs)

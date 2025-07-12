@@ -44,7 +44,7 @@
 	H.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/music, pick(0,1,1), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
 	H.change_stat(STATKEY_SPD, 1)
 	H.change_stat(STATKEY_END, 1)
 	backpack_contents = list(/obj/item/recipe_book/cooking = 1)
@@ -93,7 +93,7 @@
 		H.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/music, pick(0,1,1), TRUE)
+		H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
 		H.change_stat(STATKEY_SPD, 1)
 		H.change_stat(STATKEY_END, 1)
 
@@ -106,8 +106,8 @@
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_SERVANT
 	faction = FACTION_TOWN
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	min_pq = -20
 	bypass_lastclass = TRUE
 
@@ -141,7 +141,7 @@
 		H.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/music, pick(0,1,1), TRUE)
+		H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
 		H.change_stat(STATKEY_SPD, 1)
 		H.change_stat(STATKEY_END, 1)
 
@@ -154,8 +154,8 @@
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_SERVANT
 	faction = FACTION_TOWN
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	min_pq = 8
 	bypass_lastclass = TRUE
 
@@ -188,6 +188,6 @@
 		H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/labor/mathematics, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/music, pick(0,1,1), TRUE)
+		H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
 		H.change_stat(STATKEY_SPD, 1)
 		H.change_stat(STATKEY_END, 1)

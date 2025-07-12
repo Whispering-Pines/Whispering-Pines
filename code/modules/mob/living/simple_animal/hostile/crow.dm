@@ -18,7 +18,7 @@
 
 /obj/item/reagent_containers/food/snacks/friedcrow
 	name = "fried crow"
-	desc = "A pesky, fried bird. The Grenzelhoftians say one 'eats crow' if they are mistaken or outdone."
+	desc = "A pesky, fried bird. The Frozeners say one 'eats crow' if they are mistaken or outdone."
 	icon_state = "fcrow"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)

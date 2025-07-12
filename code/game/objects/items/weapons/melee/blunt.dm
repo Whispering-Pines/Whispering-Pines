@@ -352,7 +352,7 @@
 
 //................ Old Godsian Grand Mace ............... //
 /obj/item/weapon/mace/goden/psydon
-	name = "psydonian grand mace"
+	name = "old goddean grand mace"
 	desc = "A mighty mace which seems to be a large psycross with a handle, though no less effective at crushing the spirit and bones of the inhumen."
 	icon_state = "psymace"
 	resistance_flags = FIRE_PROOF

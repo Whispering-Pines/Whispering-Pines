@@ -24,6 +24,7 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 	outfit_female = null
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 50, CTAG_PILGRIM = 50)
 	can_have_apprentices = FALSE
+	give_bank_account = 10
 
 
 /datum/job/adventurer/after_spawn(mob/living/spawned, client/player_client)

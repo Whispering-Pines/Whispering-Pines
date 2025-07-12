@@ -3,61 +3,61 @@
 	var/track_prob = 0
 
 //Base probabilities to leave a track.
-/turf/open/floor/rogue/dirt
+/turf/open/floor/dirt
 	track_prob = 10
 
-/turf/open/floor/rogue/grass
+/turf/open/floor/grass
 	track_prob = 10
 
-/turf/open/floor/rogue/grassyel
+/turf/open/floor/grassyel
 	track_prob = 10
 
-/turf/open/floor/rogue/grassred
+/turf/open/floor/grassred
 	track_prob = 10
 
-/turf/open/floor/rogue/grasscold
+/turf/open/floor/grasscold
 	track_prob = 10
 
-/turf/open/floor/rogue/snow
+/turf/open/floor/snow
 	track_prob = 20
 
-/turf/open/floor/rogue/snowrough
+/turf/open/floor/snowrough
 	track_prob = 10
 
 /turf/open/floor/carpet
 	track_prob = 10
 
-/turf/open/floor/rogue/wood
+/turf/open/floor/wood
 	track_prob = 5
 
-/turf/open/floor/rogue/dirt/road
+/turf/open/floor/dirt/road
 	track_prob = 10
 
-/turf/open/floor/rogue/concrete
+/turf/open/floor/concrete
 	track_prob = 5
 
-/turf/open/floor/rogue/rooftop
+/turf/open/floor/rooftop
 	track_prob = 10
 
-/turf/open/floor/rogue/cobble
+/turf/open/floor/cobble
 	track_prob = 3
 
-/turf/open/floor/rogue/blocks
+/turf/open/floor/blocks
 	track_prob = 10
 
-/turf/open/floor/rogue/tile/bath
+/turf/open/floor/tile/bath
 	track_prob = 20
 
-/turf/open/floor/rogue/tile
+/turf/open/floor/tile
 	track_prob = 10
 
-/turf/open/floor/rogue/hexstone
+/turf/open/floor/hexstone
 	track_prob = 10
 
-/turf/open/floor/rogue/churchmarble
+/turf/open/floor/churchmarble
 	track_prob = 5
 
-/turf/open/floor/rogue/churchbrick
+/turf/open/floor/churchbrick
 	track_prob = 5
 //Probabilities end (albeit mud is handled seperately).
 
@@ -457,11 +457,13 @@
 		. += "It looks to be the distinct markings of \the <font color = '#5ca2d1'>[tool_used].</font><br>"
 	return .
 
-/obj/effect/track/structure/attack_right(mob/user)
+/obj/effect/track/structure/attack_hand_secondary(mob/user)
+	. = ..()
 	to_chat(user,span_info("You can't distinguish an object like this."))
 	return
 
-/obj/effect/track/attack_right(mob/user)
+/obj/effect/track/attack_hand_secondary(mob/user)
+	. = ..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.get_skill_level(/datum/skill/misc/tracking) > SKILL_LEVEL_JOURNEYMAN)	//Expert+
@@ -500,7 +502,8 @@
 
 	return .
 
-/obj/effect/track/thievescant/attack_right(mob/user)
+/obj/effect/track/thievescant/attack_hand_secondary(mob/user)
+	. = ..()
 	to_chat(user,span_info("You can't distinguish an object like this."))
 	return
 

@@ -67,6 +67,7 @@
 #define PURITAN		(1<<2)
 #define MONK		(1<<3)
 #define MORTICIAN	(1<<4)
+#define CONFESSOR	(1<<5)
 
 #define SERFS			(1<<3)
 

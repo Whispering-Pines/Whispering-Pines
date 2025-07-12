@@ -31,6 +31,7 @@
 	icon_state = "canopyg-booth-2"
 
 /obj/structure/fluff/canopy/booth/CanPass(atom/movable/mover, turf/target)
+	. = ..()
 	if(get_dir(loc, mover) == dir)
 		return 0
 	return !density

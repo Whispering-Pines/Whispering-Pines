@@ -20,8 +20,8 @@
 	neck = /obj/item/clothing/neck/coif
 	mask = /obj/item/clothing/face/lordmask
 
-	H.adjust_skillrank(/datum/skill/combat/knives, pick(2,3), TRUE)
-	H.adjust_skillrank(/datum/skill/combat/swords, pick(1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/music, pick(4,5,5,6), TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,2,2,3), TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,2,2,3), TRUE)

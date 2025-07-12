@@ -4,7 +4,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 
 	outfit = /datum/outfit/job/adventurer/rogue
-	min_pq = 5
+	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/cmode/adventurer/CombatRogue.ogg'
 
@@ -45,7 +45,6 @@
 	backpack_contents = list(/obj/item/weapon/pick = 1, /obj/item/weapon/knife/hunting = 1, /obj/item/lockpickring/mundane)
 	gloves = /obj/item/clothing/gloves/fingerless
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
-	armor = /obj/item/clothing/armor/leather
 	shoes = /obj/item/clothing/shoes/boots/leather
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	beltl = /obj/item/weapon/whip // You know why.
@@ -93,7 +92,7 @@
 
 /datum/outfit/job/adventurer/rogue/proc/roguearch(mob/living/carbon/human/H)
 	if(H.mind)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rogue_vanish) //stealth guy more than others.
+		H.add_spell(/datum/action/cooldown/spell/undirected/rogue_vanish) //stealth guy more than others.
 		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
@@ -117,11 +116,13 @@
 	if(H.gender == FEMALE)
 		armor = /obj/item/clothing/armor/leather/bikini
 		shirt = /obj/item/clothing/armor/gambeson/bikini
+		pants = /obj/item/clothing/pants/trou/leather/skirt
 	else
 		armor = /obj/item/clothing/armor/leather
 		shirt = /obj/item/clothing/armor/gambeson
+		pants = /obj/item/clothing/pants/trou/leather
+	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	gloves = /obj/item/clothing/gloves/fingerless
-	pants = /obj/item/clothing/pants/trou/leather
 	shoes = /obj/item/clothing/shoes/boots
 	backl = /obj/item/storage/backpack/backpack
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
@@ -164,17 +165,16 @@
 	cloak = /obj/item/clothing/cloak/half/duelcape
 	armor = /obj/item/clothing/armor/leather/jacket/leathercoat
 	if(H.gender == FEMALE)
+		shirt = /obj/item/clothing/armor/chainmail/bikini
 		shirt = /obj/item/clothing/armor/gambeson/bikini
+		pants = /obj/item/clothing/pants/trou/leather/skirt
 	else
 		shirt = /obj/item/clothing/armor/gambeson
+		shirt = /obj/item/clothing/armor/chainmail
+		pants = /obj/item/clothing/pants/trou/leather
 	gloves = /obj/item/clothing/gloves/leather/black
-	pants = /obj/item/clothing/pants/trou/leather
 	shoes = /obj/item/clothing/shoes/nobleboot
 	belt = /obj/item/storage/belt/leather
-	if(H.gender == FEMALE) //funny
-		shirt = /obj/item/clothing/armor/chainmail/bikini
-	else
-		shirt = /obj/item/clothing/armor/chainmail
 	backl = /obj/item/storage/backpack/satchel
 	beltl = /obj/item/weapon/sword/rapier
 	beltr = /obj/item/weapon/shield/tower/buckleriron
@@ -206,15 +206,16 @@
 	H.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
-	pants = /obj/item/clothing/pants/trou/leather
 	gloves = /obj/item/clothing/gloves/fingerless
 	belt = /obj/item/storage/belt/leather
 	if(H.gender == FEMALE)
 		armor = /obj/item/clothing/armor/leather/bikini
 		shirt = /obj/item/clothing/armor/gambeson/bikini
+		pants = /obj/item/clothing/pants/trou/leather/skirt
 	else
 		armor = /obj/item/clothing/armor/leather
 		shirt = /obj/item/clothing/armor/gambeson
+		pants = /obj/item/clothing/pants/trou/leather
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	backl = /obj/item/storage/backpack/satchel
 	beltr = /obj/item/weapon/knife/dagger/steel
@@ -229,121 +230,29 @@
 	H.change_stat(STATKEY_INT, 3)
 	H.visible_message(span_info("I was always intrigued by magic, more than others. I took my time learning to use magic and stole a spellbook along the way."))
 	if(H.mind)
-		H.mind.adjust_spellpoints(1)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/rogue_knock)
-
-// Rogue spells/abilities
-/obj/effect/proc_holder/spell/aoe_turf/rogue_knock
-	name = "Knock"
-	desc = ""
-	range = 1
-	overlay_state = "null"
-	sound = list('sound/combat/cleave.ogg')
-	releasedrain = 50
-	chargedrain = 1
-	chargetime = 15
-	cast_without_targets = TRUE
-	recharge_time = 5 MINUTES
-	warnie = "spellwarning"
-	movement_interrupt = FALSE
-	chargedloop = /datum/looping_sound/invokegen
-	invocation = "OPEN SESAME!!"
-	invocation_type = "shout"
-	action_icon_state = "knock"
-	associated_skill = /datum/skill/magic/arcane
-	miracle = FALSE
-
-/obj/effect/proc_holder/spell/aoe_turf/rogue_knock/cast(list/targets, mob/user)
-	. = ..()
-	SEND_SOUND(user, sound('sound/combat/cleave.ogg'))
-	knock_sound(user)
-	for(var/turf/T in targets)
-		for(var/obj/structure/door/D in T.contents)
-			INVOKE_ASYNC(src, PROC_REF(open_door), D)
-		for(var/obj/structure/closet/crate/C in T.contents)
-			INVOKE_ASYNC(src, PROC_REF(open_closet), C)
-
-/obj/effect/proc_holder/spell/aoe_turf/rogue_knock/proc/open_door(obj/structure/door/D)
-	if(D.locked())
-		D.unlock()
-	D.force_open()
-
-/obj/effect/proc_holder/spell/aoe_turf/rogue_knock/proc/open_closet(obj/structure/closet/crate/C)
-	if(C.locked())
-		C.unlock()
-	C.open()
-
-/obj/effect/proc_holder/spell/aoe_turf/rogue_knock/proc/knock_sound(mob/living/user)
-	user.visible_message(span_warning("A loud KNOCK comes from [user]!"))
-	var/turf/origin_turf = get_turf(src)
-
-	for(var/mob/living/player in GLOB.player_list)
-		if(player.stat == DEAD)
-			continue
-		if(isbrain(player))
-			continue
-
-		var/distance = get_dist(player, origin_turf)
-		if(distance <= 7)
-			continue
-		var/dirtext = " to the "
-		var/direction = get_dir(player, origin_turf)
-		switch(direction)
-			if(NORTH)
-				dirtext += "north"
-			if(SOUTH)
-				dirtext += "south"
-			if(EAST)
-				dirtext += "east"
-			if(WEST)
-				dirtext += "west"
-			if(NORTHWEST)
-				dirtext += "northwest"
-			if(NORTHEAST)
-				dirtext += "northeast"
-			if(SOUTHWEST)
-				dirtext += "southwest"
-			if(SOUTHEAST)
-				dirtext += "southeast"
-			else //Where ARE you.
-				dirtext = ", although I cannot make out a direction"
-		var/disttext
-		switch(distance)
-			if(0 to 20)
-				disttext = " very close"
-			if(20 to 40)
-				disttext = " close"
-			if(40 to 80)
-				disttext = ""
-			if(80 to 160)
-				disttext = " far"
-			else
-				disttext = " very far"
-		if(distance < 80)
-			//sound played for other players
-			player.playsound_local(get_turf(player), 'sound/combat/cleave.ogg', 35, FALSE, pressure_affected = FALSE)
-			to_chat(player, span_warning("I hear a loud KNOCK somewhere[disttext][dirtext]!"))
+		H.adjust_spellpoints(1)
+	H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
+	H.add_spell(/datum/action/cooldown/spell/projectile/fetch)
+	H.add_spell(/datum/action/cooldown/spell/aoe/knock)
 
 //rogue innate vanish
-/obj/effect/proc_holder/spell/self/rogue_vanish
+/datum/action/cooldown/spell/undirected/rogue_vanish
 	name = "Vanish"
-	overlay_state = "Smoke Bomb"
-	releasedrain = 0
-	recharge_time = 20 SECONDS
-	still_recharging_msg = span_notice("I don't have another smoke bomb ready yet.")
-	warnie = "sydwarning"
-	invocation_emote_self = "pulls out a smoke bomb and slams it to the ground!"
-	movement_interrupt = FALSE
-	antimagic_allowed = TRUE
+	cooldown_time = 20 SECONDS
+	button_icon_state = "blindness"
+	sound = 'sound/magic/barbroar.ogg'
+	antimagic_flags = NONE
+	charge_required = FALSE
+	has_visual_effects = FALSE
+	cooldown_time = 2 MINUTES
+	spell_cost = 0
 	sound = 'sound/misc/explode/incendiary (1).ogg'
-	invocation = ""
-	invocation_type = "none"
+	invocation = "pulls out a smoke bomb and slams it to the ground!"
+	invocation_type = INVOCATION_EMOTE
 	associated_skill = /datum/skill/misc/sneaking
-	cooldown_min = 10 SECONDS
+	cooldown_reduction_per_rank = 2 SECONDS
 
-/obj/effect/proc_holder/spell/self/rogue_vanish/cast(mob/living/carbon/human/user)
+/datum/action/cooldown/spell/undirected/rogue_vanish/cast(mob/living/carbon/human/user)
 	. = ..()
 	new /obj/effect/particle_effect/smoke(get_turf(user))
 	user.visible_message(span_warning("[user] tosses a smokebomb to the ground and vanishes in a puff of smoke!"), span_notice("I toss a smokebomb to the ground and vanish in a puff of smoke!"))

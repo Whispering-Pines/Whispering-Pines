@@ -2999,4 +2999,6 @@
 #include "modular_whisper\code\modules\mob\living\carbon\human\species_types\slimeperson.dm"
 #include "modular_whisper\code\modules\mob\living\carbon\human\species_types\plantoid.dm"
 #include "modular_whisper\code\modules\cargo\supply_packs\adventuring.dm"
+#include "modular_whisper\code\game\objects\items\powered.dm"
+#include "modular_whisper\code\modules\jobs\gangster.dm"
 // END_INCLUDE

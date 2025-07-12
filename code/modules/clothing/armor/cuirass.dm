@@ -19,7 +19,7 @@
 //................ Frozen Empire Cuirass ............... //
 /obj/item/clothing/armor/cuirass/grenzelhoft
 	name = "grenzelhoft cuirass"
-	desc = "Simple armor, but made from Grenzelhoftian black-steel, famed afar for its strength."
+	desc = "Simple armor, but made from Frozener black-steel, famed afar for its strength."
 	icon_state = "grenzelcuirass"
 	item_state = "grenzelcuirass"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'

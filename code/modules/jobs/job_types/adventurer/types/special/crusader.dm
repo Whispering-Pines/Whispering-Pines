@@ -9,7 +9,7 @@
 		"Human",
 		"Dwarf"
 	)
-	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/old_gods)
+	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/psydon)
 	outfit = /datum/outfit/job/adventurer/crusader
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 1
@@ -17,7 +17,7 @@
 	min_pq = 0
 
 /datum/outfit/job/adventurer/crusader
-	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/old_gods)
+	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/psydon)
 
 /datum/outfit/job/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()

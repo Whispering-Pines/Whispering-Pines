@@ -17,7 +17,7 @@
 		if("Divine")
 			blessing_path = input("Choose Divine Blessing") as null|anything in list( \
 				/datum/status_effect/buff/noc, \
-				/datum/status_effect/buff/wanderer, \
+				/datum/status_effect/buff/ravox, \
 				/datum/status_effect/buff/beastsense, \
 				/datum/status_effect/buff/trollshape, \
 				/datum/status_effect/buff/divine_beauty, \
@@ -337,7 +337,7 @@
 		),
 
 		/// Wanderer - The Warlord
-		/datum/patron/divine/wanderer = list(
+		/datum/patron/divine/ravox = list(
 			/datum/status_effect/buff/beastsense = "Wanderer growls: \"Smell your enemy. Hunt them down with purpose.\"",
 			/datum/status_effect/buff/trollshape = "Wanderer commands: \"Let might serve justice. Let strength carry duty.\"",
 			/datum/status_effect/buff/divine_beauty = "Wanderer declares: \"Wear your glory well, warrior. Let honor shine brighter.\"",

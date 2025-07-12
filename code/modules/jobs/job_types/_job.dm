@@ -147,6 +147,7 @@
 	var/static/list/actors_list_blacklist = list(
 		/datum/job/adventurer,
 		/datum/job/pilgrim,
+		/datum/job/ganger,
 	)
 
 /datum/job/New()

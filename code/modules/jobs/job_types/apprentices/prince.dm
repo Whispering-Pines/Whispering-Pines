@@ -12,12 +12,8 @@
 	faction = FACTION_TOWN
 	total_positions = 2
 	spawn_positions = 2
-	allowed_races = list(
-		"Human",
-		"Half-Elf",
-		"Elf",
-		"Dwarf"
-	)
+
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 
 	spells = list(
 		/datum/action/cooldown/spell/undirected/list_target/grant_title,
@@ -112,13 +108,13 @@
 		pants = /obj/item/clothing/pants/tights/random
 
 	H.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/crossbows, pick(0,1), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/athletics, pick(0,1), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
@@ -159,13 +155,13 @@
 
 
 	H.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/crossbows, pick(0,1), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/climbing, pick(0,0,1), TRUE)
-	H.adjust_skillrank(/datum/skill/misc/athletics, pick(0,1), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)

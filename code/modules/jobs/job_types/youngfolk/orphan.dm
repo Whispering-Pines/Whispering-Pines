@@ -48,7 +48,7 @@
 	if(prob(15))
 		r_hand = pick(/obj/item/instrument/lute, /obj/item/instrument/accord, /obj/item/instrument/guitar, /obj/item/instrument/flute, /obj/item/instrument/hurdygurdy, /obj/item/instrument/viola)
 		if(H.mind)
-			H.adjust_skillrank(/datum/skill/misc/music, pick(2,3,4), TRUE)
+			H.adjust_skillrank(/datum/skill/misc/music, 3, TRUE)
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)

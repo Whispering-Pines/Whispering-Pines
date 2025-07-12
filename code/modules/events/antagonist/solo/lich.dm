@@ -31,7 +31,7 @@
 		"Merchant",
 		"Forest Warden",
 		"Inquisitor",
-		"Adept",
+		"Confessor",
 		"Royal Knight",
 		"Templar",
 	)

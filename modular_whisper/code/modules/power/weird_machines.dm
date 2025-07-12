@@ -1,13 +1,13 @@
 //By Vide Noir https://github.com/EaglePhntm.
 //this place is a FUCKING mess by the way good luck.
 //parent type fabricator
-/obj/machinery/fake_powered/biofabricator
+/obj/machinery/basic_power/biofabricator
 	name = "Fake Fabricator"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	var/biomass_amount = 0
 	var/obj/item/produced_thing = null
 
-/obj/machinery/fake_powered/attack_hand(mob/living/user)
+/obj/machinery/basic_power/attack_hand(mob/living/user)
 	if(Adjacent(user) && user.pulling)
 		if(isliving(user.pulling))
 			var/mob/living/pushed_mob = user.pulling
@@ -38,13 +38,13 @@
 				user.stop_pulling()
 	return ..()
 
-/obj/machinery/fake_powered/biofabricator/examine(mob/user)
+/obj/machinery/basic_power/biofabricator/examine(mob/user)
 	. = ..()
 	. += "This produces [produced_thing.name] per biomass, and has [biomass_amount] biomass stored."
 
 
 //solvent fab, takes various goods and gives out solvent bars.
-/obj/machinery/fake_powered/biofabricator/solvent
+/obj/machinery/basic_power/biofabricator/solvent
 	name = "Solvent Fabricator"
 	icon_state = "biofab_solvent"
 	desc = "A horrible machine of old desperativeness, turns natural matter into yucky but edible paste for the masses... right button dispenses solvent bars."
@@ -54,7 +54,7 @@
 	. = ..()
 	color = pick(COLOR_GREEN,COLOR_RED,COLOR_BLUE,COLOR_PURPLE,COLOR_BEIGE,COLOR_ORANGE,null)
 
-/obj/machinery/fake_powered/biofabricator/solvent/attackby(obj/item/I, mob/user, params)
+/obj/machinery/basic_power/biofabricator/solvent/attackby(obj/item/I, mob/user, params)
 	if(toggled)
 		if (istype(I, /obj/item/natural/poo))
 			biomass_amount += 1
@@ -81,7 +81,7 @@
 		balloon_alert_to_viewers("Unpowered.")
 	. = ..()
 
-/obj/machinery/fake_powered/biofabricator/solvent/attack_right(mob/user)
+/obj/machinery/basic_power/biofabricator/solvent/attack_hand_secondary(mob/user)
 	. = ..()
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
@@ -94,7 +94,7 @@
 	sleep(0.5 SECONDS)
 	start_processing_solvent()
 
-/obj/machinery/fake_powered/biofabricator/solvent/proc/start_processing_solvent()
+/obj/machinery/basic_power/biofabricator/solvent/proc/start_processing_solvent()
 	playsound(loc, 'sound/misc/guillotine.ogg', 50, TRUE, -1)
 	sleep(1.5 SECONDS)
 	playsound(loc, 'sound/misc/guillotine.ogg', 50, TRUE, -1)
@@ -114,7 +114,7 @@
 //biomass recycler
 GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
-/obj/structure/closet/fake_powered/biomass_recycler
+/obj/structure/closet/basic_power/biomass_recycler
 	name = "Biomass Recycler"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "biomass_recycler"
@@ -123,18 +123,18 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	open_sound = 'sound/foley/doors/shittyopen.ogg'
 	close_sound = 'sound/foley/doors/shittyclose.ogg'
 
-/obj/structure/closet/fake_powered/biomass_recycler/examine(mob/user)
+/obj/structure/closet/basic_power/biomass_recycler/examine(mob/user)
 	. = ..()
 	. += "<span class='warning'>There is enough biomass to make [GLOB.global_biomass_storage] bodies.</span>"
 
-/obj/structure/closet/fake_powered/biomass_recycler/open(mob/living/user)
+/obj/structure/closet/basic_power/biomass_recycler/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/fake_powered/biomass_recycler/close(mob/living/user)
+/obj/structure/closet/basic_power/biomass_recycler/close(mob/living/user)
 	. = ..()
 	update_icon_state()
 	if(!toggled)
@@ -224,14 +224,14 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Animal matter is difficult to process and yields less therefore.", language = /datum/language/ancient_english)
 			continue
-	for(var/obj/machinery/fake_powered/cloning_pod/clonebays in GLOB.cloning_bays)
+	for(var/obj/machinery/basic_power/cloning_pod/clonebays in GLOB.cloning_bays)
 		clonebays.update_appearance(UPDATE_ICON_STATE)
 	working = FALSE
 	open()
 
 
 //BLOOD DRAINER
-/obj/structure/closet/fake_powered/liquid_drainer
+/obj/structure/closet/basic_power/liquid_drainer
 	name = "Blood drainer"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "blood_drainer"
@@ -239,22 +239,22 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	desc = "Likely used to supply blood for the warriors of the great war of old, now it has other purposes aswell, thanks to modifications. Drains all of the blood and other fluids of living and the dead, leaving them weakened and likely to die without aid."
 	var/suck_bonus
 
-/obj/structure/closet/fake_powered/liquid_drainer/examine(mob/user)
+/obj/structure/closet/basic_power/liquid_drainer/examine(mob/user)
 	. = ..()
 	. += "It seems [reagents.total_volume/3]/[reagents.maximum_volume] oz full."
 
-/obj/structure/closet/fake_powered/liquid_drainer/open(mob/living/user)
+/obj/structure/closet/basic_power/liquid_drainer/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/fake_powered/liquid_drainer/Initialize()
+/obj/structure/closet/basic_power/liquid_drainer/Initialize()
 	. = ..()
 	create_reagents(2000)
 
-/obj/structure/closet/fake_powered/liquid_drainer/close(mob/living/user)
+/obj/structure/closet/basic_power/liquid_drainer/close(mob/living/user)
 	. = ..()
 	update_icon_state()
 	if(!toggled)
@@ -299,7 +299,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Obstruction on groin detected, blood pumping enhancement not available.", language = /datum/language/ancient_english)
 
-/obj/structure/closet/fake_powered/liquid_drainer/proc/suckening_cycle(mob/living/carbon/human/victim)
+/obj/structure/closet/basic_power/liquid_drainer/proc/suckening_cycle(mob/living/carbon/human/victim)
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
 		working = FALSE
@@ -335,7 +335,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		if(!opened)
 			open()
 
-/obj/structure/closet/fake_powered/liquid_drainer/attack_right(mob/user)
+/obj/structure/closet/basic_power/liquid_drainer/attack_hand_secondary(mob/user)
 	. = ..()
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
@@ -372,7 +372,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 //cloning pod
 //todo add emissive overlay
-/obj/machinery/fake_powered/cloning_pod
+/obj/machinery/basic_power/cloning_pod
 	name = "Automated Cloning Pod"
 	desc = "Used to reclone people and defy old gods' way. Recloning is costly and tend to put people in debt to the kingdom."
 	icon = 'modular_whisper/icons/misc/cloning.dmi'
@@ -387,7 +387,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	var/mutable_appearance/emiss
 	var/growing = FALSE
 
-/obj/machinery/fake_powered/cloning_pod/check_fake_power()
+/obj/machinery/basic_power/cloning_pod/check_fake_power()
 	//no icon changes but instead emit green light
 	var/area/current_area = get_area(src)
 	if(current_area.fake_power)
@@ -403,26 +403,26 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		set_light_on(FALSE)
 		update_light()
 
-/obj/machinery/fake_powered/cloning_pod/examine(mob/user)
+/obj/machinery/basic_power/cloning_pod/examine(mob/user)
 	. = ..()
 	. += "<span class='warning'>There is enough biomass to make [GLOB.global_biomass_storage] bodies.</span>"
 
-/obj/machinery/fake_powered/cloning_pod/Initialize(mapload, ...)
+/obj/machinery/basic_power/cloning_pod/Initialize(mapload, ...)
 	. = ..()
 	GLOB.cloning_bays += src
 
-/obj/machinery/fake_powered/cloning_pod/Destroy()
+/obj/machinery/basic_power/cloning_pod/Destroy()
 	. = ..()
 	GLOB.cloning_bays -= src
 
-/obj/machinery/fake_powered/cloning_pod/proc/send_manual_alert()
+/obj/machinery/basic_power/cloning_pod/proc/send_manual_alert()
 	if(!toggled)
 		return
 	update_appearance(UPDATE_ICON_STATE)
 	playsound(loc, 'sound/foley/industrial/machineoff.ogg', 50, FALSE, -1)
 	say("ALERT. A saved mind is trying to reclone, but there is Insufficent biomass stored!", language = /datum/language/ancient_english)
 
-/obj/machinery/fake_powered/cloning_pod/process()
+/obj/machinery/basic_power/cloning_pod/process()
 	. = ..()
 	if(!toggled)
 		return
@@ -434,7 +434,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	playsound(loc, 'sound/foley/industrial/pneumatic1.ogg', 50, FALSE, -1)
 	say("Warning; Insufficent biomass stored.", language = /datum/language/ancient_english)
 
-/obj/machinery/fake_powered/cloning_pod/update_icon_state()
+/obj/machinery/basic_power/cloning_pod/update_icon_state()
 	. = ..()
 	switch(GLOB.global_biomass_storage)
 		if(0 to 0.24)
@@ -454,7 +454,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		emiss = mutable_appearance(icon, "[icon_state]_emissive", layer, EMISSIVE_PLANE, 255, color, EMISSIVE_APPEARANCE_FLAGS)
 		add_overlay(emiss)
 
-/obj/machinery/fake_powered/cloning_pod/proc/finish_growing(mob/ghost_guy, mob/living/carbon/human/new_body)
+/obj/machinery/basic_power/cloning_pod/proc/finish_growing(mob/ghost_guy, mob/living/carbon/human/new_body)
 	growing = FALSE
 	if(ghost_guy.client)
 		new_body.ckey = ghost_guy.client.ckey
@@ -468,7 +468,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	update_appearance(UPDATE_ICON_STATE)
 
 //limb regrower (cannibals)
-/obj/structure/closet/fake_powered/limb_regrower
+/obj/structure/closet/basic_power/limb_regrower
 	name = "MEAT GOD"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "regrower"
@@ -476,18 +476,18 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 	var/blood_stored = 0
 
-/obj/structure/closet/fake_powered/limb_regrower/examine(mob/user)
+/obj/structure/closet/basic_power/limb_regrower/examine(mob/user)
 	. = ..()
 	user.visible_message("This has [blood_stored] units blood stored, 750 units required for a single limb.")
 
-/obj/structure/closet/fake_powered/limb_regrower/open(mob/living/user)
+/obj/structure/closet/basic_power/limb_regrower/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/fake_powered/limb_regrower/close(mob/living/user)
+/obj/structure/closet/basic_power/limb_regrower/close(mob/living/user)
 	. = ..()
 	update_icon_state()
 	if(!toggled)
@@ -517,7 +517,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		sleep(1 SECONDS)
 		regrowing_cycle(victim)
 
-/obj/structure/closet/fake_powered/limb_regrower/attackby(obj/item/I, mob/user, params)
+/obj/structure/closet/basic_power/limb_regrower/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/blood))
 		var/obj/item/reagent_containers/blood/bpack = I
 		blood_stored += bpack.reagents.get_reagent_amount(/datum/reagent/blood)
@@ -526,7 +526,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		say("Added bloodpack into reserves.", language = /datum/language/ancient_english)
 	. = ..()
 
-/obj/structure/closet/fake_powered/limb_regrower/proc/regrowing_cycle(mob/living/carbon/human/victim)
+/obj/structure/closet/basic_power/limb_regrower/proc/regrowing_cycle(mob/living/carbon/human/victim)
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
 		open()
@@ -603,21 +603,21 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 
 //biomass chute
-/obj/structure/closet/fake_powered/bio_chute
+/obj/structure/closet/basic_power/bio_chute
 	name = "corpse disposal"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
 	icon_state = "chute"
 	base_icon_state = "chute"
 	desc = "body goes in, money comes out."
 
-/obj/structure/closet/fake_powered/bio_chute/open(mob/living/user)
+/obj/structure/closet/basic_power/bio_chute/open(mob/living/user)
 	if(working)
 		balloon_alert_to_viewers("Working.")
 		return
 	. = ..()
 	update_icon_state()
 
-/obj/structure/closet/fake_powered/bio_chute/close(mob/living/user)
+/obj/structure/closet/basic_power/bio_chute/close(mob/living/user)
 	. = ..()
 	update_icon_state()
 	working = TRUE
@@ -659,7 +659,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 
 
 //MILKER
-/obj/structure/chair/fake_powered/milker
+/obj/structure/chair/basic_power/milker
 	name = "Milker"
 	icon = 'modular_whisper/icons/misc/chairs.dmi'
 	icon_state = "milker"
@@ -667,20 +667,20 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	breakoutextra = 4 MINUTES
 	var/suck_bonus
 
-/obj/structure/chair/fake_powered/milker/self_powered
+/obj/structure/chair/basic_power/milker/self_powered
 	name = "Self powered Milker"
 	desc = "A strange machine that used to milk livestock in the old world, now modified to milk people... A salvaged off the grid version of the milker that is less efficent."
 	self_powered = TRUE
 
-/obj/structure/chair/fake_powered/milker/examine(mob/user)
+/obj/structure/chair/basic_power/milker/examine(mob/user)
 	. = ..()
 	. += "It seems [reagents.total_volume/3]/[reagents.maximum_volume] oz full."
 
-/obj/structure/chair/fake_powered/milker/Initialize()
+/obj/structure/chair/basic_power/milker/Initialize()
 	. = ..()
 	create_reagents(5000)
 
-/obj/structure/chair/fake_powered/milker/post_buckle_mob(mob/living/M)
+/obj/structure/chair/basic_power/milker/post_buckle_mob(mob/living/M)
 	. = ..()
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
@@ -729,7 +729,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Obstruction on groin detected, milking speed enhancement not available.", language = /datum/language/ancient_english)
 
-/obj/structure/chair/fake_powered/milker/proc/suckening_cycle(mob/living/carbon/human/victim)
+/obj/structure/chair/basic_power/milker/proc/suckening_cycle(mob/living/carbon/human/victim)
 	if(!toggled)
 		balloon_alert_to_viewers("Unpowered.")
 		return
@@ -759,7 +759,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		return
 	addtimer(CALLBACK(src, PROC_REF(suckening_cycle), victim), 1 SECONDS, TIMER_STOPPABLE)
 
-/obj/structure/chair/fake_powered/milker/attackby(obj/item/I, mob/living/user, params)
+/obj/structure/chair/basic_power/milker/attackby(obj/item/I, mob/living/user, params)
 	if(!istype(I, /obj/item/reagent_containers/glass))
 		return
 	if(!toggled)

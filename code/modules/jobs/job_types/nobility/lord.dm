@@ -4,11 +4,9 @@ GLOBAL_LIST_EMPTY(lord_titles)
 /datum/job/lord
 	title = "Monarch"
 	var/ruler_title = "Monarch"
-	tutorial = "Elevated to your throne through a web of intrigue, political maneuvering, and divine sanction, you are the \
-	unquestioned authority of these lands. The Church has bestowed upon you the legitimacy of the gods themselves, and now \
-	you sit at the center of every plot, and every whisper of ambition. Every man, woman, and child may envy your power and \
-	would replace you in the blink of an eye. But remember, its not envy that keeps you in place, it is your will. Show them \
-	the error of their ways."
+	tutorial = "Elevated to your 'throne' through being filthy rich and grasping post apocalyptic monopoly, you own this entire island, the one next to it and the people \
+	within it which you must tolerate to keep the casings flowing through taxation for nearly no services you provide. Though they may try for your life for the earliest inconvenience, majority of your spending has been going \
+	for yourself rather than anyone else. Show them the error of their ways."
 	flag = LORD
 	department_flag = NOBLEMEN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -16,12 +14,11 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	faction = FACTION_TOWN
 	total_positions = 1
 	spawn_positions = 1
-	min_pq = 25
+	min_pq = 10
 
 	spells = list(
 		/datum/action/cooldown/spell/undirected/list_target/grant_title,
 		/datum/action/cooldown/spell/undirected/list_target/grant_nobility,
-		/datum/action/cooldown/spell/undirected/list_target/convert_role/servant,
 	)
 
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
@@ -119,7 +116,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	switch(classchoice)
 		if("Monarch")
 			Monarch(H)
-		if("Ancestor")
+		if("Ancestor") //the TRUE ruler of the land.
 			Ancestor(H)
 
 /datum/outfit/job/lord/proc/Monarch(mob/living/carbon/human/H)
@@ -136,9 +133,9 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	if(H.wear_mask)
 		qdel(H.wear_mask)
 		mask = /obj/item/clothing/face/facemask/goldmask
-	to_chat(H, span_notice("I am ancient, one of the first Resurgentis to ever exist, I witnessed with my very own eyes when the Last Death himself made me out of whatever husk I was in my previous life. Unfortunately this semi undead body of mine rotted in time and is hideous... Also unfortunately, I am forced in a cannibal diet due to my strange body."))
+	to_chat(H, span_notice("I am ancient, one of the first Resurgentis to ever exist and rightful owner of the throne, I witnessed with my very own eyes when the Last Death himself made me out of whatever husk I was in my previous life. Unfortunately this semi undead body of mine rotted in time and is hideous... Also unfortunately, I am forced in a cannibal diet due to my strange body."))
 	H.AddComponent(/datum/component/rot/stinky_person)
-	//The true ruler, likely to have many idiots rising up against him for being so hideous and an undead.
+	//The true ruler, likely to have many idiots rising up against him for being so hideous and an undead. vro is basically vlord.
 	H.change_stat(STATKEY_STR, 2) //4 after parent
 	H.change_stat(STATKEY_INT, 2) //5 after parent
 	H.change_stat(STATKEY_LCK, 2) //1 Compensation for ugly luck debuff + being chosen of last death
@@ -166,13 +163,3 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	else
 		family_guy.fully_replace_character_name(family_guy.real_name, family_guy.real_name + " " + GLOB.lordsurname)
 	return family_guy.real_name
-
-/datum/action/cooldown/spell/undirected/list_target/convert_role/servant
-	name = "Recruit Servant"
-	new_role = "Servant"
-	overlay_state = "recruit_servant"
-	recruitment_faction = "Servants"
-	recruitment_message = "Serve the crown, %RECRUIT!"
-	accept_message = "FOR THE CROWN!"
-	refuse_message = "I refuse."
-	recharge_time = 100

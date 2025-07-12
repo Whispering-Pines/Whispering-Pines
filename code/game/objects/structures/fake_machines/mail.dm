@@ -405,32 +405,32 @@
 			cost = 3,
 			max_purchases = 1
 		),
-		"Psydonian Longsword (8)" = list(
+		"Old goddean Longsword (8)" = list(
 			list(type = /obj/item/weapon/sword/long/psydon, count = 1),
 			cost = 8,
 			max_purchases = 2
 		),
-		"Psydonian Greatsword (8)" = list(
+		"Old goddean Greatsword (8)" = list(
 			list(type = /obj/item/weapon/sword/long/greatsword/psydon, count = 1),
 			cost = 8,
 			max_purchases = 1
 		),
-		"Psydonian Spear (8)" = list(
+		"Old goddean Spear (8)" = list(
 			list(type = /obj/item/weapon/polearm/spear/psydon, count = 1),
 			cost = 8,
 			max_purchases = 1
 		),
-		"Psydonian Halberd (8)" = list(
+		"Old goddean Halberd (8)" = list(
 			list(type = /obj/item/weapon/polearm/halberd/psydon, count = 1),
 			cost = 8,
 			max_purchases = 1
 		),
-		"Psydonian Grand Mace (8)" = list(
+		"Old goddean Grand Mace (8)" = list(
 			list(type = /obj/item/weapon/mace/goden/psydon, count = 1),
 			cost = 8,
 			max_purchases = 1
 		),
-		"Psydonian Axe (3)" = list(
+		"Old goddean Axe (3)" = list(
 			list(type = /obj/item/weapon/axe/psydon, count = 1),
 			cost = 3,
 			max_purchases = 3
@@ -440,7 +440,7 @@
 			cost = 4,
 			max_purchases = 1
 		),
-		"Psydonian Dagger (3)" = list(
+		"Old goddean Dagger (3)" = list(
 			list(type = /obj/item/weapon/knife/dagger/psydon, count = 1),
 			cost = 3,
 			max_purchases = 3

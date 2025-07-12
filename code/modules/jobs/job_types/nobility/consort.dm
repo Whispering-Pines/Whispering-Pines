@@ -13,13 +13,9 @@
 	min_pq = 6
 	bypass_lastclass = TRUE
 
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
+
 	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/servant)
-	allowed_races = list(
-		"Human",
-		"Half-Elf",
-		"Elf",
-		"Dwarf"
-	)
 	outfit = /datum/outfit/job/consort
 	advclass_cat_rolls = list(CTAG_CONSORT = 20)
 	give_bank_account = 500

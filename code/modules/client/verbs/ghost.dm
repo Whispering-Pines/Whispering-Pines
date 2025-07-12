@@ -53,7 +53,7 @@
 			O.ckey = ckey
 			ADD_TRAIT(O, TRAIT_PACIFISM, TRAIT_GENERIC)
 			O.set_patron(prefs.selected_patron)
-			SSdeath_arena.add_fighter(O, mind?.necra)
+			SSdeath_arena.add_fighter(O, mind?.last_death)
 
 			if(HAS_TRAIT(mind?.current, TRAIT_BURIED_COIN_GIVEN))
 				O.paid = TRUE
@@ -78,7 +78,7 @@
 			if((mob.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(mob, TRAIT_ZIZOID_HUNTED)) && !MOBTIMER_FINISHED(mob, MT_LASTDIED, 60 SECONDS))
 				to_chat(mob, span_warning("Sinius's influence is currently preventing me from fleeing to a new body or to the underworld!"))
 				return
-			var/obj/machinery/fake_powered/cloning_pod/spawn_loc = pick(GLOB.cloning_bays)
+			var/obj/machinery/basic_power/cloning_pod/spawn_loc = pick(GLOB.cloning_bays)
 			if(!length(GLOB.cloning_bays)) //That cant be good.
 				to_chat(mob, span_danger("There is no cloning bays, notify an admin."))
 				return
@@ -135,7 +135,7 @@
 					S.repeat_message("[O.real_name] recloned without bank account, in 250c debt.")
 			GLOB.global_biomass_storage -= 1
 			spawn_loc.update_icon()
-			addtimer(CALLBACK(spawn_loc, TYPE_PROC_REF(/obj/machinery/fake_powered/cloning_pod, finish_growing), mob, O), 30 SECONDS)
+			addtimer(CALLBACK(spawn_loc, TYPE_PROC_REF(/obj/machinery/basic_power/cloning_pod, finish_growing), mob, O), 30 SECONDS)
 			playsound(spawn_loc, 'sound/foley/industrial/machinechug.ogg', 50, FALSE, -1)
 
 			verbs -= /client/proc/descend
