@@ -3,11 +3,6 @@
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
-/datum/supply_pack/tools/rope
-	name = "Rope"
-	cost = 7
-	contains = /obj/item/rope
-
 /datum/supply_pack/tools/chain
 	name = "Chain"
 	cost = 11
@@ -64,11 +59,6 @@
 	contains = list(/obj/item/candle/yellow,
 	/obj/item/candle/yellow,
 	/obj/item/candle/yellow)
-
-/datum/supply_pack/tools/lamptern
-	name = "Iron lantern"
-	cost = 20
-	contains = /obj/item/flashlight/flare/torch/lantern
 
 /datum/supply_pack/tools/pick
 	name = "Iron Pickaxe"
@@ -205,3 +195,9 @@
 	name = "Set of Surgical Tools"
 	cost = 65
 	contains = /obj/item/storage/backpack/satchel/surgbag
+
+/datum/supply_pack/rogue/tools/shopkey
+	name = "Spare Shopkey"
+	cost = 10
+	not_in_public = TRUE
+	contains = list(/obj/item/key/merchant)

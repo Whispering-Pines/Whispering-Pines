@@ -11,7 +11,7 @@
 	They also have sharp claws and teeth."
 	skin_tone_wording = "Skin Colors"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	default_color = "444"
+	default_color = "#5c5c5cff"
 	skin_tone_wording = "Color"
 	use_skintones = TRUE
 	inherent_traits = list(TRAIT_NOMOBSWAP)

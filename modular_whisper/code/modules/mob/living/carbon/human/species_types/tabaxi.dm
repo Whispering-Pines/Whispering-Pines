@@ -25,7 +25,7 @@
 		They have a good sense of balance and an acute sense of smell."
 	skin_tone_wording = "Fur Colors"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE, MUTCOLORS)
-	default_color = "444"
+	default_color = "#5c5c5cff"
 	skin_tone_wording = "Color"
 	use_skintones = TRUE
 	inherent_traits = list(TRAIT_NOMOBSWAP)

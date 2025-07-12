@@ -82,7 +82,7 @@
 
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_lovebold("[user] cums into [target]'s ass!"))
-		user.sexcon.cum_into(anal = TRUE)
+		user.sexcon.cum_into(target, anal = TRUE)
 //		user.try_impregnate(target)
 	user.virginity = FALSE
 	target.virginity = FALSE

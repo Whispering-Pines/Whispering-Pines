@@ -53,7 +53,7 @@
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s nipple!"))
-		user.sexcon.cum_into(nipple = TRUE)
+		user.sexcon.cum_into(target, nipple = TRUE)
 
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 3, FALSE)

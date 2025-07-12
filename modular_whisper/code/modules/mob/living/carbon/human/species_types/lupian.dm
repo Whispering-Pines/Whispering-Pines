@@ -11,7 +11,7 @@
 	but form deep connections with those they do. In recent years they have been driven from the forests by unrest and pressed \
 	into cohabitation with races they'd deem lesser.)"
 	skin_tone_wording = "Pack"
-	default_color = "444"
+	default_color = "#5c5c5cff"
 	skin_tone_wording = "Color"
 	use_skintones = TRUE
 	species_traits = list(

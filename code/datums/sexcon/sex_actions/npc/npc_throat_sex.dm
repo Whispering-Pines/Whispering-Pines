@@ -24,7 +24,7 @@
 	user.sexcon.perform_sex_action(user, 8, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s throat!"))
-		user.sexcon.cum_into(oral = TRUE)
+		user.sexcon.cum_into(target, oral = TRUE)
 
 	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	if(user.sexcon.considered_limp())
@@ -80,7 +80,7 @@
 
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_lovebold("[target] cums into [user]!"))
-		target.sexcon.cum_into(oral = TRUE)
+		target.sexcon.cum_into(user, oral = TRUE)
 
 /datum/sex_action/npc_blowjob/on_finish(mob/living/user, mob/living/target)
 	..()

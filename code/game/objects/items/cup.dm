@@ -106,6 +106,7 @@
 	fill_icon_thresholds = list(0, 10, 50, 100)
 	grid_width = 32
 	grid_height = 64
+	fragile = TRUE
 
 /obj/item/reagent_containers/glass/cup/glassware/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
@@ -133,8 +134,10 @@
 	sellprice = VALUE_COMMON_GOODS * 1.5
 	volume = 9
 	grid_height = 32
+	fragile = TRUE
 
 /obj/item/reagent_containers/glass/cup/glassware/wineglass
 	name = "wine glass"
 	desc = "A fancy wine glass- the few scratches that are upon it tell grand tales of lies and betrayal. It tends to break easily..."
 	icon_state = "clear_wineglass1"
+	fragile = TRUE

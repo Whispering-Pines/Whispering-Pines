@@ -45,7 +45,6 @@
 	var/butt_max = MAX_BUTT_SIZE
 	var/vagina_organ = /obj/item/organ/filling_organ/vagina
 	var/show_genitals = FALSE
-	var/no_random_gender = FALSE
 	var/mutable_appearance/breast_overlay
 	var/mutable_appearance/nipple_overlay
 	var/mutable_appearance/vag_overlay
@@ -238,8 +237,6 @@
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	if(erpable)
-		if(!no_random_gender)
-			gender = pick(MALE, FEMALE)
 		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 1) //stupid should_not_sleep on init and organ removal death sleep issues.
 	if(prob(hornychance))
 		seeksfuck = TRUE

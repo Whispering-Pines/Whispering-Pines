@@ -356,3 +356,6 @@
 #define COMSIG_HABITABLE_HOME "comsig_habitable_home"
 
 #define COMSIG_COMBAT_TARGET_SET "comsig_combat_target_set"
+
+//Whispering pines slop
+#define COMSIG_APPLY_REAGENTS "item_apply_reagents" //used for weapon coating

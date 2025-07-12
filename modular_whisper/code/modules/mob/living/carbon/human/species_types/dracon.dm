@@ -6,7 +6,7 @@
 	id = "dracon"
 	desc = "Mighty scaled individuals who claim to be descendants of the dragons."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	default_color = "444"
+	default_color = "#5c5c5cff"
 	skin_tone_wording = "Color"
 	use_skintones = TRUE
 	inherent_traits = list(TRAIT_NOMOBSWAP)

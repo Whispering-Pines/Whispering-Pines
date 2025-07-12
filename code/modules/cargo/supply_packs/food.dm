@@ -2,6 +2,7 @@
 	group = "Consumable"
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
+	mandated_public_profit = 0.5
 
 /datum/supply_pack/food/meat
 	name = "Dry Meat"

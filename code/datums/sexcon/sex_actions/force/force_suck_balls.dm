@@ -40,7 +40,7 @@
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("cums on [target]'s head!"))
-		user.sexcon.cum_onto()
+		user.sexcon.cum_onto(target)
 
 	user.sexcon.perform_sex_action(target, 0, 7, FALSE)
 	if(!user.sexcon.considered_limp())

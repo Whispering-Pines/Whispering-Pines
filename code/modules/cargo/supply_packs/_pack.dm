@@ -18,10 +18,13 @@
 	var/small_item = FALSE //Small items can be grouped into a single crate.
 	var/static_cost = FALSE
 	var/randomprice_factor = 0.07
+	var/no_name_quantity = FALSE // If TRUE, do not display the name as "[Name] x [Amount]".
+	var/not_in_public = FALSE // If true, this pack will not be listed in the public goldface.
+	var/mandated_public_profit = 0 // If set, this pack will always additional cost this much percentage on top of the base cost when in the public vendor. All of the forced profit
 
 /datum/supply_pack/New()
 	..()
-	var/lim = round(cost * 0.3)
+	var/lim = round(cost * 0.1)
 	cost = rand(cost-lim, cost+lim)
 	if(cost < 1)
 		cost = 1

@@ -2909,6 +2909,7 @@
 #include "modular_whisper\code\datums\stock\import.dm"
 #include "modular_whisper\code\game\objects\weird_items.dm"
 #include "modular_whisper\code\game\objects\items\leash.dm"
+#include "modular_whisper\code\game\objects\items\reagent_coating.dm"
 #include "modular_whisper\code\game\objects\items\util.dm"
 #include "modular_whisper\code\game\objects\structures\plant_things.dm"
 #include "modular_whisper\code\game\objects\structures\whisp_things.dm"
@@ -2936,4 +2937,7 @@
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
 #include "modular_whisper\code\modules\surgery\surgeries\resize_surgery.dm"
+#include "modular_whisper\code\modules\mob\living\carbon\human\species_types\slimeperson.dm"
+#include "modular_whisper\code\modules\mob\living\carbon\human\species_types\plantoid.dm"
+#include "modular_whisper\code\modules\cargo\supply_packs\adventuring.dm"
 // END_INCLUDE

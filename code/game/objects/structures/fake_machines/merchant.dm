@@ -113,6 +113,8 @@
 	var/budget = 0
 	var/upgrade_flags
 	var/current_cat = "1"
+	var/is_public = FALSE // Whether it is a public access vendor.
+	var/extra_fee = 0 // Extra Guild Fees on purchases. Meant to make publicface very unprofitable.
 
 /obj/structure/fake_machine/merchantvend/Initialize()
 	. = ..()
@@ -142,7 +144,7 @@
 	. = ..()
 	if(!ishuman(usr))
 		return
-	if(!usr.can_perform_action(src, NEED_DEXTERITY|FORBID_TELEKINESIS_REACH) || locked())
+	if(!usr.can_perform_action(src, NEED_DEXTERITY|FORBID_TELEKINESIS_REACH) || (locked() && !is_public))
 		return
 	var/mob/living/carbon/human/human_mob = usr
 	if(href_list["buy"])
@@ -151,11 +153,14 @@
 			message_admins("MERCHANT [usr.key] IS TRYING TO BUY A [path] WITH THE GOLDFACE. THIS IS AN EXPLOIT.")
 			return
 		var/datum/supply_pack/picked_pack = new path
-		var/cost = picked_pack.cost
-		var/tax_amt=round(SStreasury.tax_value * cost)
-		cost=cost+tax_amt
-		if(upgrade_flags & UPGRADE_NOTAX)
-			cost = picked_pack.cost
+		var/cost = picked_pack.cost + picked_pack.cost * extra_fee
+		var/mandated_public_profit = is_public ? picked_pack.cost * picked_pack.mandated_public_profit : 0
+		var/tax_amt = round(SStreasury.tax_value * picked_pack.cost)
+		if(is_public)
+			cost = cost + mandated_public_profit
+		if(!(upgrade_flags & UPGRADE_NOTAX))
+			cost = cost + tax_amt
+		cost = round(cost)
 		if(budget >= cost)
 			budget -= cost
 			if(!(upgrade_flags & UPGRADE_NOTAX))
@@ -188,7 +193,7 @@
 		var/select = input(usr, "Please select an option.", "", null) as null|anything in options
 		if(!select)
 			return
-		if(!usr.can_perform_action(src, NEED_DEXTERITY|FORBID_TELEKINESIS_REACH) || locked())
+		if(!usr.can_perform_action(src, NEED_DEXTERITY|FORBID_TELEKINESIS_REACH) || (locked() && !is_public))
 			return
 		switch(select)
 			if("Enable Paying Taxes")
@@ -205,18 +210,21 @@
 		return
 	if(!ishuman(user))
 		return
-	if(locked())
+	if(locked() && !is_public)
 		to_chat(user, "<span class='warning'>It's locked. Of course.</span>")
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
 	var/contents
-	contents = "<center>GOLDFACE - In the name of greed.<BR>"
+	if(is_public)
+		contents = "<center>SILVERFACE - In the name of greed.<BR>"
+	else
+		contents = "<center>GOLDFACE - In the name of greed.<BR>"
 	contents += "<a href='byond://?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
 
 	var/mob/living/carbon/human/H = user
-	if(H.job == "Merchant")
+	if(H.job in list("Merchant","Shophand") && !is_public)
 		if(canread)
 			contents += "<a href='byond://?src=[REF(src)];secrets=1'>Secrets</a>"
 		else
@@ -224,7 +232,7 @@
 
 	contents += "</center><BR>"
 
-	var/list/unlocked_cats = list("Apparel","Armor","Consumable","Jewelry","Tools","Seeds","Weapons")
+	var/list/unlocked_cats = list("Apparel","Armor","Consumable","Jewelry","Tools","Seeds","Weapons","Adventuring Supplies")
 
 	if(current_cat == "1")
 		contents += "<center>"
@@ -237,19 +245,42 @@
 		var/list/pax = list()
 		for(var/pack in SSmerchant.supply_packs)
 			var/datum/supply_pack/picked_pack = SSmerchant.supply_packs[pack]
+			if(picked_pack.not_in_public && is_public)
+				continue
 			if(picked_pack.group == current_cat)
 				pax += picked_pack
 		for(var/datum/supply_pack/picked_pack in sortList(pax))
-			var/costy = picked_pack.cost
+			var/costy = picked_pack.cost + picked_pack.cost * extra_fee
+			if(is_public)
+				costy = costy + round(picked_pack.cost * picked_pack.mandated_public_profit)
+				costy = costy + picked_pack.cost * picked_pack.mandated_public_profit
 			if(!(upgrade_flags & UPGRADE_NOTAX))
-				costy=round(costy+(SStreasury.tax_value * costy))
-			contents += "[picked_pack.name] - ([costy])<a href='byond://?src=[REF(src)];buy=[picked_pack.type]'>BUY</a><BR>"
+				costy = costy + round(SStreasury.tax_value * picked_pack.cost)
+			costy = round(costy)
+			var/quantified_name = picked_pack.no_name_quantity ? picked_pack.name : "[picked_pack.name] [picked_pack.contains.len > 1?"x[picked_pack.contains.len]":""]"
+			if(is_public && locked())
+				contents += "[quantified_name]<BR>"
+			else
+				contents += "[quantified_name] - ([costy])<a href='?src=[REF(src)];buy=[picked_pack.type]'>BUY</a><BR>"
 
 	if(!canread)
 		contents = stars(contents)
 
-	var/datum/browser/popup = new(user, "VENDORTHING", "", 370, 400)
+	var/datum/browser/popup = new(user, "VENDORTHING", "", 500, 800)
 	popup.set_content(contents)
 	popup.open()
+
+/obj/structure/fake_machine/merchantvend/public
+	name = "SILVERFACE"
+	extra_fee = 0.5
+	is_public = TRUE
+
+/obj/structure/fake_machine/merchantvend/public/Initialize()
+	. = ..()
+	unlock()
+
+/obj/structure/fake_machine/merchantvend/public/examine()
+	. = ..()
+	. += "<span class='info'>A public version of the GOLDFACE. The guild charges a hefty fee for its usage. When locked, can be used to browse the inventory a merchant has.</span>"
 
 #undef UPGRADE_NOTAX

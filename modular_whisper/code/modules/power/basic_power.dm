@@ -167,7 +167,7 @@ GLOBAL_LIST_EMPTY(fake_powered_machines)
 		balloon_alert_to_viewers("dies down.")
 
 
-//MILKER
+//SEX GENERATOR
 /obj/structure/chair/sexgenerator
 	name = "Senerator"
 	icon = 'modular_whisper/icons/misc/chairs.dmi'

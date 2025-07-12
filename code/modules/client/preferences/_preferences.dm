@@ -1386,12 +1386,15 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					var/new_s_tone
 					if(length(listy))
 						new_s_tone = browser_input_list(user, "CHOOSE YOUR HERO'S [uppertext(pref_species.skin_tone_wording)]", "THE SUN", listy)
+						if(new_s_tone)
+							skin_tone = listy[new_s_tone]
+							features["mcolor"] = listy[new_s_tone]
 					else
 						new_s_tone = color_pick_sanitized(user, "CHOOSE YOUR HERO'S [uppertext(pref_species.skin_tone_wording)]", "THE SUN", skin_tone)
-					if(new_s_tone)
-						skin_tone = listy[new_s_tone]
-						features["mcolor"] = listy[new_s_tone]
-						try_update_mutant_colors()
+						if(new_s_tone)
+							skin_tone = sanitize_hexcolor(new_s_tone)
+							features["mcolor"] = sanitize_hexcolor(new_s_tone)
+					try_update_mutant_colors()
 
 				if("selected_accent")
 					if(!patreon)
@@ -1666,7 +1669,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					if(choice)
 						choice = choices[choice]
 						if(!load_character(choice))
-							user.cut_overlays()
 							randomise_appearance_prefs(include_patreon = patreon)
 							save_character()
 

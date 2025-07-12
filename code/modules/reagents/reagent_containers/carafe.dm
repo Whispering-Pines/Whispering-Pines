@@ -18,6 +18,7 @@
 	poursounds = list('sound/items/fillbottle.ogg')
 	sellprice = 5
 	gripped_intents = list(INTENT_POUR)
+	fragile = TRUE
 
 /obj/item/reagent_containers/glass/carafe/silver
 	name = "silver carafe"
@@ -28,6 +29,7 @@
 	sellprice = 45
 	last_used = 0
 	is_silver = TRUE
+	fragile = FALSE
 
 /obj/item/reagent_containers/glass/carafe/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
@@ -46,6 +48,7 @@
 	fill_icon_thresholds = null
 	dropshrink = 0.8
 	sellprice = 65
+	fragile = FALSE
 
 /* Spawning full */
 

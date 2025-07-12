@@ -11,7 +11,6 @@
 	animal_species = /mob/living/simple_animal/hostile/retaliate/bull
 	faction = list("cows")
 	gender = FEMALE
-	no_random_gender = TRUE
 	footstep_type = FOOTSTEP_MOB_SHOE
 	emote_hear = list("brays.")
 	emote_see = list("shakes its head.", "chews her cud.")
@@ -171,7 +170,6 @@
 	name = "bull"
 	desc = "Angry male cow."
 	gender = MALE
-	no_random_gender = TRUE
 	icon_state = "bull"
 	icon_living = "bull"
 	icon_dead = "bull_dead"

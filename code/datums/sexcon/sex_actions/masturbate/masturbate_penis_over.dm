@@ -44,7 +44,7 @@
 
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_lovebold("[user] cums over [target]'s body!"))
-		user.sexcon.cum_onto()
+		user.sexcon.cum_onto(target)
 
 /datum/sex_action/masturbate_penis_over/on_finish(mob/living/user, mob/living/target)
 	..()

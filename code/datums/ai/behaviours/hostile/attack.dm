@@ -17,7 +17,7 @@
 		return
 
 	var/mob/living/living_target = attack_target
-	if(istype(living_target) && (living_target.stat >= CONSCIOUS))
+	if(istype(living_target) && (living_target.stat > CONSCIOUS))
 		finish_action(controller, TRUE)
 		return
 

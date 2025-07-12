@@ -233,21 +233,6 @@
 	cost = 6
 	contains = /obj/item/storage/belt/leather/black
 
-/datum/supply_pack/apparel/pouch
-	name = "Pouch"
-	cost = 4
-	contains = /obj/item/storage/belt/pouch
-
-/datum/supply_pack/apparel/satchel
-	name = "Satchel"
-	cost = 10
-	contains = /obj/item/storage/backpack/satchel
-
-/datum/supply_pack/apparel/backpack
-	name = "Backpack"
-	cost = 20
-	contains = /obj/item/storage/backpack/backpack
-
 /datum/supply_pack/apparel/luxurydyes
 	name = "Luxury Dyes"
 	cost = 70

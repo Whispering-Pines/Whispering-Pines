@@ -96,6 +96,19 @@
 	},
 /turf/open/floor/cobble/alt,
 /area/rogue/indoors/town/garrison)
+"aej" = (
+/obj/structure/rack/shelf/biggest,
+/obj/item/soap,
+/obj/item/soap{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/soap{
+	pixel_x = 3;
+	pixel_y = 9
+	},
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/bath)
 "aes" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/ruinedwood/spiral,
@@ -155,6 +168,12 @@
 /obj/structure/fluff/statue/knight/interior,
 /turf/open/floor/tile,
 /area/rogue/indoors/town/manor)
+"agc" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/turf/open/floor/cobble,
+/area/rogue/under/cavewet)
 "agZ" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
@@ -418,18 +437,34 @@
 /obj/item/reagent_containers/food/snacks/smallrat,
 /turf/open/floor/metal/barograte,
 /area/rogue/indoors/town/cell)
+"ard" = (
+/obj/machinery/light/fueled/wallfire/candle,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "aro" = (
 /turf/closed/wall/mineral/decorstone,
 /area/rogue/indoors/town)
 "arR" = (
 /obj/structure/fluff/wallclock/r,
 /obj/structure/rack/shelf/biggest,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/item/natural/feather,
 /turf/open/floor/woodturned,
@@ -581,7 +616,7 @@
 "axq" = (
 /obj/structure/bed,
 /obj/structure/curtain/fancy/magenta,
-/obj/machinery/light/fueled/wallfire/candle/weak,
+/obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/bath)
 "axs" = (
@@ -808,7 +843,7 @@
 "aHZ" = (
 /obj/structure/closet/crate/chest/crate,
 /turf/open/floor/ruinedwood,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "aIO" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
@@ -1045,7 +1080,7 @@
 /turf/open/floor/blocks/newstone,
 /area/rogue/under/town/basement)
 "aRg" = (
-/obj/structure/bars,
+/obj/structure/window/harem/three,
 /turf/open/water/river,
 /area/rogue/indoors/town/bath)
 "aRt" = (
@@ -1323,6 +1358,9 @@
 	},
 /turf/open/floor/twig,
 /area/rogue/indoors/town/clinic_large)
+"bbc" = (
+/turf/open/floor/cobblerock,
+/area/rogue/under/cavewet)
 "bbd" = (
 /turf/open/floor/twig,
 /area/rogue/indoors/town/garrison)
@@ -1777,6 +1815,9 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
+"bqT" = (
+/turf/closed/wall/mineral/stone/window,
+/area/rogue/indoors/town/dwarfin)
 "bra" = (
 /obj/structure/door{
 	lockid = "apartment13";
@@ -1842,9 +1883,20 @@
 /obj/item/key/luxroomiv,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
+"brO" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	pixel_y = -1
+	},
+/turf/open/floor/dirt,
+/area/rogue/outdoors/town)
 "bsk" = (
 /turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/bath)
+"bso" = (
+/obj/item/reagent_containers/glass/bucket/wooden,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "bsE" = (
 /obj/structure/flora/grass/water,
 /obj/structure/flora/grass/water,
@@ -1883,6 +1935,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor)
+"bsW" = (
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/obj/structure/closet/crate/chest/old_crate,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "btd" = (
 /obj/machinery/light/fueled/torchholder{
 	dir = 4
@@ -2008,6 +2067,10 @@
 	},
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/church/chapel)
+"bwE" = (
+/obj/structure/fermentation_keg,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/bath)
 "bwL" = (
 /obj/structure/closet/crate/drawer,
 /obj/item/lockpickring,
@@ -2019,7 +2082,7 @@
 "bwP" = (
 /obj/structure/table/wood/reinforced_alter,
 /turf/open/floor/ruinedwood,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "bwZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/crafted,
@@ -2110,7 +2173,9 @@
 	dir = 9;
 	icon_state = "largetable"
 	},
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/paper{
 	pixel_x = 2;
 	pixel_y = 5
@@ -2148,18 +2213,9 @@
 /turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/manor)
 "bzH" = (
-/obj/structure/table/wood/plain_alt,
-/obj/item/soap,
-/obj/item/soap{
-	pixel_x = -6;
-	pixel_y = 8
-	},
-/obj/item/soap{
-	pixel_x = 3;
-	pixel_y = 9
-	},
-/turf/open/floor/blocks/stonered,
-/area/rogue/indoors/town/bath)
+/obj/machinery/tanningrack,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "bzL" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -2310,6 +2366,19 @@
 /obj/structure/flora/grass/bush/wall/tall,
 /turf/open/floor/grass,
 /area/rogue/under/cave)
+"bEx" = (
+/obj/machinery/light/fueled/wallfire/candle/blue/l,
+/obj/machinery/light/wallfire/candle/floorcandle/alt/pink,
+/turf/open/water/bath{
+	name = "Steamy Water";
+	desc = "Water for bathing, warmed from the thermal heated rocks below your feet"
+	},
+/area/rogue/indoors/town/bath)
+"bEG" = (
+/obj/structure/water_pipe,
+/obj/machinery/light/fueled/torchholder/c,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/under/cave)
 "bFo" = (
 /turf/closed/wall/mineral/stone/window,
 /area/rogue/indoors/town)
@@ -2322,10 +2391,10 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/villagegarrison)
 "bGw" = (
-/obj/structure/fluff/railing/border{
-	dir = 6
+/obj/structure/bed/sleepingbag/fluff/pillow/purple{
+	dir = 1
 	},
-/turf/open/floor/tile/harem/two,
+/turf/open/floor/tile,
 /area/rogue/indoors/town/bath)
 "bGB" = (
 /mob/living/simple_animal/hostile/retaliate/goatmale,
@@ -2470,6 +2539,10 @@
 /obj/structure/fluff/walldeco/chains,
 /turf/open/floor/blocks,
 /area/rogue/under/dungeon)
+"bMD" = (
+/obj/effect/landmark/start/artificer,
+/turf/open/floor/blocks/paving,
+/area/rogue/indoors/town/dwarfin)
 "bNb" = (
 /obj/structure/table/wood/counter/end{
 	dir = 1
@@ -2571,6 +2644,10 @@
 /obj/item/paper/scroll,
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/shop)
+"bQF" = (
+/obj/structure/fluff/walldeco/masonflag,
+/turf/closed/wall/mineral/stonebrick,
+/area/rogue/indoors/town/dwarfin)
 "bQQ" = (
 /obj/structure/closet/dirthole/closed/loot,
 /obj/item/natural/stone,
@@ -2912,6 +2989,14 @@
 	},
 /turf/open/floor/cobble/alt,
 /area/rogue/under/town/basement)
+"cfA" = (
+/obj/structure/closet/crate/crafted_closet/dark,
+/obj/item/clothing/shirt/tunic/green,
+/obj/item/clothing/shirt/undershirt/random,
+/obj/item/clothing/pants/tights/random,
+/obj/machinery/light/fueled/wallfire/candle,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "cfC" = (
 /obj/structure/closet/crate/chest/crate,
 /obj/machinery/light/fueled/wallfire/candle,
@@ -3061,9 +3146,15 @@
 /obj/structure/rack/shelf/big{
 	pixel_y = 10
 	},
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /turf/open/floor/wood,
 /area/rogue/indoors)
@@ -3097,6 +3188,9 @@
 /obj/structure/bed/mediocre,
 /obj/item/bedsheet/cloth,
 /turf/open/floor/wood,
+/area/rogue/indoors/town)
+"cmU" = (
+/turf/closed/wall/mineral/stone/window/moss,
 /area/rogue/outdoors/town)
 "cmV" = (
 /obj/structure/chair/stool,
@@ -3183,6 +3277,10 @@
 /obj/structure/chair/stool,
 /turf/open/floor/churchbrick,
 /area/rogue/indoors/town/church)
+"cqS" = (
+/obj/structure/window/harem/two,
+/turf/open/floor/tile/harem/three,
+/area/rogue/indoors/town/bath)
 "crv" = (
 /turf/open/floor/dirt,
 /area/rogue/indoors/butchershop)
@@ -3320,6 +3418,12 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
+"cut" = (
+/obj/machinery/light/wallfire/candle/floorcandle/alt/pink{
+	pixel_y = -14
+	},
+/turf/open/floor/tile,
+/area/rogue/indoors/town/bath)
 "cuC" = (
 /turf/closed/wall/mineral/roofwall/outercorner,
 /area/rogue/outdoors/town)
@@ -3494,9 +3598,10 @@
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors/town/church)
 "cBp" = (
-/obj/structure/closet/crate/crafted_closet,
-/turf/open/floor/ruinedwood,
-/area/rogue/outdoors/town)
+/obj/structure/bed/shit,
+/mob/living/carbon/human/species/human/northern/bum,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "cBu" = (
 /obj/structure/door/violet{
 	lockid = "waterfront4"
@@ -3682,7 +3787,7 @@
 /area/rogue/indoors/town/church)
 "cHj" = (
 /obj/structure/door{
-	name = "adult toy shop"
+	name = "brothel shop"
 	},
 /obj/effect/mapping_helpers/access/locker,
 /obj/effect/mapping_helpers/access/keyset/town/bathhouse,
@@ -3912,12 +4017,24 @@
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods_safe)
 "cQv" = (
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/item/natural/feather,
 /obj/structure/rack/shelf/biggest,
@@ -3956,12 +4073,16 @@
 /obj/structure/fake_machine/scomm/r,
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/indoors/town/theatre)
-"cSh" = (
-/obj/structure/chair/wood/alt{
+"cSe" = (
+/obj/machinery/light/fueled/torchholder{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/rogue/outdoors/town)
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
+"cSh" = (
+/obj/machinery/loom,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "cSk" = (
 /obj/structure/window/openclose{
 	dir = 4
@@ -4040,24 +4161,12 @@
 /obj/structure/fermentation_keg/random/water,
 /turf/open/floor/dirt/road,
 /area/rogue/indoors/town/garrison)
-"cWc" = (
-/obj/structure/stairs/slope{
-	dir = 1
-	},
-/turf/closed/mineral/random,
-/area/rogue/under/cave)
 "cWf" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/indoors/town/tavern)
-"cWq" = (
-/obj/structure/stairs/slope{
-	dir = 8
-	},
-/turf/open/floor/naturalstone,
-/area/rogue/outdoors/mountains)
 "cWv" = (
 /turf/open/floor/tile/masonic{
 	dir = 8
@@ -4236,7 +4345,9 @@
 /area/rogue/outdoors/woods_safe)
 "dec" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather{
 	pixel_x = -15;
 	pixel_y = 4
@@ -4364,10 +4475,18 @@
 /area/rogue/under/town/sewer)
 "diG" = (
 /obj/structure/closet/crate/chest/crate,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/churchbrick,
 /area/rogue/outdoors/town/roofs)
 "djc" = (
@@ -4583,16 +4702,36 @@
 /obj/structure/fake_machine/mail{
 	mailtag = "Forrest Garrison"
 	},
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/item/natural/feather,
 /turf/open/floor/hexstone,
@@ -5268,7 +5407,9 @@
 /area/rogue/indoors/dungeon)
 "dWZ" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/twig{
 	dir = 4
 	},
@@ -5401,6 +5542,10 @@
 /obj/structure/roguerock,
 /turf/open/water,
 /area/rogue/under/cave)
+"ecR" = (
+/obj/structure/window/harem,
+/turf/open/floor/tile/harem/three,
+/area/rogue/indoors/town/bath)
 "edg" = (
 /obj/effect/lily_petal/three,
 /turf/open/water/cleanshallow,
@@ -5767,14 +5912,21 @@
 /area/rogue/under/town/basement)
 "epA" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/twig,
 /area/rogue/indoors)
 "epQ" = (
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/structure/table/wood/fancy/purple,
+/obj/item/candle/eora/lit,
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/bath)
 "epW" = (
@@ -5910,10 +6062,20 @@
 	},
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
+"etC" = (
+/obj/machinery/light/fueled/torchholder{
+	dir = 8
+	},
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "eul" = (
 /obj/structure/stairs/stone/church,
 /turf/open/floor/church,
 /area/rogue/indoors/town/clinic_large)
+"euD" = (
+/obj/structure/fluff/statue/lewd/random,
+/turf/closed/wall/mineral/decostone,
+/area/rogue/indoors/town/bath)
 "euR" = (
 /obj/structure/door{
 	lockid = "apartment5";
@@ -5986,6 +6148,10 @@
 /obj/structure/chair/bench/couch/redright,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/tavern)
+"exR" = (
+/obj/machinery/artificer_table,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "eyd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/start/villager,
@@ -6129,7 +6295,9 @@
 /area/rogue/outdoors/town)
 "eEK" = (
 /obj/structure/table/wood/reinforced_alter,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/town/roofs)
 "eFu" = (
@@ -6237,17 +6405,25 @@
 	layer = 2.81
 	},
 /turf/open/floor/ruinedwood,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "eJk" = (
 /obj/structure/chair/wood/alt/chair3,
 /turf/open/floor/carpet,
 /area/rogue/indoors/town/tavern)
 "eJm" = (
 /obj/structure/rack,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/machinery/light/fueled/wallfire/candle/blue/r,
 /turf/open/floor/hexstone,
@@ -6325,6 +6501,12 @@
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/indoors/town/theatre)
+"eMN" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/ore/copper,
+/obj/item/ore/copper,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "eNr" = (
 /obj/structure/minecart_rail{
 	dir = 4
@@ -6690,14 +6872,30 @@
 /area/rogue/indoors/town/clinic_large)
 "fbT" = (
 /obj/structure/closet/crate/drawer,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
@@ -6761,6 +6959,10 @@
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/blocks,
 /area/rogue/under/town/basement)
+"ffN" = (
+/obj/structure/ladder,
+/turf/open/floor/blocks/stonered,
+/area/rogue/under/cave)
 "fgg" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
@@ -6832,9 +7034,8 @@
 /turf/closed/wall/mineral/craftstone,
 /area/rogue/indoors)
 "fje" = (
-/obj/structure/bars/cemetery,
-/turf/open/floor/dirt/road,
-/area/rogue/under/cave)
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/dwarfin)
 "fjg" = (
 /obj/structure/fluff/walldeco/church/line,
 /obj/structure/fluff/walldeco/church/line{
@@ -6848,6 +7049,11 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/shop)
+"fjs" = (
+/obj/structure/window/harem,
+/obj/structure/curtain/fancy/magenta,
+/turf/open/floor/tile,
+/area/rogue/indoors/town/bath)
 "fke" = (
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/herringbone,
@@ -6904,7 +7110,7 @@
 /obj/machinery/light/fueled/oven{
 	pixel_y = 31
 	},
-/obj/item/reagent_containers/glass/bucket/wooden/alter,
+/obj/machinery/light/fueled/hearth,
 /turf/open/floor/tile,
 /area/rogue/indoors/town/bath)
 "fmH" = (
@@ -6999,10 +7205,13 @@
 /turf/open/floor/churchrough,
 /area/rogue/under/town/basement)
 "foJ" = (
+/obj/item/weapon/knife/copper,
+/obj/item/natural/bundle/cloth/full,
+/obj/item/needle,
 /obj/structure/table/wood{
+	dir = 1;
 	icon_state = "longtable"
 	},
-/obj/item/weapon/knife/copper,
 /turf/open/floor/tile/harem/three,
 /area/rogue/indoors/town/bath)
 "foS" = (
@@ -7020,7 +7229,7 @@
 /turf/open/floor/ruinedwood/chevron,
 /area/rogue/indoors/town/orphanage)
 "fpl" = (
-/obj/machinery/light/fueled/wallfire/candle/weak{
+/obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
 	},
 /obj/item/clothing/armor/corset,
@@ -7108,6 +7317,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/hexstone,
 /area/rogue/indoors/town/garrison)
+"ftI" = (
+/obj/machinery/light/fueled/smelter/great,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/dwarfin)
 "ftT" = (
 /obj/structure/door{
 	lockid = "apartment4";
@@ -7197,6 +7410,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/hexstone,
 /area/rogue/indoors/town/garrison)
+"fxT" = (
+/obj/structure/fluff/railing/border,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/bath)
 "fye" = (
 /obj/machinery/light/fueled/torchholder{
 	dir = 4
@@ -7386,6 +7603,9 @@
 /obj/structure/table/wood/reinf_long,
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors/town/church)
+"fHi" = (
+/turf/open/floor/dirt,
+/area/rogue/under/cavewet)
 "fIc" = (
 /obj/structure/fermentation_keg/random/beer,
 /turf/open/floor/cobble,
@@ -7502,6 +7722,13 @@
 /obj/machinery/light/fueled/firebowl/standing,
 /turf/open/floor/tile,
 /area/rogue/indoors/town/manor)
+"fPF" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "fPL" = (
 /obj/structure/rack/shelf/biggest,
 /obj/item/reagent_containers/glass/bottle/wine/sourwine,
@@ -7870,6 +8097,10 @@
 	dir = 8
 	},
 /area/rogue/outdoors/river)
+"gcA" = (
+/obj/structure/bed/shit,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "gcF" = (
 /turf/open/floor/church,
 /area/rogue/under/town/basement)
@@ -7916,11 +8147,11 @@
 /turf/open/floor/tile,
 /area/rogue/indoors/town/bath)
 "ggz" = (
-/obj/machinery/light/fueled/wallfire/candle/weak{
-	pixel_y = -32
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
 	},
-/turf/open/floor/wood,
-/area/rogue/under/cave)
+/turf/open/floor/metal/alt,
+/area/rogue/indoors/town/bath)
 "ggE" = (
 /turf/closed/wall/mineral/roofwall/center,
 /area/rogue/indoors/town/shop)
@@ -8263,6 +8494,11 @@
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/magician)
+"gtx" = (
+/obj/structure/door/iron/bars,
+/obj/effect/mapping_helpers/access/keyset/garrison/general,
+/turf/open/floor/blocks,
+/area/rogue/outdoors/town)
 "gty" = (
 /obj/structure/door{
 	lockid = "apartment18";
@@ -8864,6 +9100,12 @@
 "gRf" = (
 /turf/closed/wall/mineral/decorstone,
 /area/rogue/indoors/town/manor)
+"gRk" = (
+/obj/structure/door{
+	name = "handler's room"
+	},
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "gRH" = (
 /obj/structure/closet/crate/chest/crate,
 /obj/effect/spawner/map_spawner/loot/potion_ingredient/herb,
@@ -8895,9 +9137,10 @@
 /turf/open/floor/blocks,
 /area/rogue/indoors/dungeon)
 "gSJ" = (
-/obj/structure/underworld/barrier,
-/turf/open/floor/naturalstone,
-/area/rogue/indoors/town)
+/obj/structure/rack,
+/obj/item/clothing/cloak/boiler,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/under/cave)
 "gTE" = (
 /obj/structure/lever/wall{
 	dir = 4;
@@ -9170,6 +9413,15 @@
 	},
 /turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/manor)
+"hcR" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/turf/open/floor/cobble,
+/area/rogue/outdoors/river)
 "hcU" = (
 /obj/structure/table/wood{
 	icon_state = "largetable"
@@ -9328,6 +9580,14 @@
 "hid" = (
 /turf/open/water,
 /area/rogue/outdoors/river)
+"hir" = (
+/obj/structure/fake_machine/mail{
+	pixel_x = 32;
+	pixel_y = 0;
+	mailtag = "Artificer"
+	},
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "hiz" = (
 /obj/structure/fermentation_keg,
 /turf/open/floor/carpet/red,
@@ -9377,12 +9637,24 @@
 /area/rogue/under/cave)
 "hjJ" = (
 /obj/structure/closet/crate/drawer,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/item/natural/feather,
 /obj/machinery/light/fueled/wallfire/candle,
@@ -9418,6 +9690,13 @@
 /obj/machinery/light/fueled/torchholder,
 /turf/open/floor/dirt/road,
 /area/rogue/under/cave)
+"hlu" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	pixel_y = -1
+	},
+/turf/open/floor/grass,
+/area/rogue/outdoors/town)
 "hlL" = (
 /obj/structure/table/wood{
 	dir = 5;
@@ -9969,10 +10248,18 @@
 /area/rogue/indoors/town/church)
 "hJz" = (
 /obj/structure/closet/crate/chest/crate,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/churchbrick,
 /area/rogue/indoors/town/church)
 "hJS" = (
@@ -9987,6 +10274,11 @@
 	},
 /turf/open/floor/cobblerock,
 /area/rogue/outdoors/town)
+"hKl" = (
+/obj/structure/bed/mediocre,
+/obj/item/bedsheet/wool,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "hKD" = (
 /obj/structure/closet/crate/drawer,
 /obj/item/paper/scroll,
@@ -10185,7 +10477,7 @@
 /area/rogue/indoors/town/bath)
 "hRn" = (
 /obj/structure/table/wood/crafted,
-/obj/machinery/light/fueled/wallfire/candle/weak,
+/obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/wood,
 /area/rogue/under/cave)
 "hRu" = (
@@ -10210,11 +10502,14 @@
 /turf/open/floor/blocks/paving,
 /area/rogue/under/town/sewer)
 "hSP" = (
-/obj/structure/door/iron/bars,
+/obj/structure/door/viewport{
+	dir = 1;
+	name = "Makers Quarters"
+	},
 /obj/effect/mapping_helpers/access/locker,
-/obj/effect/mapping_helpers/access/keyset/church/general,
-/turf/open/floor/dirt,
-/area/rogue/under/cave)
+/obj/effect/mapping_helpers/access/keyset/town/artificer,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "hTg" = (
 /obj/structure/table/wood/large/corner_new{
 	dir = 10
@@ -10281,6 +10576,14 @@
 	},
 /turf/open/floor/blocks,
 /area/rogue/indoors/dungeon)
+"hWb" = (
+/obj/structure/door/viewport{
+	name = "power room door"
+	},
+/obj/effect/mapping_helpers/access/keyset/town/bathhouse,
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/bath)
 "hWd" = (
 /turf/open/water/sewer,
 /area/rogue/outdoors/river)
@@ -10321,7 +10624,9 @@
 /area/rogue/under/town/basement)
 "hXC" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/structure/fluff/walldeco/church/line{
 	dir = 1
@@ -10588,6 +10893,12 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors)
+"ikb" = (
+/obj/machinery/light/fueled/wallfire/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/dwarfin)
 "iko" = (
 /obj/structure/fake_machine/scomm{
 	pixel_y = -32
@@ -10686,6 +10997,10 @@
 	},
 /turf/open/floor/cobble,
 /area/rogue/indoors)
+"ipB" = (
+/obj/structure/water_pipe,
+/turf/open/transparent/openspace,
+/area/rogue/under/cave)
 "ipK" = (
 /obj/item/clothing/head/helmet/townwatch{
 	pixel_y = 2
@@ -10721,7 +11036,9 @@
 /area/rogue/under/dungeon)
 "iqv" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/tile,
 /area/rogue/indoors/town/manor)
 "irk" = (
@@ -10933,7 +11250,9 @@
 /area/rogue/under/town/basement)
 "iBS" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/structure/fluff/walldeco/church/line{
 	dir = 1
@@ -11016,8 +11335,12 @@
 /turf/open/floor/grass,
 /area/rogue/indoors)
 "iFa" = (
-/obj/structure/rack/shelf/biggest,
-/turf/open/floor/blocks/stonered,
+/obj/structure/fluff/railing/border{
+	dir = 9;
+	pixel_x = 24;
+	pixel_y = -24
+	},
+/turf/open/floor/tile/harem/two,
 /area/rogue/indoors/town/bath)
 "iFc" = (
 /obj/structure/closet/crate/chest/wicker,
@@ -11097,6 +11420,12 @@
 /obj/item/fishing/hook/wooden,
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/under/cave)
+"iIo" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/turf/open/floor/cobble,
+/area/rogue/outdoors/river)
 "iIy" = (
 /obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
@@ -11206,6 +11535,11 @@
 "iMN" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/woods)
+"iMS" = (
+/obj/machinery/light/fueled/smelter,
+/obj/structure/fluff/walldeco/bath/wallpipes,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "iNn" = (
 /obj/structure/chair/wood/alt{
 	dir = 8
@@ -11369,7 +11703,9 @@
 	dir = 1;
 	icon_state = "longtable_mid"
 	},
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/blocks,
 /area/rogue/under/town/basement)
@@ -11459,6 +11795,10 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/town/manor)
+"iUK" = (
+/obj/structure/mannequin/male/decorative,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/under/cave)
 "iUS" = (
 /obj/effect/spawner/map_spawner/hauntz_random,
 /turf/open/floor/metal/barograte,
@@ -11832,6 +12172,9 @@
 /obj/item/bedsheet/fabric_double,
 /turf/open/floor/carpet/lord/center,
 /area/rogue/indoors/town/manor)
+"jho" = (
+/turf/open/floor/cobble,
+/area/rogue/outdoors/river)
 "jhL" = (
 /obj/effect/landmark/start/hunter,
 /turf/open/floor/wood,
@@ -12122,6 +12465,15 @@
 	},
 /turf/open/floor/woodturned,
 /area/rogue/under/cave)
+"jpO" = (
+/obj/structure/table/wood/reinforced_alter,
+/obj/structure/bars{
+	icon_state = "barsbent";
+	layer = 2.81
+	},
+/obj/structure/curtain/bounty/dir,
+/turf/open/floor/herringbone,
+/area/rogue/indoors/town/dwarfin)
 "jqt" = (
 /obj/effect/landmark/events/animal_migration_point,
 /turf/open/floor/cobble,
@@ -12553,13 +12905,17 @@
 "jFD" = (
 /obj/structure/rack,
 /turf/open/floor/ruinedwood,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "jFJ" = (
 /obj/structure/door/violet{
 	lockid = "waterfront3"
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
+"jFK" = (
+/obj/structure/bars/cemetery,
+/turf/open/floor/dirt,
+/area/rogue/outdoors/rtfield/safe)
 "jFL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/fueled/wallfire/candle/l{
@@ -12800,6 +13156,12 @@
 "jQT" = (
 /turf/closed/wall/mineral/decostone,
 /area/rogue/under/cave)
+"jQY" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/turf/open/floor/cobble,
+/area/rogue/outdoors/river)
 "jRT" = (
 /obj/effect/landmark/start/villager{
 	dir = 1
@@ -12894,7 +13256,7 @@
 /obj/structure/table/wood/plain_alt,
 /obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/wood,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "jVX" = (
 /obj/structure/closet/crate/crafted_closet/inn,
 /obj/item/key/apartments/apartment6,
@@ -12946,7 +13308,9 @@
 /obj/structure/table/wood/counter/end{
 	dir = 1
 	},
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /turf/open/floor/greenstone,
 /area/rogue/under/cave)
@@ -13059,6 +13423,10 @@
 /obj/structure/well/fountain/mana,
 /turf/open/floor/woodturned,
 /area/rogue/under/cave)
+"kde" = (
+/obj/machinery/light/fueled/campfire,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "kdB" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
@@ -13234,10 +13602,8 @@
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors/woods)
 "kli" = (
-/obj/structure/curtain/bounty/dir{
-	dir = 8
-	},
-/turf/closed/wall/mineral/stone/window,
+/obj/structure/window/harem,
+/turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/bath)
 "klo" = (
 /obj/structure/closet/dirthole/closed/loot,
@@ -13321,7 +13687,9 @@
 	dir = 1;
 	icon_state = "longtable_mid"
 	},
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/weapon/sword/long/exe{
 	pixel_x = -52;
 	pixel_y = -11
@@ -13476,6 +13844,14 @@
 /obj/structure/bed/mediocre,
 /turf/open/floor/wood,
 /area/rogue/under/cave)
+"ksk" = (
+/obj/machinery/light/fueled/wallfire/candle{
+	pixel_y = -32
+	},
+/obj/structure/table/wood/plain_alt,
+/obj/item/bomb,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "ksm" = (
 /obj/structure/fluff/walldeco/wantedposter{
 	pixel_y = -32
@@ -13499,6 +13875,22 @@
 "ksQ" = (
 /turf/closed/wall/mineral/stone/moss,
 /area/rogue/indoors)
+"ktc" = (
+/obj/structure/table/wood/plain_alt,
+/obj/item/contraption{
+	pixel_x = 6;
+	pixel_y = 3
+	},
+/obj/item/flint{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/item/weapon/hammer/steel{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "kte" = (
 /obj/structure/flora/grass,
 /turf/open/floor/grass,
@@ -13533,6 +13925,10 @@
 /obj/structure/table/wood/plain_alt,
 /turf/open/floor/blocks,
 /area/rogue/under/town/basement)
+"kus" = (
+/mob/living/simple_animal/pet/giraffe,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "kvd" = (
 /obj/structure/toilet,
 /turf/open/floor/blocks/paving,
@@ -13589,6 +13985,9 @@
 "kwE" = (
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/manor)
+"kwV" = (
+/turf/open/floor/grass,
+/area/rogue/under/cavewet)
 "kxf" = (
 /obj/structure/table/wood/counter/end,
 /obj/item/recipe_book/arcyne{
@@ -13602,7 +14001,7 @@
 /turf/open/floor/greenstone,
 /area/rogue/under/cave)
 "kxk" = (
-/obj/structure/chair/fake_powered/milker,
+/obj/structure/chair/fake_powered/milker/self_powered,
 /turf/open/floor/grass/red,
 /area/rogue/indoors/butchershop)
 "kxw" = (
@@ -13676,6 +14075,13 @@
 /obj/effect/decal/carpet/kover_black,
 /turf/open/floor/woodturned,
 /area/rogue/indoors/town/tavern)
+"kAb" = (
+/obj/machinery/light/fueled/wallfire/candle{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "kAh" = (
 /obj/item/clothing/face/exoticsilkmask,
 /obj/item/clothing/shirt/exoticsilkbra,
@@ -14554,6 +14960,11 @@
 	},
 /turf/open/floor/blocks/paving,
 /area/rogue/indoors/town/orphanage)
+"lis" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/ore/iron,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "liw" = (
 /obj/effect/mapping_helpers/access/locker,
 /obj/structure/door{
@@ -14610,6 +15021,10 @@
 	},
 /turf/open/floor/churchbrick,
 /area/rogue/indoors/town/manor)
+"lkI" = (
+/obj/machinery/light/fueledstreet/blue/wall,
+/turf/open/water/marsh,
+/area/rogue/under/cave)
 "lkR" = (
 /obj/structure/closet/dirthole/grave,
 /obj/effect/landmark/start/vagrant,
@@ -14740,46 +15155,126 @@
 /obj/machinery/light/fueled/wallfire/candle/l{
 	pixel_x = 32
 	},
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/structure/closet/crate/chest/neu_fancy,
 /turf/open/floor/greenstone,
 /area/rogue/under/town/basement)
@@ -14817,8 +15312,12 @@
 	},
 /turf/open/floor/cobble,
 /area/rogue/outdoors/town)
+"lsb" = (
+/turf/open/floor/cobble,
+/area/rogue/under/cavewet)
 "lsn" = (
-/turf/closed/basic,
+/obj/structure/fermentation_keg/random/beer,
+/turf/open/floor/tile,
 /area/rogue/indoors/town/bath)
 "lsv" = (
 /obj/structure/rack/shelf/big,
@@ -14875,7 +15374,7 @@
 /turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/manor)
 "ltZ" = (
-/obj/machinery/light/fueled/wallfire/candle/weak,
+/obj/machinery/light/fueled/wallfire/candle,
 /obj/item/weapon/mace/woodclub/crafted,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave)
@@ -14976,12 +15475,7 @@
 /turf/open/floor/dirt,
 /area/rogue/indoors/town/garrison)
 "lyA" = (
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "longtable"
-	},
-/obj/item/natural/bundle/cloth/full,
-/obj/item/needle,
+/obj/structure/fermentation_keg/random/beer,
 /turf/open/floor/tile/harem/three,
 /area/rogue/indoors/town/bath)
 "lyG" = (
@@ -15180,8 +15674,8 @@
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/clinic_large)
 "lFr" = (
-/obj/structure/fake_machine/scomm,
-/turf/open/floor/blocks/stonered,
+/obj/structure/window/harem/two,
+/turf/open/floor/tile,
 /area/rogue/indoors/town/bath)
 "lFu" = (
 /obj/structure/table/wood{
@@ -15319,6 +15813,8 @@
 /obj/item/reagent_containers/food/snacks/produce/grain/wheat,
 /obj/item/reagent_containers/food/snacks/produce/grain/wheat,
 /obj/item/reagent_containers/food/snacks/produce/grain/wheat,
+/obj/effect/spawner/map_spawner/loot/food,
+/obj/effect/spawner/map_spawner/loot/food,
 /turf/open/floor/tile,
 /area/rogue/indoors/town/bath)
 "lKG" = (
@@ -15592,8 +16088,7 @@
 /turf/open/floor/carpet/lord/center,
 /area/rogue/indoors/town/manor)
 "lWx" = (
-/obj/machinery/light/fueled/wallfire/candle/weak,
-/turf/open/floor/blocks/stonered,
+/turf/open/water/marsh,
 /area/rogue/indoors/town/bath)
 "lWM" = (
 /obj/machinery/light/fueled/wallfire/candle{
@@ -15624,6 +16119,11 @@
 	},
 /turf/open/floor/dirt,
 /area/rogue/outdoors/woods_safe)
+"lYm" = (
+/obj/structure/closet/crate/chest/neu,
+/obj/item/ingot/iron,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "lYp" = (
 /obj/structure/door/stone,
 /obj/effect/mapping_helpers/access/locker,
@@ -15751,6 +16251,10 @@
 "mcm" = (
 /turf/closed/mineral/random/med_nonval,
 /area/rogue/under/cave)
+"mcG" = (
+/obj/structure/handcart,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "mcY" = (
 /obj/structure/fluff/nest{
 	name = "patch of straw"
@@ -16188,6 +16692,15 @@
 /obj/effect/mapping_helpers/access/keyset/town/matron,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/orphanage)
+"mrE" = (
+/obj/structure/closet/crate/chest/neu,
+/obj/item/ingot/copper,
+/obj/item/ingot/copper,
+/obj/item/ingot/copper,
+/obj/item/ingot/copper,
+/obj/item/ingot/copper,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "mrH" = (
 /obj/structure/chair/bench/church{
 	dir = 1
@@ -16868,6 +17381,15 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/butchershop)
+"mRY" = (
+/obj/structure/stairs{
+	dir = 1
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/turf/open/floor/ruinedwood/darker,
+/area/rogue/under/cave)
 "mSf" = (
 /obj/structure/table/vtable,
 /turf/open/floor/blocks,
@@ -17207,6 +17729,18 @@
 /obj/effect/spawner/map_spawner/loot/coin/low,
 /turf/open/floor/ruinedwood/turned/alt,
 /area/rogue/indoors/town/tavern)
+"nhn" = (
+/obj/structure/fluff/railing/wood,
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/obj/structure/table/wood/plain_alt,
+/obj/item/clothing/face/cigarette/rollie/nicotine,
+/obj/item/candle/silver/lit{
+	pixel_x = 8
+	},
+/turf/open/floor/cobble,
+/area/rogue/outdoors/river)
 "nhp" = (
 /obj/machinery/light/fueled/wallfire/candle,
 /obj/structure/bed/mediocre,
@@ -17406,6 +17940,10 @@
 /obj/structure/closet/crate/chest/crafted,
 /turf/open/floor/wood,
 /area/rogue/indoors/villagegarrison)
+"nnc" = (
+/obj/item/cooking/pan,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "nnh" = (
 /obj/structure/bed/shit,
 /turf/open/floor/dirt,
@@ -17489,6 +18027,21 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/cobble,
 /area/rogue/indoors/villagegarrison)
+"npk" = (
+/obj/structure/table/wood{
+	dir = 10;
+	icon_state = "tablewood2"
+	},
+/obj/item/storage/crucible/random{
+	pixel_x = -3;
+	pixel_y = 13
+	},
+/obj/item/mould/ingot{
+	pixel_y = -7
+	},
+/obj/machinery/light/fueled/wallfire/candle,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "nps" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -17526,7 +18079,7 @@
 	pixel_y = 5
 	},
 /turf/open/floor/ruinedwood,
-/area/rogue/indoors/town/shop)
+/area/rogue/indoors/town)
 "nry" = (
 /obj/structure/chair/wood/alt/chair3{
 	dir = 8
@@ -17665,9 +18218,15 @@
 /area/rogue/under/cave)
 "ntN" = (
 /obj/structure/closet/crate/chest/neu,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/paper/scroll,
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/shop)
@@ -17945,6 +18504,7 @@
 /obj/item/grown/log/tree/stick,
 /obj/item/grown/log/tree/stick,
 /obj/item/grown/log/tree/stick,
+/obj/item/grown/log/tree/stick,
 /turf/open/floor/dirt,
 /area/rogue/under/cave)
 "nFN" = (
@@ -17999,6 +18559,14 @@
 /obj/structure/fluff/statue/knightalt/r,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/manor)
+"nHd" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/machinery/light/fueled/wallfire/candle{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "nHs" = (
 /obj/structure/chair/stool,
 /obj/structure/fluff/walldeco/painting/skull{
@@ -18115,7 +18683,7 @@
 /turf/open/floor/grass/red,
 /area/rogue/outdoors/woods_safe)
 "nLI" = (
-/obj/machinery/light/fueled/wallfire/candle/weak,
+/obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/wood,
 /area/rogue/under/cave)
 "nLW" = (
@@ -18291,6 +18859,10 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/town/tavern)
+"nQX" = (
+/obj/structure/bed/sleepingbag/fluff/pillow/purple,
+/turf/open/floor/tile/bath,
+/area/rogue/indoors/town/bath)
 "nQZ" = (
 /obj/machinery/light/fueled/wallfire{
 	pixel_y = -32
@@ -18344,6 +18916,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
+"nTi" = (
+/obj/structure/closet/crate/chest/old_crate,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "nTq" = (
 /obj/structure/door/stone,
 /obj/effect/mapping_helpers/structure/breaker{
@@ -18412,9 +18988,8 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/magician)
 "nVb" = (
-/obj/structure/bars/cemetery,
-/turf/open/floor/dirt,
-/area/rogue/under/cave)
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "nVp" = (
 /obj/structure/handcart{
 	dir = 4
@@ -18689,6 +19264,11 @@
 /obj/item/bin/water,
 /turf/open/floor/cobble,
 /area/rogue/under/town/basement)
+"ofa" = (
+/obj/structure/fake_machine/scomm,
+/obj/structure/table/wood/plain_alt,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "ofh" = (
 /obj/machinery/light/fueled/torchholder{
 	dir = 4
@@ -18832,16 +19412,36 @@
 /area/rogue/indoors/town)
 "okD" = (
 /obj/structure/table/wood/counter/end,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/machinery/light/fueled/torchholder/l,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/hexstone,
@@ -18855,30 +19455,78 @@
 /area/rogue/indoors/town/garrison)
 "okN" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/carpet,
 /area/rogue/indoors/town)
 "ole" = (
@@ -19079,6 +19727,23 @@
 	},
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
+"orI" = (
+/obj/structure/table/wood/plain_alt,
+/obj/item/gear/metal/bronze,
+/obj/item/gear/metal/bronze{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/gear/metal/bronze{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/item/gear/metal/bronze{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "orV" = (
 /turf/open/water/river,
 /area/rogue/outdoors/river)
@@ -19286,6 +19951,12 @@
 	},
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors/town/church)
+"ozT" = (
+/obj/structure/water_vent{
+	dir = 8
+	},
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/under/cave)
 "oAh" = (
 /obj/structure/closet/crate/chest/crate,
 /turf/open/floor/wood,
@@ -19403,11 +20074,12 @@
 /area/rogue/under/cave)
 "oCo" = (
 /obj/structure/table/wood/crafted,
-/obj/machinery/light/fueled/wallfire/candle/weak,
+/obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/bath)
 "oCz" = (
 /obj/item/storage/belt/pouch/coins/rich,
+/obj/item/coin/copper/pile,
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors/town/bath)
 "oDb" = (
@@ -19417,6 +20089,9 @@
 	},
 /turf/open/floor/dirt,
 /area/rogue/indoors/town/shop)
+"oDH" = (
+/turf/open/water/marsh,
+/area/rogue/under/cave)
 "oEe" = (
 /obj/structure/noticeboard{
 	dir = 4;
@@ -19525,11 +20200,8 @@
 /turf/open/floor/cobble,
 /area/rogue/indoors/dungeon)
 "oIZ" = (
-/obj/structure/door,
-/obj/effect/mapping_helpers/access/locker,
-/obj/effect/mapping_helpers/access/keyset/town/bathhouse,
-/turf/open/floor/blocks/stonered,
-/area/rogue/indoors/town/bath)
+/turf/closed/wall/mineral/stonebrick,
+/area/rogue/indoors/town/dwarfin)
 "oJe" = (
 /obj/machinery/light/fueled/hearth,
 /obj/item/reagent_containers/glass/bucket/pot{
@@ -19682,7 +20354,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/dungeon)
 "oPB" = (
-/obj/structure/chair/fake_powered/milker{
+/obj/structure/chair/fake_powered/milker/self_powered{
 	dir = 1
 	},
 /turf/open/floor/dirt,
@@ -20071,6 +20743,13 @@
 "pbi" = (
 /turf/open/floor/rooftop,
 /area/rogue/indoors/town)
+"pbn" = (
+/obj/machinery/artificer_table,
+/obj/item/recipe_book/engineering,
+/obj/item/contraption/linker,
+/obj/item/contraption/linker,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "pbB" = (
 /obj/structure/toilet,
 /turf/open/floor/metal/barograte,
@@ -20236,6 +20915,11 @@
 /obj/structure/curtain/fancy/purple,
 /turf/open/floor/tile/harem/three,
 /area/rogue/indoors/town/bath)
+"pii" = (
+/obj/structure/bed/mediocre,
+/obj/item/bedsheet/cloth,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "pim" = (
 /obj/structure/table/wood{
 	icon_state = "largetable"
@@ -20268,6 +20952,10 @@
 	},
 /turf/open/floor/hexstone,
 /area/rogue/indoors/villagegarrison)
+"piL" = (
+/obj/structure/steam_recharger,
+/turf/open/floor/blocks/stonered,
+/area/rogue/under/cave)
 "piV" = (
 /obj/structure/door{
 	name = "Room II"
@@ -20328,13 +21016,27 @@
 /area/rogue/indoors/butchershop)
 "pmi" = (
 /obj/structure/closet/crate/chest/neu,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
@@ -20505,6 +21207,12 @@
 /obj/structure/closet/crate/chest/crafted,
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
+"prY" = (
+/obj/machinery/light/wallfire/candle/floorcandle/alt/pink{
+	pixel_y = -14
+	},
+/turf/open/floor/carpet/purple,
+/area/rogue/indoors/town/bath)
 "pso" = (
 /turf/closed/wall/mineral/stone,
 /area/rogue/under/cave)
@@ -20533,7 +21241,7 @@
 	},
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "ptJ" = (
 /obj/structure/bed/hay,
 /obj/effect/decal/cleanable/dirt/cobweb{
@@ -20598,6 +21306,10 @@
 	dir = 8
 	},
 /area/rogue/outdoors/town)
+"pxp" = (
+/obj/structure/table/wood/plain_alt,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "pxG" = (
 /obj/structure/fluff/walldeco/church/line,
 /obj/structure/fluff/walldeco/church/line{
@@ -20721,6 +21433,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/rogue/under/town/basement)
+"pBX" = (
+/obj/structure/mannequin/male/female,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/under/cave)
 "pCj" = (
 /obj/machinery/light/fueled/torchholder/l,
 /obj/structure/fluff/railing/border{
@@ -20852,7 +21568,9 @@
 	dir = 1;
 	icon_state = "longtable_mid"
 	},
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/indoors/town/theatre)
 "pGv" = (
@@ -20892,16 +21610,15 @@
 	pixel_y = -4
 	},
 /turf/open/floor/ruinedwood,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "pHU" = (
 /obj/structure/pottery_lathe,
 /turf/open/floor/woodturned,
 /area/rogue/indoors/town/smithy)
 "pIr" = (
-/obj/structure/fluff/railing/border{
-	dir = 10
-	},
-/turf/open/floor/tile/harem/two,
+/obj/machinery/light/fueled/wallfire/candle/blue/l,
+/obj/structure/table/wood/plain_alt,
+/turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/bath)
 "pIt" = (
 /turf/open/floor/rooftop/green,
@@ -21076,6 +21793,12 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/woodturned,
 /area/rogue/indoors/butchershop)
+"pNW" = (
+/obj/structure/bed/sleepingbag/fluff/pillow/purple{
+	dir = 8
+	},
+/turf/open/floor/tile,
+/area/rogue/indoors/town/bath)
 "pOg" = (
 /obj/structure/door/window,
 /obj/effect/mapping_helpers/access/locker,
@@ -21125,6 +21848,13 @@
 	},
 /turf/open/floor/metal,
 /area/rogue/outdoors/town)
+"pPX" = (
+/obj/structure/fake_machine/stockpile{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "pQd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/start/villager,
@@ -21583,14 +22313,21 @@
 /obj/item/bin/water,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/church)
+"qlL" = (
+/obj/structure/table/wood/plain_alt,
+/obj/item/recipe_book/engineering,
+/obj/item/recipe_book/engineering{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "qlO" = (
 /obj/structure/fluff/railing/border,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/butchershop)
 "qmb" = (
-/obj/structure/stairs/slope{
-	dir = 1
-	},
+/obj/structure/stairs/slope,
 /turf/open/floor/grass,
 /area/rogue/under/cave)
 "qmf" = (
@@ -21944,12 +22681,8 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
 "qxy" = (
-/obj/structure/underworld/barrier,
-/obj/structure/minecart_rail{
-	dir = 4
-	},
-/turf/open/floor/metal,
-/area/rogue/indoors/town)
+/turf/closed/wall/mineral/craftstone,
+/area/rogue/indoors/town/dwarfin)
 "qxA" = (
 /obj/structure/bars,
 /turf/open/floor/dirt/road,
@@ -22006,6 +22739,10 @@
 	},
 /turf/open/floor/blocks,
 /area/rogue/indoors)
+"qzh" = (
+/obj/structure/fluff/walldeco/masonflag,
+/turf/closed/wall/mineral/craftstone,
+/area/rogue/indoors/town/dwarfin)
 "qzj" = (
 /obj/structure/door/violet,
 /obj/effect/mapping_helpers/access/keyset/town/merchant,
@@ -22062,9 +22799,9 @@
 /turf/closed/wall/mineral/craftstone,
 /area/rogue/indoors/town/shop)
 "qBY" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
-/area/rogue/outdoors/town)
+/obj/machinery/light/fueled/hearth,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "qBZ" = (
 /obj/machinery/light/fueled/lanternpost/fixed{
 	pixel_x = -2
@@ -22369,6 +23106,10 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/cobble,
 /area/rogue/indoors)
+"qNL" = (
+/obj/item/reagent_containers/glass/bucket/wooden,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "qOf" = (
 /obj/structure/bed/shit,
 /obj/effect/landmark/start/grabber{
@@ -22510,7 +23251,7 @@
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/indoors/town/tavern)
 "qSD" = (
-/obj/structure/bars,
+/obj/structure/window/harem/three,
 /turf/open/water/river{
 	dir = 8
 	},
@@ -22522,6 +23263,13 @@
 /obj/structure/table/wood/plain_alt,
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
+"qTA" = (
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/ore/iron,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "qTL" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/blocks,
@@ -22853,7 +23601,9 @@
 /area/rogue/under/cave)
 "rgt" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
@@ -23297,6 +24047,9 @@
 "rAh" = (
 /turf/open/floor/twig,
 /area/rogue/indoors)
+"rAD" = (
+/turf/open/floor/blocks/paving,
+/area/rogue/indoors/town/dwarfin)
 "rBn" = (
 /obj/machinery/light/fueled/firebowl/standing/blue,
 /turf/open/floor/grass/yel,
@@ -23325,11 +24078,11 @@
 /turf/closed/wall/mineral/wooddark,
 /area/rogue/outdoors/town)
 "rCF" = (
-/obj/structure/chair/wood/alt/fancy{
-	dir = 4
-	},
 /obj/structure/fluff/walldeco/painting/castle{
 	pixel_x = -32
+	},
+/obj/structure/chair/wood/alt/chair_noble{
+	dir = 4
 	},
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/bath)
@@ -23343,6 +24096,13 @@
 /obj/structure/fluff/walldeco/sign/apothecarysign,
 /turf/open/floor/dirt/road,
 /area/rogue/under/cave)
+"rDI" = (
+/obj/machinery/light/fueled/wallfire/candle{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "rDK" = (
 /obj/structure/bars/bent,
 /obj/structure/table/wood/reinf_long,
@@ -23414,6 +24174,7 @@
 "rGl" = (
 /obj/structure/mirror,
 /obj/structure/table/wood,
+/obj/item/natural/cloth,
 /turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/bath)
 "rGG" = (
@@ -23578,7 +24339,9 @@
 	dir = 6;
 	icon_state = "largetable"
 	},
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/manor)
 "rNt" = (
@@ -23623,6 +24386,10 @@
 /obj/structure/window/stained/silver/alt,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/clinic_large)
+"rPQ" = (
+/obj/structure/curtain,
+/turf/closed/wall/mineral/stone/window,
+/area/rogue/under/town/sewer)
 "rQc" = (
 /turf/open/floor/cobble/mossy,
 /area/rogue/under/cave)
@@ -23644,7 +24411,7 @@
 /area/rogue/under/town/basement)
 "rRv" = (
 /obj/structure/stairs/slope{
-	dir = 1
+	dir = 4
 	},
 /turf/open/floor/naturalstone,
 /area/rogue/outdoors/mountains)
@@ -24069,6 +24836,15 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/tavern)
+"sfM" = (
+/obj/structure/closet/crate/crafted_closet/dark,
+/obj/item/clothing/shirt/undershirt/artificer,
+/obj/machinery/light/fueled/wallfire/candle,
+/obj/item/clothing/head/articap,
+/obj/item/clothing/armor/leather/jacket/artijacket,
+/obj/item/clothing/pants/trou/artipants,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "sgv" = (
 /obj/structure/door/swing,
 /turf/open/floor/cobble,
@@ -24276,6 +25052,10 @@
 	},
 /turf/open/floor/hexstone,
 /area/rogue/indoors/town/garrison)
+"sql" = (
+/obj/item/reagent_containers/powder/spice,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "sqz" = (
 /obj/structure/table/wood/large/corner{
 	dir = 6
@@ -24431,7 +25211,9 @@
 	icon_state = "largetable"
 	},
 /obj/machinery/light/fueled/oven/west,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/item/key/thatchwood/inn3{
 	pixel_x = -6;
@@ -25101,9 +25883,14 @@
 /turf/open/floor/tile,
 /area/rogue/indoors/town/manor)
 "sWy" = (
-/obj/structure/bars/cemetery,
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/town/roofs)
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
+"sWP" = (
+/obj/structure/bed/sleepingbag/fluff/pillow/purple{
+	dir = 8
+	},
+/turf/open/floor/tile/bath,
+/area/rogue/indoors/town/bath)
 "sWV" = (
 /obj/effect/spawner/map_spawner/stump,
 /turf/open/floor/dirt,
@@ -25376,6 +26163,9 @@
 /area/rogue/under/town/sewer)
 "thj" = (
 /obj/machinery/light/fueled/wallfire/candle/blue/r,
+/obj/structure/bed/sleepingbag/fluff/pillow/purple{
+	dir = 1
+	},
 /turf/open/floor/tile/harem/three,
 /area/rogue/indoors/town/bath)
 "tht" = (
@@ -25879,6 +26669,11 @@
 	dir = 8
 	},
 /area/rogue/indoors/butchershop)
+"tEq" = (
+/obj/structure/rack/shelf/biggest,
+/obj/item/weapon/pick,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/dwarfin)
 "tEy" = (
 /obj/structure/chair/bench/couch/redleft,
 /turf/open/floor/wood,
@@ -25984,6 +26779,11 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/blocks/newstone/alt,
 /area/rogue/indoors/town/manor)
+"tHe" = (
+/obj/structure/rack,
+/obj/item/harpoon_gun,
+/turf/open/floor/blocks/stonered,
+/area/rogue/under/cave)
 "tHv" = (
 /mob/living/simple_animal/hostile/retaliate/wolf{
 	del_on_deaggro = 0;
@@ -26014,6 +26814,14 @@
 "tIa" = (
 /turf/open/floor/cobble,
 /area/rogue/indoors/town/cell)
+"tIh" = (
+/obj/effect/mapping_helpers/access/keyset/manor/general,
+/obj/structure/door/violet{
+	name = "Royal Guard's Storage"
+	},
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/tile,
+/area/rogue/indoors/town/manor)
 "tIn" = (
 /obj/effect/landmark/start/templar,
 /turf/open/floor/churchmarble,
@@ -26047,7 +26855,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/ruinedwood,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "tJF" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -26055,9 +26863,9 @@
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town)
 "tJL" = (
-/obj/machinery/light/fueled/wallfire/candle/blue/l,
-/turf/open/floor/tile/bath,
-/area/rogue/indoors/town/bath)
+/obj/item/natural/poo,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "tJR" = (
 /obj/structure/flora/grass,
 /obj/machinery/light/fueled/lanternpost/fixed{
@@ -26137,7 +26945,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town)
 "tMB" = (
-/obj/machinery/light/fueled/wallfire/candle/weak{
+/obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
 	},
 /obj/structure/closet/crate/crafted_closet{
@@ -26255,6 +27063,10 @@
 /obj/structure/flora/grass/water/reeds,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave)
+"tPV" = (
+/obj/machinery/light/fueled/wallfire/candle/r,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/bath)
 "tQd" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -26299,6 +27111,10 @@
 "tRy" = (
 /turf/open/floor/churchbrick,
 /area/rogue/indoors/town/church/inquisition)
+"tRE" = (
+/obj/structure/fermentation_keg/water,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "tRR" = (
 /obj/structure/door/iron/bars,
 /obj/effect/mapping_helpers/access/keyset/garrison/general,
@@ -26345,6 +27161,12 @@
 /obj/effect/mapping_helpers/access/keyset/town/tailor,
 /turf/open/floor/tile/kitchen,
 /area/rogue/indoors/town)
+"tSX" = (
+/obj/structure/door,
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/town/artificer,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "tTh" = (
 /obj/structure/closet/crate/chest/crate,
 /obj/item/alch/sinew,
@@ -26558,7 +27380,7 @@
 /turf/open/floor/blocks,
 /area/rogue/under/town/basement)
 "tXY" = (
-/obj/machinery/light/fueled/wallfire/candle/weak,
+/obj/machinery/light/fueled/wallfire/candle,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/structure/fluff/walldeco/chains,
 /turf/open/floor/naturalstone,
@@ -26621,7 +27443,15 @@
 /turf/open/floor/tile/kitchen,
 /area/rogue/indoors/town/tavern)
 "uaB" = (
-/obj/machinery/light/fueled/firebowl/standing/blue,
+/obj/item/reagent_containers/glass/cup/steel,
+/obj/item/reagent_containers/glass/bottle,
+/obj/item/reagent_containers/glass/bottle,
+/obj/item/reagent_containers/glass/cup/steel,
+/obj/item/reagent_containers/glass/cup/steel,
+/obj/item/reagent_containers/glass/bottle,
+/obj/item/reagent_containers/glass/carafe,
+/obj/item/reagent_containers/glass/carafe,
+/obj/item/reagent_containers/glass/carafe,
 /turf/open/floor/tile/harem/three,
 /area/rogue/indoors/town/bath)
 "uaF" = (
@@ -26693,11 +27523,10 @@
 "udz" = (
 /obj/machinery/light/fueled/smelter,
 /turf/open/floor/ruinedwood,
-/area/rogue/outdoors/town)
+/area/rogue/indoors/town)
 "udJ" = (
-/obj/machinery/light/fueled/wallfire/candle/weak,
+/obj/machinery/light/fueled/wallfire/candle,
 /obj/structure/dye_bin/luxury,
-/obj/item/dye_pack/luxury,
 /turf/open/floor/blocks/stonered,
 /area/rogue/indoors/town/bath)
 "udV" = (
@@ -26876,6 +27705,15 @@
 "ukH" = (
 /turf/closed/wall/mineral/stone/moss,
 /area/rogue/indoors/town/cell)
+"ukI" = (
+/obj/structure/door/viewport{
+	name = "Makers Quarters"
+	},
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/town/artificer,
+/obj/structure/water_pipe,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/under/cave)
 "ukJ" = (
 /mob/living/simple_animal/hostile/retaliate/saigabuck/tame,
 /obj/structure/fluff/nest{
@@ -26942,6 +27780,10 @@
 /area/rogue/under/cave)
 "umX" = (
 /obj/structure/fluff/statue/shisha/hookah,
+/obj/machinery/light/wallfire/candle/floorcandle/pink{
+	dir = 1;
+	pixel_y = -14
+	},
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/bath)
 "uni" = (
@@ -27194,6 +28036,14 @@
 	},
 /turf/open/floor/greenstone,
 /area/rogue/outdoors/river)
+"uzf" = (
+/obj/structure/door{
+	name = "Miners Quarters"
+	},
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/town/artificer,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "uzl" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -27694,6 +28544,15 @@
 /obj/machinery/light/fueled/wallfire/candle/blue,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church/inquisition)
+"uTK" = (
+/obj/structure/table/wood/plain_alt,
+/obj/item/flint,
+/obj/item/weapon/pick,
+/obj/item/weapon/tongs,
+/obj/item/weapon/tongs,
+/obj/item/flint,
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "uUe" = (
 /obj/structure/door/violet{
 	name = "Orphanage"
@@ -27962,13 +28821,22 @@
 /area/rogue/outdoors/rtfield/safe)
 "veC" = (
 /obj/structure/table/wood/reinforced_alter,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church)
 "veE" = (
 /obj/structure/table/wood/plain,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/magician)
+"veV" = (
+/obj/structure/fluff/railing/wood,
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/cobble,
+/area/rogue/outdoors/river)
 "vfr" = (
 /obj/structure/fake_machine/vendor/inn,
 /turf/closed/wall/mineral/wooddark,
@@ -28076,7 +28944,8 @@
 /area/rogue/outdoors/woods)
 "vjm" = (
 /obj/structure/curtain/fancy/black,
-/turf/closed/wall/mineral/stone/window,
+/obj/structure/window/harem/three,
+/turf/open/floor/tile,
 /area/rogue/indoors/town/bath)
 "vjr" = (
 /obj/structure/fluff/walldeco/vinez,
@@ -28313,6 +29182,12 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/orphanage)
+"vsT" = (
+/obj/structure/lever{
+	redstone_id = "smelter"
+	},
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/dwarfin)
 "vtr" = (
 /obj/structure/fake_machine/mail{
 	mailtag = "Thatchwood Garrison"
@@ -28637,6 +29512,10 @@
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/blocks,
 /area/rogue/under/town/basement)
+"vFN" = (
+/obj/machinery/light/wallfire/candle/floorcandle/pink,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/bath)
 "vFP" = (
 /mob/living/simple_animal/hostile/retaliate/spider,
 /turf/open/floor/greenstone,
@@ -28980,9 +29859,15 @@
 /area/rogue/indoors/town/orphanage)
 "vRw" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/natural/feather,
 /obj/item/book/law,
 /obj/structure/fluff/walldeco/painting/queen{
@@ -29047,6 +29932,12 @@
 /obj/structure/flora/grass/bush_meagre,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town/roofs)
+"vTI" = (
+/obj/machinery/light/wallfire/candle/floorcandle/alt/pink{
+	pixel_y = -14
+	},
+/turf/open/floor/metal,
+/area/rogue/indoors/town/bath)
 "vTY" = (
 /obj/structure/flora/grass/bush/wall/tall,
 /obj/structure/fluff/railing/wood{
@@ -29327,6 +30218,10 @@
 /obj/machinery/light/fueledstreet/blue/wall,
 /turf/open/floor/dirt/road,
 /area/rogue/under/cave)
+"wdH" = (
+/obj/structure/closet/crate/chest,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "wdS" = (
 /obj/structure/rack/shelf/biggest,
 /obj/item/storage/sack{
@@ -29466,6 +30361,14 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/blocks,
 /area/rogue/under/dungeon)
+"wkC" = (
+/obj/structure/door{
+	name = "Storage"
+	},
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/town/artificer,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "wkI" = (
 /obj/structure/bars/grille,
 /obj/structure/closet/crate/chest/neu_iron,
@@ -29706,6 +30609,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/hexstone,
 /area/rogue/indoors/town/garrison)
+"wum" = (
+/obj/structure/table/wood/plain_alt,
+/obj/item/candle/skull/lit,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/dwarfin)
 "wuC" = (
 /obj/structure/flora/grass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -29823,10 +30731,19 @@
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/cobble,
 /area/rogue/under/town/basement)
+"wyc" = (
+/obj/structure/door{
+	name = "Artificer's Quarters"
+	},
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/town/artificer,
+/turf/open/floor/blocks/newstone/alt,
+/area/rogue/indoors/town/dwarfin)
 "wyR" = (
 /obj/structure/sink/copper{
 	pixel_y = 10
 	},
+/obj/item/reagent_containers/glass/bucket/wooden/alter,
 /turf/open/floor/tile,
 /area/rogue/indoors/town/bath)
 "wzk" = (
@@ -29838,10 +30755,10 @@
 /area/rogue/indoors/town/church)
 "wzm" = (
 /obj/structure/fluff/railing/border{
-	dir = 8
+	dir = 6
 	},
 /obj/structure/fluff/railing/border{
-	dir = 6
+	dir = 10
 	},
 /turf/open/floor/tile/harem/two,
 /area/rogue/indoors/town/bath)
@@ -29977,6 +30894,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor)
+"wGq" = (
+/obj/structure/door{
+	name = "Miners Quarters"
+	},
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/indoors/town/dwarfin)
 "wGx" = (
 /obj/structure/kneestingers,
 /turf/open/floor/naturalstone,
@@ -30055,10 +30978,8 @@
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town)
 "wJh" = (
-/obj/structure/bed,
-/obj/structure/curtain/fancy/magenta,
 /obj/machinery/light/fueled/wallfire/candle/blue/r,
-/turf/open/floor/blocks/stonered,
+/turf/closed/wall/mineral/decostone,
 /area/rogue/indoors/town/bath)
 "wJN" = (
 /turf/closed/wall/mineral/roofwall/outercorner{
@@ -30165,23 +31086,51 @@
 /area/rogue/indoors/town/manor)
 "wNd" = (
 /obj/structure/closet/crate/chest/neu,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /turf/open/floor/carpet/purple,
 /area/rogue/under/cave)
 "wNt" = (
@@ -30343,6 +31292,10 @@
 "wRZ" = (
 /turf/open/floor/rooftop/green,
 /area/rogue/outdoors/town/roofs)
+"wSq" = (
+/obj/structure/chair/sexgenerator,
+/turf/open/floor/metal/alt,
+/area/rogue/indoors/town/bath)
 "wSx" = (
 /obj/structure/chair/wood/alt/fancy{
 	dir = 4
@@ -30540,6 +31493,12 @@
 /obj/machinery/light/fueled/torchholder,
 /turf/open/floor/cobble,
 /area/rogue/indoors/villagegarrison)
+"xbG" = (
+/obj/item/reagent_containers/food/snacks/meat/human,
+/obj/structure/closet/crate/chest,
+/obj/item/reagent_containers/food/snacks/meat,
+/turf/open/floor/greenstone,
+/area/rogue/under/town/sewer)
 "xbW" = (
 /obj/structure/window/openclose/reinforced{
 	dir = 4
@@ -31155,6 +32114,10 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
+"xvU" = (
+/obj/structure/bars/cemetery,
+/turf/open/floor/dirt/road,
+/area/rogue/outdoors/rtfield/safe)
 "xwW" = (
 /turf/open/transparent/openspace,
 /area/rogue/indoors/villagegarrison)
@@ -31251,7 +32214,9 @@
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/garrison)
 "xBl" = (
-/obj/item/paper,
+/obj/item/paper{
+	info = "Working it while it's active is doable but dangerous, DO NOT SQUIRT OR CUM ON IT, YOU MAY DIE AND MAY CAUSE A MASSIVE FIRE."
+	},
 /obj/item/paper{
 	pixel_x = 2;
 	pixel_y = 5
@@ -31493,6 +32458,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/tile/bfloorz,
 /area/rogue/indoors/town/garrison)
+"xKy" = (
+/obj/structure/rack/shelf/biggest,
+/obj/item/flint,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/dwarfin)
 "xKz" = (
 /obj/structure/closet/crate/coffin,
 /turf/open/floor/churchbrick,
@@ -31579,9 +32549,11 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/woods_safe)
 "xNz" = (
-/obj/machinery/light/fueled/smelter,
-/turf/open/floor/ruinedwood,
-/area/rogue/indoors/town/shop)
+/obj/structure/bed/sleepingbag/fluff/pillow/purple{
+	dir = 1
+	},
+/turf/open/floor/tile/bath,
+/area/rogue/indoors/town/bath)
 "xNC" = (
 /obj/effect/landmark/tram/queued_path/cargo_stop,
 /turf/open/transparent/openspace,
@@ -31620,7 +32592,8 @@
 /area/rogue/indoors/villagegarrison)
 "xPG" = (
 /obj/machinery/light/fueled/wallfire/candle/blue/l,
-/turf/closed/wall/mineral/craftstone,
+/obj/structure/table/wood/plain_alt,
+/turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town/bath)
 "xPJ" = (
 /turf/closed/wall/mineral/roofwall/middle{
@@ -31640,6 +32613,11 @@
 /obj/item/book/law,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/garrison)
+"xQo" = (
+/obj/structure/rack/shelf/biggest,
+/obj/item/weapon/tongs,
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/dwarfin)
 "xQy" = (
 /obj/structure/bed/inn,
 /obj/item/bedsheet/pelt,
@@ -31754,6 +32732,9 @@
 /area/rogue/indoors/town/church)
 "xTi" = (
 /obj/machinery/light/fueled/firebowl/standing/blue,
+/obj/machinery/light/wallfire/candle/floorcandle/alt/pink{
+	pixel_y = -14
+	},
 /turf/open/floor/tile/bath,
 /area/rogue/indoors/town/bath)
 "xTq" = (
@@ -31844,6 +32825,7 @@
 "xVr" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/reagent_containers/powder/ozium,
+/obj/item/candle/eora/lit,
 /turf/open/floor/tile/harem/two,
 /area/rogue/indoors/town/bath)
 "xVF" = (
@@ -31958,6 +32940,11 @@
 /obj/structure/fluff/walldeco/church/line,
 /turf/open/floor/church,
 /area/rogue/outdoors/town/roofs)
+"xZh" = (
+/obj/structure/door/iron/bars,
+/obj/effect/mapping_helpers/access/keyset/garrison/general,
+/turf/open/floor/dirt/road,
+/area/rogue/outdoors/town)
 "xZk" = (
 /obj/structure/stairs{
 	dir = 8
@@ -32091,6 +33078,9 @@
 /area/rogue/under/cave)
 "yev" = (
 /obj/structure/fluff/statue/shisha/hookah,
+/obj/machinery/light/wallfire/candle/floorcandle/alt/pink{
+	pixel_y = -14
+	},
 /turf/open/floor/tile/harem/three,
 /area/rogue/indoors/town/bath)
 "yez" = (
@@ -37682,7 +38672,7 @@ owL
 rHJ
 hoI
 iWs
-iWs
+gRk
 hoI
 pBu
 pBu
@@ -37869,7 +38859,7 @@ wIz
 bcR
 rHJ
 iWs
-rHJ
+bso
 rHJ
 hoI
 iWs
@@ -38057,11 +39047,11 @@ rHJ
 bcR
 rHJ
 iWs
+tJL
 rHJ
-rHJ
-rHJ
-rHJ
-rHJ
+bzH
+nnc
+qBY
 iWs
 rHJ
 bcR
@@ -38249,8 +39239,8 @@ rHJ
 rHJ
 rHJ
 rHJ
-rHJ
-iWs
+xbG
+rPQ
 rHJ
 bcR
 owL
@@ -38433,9 +39423,9 @@ hoI
 hoI
 hoI
 iWs
+sql
 rHJ
-rHJ
-rHJ
+gcA
 rHJ
 rHJ
 iWs
@@ -38626,7 +39616,7 @@ rHJ
 rHJ
 rHJ
 rHJ
-iWs
+gRk
 rHJ
 bcR
 bcR
@@ -38809,11 +39799,11 @@ pBu
 pBu
 pBu
 iWs
+cBp
+kde
 rHJ
 rHJ
-rHJ
-rHJ
-rHJ
+wdH
 iWs
 rHJ
 bcR
@@ -38999,9 +39989,9 @@ pBu
 iWs
 rHJ
 rHJ
+cBp
 rHJ
-rHJ
-rHJ
+cSh
 iWs
 rHJ
 bcR
@@ -42225,7 +43215,7 @@ owL
 rHJ
 rHJ
 sKF
-sKF
+pso
 pso
 pso
 eqk
@@ -42414,10 +43404,10 @@ rHJ
 rHJ
 fXl
 pso
-pso
-eqk
-eqk
-eqk
+uIF
+ubd
+ubd
+ubd
 uIF
 rGl
 nwF
@@ -42602,12 +43592,12 @@ rHJ
 rHJ
 pso
 pso
-pso
-eqk
-eqk
-eqk
 uIF
-adn
+wSq
+ggz
+lWx
+hWb
+bsk
 bsk
 bsk
 drd
@@ -42790,18 +43780,18 @@ hoI
 hoI
 pso
 eqk
-eqk
-eqk
-eqk
-eqk
 uIF
-lWx
-bsk
-bsk
+ubd
+ubd
+ubd
+uIF
+adn
+tPV
+bwE
 tMB
 uIF
 wJh
-bsk
+uIF
 uIF
 uIF
 uIF
@@ -42983,7 +43973,7 @@ eqk
 eqk
 eqk
 uIF
-oIZ
+ohR
 uIF
 uIF
 uIF
@@ -43171,7 +44161,7 @@ jah
 jah
 jah
 uIF
-lsn
+tGb
 lsn
 uIF
 hAM
@@ -44305,7 +45295,7 @@ uxz
 ohR
 uIF
 luK
-pbd
+prY
 vid
 sFY
 rKv
@@ -44486,11 +45476,11 @@ vMM
 hpY
 hpY
 mvI
-xTi
-tJL
+eyL
+bEx
+eyL
+erm
 bnh
-tJL
-bsk
 uIF
 rZr
 tqE
@@ -44683,7 +45673,7 @@ uIF
 uIF
 uIF
 uIF
-uIF
+fjs
 uIF
 uIF
 lPs
@@ -44867,14 +45857,14 @@ eyL
 eyL
 eyL
 bnh
-bsk
-uIF
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+vTI
+aRg
+teV
+teV
+teV
+teV
+teV
+teV
 teV
 teV
 hid
@@ -45056,10 +46046,10 @@ eyL
 eyL
 bnh
 tKt
-uIF
-eqk
-eqk
-eqk
+aRg
+teV
+teV
+teV
 teV
 teV
 teV
@@ -45242,7 +46232,7 @@ eyL
 qvA
 qvA
 eyL
-bnh
+xNz
 tKt
 aRg
 teV
@@ -45431,7 +46421,7 @@ eyL
 eyL
 eyL
 bnh
-tKt
+bsk
 ubd
 ubd
 uIF
@@ -45618,7 +46608,7 @@ eyL
 eyL
 eyL
 eyL
-bnh
+nQX
 bsk
 bsk
 lGg
@@ -45803,9 +46793,9 @@ xqd
 uWB
 nJF
 xTi
+sWP
 bnh
-bnh
-bnh
+xNz
 bsk
 bsk
 ubd
@@ -45990,7 +46980,7 @@ iQN
 tvX
 vlp
 mvI
-bsk
+vFN
 hBS
 dmF
 hBS
@@ -46368,7 +47358,7 @@ uIF
 pkV
 oGt
 uIF
-uIF
+cqS
 uIF
 mVr
 tGb
@@ -46376,7 +47366,7 @@ rnl
 pjj
 jGd
 tGb
-tGb
+cut
 uIF
 eqk
 eqk
@@ -46558,8 +47548,8 @@ oGt
 wnx
 nkC
 pjj
-tGb
-tGb
+bGw
+pNW
 vlL
 vQK
 uIF
@@ -46748,7 +47738,7 @@ raF
 pjj
 eyL
 eyL
-uIF
+cqS
 rZr
 uIF
 ksA
@@ -46940,7 +47930,7 @@ uIF
 pMT
 uIF
 uxz
-uIF
+lFr
 uIF
 eqk
 eqk
@@ -47122,13 +48112,13 @@ eqk
 uIF
 uxz
 uIF
-uIF
+euD
 uxz
 uIF
 amB
 amB
 amB
-tWI
+amB
 amB
 amB
 amB
@@ -48733,13 +49723,13 @@ eqk
 eqk
 eqk
 eqk
-gxh
-pso
-pso
-pso
+mVh
+mVh
+mVh
+mVh
 gpx
 gpx
-vuv
+tSx
 sKt
 oem
 ros
@@ -48921,13 +49911,13 @@ eqk
 eqk
 eqk
 eqk
-gxh
-pso
-pso
-pso
-tSx
+mVh
+msE
+msE
+msE
 gpx
-vuv
+gpx
+gpx
 ecD
 oem
 ros
@@ -49087,35 +50077,35 @@ amB
 eqk
 eqk
 eqk
-lPs
-eqk
-eqk
-eqk
-eqk
-wAZ
-eqk
-eqk
-eqk
-dRu
-dRu
-dRu
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-gxh
-pso
-pso
-pso
-tSx
-gpx
-tTB
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+dbD
+cnT
+hdc
+nMf
+nMf
+hBc
 sDR
 oem
 ros
@@ -49275,35 +50265,35 @@ amB
 amB
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-wAZ
-eqk
-eqk
-eqk
-dRu
-dRu
-dRu
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-gxh
-pso
-pso
-xgE
-gpx
-mom
-tTB
+mVh
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+pLn
+ukI
+dbD
+cnT
+msE
+nMf
+gwz
+nMf
 sDR
 oem
 ros
@@ -49463,35 +50453,35 @@ amB
 amB
 amB
 eqk
-eqk
-lPs
-eqk
-eqk
-eqk
-eqk
-wAZ
-eqk
-eqk
-eqk
-dRu
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
 mVh
 mVh
 mVh
 mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+mVh
+dbD
+cnT
+edv
+hvg
+gkF
 gpx
-gpx
-tSx
 sDR
 oem
 ros
@@ -49674,13 +50664,13 @@ eqk
 eqk
 eqk
 mVh
-msE
-msE
-msE
+wsN
+ffN
+edv
 gpx
+gwz
+nMf
 gpx
-gpx
-sDR
 oem
 ros
 rhD
@@ -49859,16 +50849,16 @@ eqk
 eqk
 eqk
 eqk
+eqk
+eqk
 mVh
-mVh
-mVh
-dbD
-cnT
-hdc
+msE
+msE
+msE
 nMf
 nMf
-hBc
-sDR
+ufW
+gpx
 oem
 ros
 rhD
@@ -50047,16 +51037,16 @@ eqk
 eqk
 eqk
 eqk
+eqk
+eqk
 mVh
-pLn
-msE
-dbD
-cnT
-msE
-nMf
-gwz
-nMf
-sDR
+edv
+edv
+mVh
+gpx
+gpx
+gpx
+gpx
 oem
 ros
 rhD
@@ -50102,7 +51092,7 @@ dov
 jLN
 dov
 dov
-ggz
+rBq
 kJf
 knR
 kJf
@@ -50235,16 +51225,16 @@ eqk
 eqk
 eqk
 eqk
+eqk
+eqk
 mVh
 mVh
 mVh
-dbD
-cnT
-edv
-hvg
-gkF
+mVh
 gpx
-sDR
+gpx
+mom
+gpx
 oem
 ros
 rhD
@@ -50425,18 +51415,18 @@ eqk
 eqk
 eqk
 eqk
-mVh
-wsN
-cnT
-edv
+gxh
+pso
+pso
+xgE
 gpx
-gwz
-nMf
-sDR
+gpx
+gpx
+gpx
 oem
-gSJ
-qxy
-gSJ
+ros
+rhD
+ros
 oem
 vas
 vas
@@ -50613,18 +51603,18 @@ eqk
 eqk
 eqk
 eqk
-mVh
-msE
-msE
-msE
-nMf
-nMf
-ufW
-sDR
+gxh
+pso
+pso
+pso
+gpx
+gpx
+gpx
+gpx
 oem
-ros
-rhD
-ros
+jsL
+jsL
+jsL
 oem
 vas
 vas
@@ -50801,18 +51791,18 @@ eqk
 eqk
 eqk
 eqk
-mVh
-edv
-edv
-mVh
+gxh
+pso
+pso
+pso
 gpx
 gpx
 gpx
-sDR
+gpx
 oem
-ros
-rhD
-ros
+oem
+oem
+oem
 oem
 vas
 vas
@@ -50854,7 +51844,7 @@ knR
 kJf
 nLI
 dov
-ggz
+rBq
 kJf
 knR
 knR
@@ -50989,18 +51979,18 @@ eqk
 eqk
 eqk
 eqk
-mVh
-mVh
-mVh
-mVh
+gxh
+pso
+pso
+xgE
 gpx
 gpx
 mom
-sKt
+tSx
 oem
-ros
-rhD
-ros
+oem
+oem
+oem
 oem
 vas
 vas
@@ -51184,11 +52174,11 @@ xgE
 gpx
 gpx
 gpx
-sKt
+tSx
 oem
-ros
-rhD
-ros
+oem
+oem
+oem
 oem
 vas
 vas
@@ -51374,9 +52364,9 @@ pRD
 tSx
 qID
 oem
-ros
-rhD
-ros
+oem
+oem
+oem
 oem
 vas
 vas
@@ -51562,13 +52552,13 @@ tSx
 vuv
 sKt
 oem
-ros
-rhD
-ros
+oem
+oem
+oem
 oem
 vas
 vas
-sDR
+eqk
 eqk
 eqk
 eqk
@@ -51750,13 +52740,13 @@ gpx
 sKt
 sDR
 oem
-ros
-rhD
-ros
+oem
+oem
+oem
 oem
 vas
 vas
-sDR
+eqk
 eqk
 eqk
 eqk
@@ -51938,13 +52928,13 @@ gpx
 sDR
 eqk
 oem
-ros
-rhD
-ros
+oem
+oem
+oem
 oem
 vas
-sDR
-sDR
+vas
+eqk
 eqk
 eqk
 eqk
@@ -52126,13 +53116,13 @@ gpx
 eqk
 eqk
 oem
-ros
-rhD
-ros
+oem
+oem
+oem
 oem
 vas
-sDR
-sDR
+vas
+eqk
 eqk
 eqk
 lPs
@@ -52314,13 +53304,13 @@ gpx
 sDR
 eqk
 oem
-ros
-rhD
-ros
+oem
+oem
+oem
 oem
 vas
-sDR
-sDR
+vas
+eqk
 eqk
 eqk
 eqk
@@ -52502,13 +53492,13 @@ gpx
 sDR
 eqk
 oem
-jsL
-jsL
-jsL
+oem
+oem
+oem
 oem
 eqk
-sDR
-sDR
+vas
+eqk
 eqk
 lPs
 eqk
@@ -52695,8 +53685,8 @@ oem
 oem
 oem
 eqk
-sDR
-sDR
+vas
+eqk
 eqk
 eqk
 eqk
@@ -52883,8 +53873,8 @@ eqk
 eqk
 eqk
 eqk
-sDR
-sKt
+eqk
+lfc
 eqk
 lPs
 lPs
@@ -53071,8 +54061,8 @@ eqk
 eqk
 eqk
 eqk
-sDR
-sDR
+eqk
+eqk
 eqk
 eqk
 lPs
@@ -53259,8 +54249,8 @@ eqk
 eqk
 sDR
 eqk
-sDR
-sDR
+eqk
+eqk
 eqk
 eqk
 amB
@@ -53447,8 +54437,8 @@ sDR
 sDR
 sDR
 sDR
-sDR
-sDR
+eqk
+eqk
 eqk
 eqk
 amB
@@ -56967,7 +57957,7 @@ eKg
 dwH
 dwH
 dwH
-dwH
+ezC
 qXN
 hid
 hid
@@ -57155,7 +58145,7 @@ dwH
 dwH
 mcg
 qXN
-ezC
+dwH
 eKg
 qXN
 eqk
@@ -73203,8 +74193,8 @@ aZS
 aZS
 qkr
 qkr
-qkr
-qkr
+kJf
+mRY
 qkr
 qkr
 qkr
@@ -75111,8 +76101,8 @@ qSR
 nka
 vUZ
 nka
-qSR
-qSR
+oDH
+oDH
 vUZ
 jBH
 gPT
@@ -75300,7 +76290,7 @@ qSR
 qSR
 qSR
 nka
-qSR
+oDH
 vUZ
 fvo
 pXG
@@ -77902,7 +78892,7 @@ eqk
 eqk
 eqk
 eqk
-vUZ
+oDH
 vUZ
 qSR
 qSR
@@ -78089,8 +79079,8 @@ nka
 eqk
 eqk
 eqk
-vUZ
-vUZ
+oDH
+oDH
 vUZ
 nka
 qSR
@@ -78277,7 +79267,7 @@ eqk
 eqk
 eqk
 eqk
-vUZ
+oDH
 vUZ
 qSR
 qSR
@@ -78464,7 +79454,7 @@ nka
 eqk
 eqk
 eqk
-hRu
+lkI
 vUZ
 qSR
 nka
@@ -81109,8 +82099,8 @@ vcZ
 iZi
 iZi
 jxr
-vUZ
-vUZ
+oDH
+oDH
 vUZ
 vUZ
 qSR
@@ -82092,10 +83082,10 @@ vlL
 vlL
 vlL
 vlL
-vlL
+kli
 kli
 jJG
-vlL
+kli
 vlL
 vlL
 eqk
@@ -82279,12 +83269,12 @@ ezF
 avD
 xPG
 vlL
+vlL
 iws
-sLV
 bsk
 bsk
-bsk
-sLV
+nwF
+pIr
 vlL
 vlL
 eqk
@@ -82465,11 +83455,11 @@ sdl
 gou
 iXd
 ykD
-mCc
+sdl
+sdl
 vlL
-iFa
-bsk
-kPU
+aej
+sLV
 kPU
 kPU
 bsk
@@ -82654,10 +83644,10 @@ qMh
 eVF
 xtA
 ykD
-xmV
+sdl
+vlL
 bsk
-bGw
-iPg
+iFa
 iPg
 iPg
 nkb
@@ -82793,7 +83783,7 @@ qSR
 nsK
 vUZ
 qKu
-vUZ
+oDH
 eqk
 eqk
 eqk
@@ -82842,10 +83832,10 @@ hnY
 eVF
 pzq
 wRp
-vlL
-bzH
+sdl
+xmV
+bsk
 ruh
-xed
 xed
 xed
 srM
@@ -82988,7 +83978,7 @@ eqk
 eqk
 eqk
 qSR
-qSR
+vUZ
 fAl
 lMR
 edx
@@ -83030,9 +84020,9 @@ eOe
 eVF
 tGl
 ifd
+sdl
 vlL
 fuX
-pIr
 wzm
 ghf
 ghf
@@ -83176,7 +84166,7 @@ nWG
 nWG
 eqk
 qSR
-qSR
+vUZ
 vVt
 fAl
 hLm
@@ -83218,10 +84208,10 @@ mRr
 dbu
 ifd
 sdl
+sdl
 vlL
 psB
-bsk
-ruh
+fxT
 eVF
 pDk
 bsk
@@ -83364,7 +84354,7 @@ mlD
 nWG
 eqk
 qSR
-qSR
+vUZ
 fAl
 ojF
 qLA
@@ -83407,8 +84397,8 @@ sdl
 sdl
 mdE
 vlL
-kPU
-lFr
+vlL
+bsk
 qKr
 pSJ
 pSJ
@@ -83552,7 +84542,7 @@ pXb
 nWG
 qSR
 qSR
-qSR
+vUZ
 gna
 qWf
 qLA
@@ -83740,7 +84730,7 @@ mcY
 nWG
 qSR
 qSR
-qSR
+vUZ
 sOf
 oNX
 qLA
@@ -83785,7 +84775,7 @@ oGt
 drq
 vlL
 pjj
-vlL
+ecR
 seO
 jxI
 foJ
@@ -83913,14 +84903,14 @@ vUZ
 qSR
 vUZ
 vUZ
+oDH
+oDH
 vUZ
 vUZ
 vUZ
 vUZ
+qSR
 vUZ
-nVb
-fje
-hSP
 nWG
 nWG
 nWG
@@ -83928,7 +84918,7 @@ nWG
 nWG
 qSR
 qSR
-qSR
+vUZ
 sOf
 dmp
 qLA
@@ -83973,7 +84963,7 @@ bsk
 afl
 vlL
 pjj
-vlL
+ecR
 bEi
 rUX
 lyA
@@ -84107,16 +85097,16 @@ foi
 tIB
 tIB
 foi
-qSR
+rQc
 ukp
 gXc
 eqk
 eqk
-eqk
+vUZ
 qSR
 qSR
 qSR
-qSR
+vUZ
 fAl
 xyb
 qLA
@@ -84298,13 +85288,13 @@ foi
 dTo
 rQc
 vlv
-eqk
-eqk
+vUZ
+vUZ
+vUZ
 qSR
-qSR
-qSR
-qSR
-qSR
+vUZ
+vUZ
+vUZ
 fAl
 nnT
 uzr
@@ -84349,7 +85339,7 @@ bsk
 pHr
 vlL
 uaB
-vlL
+ecR
 vao
 xRs
 vqU
@@ -84485,14 +85475,14 @@ sSe
 tIB
 sgY
 rQc
-qcK
-eqk
-eqk
+vUZ
+vUZ
 qSR
 qSR
+vUZ
+vUZ
 qSR
-qSR
-qSR
+vUZ
 jeT
 aPv
 itk
@@ -84673,12 +85663,12 @@ kZh
 tIB
 rQc
 rQc
-bEs
-eqk
-eqk
-eqk
-eqk
 qSR
+vUZ
+oDH
+oDH
+eqk
+vUZ
 qZd
 fAl
 vVt
@@ -84864,7 +85854,7 @@ vUZ
 yfk
 eqk
 eqk
-eqk
+oDH
 eqk
 eqk
 fAl
@@ -85055,7 +86045,7 @@ rrT
 rrT
 rrT
 rrT
-sOf
+fAl
 grB
 itk
 vtY
@@ -85431,7 +86421,7 @@ lyr
 oyv
 lyr
 rrT
-sOf
+fAl
 xES
 itk
 gDP
@@ -86181,7 +87171,7 @@ nzx
 rrT
 rrT
 rrT
-eqk
+vUZ
 eqk
 eqk
 fAl
@@ -86366,11 +87356,11 @@ dyJ
 tIB
 vUZ
 kte
-eqk
-eqk
-eqk
-eqk
-eqk
+sKF
+vUZ
+vUZ
+vUZ
+vUZ
 eqk
 fAl
 brL
@@ -86554,12 +87544,12 @@ wqB
 tIB
 gCu
 sKF
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+sKF
+sKF
+qSR
+qSR
+vUZ
+vUZ
 vVt
 edx
 edx
@@ -86687,10 +87677,10 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
+mVh
+mVh
+mVh
+mVh
 eqk
 eqk
 eqk
@@ -86742,12 +87732,12 @@ dpj
 tIB
 sKF
 gjw
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+vUZ
+vUZ
+vUZ
+qSR
+qSR
+vUZ
 fAl
 viA
 stT
@@ -86875,10 +87865,10 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
+mVh
+ipB
+ipB
+mVh
 eqk
 eqk
 eqk
@@ -86934,8 +87924,8 @@ foi
 foi
 foi
 foi
-eqk
-eqk
+qSR
+vUZ
 vVt
 fAl
 fAl
@@ -87063,10 +88053,10 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
+mVh
+mVh
+mVh
+mVh
 eqk
 eqk
 eqk
@@ -87122,9 +88112,9 @@ iBS
 vSz
 prx
 foi
-eqk
-eqk
-eqk
+qSR
+qSR
+qSR
 vVt
 fAl
 fAl
@@ -87311,8 +88301,8 @@ pHa
 cPT
 foi
 eqk
-eqk
-eqk
+qSR
+qSR
 fAl
 nAJ
 pjp
@@ -87500,7 +88490,7 @@ tVi
 foi
 foi
 foi
-eqk
+vUZ
 fAl
 mIS
 pjp
@@ -87688,7 +88678,7 @@ tVi
 vIm
 uYw
 foi
-eqk
+qSR
 fAl
 fPL
 pjp
@@ -87876,7 +88866,7 @@ tVi
 jsP
 cqL
 foi
-eqk
+qSR
 vVt
 fAl
 fAl
@@ -88064,8 +89054,8 @@ tVi
 sJT
 mqN
 foi
-eqk
-eqk
+qSR
+qSR
 eqk
 eqk
 fAl
@@ -88252,8 +89242,8 @@ pHa
 gka
 qtc
 foi
-eqk
-eqk
+qSR
+qSR
 eqk
 eqk
 fAl
@@ -88440,8 +89430,8 @@ grh
 xdR
 veC
 foi
-eqk
-eqk
+qSR
+qSR
 eqk
 eqk
 vVt
@@ -88608,13 +89598,13 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+qxy
+oIZ
+oIZ
+oIZ
+oIZ
+oIZ
+oIZ
 eqk
 foi
 gMH
@@ -88628,8 +89618,8 @@ cHb
 jIk
 aPV
 foi
-eqk
-eqk
+qSR
+qSR
 eqk
 eqk
 eqk
@@ -88796,13 +89786,13 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+qxy
+hKl
+cSe
+oIZ
+hKl
+cSe
+oIZ
 eqk
 foi
 gMH
@@ -88816,9 +89806,9 @@ foi
 foi
 foi
 foi
-eqk
-eqk
-eqk
+qSR
+qSR
+qSR
 eqk
 eqk
 eqk
@@ -88984,13 +89974,13 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+oIZ
+pxp
+nVb
+oIZ
+pxp
+nVb
+oIZ
 eqk
 foi
 aFC
@@ -89003,9 +89993,9 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
+qSR
+qSR
+vUZ
 eqk
 eqk
 eqk
@@ -89172,13 +90162,13 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+oIZ
+hKl
+nVb
+oIZ
+hKl
+nVb
+oIZ
 eqk
 foi
 foi
@@ -89188,11 +90178,11 @@ foi
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+vUZ
+vUZ
+qSR
+qSR
+qSR
 eqk
 eqk
 eqk
@@ -89360,6 +90350,13 @@ eqk
 eqk
 eqk
 eqk
+qxy
+oIZ
+wGq
+oIZ
+oIZ
+wGq
+oIZ
 eqk
 eqk
 eqk
@@ -89367,20 +90364,13 @@ eqk
 eqk
 eqk
 eqk
+vUZ
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+qSR
+qSR
+qSR
+qSR
+vUZ
 eqk
 eqk
 eqk
@@ -89546,30 +90536,30 @@ eqk
 eqk
 eqk
 eqk
+qxy
+qxy
+qxy
+ofa
+fje
+kAb
+nVb
+ikb
+oIZ
+eqk
+vUZ
+vUZ
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+vUZ
+qSR
 eqk
 eqk
 eqk
@@ -89734,28 +90724,28 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+qxy
+iMS
+fje
+vsT
+fje
+tEq
+nVb
+lYm
+jpO
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
 eqk
 eqk
 eqk
@@ -89922,27 +90912,27 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+qxy
+npk
+fje
+fje
+fje
+xQo
+fje
+fje
+uzf
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+qSR
+vUZ
+qSR
+oDH
 eqk
 eqk
 eqk
@@ -90110,26 +91100,26 @@ eqk
 eqk
 eqk
 eqk
+qxy
+iMS
+fje
+ftI
+fje
+xKy
+fje
+qNL
+bqT
+eqk
+eqk
+qSR
+eqk
+eqk
+vUZ
+vUZ
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+oDH
 eqk
 eqk
 eqk
@@ -90298,15 +91288,15 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+qxy
+npk
+fje
+fje
+fje
+tEq
+fje
+tRE
+bqT
 eqk
 eqk
 eqk
@@ -90485,16 +91475,16 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+qxy
+qxy
+iMS
+fje
+wum
+fje
+tEq
+fje
+fje
+qxy
 eqk
 eqk
 eqk
@@ -90673,17 +91663,17 @@ eqk
 eqk
 eqk
 eqk
-amB
-amB
-amB
-amB
-amB
-amB
-amB
-amB
-amB
-amB
-amB
+qxy
+qxy
+uTK
+fje
+pxp
+fje
+fje
+nVb
+ikb
+qxy
+qxy
 amB
 amB
 amB
@@ -90861,17 +91851,17 @@ eqk
 eqk
 eqk
 eqk
-amB
-amB
-amB
-amB
-amB
-amB
-amB
-amB
-amB
-amB
-amB
+bqT
+bsW
+sWy
+sWy
+nVb
+fje
+fje
+nVb
+sWy
+eMN
+bqT
 amB
 amB
 amB
@@ -91049,17 +92039,17 @@ jKQ
 jKQ
 jKQ
 jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-oYq
-oYq
+bqT
+lis
+sWy
+sWy
+pPX
+fje
+fje
+rDI
+sWy
+mrE
+bqT
 oYq
 oYq
 oYq
@@ -91237,17 +92227,17 @@ jKQ
 jKQ
 jKQ
 jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
+qxy
+qxy
+ard
+sWy
+qxy
+uzf
+uzf
+qxy
+qzh
+qxy
+qxy
 jKQ
 jKQ
 jKQ
@@ -91426,13 +92416,13 @@ jKQ
 jKQ
 jKQ
 jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
+qxy
+fPF
+qTA
+qxy
+iIo
+jho
+veV
 jKQ
 jKQ
 jKQ
@@ -91614,13 +92604,13 @@ jKQ
 jKQ
 jKQ
 jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
-jKQ
+qxy
+qxy
+qxy
+qxy
+hcR
+jQY
+nhn
 jKQ
 jKQ
 jKQ
@@ -110803,13 +111793,13 @@ qOs
 eEo
 eEo
 eEo
+brO
+hlu
+gjv
+gjv
+gjv
+eEo
 qOs
-eEo
-gjv
-gjv
-gjv
-gjv
-eEo
 eEo
 gjv
 gjv
@@ -110991,14 +111981,14 @@ qOs
 rhy
 eEo
 qOs
-qOs
+eEo
 qOs
 qOs
 qOs
 eEo
 qOs
 qOs
-qOs
+eEo
 qOs
 eEo
 eEo
@@ -111181,14 +112171,14 @@ eEo
 eEo
 qOs
 qOs
-qOs
+eEo
 qOs
 eEo
 qOs
 rhy
 eEo
 eEo
-qOs
+eEo
 eEo
 eEo
 qOs
@@ -111375,7 +112365,7 @@ eEo
 qOs
 eEo
 eEo
-qOs
+eEo
 qOs
 qOs
 eEo
@@ -111563,9 +112553,9 @@ eEo
 qOs
 qOs
 eEo
-qOs
-qOs
-qOs
+eEo
+eEo
+eEo
 qOs
 qOs
 qOs
@@ -119469,9 +120459,9 @@ mNL
 eIP
 eIP
 eIP
-rEP
+bFo
 ptr
-vUQ
+nWG
 eEo
 eEo
 eEo
@@ -119654,12 +120644,12 @@ xZE
 nGB
 eqi
 qBX
-bon
-bon
-bon
+fdM
+fdM
+fdM
 bwP
-bon
-hhW
+fdM
+eeo
 vvq
 vvq
 vvq
@@ -119842,12 +120832,12 @@ xTO
 pmi
 xTO
 qBX
-cBp
-bon
-bon
+pUX
+fdM
+fdM
 aHZ
-bon
-hhW
+fdM
+eeo
 vvq
 eEo
 eEo
@@ -120031,11 +121021,11 @@ bQd
 hrr
 qBX
 jFD
-bon
-bon
-bon
-bon
-hhW
+fdM
+fdM
+fdM
+fdM
+eeo
 aBm
 rhy
 nGr
@@ -120219,11 +121209,11 @@ nGB
 ruD
 qBX
 jFD
-bon
-bon
+fdM
+fdM
 pHP
-bon
-hhW
+fdM
+eeo
 vvq
 eEo
 ocj
@@ -120407,11 +121397,11 @@ pTu
 pTu
 qBX
 nqw
-xNz
+udz
 udz
 tJp
-bon
-hhW
+fdM
+eeo
 vvq
 vvq
 oqJ
@@ -120596,10 +121586,10 @@ oqD
 mNL
 qBX
 qBX
-hhW
-hhW
-tLi
-vUQ
+eeo
+eeo
+kAo
+nWG
 eEo
 qOs
 eEo
@@ -120784,10 +121774,10 @@ qOf
 oDb
 oDb
 pTu
-cSh
-tLi
-qBY
-vUQ
+huQ
+kAo
+wNJ
+nWG
 eEo
 qOs
 qOs
@@ -120973,9 +121963,9 @@ izI
 bmA
 pTu
 jVI
-tLi
+kAo
 cmO
-vUQ
+nWG
 eEo
 vvq
 aBm
@@ -121160,10 +122150,10 @@ izI
 izI
 fKA
 pTu
-vUQ
-vUQ
-vUQ
-vUQ
+nWG
+nWG
+nWG
+nWG
 eEo
 vvq
 eEo
@@ -122071,13 +123061,13 @@ eqk
 eqk
 kmp
 sfh
-kmp
+jFK
 ezb
 ezb
+jFK
 kmp
-kmp
-sfh
-sfh
+xvU
+xvU
 kmp
 vvq
 ahC
@@ -122454,7 +123444,7 @@ hOW
 tvE
 mgQ
 hOW
-kmp
+xvU
 vvq
 eEo
 vXD
@@ -122829,8 +123819,8 @@ hOW
 hOW
 eCr
 mgQ
-klo
-kmp
+mgQ
+xvU
 aBm
 vvq
 vXD
@@ -122857,7 +123847,7 @@ eEo
 eEo
 vUQ
 eEo
-eEo
+vvq
 vvq
 eEo
 rhy
@@ -123018,7 +124008,7 @@ hOW
 hOW
 pBC
 pBC
-kmp
+sfh
 aBm
 vvq
 vXD
@@ -123035,18 +124025,18 @@ pTu
 pTu
 pTu
 pTu
+qxy
+qxy
+qxy
 vXD
 vXD
 vXD
 vXD
 vXD
 vXD
-vXD
-vXD
-vXD
-eEo
+vvq
+vvq
 ioO
-eEo
 eEo
 eEo
 qOs
@@ -123206,7 +124196,7 @@ mgQ
 hOW
 tvE
 wMB
-sfh
+hOW
 aBm
 ahC
 vXD
@@ -123222,18 +124212,18 @@ vXD
 vXD
 vXD
 vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
+qxy
+sfM
+nTi
+qxy
+qxy
+qxy
+tSX
+qxy
+oIZ
+oIZ
 eEo
-vUQ
+vvq
 vUQ
 vUQ
 vUQ
@@ -123347,7 +124337,7 @@ gRf
 gRf
 gRf
 gRf
-gRf
+tIh
 gRf
 gRf
 eqk
@@ -123392,9 +124382,9 @@ uYp
 mgQ
 sGQ
 hOW
-mgQ
+klo
 pBC
-sfh
+hOW
 aBm
 ahC
 eEo
@@ -123410,18 +124400,18 @@ pnu
 vXD
 vXD
 vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-eEo
-eEo
+bqT
+rAD
+rAD
+nTi
+qxy
+nHd
+sWy
+nTi
+qzh
+vvq
+vvq
+vvq
 qOs
 eEo
 hku
@@ -123531,13 +124521,13 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+nIe
+mVh
+mVh
+edv
+edv
+pBX
+nIe
 eqk
 gxh
 rmR
@@ -123582,7 +124572,7 @@ mgQ
 hOW
 mgQ
 tvE
-kmp
+sfh
 aBm
 vvq
 ahC
@@ -123598,19 +124588,19 @@ rrT
 rrT
 bkn
 vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
+bqT
+rAD
+rAD
+sWy
+wkC
+sWy
+sWy
+sWy
+hSP
+aBm
+vvq
 eEo
-loP
-loP
-sXh
+rhy
 dwH
 dwH
 loP
@@ -123719,13 +124709,13 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+nIe
+msE
+piL
+cnT
+cnT
+gSJ
+nIe
 eqk
 eqk
 rmR
@@ -123786,19 +124776,19 @@ xzD
 ntz
 rrT
 vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
+qxy
+sfM
+orI
+oIZ
+oIZ
+ard
+sWy
+sWy
+hSP
+aBm
+vvq
+vvq
 eEo
-eEo
-loP
-loP
-loP
 loP
 sXh
 dwH
@@ -123907,13 +124897,13 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+nIe
+msE
+mVh
+cnT
+cnT
+gSJ
+nIe
 eqk
 eqk
 rmR
@@ -123974,19 +124964,19 @@ alj
 nST
 rrT
 vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-eEo
-eEo
-loP
-loP
-pTE
+qxy
+qxy
+qxy
+oIZ
+exR
+sWy
+kus
+pbn
+qzh
+vvq
+vvq
+vvq
+rFo
 dwH
 loP
 dwH
@@ -124095,13 +125085,13 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+nIe
+bEG
+piL
+cnT
+cnT
+iUK
+nIe
 eqk
 eqk
 rmR
@@ -124162,19 +125152,19 @@ xUL
 xUL
 rrT
 vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-ioO
+qxy
+cfA
+pii
+oIZ
+oIZ
+ard
+sWy
+ksk
+oIZ
+bQF
+vvq
+eEo
 qOs
-dwH
-loP
-dwH
 loP
 loP
 dwH
@@ -124283,14 +125273,14 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+nIe
+msE
+mVh
+tHe
+tHe
+ozT
+nIe
+mVh
 eqk
 rmR
 eWt
@@ -124350,19 +125340,19 @@ xUL
 xUL
 rrT
 vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
+bqT
+rAD
+bMD
+sWy
+wyc
+sWy
+sWy
+sWy
+ktc
+oIZ
+rhy
 eEo
-eEo
-sXh
-loP
-dwH
+qOs
 dwH
 loP
 dwH
@@ -124471,14 +125461,14 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+nIe
+msE
+msE
+msE
+msE
+msE
+ipB
+mVh
 eqk
 rmR
 eWt
@@ -124522,7 +125512,7 @@ hOW
 hOW
 hOW
 hOW
-kmp
+xvU
 vvq
 vvq
 ahC
@@ -124538,19 +125528,19 @@ rrT
 rrT
 rrT
 vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
+bqT
+rAD
+bMD
+sWy
+qxy
+etC
+mcG
+hir
+qlL
+qxy
+rhy
 eEo
-eEo
-sXh
-loP
-dwH
+qOs
 loP
 pTE
 loP
@@ -124659,14 +125649,14 @@ eqk
 eqk
 eqk
 eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
-eqk
+mVh
+mVh
+mVh
+mVh
+nIe
+nIe
+nIe
+mVh
 eqk
 rmR
 eWt
@@ -124710,7 +125700,7 @@ hOW
 hOW
 hOW
 hOW
-kmp
+xvU
 vvq
 vvq
 eEo
@@ -124726,19 +125716,19 @@ vXD
 vXD
 vXD
 vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-vXD
-qOs
+qxy
+cfA
+pii
+qxy
+qxy
+qxy
+qxy
+qxy
+qxy
+qzh
 eEo
-loP
-dwH
-dwH
+qOs
+qOs
 loP
 loP
 dwH
@@ -124914,19 +125904,19 @@ koO
 atL
 koO
 oqo
-vXD
-vXD
-vXD
-vXD
+qxy
+qxy
+qxy
+qxy
 vXD
 vXD
 vXD
 vXD
 qOs
 eEo
-dwH
-dwH
-loP
+qOs
+qOs
+eEo
 loP
 loP
 dwH
@@ -125112,9 +126102,9 @@ vXD
 eEo
 qOs
 eEo
-sXh
-loP
-dwH
+rhy
+eEo
+qOs
 loP
 loP
 pTE
@@ -125300,9 +126290,9 @@ qOs
 eEo
 eEo
 rhy
-sXh
-loP
-pTE
+rhy
+eEo
+rFo
 lDW
 loP
 dwH
@@ -126031,7 +127021,7 @@ aBm
 ioO
 eEo
 aBm
-aBm
+eEo
 eEo
 eEo
 vXD
@@ -126204,21 +127194,21 @@ eqk
 eqk
 eqk
 eqk
-kmp
+jFK
 ezb
-kmp
+jFK
 sfh
-kmp
-kmp
+jFK
+jFK
 sfh
 sfh
-kmp
-kmp
+jFK
+jFK
 sfh
 aBm
 vvq
 eEo
-aBm
+ahC
 aBm
 flW
 eEo
@@ -126406,7 +127396,7 @@ eEo
 aBm
 vvq
 vvq
-aBm
+ahC
 aBm
 rhy
 eEo
@@ -126591,13 +127581,13 @@ vtU
 eeo
 eeo
 nWG
-vvq
-vvq
-vvq
-aBm
-aBm
-eEo
-eEo
+vUQ
+ebH
+cmU
+gtx
+rEP
+vUQ
+ebH
 rrT
 eKT
 fVD
@@ -127718,14 +128708,14 @@ nWG
 eeo
 eeo
 eeo
-nWG
-eEo
-eEo
-ahC
-ahC
-ahC
-eEo
-eEo
+jZx
+ebH
+vUQ
+cmU
+xZh
+cmU
+ebH
+vUQ
 lla
 rrT
 rrT
@@ -127908,7 +128898,7 @@ eEo
 eEo
 eEo
 rhy
-qOs
+vvq
 ahC
 ahC
 qOs
@@ -128094,7 +129084,7 @@ eEo
 eEo
 rFo
 qOs
-qOs
+vvq
 eEo
 eEo
 ahC
@@ -128280,9 +129270,9 @@ eEo
 eEo
 eEo
 eEo
+vvq
 qOs
-qOs
-eEo
+vvq
 eEo
 sjv
 bon
@@ -128456,22 +129446,22 @@ eqk
 eqk
 eqk
 eEo
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
 eEo
+eEo
+eEo
+eEo
+eEo
+eEo
+eEo
+eEo
+vUQ
+vUQ
+eEo
+vvq
+eEo
+vvq
 eEo
 vUQ
-vUQ
-eEo
-eEo
-eEo
-eEo
-eEo
-eEo
 oev
 bon
 bon
@@ -128644,22 +129634,22 @@ gjv
 eqk
 gjv
 gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
+eEo
+eEo
+eEo
+eEo
+eEo
+eEo
+eEo
+eEo
+eEo
+vvq
+vvq
+eEo
 vUQ
+eEo
+eEo
+eEo
 oev
 bon
 bon
@@ -128837,17 +129827,17 @@ gjv
 gjv
 gjv
 gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
-gjv
+eEo
+eEo
+vUQ
+vvq
+vvq
+eEo
+eEo
+eEo
+eEo
+eEo
+eEo
 oev
 bon
 bon
@@ -129025,12 +130015,12 @@ yez
 yez
 yez
 yez
-yez
-yez
-yez
-yez
-yez
-yez
+kwV
+kwV
+bbc
+bbc
+lsb
+lsb
 yez
 yez
 yez
@@ -129214,11 +130204,11 @@ yez
 yez
 yez
 yez
-yez
-yez
-yez
-yez
-yez
+fHi
+fHi
+agc
+agc
+agc
 yez
 yez
 yez
@@ -136388,7 +137378,7 @@ rWr
 eqk
 eqk
 eqk
-cWc
+eqk
 eqk
 eqk
 eqk
@@ -136576,7 +137566,7 @@ rWr
 eqk
 eqk
 eqk
-cWc
+eqk
 eqk
 eqk
 eqk
@@ -140347,7 +141337,7 @@ rWr
 rWr
 rWr
 eqk
-cWq
+rRv
 rRv
 eqk
 eqk
@@ -159669,17 +160659,17 @@ cnP
 cnP
 cnP
 cnP
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
 lnN
 wVz
 vSZ
@@ -159867,7 +160857,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 jKC
 qLM
@@ -160055,7 +161045,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 frf
 mAd
@@ -160243,7 +161233,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 nXM
 cnP
@@ -160431,7 +161421,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 jKC
 cnP
@@ -160619,7 +161609,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 cnP
 cnP
@@ -160807,7 +161797,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 cnP
 cnP
@@ -160995,7 +161985,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 cnP
 cnP
@@ -161183,7 +162173,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -161371,7 +162361,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -161559,7 +162549,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -161747,7 +162737,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -161935,7 +162925,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -162123,7 +163113,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -162311,7 +163301,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -162499,7 +163489,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -162687,7 +163677,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -162875,7 +163865,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -163063,7 +164053,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -163251,7 +164241,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -163439,7 +164429,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -163627,7 +164617,7 @@ lnN
 lnN
 lnN
 lnN
-sWy
+lnN
 lnN
 lnN
 lnN
@@ -163805,17 +164795,17 @@ cnP
 cnP
 lnN
 lnN
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
-sWy
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
+lnN
 lnN
 lnN
 lnN

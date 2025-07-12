@@ -18,7 +18,7 @@
 		var/mob/living/living_target = current_target
 
 		// Check if target is dead
-		if(living_target.stat >= CONSCIOUS)
+		if(living_target.stat > CONSCIOUS)
 			controller.clear_blackboard_key(BB_HIGHEST_THREAT_MOB)
 			current_target = null
 		else

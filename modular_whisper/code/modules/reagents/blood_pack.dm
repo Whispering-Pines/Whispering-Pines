@@ -1,9 +1,11 @@
 /obj/item/reagent_containers/blood
-	name = "blood pack"
+	name = "blood bag"
 	desc = ""
 	icon = 'modular_whisper/icons/misc/surgery_tools.dmi'
 	icon_state = "bloodpack"
 	volume = 200
+	amount_per_transfer_from_this = 25
+	reagent_flags = OPENCONTAINER|INJECTABLE|DRAWABLE
 	var/blood_type = null
 	var/unique_blood = null
 	var/labelled = 0
@@ -104,4 +106,4 @@
 	if(!reagents?.total_volume)
 		return
 	to_chat(user, span_notice("I was injected from \the [src]."))
-	addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, 50, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
+	addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, amount_per_transfer_from_this, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)

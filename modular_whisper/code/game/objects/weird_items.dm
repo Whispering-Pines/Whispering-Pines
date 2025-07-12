@@ -285,10 +285,11 @@
 	desc = "life essence that saves life."
 	item_type = /obj/item/reagent_containers/blood
 	held_items = 5
-	payout_price = 8
-	withdraw_price = 12
-	export_price = 10
-	importexport_amt = 20
+	payout_price = 10
+	withdraw_price = 14
+	export_price = 12
+	importexport_amt = 10
+	oversupply_amount = 25
 
 /obj/item/weapon/hammer/stone
 	name = "stone hammer"

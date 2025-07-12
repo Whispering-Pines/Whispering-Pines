@@ -2,6 +2,7 @@
 	group = "Armor"
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
+	mandated_public_profit = 1
 
 /datum/supply_pack/armor/skullcap
 	name = "Skullcap Helmet"

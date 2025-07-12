@@ -665,8 +665,12 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	icon_state = "milker"
 	desc = "A strange machine that used to milk livestock in the old world, now modified to milk people..."
 	breakoutextra = 4 MINUTES
-	self_powered = TRUE
 	var/suck_bonus
+
+/obj/structure/chair/fake_powered/milker/self_powered
+	name = "Self powered Milker"
+	desc = "A strange machine that used to milk livestock in the old world, now modified to milk people... A salvaged off the grid version of the milker that is less efficent."
+	self_powered = TRUE
 
 /obj/structure/chair/fake_powered/milker/examine(mob/user)
 	. = ..()
@@ -737,6 +741,8 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		return
 	var/obj/item/organ/filling_organ/breasts/forgan = victim.getorganslot(ORGAN_SLOT_BREASTS)
 	if(forgan)
+		if(self_powered)
+			suck_bonus *= 0.3
 		forgan.reagents.trans_to(src, 10+suck_bonus) //bit by bit it milks
 		if(forgan.reagents.total_volume <= 15)
 			balloon_alert_to_viewers("struggles to suck any more.")

@@ -175,6 +175,19 @@
 	alpha = 123
 	desc = "Don't break. Don't break. Don't break. Don't break."
 
+/obj/item/dildo/glass/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	try_shatter(hit_atom, throwingdatum)
+
+/obj/item/dildo/glass/proc/try_shatter(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(istransparentturf(hit_atom))
+		try_shatter(GET_TURF_BELOW(hit_atom))
+		return
+	playsound(loc, 'sound/foley/glassbreak.ogg', 100)
+	new /obj/item/natural/glass/shard(get_turf(hit_atom))
+	new /obj/effect/decal/cleanable/debris/glass(get_turf(hit_atom))
+	qdel(src)
+
 //plug
 /obj/item/dildo/plug
 	name = "unfinished plug"
