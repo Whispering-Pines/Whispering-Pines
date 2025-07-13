@@ -90,7 +90,7 @@
 	icon_state = "beltpants"
 	item_state = "beltpants"
 
-//Zhaladuskn Duelist Merc - On par with grenzelhoftian's stats.
+//Zhaladuskn Duelist Merc - On par with frozener's stats.
 /obj/item/clothing/pants/trou/leather/advanced/duelpants
 	desc = "Padded pants, favored by Zhaladusk's Duelists, Legs are often a prime target in a duel, and these pants seem to have seen their fair share of it"
 	color = "#5a5a5a"

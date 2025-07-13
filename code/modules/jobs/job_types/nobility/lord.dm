@@ -4,11 +4,9 @@ GLOBAL_LIST_EMPTY(lord_titles)
 /datum/job/lord
 	title = "Monarch"
 	var/ruler_title = "Monarch"
-	tutorial = "Elevated to your throne through a web of intrigue, political maneuvering, and divine sanction, you are the \
-	unquestioned authority of these lands. The Church has bestowed upon you the legitimacy of the gods themselves, and now \
-	you sit at the center of every plot, and every whisper of ambition. Every man, woman, and child may envy your power and \
-	would replace you in the blink of an eye. But remember, its not envy that keeps you in place, it is your will. Show them \
-	the error of their ways."
+	tutorial = "Elevated to your 'throne' through being filthy rich and grasping post apocalyptic monopoly, you own this entire island, the one next to it and the people \
+	within it which you must tolerate to keep the casings flowing through taxation for nearly no services you provide. Though they may try for your life for the earliest inconvenience, majority of your spending has been going \
+	for yourself rather than anyone else. Show them the error of their ways."
 	flag = LORD
 	department_flag = NOBLEMEN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -16,12 +14,11 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	faction = FACTION_TOWN
 	total_positions = 1
 	spawn_positions = 1
-	min_pq = 25
+	min_pq = 10
 
 	spells = list(
-		/obj/effect/proc_holder/spell/self/grant_title,
-		/obj/effect/proc_holder/spell/self/grant_nobility,
-		/obj/effect/proc_holder/spell/self/convertrole/servant,
+		/datum/action/cooldown/spell/undirected/list_target/grant_title,
+		/datum/action/cooldown/spell/undirected/list_target/grant_nobility,
 	)
 
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
@@ -119,7 +116,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	switch(classchoice)
 		if("Monarch")
 			Monarch(H)
-		if("Ancestor")
+		if("Ancestor") //the TRUE ruler of the land.
 			Ancestor(H)
 
 /datum/outfit/job/lord/proc/Monarch(mob/living/carbon/human/H)
@@ -136,9 +133,9 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	if(H.wear_mask)
 		qdel(H.wear_mask)
 		mask = /obj/item/clothing/face/facemask/goldmask
-	to_chat(H, span_notice("I am ancient, one of the first Resurgentis to ever exist, I witnessed with my very own eyes when the Last Death himself made me out of whatever husk I was in my previous life. Unfortunately this semi undead body of mine rotted in time and is hideous... Also unfortunately, I am forced in a cannibal diet due to my strange body."))
+	to_chat(H, span_notice("I am ancient, one of the first Resurgentis to ever exist and rightful owner of the throne, I witnessed with my very own eyes when the Last Death himself made me out of whatever husk I was in my previous life. Unfortunately this semi undead body of mine rotted in time and is hideous... Also unfortunately, I am forced in a cannibal diet due to my strange body."))
 	H.AddComponent(/datum/component/rot/stinky_person)
-	//The true ruler, likely to have many idiots rising up against him for being so hideous and an undead.
+	//The true ruler, likely to have many idiots rising up against him for being so hideous and an undead. vro is basically vlord.
 	H.change_stat(STATKEY_STR, 2) //4 after parent
 	H.change_stat(STATKEY_INT, 2) //5 after parent
 	H.change_stat(STATKEY_LCK, 2) //1 Compensation for ugly luck debuff + being chosen of last death
@@ -166,125 +163,3 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	else
 		family_guy.fully_replace_character_name(family_guy.real_name, family_guy.real_name + " " + GLOB.lordsurname)
 	return family_guy.real_name
-
-/obj/effect/proc_holder/spell/self/grant_title
-	name = "Grant Title"
-	desc = "Grant someone a title of honor... Or shame."
-	overlay_state = "recruit_titlegrant"
-	antimagic_allowed = TRUE
-	recharge_time = 100
-	/// Maximum range for title granting
-	var/title_range = 3
-	/// Maximum length for the title
-	var/title_length = 42
-
-/obj/effect/proc_holder/spell/self/grant_title/cast(list/targets, mob/user = usr)
-	. = ..()
-	var/granted_title = input(user, "What title do you wish to grant?", "[name]") as null|text
-	granted_title = reject_bad_text(granted_title, title_length)
-	if(!granted_title)
-		return
-	var/list/recruitment = list()
-	for(var/mob/living/carbon/human/village_idiot in (get_hearers_in_view(title_range, user) - user))
-		//not allowed
-		if(!can_title(village_idiot))
-			continue
-		recruitment[village_idiot.name] = village_idiot
-	if(!length(recruitment))
-		to_chat(user, span_warning("There are no potential honoraries in range."))
-		return
-	var/inputty = input(user, "Select an honorary!", "[name]") as anything in recruitment
-	if(inputty)
-		var/mob/living/carbon/human/recruit = recruitment[inputty]
-		if(!QDELETED(recruit) && (recruit in get_hearers_in_view(title_range, user)))
-			INVOKE_ASYNC(src, PROC_REF(village_idiotify), recruit, user, granted_title)
-		else
-			to_chat(user, span_warning("Honorific failed!"))
-	else
-		to_chat(user, span_warning("Honorific cancelled."))
-
-/obj/effect/proc_holder/spell/self/grant_title/proc/can_title(mob/living/carbon/human/recruit)
-	//wtf
-	if(QDELETED(recruit))
-		return FALSE
-	//need a mind
-	if(!recruit.mind)
-		return FALSE
-	//need to see their damn face
-	if(!recruit.get_face_name(null))
-		return FALSE
-	return TRUE
-
-/obj/effect/proc_holder/spell/self/grant_title/proc/village_idiotify(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter, granted_title)
-	if(QDELETED(recruit) || QDELETED(recruiter) || !granted_title)
-		return FALSE
-	if(GLOB.lord_titles[recruit.real_name])
-		recruiter.say("I HEREBY STRIP YOU, [uppertext(recruit.name)], OF THE TITLE OF [uppertext(GLOB.lord_titles[recruit.real_name])]!")
-		GLOB.lord_titles -= recruit.real_name
-		return FALSE
-	recruiter.say("I HEREBY GRANT YOU, [uppertext(recruit.name)], THE TITLE OF [uppertext(granted_title)]!")
-	GLOB.lord_titles[recruit.real_name] = granted_title
-	return TRUE
-
-
-/obj/effect/proc_holder/spell/self/grant_nobility
-	name = "Grant Nobility"
-	desc = "Make someone a noble, or strip them of their nobility."
-	antimagic_allowed = TRUE
-	recharge_time = 100
-	/// Maximum range for nobility granting
-	var/nobility_range = 3
-
-/obj/effect/proc_holder/spell/self/grant_nobility/cast(list/targets, mob/user = usr)
-	. = ..()
-	var/list/recruitment = list()
-	for(var/mob/living/carbon/human/village_idiot in (get_hearers_in_view(nobility_range, user) - user))
-		//not allowed
-		if(!can_nobility(village_idiot))
-			continue
-		recruitment[village_idiot.name] = village_idiot
-	if(!length(recruitment))
-		to_chat(user, span_warning("There are no potential honoraries in range."))
-		return
-	var/inputty = input(user, "Select an honorary!", "[name]") as anything in recruitment
-	if(inputty)
-		var/mob/living/carbon/human/recruit = recruitment[inputty]
-		if(!QDELETED(recruit) && (recruit in get_hearers_in_view(nobility_range, user)))
-			INVOKE_ASYNC(src, PROC_REF(grant_nobility), recruit, user)
-		else
-			to_chat(user, span_warning("Honorific failed!"))
-	else
-		to_chat(user, span_warning("Honorific cancelled."))
-
-/obj/effect/proc_holder/spell/self/grant_nobility/proc/can_nobility(mob/living/carbon/human/recruit)
-	//wtf
-	if(QDELETED(recruit))
-		return FALSE
-	//need a mind
-	if(!recruit.mind)
-		return FALSE
-	//need to see their damn face
-	if(!recruit.get_face_name(null))
-		return FALSE
-	return TRUE
-
-/obj/effect/proc_holder/spell/self/grant_nobility/proc/grant_nobility(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter)
-	if(QDELETED(recruit) || QDELETED(recruiter))
-		return FALSE
-	if(HAS_TRAIT(recruit, TRAIT_NOBLE))
-		recruiter.say("I HEREBY STRIP YOU, [uppertext(recruit.name)], OF NOBILITY!!")
-		REMOVE_TRAIT(recruit, TRAIT_NOBLE, TRAIT_GENERIC)
-		return FALSE
-	recruiter.say("I HEREBY GRANT YOU, [uppertext(recruit.name)], NOBILITY!")
-	ADD_TRAIT(recruit, TRAIT_NOBLE, TRAIT_GENERIC)
-	return TRUE
-
-/obj/effect/proc_holder/spell/self/convertrole/servant
-	name = "Recruit Servant"
-	new_role = "Servant"
-	overlay_state = "recruit_servant"
-	recruitment_faction = "Servants"
-	recruitment_message = "Serve the crown, %RECRUIT!"
-	accept_message = "FOR THE CROWN!"
-	refuse_message = "I refuse."
-	recharge_time = 100

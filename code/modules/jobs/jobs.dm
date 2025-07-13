@@ -32,7 +32,6 @@ GLOBAL_LIST_INIT(church_positions, list(
 	/datum/job/monk::title,
 	/datum/job/undertaker::title,
 	/datum/job/inquisitor::title,
-	// "Confessor",
 	/datum/job/templar::title,
 	/datum/job/adept::title,
 	))
@@ -76,7 +75,7 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	/datum/job/wapprentice::title,
 	/datum/job/servant::title,
 	/datum/job/tapster::title,
-	/datum/job/gaffer_assistant::title,
+	///datum/job/gaffer_assistant::title,
 	/datum/job/orphan::title,
 	/datum/job/churchling::title,
 	))
@@ -100,7 +99,7 @@ GLOBAL_LIST_INIT(allmig_positions, list(
 	/datum/job/pilgrim::title,
 	/datum/job/adventurer::title,
 	// /datum/job/mercenary::title,
-	// /datum/job/bandit::title,
+	/datum/job/bandit::title,
 	))
 
 GLOBAL_LIST_INIT(roguewar_positions, list(

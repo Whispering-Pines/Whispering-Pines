@@ -233,31 +233,6 @@
 	. = 1
 	..()
 
-//healthscanner
-/obj/item/health_scanner
-	name = "old world health scanner"
-	desc = "A salvaged old world tech which tells about someone's detailed health status, unfortunately it is in an ancient language."
-	icon = 'modular_whisper/icons/obj/misc.dmi'
-	icon_state = "health_scanner"
-	var/toggled = FALSE
-	sellprice = 200
-
-/obj/item/health_scanner/attack_self(mob/user)
-	. = ..()
-	toggled = !toggled
-	playsound(user, 'sound/misc/keyboard_type (1).ogg', 100)
-	icon_state = "[initial(icon_state)][toggled ? "_on":""]"
-
-/obj/item/health_scanner/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
-	if(!toggled)
-		user.balloon_alert(user, "Not on.")
-		return
-	if(user.has_language(/datum/language/ancient_english) && user.can_read(src))
-		M.check_for_injuries(user, TRUE, FALSE, TRUE)
-	else
-		to_chat(user, span_notice("I can't make sense of the language but can tell basic information through images."))
-		M.check_for_injuries(user, FALSE, FALSE, FALSE)
-
 
 //some stockpile and food shit
 /obj/item/reagent_containers/food/snacks/raisins/solvent

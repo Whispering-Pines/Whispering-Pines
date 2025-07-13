@@ -19,7 +19,7 @@
 	outfit = /datum/outfit/job/undertaker
 	give_bank_account = 50
 	cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
-	spells = list(/obj/effect/proc_holder/spell/targeted/burialrite)
+	spells = list(/datum/action/cooldown/spell/burial_rites)
 
 /datum/outfit/job/undertaker
 	job_bitflag = BITFLAG_CHURCH
@@ -29,7 +29,7 @@
 	switch(H.patron?.type)
 		if(/datum/patron/divine/astrata)
 			neck = /obj/item/clothing/neck/psycross/silver/astrata
-		if(/datum/patron/divine/dendor)	// good helmet but no money
+		if(/datum/patron/divine/dendor)
 			neck = /obj/item/clothing/neck/psycross/silver/dendor
 		if(/datum/patron/divine/necra)
 			neck = /obj/item/clothing/neck/psycross/silver/necra

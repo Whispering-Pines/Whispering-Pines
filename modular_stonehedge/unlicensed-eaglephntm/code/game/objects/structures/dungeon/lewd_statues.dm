@@ -48,7 +48,7 @@
 			return
 	. = ..()
 
-/obj/structure/fluff/statue/lewd/four/attack_right(mob/user)
+/obj/structure/fluff/statue/lewd/four/attack_hand_secondary(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
 		if(L.stat != CONSCIOUS)

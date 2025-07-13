@@ -187,7 +187,7 @@
 	force = DAMAGE_AXE
 	force_wielded = DAMAGE_AXE_WIELD
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	name = "psydonian axe"
+	name = "old goddean axe"
 	desc = "An axe forged of silver with a small psycross attached, Blissrose and his foul beastmen be damned."
 	icon_state = "psyaxe"
 	max_blade_int = 200

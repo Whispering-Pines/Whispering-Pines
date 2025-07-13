@@ -162,12 +162,12 @@
 
 /datum/quirk/mtraining1/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.clamped_adjust_skillrank(/datum/skill/misc/medicine, 4, 4, TRUE)
+	H.clamped_adjust_skillrank(/datum/skill/misc/medicine, 3, 3, TRUE)
 	H.clamped_adjust_skillrank(/datum/skill/craft/alchemy, 2, 2, TRUE)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	H.mind.special_items["Needle"] = /obj/item/needle
 	H.mind.special_items["Bedroll"] = /obj/structure/bed/sleepingbag //for field surgery
 	H.mind.special_items["Surgery Bag"] = /obj/item/storage/backpack/satchel/surgbag/shit
+	H.mind.special_items["Health Analyzer"] = /obj/item/basic_power/health_analyzer //instead of secular diagnosis
 
 /datum/quirk/greenthumb
 	name = "Green Thumb"

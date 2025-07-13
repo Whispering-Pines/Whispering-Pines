@@ -9,20 +9,19 @@
 	department_flag = GARRISON
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	display_order = JDO_FORWARDEN
 	min_pq = 8
 	bypass_lastclass = TRUE
 	selection_color = "#0d6929"
-
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 
 	outfit = /datum/outfit/job/forestwarden
-	spells = list(/obj/effect/proc_holder/spell/self/convertrole/guard/forest_guard)
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/guard/forest)
 	give_bank_account = 45
 	cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
 

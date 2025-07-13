@@ -104,12 +104,13 @@
 	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(adv_hugboxing_moved), TRUE)
 	//Lies, it goes away even if you don't move after enough time
 	if(GLOB.adventurer_hugbox_duration_still)
-		addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_end)), GLOB.adventurer_hugbox_duration_still)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_moved)), GLOB.adventurer_hugbox_duration_still)
 
 /mob/living/carbon/human/proc/adv_hugboxing_moved()
 	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	to_chat(src, span_danger("I have [DisplayTimeText(GLOB.adventurer_hugbox_duration)] to begone!"))
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_end)), GLOB.adventurer_hugbox_duration)
+	SSquirks.AssignQuirks(src, client, TRUE)
 
 /mob/living/carbon/human/proc/adv_hugboxing_end()
 	if(QDELETED(src))
@@ -120,7 +121,6 @@
 	status_flags &= ~GODMODE
 	REMOVE_TRAIT(src, TRAIT_PACIFISM, "hugbox")
 	to_chat(src, span_danger("My joy is gone! Danger surrounds me."))
-	SSquirks.AssignQuirks(src, client, TRUE)
 
 /mob/living/carbon/human/proc/adv_hugboxing_cancel()
 	adv_hugboxing_end()

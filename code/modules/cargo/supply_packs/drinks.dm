@@ -24,7 +24,7 @@
 	contains = /obj/item/reagent_containers/glass/bottle/beer/ratkept
 
 /datum/supply_pack/food/grenzelbeer
-	name = "Grenzelhoftian Bitter Beer"
+	name = "Frozener Bitter Beer"
 	cost = 19
 	contains = /obj/item/reagent_containers/glass/bottle/beer/hagwoodbitter
 
@@ -59,7 +59,7 @@
 	contains = /obj/item/reagent_containers/glass/bottle/wine
 
 /datum/supply_pack/food/winegrenzel
-	name = "Grenzelhoftian Sour Wine"
+	name = "Frozener Sour Wine"
 	cost = 25
 	contains = /obj/item/reagent_containers/glass/bottle/wine/sourwine
 

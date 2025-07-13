@@ -49,7 +49,7 @@
 	item_weight = 12 * STEEL_MULTIPLIER
 
 /obj/item/clothing/armor/rare/grenzelplate
-	name = "grenzelhoftian plate regalia"
+	name = "frozener plate regalia"
 	desc = "Engraved on this masterwork of humen metallurgy lies \"Thrice Fingered, Thrice Betrayed, Thrice Pronged\" alongside the symbol of an Old God in its neck guard. No one is certain what the third betrayal is meant to signify, yet Samantha's poetry is clear."
 	icon_state = "human_swordchest"
 	allowed_race = list("human","aasimar")

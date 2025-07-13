@@ -14,6 +14,6 @@
 
 /obj/item/clothing/gloves/angle/grenzel
 	name = "grenzelhoft gloves"
-	desc = "Regal gloves of Grenzelhoftian design, more a fashion statement than actual protection."
+	desc = "Regal gloves of Frozener design, more a fashion statement than actual protection."
 	icon_state = "grenzelgloves"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'

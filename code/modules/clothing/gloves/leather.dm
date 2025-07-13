@@ -73,7 +73,7 @@
 	icon_state = "inqgloves"
 	item_state = "inqgloves"
 
-//Zhaladuskn Duelist Merc - On par with grenzelhoftian's stats.
+//Zhaladuskn Duelist Merc - On par with frozener's stats.
 /obj/item/clothing/gloves/leather/duelgloves
 	desc = "Gloves of worn leather, Seems to be padded and commonly used by fencers, renowned for their quality.."
 	color = CLOTHING_SOOT_BLACK

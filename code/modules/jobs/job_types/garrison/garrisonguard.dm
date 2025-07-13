@@ -3,7 +3,8 @@
 	tutorial = "You are a member of the Lawbringers. \
 	It is not nobility, or anything extraordinary, You don't decide the laws either... It's just a name,\
 	likely to make it sound more appealing than a town guard..., \
-	Your primary job is to protect the King, who pays your wages."
+	The Monarch hired you after brigands and lowlifes caused more damage to his land than your wage would cost him.\
+	So you are to make order in the town and protect the land of the Monarch."
 	flag = GUARDSMAN
 	department_flag = GARRISON
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)

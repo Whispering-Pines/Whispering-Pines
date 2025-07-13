@@ -23,7 +23,7 @@
 	backr = /obj/item/storage/backpack/satchel
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,3), TRUE)
+		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
@@ -61,7 +61,7 @@
 		H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2), TRUE)
+		H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.change_stat(STATKEY_STR, 1)
 		H.change_stat(STATKEY_CON, -1)
 		H.change_stat(STATKEY_END, -1)

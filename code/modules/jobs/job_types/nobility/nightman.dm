@@ -52,7 +52,7 @@
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	if(H.mind)
-		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/convertrole/prostitute)
+		H.add_spell(/datum/action/cooldown/spell/undirected/list_target/convert_role/prostitute)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
@@ -78,24 +78,26 @@
 	else if(H.gender == FEMALE)
 		armor = /obj/item/clothing/armor/gambeson/heavy/dress/alt
 
-/obj/effect/proc_holder/spell/self/convertrole/prostitute
+/datum/action/cooldown/spell/undirected/list_target/convert_role/prostitute
 	name = "Hire Prostitute"
 	new_role = "Nightswain"
-	overlay_state = "recruit_servant"
+	button_icon_state = "recruit_servant"
 	recruitment_faction = "Prostitute"
 	recruitment_message = "Work for me, %RECRUIT."
 	accept_message = "I will."
 	refuse_message = "I refuse."
 
-//whore
+
+//NIGHTMAIDENS
+
 /datum/job/nightmaiden
 	title = "Nightswain"
 	f_title = "Nightmaiden"
 	flag = WENCH
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 8
+	spawn_positions = 8
 
 	allowed_sexes = list(FEMALE)
 	allowed_races = RACES_PLAYER_ALL
@@ -122,7 +124,7 @@
 	name = "Nightmaiden"
 	// This is just a base outfit, the actual outfits are defined in the advclasses
 
-/datum/advclass/nightmaiden
+/datum/advclass/nightmaiden/attendant
 	name = "Attendant"
 	tutorial = "A fresh initiate, a desperate fool who ended up here, and mainly tasked to keep the whorehouse and it's whores in shape and relatively clean while occasionally tempting others into bedsheets for money. You work underneath your betters in the whorehouse, keeping it and the guests in turn as tidy as they please. Wash slimy laundry, tend mild 'work-place accidents', and clean the whorehouse until someone's eye catches you..."
 	outfit = /datum/outfit/job/nightmaiden/attendant

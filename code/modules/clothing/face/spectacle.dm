@@ -26,7 +26,7 @@
 
 /obj/item/clothing/face/spectacles/inqglasses
 	name = "crimson spectacles"
-	desc = "Spectacles evoking the stained glass of Grenzelhoftian cathedrals. See all evil."
+	desc = "Spectacles evoking the stained glass of Frozener cathedrals. See all evil."
 	icon_state = "bglasses"
 
 /obj/item/clothing/face/spectacles/sglasses

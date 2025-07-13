@@ -29,7 +29,7 @@
 
 /datum/outfit/job/wapprentice/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.adjust_skillrank(/datum/skill/magic/arcane, pick(1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
@@ -37,8 +37,8 @@
 	H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-	H.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
-	H.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+	H.add_spell(/datum/action/cooldown/spell/projectile/fetch)
+	H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/pants/tights/random
 		shoes = /obj/item/clothing/shoes/simpleshoes

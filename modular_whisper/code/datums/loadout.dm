@@ -339,7 +339,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	path = /obj/item/clothing/face/blindfold
 
 /datum/loadout_item/psycross
-	name = "Psydonian Cross"
+	name = "Old goddean Cross"
 	path = /obj/item/clothing/neck/psycross
 
 /datum/loadout_item/psycross/silver/astrata

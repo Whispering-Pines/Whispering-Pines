@@ -22,7 +22,7 @@ export const CodexGigas = props => {
     "Viscount",
     "Vizier",
     "Elder",
-    "Adept",
+    "Confessor",
   ];
   const names = [
     "hal",

@@ -1069,7 +1069,7 @@
 		return
 	var/mob/living/carbon/human/humanuser = src
 	//milker checks
-	for(var/obj/structure/chair/fake_powered/milker/milkmachine in range(0,src))
+	for(var/obj/structure/chair/basic_power/milker/milkmachine in range(0,src))
 		milkmachine.balloon_alert_to_viewers("Sucks up [name]'s juices!")
 		if(getorganslot(ORGAN_SLOT_VAGINA)) //since no pussyjuice
 			milkmachine.reagents.add_reagent(/datum/reagent/water/pussjuice, 15)

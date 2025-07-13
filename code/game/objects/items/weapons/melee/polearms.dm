@@ -240,7 +240,7 @@
 /obj/item/weapon/polearm/spear/psydon
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_SPEAR_WIELD
-	name = "psydonian spear"
+	name = "old goddean spear"
 	desc = "A polearm with a twisting trident head perfect for mangling the bodies of the impure."
 	icon_state = "psyspear"
 	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
@@ -359,7 +359,7 @@
 /obj/item/weapon/polearm/halberd/psydon
 	force = DAMAGE_SPEAR
 	force_wielded = DAMAGE_HALBERD_WIELD
-	name = "psydonian halberd"
+	name = "old goddean halberd"
 	desc = "A mighty halberd capable of cutting down the heretical with remarkable ease, be it effigy, man, or beast."
 	icon_state = "psyhalberd"
 	melting_material = /datum/material/silver

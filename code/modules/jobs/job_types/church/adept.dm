@@ -1,15 +1,13 @@
 /datum/job/adept
-	title = "Adept"
-	tutorial = "You were a convicted criminal, the lowest scum of Phantom Kingdom. \
-	Your master, the Inquisitor, saved you from the gallows \
-	and has given you true purpose in service to Old Gods. \
-	You will not let him down."
+	title = "Confessor"
+	tutorial = "You were a common thug, but to your luck, you were hired by the inquisition to do god's work, \
+	and you have been for a long time now... Maybe one day you might even become an inquisitor, or stay a mercenary."
 	flag = MONK
 	department_flag = CHURCHMEN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_SHEPHERD
 	faction = FACTION_TOWN
-	total_positions = 3
+	total_positions = 2
 	spawn_positions = 2
 	min_pq = 5
 	bypass_lastclass = TRUE
@@ -20,12 +18,11 @@
 	outfit = /datum/outfit/job/adept
 	advclass_cat_rolls = list(CTAG_ADEPT = 20)
 	can_have_apprentices = FALSE
-	is_foreigner = TRUE
 
 /datum/outfit/job/adept
-	name = "Adept"
+	name = "Confessor"
 	jobtype = /datum/job/adept
-	allowed_patrons = list(/datum/patron/old_gods)
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	job_bitflag = BITFLAG_CHURCH
 
 /datum/outfit/job/adept // Base outfit for Adepts, before loadouts
@@ -34,12 +31,11 @@
 	mask = /obj/item/clothing/face/facemask
 	pants = /obj/item/clothing/pants/trou/leather
 	shirt = /obj/item/clothing/shirt/undershirt/black
-	wrists = /obj/item/clothing/neck/psycross/silver
 
 // Brutal Zealot, a class balanced to town guard, with 1 more strength but less intelligence and perception. Axe/Mace and shield focus.
 /datum/advclass/adept/bzealot
 	name = "Brutal Zealot"
-	tutorial = "You are a former thug who has been given a chance to redeem yourself by the Inquisitor. You serve him and Old Gods with your physical strength and zeal."
+	tutorial = "You are a former thug, your have physical strength and zeal."
 	outfit = /datum/outfit/job/adept/bzealot
 
 	category_tags = list(CTAG_ADEPT)
@@ -56,7 +52,7 @@
 	beltl = /obj/item/weapon/mace/spiked
 	backr = /obj/item/weapon/shield/wood/adept
 	gloves = /obj/item/clothing/gloves/leather
-	backpack_contents = list(/obj/item/storage/keyring/inquisitor = 1, /obj/item/weapon/knife/dagger/psydon = 1)
+	backpack_contents = list(/obj/item/storage/keyring/inquisitor = 1, /obj/item/weapon/knife/dagger/psydon = 1, /obj/item/clothing/head/sack = 1)
 
 	//Stats for class
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
@@ -85,7 +81,7 @@
 // Reformed Thief, a class balanced to rogue. Axe and crossbow focus.
 /datum/advclass/adept/rthief
 	name = "Reformed Thief"
-	tutorial = "You are a former thief who has been given a chance to redeem yourself by the Inquisitor. You serve him and Old Gods with your stealth and cunning."
+	tutorial = "You are a former thief You have stealth and cunning."
 	outfit = /datum/outfit/job/adept/rthief
 
 	category_tags = list(CTAG_ADEPT)
@@ -103,7 +99,7 @@
 	beltl = /obj/item/weapon/mace/cudgel
 	pants = /obj/item/clothing/pants/trou/leather
 	cloak = /obj/item/clothing/cloak/raincloak/brown
-	backpack_contents = list(/obj/item/storage/keyring/inquisitor = 1, /obj/item/weapon/knife/dagger/psydon = 1)
+	backpack_contents = list(/obj/item/storage/keyring/inquisitor = 1, /obj/item/weapon/knife/dagger/psydon = 1, /obj/item/clothing/head/sack = 1)
 
 	//Stats for class
 	H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
@@ -133,7 +129,7 @@
 
 // Vile Highwayman, utility and ranged focus. Whip and Bow user with a heavy disincentive to get into a direct fight.
 /datum/advclass/adept/highwayman
-	name = "Vile Renegade"
+	name = "Renegade"
 	tutorial = "You were a former outlaw who has been given a chance to redeem yourself by the Inquisitor. You serve him and Old Gods with your survival skills and deadly accuracy."
 	outfit = /datum/outfit/job/adept/highwayman
 
@@ -187,9 +183,30 @@
 	if(H.mind)
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
+		switch(H.patron?.type)
+			if(/datum/patron/divine/astrata)
+				wrists = /obj/item/clothing/neck/psycross/silver/astrata
+			if(/datum/patron/divine/dendor)
+				wrists = /obj/item/clothing/neck/psycross/silver/dendor
+			if(/datum/patron/divine/necra)
+				wrists = /obj/item/clothing/neck/psycross/silver/necra
+			if(/datum/patron/divine/eora)
+				wrists = /obj/item/clothing/neck/psycross/silver/eora
+				H.virginity = FALSE
+			if(/datum/patron/divine/ravox)
+				wrists = /obj/item/clothing/neck/psycross/silver/ravox
+			if(/datum/patron/divine/noc)
+				wrists = /obj/item/clothing/neck/psycross/noc
+			if(/datum/patron/divine/pestra)
+				wrists = /obj/item/clothing/neck/psycross/silver/pestra
+			if(/datum/patron/divine/abyssor)
+				wrists = /obj/item/clothing/neck/psycross/silver/abyssor
+			if(/datum/patron/divine/malum)
+				wrists = /obj/item/clothing/neck/psycross/silver/malum
+			if(/datum/patron/divine/xylix)
+				wrists = /obj/item/clothing/neck/psycross/silver/xylix
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.set_patron(/datum/patron/old_gods)
 		H.verbs |= /mob/living/carbon/human/proc/torture_victim
 		H.verbs |= /mob/living/carbon/human/proc/faith_test
 		H.mind?.teach_crafting_recipe(/datum/repeatable_crafting_recipe/reading/confessional)

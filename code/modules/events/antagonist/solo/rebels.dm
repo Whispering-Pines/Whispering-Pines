@@ -28,7 +28,7 @@
 		"Prince",
 		"Priest",
 		"Inquisitor",
-		"Adept",
+		"Confessor",
 	)
 
 /datum/round_event/antagonist/solo/rebel

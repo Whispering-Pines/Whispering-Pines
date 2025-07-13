@@ -146,7 +146,7 @@
 
 /obj/item/reagent_containers/glass/bottle/wine/sourwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/sourwine = 70)
-	desc = "A bottle that contains a Grenzelhoftian classic with a black ink cork-seal.. An extremely sour wine that is watered down with mineral water."
+	desc = "A bottle that contains a Frozener classic with a black ink cork-seal.. An extremely sour wine that is watered down with mineral water."
 
 /obj/item/reagent_containers/glass/bottle/redwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/redwine = 70)

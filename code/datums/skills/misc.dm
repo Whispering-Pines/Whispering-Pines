@@ -82,3 +82,10 @@
 	dreams = list(
 		"...The untiring hunter stays on it's prey's trail in a shaded forest..."
 	)
+
+/datum/skill/misc/lore
+	name = "Lore"
+	desc = "Lore is a skill that represents your knowledge in old world technology, it helps you determine what an unknown technology may be and how to use it."
+	dreams = list(
+		"...Incomprehensible machinery clicks and hums to life..."
+	)

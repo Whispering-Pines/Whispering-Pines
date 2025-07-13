@@ -183,7 +183,7 @@
 	name = "Psydon's Drunkest Rider"
 	greet_text = span_notice("I ride! None of the laws shall stop me for that is Psydon's divine will!")
 	req_text = "Worship Psydon"
-	allowed_patrons = list(/datum/patron/old_gods)
+	allowed_patrons = list(/datum/patron/psydon)
 	weight = 100
 
 /datum/special_trait/psydons_rider/on_apply(mob/living/carbon/human/character, silent)
@@ -573,9 +573,8 @@
 	character.change_stat("endurance", -1)
 	character.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
 	character.set_skillrank(/datum/skill/combat/swords, 2, TRUE) //Average only.
-	character.mind.adjust_spellpoints(14) //Less points than Court Mage, why do Court mage get 17 points? what even?
-	character.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
-	character.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+	character.adjust_spellpoints(14) //Less points than Court Mage, why do Court mage get 17 points? what even?
+	character.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation, silent = TRUE)
 	character.generate_random_attunements(rand(4,6))
 	character.mana_pool.set_intrinsic_recharge(MANA_ALL_LEYLINES)
 	character.mana_pool.adjust_mana(100) //I don't know, they don't spawn with their full mana bar, so we give them a bit more mana at the start.

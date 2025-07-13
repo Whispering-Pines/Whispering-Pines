@@ -36,7 +36,7 @@
 	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_dagger.ogg'
 	COOLDOWN_DECLARE(flip_cooldown)
 
-/obj/item/weapon/knife/rmb_self(mob/user)
+/obj/item/weapon/knife/attack_self_secondary(mob/user, params)
 	. = ..()
 	if(.)
 		return
@@ -364,7 +364,7 @@
 
 //................ Old Godsian Dagger ............... //
 /obj/item/weapon/knife/dagger/psydon
-	name = "psydonian dagger"
+	name = "old goddean dagger"
 	icon = 'modular_whisper/icons/weapons/weapons.dmi'
 	desc = "A silver dagger favored by close range fighters of the inquisition."
 	icon_state = "psydagger"
@@ -606,7 +606,7 @@
 	melt_amount = 50
 
 /obj/item/weapon/knife/throwingknife/psydon
-	name = "psydonian tossblade"
+	name = "old goddean tossblade"
 	desc = "An unconventional method of delivering silver to a heretic; but one OLD GODS smiles at, all the same. Doubles as an 'actual' knife in a pinch."
 	item_state = "bone_dagger"
 	force = 12

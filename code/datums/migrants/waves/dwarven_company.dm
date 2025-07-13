@@ -80,8 +80,8 @@
 		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if(H.age == AGE_OLD)
-			H.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
-			H.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(1,2), TRUE)
+			H.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/pants/trou
 		shoes = /obj/item/clothing/shoes/boots/leather
@@ -139,8 +139,8 @@
 		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if(H.age == AGE_OLD)
-			H.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
-			H.adjust_skillrank(/datum/skill/craft/armorsmithing, pick(1,2), TRUE)
+			H.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/pants/trou
 		shoes = /obj/item/clothing/shoes/simpleshoes/buckle

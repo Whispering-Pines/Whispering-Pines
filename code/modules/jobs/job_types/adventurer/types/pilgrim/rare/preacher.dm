@@ -29,5 +29,5 @@
 		H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-		H.set_patron(/datum/patron/old_gods)
+		H.set_patron(/datum/patron/psydon)
 	ADD_TRAIT(H, TRAIT_FOREIGNER, TRAIT_GENERIC)
