@@ -15,7 +15,7 @@
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	include_subtypes = FALSE
 	allowed_turfs = list(/turf/open/floor/snow,/turf/open/floor/grass/cold,/turf/open/floor/snow/patchy)
-	spawnableAtoms = list(/obj/structure/flora/grass/bush_meagre = 25,
+	spawnableAtoms = list(/obj/structure/flora/grass/bush_meagre/green = 25,
 						/obj/structure/flora/grass = 25,
 						/obj/structure/flora/grass/herb/random = 2,
 						/obj/item/natural/stone = 10,
@@ -40,6 +40,6 @@
 	spawnableAtoms = list(/obj/item/natural/stone = 3,
 						/obj/structure/flora/grass = 25,
 						/obj/structure/flora/grass/herb/random = 2,
-						/obj/structure/flora/grass/bush = 4,
+						/obj/structure/flora/grass/bush/green = 4,
 						/obj/item/grown/log/tree/stick = 10)
 	allowed_areas = list(/area/rogue/outdoors/mountains/anvil/grove)

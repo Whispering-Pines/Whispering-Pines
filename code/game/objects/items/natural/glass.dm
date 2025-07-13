@@ -1,6 +1,6 @@
 /obj/item/natural/glass
 	name = "glass"
-	desc = "A glass pane for constructing windows."
+	desc = "A glass pane for making glass things."
 	icon_state = "glasspane"
 	lefthand_file = 'icons/roguetown/onmob/lefthand.dmi'
 	righthand_file = 'icons/roguetown/onmob/righthand.dmi'

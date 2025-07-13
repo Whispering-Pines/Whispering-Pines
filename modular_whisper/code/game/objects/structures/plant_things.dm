@@ -214,3 +214,25 @@
 	description = "<span class='nicered'>All my bits were drained dry, phew. I feel a bit lightheaded.</span>\n"
 	mood_change = 4
 	timeout = 5 MINUTES
+
+//no more red bushes and gray ass grass
+/obj/structure/flora/grass/bush/green
+	color = "#1aff00"
+
+/obj/structure/flora/grass/bush/wall/green
+	color = "#1aff00"
+
+/obj/structure/flora/grass/bush/wall/tall/green
+	color = "#1aff00"
+
+/obj/structure/flora/grass/bush_meagre/green
+	color = "#1aff00"
+
+/obj/structure/flora/grass/thorn_bush/green
+	color = "#1aff00"
+
+/turf/open/floor/grass/greener
+	color = "#c0ffb9"
+
+/obj/structure/flora/grass/maneater
+	color = "#c0ffb9"

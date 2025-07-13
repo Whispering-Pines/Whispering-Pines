@@ -66,6 +66,18 @@
 	color = "#606060" //pure iron? let's make it violet of course
 
 /datum/reagent/iron/on_mob_life(mob/living/carbon/M)
-	if(M.blood_volume < BLOOD_VOLUME_NORMAL) //stabilize if in crit.
+	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
 		M.blood_volume += 5
+	..()
+
+/datum/reagent/charcoal
+	name = "Charcoal"
+	description = "black charcoal grinded into liquid"
+	reagent_state = SOLID
+	taste_description = "coal"
+	color = "#202020"
+
+/datum/reagent/charcoal/on_mob_life(mob/living/carbon/M)
+	if(volume > 0.99)
+		M.adjustToxLoss(-5, 0)
 	..()

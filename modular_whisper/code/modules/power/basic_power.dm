@@ -201,11 +201,12 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 	. += "The power gauge shows it is [(charge_stored/max_charge)*100]% charged."
 
 /obj/structure/chair/sexgenerator/process()
-	. = ..()
-	if(toggled)
-		charge_stored -= 1
-		if(!charge_stored)
-			toggle_power()
+	if(!toggled)
+		return
+	charge_stored -= 1
+	if(!charge_stored)
+		balloon_alert_to_viewers("Powers down.")
+		toggle_power()
 
 /obj/structure/chair/sexgenerator/Destroy()
 	if(toggled)
@@ -235,6 +236,7 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 	toggled = !toggled
 	var/area/current_area = get_area(src)
 	if(toggled)
+		START_PROCESSING(SSprocessing, src)
 		soundloop.start()
 		current_area.fake_power += 1 //hopefully should handle multiples
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
@@ -249,6 +251,7 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 			if(get_area(power_checker) == current_area)
 				power_checker.check_fake_power()
 	else
+		STOP_PROCESSING(SSprocessing, src)
 		soundloop.stop()
 		current_area.fake_power -= 1
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
@@ -312,7 +315,7 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 		victim.SetParalyzed(2 SECONDS)
 		victim.electrocution_animation(2 SECONDS)
 		victim.apply_damage(15, BURN, BODY_ZONE_PRECISE_GROIN, FALSE)
-		charge_stored -= max(0, charge_stored-20)
+		charge_stored = max(0, charge_stored-20)
 	charge_stored = min(charge_stored+charge_amt, max_charge)
 	if(charge_stored == max_charge)
 		balloon_alert_to_viewers("Fully charged!")

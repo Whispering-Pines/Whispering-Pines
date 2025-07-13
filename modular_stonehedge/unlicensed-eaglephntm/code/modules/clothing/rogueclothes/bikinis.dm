@@ -76,6 +76,26 @@
 	flags_inv = HIDEBOOB
 	is_bra = TRUE
 
+
+/obj/item/clothing/armor/leather/masterwork/bikini
+	name = "masterworkw leather bikini"
+	desc = "This bikini is a craftsmanship marvel. Made with the finest leather. Strong, nimble, reliable."
+	icon = 'modular_stonehedge/icons/clothing/armor/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/armor.dmi'
+	sleeved = 'modular_stonehedge/icons/clothing/armor/onmob/helpers/sleeves_armor.dmi'
+	icon_state = "mastkini"
+	item_state = "mastkini"
+	allowed_sex = list(FEMALE)
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/armor/leather/masterwork/bikini/bra
+	name = "masterwork leather bra"
+	desc = "This bra is a craftsmanship marvel. Made with the finest leather. Strong, even nimbler and reliable."
+	icon_state = "mastbra"
+	item_state = "mastbra"
+	flags_inv = HIDEBOOB
+	is_bra = TRUE
+
 /obj/item/clothing/armor/plate/bikini
 	name = "half-plate bikini"
 	desc = "Half plate in bikini form, still just as protective somehow."
@@ -352,7 +372,7 @@
 	craftdiff = 1
 	category = "Armor"
 
-/datum/repeatable_crafting_recipe/sewing/lgambesonbikini
+/datum/repeatable_crafting_recipe/sewing/lgambesonbra
 	name = "light gambeson bra"
 	output = /obj/item/clothing/armor/gambeson/light/bikini/bra
 	requirements = list(/obj/item/natural/cloth = 1,
@@ -446,21 +466,39 @@
 	created_item = /obj/item/clothing/armor/plate/full/bikini/bra
 	craftdiff = 4
 
-/datum/crafting_recipe/sewing/leather/hardenedbikini
+/datum/repeatable_crafting_recipe/leather/standalone/coat/bikini
 	name = "hardened leather bikini"
-	result = /obj/item/clothing/armor/leather/advanced/bikini
-	reqs = list(/obj/item/natural/hide/cured = 2,
+	output = /obj/item/clothing/armor/leather/advanced/bikini
+	requirements = list(/obj/item/natural/hide/cured = 1,
 				/obj/item/natural/fibers = 1,
 				/obj/item/reagent_containers/food/snacks/tallow = 1,)
 	craftdiff = 4
 
-/datum/crafting_recipe/sewing/leather/hardenedbra
+/datum/repeatable_crafting_recipe/leather/standalone/coat/bra
 	name = "hardened leather bra"
-	result = /obj/item/clothing/armor/leather/advanced/bikini/bra
-	reqs = list(/obj/item/natural/hide/cured = 2,
+	output = /obj/item/clothing/armor/leather/advanced/bikini/bra
+	requirements = list(/obj/item/natural/hide/cured = 1,
 				/obj/item/natural/fibers = 1,
 				/obj/item/reagent_containers/food/snacks/tallow = 1,)
 	craftdiff = 4
+
+/datum/repeatable_crafting_recipe/leather/standalone/coat/masterwork/bikini
+	name = "masterwork leather bikini"
+	output = /obj/item/clothing/armor/leather/masterwork/bikini
+	attacked_atom = /obj/item/clothing/armor/leather
+	requirements = list(/obj/item/clothing/armor/leather = 1,
+				/obj/item/natural/cured/essence = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 5
+
+/datum/repeatable_crafting_recipe/leather/standalone/coat/masterwork/bra
+	name = "masterwork leather bra"
+	output = /obj/item/clothing/armor/leather/masterwork/bikini/bra
+	attacked_atom = /obj/item/clothing/armor/leather
+	requirements = list(/obj/item/clothing/armor/leather = 1,
+				/obj/item/natural/cured/essence = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 5
 
 /datum/crafting_recipe/leather/bikini
 	name = "leather bikini (2 leather)"
@@ -475,19 +513,46 @@
 				/obj/item/natural/fur = 1)
 	sellprice = 26
 
-/datum/crafting_recipe/sewing/bra
+/datum/repeatable_crafting_recipe/leather/armor/bikini
+	name = "leather bikini armor"
+	requirements = list(
+		/obj/item/natural/hide/cured = 1,
+		/obj/item/natural/fibers = 1
+	)
+	output = /obj/item/clothing/armor/leather/bikini
+	craftdiff = 1
+
+/datum/repeatable_crafting_recipe/leather/armor/bra
 	name = "leather bra armor"
-	result = /obj/item/clothing/armor/leather/bikini/bra
-	reqs = list(/obj/item/natural/hide = 2)
-	sellprice = 26
+	requirements = list(
+		/obj/item/natural/hide/cured = 1,
+		/obj/item/natural/fibers = 1
+	)
+	output = /obj/item/clothing/armor/leather/bikini/bra
+	craftdiff = 1
 
 
-/datum/crafting_recipe/sewing/hidebra
+/datum/repeatable_crafting_recipe/leather/hidearmor/bikini
+	name = "hide bikini armor"
+	attacked_atom = /obj/item/natural/hide
+	requirements = list(
+		/obj/item/natural/hide = 1,
+		/obj/item/natural/fibers = 1,
+		/obj/item/natural/fur = 1,
+	)
+	output = /obj/item/clothing/armor/leather/hide/bikini
+	craftdiff = 2
+
+/datum/repeatable_crafting_recipe/leather/hidearmor/bra
 	name = "hide bra armor"
-	result = /obj/item/clothing/armor/leather/hide/bikini/bra
-	reqs = list(/obj/item/natural/hide = 2,
-				/obj/item/natural/fur = 1)
-	sellprice = 26
+	attacked_atom = /obj/item/natural/hide
+	requirements = list(
+		/obj/item/natural/hide = 1,
+		/obj/item/natural/fibers = 1,
+		/obj/item/natural/fur = 1,
+	)
+	output = /obj/item/clothing/armor/leather/hide/bikini/bra
+	craftdiff = 2
 
 ///----------------------CONVERSIONS--------------------------------------
 /datum/crafting_recipe/hauberkconvone
@@ -564,6 +629,16 @@
 	name = "leather bikini to bra"
 	result = /obj/item/clothing/armor/leather/bikini/bra
 	reqs = list(/obj/item/clothing/armor/leather/bikini = 1)
+
+/datum/crafting_recipe/mlarmorconvone
+	name = "masterwork leather armor to bikini"
+	result = /obj/item/clothing/armor/leather/masterwork/bikini
+	reqs = list(/obj/item/clothing/armor/leather/masterwork = 1)
+
+/datum/crafting_recipe/mlarmorconvtwo
+	name = "masterwork leather bikini to bra"
+	result = /obj/item/clothing/armor/leather/masterwork/bikini/bra
+	reqs = list(/obj/item/clothing/armor/leather/masterwork/bikini = 1)
 
 /datum/crafting_recipe/hidearmorconvone
 	name = "hide armor to bikini"

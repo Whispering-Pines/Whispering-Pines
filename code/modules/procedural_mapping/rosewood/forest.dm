@@ -103,9 +103,9 @@
 	clusterCheckFlags = CLUSTER_CHECK_NONE
 	allowed_turfs = list(/turf/open/floor/grass)
 	excluded_turfs = list(/turf/open/floor/grass/cold)
-	spawnableAtoms = list(/obj/structure/flora/grass/bush = 3,
-							/obj/structure/flora/grass/bush_meagre = 14,
-							/obj/structure/flora/grass/bush/wall/tall = 0.25,
+	spawnableAtoms = list(/obj/structure/flora/grass/bush/green = 3,
+							/obj/structure/flora/grass/bush_meagre/green = 14,
+							/obj/structure/flora/grass/bush/wall/tall/green = 0.25,
 							/obj/structure/flora/grass = 80,
 							/obj/structure/flora/grass/herb/random = 1,
 							/obj/structure/flora/grass/maneater = 1,

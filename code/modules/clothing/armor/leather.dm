@@ -31,7 +31,7 @@
 
 /obj/item/clothing/armor/leather/masterwork
 	name = "masterwork leather coat"
-	desc = "This coat is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+	desc = "This coat is a craftsmanship marvel. Made with the finest leather. Strong, nimble, reliable."
 	icon_state = "leather"
 	max_integrity = 400
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!

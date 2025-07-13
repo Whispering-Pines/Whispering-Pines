@@ -54,11 +54,10 @@
 		STOP_PROCESSING(SSprocessing, src)
 
 /obj/item/basic_power/process()
-	. = ..()
 	if(self_powering || !toggled)
 		return
 	if(charge_amt)
-		charge_amt -= max(0,charge_amt-1)
+		charge_amt = max(0,charge_amt-1)
 	else
 		balloon_alert_to_viewers("Powers down.")
 		toggle()

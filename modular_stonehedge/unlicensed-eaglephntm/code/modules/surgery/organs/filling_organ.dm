@@ -3,7 +3,8 @@
 /obj/item/organ/filling_organ
 	name = "self filling organ"
 
-	healing_factor = 0.5 //massive heal speed but they get damaged from sex so
+	//faster healing cause those will be rippin alot
+	healing_factor = STANDARD_ORGAN_HEALING*3
 	decay_factor = STANDARD_ORGAN_DECAY
 
 	//self generating liquid stuff, dont use with absorbing stuff
@@ -54,7 +55,7 @@
 	if(!issimple(H) && H.mind && organ_sizeable)
 		var/captarget = storage_per_size + (storage_per_size * organ_size) // Updates the max_reagents in case the organ size changes
 		if(damage)
-			captarget -= damage
+			captarget -= damage*5
 		if(contents.len)
 			for(var/obj/item/thing as anything in contents)
 				if(thing.type != /obj/item/dildo/plug) //plugs wont take space as they are especially for this.
@@ -84,6 +85,8 @@
 	if(damage > low_threshold)
 		if(prob(5))
 			to_chat(H, span_warning("My [pick(altnames)] aches..."))
+			if(damage > high_threshold) //internal bleeding ig
+				owner.transfer_blood_to(src, round(damage/10), TRUE)
 
 	// modify nutrition to generate reagents
 	if(!HAS_TRAIT(src, TRAIT_NOHUNGER)) //if not nohunger
@@ -307,9 +310,6 @@
 	slot = ORGAN_SLOT_GUTS
 	attack_verb = list("gored", "squished", "slapped", "digested")
 	desc = ""
-
-	healing_factor = STANDARD_ORGAN_HEALING
-	decay_factor = STANDARD_ORGAN_DECAY
 
 	low_threshold_passed = "<span class='info'>My guts flashes with pain before subsiding.</span>"
 	high_threshold_passed = "<span class='warning'>My guts flares up with constant pain.</span>"

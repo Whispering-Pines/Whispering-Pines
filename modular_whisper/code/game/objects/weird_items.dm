@@ -272,3 +272,19 @@
 	force = 8
 	smeltresult = null
 	max_integrity = 20
+
+/obj/item/natural/sand
+	name = "sand"
+	desc = "A piece of rough sand."
+	icon_state = "infernalash"
+	color = "#ffcd87"
+	item_state = "infernalash"
+	experimental_inhand = FALSE
+	gripped_intents = null
+	dropshrink = 0.75
+	possible_item_intents = list(INTENT_GENERIC)
+	force = 1
+	throwforce = 1
+	slot_flags = ITEM_SLOT_MOUTH
+	w_class = WEIGHT_CLASS_SMALL
+	resistance_flags = FIRE_PROOF

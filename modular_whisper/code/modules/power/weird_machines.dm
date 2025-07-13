@@ -392,12 +392,14 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	var/area/current_area = get_area(src)
 	if(current_area.fake_power)
 		toggled = TRUE
+		START_PROCESSING(SSprocessing, src)
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
 		balloon_alert_to_viewers("whirrs to life.")
 		set_light_on(TRUE)
 		update_light()
 	else
 		toggled = FALSE
+		STOP_PROCESSING(SSprocessing, src)
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		balloon_alert_to_viewers("dies down.")
 		set_light_on(FALSE)
@@ -423,7 +425,6 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	say("ALERT. A saved mind is trying to reclone, but there is Insufficent biomass stored!", language = /datum/language/ancient_english)
 
 /obj/machinery/basic_power/cloning_pod/process()
-	. = ..()
 	if(!toggled)
 		return
 	if(world.time < last_alert+30 SECONDS)

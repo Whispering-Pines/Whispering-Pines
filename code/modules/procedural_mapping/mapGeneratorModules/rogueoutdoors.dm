@@ -15,7 +15,7 @@
 	allowed_turfs = list(/turf/open/floor/dirt)
 	excluded_turfs = list(/turf/open/floor/dirt/road)
 	spawnableAtoms = list(/obj/structure/flora/newtree = 5,
-							/obj/structure/flora/grass/bush_meagre = 13,
+							/obj/structure/flora/grass/bush_meagre/green = 13,
 							/obj/structure/flora/grass/herb/random = 1,
 							/obj/structure/flora/grass = 50,
 							/obj/structure/flora/grass/maneater = 1,

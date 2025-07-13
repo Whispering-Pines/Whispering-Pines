@@ -25,6 +25,7 @@
 	destroy_sound = 'sound/items/pickbreak.ogg'
 	grid_width = 32
 	grid_height = 64
+	anvilrepair = /datum/skill/craft/blacksmithing
 
 //custom key
 /obj/item/key/custom

@@ -21,7 +21,6 @@
 	var/last_ejaculation_time = 0
 	var/last_moan = 0
 	var/last_pain = 0
-	var/msg_signature = ""
 	var/last_msg_signature = 0
 	var/last_crit_attempt = 0
 
@@ -55,14 +54,12 @@
 	animate(pixel_x = oldx, pixel_y = oldy, time = time)
 
 /datum/sex_controller/proc/do_message_signature(sigkey)
-	var/properkey = "[speed][force][sigkey]"
 	if(user.rogue_sneaking || user.alpha <= 100) //stealth sex les go
 		return FALSE
-	if(properkey == msg_signature && last_msg_signature + 8 SECONDS >= world.time)
+	if(last_msg_signature + 5 SECONDS >= world.time)
 		if(prob(40))
 			user.balloon_alert_to_viewers(pick("*plap*","*plop*","*slap*","*pap*","*slick*"))
 		return FALSE
-	msg_signature = properkey
 	last_msg_signature = world.time
 	return TRUE
 
@@ -756,7 +753,7 @@
 			break
 		if(ishuman(user))
 			var/mob/living/carbon/human/humanuser = user
-			humanuser.adjust_experience(/datum/skill/misc/athletics, (user.STAINT*0.04)*get_stamina_cost_multiplier()) //endurance training boiii
+			humanuser.adjust_experience(/datum/skill/misc/athletics, (humanuser.STAINT*0.02) * user.get_learning_boon(/datum/skill/misc/athletics)) //endurance training boiii
 		if(!do_after(user, (action.do_time / get_speed_multiplier()), target = target))
 			break
 		if(current_action == null || performed_action_type != current_action)
@@ -1039,21 +1036,23 @@
 		victim.do_jitter_animation(5*force)
 		victim.sexcon.perform_sex_action(victim, 2.4*victim.sexcon.get_force_pleasure_multiplier(force, FALSE), ((4*victim.sexcon.get_force_pain_multiplier(force))*victim.sexcon.get_speed_pain_multiplier(speed)), TRUE)
 		victim.sexcon.handle_passive_ejaculation()
-		if(victim.sexcon.do_message_signature("objectsex"))
+		if(victim.sexcon.do_message_signature("objectsex_[name]_[organ_slot]"))
 			if(cameloc && victim.getorganslot(organ_slot))
 				to_chat(victim, "[force_span][name] [force_adj] fucks [victim.name]'s [pick(cameloc.altnames)].</span>")
-				if(prob(5*(speed+force)) && can_cum)
-					to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [pick(cameloc.altnames)]!"))
-					cameloc.reagents.add_reagent(cum_type, cum_amt)
-					playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-					add_cum_floor(get_turf(src))
 			else
 				to_chat(victim, "[force_span][name] [force_adj] fucks [victim.name]'s [organ_slot].</span>") //fake message basically for unknown organs, such as mouth.
-				if(prob(5*(speed+force)) && can_cum)
-					to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [organ_slot]!"))
-					victim.reagents.add_reagent(cum_type, cum_amt)
-					playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-					add_cum_floor(get_turf(src))
+		if(cameloc && victim.getorganslot(organ_slot))
+			if(prob(5*(speed+force)) && can_cum)
+				to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [pick(cameloc.altnames)]!"))
+				cameloc.reagents.add_reagent(cum_type, cum_amt)
+				playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+				add_cum_floor(get_turf(src))
+		else
+			if(prob(5*(speed+force)) && can_cum)
+				to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [organ_slot]!"))
+				victim.reagents.add_reagent(cum_type, cum_amt)
+				playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+				add_cum_floor(get_turf(src))
 	//ending
 	if(cameloc && victim.getorganslot(organ_slot))
 		balloon_alert_to_viewers("Disconnects from [victim]'s [pick(cameloc.altnames)]")
