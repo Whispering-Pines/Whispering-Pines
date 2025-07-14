@@ -97,7 +97,7 @@
 					situational_bonus = min(situational_bonus + 1, 25)
 				conditional_buff = TRUE
 			if(/datum/patron/divine/necra)
-				cast_on.visible_message(span_info("A sense of quiet respite radiates from [cast_on]!"), span_notice("I feel the Undermaiden's gaze turn from me for now!"))
+				cast_on.visible_message(span_info("A sense of quiet respite radiates from [cast_on]!"), span_notice("I feel the Death's gaze turn from me for now!"))
 				if (iscarbon(cast_on))
 					var/mob/living/carbon/C = cast_on
 					// if the cast_on is "close to death" (at or below 25% health)

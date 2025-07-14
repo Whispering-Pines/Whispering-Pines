@@ -1,12 +1,14 @@
 GLOBAL_LIST_EMPTY(basic_power_machines)
 GLOBAL_LIST_EMPTY(basic_power_relays)
 GLOBAL_LIST_EMPTY(basic_power_lamps)
-GLOBAL_LIST_EMPTY(power_generators)
+GLOBAL_LIST_EMPTY(nuclear_generators)
 
 //this is just cosmetic since i cant possibly return power code.
 //this has a toggle which sets area as a ghetto powered state to be checked rather than having to search every tile of an area by machines.
+//This might need a rework later but fuck me it was tough I aint gonna do it -vide.
 
 /obj/proc/check_area_power()
+	var/area/current_area = get_area(src)
 	for(var/obj/machinery/basic_power/power_checker in GLOB.basic_power_machines)
 		if(get_area(power_checker) == current_area)
 			power_checker.check_fake_power()
@@ -19,14 +21,8 @@ GLOBAL_LIST_EMPTY(power_generators)
 	for(var/obj/machinery/light/fueledstreet/basic_power/power_checker in GLOB.basic_power_lamps)
 		if(get_area(power_checker) == current_area)
 			power_checker.check_fake_power()
-	//power checks
-	for(var/obj/machinery/mini_nuclear_generator/power_checker in GLOB.power_generators)
-		if(get_area(power_checker) == current_area && toggled)
-			current_area.fake_power = TRUE
-	for(var/obj/structure/chair/sexgenerator/power_checker in GLOB.power_generators)
-		if(get_area(power_checker) == current_area && toggled && charge_stored)
-			current_area.fake_power = TRUE
 
+//do not place more than one, it will mess with relays and everything.
 /obj/machinery/mini_nuclear_generator
 	name = "Nuclear generator"
 	icon = 'modular_whisper/icons/misc/machines.dmi'
@@ -38,16 +34,16 @@ GLOBAL_LIST_EMPTY(power_generators)
 /obj/machinery/mini_nuclear_generator/Initialize(mapload, ...)
 	. = ..()
 	soundloop = new(src, FALSE)
-	GLOB.power_generators += src
+	GLOB.nuclear_generators += src
 
 /obj/machinery/mini_nuclear_generator/Destroy()
-	GLOB.power_generators -= src
+	GLOB.nuclear_generators -= src
 	if(toggled)
 		var/area/current_area = get_area(src)
-		current_area.fake_power = FALSE
+		current_area.fake_power = max(0, current_area.fake_power-1)
 		check_area_power()
 		for(var/obj/machinery/power_relay/power_checker in GLOB.basic_power_relays)
-			power_checker.power_available = FALSE
+			power_checker.power_available = max(0, power_checker.power_available-1)
 			power_checker.check_fake_power()
 	if(soundloop)
 		QDEL_NULL(soundloop)
@@ -67,19 +63,19 @@ GLOBAL_LIST_EMPTY(power_generators)
 	var/area/current_area = get_area(src)
 	if(toggled)
 		soundloop.start()
-		current_area.fake_power = TRUE
+		current_area.fake_power += 1 //hopefully should handle multiples
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
 		icon_state = "[initial(icon_state)]_on"
 		for(var/obj/machinery/power_relay/power_checker in GLOB.basic_power_relays)
-			power_checker.power_available = TRUE
+			power_checker.power_available += 1
 			power_checker.check_fake_power()
 	else
 		soundloop.stop()
-		current_area.fake_power = FALSE
+		current_area.fake_power = max(0, current_area.fake_power-1)
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		icon_state = "[initial(icon_state)]_off"
 		for(var/obj/machinery/power_relay/power_checker in GLOB.basic_power_relays)
-			power_checker.power_available = FALSE
+			power_checker.power_available = max(0, power_checker.power_available-1)
 			power_checker.check_fake_power()
 	check_area_power()
 
@@ -205,7 +201,6 @@ GLOBAL_LIST_EMPTY(power_generators)
 
 /obj/structure/chair/sexgenerator/Initialize(mapload, ...)
 	. = ..()
-	GLOB.power_generators += src
 	soundloop = new(src, FALSE)
 
 /obj/structure/chair/sexgenerator/examine(mob/user)
@@ -221,10 +216,9 @@ GLOBAL_LIST_EMPTY(power_generators)
 		toggle_power()
 
 /obj/structure/chair/sexgenerator/Destroy()
-	GLOB.power_generators -= src
 	if(toggled)
 		var/area/current_area = get_area(src)
-		current_area.fake_power = FALSE
+		current_area.fake_power = max(0, current_area.fake_power-1)
 		check_area_power()
 	if(soundloop)
 		QDEL_NULL(soundloop)
@@ -243,13 +237,13 @@ GLOBAL_LIST_EMPTY(power_generators)
 	if(toggled)
 		START_PROCESSING(SSprocessing, src)
 		soundloop.start()
-		current_area.fake_power = TRUE
+		current_area.fake_power += 1 //hopefully should handle multiples
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
 		icon_state = "milker_gen_on"
 	else
 		STOP_PROCESSING(SSprocessing, src)
 		soundloop.stop()
-		current_area.fake_power = FALSE
+		current_area.fake_power = max(0, current_area.fake_power-1)
 		playsound(loc, 'sound/foley/industrial/loadout.ogg', 100)
 		icon_state = "milker_gen"
 	check_area_power()
@@ -316,7 +310,8 @@ GLOBAL_LIST_EMPTY(power_generators)
 	icon_state = "relay_off"
 	desc = "A power relay capable of sending nuclear power to other parts of the land."
 	var/toggled = TRUE
-	var/power_available = FALSE
+	var/power_available = 0
+	var/last_power = 0
 
 /obj/machinery/power_relay/update_icon_state()
 	. = ..()
@@ -334,7 +329,7 @@ GLOBAL_LIST_EMPTY(power_generators)
 	GLOB.basic_power_relays -= src
 	var/area/current_area = get_area(src)
 	if(power_available && toggled)
-		current_area.fake_power = FALSE
+		current_area.fake_power = max(0, current_area.fake_power-1)
 	check_area_power()
 	. = ..()
 
@@ -351,13 +346,18 @@ GLOBAL_LIST_EMPTY(power_generators)
 
 /obj/machinery/power_relay/proc/check_fake_power()
 	var/area/current_area = get_area(src)
-	if(!power_available || !toggled)
-		current_area.fake_power = FALSE
-	else if(power_available && toggled)
-		current_area.fake_power = TRUE
+	//We dont add more than one unit of power even if we got more than 1 available. In case of some cursed situation where we got two reactors or something.
+	if(!power_available && last_power && toggled) //looks like we lost power from the reactor, but we had power and were giving it out.
+		current_area.fake_power = max(0, current_area.fake_power-1)
+	else if(power_available) //we got power, now toggles determine if we emit power.
+		if(last_power >= power_available && !toggled && (power_available < 2 && last_power < 2)) //toggled off, we got less power than before.
+			current_area.fake_power = max(0, current_area.fake_power-1)
+		else if(last_power <= power_available && toggled && (power_available < 2 && last_power < 2)) //toggled on, we got more power than before
+			current_area.fake_power += 1
 	update_appearance(UPDATE_ICON_STATE)
 	last_power = power_available
 	check_area_power()
+
 
 //lights
 /obj/machinery/light/fueledstreet/basic_power

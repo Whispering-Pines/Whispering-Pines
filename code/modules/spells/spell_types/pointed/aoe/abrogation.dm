@@ -2,7 +2,7 @@
 
 /datum/action/cooldown/spell/aoe/abrogation
 	name = "Abrogation"
-	desc = "Bring forth motes of the Undermaiden to weaken the unliving."
+	desc = "Bring forth motes of the Death to weaken the unliving."
 	button_icon_state = "necra"
 	sound = 'sound/magic/churn.ogg'
 	charge_sound = 'sound/magic/holycharging.ogg'
@@ -13,7 +13,7 @@
 	associated_skill = /datum/skill/magic/holy
 	required_items = list(/obj/item/clothing/neck/psycross)
 
-	invocation = "The Undermaiden rejects your presence!"
+	invocation = "The Death rejects your presence!"
 	invocation_type = INVOCATION_SHOUT
 
 	charge_time = 3 SECONDS

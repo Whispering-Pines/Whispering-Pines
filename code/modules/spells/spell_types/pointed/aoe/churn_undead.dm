@@ -11,7 +11,7 @@
 	associated_skill = /datum/skill/magic/holy
 	required_items = list(/obj/item/clothing/neck/psycross/silver/necra)
 
-	invocation = "The Undermaiden rebukes!"
+	invocation = "The Death rebukes!"
 	invocation_type = INVOCATION_SHOUT
 
 	charge_time = 4 SECONDS
