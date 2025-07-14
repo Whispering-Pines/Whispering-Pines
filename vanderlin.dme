@@ -2940,6 +2940,7 @@
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
 #include "modular\code\game\objects\items\lewd\dildo.dm"
+#include "modular\Neu_Food\code\cookware\ration.dm"
 #include "modular_azure\code\_statpacks.dm"
 #include "modular_azure\code\azure_bleak_items.dm"
 #include "modular_azure\code\azure_bleak_structures.dm"
@@ -2973,6 +2974,7 @@
 #include "modular_whisper\code\datums\loadout.dm"
 #include "modular_whisper\code\datums\status_effects\status_effects.dm"
 #include "modular_whisper\code\datums\stock\import.dm"
+#include "modular_whisper\code\game\area\roguetownareas.dm"
 #include "modular_whisper\code\game\objects\weird_items.dm"
 #include "modular_whisper\code\game\objects\items\leash.dm"
 #include "modular_whisper\code\game\objects\items\powered.dm"
@@ -3008,6 +3010,4 @@
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
 #include "modular_whisper\code\modules\surgery\surgeries\resize_surgery.dm"
-#include "modular\Neu_Food\code\cookware\ration.dm"
-#include "modular_whisper\code\game\area\roguetownareas.dm"
 // END_INCLUDE

@@ -26,7 +26,7 @@
 	/// If we are switching states
 	var/switching_states = FALSE
 	/// Delay of auto closing, values 0 or below do not auto close.
-	var/close_delay = 0.5 SECONDS
+	var/close_delay = 0.6 SECONDS
 	/// How long should it take for the door to change states? Ideally matches the icon's animation length
 	var/animate_time = 0.3 SECONDS
 	var/open_sound = 'sound/foley/doors/creak.ogg'

@@ -167,3 +167,20 @@
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 1
 	structurecraft = /obj/machinery/light/fueled/smelter
+
+//head bag
+/datum/repeatable_crafting_recipe/sewing/headbag
+	name = "head sack"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/fibers = 1,
+	)
+	tool_usage = list(
+		/obj/item/needle = list("starts to sew", "start to sew")
+	)
+	starting_atom = /obj/item/needle
+	attacked_atom = /obj/item/natural/cloth
+	output = /obj/item/clothing/head/sack
+	craftdiff = 2
+	skillcraft = /datum/skill/misc/sewing
+	subtypes_allowed = TRUE

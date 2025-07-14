@@ -417,12 +417,3 @@
 	desc = "Master key of the bathhouse."
 	icon_state = "rustkey"
 	lockids = list("nightman")
-
-/obj/structure/door/secret/bath/examine(mob/user)
-	. = ..()
-	if(user.job == "nightmaster")
-		. += span_purple("There's a hidden wall here...")
-
-/obj/structure/lever/hidden/bath/feel_button(mob/living/user)
-	if(user.job == "nightmaster")
-		..()

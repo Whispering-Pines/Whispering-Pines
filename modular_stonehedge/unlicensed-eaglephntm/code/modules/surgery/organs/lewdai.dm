@@ -228,7 +228,7 @@
 	if(sexcon)
 		if(sexcon.current_action)
 			stoppedfucking()
-			if(!ai_controller.able_to_run())
+			if(!ai_controller?.able_to_run())
 				ai_controller.PauseAi(1) //override pauses.
 
 /mob/living/simple_animal
@@ -307,7 +307,7 @@
 			foundfuckmeat += fucktarg
 		if(foundfuckmeat.len)
 			L = pick(foundfuckmeat)
-			ai_controller.PauseAi(8 MINUTES)
+			ai_controller?.PauseAi(8 MINUTES)
 			if(Adjacent(L) || loc == L.loc)
 				if(iscarbon(L))
 					chasesfuck = FALSE
@@ -403,7 +403,7 @@
 	sexcon.current_action = null
 	chasesfuck = FALSE
 	seekboredom = 0
-	ai_controller.PauseAi(1)
+	ai_controller?.PauseAi(1)
 	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
 		fuckcd = rand(50,250)
 	else

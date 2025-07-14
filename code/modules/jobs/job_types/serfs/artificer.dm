@@ -1,5 +1,5 @@
 /datum/job/artificer
-	title = "Techwizard"
+	title = "Artificer"
 	tutorial = "You are one of the greatest minds of these lands- a 'techwizard' they call you, in reality you are an engineer. \
 	You will rebuild the future from it's corpse, regardless of what superstition the more mystical minded may spout. \
 	You know your machines' and old world machines' inner workings as well as you do stone, down to the last cog and wire."
