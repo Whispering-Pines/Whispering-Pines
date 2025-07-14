@@ -273,10 +273,6 @@
 /datum/job/proc/old_age_effects()
 	return
 
-/// When our guy is OLD do we do anything extra
-/datum/job/proc/old_age_effects()
-	return
-
 //Used for a special check of whether to allow a client to latejoin as this job.
 /datum/job/proc/special_check_latejoin(client/C)
 	return TRUE
