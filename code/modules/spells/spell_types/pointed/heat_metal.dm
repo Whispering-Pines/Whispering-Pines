@@ -3,7 +3,6 @@
 	desc = ""
 	button_icon_state = "heatmetal"
 	sound = 'sound/items/bsmithfail.ogg'
-	self_cast_possible = FALSE
 
 	cast_range = 2
 	spell_type = SPELL_MIRACLE
@@ -11,11 +10,10 @@
 	associated_skill = /datum/skill/magic/holy
 	required_items = list(/obj/item/clothing/neck/psycross/silver/malum)
 
-	invocation = "Metal bends to the heat of Malum's forge!"
+	invocation = "Metal bends to the heat of Deserts!"
 	invocation_type = INVOCATION_SHOUT
 
 	charge_time = 2 SECONDS
-	charge_drain = 1
 	charge_slowdown = 1.3
 	cooldown_time = 2 MINUTES
 	spell_cost = 40
@@ -44,7 +42,7 @@
 		target.visible_message("<font color='yellow'>After [owner]'s incantation, [target] melts into an ingot.</font>")
 		itemtospawn = new target.smeltresult(get_turf(target))
 	else if(target_loc == owner)
-		owner.visible_message("<font color='yellow'>[owner] channels Malum's power to smelt [target] [owner.p_theyre()] holding.</font>")
+		owner.visible_message("<font color='yellow'>[owner] channels the Desert's scorching heat to smelt [target] [owner.p_theyre()] holding.</font>")
 		itemtospawn = new target.smeltresult(get_turf(target))
 	else
 		return FALSE

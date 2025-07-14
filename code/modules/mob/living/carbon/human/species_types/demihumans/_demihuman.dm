@@ -12,6 +12,7 @@
 	id = "demihuman"
 	desc = "Generally an offspring of an anthro and a human, or a human turned anthrolike by some other means."
 
+	allowed_pronouns = PRONOUNS_LIST
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR, HAIR ,FACEHAIR, LIPS, STUBBLE, OLDGREY)

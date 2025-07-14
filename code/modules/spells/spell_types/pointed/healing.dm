@@ -1,28 +1,26 @@
 /datum/action/cooldown/spell/healing
-	name = "Miracle"
+	name = "Lesser Miracle"
 	desc = "Call upon your patron to heal the wounds of yourself or others."
 	button_icon_state = "lesserheal"
 	sound = 'sound/magic/heal.ogg'
 	charge_sound = 'sound/magic/holycharging.ogg'
 
-	cast_range = 3
+	cast_range = 6
 	spell_type = SPELL_MIRACLE
 	antimagic_flags = MAGIC_RESISTANCE_HOLY
 	associated_skill = /datum/skill/magic/holy
 	required_items = list(/obj/item/clothing/neck/psycross)
 
-	charge_time = 3 SECONDS
-	charge_drain = 1
-	charge_slowdown = 0.3
-	cooldown_time = 20 SECONDS
-	spell_cost = 25
+	charge_required = FALSE
+	cooldown_time = 10 SECONDS
+	spell_cost = 10
 
 	/// Base healing before adjustments
 	var/base_healing = 25
 	/// Wound healing modifier
 	var/wound_modifier = 0.25
 	/// Blood healing amount
-	var/blood_restoration = BLOOD_VOLUME_SURVIVE / 2
+	var/blood_restoration = 0
 	/// Stuns undead
 	var/stun_undead = FALSE
 
@@ -97,7 +95,7 @@
 					situational_bonus = min(situational_bonus + 1, 25)
 				conditional_buff = TRUE
 			if(/datum/patron/divine/necra)
-				cast_on.visible_message(span_info("A sense of quiet respite radiates from [cast_on]!"), span_notice("I feel the Death's gaze turn from me for now!"))
+				cast_on.visible_message(span_info("A sense of quiet respite radiates from [cast_on]!"), span_notice("I feel the Undermaiden's gaze turn from me for now!"))
 				if (iscarbon(cast_on))
 					var/mob/living/carbon/C = cast_on
 					// if the cast_on is "close to death" (at or below 25% health)
@@ -180,27 +178,13 @@
 		affecting.heal_wounds(base_healing * wound_modifier)
 		C.update_damage_overlays()
 
-// For churchlings or something idk
-/datum/action/cooldown/spell/healing/lesser
-	name = "Lesser Miracle"
-
-	cast_range = 2
-
-	cooldown_time = 30 SECONDS
-	spell_cost = 30
-
-	base_healing = 20
-	wound_modifier = 0.4
-	blood_restoration = 0
-
 /datum/action/cooldown/spell/healing/greater
-	name = "Greater Miracle"
+	name = "Miracle"
 	button_icon_state = "astrata"
 
-	cast_range = 5
-
-	charge_slowdown = 0.3
-	cooldown_time = 25 SECONDS
+	charge_required = TRUE
+	charge_time = 1 SECONDS
+	cooldown_time = 20 SECONDS
 	spell_cost = 45
 
 	base_healing = 50

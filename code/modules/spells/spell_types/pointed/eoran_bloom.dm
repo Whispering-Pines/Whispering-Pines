@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/eoran_bloom
-	name = "Eoran Bloom"
-	desc = "Grows an eoran bud on the target."
+	name = "Dream Bloom"
+	desc = "Grows an bud that pacifies, on the target."
 	button_icon_state = "pflower"
 	sound = 'sound/magic/magnet.ogg'
 
@@ -9,14 +9,14 @@
 	associated_skill = /datum/skill/magic/holy
 	required_items = list(/obj/item/clothing/neck/psycross/silver/eora)
 
-	invocation = "Be at peace with Eora!"
+	invocation = "Be at peace!"
 	invocation_type = INVOCATION_SHOUT
 
-	charge_time = 4 SECONDS
-	charge_drain = 1
-	charge_slowdown = 0.7
+	cast_range = 3
+
+	charge_time = 3 SECONDS
 	cooldown_time = 60 SECONDS
-	spell_cost = 60
+	spell_cost = 65
 
 /datum/action/cooldown/spell/eoran_bloom/cast(atom/cast_on)
 	. = ..()

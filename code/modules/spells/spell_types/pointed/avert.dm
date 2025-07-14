@@ -48,7 +48,7 @@
 	. = ..()
 
 	owner.visible_message(
-		span_notice("Whispering motes gently bead from [owner]'s fingers as [owner.p_they()] place a hand near [cast_on], scriptures of the Death spilling from their lips..."),
+		span_notice("Whispering motes gently bead from [owner]'s fingers as [owner.p_they()] place a hand near [cast_on], scriptures of the Last Death spilling from their lips..."),
 		span_notice("I stand beside [cast_on] and utter the hallowed words of Aeon's Intercession, staying Her grasp for just a little while longer..."),
 	)
 
@@ -70,6 +70,6 @@
 			to_chat(owner, span_warning("My devotion runs dry, the intercession fades from my lips!"))
 			break
 
-		invoke_cost(10)
+		invoke_cost(10, re_run = TRUE)
 
 	REMOVE_TRAIT(cast_on, TRAIT_NODEATH, "avert_spell")

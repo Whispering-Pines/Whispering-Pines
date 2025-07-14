@@ -314,7 +314,7 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 	if(!isnull(old_current))
 		SEND_SIGNAL(old_current, COMSIG_MOB_MIND_TRANSFERRED_OUT_OF, current)
 
-/// set the /necra time of a mind to the current world time
+/// set the last_death time of a mind to the current world time
 /datum/mind/proc/set_death_time()
 	last_death = world.time
 
