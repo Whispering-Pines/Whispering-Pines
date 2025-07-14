@@ -240,6 +240,8 @@
 	var/bloodiness = 20
 	var/obj/structure/closet/dirthole/holie
 	var/dirt_amt = 3
+	burn_power = 0
+	spread_chance = 0
 
 /turf/open/floor/dirt/attack_hand_secondary(mob/user, params)
 	. = ..()

@@ -38,6 +38,8 @@
 		H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_PER, 1)
 
+	if(!H.has_language(/datum/language/ancient_english))
+		H.grant_partial_language(/datum/language/ancient_english)
 	H.add_spell(/datum/action/cooldown/spell/diagnose)
 
 	ADD_TRAIT(H, TRAIT_FORAGER, TRAIT_GENERIC)

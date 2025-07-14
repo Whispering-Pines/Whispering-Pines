@@ -288,3 +288,15 @@
 	slot_flags = ITEM_SLOT_MOUTH
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FIRE_PROOF
+
+/turf/closed/mineral/sand
+	icon = MAP_SWITCH('icons/turf/smooth/walls/mineral.dmi', 'icons/turf/mining.dmi')
+	icon_state = MAP_SWITCH("mineral", "salt")
+	mineralType = /obj/item/natural/sand
+	rockType = /obj/item/natural/rock/sand
+	spreadChance = 12
+	spread = 3
+	max_integrity = 200
+
+/obj/item/natural/rock/sand
+	mineralType = /obj/item/natural/rock/sand

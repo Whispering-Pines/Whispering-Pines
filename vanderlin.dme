@@ -3009,4 +3009,5 @@
 #include "modular_whisper\code\modules\reagents\syringes.dm"
 #include "modular_whisper\code\modules\surgery\surgeries\resize_surgery.dm"
 #include "modular\Neu_Food\code\cookware\ration.dm"
+#include "modular_whisper\code\game\area\roguetownareas.dm"
 // END_INCLUDE

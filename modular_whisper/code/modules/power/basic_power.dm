@@ -188,7 +188,7 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 	item_chair = null
 	var/toggled = FALSE
 	var/charge_stored = 0
-	var/max_charge = 1000
+	var/max_charge = 10000
 	var/charge_amt
 	var/datum/looping_sound/streetlamp1/soundloop
 
@@ -290,17 +290,17 @@ GLOBAL_LIST_EMPTY(basic_power_machines)
 				sleep(0.3 SECONDS)
 				victim.visible_message(span_love("[victim] starts to thrust into the machine's apparatus."), span_red("I start to thrust into the machine's apparatus."))
 				addtimer(CALLBACK(src, PROC_REF(start_obj_sex), victim, SEX_SPEED_EXTREME, SEX_FORCE_MID, FALSE, ORGAN_SLOT_PENIS), 0.1 SECONDS, TIMER_STOPPABLE)
-				charge_amt += 3
+				charge_amt += 10
 			if(victim.getorganslot(ORGAN_SLOT_VAGINA))
 				sleep(0.3 SECONDS)
 				victim.visible_message(span_love("[victim] starts to bounce their pussy on the machine's phallus."), span_red("I start to bounce my pussy on the machine's phallus."))
 				addtimer(CALLBACK(src, PROC_REF(start_obj_sex), victim, SEX_SPEED_EXTREME, SEX_FORCE_MID, FALSE, ORGAN_SLOT_VAGINA), 0.2 SECONDS, TIMER_STOPPABLE)
-				charge_amt += 3
+				charge_amt += 10
 			if(victim.gender == FEMALE)
 				sleep(0.3 SECONDS)
 				victim.visible_message(span_love("[victim] starts to bounce their ass on the machine's phallus."), span_red("I start to bounce my ass on the machine's phallus."))
 				addtimer(CALLBACK(src, PROC_REF(start_obj_sex), victim, SEX_SPEED_EXTREME, SEX_FORCE_MID, FALSE, ORGAN_SLOT_GUTS), 0.3 SECONDS, TIMER_STOPPABLE)
-				charge_amt += 3
+				charge_amt += 10
 		else
 			playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			say("Obstruction on FUCKHOLES detected,  THIS FUCKING THING IS not DOABLE.")

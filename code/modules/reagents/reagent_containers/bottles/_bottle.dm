@@ -7,10 +7,10 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	icon = 'icons/roguetown/items/glass_reagent_container.dmi'
 	icon_state = "clear_bottle1"
 	var/original_icon_state = null
-	amount_per_transfer_from_this = 6
-	possible_transfer_amounts = list(6)
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 	volume = 70
-	fill_icon_thresholds = list(0, 25, 50, 75, 100)
+	fill_icon_thresholds = list(0, 10, 25, 50, 75, 100)
 	dropshrink = 0.8
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	obj_flags = CAN_BE_HIT

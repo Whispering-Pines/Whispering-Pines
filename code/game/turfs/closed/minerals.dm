@@ -195,7 +195,7 @@
 	wallclimb = TRUE
 	max_integrity = 400
 	///if this isn't empty, swaps to one of them via pickweight
-	var/list/mineralSpawnChanceList = list(/obj/item/natural/sand = 20, /turf/closed/mineral/salt = 20, /turf/closed/mineral/copper = 15, ,/turf/closed/mineral/tin = 12, /turf/closed/mineral/iron = 5, /turf/closed/mineral/coal = 5)
+	var/list/mineralSpawnChanceList = list(/turf/closed/mineral/sand = 20, /turf/closed/mineral/salt = 20, /turf/closed/mineral/copper = 15, ,/turf/closed/mineral/tin = 12, /turf/closed/mineral/iron = 5, /turf/closed/mineral/coal = 5)
 	///the chance to swap to something useful
 	var/mineralChance = 30
 

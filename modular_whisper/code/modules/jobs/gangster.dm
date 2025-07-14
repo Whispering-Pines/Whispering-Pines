@@ -1,7 +1,7 @@
 /datum/job/ganger
 	title = "Ganger"
 	tutorial = "You are basically a wanderer who isn't wandering... You are part of the minus gang and your gang has been keeping the underground yours, keeping law out so you may write your own.\
-	Fight the law, collect toll from small businesses for protection, get paid to beat someone up, j<ust remember mindless cruelty will always come back in due time. Your gang only will stand if people aren't arming up against it."
+	Fight the law, collect toll from small businesses for protection, get paid to beat someone up, j<ust remember mindless cruelty will always come back in due time. Your gang only will stand if people aren't arming up against it. (You are not a brigand or a full on antagonist.)"
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/ganger
 	outfit_female = null

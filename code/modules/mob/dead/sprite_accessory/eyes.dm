@@ -9,7 +9,7 @@
 		return
 	if(NOEYESPRITES in owner.dna?.species?.species_traits)
 		return FALSE
-	update_overlay(organ, owner)
+	addtimer(CALLBACK(src, PROC_REF(update_overlay), organ, owner), 0.5 SECONDS) //so it detects something you wear proper
 	return is_human_part_visible(owner, HIDEEYES)
 
 /datum/sprite_accessory/eyes/adjust_appearance_list(list/appearance_list, obj/item/organ/eyes/eyes, obj/item/bodypart/bodypart, mob/living/carbon/owner)

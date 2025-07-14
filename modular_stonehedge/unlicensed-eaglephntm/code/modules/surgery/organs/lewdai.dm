@@ -506,3 +506,4 @@
 					penis = new penis_organ
 				penis.organ_size = rand(penis_min, penis_max)
 				penis.Insert(user, TRUE)
+		color_key_source_list_from_carbon(src)

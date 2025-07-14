@@ -11,14 +11,14 @@
 
 /obj/item/ammo_holder/quiver/arrows/water
 	fill_type = /obj/item/ammo_casing/caseless/arrow/water
-	fill_to = 10
+	fill_to = 20
 
 /obj/item/ammo_holder/quiver/bolts
 	fill_type = /obj/item/ammo_casing/caseless/bolt
 
 /obj/item/ammo_holder/quiver/bolt/water
 	fill_type = /obj/item/ammo_casing/caseless/bolt/water
-	fill_to = 10
+	fill_to = 20
 
 /obj/item/ammo_holder/bullet
 	name = "bullet pouch"

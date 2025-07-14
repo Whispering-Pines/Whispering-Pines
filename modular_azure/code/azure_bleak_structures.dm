@@ -384,7 +384,7 @@ SUBSYSTEM_DEF(BMtreasury)
 	if(world.time > next_treasury_check)
 		next_treasury_check = world.time + rand(5 MINUTES, 8 MINUTES)
 		vault_accounting = list()
-		var/area/A = GLOB.areas_by_type[/area/rogue/outdoors/exposed/bath/vault]
+		var/area/A = GLOB.areas_by_type[/area/rogue/indoors/town/bath/vault]
 		var/amt_to_generate = 0
 		for(var/obj/item/I in A)
 			if(!isturf(I.loc))
@@ -398,6 +398,6 @@ SUBSYSTEM_DEF(BMtreasury)
 			brassface.budget += amt_to_generate // goes directly into BRASSFACE rather than into any account.
 		send_ooc_note("Income from smuggling hoard to the BRASSFACE: +[amt_to_generate]", job = list("Nightmaster"))
 
-/area/rogue/outdoors/exposed/bath/vault
+/area/rogue/indoors/town/bath/vault
 	name = "Bathmaster vault"
 	icon_state = "bathvault"

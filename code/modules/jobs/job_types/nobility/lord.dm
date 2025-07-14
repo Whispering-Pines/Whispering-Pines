@@ -30,6 +30,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 
 	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 	can_have_apprentices = FALSE
+	advclass_cat_rolls = list("CAT_LORD" = 20)
 
 /datum/job/lord/get_informed_title(mob/mob)
 	return "[ruler_title]"
@@ -54,8 +55,16 @@ GLOBAL_LIST_EMPTY(lord_titles)
 /datum/outfit/job/lord
 	job_bitflag = BITFLAG_ROYALTY
 
-/datum/outfit/job/lord/pre_equip(mob/living/carbon/human/H)
-	..()
+
+/datum/advclass/lord/monarch
+	name = "Monarch"
+	tutorial = "You grabbed the throne after the ancestors, whether through intrigue, favor or power. These lands are yours now, as long as you can keep it that way."
+	outfit = /datum/outfit/job/lord/monarch
+
+	category_tags = list("CAT_LORD")
+
+/datum/outfit/job/lord/monarch/pre_equip(mob/living/carbon/human/H)
+	. = ..()
 	head = /obj/item/clothing/head/crown/serpcrown
 	backr = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather/plaquegold
@@ -107,27 +116,71 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWKEEPPLANS, TRAIT_GENERIC)
 
-	var/classes = list(
-	"Monarch",
-	)
-	if(isresurgentis(H))
-		classes += "Ancestor"
-	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
-	switch(classchoice)
-		if("Monarch")
-			Monarch(H)
-		if("Ancestor") //the TRUE ruler of the land.
-			Ancestor(H)
+/datum/advclass/lord/ancestor
+	name = "Ancestor"
+	tutorial = "The true ruler of the land, you were created by death god himself and are grand grand grand parent of ever resaurgentis to ever exist, with other 'ancestors', you make alpha resurgentis, semi undead, manflesh craving first of kind."
+	outfit = /datum/outfit/job/lord/ancestor
+	allowed_races = list("Resurgentis")
 
-/datum/outfit/job/lord/proc/Monarch(mob/living/carbon/human/H)
-	//literally what you get from the parent
+	category_tags = list("CAT_LORD")
 
-/datum/outfit/job/lord/proc/Ancestor(mob/living/carbon/human/H)
+/datum/outfit/job/lord/ancestor/pre_equip(mob/living/carbon/human/H)
+	. = ..()
 	H.dna.species.species_traits |= DRINKSBLOOD
 	H.dna.species.liked_food = CANNIBAL
 	H.dna.species.disliked_food = GROSS
 	H.dna.species.toxic_food = VEGETABLES|GRAIN|FRUIT|DAIRY|FRIED|PINEAPPLE|CLOTH
+	H.age = AGE_IMMORTAL
+	head = /obj/item/clothing/head/crown/serpcrown
+	backr = /obj/item/storage/backpack/satchel
+	belt = /obj/item/storage/belt/leather/plaquegold
+	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1, /obj/item/scomstone = 1)
+	ring = /obj/item/clothing/ring/active/nomag
+	l_hand = /obj/item/weapon/lordscepter
+	H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/labor/mathematics, 3, TRUE)
+	if(H.age == AGE_OLD)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	if(H.gender == MALE)
+		pants = /obj/item/clothing/pants/tights/black
+		shirt = /obj/item/clothing/shirt/undershirt/black
+		armor = /obj/item/clothing/armor/gambeson/arming
+		shoes = /obj/item/clothing/shoes/boots
+		cloak = /obj/item/clothing/cloak/lordcloak
+		if(H.dna?.species)
+			if(H.dna.species.id == "human")
+				H.dna.species.soundpack_m = new /datum/voicepack/male/evil()
+	else
+		pants = /obj/item/clothing/pants/tights/random
+		armor = /obj/item/clothing/shirt/dress/royal
+		shirt = /obj/item/clothing/armor/gambeson/heavy
+		shoes = /obj/item/clothing/shoes/shortboots
+		cloak = /obj/item/clothing/cloak/lordcloak/ladycloak
+		wrists = /obj/item/clothing/wrists/royalsleeves
+
+		if(H.wear_mask)
+			if(istype(H.wear_mask, /obj/item/clothing/face/eyepatch))
+				qdel(H.wear_mask)
+				mask = /obj/item/clothing/face/lordmask
+			if(istype(H.wear_mask, /obj/item/clothing/face/eyepatch/left))
+				qdel(H.wear_mask)
+				mask = /obj/item/clothing/face/lordmask/l
+
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWKEEPPLANS, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBREATH, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOSLEEP, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_UGLY, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DARKVISION, TRAIT_GENERIC)
 	if(H.wear_mask)
@@ -135,12 +188,11 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		mask = /obj/item/clothing/face/facemask/goldmask
 	to_chat(H, span_notice("I am ancient, one of the first Resurgentis to ever exist and rightful owner of the throne, I witnessed with my very own eyes when the Last Death himself made me out of whatever husk I was in my previous life. Unfortunately this semi undead body of mine rotted in time and is hideous... Also unfortunately, I am forced in a cannibal diet due to my strange body."))
 	H.AddComponent(/datum/component/rot/stinky_person)
-	//The true ruler, likely to have many idiots rising up against him for being so hideous and an undead. vro is basically vlord.
-	H.change_stat(STATKEY_STR, 2) //4 after parent
-	H.change_stat(STATKEY_INT, 2) //5 after parent
+	H.change_stat(STATKEY_STR, 4) //4 after parent
+	H.change_stat(STATKEY_INT, 4) //4 after parent
 	H.change_stat(STATKEY_LCK, 2) //1 Compensation for ugly luck debuff + being chosen of last death
-	H.change_stat(STATKEY_END, 3)
-	H.change_stat(STATKEY_CON, 3)
+	H.change_stat(STATKEY_END, 2)
+	H.change_stat(STATKEY_CON, 2)
 
 /datum/job/exlord //just used to change the lords title
 	title = "Ex-Monarch"

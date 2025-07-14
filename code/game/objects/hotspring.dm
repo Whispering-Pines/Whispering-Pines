@@ -24,6 +24,7 @@
 	icon = 'icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring"
 	object_slowdown = 5
+	resistance_flags = FIRE_PROOF
 
 	var/edge = FALSE
 

@@ -34,6 +34,7 @@
 
 	//misc
 	var/list/altnames = list("bugged place", "bugged organ") //used in thought messages.
+	var/last_size_alert = 0
 
 	COOLDOWN_DECLARE(liquidcd)
 
@@ -55,7 +56,7 @@
 	if(!issimple(H) && H.mind && organ_sizeable)
 		var/captarget = storage_per_size + (storage_per_size * organ_size) // Updates the max_reagents in case the organ size changes
 		if(damage)
-			captarget -= damage*5
+			captarget = max(0, captarget-damage*10)
 		if(contents.len)
 			for(var/obj/item/thing as anything in contents)
 				if(thing.type != /obj/item/dildo/plug) //plugs wont take space as they are especially for this.
@@ -64,8 +65,9 @@
 			if(fertility && pregnant)
 				captarget *= 0.5
 			reagents.maximum_volume = captarget
-			if(H.has_quirk(/datum/quirk/selfawaregeni))
-				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
+			if(H.has_quirk(/datum/quirk/selfawaregeni) && world.time > last_size_alert + 8 SECONDS)
+				last_size_alert = world.time
+				to_chat(H, span_blue("My [pick(altnames)] hold a different amount now."))
 
 	//debuff checks
 	if(bloatable) //its bloatable.

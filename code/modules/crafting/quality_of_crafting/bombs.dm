@@ -4,7 +4,7 @@
 	craftdiff = 2
 
 /datum/repeatable_crafting_recipe/bomb/homemade
-	name = "homemade bottle bomb"
+	name = "bottle bomb"
 
 	requirements = list(
 		/obj/item/natural/cloth = 1,
@@ -17,7 +17,7 @@
 
 	starting_atom = /obj/item/natural/cloth
 	attacked_atom = /obj/item/reagent_containers/glass/bottle
-	output = /obj/item/bomb/homemade
+	output = /obj/item/bomb
 	craft_time = 1 SECONDS
 	uses_attacked_atom = TRUE
 	subtypes_allowed = TRUE

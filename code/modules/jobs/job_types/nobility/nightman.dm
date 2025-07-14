@@ -34,11 +34,12 @@
 	shoes = /obj/item/clothing/shoes/boots
 	belt = /obj/item/storage/belt/leather/black
 	shirt = /obj/item/clothing/armor/gambeson/heavy/dark
+	armor = /obj/item/clothing/armor/leather/jacket/apothecary
 	wrists = /obj/item/storage/keyring/nightman
 	neck = /obj/item/storage/belt/pouch/coins/rich
 	pants = /obj/item/clothing/pants/trou/leather
 	if(H.gender == FEMALE)
-		shirt = /obj/item/clothing/armor/gambeson/heavy/dress
+		shirt = /obj/item/clothing/armor/gambeson/heavy/dress/alt
 		pants = /obj/item/clothing/pants/tights/stockings/silk/black
 	beltl = /obj/item/weapon/whip
 	beltr = /obj/item/weapon/knife/dagger/steel/special
@@ -71,12 +72,7 @@
 		H.change_stat(STATKEY_INT, -1)
 		H.change_stat(STATKEY_CON, 1)
 		H.change_stat(STATKEY_END, 2)
-
-
-		armor = /obj/item/clothing/armor/leather/jacket/apothecary
 		H.dna.species.soundpack_m = new /datum/voicepack/male/zeth()
-	else if(H.gender == FEMALE)
-		armor = /obj/item/clothing/armor/gambeson/heavy/dress/alt
 
 /datum/action/cooldown/spell/undirected/list_target/convert_role/prostitute
 	name = "Hire Prostitute"
@@ -421,3 +417,12 @@
 	desc = "Master key of the bathhouse."
 	icon_state = "rustkey"
 	lockids = list("nightman")
+
+/obj/structure/door/secret/bath/examine(mob/user)
+	. = ..()
+	if(user.job == "nightmaster")
+		. += span_purple("There's a hidden wall here...")
+
+/obj/structure/lever/hidden/bath/feel_button(mob/living/user)
+	if(user.job == "nightmaster")
+		..()
