@@ -90,8 +90,6 @@
 
 	var/converted_type
 
-	var/fake_power = 0
-
 /**
  * A list of teleport locations
  *

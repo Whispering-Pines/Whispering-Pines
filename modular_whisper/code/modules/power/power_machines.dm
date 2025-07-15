@@ -7,6 +7,14 @@
 	var/biomass_amount = 0
 	var/obj/item/produced_thing = null
 
+/obj/machinery/basic_power/on_power_update(datum/source, area/current_area)
+	if(current_area.basic_power)
+		toggled = TRUE
+		icon_state = "[initial(icon_state)]_on"
+	else
+		toggled = FALSE
+		icon_state = "[initial(icon_state)]_off"
+
 /obj/machinery/basic_power/attack_hand(mob/living/user)
 	if(Adjacent(user) && user.pulling)
 		if(isliving(user.pulling))
@@ -343,12 +351,12 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 	say("Dispensing blood pack.", language = /datum/language/ancient_english)
 	sleep(1 SECONDS)
-	if(reagents.total_volume >= 300)
-		while(reagents.total_volume >= 300)
+	if(reagents.total_volume >= 400)
+		while(reagents.total_volume >= 400)
 			playsound(loc, 'sound/items/fillbottle.ogg', 100)
 			sleep(2 SECONDS)
 			var/obj/item/reagent_containers/blood/bloodpack = new /obj/item/reagent_containers/blood(src.loc)
-			reagents.trans_to(bloodpack, 300, FALSE, TRUE, FALSE)
+			reagents.trans_to(bloodpack, 400, FALSE, TRUE, FALSE)
 	else
 		playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		say("Insufficent blood stored.", language = /datum/language/ancient_english)
@@ -387,10 +395,9 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	var/mutable_appearance/emiss
 	var/growing = FALSE
 
-/obj/machinery/basic_power/cloning_pod/check_fake_power()
+/obj/machinery/basic_power/cloning_pod/on_power_update(datum/source, area/current_area)
 	//no icon changes but instead emit green light
-	var/area/current_area = get_area(src)
-	if(current_area.fake_power)
+	if(current_area.basic_power)
 		toggled = TRUE
 		START_PROCESSING(SSprocessing, src)
 		playsound(loc, 'sound/foley/industrial/loadin.ogg', 100)
@@ -404,6 +411,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		balloon_alert_to_viewers("dies down.")
 		set_light_on(FALSE)
 		update_light()
+	update_appearance(UPDATE_ICON_STATE)
 
 /obj/machinery/basic_power/cloning_pod/examine(mob/user)
 	. = ..()
@@ -668,11 +676,6 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	breakoutextra = 4 MINUTES
 	var/suck_bonus
 
-/obj/structure/chair/basic_power/milker/self_powered
-	name = "Self powered Milker"
-	desc = "A strange machine that used to milk livestock in the old world, now modified to milk people... A salvaged off the grid version of the milker that is less efficent."
-	self_powered = TRUE
-
 /obj/structure/chair/basic_power/milker/examine(mob/user)
 	. = ..()
 	. += "It seems [reagents.total_volume/3]/[reagents.maximum_volume] oz full."
@@ -697,6 +700,8 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		playsound(loc, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		say("Analyzing cattle specifications...", language = /datum/language/ancient_english)
 		sleep(2 SECONDS)
+		if(!length(buckled_mobs)) //incase they moved while sleep.
+			return
 		if(!get_location_accessible(victim, BODY_ZONE_CHEST))
 			playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			say("Obstruction on udder detected, remove obstructions and try again.", language = /datum/language/ancient_english)
@@ -742,8 +747,6 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		return
 	var/obj/item/organ/filling_organ/breasts/forgan = victim.getorganslot(ORGAN_SLOT_BREASTS)
 	if(forgan)
-		if(self_powered)
-			suck_bonus *= 0.3
 		forgan.reagents.trans_to(src, 10+suck_bonus) //bit by bit it milks
 		if(forgan.reagents.total_volume <= 15)
 			balloon_alert_to_viewers("struggles to suck any more.")
@@ -779,3 +782,37 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 		playsound(loc, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		say("Nothing stored.", language = /datum/language/ancient_english)
 	. = ..()
+
+//lights
+/obj/machinery/light/fueledstreet/basic_power
+	name = "street lamp"
+
+/obj/machinery/light/fueledstreet/basic_power/Initialize()
+	. = ..()
+	AddComponent(/datum/component/basic_power, CALLBACK(src, PROC_REF(on_power_update)))
+
+/obj/machinery/light/fueledstreet/basic_power/on_power_update(datum/source, area/current_area)
+	if(current_area.basic_power && anchored)
+		lights_on()
+	else
+		lights_out(TRUE)
+	update_appearance(UPDATE_ICON_STATE)
+
+/obj/machinery/light/fueledstreet/basic_power/blue
+	icon_state = "slamp3"
+	bulb_colour = "#6cfdff"
+	base_state = "slamp"
+	state_suffix = "3"
+
+/obj/machinery/light/fueledstreet/basic_power/blue/midlamp
+	icon = 'icons/roguetown/misc/64x64.dmi'
+	icon_state = "midlamp3"
+	base_state = "midlamp"
+	state_suffix = "3"
+	pixel_x = -16
+	density = TRUE
+
+/obj/machinery/light/fueledstreet/basic_power/blue/wall
+	icon_state = "wlamp3"
+	base_state = "wlamp"
+	state_suffix = "3"

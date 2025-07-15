@@ -79,36 +79,34 @@
 				if(!owner.has_status_effect(/datum/status_effect/debuff/bloattwo))
 					owner.apply_status_effect(/datum/status_effect/debuff/bloattwo)
 
-	if(reagents.total_volume > reagents.maximum_volume) //lil allowance
-		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill it's excesss contents with the pressure built up on it!"),span_unconscious("I hear a splash."))
-		reagents.remove_all(reagents.total_volume - reagents.maximum_volume)
-		playsound(owner, 'sound/foley/waterenter.ogg', 15)
-
 	if(damage > low_threshold)
-		if(prob(5))
+		if(prob(3))
 			to_chat(H, span_warning("My [pick(altnames)] aches..."))
-			if(damage > high_threshold) //internal bleeding ig
-				owner.transfer_blood_to(src, round(damage/10), TRUE)
+		if(damage > high_threshold) //internal bleeding ig
+			owner.transfer_blood_to(src, round(damage/10), TRUE)
+			to_chat(H, span_boldwarning("My [pick(altnames)] BLEEDS..!"))
+
 
 	// modify nutrition to generate reagents
-	if(!HAS_TRAIT(src, TRAIT_NOHUNGER)) //if not nohunger
-		if(owner.nutrition < (NUTRITION_LEVEL_HUNGRY - 25) && hungerhelp) //consumes if hungry and uses nutrient, putting below the limit so person dont get stress message spam.
-			var/remove_amount = min(reagent_generate_rate, reagents.total_volume)
-			if(uses_nutrient) //add nutrient
-				owner.adjust_nutrition(remove_amount) //since hunger factor is so tiny compared to the nutrition levels it has to fill
-			reagents.remove_reagent(reagent_to_make, (remove_amount*4)) //we consume our own reagents for food less efficently, allowing running out (may undo this multiplier later.)
-		else
-			if((reagents.total_volume < reagents.maximum_volume) && refilling && owner.nutrition > (NUTRITION_LEVEL_FED + 25)) //if organ is not full.
-				var/max_restore = owner.nutrition > (NUTRITION_LEVEL_WELL_FED) ? reagent_generate_rate * 2 : reagent_generate_rate
-				var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume) // amount restored if fed, capped by reagents.maximum_volume
-				if(uses_nutrient) //consume nutrient
-					owner.adjust_nutrition(-restore_amount)
+	if(damage) //cant regen or consume while damaged.
+		if(!HAS_TRAIT(src, TRAIT_NOHUNGER)) //if not nohunger
+			if(owner.nutrition < (NUTRITION_LEVEL_HUNGRY - 25) && hungerhelp) //consumes if hungry and uses nutrient, putting below the limit so person dont get stress message spam.
+				var/remove_amount = min(reagent_generate_rate, reagents.total_volume)
+				if(uses_nutrient) //add nutrient
+					owner.adjust_nutrition(remove_amount) //since hunger factor is so tiny compared to the nutrition levels it has to fill
+				reagents.remove_reagent(reagent_to_make, (remove_amount*4)) //we consume our own reagents for food less efficently, allowing running out (may undo this multiplier later.)
+			else
+				if((reagents.total_volume < reagents.maximum_volume) && refilling && owner.nutrition > (NUTRITION_LEVEL_FED + 25)) //if organ is not full.
+					var/max_restore = owner.nutrition > (NUTRITION_LEVEL_WELL_FED) ? reagent_generate_rate * 2 : reagent_generate_rate
+					var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume) // amount restored if fed, capped by reagents.maximum_volume
+					if(uses_nutrient) //consume nutrient
+						owner.adjust_nutrition(-restore_amount)
+					reagents.add_reagent(reagent_to_make, restore_amount)
+		else //if nohunger, should just regenerate stuff for free no matter what, if refilling.
+			if((reagents.total_volume < reagents.maximum_volume) && refilling)
+				var/max_restore = reagent_generate_rate * 2
+				var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume)
 				reagents.add_reagent(reagent_to_make, restore_amount)
-	else //if nohunger, should just regenerate stuff for free no matter what, if refilling.
-		if((reagents.total_volume < reagents.maximum_volume) && refilling)
-			var/max_restore = reagent_generate_rate * 2
-			var/restore_amount = min(max_restore, reagents.maximum_volume - reagents.total_volume)
-			reagents.add_reagent(reagent_to_make, restore_amount)
 
 	if(!COOLDOWN_FINISHED(src, liquidcd))
 		return
@@ -119,7 +117,6 @@
 		if((reagents.total_volume && spiller) || (reagents.total_volume > reagents.maximum_volume)) //spiller or above it's capacity to leak.
 			var/obj/item/clothing/blockingitem = H.mob_slot_wearing(blocker)
 			if(blockingitem && !blockingitem.genital_access) //we aint dripping a drop.
-
 			/*
 				tempdriprate = 0.1 //if worn slot cover it, drip nearly nothing.
 				if(owner.has_quirk(/datum/quirk/selfawaregeni))
@@ -136,9 +133,9 @@
 						span_info("Some liquid drips from my [pick(altnames)]."),
 						span_info("My [pick(altnames)] spills some liquid."),
 						span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)].")))
-				var/obj/item/reagent_containers/glass/the_bottle
+				var/obj/item/reagent_containers/the_bottle
 				if((owner.mobility_flags & MOBILITY_STAND))
-					for(var/obj/item/reagent_containers/glass/bottle in range(0,H)) //having a bottle under us speed up leak greatly and transfer the leak there instead.
+					for(var/obj/item/reagent_containers/bottle in range(0,H)) //having a bottle under us speed up leak greatly and transfer the leak there instead.
 						if(bottle.reagents.total_volume >= bottle.reagents.maximum_volume)
 							continue
 						if(bottle.reagents.flags & REFILLABLE)
@@ -151,6 +148,14 @@
 					tempdriprate *= 50 //since default values are basically decimals.
 					reagents.trans_to(the_bottle, min(tempdriprate, avlspace))
 					to_chat(owner, span_info("I collect the fluids in \the [the_bottle] beneath me."))
+	else //we got something in contents
+		for(var/obj/item/reagent_containers/contentitem in contents) //we got a bottle inside
+			if(contentitem.reagents && contentitem.spillable)
+				if(refilling && reagents.total_volume) //producers fill bottles, others get filled.
+					reagents.trans_to(reagents, rand(4,8))
+				else
+					if(contentitem.reagents.total_volume)
+						contentitem.reagents.trans_to(reagents, rand(4,8))
 	COOLDOWN_START(src, liquidcd, processspeed)
 
 /obj/item/organ/filling_organ/proc/organ_jumped()

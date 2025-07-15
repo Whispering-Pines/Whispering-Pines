@@ -3,14 +3,14 @@
 	desc = ""
 	icon = 'modular_whisper/icons/misc/surgery_tools.dmi'
 	icon_state = "bloodpack"
-	volume = 200
+	volume = 400
 	amount_per_transfer_from_this = 25
 	reagent_flags = OPENCONTAINER|INJECTABLE|DRAWABLE
 	var/blood_type = null
 	var/unique_blood = null
 	var/labelled = 0
 	fill_icon_thresholds = list(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
-	possible_item_intents = list(/datum/intent/use, INTENT_POUR, INTENT_FILL, INTENT_GENERIC)
+	possible_item_intents = list(/datum/intent/use, INTENT_POUR, INTENT_FILL)
 
 /obj/item/reagent_containers/blood/Initialize()
 	. = ..()
@@ -97,13 +97,27 @@
 	addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
 */
 
-/obj/item/reagent_containers/blood/attack(mob/M, mob/user, obj/target)
-	if(M != user)
-		M.visible_message("<span class='danger'>[user] attempts to inject [M] from the bloodbag.</span>", \
-					"<span class='danger'>[user] attempts to inject you from the bloodbag.</span>")
-	if(!do_after(user, 3 SECONDS, M))
-		return
-	if(!reagents?.total_volume)
-		return
-	to_chat(user, span_notice("I was injected from \the [src]."))
-	addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, amount_per_transfer_from_this, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
+/obj/item/reagent_containers/blood/attack(mob/living/carbon/human/M, mob/user, obj/target)
+	switch(user.used_intent.type)
+		if(/datum/intent/use)
+			if(M != user)
+				M.visible_message("<span class='danger'>[user] attempts to inject [M] from the bloodbag.</span>", \
+							"<span class='danger'>[user] attempts to inject you from the bloodbag.</span>")
+			if(!do_after(user, 3 SECONDS, M))
+				return
+			if(!reagents?.total_volume)
+				return
+			to_chat(user, span_notice("I was injected from \the [src]."))
+			addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, amount_per_transfer_from_this, TRUE, TRUE, FALSE, user, FALSE, INJECT), 5)
+		if(INTENT_FILL)
+			if(ishuman(M))
+				if(M != user)
+					M.visible_message("<span class='danger'>[user] attempts to draw [M]'s blood to the bloodbag.</span>", \
+								"<span class='danger'>[user] attempts to draw your blood to the bloodbag.</span>")
+				if(!do_after(user, 3 SECONDS, M))
+					return
+				if(!reagents?.total_volume)
+					return
+				to_chat(user, span_notice("I was injected from \the [src]."))
+				M.transfer_blood_to(reagents, amount_per_transfer_from_this, TRUE)
+	. = ..()

@@ -313,3 +313,4 @@
 
 //Whispering pines slop
 #define COMSIG_APPLY_REAGENTS "item_apply_reagents" //used for weapon coating
+#define COMSIG_POWER_UPDATE "power_update"
