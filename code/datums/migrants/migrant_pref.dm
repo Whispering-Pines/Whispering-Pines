@@ -97,22 +97,34 @@
 	client.mob << browse(null, "window=migration")
 	client.prefs.migrant.viewer = FALSE
 
+/mob/living/carbon/human
+	var/hugbox_escape_timer = null
+
 /mob/living/carbon/human/proc/adv_hugboxing_start()
+	if(HAS_TRAIT_FROM(src, TRAIT_PACIFISM, "hugbox"))
+		return
 	to_chat(src, span_warning("I will be in danger once I start moving."))
 	status_flags |= GODMODE
 	ADD_TRAIT(src, TRAIT_PACIFISM, "hugbox")
 	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(adv_hugboxing_moved), TRUE)
 	//Lies, it goes away even if you don't move after enough time
 	if(GLOB.adventurer_hugbox_duration_still)
-		addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_moved)), GLOB.adventurer_hugbox_duration_still)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_end_silent)), GLOB.adventurer_hugbox_duration_still)
 
 /mob/living/carbon/human/proc/adv_hugboxing_moved()
 	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	to_chat(src, span_danger("I have [DisplayTimeText(GLOB.adventurer_hugbox_duration)] to begone!"))
-	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_end)), GLOB.adventurer_hugbox_duration)
+	hugbox_escape_timer = addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_end)), GLOB.adventurer_hugbox_duration)
 	SSquirks.AssignQuirks(src, client, TRUE)
 
-/mob/living/carbon/human/proc/adv_hugboxing_end()
+/mob/living/carbon/human/proc/adv_hugboxing_end_silent()
+	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
+	if(hugbox_escape_timer)
+		deltimer(hugbox_escape_timer)
+		hugbox_escape_timer = null
+	adv_hugboxing_end(TRUE)
+
+/mob/living/carbon/human/proc/adv_hugboxing_end(silent = FALSE)
 	if(QDELETED(src))
 		return
 	//hugbox already ended
@@ -120,7 +132,9 @@
 		return
 	status_flags &= ~GODMODE
 	REMOVE_TRAIT(src, TRAIT_PACIFISM, "hugbox")
-	to_chat(src, span_danger("My joy is gone! Danger surrounds me."))
+	hugbox_escape_timer = null
+	if(!silent)
+		to_chat(src, span_danger("My joy is gone! Danger surrounds me."))
 
 /mob/living/carbon/human/proc/adv_hugboxing_cancel()
 	adv_hugboxing_end()
