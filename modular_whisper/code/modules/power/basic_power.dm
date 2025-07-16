@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(power_relays)
 	//basic power related things.
 	var/basic_power = 0
 
-/obj/proc/on_power_update(area/current_area)
+/obj/proc/on_power_update(datum/source, area/current_area)
 	return
 
 //machinery type
@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(power_relays)
 	anchored = TRUE
 	var/toggled = FALSE
 
-/obj/machinery/basic_power/on_power_update(area/current_area)
+/obj/machinery/basic_power/on_power_update(datum/source, area/current_area)
 	if(current_area.basic_power)
 		toggled = TRUE
 	else
@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(power_relays)
 	var/toggled = FALSE
 	var/working = FALSE
 
-/obj/structure/closet/basic_power/on_power_update(area/current_area)
+/obj/structure/closet/basic_power/on_power_update(datum/source, area/current_area)
 	if(current_area.basic_power)
 		toggled = TRUE
 	else
