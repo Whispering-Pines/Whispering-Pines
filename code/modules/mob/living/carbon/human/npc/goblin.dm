@@ -18,7 +18,7 @@
 	stand_attempts = 6
 	vitae_pool = 250 // Small, frail creechers with not so much vitality to gain from.
 	erpable = TRUE
-	hornychance = 50
+
 	skin_tone = "e8b59b"
 	var/bounty = 30
 
@@ -35,8 +35,12 @@
 	penis_max = 2
 	ball_min = 3
 	ball_max = 3
-	butt_min = 0
-	butt_max = 0
+	butt_min = 3
+	butt_max = 3
+
+/mob/living/carbon/human/species/goblin/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
+	. = ..()
+	update_body_parts(TRUE)
 
 /mob/living/carbon/human/species/goblin/npc
 	ai_controller = /datum/ai_controller/human_npc
@@ -44,6 +48,7 @@
 	flee_in_pain = TRUE
 
 	wander = FALSE
+	hornychance = 50
 
 /mob/living/carbon/human/species/goblin/npc/Initialize()
 	. = ..()
@@ -284,6 +289,7 @@
 		overlays_standing[ARMOR_LAYER] = standing
 
 	apply_overlay(ARMOR_LAYER)
+	update_body_parts(TRUE)
 
 
 /mob/living/carbon/human/species/goblin/update_inv_head()
@@ -300,7 +306,6 @@
 
 /mob/living/carbon/human/species/goblin/after_creation()
 	..()
-	gender = MALE
 	if(src.dna && src.dna.species)
 		src.dna.species.soundpack_m = new /datum/voicepack/goblin()
 		src.dna.species.soundpack_f = new /datum/voicepack/goblin()
@@ -555,7 +560,6 @@
 	name = "goblin butt"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblin"
-	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /obj/item/organ/penis/goblin
 	name = "goblin penis"
@@ -565,7 +569,6 @@
 	name = "goblin penis"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblin"
-	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /obj/item/organ/filling_organ/testicles/goblin
 	name = "goblin testicles"
@@ -575,7 +578,6 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinballs"
-	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /obj/item/organ/filling_organ/breasts/goblin
 	name = "goblin breasts"
@@ -585,7 +587,6 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinbreasts"
-	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /obj/item/organ/filling_organ/vagina/goblin
 	name = "goblin vagina"
@@ -595,7 +596,6 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinpussy"
-	color_key_defaults = list(KEY_SKIN_COLOR)
 
 //
 
@@ -607,7 +607,6 @@
 	name = "goblin butt"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinsea"
-	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /obj/item/organ/penis/goblin/sea
 	name = "goblin penis"
@@ -617,7 +616,7 @@
 	name = "goblin penis"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinsea"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/filling_organ/testicles/goblin/sea
 	name = "goblin testicles"
@@ -627,7 +626,7 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinseaballs"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/filling_organ/breasts/goblin/sea
 	name = "goblin breasts"
@@ -637,7 +636,7 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinseabreasts"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 //
 
@@ -649,7 +648,7 @@
 	name = "goblin butt"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblincave"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/penis/goblin/cave
 	name = "goblin penis"
@@ -659,7 +658,7 @@
 	name = "goblin penis"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblincave"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/filling_organ/testicles/goblin/cave
 	name = "goblin testicles"
@@ -669,7 +668,7 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblincaveballs"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/filling_organ/breasts/goblin/cave
 	name = "goblin breasts"
@@ -679,7 +678,7 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblincavebreasts"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 //
 
 /obj/item/organ/butt/goblin/hell
@@ -690,7 +689,7 @@
 	name = "goblin butt"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinhell"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/penis/goblin/hell
 	name = "goblin penis"
@@ -700,7 +699,7 @@
 	name = "goblin penis"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinhell"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/filling_organ/testicles/goblin/hell
 	name = "goblin testicles"
@@ -710,7 +709,7 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinhellballs"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/filling_organ/breasts/goblin/hell
 	name = "goblin breasts"
@@ -720,7 +719,7 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinhellbreasts"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 //
 
@@ -732,7 +731,7 @@
 	name = "goblin butt"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinmoon"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/penis/goblin/moon
 	name = "goblin penis"
@@ -742,7 +741,7 @@
 	name = "goblin penis"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinmoon"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/filling_organ/testicles/goblin/moon
 	name = "goblin testicles"
@@ -752,7 +751,7 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinmoonballs"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+
 
 /obj/item/organ/filling_organ/breasts/goblin/moon
 	name = "goblin breasts"
@@ -762,4 +761,4 @@
 	name = "goblin"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/goblinbits.dmi'
 	icon_state = "goblinmoonbreasts"
-	color_key_defaults = list(KEY_SKIN_COLOR)
+

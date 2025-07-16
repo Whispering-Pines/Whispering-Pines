@@ -421,14 +421,14 @@
 /area/rogue/indoors/town/bath
 	name = "Baths"
 	icon_state = "bath"
-	background_track = 'sound/music/area/bath.ogg'
+	background_track = 'modular_whisper/sound/area/bathold.ogg'
 	background_track_dusk = null
 	background_track_night = null
 	converted_type = /area/rogue/outdoors/exposed/bath
 
 /area/rogue/outdoors/exposed/bath
 	icon_state = "bath"
-	background_track = 'sound/music/area/bath.ogg'
+	background_track = 'modular_whisper/sound/area/bathold.ogg'
 
 /*	..................   Areas to play with the music a bit   ................... */
 /area/rogue/indoors/town/bath/redhouse // lets try something different

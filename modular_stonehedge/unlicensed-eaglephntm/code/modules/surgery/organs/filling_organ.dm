@@ -1,5 +1,8 @@
 //By Vide Noir https://github.com/EaglePhntm.
 //container organ that can refill self through nutrients etc.
+/obj/item/organ
+	var/draw_while_skeletonized = FALSE
+
 /obj/item/organ/filling_organ
 	name = "self filling organ"
 

@@ -70,45 +70,65 @@
 	H.icon = 'modular_whisper/icons/mob/monster/werewolf.dmi'
 	H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/simple/wereclaw, /datum/intent/simple/werebite)
 
-	 //checks if the person has genitals, for sprites.
-	var/obj/item/organ/penis/penis = H.stored_mob.getorganslot(ORGAN_SLOT_PENIS)
-	var/obj/item/organ/filling_organ/breasts/breasts = H.stored_mob.getorganslot(ORGAN_SLOT_BREASTS)
-	var/obj/item/organ/filling_organ/vagina/vagina = H.stored_mob.getorganslot(ORGAN_SLOT_VAGINA)
-	if(breasts)
-		if(breasts.organ_size <= 2)
-			wwbreastsize = 1
-		else if(breasts.organ_size >= 4)
-			wwbreastsize = 3
+	if(H.age != AGE_CHILD)
+		if(!H.sexcon)
+			H.sexcon = new /datum/sex_controller(src)
+		if(H.stored_mob)
+			//checks if the person has genitals, for sprites.
+			var/obj/item/organ/penis/penis = H.stored_mob.getorganslot(ORGAN_SLOT_PENIS)
+			var/obj/item/organ/filling_organ/breasts/breasts = H.stored_mob.getorganslot(ORGAN_SLOT_BREASTS)
+			var/obj/item/organ/filling_organ/vagina/vagina = H.stored_mob.getorganslot(ORGAN_SLOT_VAGINA)
+			if(breasts)
+				if(breasts.organ_size <= 2)
+					wwbreastsize = 1
+				else if(breasts.organ_size >= 4)
+					wwbreastsize = 3
+				else
+					wwbreastsize = 2
+			if(penis && !breasts && !vagina) //basic male
+				if(H.sexcon.arousal >= 20)
+					H.icon_state = "wwolf_m-e"
+				else if (H.sexcon.arousal >= 10)
+					H.icon_state = "wwolf_m-p"
+				else
+					H.icon_state = "wwolf_m"
+			else if(!penis && breasts && vagina) //basic female
+				H.icon_state = "wwolf_f-[wwbreastsize]"
+			else if (penis && breasts && !vagina) //dicked female without vagina
+				if(H.sexcon.arousal >= 20)
+					H.icon_state = "wwolf_g-e-[wwbreastsize]"
+				else if (H.sexcon.arousal >= 10)
+					H.icon_state = "wwolf_g-p-[wwbreastsize]"
+				else
+					H.icon_state = "wwolf_g-[wwbreastsize]"
+			else if(penis && vagina) //dicked female with vagina
+				if(H.sexcon.arousal >= 20)
+					H.icon_state = "wwolf_g-e-[wwbreastsize]"
+				else if (H.sexcon.arousal >= 10)
+					H.icon_state = "wwolf_g-p-[wwbreastsize]"
+				else
+					H.icon_state = "wwolf_g-[wwbreastsize]"
+			else //you got no tools, sorry, or you're andro.
+				H.icon_state = "wwolf_n"
 		else
-			wwbreastsize = 2
-	if(!H.sexcon)
-		H.sexcon = new /datum/sex_controller(src)
-
-	if(penis && !breasts && !vagina) //basic male
-		if(H.sexcon.arousal >= 20)
-			H.icon_state = "wwolf_m-e"
-		else if (H.sexcon.arousal >= 10)
-			H.icon_state = "wwolf_m-p"
-		else
-			H.icon_state = "wwolf_m"
-	else if(!penis && breasts && vagina) //basic female
-		H.icon_state = "wwolf_f-[wwbreastsize]"
-	else if (penis && breasts && !vagina) //dicked female without vagina
-		if(H.sexcon.arousal >= 20)
-			H.icon_state = "wwolf_g-e-[wwbreastsize]"
-		else if (H.sexcon.arousal >= 10)
-			H.icon_state = "wwolf_g-p-[wwbreastsize]"
-		else
-			H.icon_state = "wwolf_g-[wwbreastsize]"
-	else if(penis && vagina) //dicked female with vagina
-		if(H.sexcon.arousal >= 20)
-			H.icon_state = "wwolf_g-e-[wwbreastsize]"
-		else if (H.sexcon.arousal >= 10)
-			H.icon_state = "wwolf_g-p-[wwbreastsize]"
-		else
-			H.icon_state = "wwolf_g-[wwbreastsize]"
-	else //you got no tools, sorry, or you're andro.
-		H.icon_state = "wwolf_n"
+			if(H.gender == MALE)
+				if(H.sexcon.arousal >= 20)
+					H.icon_state = "wwolf_m-e"
+				else if (H.sexcon.arousal >= 10)
+					H.icon_state = "wwolf_m-p"
+				else
+					H.icon_state = "wwolf_m"
+			else if(H.gender == FEMALE)
+				H.icon_state = "wwolf_f-3"
+				if(H.getorganslot(ORGAN_SLOT_PENIS)) //Dickgirl
+					if(H.sexcon.arousal >= 20)
+						H.icon_state = "wwolf_g-e-3"
+					else if (H.sexcon.arousal >= 10)
+						H.icon_state = "wwolf_g-p-3"
+					else
+						H.icon_state = "wwolf_g-3"
+			else if(H.gender == NEUTER)
+				H.icon_state = "wwolf_n"
 	H.update_damage_overlays()
 	return TRUE
 

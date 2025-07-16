@@ -17,22 +17,21 @@
 	cmode_music = 'sound/music/cmode/antag/combatskeleton.ogg'
 	var/should_have_aggro = TRUE
 	erpable = TRUE
-	hornychance = 50
 	//organ bs
 	show_genitals = TRUE
 	ball_organ = /obj/item/organ/filling_organ/testicles/skeleton
 	breast_organ = /obj/item/organ/filling_organ/breasts/skeleton
 	ass_organ = /obj/item/organ/butt/skeleton
 	penis_organ = /obj/item/organ/penis/skeleton
-	vagina_organ = /obj/item/organ/filling_organ/vagina
+	vagina_organ = /obj/item/organ/filling_organ/vagina/skeleton
 	breast_min = 3
 	breast_max = 4
 	penis_min = 2
 	penis_max = 2
 	ball_min = 3
 	ball_max = 3
-	butt_min = 0
-	butt_max = 0
+	butt_min = 3
+	butt_max = 3
 
 /mob/living/carbon/human/species/skeleton/npc/no_equipment
 	skel_outfit = null
@@ -76,6 +75,7 @@
 	for(var/obj/item/bodypart/B as anything in bodyparts)
 		B.skeletonize(FALSE)
 	grant_undead_eyes()
+	give_genitals()
 	update_body()
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
@@ -363,6 +363,7 @@
 	name = "skeleton butt"
 	accessory_type = /datum/sprite_accessory/butt/skeleton
 	item_flags = DROPDEL //Magical bits cant exist like that.
+	draw_while_skeletonized = TRUE
 
 /datum/sprite_accessory/butt/skeleton
 	name = "skeleton butt"
@@ -373,6 +374,7 @@
 	name = "skeleton penis"
 	accessory_type = /datum/sprite_accessory/penis/skeleton
 	item_flags = DROPDEL
+	draw_while_skeletonized = TRUE
 
 /datum/sprite_accessory/penis/skeleton
 	name = "skeleton penis"
@@ -384,6 +386,7 @@
 	accessory_type = /datum/sprite_accessory/testicles/skeleton
 	item_flags = DROPDEL
 	reagent_to_make = /datum/reagent/consumable/cum/sterile/old
+	draw_while_skeletonized = TRUE
 
 /datum/sprite_accessory/testicles/skeleton
 	name = "skeleton testicles"
@@ -397,8 +400,15 @@
 	hungerhelp = FALSE
 	startsfilled = FALSE
 	item_flags = DROPDEL
+	draw_while_skeletonized = TRUE
 
 /datum/sprite_accessory/breasts/skeleton
 	name = "skeleton"
 	icon = 'modular_stonehedge/icons/roguetown/mob/monster/skeletonbits.dmi'
 	icon_state = "skeletonbreasts"
+
+/obj/item/organ/filling_organ/vagina/skeleton
+	name = "skeleton vagina"
+	accessory_type = /datum/sprite_accessory/vagina
+	item_flags = DROPDEL
+	draw_while_skeletonized = TRUE

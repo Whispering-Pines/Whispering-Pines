@@ -402,9 +402,9 @@
 /obj/structure/flora/grass/bush/attack_hand(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_FAST)
 		playsound(src.loc, "plantcross", 80, FALSE, -1)
-		if(do_after(L, rand(1,5) DECISECONDS, src))
+		if(do_after(L, rand(1,5), src))
 			if(prob(50) && looty.len)
 				if(looty.len == 1)
 					res_replenish = world.time + 8 MINUTES
@@ -415,6 +415,8 @@
 					user.visible_message("<span class='notice'>[user] finds [B] in [src].</span>")
 					return
 			user.visible_message("<span class='warning'>[user] searches through [src].</span>")
+			if(looty.len)
+				attack_hand(user)
 			if(!looty.len)
 				to_chat(user, "<span class='warning'>Picked clean.</span>")
 

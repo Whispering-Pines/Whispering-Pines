@@ -72,12 +72,21 @@
 
 /datum/reagent/charcoal
 	name = "Charcoal"
-	description = "black charcoal grinded into liquid"
+	description = "black charcoal grinded into powdery liquid."
 	reagent_state = SOLID
 	taste_description = "coal"
 	color = "#202020"
+	overdose_threshold = 30
 
 /datum/reagent/charcoal/on_mob_life(mob/living/carbon/M)
+	//weak antitox
 	if(volume > 0.99)
-		M.adjustToxLoss(-5, 0)
+		M.adjustToxLoss(-2, 0)
+		for(var/datum/reagent/toxin/toxinsies in M.reagents.reagent_list)
+			M.reagents.remove_reagent(toxinsies, -1)
 	..()
+
+/datum/reagent/charcoal/overdose_process(mob/living/M)
+	. = ..()
+	if(volume > 0.99)
+		M.adjustToxLoss(2, 0)

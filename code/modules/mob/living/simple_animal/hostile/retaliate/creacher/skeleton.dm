@@ -37,6 +37,7 @@
 	del_on_death = TRUE
 
 	ai_controller = /datum/ai_controller/orc
+	erpable = FALSE
 
 /mob/living/simple_animal/hostile/skeleton/Initialize(mapload, mob/user, cabal_affine)
 	. = ..()

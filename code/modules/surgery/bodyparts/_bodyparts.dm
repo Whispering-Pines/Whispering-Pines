@@ -692,8 +692,10 @@
 		if(NO_BODYPART_FEATURES in owner_species.species_traits)
 			draw_bodypart_features = FALSE
 
-	if(!skeletonized && draw_organ_features)
+	if(draw_organ_features)
 		for(var/obj/item/organ/organ as anything in get_organs())
+			if(skeletonized && !organ.draw_while_skeletonized)
+				continue
 			if(!organ.is_visible())
 				continue
 			var/mutable_appearance/organ_appearance = organ.get_bodypart_overlay(src)

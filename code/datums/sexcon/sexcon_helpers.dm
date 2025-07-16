@@ -35,6 +35,8 @@
 	extra_range = -4
 
 /mob/living/MiddleMouseDrop_T(mob/living/target, mob/living/user)
+	if(!isliving(target))
+		return
 	if(user.mmb_intent)
 		return ..()
 	if(!user.sexcon || !target.sexcon)

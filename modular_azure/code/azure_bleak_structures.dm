@@ -24,7 +24,8 @@
 
 /turf/open/floor/sand
 	name = "sand"
-	desc = "Warm sand that, sadly, have been mixed with dirt."
+	desc = "Warm sand."
+	icon = 'modular_azure/icons/turf/roguefloor.dmi'
 	icon_state = "grimshart"
 	layer = MID_TURF_LAYER
 	footstep = FOOTSTEP_SAND
@@ -43,6 +44,7 @@
 
 /turf/open/water/bath/pool
 	desc = "Clear water, pleasant temperature. Soothing."
+	icon = 'modular_azure/icons/turf/roguefloor.dmi'
 	icon_state = "bathtile_pool"
 
 /turf/open/water/bath/pool/Initialize()

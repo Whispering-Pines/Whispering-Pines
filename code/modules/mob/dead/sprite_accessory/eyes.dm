@@ -9,12 +9,6 @@
 		return
 	if(NOEYESPRITES in owner.dna?.species?.species_traits)
 		return FALSE
-	owner.cut_overlay(owner.eye_overlay)
-	owner.cut_overlay(owner.eye_overlay2)
-	if(owner.wear_mask && owner.wear_mask.flags_cover & MASKCOVERSEYES)
-		return FALSE
-	if(owner.name == "Unknown" || owner.name == "Unknown Man" || owner.name == "Unknown Woman")
-		return FALSE
 	update_overlay(organ, owner) //so it detects something you wear proper
 	return is_human_part_visible(owner, HIDEEYES)
 
@@ -22,13 +16,19 @@
 	generic_gender_feature_adjust(appearance_list, eyes, bodypart, owner, OFFSET_FACE)
 
 /datum/sprite_accessory/eyes/proc/update_overlay(obj/item/organ/eyes/organ, mob/living/carbon/human/owner)
-	spawn(0.3 SECONDS) //let it process worn stuff.
 	if(!owner)
 		return
 	if(!owner.client)
 		return
 	if(!ishuman(owner) || !owner.client.prefs)
 		return
+	owner.eye_overlay = null
+	owner.eye_overlay2 = null
+	owner.cut_overlay(list(owner.eye_overlay,owner.eye_overlay2))
+	if(owner.wear_mask && owner.wear_mask.flags_cover & MASKCOVERSEYES)
+		return FALSE
+	if(owner.name == "Unknown" || owner.name == "Unknown Man" || owner.name == "Unknown Woman")
+		return FALSE
 	//ways to hide your glowing ass eyes
 	if(is_human_part_visible(owner, HIDEEYES) && organ.glows) //hideface so people can hide their glowy ass eyes with a mask etc.
 		owner.eye_overlay = mutable_appearance(icon, "human_glow_1", MOUTH_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.client.prefs.get_eye_color())
@@ -49,8 +49,7 @@
 				owner.eye_overlay.pixel_y += offsets[OFFSET_FACE][2]
 				owner.eye_overlay2.pixel_x += offsets[OFFSET_FACE][1]
 				owner.eye_overlay2.pixel_y += offsets[OFFSET_FACE][2]
-			owner.add_overlay(owner.eye_overlay)
-			owner.add_overlay(owner.eye_overlay2)
+			owner.add_overlay(list(owner.eye_overlay, owner.eye_overlay2))
 
 /datum/sprite_accessory/eyes/moth
 	name = "Fluvian Eyes"

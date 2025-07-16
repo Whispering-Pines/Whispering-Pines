@@ -7,6 +7,7 @@
 	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 0, "fire" = 0, "acid" = 0)
 	allowed_race = list("goblin")
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
+	flags_inv = HIDECROTCH|HIDEBOOB|HIDEBELLY|HIDEBUTT
 	anvilrepair = /datum/skill/craft/armorsmithing
 	max_integrity = 60
 	armor_class = AC_LIGHT // Otherwise they get knocked down TOO easily!!!
@@ -20,6 +21,7 @@
 	armor = list("blunt" = 60, "slash" = 60, "stab" = 60,  "piercing" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	armor_class = AC_LIGHT
+	flags_inv = HIDECROTCH|HIDEBOOB|HIDEBELLY
 	max_integrity = 60
 	allowed_race = list("goblin")
 	sellprice = 0
@@ -33,6 +35,7 @@
 	allowed_race = list("goblin")
 	armor = list("blunt" = 30, "slash" = 30, "stab" = 30,  "piercing" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN
+	flags_inv = HIDECROTCH
 	sellprice = 0
 	smeltresult = /obj/item/ash
 

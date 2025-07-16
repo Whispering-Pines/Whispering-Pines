@@ -89,6 +89,9 @@
 	if(!cast_on.revive(full_heal = FALSE))
 		to_chat(owner, span_warning("Solaria's light fails to revive [cast_on]!"))
 		return
+	if(cast_on.client)
+		if(cast_on.client.prefs)
+			cast_on.client.prefs.apply_prefs_to(cast_on, TRUE)
 	GLOB.vanderlin_round_stats[STATS_ASTRATA_REVIVALS]++
 	cast_on.emote("breathgasp")
 	cast_on.Jitter(100)

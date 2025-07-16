@@ -57,6 +57,9 @@
 			rotty.update_limb()
 			if(rotty.can_be_disabled)
 				rotty.update_disabled()
+	if(target.client)
+		if(target.client.prefs)
+			target.client.prefs.apply_prefs_to(target, TRUE)
 	target.update_body()
 	display_results(user, target, span_notice("You burn away the rot inside of [target]."),
 		"[user] burns the rot within [target].",
