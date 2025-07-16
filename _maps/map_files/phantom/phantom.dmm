@@ -9208,8 +9208,8 @@
 /area/rogue/under/cave)
 "gCF" = (
 /obj/structure/sink/copper{
-	pixel_x = 16;
-	dir = 8
+	pixel_x = -16;
+	dir = 4
 	},
 /turf/open/floor/woodturned,
 /area/rogue/indoors/soilsons)
@@ -10046,8 +10046,8 @@
 /area/rogue/indoors)
 "hgM" = (
 /obj/structure/sink/copper{
-	pixel_x = 16;
-	dir = 8
+	pixel_x = -16;
+	dir = 4
 	},
 /turf/open/floor/twig,
 /area/rogue/indoors/town/clinic_large)
@@ -20168,8 +20168,8 @@
 	pixel_y = 0
 	},
 /obj/structure/sink/copper{
-	pixel_x = 16;
-	dir = 8
+	pixel_x = -16;
+	dir = 4
 	},
 /turf/open/floor/greenstone,
 /area/rogue/indoors/town/orphanage)
@@ -24563,8 +24563,8 @@
 /area/rogue/under/town/basement)
 "qVg" = (
 /obj/structure/sink/copper{
-	pixel_x = 16;
-	dir = 8
+	pixel_x = -16;
+	dir = 4
 	},
 /turf/open/floor/dirt,
 /area/rogue/indoors/town/cell)
@@ -28012,8 +28012,8 @@
 /area/rogue/indoors/town/manor)
 "tCx" = (
 /obj/structure/sink/copper{
-	pixel_x = 16;
-	dir = 8
+	pixel_x = -16;
+	dir = 4
 	},
 /obj/machinery/light/fueledstreet/basic_power/blue/wall{
 	dir = 4;
@@ -30286,8 +30286,8 @@
 	pixel_y = 0
 	},
 /obj/structure/sink/copper{
-	pixel_x = 16;
-	dir = 8
+	pixel_x = -16;
+	dir = 4
 	},
 /turf/open/floor/greenstone,
 /area/rogue/under/town/basement)
@@ -32511,8 +32511,8 @@
 /area/rogue/indoors)
 "wDJ" = (
 /obj/structure/sink/copper{
-	pixel_x = 16;
-	dir = 8
+	pixel_x = -16;
+	dir = 4
 	},
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors/town/tavern)
