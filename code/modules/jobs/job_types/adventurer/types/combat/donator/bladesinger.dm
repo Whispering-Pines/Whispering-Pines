@@ -40,3 +40,4 @@
 	head = /obj/item/clothing/head/rare/elfplate/welfplate
 	neck = /obj/item/clothing/neck/chaincoif
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DUALWIELDER, TRAIT_GENERIC)

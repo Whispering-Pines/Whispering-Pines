@@ -92,7 +92,7 @@
 	if(cast_on.client)
 		if(cast_on.client.prefs)
 			cast_on.client.prefs.apply_prefs_to(cast_on, TRUE)
-	GLOB.vanderlin_round_stats[STATS_ASTRATA_REVIVALS]++
+	record_round_statistic(STATS_ASTRATA_REVIVALS)
 	cast_on.emote("breathgasp")
 	cast_on.Jitter(100)
 	cast_on.visible_message(span_notice("[cast_on] is revived by holy light!"), span_green("I awake from the void."))
