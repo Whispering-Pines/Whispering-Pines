@@ -3012,4 +3012,5 @@
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
 #include "modular_whisper\code\modules\surgery\surgeries\resize_surgery.dm"
+#include "modular_helmsguard\code\game\objects\structures\sarcophagi.dm"
 // END_INCLUDE

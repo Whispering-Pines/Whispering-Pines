@@ -24,6 +24,7 @@
 #define RACE_VULPKANIN "Vulpkanin"
 #define RACE_CONSTRUCT "Metal Construct"
 #define RACE_SLIMEPERSON "Slimeperson"
+#define RACE_PLANTOID "Plantoid"
 #define RACE_HUMAN_SPACE "Human"
 
 // ============ USING ID BECAUSE FUCK YOU
@@ -44,6 +45,7 @@
 	"triton",\
 	"resurgentis",\
 	"slimeperson",\
+	"plantoid",\
 	"akula",\
 	"anthromorph",\
 	"anthromorphsmall",\
@@ -133,6 +135,7 @@
 	RACE_VULPKANIN,\
 	RACE_CONSTRUCT,\
 	RACE_SLIMEPERSON,\
+	RACE_PLANTOID,\
 )
 
 /// Races not considered discriminated against in Phantom Kingdom. Used for nobility, etc.
@@ -163,6 +166,7 @@
 	RACE_VULPKANIN,\
 	RACE_CONSTRUCT,\
 	RACE_SLIMEPERSON,\
+	RACE_PLANTOID,\
 )
 
 /// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Tenebrase. Used for church/faith roles.
@@ -194,6 +198,7 @@
 	RACE_VULPKANIN,\
 	RACE_CONSTRUCT,\
 	RACE_SLIMEPERSON,\
+	RACE_PLANTOID,\
 )
 
 /// Races who are non-exotic to Phantom Kingdom. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
@@ -284,6 +289,7 @@
 	RACE_VULPKANIN,\
 	RACE_CONSTRUCT,\
 	RACE_SLIMEPERSON,\
+	RACE_PLANTOID,\
 )
 
 /// Foreigner Nobility Races
