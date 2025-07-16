@@ -1308,7 +1308,7 @@
 	if (ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		H.check_for_injuries(H)
-		to_chat(H, "I am [H.get_encumbrance() * 100]% Encumbered")
+		to_chat(H, span_info("I am [H.get_encumbrance() * 100]% encumbered."))
 
 /atom/movable/screen/mood
 	name = "mood"
@@ -1327,7 +1327,7 @@
 		var/mob/living/carbon/human/H = usr
 		if(LAZYACCESS(modifiers, LEFT_CLICK))
 			H.check_for_injuries(H)
-			to_chat(H, "I am [H.get_encumbrance() * 100]% Encumbered")
+			to_chat(H, span_info("I am [H.get_encumbrance() * 100]% encumbered."))
 		if(LAZYACCESS(modifiers, RIGHT_CLICK))
 			if(!H.mind)
 				return
