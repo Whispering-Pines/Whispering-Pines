@@ -4,7 +4,7 @@
 	///should we be clearing the target after the fact?
 	var/clear_target = TRUE
 	///should our combat mode be off during interaction?
-	var/combat_mode = TRUE
+	var/cmode = TRUE
 
 /datum/ai_behavior/interact_with_target/setup(datum/ai_controller/controller, target_key)
 	. = ..()
@@ -18,7 +18,7 @@
 	if(QDELETED(target) || !pre_interact(controller, target))
 		finish_action(controller, FALSE)
 		return FALSE
-	controller.ai_interact(target, combat_mode)
+	controller.ai_interact(target, cmode)
 	finish_action(controller, TRUE)
 	return TRUE
 

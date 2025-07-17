@@ -111,7 +111,7 @@
 		var/datum/organ_dna/dna = customizer_choice.create_organ_dna(entry, src)
 		if(!dna)
 			continue
-		organ_list[customizer_choice.get_organ_slot()] = dna
+		organ_list[customizer_choice.getorganslot()] = dna
 
 	return organ_list
 
@@ -123,7 +123,7 @@
 			continue
 		if(entry.disabled)
 			continue
-		if(!(customizer_choice.get_organ_slot() == organ.slot))
+		if(!(customizer_choice.getorganslot() == organ.slot))
 			continue
 		customizer_choice.customize_organ(organ, entry)
 

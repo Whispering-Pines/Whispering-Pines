@@ -194,7 +194,7 @@
 	entry.accessory_colors = accessory.get_default_colors(color_key_source_list_from_prefs(prefs))
 
 /// When you want to customize an organ but not through DNA (hair dye for example)
-/datum/customizer_choice/proc/get_organ_slot(obj/item/organ/organ, datum/customizer_entry/entry)
+/datum/customizer_choice/proc/getorganslot(obj/item/organ/organ, datum/customizer_entry/entry)
 	return FALSE
 
 /datum/customizer_choice/proc/imprint_organ_dna(datum/organ_dna/organ_dna, datum/customizer_entry/entry, datum/preferences/prefs)

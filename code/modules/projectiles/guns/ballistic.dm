@@ -1,3 +1,4 @@
+/*
 /obj/item/proc/can_trigger_gun(mob/living/user)
 	if(!user.can_use_guns(src))
 		return FALSE
@@ -18,19 +19,19 @@
 	///volume of loading sound
 	var/load_sound_volume = 40
 	///whether loading sound should vary
-	var/load_sound_vary = TRUE
+	var/load_vary_fire_sound = TRUE
 	///sound of racking
 	var/rack_sound = 'sound/blank.ogg'
 	///volume of racking
 	var/rack_sound_volume = 60
 	///whether racking sound should vary
-	var/rack_sound_vary = TRUE
+	var/rack_vary_fire_sound = TRUE
 	///sound of when the bolt is locked back manually
 	var/lock_back_sound = 'sound/blank.ogg'
 	///volume of lock back
 	var/lock_back_sound_volume = 60
 	///whether lock back varies
-	var/lock_back_sound_vary = TRUE
+	var/lock_back_vary_fire_sound = TRUE
 	///Sound of ejecting a magazine
 	var/eject_sound = 'sound/blank.ogg'
 	///sound of ejecting an empty magazine
@@ -38,7 +39,7 @@
 	///volume of ejecting a magazine
 	var/eject_sound_volume = 40
 	///whether eject sound should vary
-	var/eject_sound_vary = TRUE
+	var/eject_vary_fire_sound = TRUE
 	///sound of dropping the bolt or releasing a slide
 	var/bolt_drop_sound = 'sound/blank.ogg'
 	///volume of bolt drop/slide release
@@ -172,9 +173,9 @@
 	process_chamber(!chambered, FALSE)
 	if (bolt_type == BOLT_TYPE_LOCKING && !chambered)
 		bolt_locked = TRUE
-		playsound(src, lock_back_sound, lock_back_sound_volume, lock_back_sound_vary)
+		playsound(src, lock_back_sound, lock_back_sound_volume, lock_back_vary_fire_sound)
 	else
-		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+		playsound(src, rack_sound, rack_sound_volume, rack_vary_fire_sound)
 	update_appearance(UPDATE_ICON)
 
 ///Drops the bolt from a locked position
@@ -195,7 +196,7 @@
 		magazine = AM
 		if (display_message)
 			to_chat(user, "<span class='notice'>I load a new [magazine_wording] into \the [src].</span>")
-		playsound(src, load_empty_sound, load_sound_volume, load_sound_vary)
+		playsound(src, load_empty_sound, load_sound_volume, load_vary_fire_sound)
 		if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked)
 			chamber_round(TRUE)
 		update_appearance(UPDATE_ICON)
@@ -209,9 +210,9 @@
 	if(bolt_type == BOLT_TYPE_OPEN)
 		chambered = null
 	if (magazine.ammo_count())
-		playsound(src, load_sound, load_sound_volume, load_sound_vary)
+		playsound(src, load_sound, load_sound_volume, load_vary_fire_sound)
 	else
-		playsound(src, load_empty_sound, load_sound_volume, load_sound_vary)
+		playsound(src, load_empty_sound, load_sound_volume, load_vary_fire_sound)
 	magazine.forceMove(drop_location())
 	var/obj/item/ammo_box/magazine/old_mag = magazine
 	if (tac_load)
@@ -253,7 +254,7 @@
 			var/num_loaded = magazine.attackby(A, user, params, TRUE)
 			if (num_loaded)
 				to_chat(user, "<span class='notice'>I [verbage] \a [cartridge_wording]\s on \the [src].</span>")
-				playsound(src, load_sound, load_sound_volume, load_sound_vary)
+				playsound(src, load_sound, load_sound_volume, load_vary_fire_sound)
 				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
 					chamber_round()
 				A.update_appearance()
@@ -315,7 +316,7 @@
 				SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
 		if (num_unloaded)
 			to_chat(user, "<span class='notice'>I remove [(num_unloaded == 1) ? "the" : "[num_unloaded]"] [cartridge_wording]\s from [src].</span>")
-			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+			playsound(user, eject_sound, eject_sound_volume, eject_vary_fire_sound)
 			update_appearance(UPDATE_ICON)
 		else
 			to_chat(user, "<span class='warning'>[src] is empty!</span>")
@@ -373,3 +374,4 @@
 		return (OXYLOSS)
 #undef BRAINS_BLOWN_THROW_SPEED
 #undef BRAINS_BLOWN_THROW_RANGE
+*/

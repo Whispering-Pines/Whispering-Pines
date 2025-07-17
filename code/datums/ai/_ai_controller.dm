@@ -161,7 +161,7 @@ have ways of interacting with a specific atom and control it. They posses a blac
 	return !QDELETED(pawn)
 
 ///Interact with objects
-/datum/ai_controller/proc/ai_interact(target, combat_mode, list/modifiers, nextmove = FALSE)
+/datum/ai_controller/proc/ai_interact(target, cmode, list/modifiers, nextmove = FALSE)
 	if(!ai_can_interact())
 		return FALSE
 
@@ -179,16 +179,16 @@ have ways of interacting with a specific atom and control it. They posses a blac
 	else
 		living_pawn.aimheight_change(rand(10,19))
 
-	if(isnull(combat_mode))
+	if(isnull(cmode))
 		SEND_SIGNAL(living_pawn, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, final_target)
 		living_pawn.ClickOn(final_target, params)
 		return TRUE
 
-	var/old_combat_mode = living_pawn.cmode
-	living_pawn.cmode = combat_mode
+	var/old_cmode = living_pawn.cmode
+	living_pawn.cmode = cmode
 	SEND_SIGNAL(living_pawn, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, final_target)
 	living_pawn.ClickOn(final_target, params)
-	living_pawn.cmode = old_combat_mode
+	living_pawn.cmode = old_cmode
 	return TRUE
 
 /datum/ai_controller/proc/update_grid(datum/source, datum/spatial_grid_cell/new_cell)

@@ -585,7 +585,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 			var/datum/organ_dna/dna = customizer_choice.create_organ_dna(entry, H)
 			if(!dna)
 				continue
-			organ_list[customizer_choice.get_organ_slot()] = dna
+			organ_list[customizer_choice.getorganslot()] = dna
 
 		H.dna.organ_dna = list()
 		var/list/organ_dna_list = organ_list

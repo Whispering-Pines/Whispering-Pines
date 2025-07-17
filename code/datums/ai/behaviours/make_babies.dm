@@ -71,7 +71,7 @@
 		finish_action(controller, FALSE, target_key)
 		return
 	var/mob/living/simple_animal/hostile/living_pawn = controller.pawn
-	//living_pawn.set_combat_mode(FALSE)
+	//living_pawn.set_cmode(FALSE)
 	living_pawn.cmode = FALSE
 	living_pawn.AttackingTarget(target)
 	finish_action(controller, TRUE, target_key)

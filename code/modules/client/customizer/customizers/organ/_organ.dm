@@ -10,7 +10,7 @@
 	var/organ_dna_type = /datum/organ_dna
 
 /// When you want to customize an organ but not through DNA (hair dye for example)
-/datum/customizer_choice/organ/get_organ_slot(obj/item/organ/organ, datum/customizer_entry/entry)
+/datum/customizer_choice/organ/getorganslot(obj/item/organ/organ, datum/customizer_entry/entry)
 	return organ_slot
 
 /// When you want to customize an organ but not through DNA (hair dye for example)

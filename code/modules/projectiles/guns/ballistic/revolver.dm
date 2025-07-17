@@ -1,3 +1,4 @@
+/*
 /obj/item/gun/ballistic/revolver
 	name = "\improper .357 revolver"
 	desc = "" //usually used by syndicates
@@ -32,3 +33,4 @@
 	if (magazine)
 		boolets += magazine.ammo_count(countempties)
 	return boolets
+*/

@@ -1,3 +1,4 @@
+/*
 //Boxes of ammo
 /obj/item/ammo_box
 	name = "ammo box (null_reference_exception)"
@@ -144,3 +145,4 @@
 /obj/item/ammo_box/magazine/handle_atom_del(atom/A)
 	stored_ammo -= A
 	update_appearance(UPDATE_ICON_STATE)
+*/

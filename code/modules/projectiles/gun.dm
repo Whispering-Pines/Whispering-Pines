@@ -1,4 +1,5 @@
 
+/*
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
 
 /obj/item/gun
@@ -185,3 +186,4 @@
 	return "[thats? "That's ":""]<b>[get_examine_name(user)]</b>"
 
 #undef DUALWIELD_PENALTY_EXTRA_MULTIPLIER
+*/

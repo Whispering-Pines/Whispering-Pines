@@ -398,8 +398,8 @@ GLOBAL_PROTECT(tracy_init_reason)
 /world/proc/update_status()
 	var/s = ""
 	s += "<center><a href=\"https://discord.gg/zNAGFDcQ\">"
-	s += "<big><b>Phantom Kingdom - Now 24/7 (Hosted by Monkestation)</b></big></a><br>"
-	s += "<b>Dark Medieval Fantasy Roleplay<b><br>"
+	s += "<big><b>Whispering Pines</b></big></a><br>"
+	s += "<b>Post-Apoc medieval tech mind-dump<b><br>"
 	s += "\["
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
 		s += "<b>GAME STATUS:</b> IN LOBBY"
