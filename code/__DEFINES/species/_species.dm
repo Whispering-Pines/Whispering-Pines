@@ -244,9 +244,6 @@
 	SPEC_ID_AXIAN,\
 	SPEC_ID_TABAXI,\
 	SPEC_ID_VULPKANIN,\
-	SPEC_ID_CONSTRUCT,\
-	SPEC_ID_SLIMEPERSON,\
-	SPEC_ID_PLANTOID,\
 )
 
 /// Species that lack lux. Any who have no ties to divinity anymore, whether it be their creation story or otherwise taken from them (Hollow-kin)
@@ -322,6 +319,25 @@
 	SPEC_ID_CONSTRUCT,\
 	SPEC_ID_SLIMEPERSON,\
 	SPEC_ID_PLANTOID,\
+)
+
+#define RACES_PLAYER_ROYALTY list(\
+	SPEC_ID_HUMEN,\
+	SPEC_ID_DWARF,\
+	SPEC_ID_AASIMAR,\
+	SPEC_ID_ELF,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_HOLLOWKIN,\
+	SPEC_ID_HALF_ORC,\
+	SPEC_ID_RESURGENTIS,\
+	SPEC_ID_WILDKIN,\
+	SPEC_ID_VERMINVOLK,\
+	SPEC_ID_DRACON,\
+	SPEC_ID_LIZARDFOLK,\
+	SPEC_ID_LUPIAN,\
+	SPEC_ID_AXIAN,\
+	SPEC_ID_TABAXI,\
+	SPEC_ID_VULPKANIN,\
 )
 
 /// Foreigner Nobility Races

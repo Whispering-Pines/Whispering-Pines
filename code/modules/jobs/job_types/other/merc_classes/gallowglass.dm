@@ -2,9 +2,6 @@
 /datum/advclass/mercenary/gallowglass
 	name = "Gallowglass"
 	tutorial = "A claymore wielding mercanary hailing from the land of Kaledon, you are a fighter for coin, having fled the Frozener occupation of your homeland. Your Kerns fight under you."
-	allowed_races = list(\
-		SPEC_ID_HUMEN,\
-		SPEC_ID_ELF,\
 	cmode_music = 'sound/music/cmode/Combat_Dwarf.ogg'
 
 /datum/outfit/job/mercenary/gallowglass/pre_equip(mob/living/carbon/human/H)
