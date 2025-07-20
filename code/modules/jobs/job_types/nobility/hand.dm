@@ -19,6 +19,8 @@
 	min_pq = 10
 	bypass_lastclass = TRUE
 
+	allowed_races = RACES_PLAYER_ROYALTY
+
 	outfit = /datum/outfit/job/hand
 	advclass_cat_rolls = list(CTAG_HAND = 20)
 	give_bank_account = 120

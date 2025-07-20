@@ -207,7 +207,7 @@
 	name = "Magos of Glimmerfall"
 	greet_text = "You are the Magos of Glimmerfall, renowned for your arcane knowledge yet unable to foresee the tragedy that befell your home. Drawn by a guiding star to Phantom Kingdom, you seek answers and perhaps a new purpose in the wake of destruction."
 	outfit = /datum/outfit/job/heartfelt/magos
-	allowed_races = list("Human")
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	grant_lit_torch = TRUE
 
 /datum/outfit/job/heartfelt/magos

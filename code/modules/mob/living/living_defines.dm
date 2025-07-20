@@ -217,5 +217,3 @@
 	var/spell_points
 	/// amount of spell points this mob has used
 	var/used_spell_points
-
-	var/last_message

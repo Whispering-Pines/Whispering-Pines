@@ -12,8 +12,6 @@
 	spawn_positions = 0
 	min_pq = -5
 	bypass_lastclass = TRUE
-
-	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
 	allowed_races = RACES_PLAYER_ALL
 

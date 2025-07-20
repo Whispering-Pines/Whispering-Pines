@@ -201,6 +201,20 @@
 	icon_state = "orctusk"
 	default_colors = list("#F4F4BE")
 
+/datum/sprite_accessory/horns/tiefling
+	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
+	name = "TiebHorns"
+	icon_state = "tiebhorns"
+	specuse = list(SPEC_ID_TIEFLING)
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/datum/sprite_accessory/horns/tiefling/alt
+	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
+	name = "TiebHornies"
+	icon_state = "tiebhornsalt"
+	specuse = list(SPEC_ID_TIEFLING)
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
 /datum/sprite_accessory/horns/triton
 	name = "Triton Tusks"
 	icon = 'icons/mob/sprite_accessory/horns/triton.dmi'

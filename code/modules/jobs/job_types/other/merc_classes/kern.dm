@@ -1,12 +1,6 @@
 /datum/advclass/mercenary/kern
 	name = "Kern"
 	tutorial = "A mercanary hailing from Kaledon, you fight under your Gallowglass or for your own coin, you fled with your fellow countrymen to escape the Frozener Occupation of your homeland."
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Human",
-		"Half-Elf",
-		"Dwarf"
-	)
 	outfit = /datum/outfit/job/mercenary/kern
 	category_tags = list(CTAG_MERCENARY)
 	maximum_possible_slots = 4

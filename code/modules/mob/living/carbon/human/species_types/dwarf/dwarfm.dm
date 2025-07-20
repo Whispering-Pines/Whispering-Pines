@@ -11,7 +11,7 @@
 
 /datum/species/dwarf/mountain
 	name = "Dwarf"
-	id = "dwarf"
+	id = SPEC_ID_DWARF
 	desc = "A proud and robust species of stunted folk, \
 	the dwarves are known for their pride in martial strength \
 	and their tenacity towards their ancient customs. \

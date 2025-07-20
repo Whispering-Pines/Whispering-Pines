@@ -1,8 +1,6 @@
 /datum/advclass/pilgrim/rare/grenzelhoft
 	name = "Frozen Empire Count"
 	tutorial = "A Count hailing from the Frozen Empire Imperiate, here on an official visit to Phantom Kingdom."
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_PLAYER_GRENZ
 	outfit = /datum/outfit/job/adventurer/grenzelhoft
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 1

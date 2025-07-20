@@ -152,7 +152,7 @@
 
 /datum/species/zizombie
 	name = "zombie"
-	id = "zombie"
+	id = SPEC_ID_ZIZOMBIE
 	species_traits = list()
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE)
 	nojumpsuit = 1

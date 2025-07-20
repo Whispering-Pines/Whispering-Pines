@@ -11,7 +11,6 @@
 	min_pq = 10
 	bypass_lastclass = TRUE
 
-	allowed_races = list(MALE, FEMALE)
 	allowed_patrons = ALL_TEMPLE_PATRONS
 
 	outfit = /datum/outfit/job/inquisitor

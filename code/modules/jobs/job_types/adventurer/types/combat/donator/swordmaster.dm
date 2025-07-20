@@ -2,7 +2,7 @@
 	name = "Hedge Knight"
 	tutorial = "You spent years serving the eastern Frozener lords, and now you spend your days as a travelling hedge knight. Upon this island, you like to increase the fame of your sword skills, as well as your honor."
 	allowed_sexes = list(MALE)
-	allowed_races = list("Human","Aasimar") // not RACES_PLAYER_GRENZ because dwarves don't have a sprite for this armor
+	allowed_races = list(SPEC_ID_HUMEN, SPEC_ID_AASIMAR) // not RACES_PLAYER_GRENZ because dwarves don't have a sprite for this armor
 	outfit = /datum/outfit/job/adventurer/swordmaster
 	maximum_possible_slots = 1
 	min_pq = 2
@@ -48,5 +48,5 @@
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 
 	if(H.dna?.species)
-		if(H.dna.species.id == "human")
+		if(H.dna.species.id == SPEC_ID_HUMEN)
 			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()

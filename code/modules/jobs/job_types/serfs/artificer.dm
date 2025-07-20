@@ -13,7 +13,6 @@
 	min_pq = -50
 	bypass_lastclass = TRUE
 
-	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_ALL
 
 	outfit = /datum/outfit/job/artificer
@@ -63,6 +62,6 @@
 		H.grant_language(/datum/language/ancient_english)
 		to_chat(H, "<span class='info'>I can speak Ancient English with ,n before my speech.</span>")
 
-	if(H.dna.species.id == "dwarf")
+	if(H.dna.species.id == SPEC_ID_DWARF)
 		head = /obj/item/clothing/head/helmet/leather/minershelm
 		H.cmode_music = 'sound/music/cmode/combat_dwarf.ogg'

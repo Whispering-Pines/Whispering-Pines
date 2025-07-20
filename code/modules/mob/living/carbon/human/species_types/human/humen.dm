@@ -11,8 +11,8 @@
 
 /datum/species/human/northern
 	name = "Human"
-	id = "human"
-	desc = "Humenity, creation in Old Gods' image. \
+	id = SPEC_ID_HUMEN
+	desc = "Humanity, the earliest race.\
 	\n\n\
 	Humans are the first species ever, from the old world,\
 	they are descendants of the old worlders, their true languages, \

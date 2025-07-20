@@ -3,7 +3,7 @@
 
 /datum/species/triton
 	name = "Triton"
-	id = "triton"
+	id = SPEC_ID_TRITON
 	changesource_flags = WABBAJACK
 
 	desc = "Deep ocean folk, Tritons seen on the surface are very important trade partners, mercenaries, and surprising academics. \

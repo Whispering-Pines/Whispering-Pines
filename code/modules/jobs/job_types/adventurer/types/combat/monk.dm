@@ -1,7 +1,5 @@
 /datum/advclass/combat/monk
 	name = "Martial Artist"
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_PLAYER_NONHERETICAL
 	tutorial = "A traveling Martial Artist, unmatched in unarmed combat and with a matching mindset towards Justice and balance."
 
 	outfit = /datum/outfit/job/adventurer/monk

@@ -2,13 +2,7 @@
 	name = " Crater Emir"
 	greet_text = "An Emir hailing from the The Great Desert, here on business for the Mercator's Guild to the eastern continent."
 	allowed_sexes = list(MALE)
-	allowed_races = list(
-		"Human",
-		"Rakshari",
-		"Elf",
-		"Half-Elf",
-		"Dwarf"
-	)
+	allowed_races = RACES_PLAYER_ZYBANTINE
 	outfit = /datum/outfit/job/zalad_migration/emir
 	grant_lit_torch = TRUE
 
@@ -63,13 +57,7 @@
 	name = " Crater Amirah"
 	greet_text = "An Amirah hailing from the The Great Desert, here on business for the Mercator's Guild to the eastern continent."
 	allowed_sexes = list(FEMALE)
-	allowed_races = list(
-		"Human",
-		"Rakshari",
-		"Elf",
-		"Half-Elf",
-		"Dwarf"
-	)
+	allowed_races = RACES_PLAYER_ZYBANTINE
 	outfit = /datum/outfit/job/zalad_migration/amirah
 	grant_lit_torch = TRUE
 
@@ -119,13 +107,7 @@
 	name = "Furusiyya"
 	greet_text = "You are a furusiyya, pledged to the Emir and the Amirah. Make sure they come out alive of that place."
 	allowed_sexes = list(MALE)
-	allowed_races = list(
-	"Human",
-	"Elf",
-	"Half-Elf",
-	"Dwarf",
-	"Rakshari"
-	)
+	allowed_races = RACES_PLAYER_ZYBANTINE
 	outfit = /datum/outfit/job/zalad_migration/furusiyya
 	grant_lit_torch = TRUE
 
@@ -225,14 +207,14 @@
 /datum/migrant_role/qatil
 	name = "Qatil"
 	greet_text = "You are the Amirah's confident and most loyal protector, you shan't let them die in these wretched lands."
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Human",
-		"Elf",
-		"Rakshari",
-		"Half-Elf",
-		"Tiefling",
-		"Dark Elf",
+	allowed_races = list(\
+		SPEC_ID_HUMEN,\
+		SPEC_ID_ELF,\
+		SPEC_ID_RAKSHARI,\
+		SPEC_ID_HALF_ELF,\
+		SPEC_ID_TIEFLING,\
+		SPEC_ID_DROW,\
+		SPEC_ID_HALF_DROW,\
 	)
 	outfit = /datum/outfit/job/zalad_migration/qatil
 

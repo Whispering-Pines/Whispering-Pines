@@ -1,16 +1,6 @@
 /datum/advclass/mercenary/duelist
 	name = "Duelist"
 	tutorial = "A swordsman from Zhaladusk, wielding a rapier with deadly precision and driven by honor and a thirst for coin, they duel with unmatched precision, seeking glory and wealth."
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-	"Human",
-	"Elf",
-	"Tiefling",
-	"Half-Elf",
-	"Half-Drow",
-	"Aasimar",
-	"Half-Orc"
-	) //Yes, Horcs get to be Duelists, Not Drows though.
 	outfit = /datum/outfit/job/mercenary/duelist
 	category_tags = list(CTAG_MERCENARY)
 	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg' //Placeholder music since apparently i can't use one from the internet...

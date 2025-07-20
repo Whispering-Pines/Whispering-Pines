@@ -12,7 +12,7 @@
 
 /datum/species/elf/snow
 	name = "Elf"
-	id = "elf"
+	id = SPEC_ID_ELF
 	desc = "the new world's first new race.\
 	\n\n\
 	Elves, the first species of the new world, are characterized by lengthened age, \

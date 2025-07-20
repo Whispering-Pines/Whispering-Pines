@@ -16,8 +16,7 @@
 	min_pq = 4
 	bypass_lastclass = TRUE
 
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_PLAYER_GUARD
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 
 	outfit = /datum/outfit/job/watchman
 	advclass_cat_rolls = list(CTAG_MENATARMS = 20)

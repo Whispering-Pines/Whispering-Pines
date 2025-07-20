@@ -13,9 +13,7 @@
 	spawn_positions = 2
 
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
-	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
-
 	outfit = /datum/outfit/job/squire
 	display_order = JDO_SQUIRE
 	give_bank_account = TRUE

@@ -12,17 +12,7 @@
 	min_pq = -20
 	bypass_lastclass = TRUE
 
-	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Human",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar",
-		"Harpy"
-	)
+	allowed_races = list(RACES_PLAYER_ALL)
 
 	outfit = /datum/outfit/job/cook
 	display_order = JDO_COOK

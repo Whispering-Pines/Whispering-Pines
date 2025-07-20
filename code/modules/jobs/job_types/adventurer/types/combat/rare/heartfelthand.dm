@@ -3,7 +3,6 @@
 	tutorial = "You serve your lord as hand, taking care of diplomatic actions within your realm, \
 	but why have you come to Phantom Kingdom?"
 	allowed_sexes = list(MALE)
-	allowed_races = list("Human")
 	outfit = /datum/outfit/job/adventurer/heartfelthand
 	maximum_possible_slots = 1
 	min_pq = 1

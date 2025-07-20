@@ -16,6 +16,7 @@
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 
 	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/servant)
+	allowed_races = RACES_PLAYER_ROYALTY
 	outfit = /datum/outfit/job/consort
 	advclass_cat_rolls = list(CTAG_CONSORT = 20)
 	give_bank_account = 500

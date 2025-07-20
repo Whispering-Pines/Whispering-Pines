@@ -9,7 +9,7 @@
 
 /datum/species/demihuman
 	name = "Demihuman"
-	id = "demihuman"
+	id = SPEC_ID_HOLLOWKIN
 	desc = "Generally an offspring of an anthro and a human, or a human turned anthrolike by some other means."
 
 	allowed_pronouns = PRONOUNS_LIST
