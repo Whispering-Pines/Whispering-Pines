@@ -6,49 +6,23 @@
 /obj/item/basic_power
 	name = "Power requiring item."
 	desc = ""
-	var/discovered = TRUE
+	var/discoverable = TRUE
 	var/toggled = FALSE
 	var/self_powering = FALSE
 	var/charge_amt = 0
 	var/charge_max = 0
-	var/last_identify_attempt = 0
-	var/identify_difficulty = 0
+	var/datum/component/discoverable/dis_comp
 
 /obj/item/basic_power/examine(mob/user)
 	. = ..()
-	if(!ishuman(user))
+	if(dis_comp && !dis_comp.discovered)
 		return
-	var/mob/living/carbon/human/huser = user
-	if(!discovered)
-		if(world.time > last_identify_attempt + 3 MINUTES)
-			last_identify_attempt = world.time
-			var/the_roll = 2*huser.STAINT*max(1,huser.get_skill_level(/datum/skill/misc/lore))-identify_difficulty
-			if(type in huser.identified_items)
-				to_chat(huser, span_green("I seen this before..."))
-				the_roll += 50
-				identify_difficulty = 0 //eliminate exp bonus.
-			if(prob(min(the_roll,100)))
-				name = initial(name)
-				desc = initial(desc)
-				icon_state = initial(icon_state)
-				discovered = TRUE
-				update_appearance(UPDATE_ICON_STATE)
-				to_chat(huser, span_green("I figure that this should be a [name]."))
-				huser.adjust_experience(/datum/skill/misc/lore, huser.STAINT * 2 + identify_difficulty, FALSE, TRUE)
-				if(!(type in huser.identified_items))
-					huser.identified_items += type
-			else
-				to_chat(huser, span_red("I can't quite figure out what this is, I should ponder again later... [the_roll]%"))
-		return
-	else
-		. += "It's power gauge reads [(charge_amt/charge_max)*100]%."
+	. += "It's power gauge reads [(charge_amt/charge_max)*100]%."
 
 /obj/item/basic_power/Initialize()
 	. = ..()
-	if(!discovered)
-		name = "Unidentified item."
-		desc = "Some strange old world technology."
-		icon_state = "Unknown[rand(1,3)]"
+	if(discoverable)
+		dis_comp = AddComponent(/datum/component/discoverable)
 		charge_amt = rand(0, charge_max)
 	if(!toggled)
 		STOP_PROCESSING(SSprocessing, src)
@@ -83,7 +57,7 @@
 	toggle()
 
 /obj/item/basic_power/attack(mob/living/M, mob/living/user, params)
-	if(!discovered)
+	if(dis_comp && !dis_comp.discovered)
 		user.balloon_alert(user, "Don't know how to use this.")
 		return
 	if(!toggled)

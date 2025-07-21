@@ -13,7 +13,7 @@
 
 /datum/species/tabaxi
 	name = "Tabaxi"
-	id = "tabaxi"
+	id = SPEC_ID_TABAXI
 
 	changesource_flags = WABBAJACK
 	desc = "Tabaxi are taller than most humans at six to seven feet. \

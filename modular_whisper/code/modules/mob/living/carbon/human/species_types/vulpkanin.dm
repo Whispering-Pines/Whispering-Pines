@@ -3,7 +3,7 @@
 
 /datum/species/vulpkanin
 	name = "Vulpkian"
-	id = "vulpkanin"
+	id = SPEC_ID_VULPKANIN
 	desc = "Foxy creatures known for their cleverness and mischief. In ancient history they were Dendor's original champions, but as His madness grew the connect became frey and forgotten, leaving them to their own devices. Or, at least, that's what they say."
 	default_color = "#5c5c5cff"
 	skin_tone_wording = "Color"

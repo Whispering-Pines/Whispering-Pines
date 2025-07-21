@@ -2,8 +2,8 @@
 	race = /datum/species/human/resurgentis
 
 /datum/species/human/resurgentis
-	id = "resurgentis"
 	name = "Resurgentis"
+	id = SPEC_ID_RESURGENTIS
 	desc = "The children of Last Death. \
 	\n\n\
 	Resurgentis are descendants of their immortal 'Ancestor', The resurgentis semi undead Monarch, \

@@ -3,7 +3,7 @@
 
 /datum/species/lupian
 	name = "Lupian"
-	id = "lupian"
+	id = SPEC_ID_LUPIAN
 	desc = "Lupians are the sons and daughters of Lunaria. They are a volf-like people hailing from the Northern Regions of the world. \
 	They are resilient, cunning and fight ready creachures capable of surviving the north thanks to their rugged pelts, \
 	sharp teeth and deep-rooted spirit of community. They are very dutiful individuals and make fantastic and fearsome \
@@ -174,19 +174,3 @@
 	UnregisterSignal(C, COMSIG_MOB_SAY)
 	C.remove_language(/datum/language/common)
 	C.remove_language(/datum/language/beast)
-
-/datum/species/lupian/get_skin_list()
-	return list(
-		"Vakran" = "271f1b",
-		"Lanarain" = "271f1c",
-		"Frostfell" = "271f1d",
-		"Varghelm" = "271f1e",
-		"Dawnbreak" = "271f1f",
-		"Bloodmoon" = "271f2a",
-		"Felsaad" = "271f2b",
-		"Hizmut" = "271f2c",
-		"Langqan" = "271f2d",
-		"a tangled lineage" = "271f2e",
-		"disputed" = "271f2f",
-		"bastardized" = "271f3a"
-	) // This is a dirty hack that stops me using mob defines, the colors do not do anything, it just a var that relates to their pack name on examine

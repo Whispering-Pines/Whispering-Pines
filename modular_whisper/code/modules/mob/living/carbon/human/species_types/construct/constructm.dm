@@ -10,7 +10,7 @@
 
 /datum/species/construct/metal
 	name = "Metal Construct"
-	id = "constructm"
+	id = SPEC_ID_CONSTRUCT
 	desc = "<b>Metallic Construct</b><br>\
 	Masterworks of artifice, old world technology and magic combined, metal contructs are as the name implies- entirely constructed by mortal hands. \
 	They are beings not of flesh and blood, but cold metal and the arcyne.\n\n \

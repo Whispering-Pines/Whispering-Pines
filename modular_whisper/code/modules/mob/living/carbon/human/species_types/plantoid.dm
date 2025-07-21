@@ -3,7 +3,7 @@
 
 /datum/species/plantoid
 	name = "Plantoid"
-	id = "plantoid"
+	id = SPEC_ID_PLANTOID
 	desc = "Children of blissrose, extremely rare plantoids, or plantpeople as commonly called. \
 	Are one in a million chance product of a plantperson mating and planting such seeds. \
 	They are entirely made of plant matter and sustain themselves on sunlight, they lack organs but still have blood-like substance to maintain themselves and are easier to delimb due lack of bone. They are overall pretty stupid and unable to speak or comprehend languages, animalistic a tad. They need to eat meat as they can't consume plant matter... But they are satiated by sunlight aswell.<br><br>\

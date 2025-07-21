@@ -25,6 +25,7 @@
 #define SPEC_ID_CONSTRUCT "Metal Construct"
 #define SPEC_ID_SLIMEPERSON "Slimeperson"
 #define SPEC_ID_PLANTOID "Plantoid"
+#define SPEC_ID_GOBLINPLAYER	"goblinplayer"
 #define SPEC_ID_HUMAN_SPACE "Human"
 
 #define SPEC_ID_ORC	"orc"
@@ -61,6 +62,7 @@
 	SPEC_ID_CONSTRUCT,\
 	SPEC_ID_SLIMEPERSON,\
 	SPEC_ID_PLANTOID,\
+	SPEC_ID_GOBLINPLAYER,\
 	SPEC_ID_ORC,\
 	SPEC_ID_GOBLIN,\
 	SPEC_ID_ROUSMAN,\
@@ -94,6 +96,7 @@
 	SPEC_ID_AXIAN,\
 	SPEC_ID_TABAXI,\
 	SPEC_ID_VULPKANIN,\
+	SPEC_ID_GOBLINPLAYER,\
 	)
 
 /// Species where males get underwear, identical to above, elves handled seperately
@@ -121,6 +124,7 @@
 	SPEC_ID_AXIAN,\
 	SPEC_ID_TABAXI,\
 	SPEC_ID_VULPKANIN,\
+	SPEC_ID_GOBLINPLAYER,\
 	)
 
 // ============ USING NAME
@@ -153,6 +157,7 @@
 	SPEC_ID_CONSTRUCT,\
 	SPEC_ID_SLIMEPERSON,\
 	SPEC_ID_PLANTOID,\
+	SPEC_ID_GOBLINPLAYER,\
 )
 
 /// Races not considered discriminated against in Phantom Kingdom. Used for nobility, etc.
@@ -184,6 +189,7 @@
 	SPEC_ID_CONSTRUCT,\
 	SPEC_ID_SLIMEPERSON,\
 	SPEC_ID_PLANTOID,\
+	SPEC_ID_GOBLINPLAYER,\
 )
 
 /// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Tenebrase. Used for church/faith roles.
@@ -216,6 +222,7 @@
 	SPEC_ID_CONSTRUCT,\
 	SPEC_ID_SLIMEPERSON,\
 	SPEC_ID_PLANTOID,\
+	SPEC_ID_GOBLINPLAYER,\
 )
 
 /// Races who are non-exotic to Phantom Kingdom. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
@@ -244,6 +251,7 @@
 	SPEC_ID_AXIAN,\
 	SPEC_ID_TABAXI,\
 	SPEC_ID_VULPKANIN,\
+	SPEC_ID_GOBLINPLAYER,\
 )
 
 /// Species that lack lux. Any who have no ties to divinity anymore, whether it be their creation story or otherwise taken from them (Hollow-kin)
@@ -251,20 +259,62 @@
 	SPEC_ID_HUMAN_SPACE,\
 )
 
-/// Races who are affiliated with Grenzelhoft or Old Gods specifically.
+/// Races who are affiliated with Frozen City or Old Gods specifically.
 #define RACES_PLAYER_GRENZ list(\
 	SPEC_ID_HUMEN,\
 	SPEC_ID_DWARF,\
 	SPEC_ID_AASIMAR,\
-)
-
-/// Races who are affiliated with Zybantine
-#define RACES_PLAYER_ZYBANTINE list(\
-	SPEC_ID_HUMEN,\
-	SPEC_ID_RAKSHARI,\
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
+	SPEC_ID_DROW,\
+	SPEC_ID_HALF_DROW,\
+	SPEC_ID_TIEFLING,\
+	SPEC_ID_HARPY,\
+	SPEC_ID_RAKSHARI,\
+	SPEC_ID_TRITON,\
+	SPEC_ID_KOBOLD,\
+	SPEC_ID_HOLLOWKIN,\
+	SPEC_ID_HALF_ORC,\
+	SPEC_ID_RESURGENTIS,\
+	SPEC_ID_AKULA,\
+	SPEC_ID_WILDKIN,\
+	SPEC_ID_VERMINVOLK,\
+	SPEC_ID_DRACON,\
+	SPEC_ID_LIZARDFOLK,\
+	SPEC_ID_LUPIAN,\
+	SPEC_ID_AXIAN,\
+	SPEC_ID_TABAXI,\
+	SPEC_ID_VULPKANIN,\
+	SPEC_ID_GOBLINPLAYER,\
+)
+
+/// Races who are affiliated with Crater Emirate
+#define RACES_PLAYER_ZYBANTINE list(\
+	SPEC_ID_HUMEN,\
 	SPEC_ID_DWARF,\
+	SPEC_ID_AASIMAR,\
+	SPEC_ID_ELF,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_DROW,\
+	SPEC_ID_HALF_DROW,\
+	SPEC_ID_TIEFLING,\
+	SPEC_ID_HARPY,\
+	SPEC_ID_RAKSHARI,\
+	SPEC_ID_TRITON,\
+	SPEC_ID_KOBOLD,\
+	SPEC_ID_HOLLOWKIN,\
+	SPEC_ID_HALF_ORC,\
+	SPEC_ID_RESURGENTIS,\
+	SPEC_ID_AKULA,\
+	SPEC_ID_WILDKIN,\
+	SPEC_ID_VERMINVOLK,\
+	SPEC_ID_DRACON,\
+	SPEC_ID_LIZARDFOLK,\
+	SPEC_ID_LUPIAN,\
+	SPEC_ID_AXIAN,\
+	SPEC_ID_TABAXI,\
+	SPEC_ID_VULPKANIN,\
+	SPEC_ID_GOBLINPLAYER,\
 )
 
 /// Elves and Half-Elves
@@ -319,6 +369,7 @@
 	SPEC_ID_CONSTRUCT,\
 	SPEC_ID_SLIMEPERSON,\
 	SPEC_ID_PLANTOID,\
+	SPEC_ID_GOBLINPLAYER,\
 )
 
 #define RACES_PLAYER_ROYALTY list(\
@@ -365,6 +416,7 @@
 	SPEC_ID_AXIAN,\
 	SPEC_ID_TABAXI,\
 	SPEC_ID_VULPKANIN,\
+	SPEC_ID_GOBLINPLAYER,\
 )
 
 /// Nonnative species - Anything not native to Psydonia.

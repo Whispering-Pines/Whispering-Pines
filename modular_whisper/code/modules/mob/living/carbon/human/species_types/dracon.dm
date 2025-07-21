@@ -3,7 +3,7 @@
 
 /datum/species/dracon
 	name = "Drakian"
-	id = "dracon"
+	id = SPEC_ID_DRACON
 	desc = "Mighty scaled individuals who claim to be descendants of the dragons."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	default_color = "#5c5c5cff"

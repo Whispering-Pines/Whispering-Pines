@@ -3,7 +3,7 @@
 
 /datum/species/lizardfolk
 	name = "Lizardfolk"
-	id = "lizardfolk"
+	id = SPEC_ID_LIZARDFOLK
 	desc = "Lizardfolk are semi-aquatic reptilian humanoids. \
 	Their flesh is covered in scales varying in color from dark green to shades of brown and gray. \
 	Taller than humans and powerfully built, lizardfolk are often between 6 and 7 feet tall. \

@@ -3,7 +3,7 @@
 
 /datum/species/slimeperson
 	name = "Slimeperson"
-	id = "slimeperson"
+	id = SPEC_ID_SLIMEPERSON
 	desc = "Strange living gelatinous things with human organs which gained a basic level of sentience... Such type of slimes are said to form using corpses, They have simple organs and a skeleton inside. They are quite fragile but may reattach their severed bits."
 	default_color = "#115b10"
 	skin_tone_wording = "Color"
