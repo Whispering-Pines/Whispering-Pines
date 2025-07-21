@@ -238,7 +238,6 @@
 
 	var/muddy = FALSE
 	var/bloodiness = 20
-	var/obj/structure/closet/dirthole/holie
 	var/dirt_amt = 3
 	burn_power = 0
 	spread_chance = 0
@@ -258,12 +257,6 @@
 		else
 			qdel(I)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-
-/turf/open/floor/dirt/Destroy()
-	if(holie)
-		QDEL_NULL(holie)
-	return ..()
-
 
 /turf/open/floor/dirt/Crossed(atom/movable/O)
 	..()
