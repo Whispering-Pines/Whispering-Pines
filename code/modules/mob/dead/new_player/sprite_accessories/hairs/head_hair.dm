@@ -69,9 +69,12 @@
 	owner.cut_overlay(owner.hair_overlay)
 	if(is_human_part_visible(owner, HIDEHAIR)) //have to check for helmets because they become invisible under the overlay unfortunately
 		if(isresurgentis(owner))
-			owner.hair_overlay = mutable_appearance(icon, icon_state, HAIR_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.get_hair_color())
+			owner.hair_overlay = mutable_appearance(icon, icon_state, HAIR_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 150, owner.get_hair_color())
+			owner.hair_overlay.alpha = 150
+			/*
 			if(owner.head && owner.head.w_class > 1)
 				owner.hair_overlay.alpha = 50 //so helmet shows, tho looks less glowy and wrong sadly. I tried adding a alpha gradient but couldnt figure it out.
+				*/
 		if(owner.hair_overlay)
 			var/use_female_sprites = FALSE
 			if(owner.dna.species?.sexes)

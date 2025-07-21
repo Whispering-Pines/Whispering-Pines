@@ -25,6 +25,10 @@
 				if(80 to 99)
 					. += "<span class='warning'>It's a little damaged.</span>"
 
+	//helmsguard taint code
+	if(tainted)
+		. += span_warning("It's very old and decayed.")
+
 //	if(has_inspect_verb || (obj_integrity < max_integrity))
 //		. += "<span class='notice'><a href='byond://?src=[REF(src)];inspect=1'>Inspect</a></span>"
 

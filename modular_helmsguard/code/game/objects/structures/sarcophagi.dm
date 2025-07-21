@@ -197,10 +197,12 @@
 //Mob
 
 /mob/living/carbon/human/species/skeleton/dead
+	tainted_chance = 70
 
 /mob/living/carbon/human/species/skeleton/dead/after_creation()
 	..()
 	death()
+	setDir(pick(GLOB.cardinals))
 
 /mob/living/carbon/human/species/skeleton/dead/adventurer
 	skel_outfit = /datum/outfit/job/npc/skeleton/dead/adventurer

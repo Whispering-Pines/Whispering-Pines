@@ -283,9 +283,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	/// angle of the icon, these are used for attack animations
 	var/icon_angle = 50 // most of our icons are angled
 
+	//whisp additions
 	var/sheathe_sound = "rustle"
-
 	var/leashable = FALSE // More elegant solution to leash checks
+	var/tainted = FALSE
 
 /obj/item/Initialize()
 	. = ..()

@@ -1225,8 +1225,8 @@
 	owner.cut_overlay(owner.fhair_overlay)
 	if(is_human_part_visible(owner, HIDEFACIALHAIR))
 		if(isresurgentis(owner))
-			owner.fhair_overlay = mutable_appearance(icon, icon_state, HAIR_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 100, owner.get_hair_color())
-			owner.fhair_overlay.alpha = 100
+			owner.fhair_overlay = mutable_appearance(icon, icon_state, HAIR_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 150, owner.get_hair_color())
+			owner.fhair_overlay.alpha = 150
 		if(owner.fhair_overlay)
 			var/use_female_sprites = FALSE
 			if(owner.dna.species?.sexes)

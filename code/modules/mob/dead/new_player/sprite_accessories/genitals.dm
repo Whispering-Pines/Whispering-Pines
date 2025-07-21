@@ -134,13 +134,15 @@
 	owner.cut_overlay(owner.breast_overlay)
 	if(is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT))
 		if(isresurgentis(owner))
-			owner.nipple_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/nipples.dmi', "pair_[organ.organ_size]_FRONT", BODY_FFFFFRONT_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.get_hair_color()) //someone plz figure a way to put this behind fovs
+			owner.nipple_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/nipples.dmi', "pair_[organ.organ_size]_FRONT", BODY_FFFFFRONT_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 200, owner.get_hair_color()) //someone plz figure a way to put this behind fovs
+			owner.nipple_overlay.alpha = 200
 			if(owner.wear_armor||owner.wear_shirt)
-				owner.nipple_overlay.alpha = 50 //so worn thing shows, tho looks less glowy and wrong sadly
+				owner.nipple_overlay.alpha = 100 //so worn thing shows, tho looks less glowy and wrong sadly
 		else if(isconstruct(owner) && owner.client)
-			owner.nipple_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/nipples.dmi', "pair_[organ.organ_size]_FRONT", BODY_FFFFFRONT_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.client.prefs.get_eye_color())
+			owner.nipple_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/nipples.dmi', "pair_[organ.organ_size]_FRONT", BODY_FFFFFRONT_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 200, owner.client.prefs.get_eye_color())
+			owner.nipple_overlay.alpha = 200
 			if(owner.wear_armor||owner.wear_shirt)
-				owner.nipple_overlay.alpha = 50 //so worn thing shows, tho looks less glowy and wrong sadly
+				owner.nipple_overlay.alpha = 100 //so worn thing shows, tho looks less glowy and wrong sadly
 		else
 			owner.nipple_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/nipples.dmi', "pair_[organ.organ_size]_FRONT", BODY_FFFFFRONT_LAYER, GAME_PLANE_FOV_HIDDEN, 100, "#ffa0a2ff") //low alpha so it merges with skin color
 			owner.nipple_overlay.alpha = 100 //for some reason it isnt semi transparent anyway.
@@ -200,9 +202,10 @@
 	owner.cut_overlay(owner.vag_overlay)
 	if(is_human_part_visible(owner, HIDECROTCH|HIDEBUTT|HIDEJUMPSUIT))
 		if(isresurgentis(owner))
-			owner.vag_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/vagina.dmi', "[icon_state]_FRONT", BODY_FRONT_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.get_hair_color())
+			owner.vag_overlay = mutable_appearance('modular_stonehedge/icons/mob/sprite_accessory/genitals/vagina.dmi', "[icon_state]_FRONT", BODY_FRONT_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 150, owner.get_hair_color())
+			owner.vag_overlay.alpha = 150
 			if(owner.wear_pants||owner.belt)
-				owner.vag_overlay.alpha = 100 //so belt shows, tho looks less glowy and wrong sadly
+				owner.vag_overlay.alpha -= 50 //so belt shows, tho looks less glowy and wrong sadly
 		if(owner.vag_overlay)
 			var/use_female_sprites = FALSE
 			if(owner.dna.species?.sexes)

@@ -9,11 +9,12 @@
 		return
 	if(NOEYESPRITES in owner.dna?.species?.species_traits)
 		return FALSE
-	update_overlay(organ, owner) //so it detects something you wear proper
 	return is_human_part_visible(owner, HIDEEYES)
 
 /datum/sprite_accessory/eyes/adjust_appearance_list(list/appearance_list, obj/item/organ/eyes/eyes, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, eyes, bodypart, owner, OFFSET_FACE)
+	owner.cut_overlay(list(owner.eye_overlay,owner.eye_overlay2))
+	CALLBACK(CALLBACK(src, PROC_REF(update_overlay), eyes, owner), 1 SECONDS) //it updates too early otherwise it seems
 
 /datum/sprite_accessory/eyes/proc/update_overlay(obj/item/organ/eyes/organ, mob/living/carbon/human/owner)
 	if(!owner)
@@ -22,17 +23,16 @@
 		return
 	if(!ishuman(owner) || !owner.client.prefs)
 		return
-	owner.eye_overlay = null
-	owner.eye_overlay2 = null
-	owner.cut_overlay(list(owner.eye_overlay,owner.eye_overlay2))
-	if(owner.wear_mask && owner.wear_mask.flags_cover & MASKCOVERSEYES)
-		return FALSE
-	if(owner.name == "Unknown" || owner.name == "Unknown Man" || owner.name == "Unknown Woman")
-		return FALSE
 	//ways to hide your glowing ass eyes
+	if(owner.wear_mask && (owner.wear_mask.flags_cover & MASKCOVERSEYES))
+		return
+	if(owner.head && (owner.head.flags_cover & HEADCOVERSEYES))
+		return
+	if(owner.name == "Unknown" || owner.name == "Unknown Man" || owner.name == "Unknown Woman")
+		return
 	if(is_human_part_visible(owner, HIDEEYES) && organ.glows) //hideface so people can hide their glowy ass eyes with a mask etc.
-		owner.eye_overlay = mutable_appearance(icon, "human_glow_1", MOUTH_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.client.prefs.get_eye_color())
-		owner.eye_overlay2 = mutable_appearance(icon, "human_glow_2", MOUTH_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 255, owner.client.prefs.get_eye_second_color())
+		owner.eye_overlay = mutable_appearance(icon, "human_glow_1", MOUTH_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 100, owner.client.prefs.get_eye_color())
+		owner.eye_overlay2 = mutable_appearance(icon, "human_glow_2", MOUTH_LAYER, EMISSIVE_LAYER_UNBLOCKABLE, 100, owner.client.prefs.get_eye_second_color())
 		if(owner.eye_overlay && owner.eye_overlay2)
 			var/use_female_sprites = FALSE
 			if(owner.dna.species?.sexes)

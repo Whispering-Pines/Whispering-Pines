@@ -3,6 +3,7 @@
 /mob/living/carbon/human
 	var/list/identified_items = list()
 
+//sort of merged with discovery functions.
 /obj/item/basic_power
 	name = "Power requiring item."
 	desc = ""
@@ -17,7 +18,7 @@
 	. = ..()
 	if(dis_comp && !dis_comp.discovered)
 		return
-	. += "It's power gauge reads [(charge_amt/charge_max)*100]%."
+	. += span_notice("It's power gauge reads [(charge_amt/charge_max)*100]%.")
 
 /obj/item/basic_power/Initialize()
 	. = ..()
@@ -38,6 +39,8 @@
 
 /obj/item/basic_power/update_icon_state()
 	. = ..()
+	if(dis_comp && !dis_comp.discovered)
+		return
 	icon_state = "[initial(icon_state)][toggled ? "_on":""]"
 
 /obj/item/basic_power/proc/toggle()
@@ -54,11 +57,14 @@
 
 /obj/item/basic_power/attack_self(mob/user, params)
 	. = ..()
+	if(dis_comp && !dis_comp.discovered)
+		user.balloon_alert(user, "I don't know how to use this.")
+		return
 	toggle()
 
 /obj/item/basic_power/attack(mob/living/M, mob/living/user, params)
 	if(dis_comp && !dis_comp.discovered)
-		user.balloon_alert(user, "Don't know how to use this.")
+		user.balloon_alert(user, "I don't know how to use this.")
 		return
 	if(!toggled)
 		user.balloon_alert(user, "Not on.")

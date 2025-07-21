@@ -13,6 +13,7 @@
 	possible_rmb_intents = list()
 	erpable = TRUE
 	show_genitals = TRUE
+	skin_tone = "A3866D"
 
 /mob/living/carbon/human/species/zizombie/npc
 	ai_controller = /datum/ai_controller/human_npc

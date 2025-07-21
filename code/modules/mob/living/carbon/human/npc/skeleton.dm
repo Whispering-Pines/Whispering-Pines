@@ -32,6 +32,7 @@
 	ball_max = 3
 	butt_min = 3
 	butt_max = 3
+	var/tainted_chance = 50
 
 /mob/living/carbon/human/species/skeleton/npc/no_equipment
 	skel_outfit = null
@@ -90,6 +91,20 @@
 		var/datum/outfit/OU = new skel_outfit
 		if(OU)
 			equipOutfit(OU)
+
+	//helmsguard taint code
+	for(var/obj/item/W in contents)	//TAINTED CODES
+		if(prob(tainted_chance))
+			W.max_integrity = W.max_integrity/2
+			W.tainted = TRUE
+			W.color = "#7b5740"
+			W.name = "Decrepit [W.name] "
+			if(prob(tainted_chance/5)) //even more fucked.
+				W.max_integrity = W.max_integrity/1.5
+				W.color = "#39261b"
+				W.name = "Ancient [W.name] "
+				W.smeltresult = null //too fucked to smelt.
+			W.obj_integrity = rand(1, W.max_integrity)
 
 /datum/outfit/job/npc/skeleton/random/pre_equip(mob/living/carbon/human/H)
 	..()
