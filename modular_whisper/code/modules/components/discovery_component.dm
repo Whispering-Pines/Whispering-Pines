@@ -1,4 +1,9 @@
-//wip
+//By Vide Noir https://github.com/EaglePhntm.
+///Discoverable component, makes items unknown
+//and unusable with some more effort on the item type used using checks for the discovered var here and doing early returns like on powered.dm
+//examining an unknown item has a chance based on int and lore skill to reveal it, examining identified items, or having identified an item-
+//makes you memorize it for future of identifying the same kind of item, making it much easier.
+//take health_analyzer from powered.dm for a prime example of use.
 /datum/component/discoverable
 	var/discovered = FALSE
 	var/last_identify_attempt = 0
