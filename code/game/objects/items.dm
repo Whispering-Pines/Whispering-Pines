@@ -287,6 +287,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/sheathe_sound = "rustle"
 	var/leashable = FALSE // More elegant solution to leash checks
 	var/tainted = FALSE
+	var/datum/component/identifiable/ident_comp
+	var/pre_identified = FALSE
 
 /obj/item/Initialize()
 	. = ..()

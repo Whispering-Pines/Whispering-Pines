@@ -1,30 +1,26 @@
 //by vide noir
 //old world powered tech that needs identification.
-/mob/living/carbon/human
-	var/list/identified_items = list()
-
-//sort of merged with discovery functions.
 /obj/item/basic_power
 	name = "Power requiring item."
 	desc = ""
-	var/discoverable = TRUE
 	var/toggled = FALSE
 	var/self_powering = FALSE
 	var/charge_amt = 0
-	var/charge_max = 0
-	var/datum/component/discoverable/dis_comp
+	var/charge_max = 4000
 
 /obj/item/basic_power/examine(mob/user)
 	. = ..()
-	if(dis_comp && !dis_comp.discovered)
+	if(ident_comp && !ident_comp.identified)
 		return
 	. += span_notice("It's power gauge reads [(charge_amt/charge_max)*100]%.")
 
 /obj/item/basic_power/Initialize()
 	. = ..()
-	if(discoverable)
-		dis_comp = AddComponent(/datum/component/discoverable)
+	ident_comp = AddComponent(/datum/component/identifiable)
+	if(!pre_identified)
 		charge_amt = rand(0, charge_max)
+	else
+		ident_comp.unmysterize(src)
 	if(!toggled)
 		STOP_PROCESSING(SSprocessing, src)
 
@@ -39,8 +35,6 @@
 
 /obj/item/basic_power/update_icon_state()
 	. = ..()
-	if(dis_comp && !dis_comp.discovered)
-		return
 	icon_state = "[initial(icon_state)][toggled ? "_on":""]"
 
 /obj/item/basic_power/proc/toggle()
@@ -57,15 +51,9 @@
 
 /obj/item/basic_power/attack_self(mob/user, params)
 	. = ..()
-	if(dis_comp && !dis_comp.discovered)
-		user.balloon_alert(user, "I don't know how to use this.")
-		return
 	toggle()
 
 /obj/item/basic_power/attack(mob/living/M, mob/living/user, params)
-	if(dis_comp && !dis_comp.discovered)
-		user.balloon_alert(user, "I don't know how to use this.")
-		return
 	if(!toggled)
 		user.balloon_alert(user, "Not on.")
 		return
@@ -79,6 +67,9 @@
 	icon = 'modular_whisper/icons/obj/misc.dmi'
 	icon_state = "health_scanner"
 	sellprice = 200
+
+/obj/item/basic_power/health_analyzer/identified
+	pre_identified = TRUE
 
 /obj/item/basic_power/health_analyzer/attack(mob/living/carbon/human/M, mob/living/user, params)
 	. = ..()

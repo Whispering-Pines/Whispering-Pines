@@ -2986,7 +2986,7 @@
 #include "modular_whisper\code\modules\cargo\supply_packs\adventuring.dm"
 #include "modular_whisper\code\modules\cargo\supply_packs\apparel.dm"
 #include "modular_whisper\code\modules\clothing\neck.dm"
-#include "modular_whisper\code\modules\components\discovery_component.dm"
+#include "modular_whisper\code\modules\components\identifiable_component.dm"
 #include "modular_whisper\code\modules\cooking\raw\Human_processing.dm"
 #include "modular_whisper\code\modules\crafting\crafting.dm"
 #include "modular_whisper\code\modules\crafting\alchemy\reagents.dm"
