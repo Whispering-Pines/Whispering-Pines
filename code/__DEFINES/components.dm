@@ -312,5 +312,5 @@
 #define COMSIG_COMBAT_TARGET_SET "comsig_combat_target_set"
 
 //Whispering pines slop
-#define COMSIG_APPLY_REAGENTS "item_apply_reagents" //used for weapon coating
 #define COMSIG_POWER_UPDATE "power_update"
+#define COMSIG_MOVABLE_THROW_HIT_MOB "movable_throw_hit_mob"

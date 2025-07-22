@@ -1,6 +1,7 @@
 /datum/sex_action/masturbate_other_anus
 	name = "Finger their butt"
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_GUTS
 
 /datum/sex_action/masturbate_other_anus/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

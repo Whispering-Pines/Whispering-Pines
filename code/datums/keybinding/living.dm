@@ -166,7 +166,6 @@
 	var/mob/living/L = user.mob
 	if(!istype(L))
 		return FALSE
-	L.stop_all_doing()
 	L.resist()
 	return TRUE
 

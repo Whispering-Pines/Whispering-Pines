@@ -1,6 +1,8 @@
 /datum/sex_action/masturbate_other_breasts
 	name = "Rub their breasts"
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_BREASTS
+	organ_damage_mult = 0.5
 
 /datum/sex_action/masturbate_other_breasts/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
@@ -46,6 +48,60 @@
 	user.visible_message(span_warning("[user] stops stroking [target]'s breasts."))
 
 /datum/sex_action/masturbate_other_breasts/is_finished(mob/living/user, mob/living/target)
+	if(target.sexcon.finished_check())
+		return TRUE
+	return FALSE
+
+//nipple pull
+/datum/sex_action/masturbate_other_breasts_two
+	name = "Tug their nipples"
+	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_BREASTS
+
+/datum/sex_action/masturbate_other_breasts_two/shows_on_menu(mob/living/user, mob/living/target)
+	if(!target.erpable && issimple(target))
+		return FALSE
+
+	if(user == target)
+		return FALSE
+	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
+	return TRUE
+
+/datum/sex_action/masturbate_other_breasts_two/can_perform(mob/living/user, mob/living/target)
+	if(user == target)
+		return FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/targethuman = target
+		if(targethuman.wear_shirt)
+			var/obj/item/clothing/shirt/shirtsies = targethuman.wear_shirt
+			if(shirtsies.flags_inv & HIDEBOOB)
+				if(shirtsies.genital_access == FALSE)
+					return FALSE
+	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
+		if(issimple(target) && target.gender == FEMALE && target.sexcon)
+		else
+			return FALSE
+	return TRUE
+
+/datum/sex_action/masturbate_other_breasts_two/on_start(mob/living/user, mob/living/target)
+	..()
+	user.visible_message(span_warning("[user] starts tugging [target]'s nipples..."))
+
+/datum/sex_action/masturbate_other_breasts_two/on_perform(mob/living/user, mob/living/target)
+	if(user.sexcon.do_message_signature("[type]"))
+		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] tugs [target]'s nipples..."))
+
+	user.sexcon.perform_sex_action(target, 2, 4, TRUE)
+	target.sexcon.handle_passive_ejaculation()
+
+/datum/sex_action/masturbate_other_breasts_two/on_finish(mob/living/user, mob/living/target)
+	..()
+	user.visible_message(span_warning("[user] stops tugging [target]'s nipples."))
+
+/datum/sex_action/masturbate_other_breasts_two/is_finished(mob/living/user, mob/living/target)
 	if(target.sexcon.finished_check())
 		return TRUE
 	return FALSE

@@ -1,6 +1,8 @@
 /datum/sex_action/masturbate_other_vagina
 	name = "Stroke their clit"
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_VAGINA
+	organ_damage_mult = 0.5
 
 /datum/sex_action/masturbate_other_vagina/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

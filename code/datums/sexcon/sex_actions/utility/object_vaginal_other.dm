@@ -2,6 +2,7 @@
 	name = "Fuck their cunt with object"
 	var/ouchietext = "owie"
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_VAGINA
 
 /datum/sex_action/object_vaginal_other/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

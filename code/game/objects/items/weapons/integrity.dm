@@ -5,6 +5,8 @@
 	var/dismember_blade_int = 0
 	/// Maximum blade integrity
 	var/max_blade_int = 0
+	/// Required skill to repair the blade integrity
+	var/required_repair_skill = 0
 
 /obj/item/proc/remove_bintegrity(amt as num, mob/user)
 	if(user && HAS_TRAIT(user, TRAIT_SHARPER_BLADES))
@@ -44,15 +46,20 @@
 	user.changeNext_move(user.used_intent.clickcd)
 	. = ..()
 
-/obj/item/attackby(obj/item/I, mob/living/user, params)
+/obj/item/attackby(obj/item/I, mob/user, params)
 	user.changeNext_move(user.used_intent.clickcd)
 	if(max_blade_int)
-		if(istype(I, /obj/item/natural/stone))
+		if(istype(I, /obj/item/natural))
+			var/obj/item/natural/ST = I
+			if(!ST.sharpening_factor)
+				return
 			playsound(src.loc, pick('sound/items/sharpen_long1.ogg','sound/items/sharpen_long2.ogg'), 100)
-			user.visible_message("<span class='notice'>[user] sharpens [src]!</span>")
+			user.visible_message(span_notice("[user] sharpens [src]!"))
 			degrade_bintegrity(0.5)
-			add_bintegrity(max_blade_int * 0.1)
-			if(prob(35))
+			add_bintegrity(max_blade_int * ST.sharpening_factor)
+			if(blade_int >= max_blade_int)
+				to_chat(user, span_info("Fully sharpened."))
+			if(prob(ST.spark_chance))
 				var/datum/effect_system/spark_spread/S = new()
 				var/turf/front = get_step(user,user.dir)
 				S.set_up(1, 1, front)

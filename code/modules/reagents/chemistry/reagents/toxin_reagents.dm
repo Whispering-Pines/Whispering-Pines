@@ -82,11 +82,11 @@
 	alpha = 225
 
 /datum/reagent/medicine/soporpot/on_mob_life(mob/living/carbon/M)
-	M.confused += 1
-	M.dizziness += 1
+	M.confused = min(M.confused+1, 100)
+	M.dizziness = min(M.dizziness+1, 100)
 	M.adjust_energy(-25)
 	if(M.stamina > 75)
-		M.drowsyness += 2
+		M.drowsyness = min(M.drowsyness+2, 100)
 	else
 		M.adjust_stamina(15)
 	..()

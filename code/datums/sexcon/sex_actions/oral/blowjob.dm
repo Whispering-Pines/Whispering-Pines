@@ -3,6 +3,7 @@
 	check_same_tile = FALSE
 	check_incapacitated = FALSE
 	gags_user = TRUE
+	affecting_organ_slot = ORGAN_SLOT_PENIS
 
 /datum/sex_action/blowjob/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

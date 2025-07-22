@@ -9,12 +9,11 @@
 		return
 	if(NOEYESPRITES in owner.dna?.species?.species_traits)
 		return FALSE
+	update_overlay(organ, owner)
 	return is_human_part_visible(owner, HIDEEYES)
 
 /datum/sprite_accessory/eyes/adjust_appearance_list(list/appearance_list, obj/item/organ/eyes/eyes, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, eyes, bodypart, owner, OFFSET_FACE)
-	owner.cut_overlay(list(owner.eye_overlay,owner.eye_overlay2))
-	CALLBACK(CALLBACK(src, PROC_REF(update_overlay), eyes, owner), 1 SECONDS) //it updates too early otherwise it seems
 
 /datum/sprite_accessory/eyes/proc/update_overlay(obj/item/organ/eyes/organ, mob/living/carbon/human/owner)
 	if(!owner)
@@ -23,6 +22,7 @@
 		return
 	if(!ishuman(owner) || !owner.client.prefs)
 		return
+	owner.cut_overlay(list(owner.eye_overlay,owner.eye_overlay2))
 	//ways to hide your glowing ass eyes
 	if(owner.wear_mask && (owner.wear_mask.flags_cover & MASKCOVERSEYES))
 		return

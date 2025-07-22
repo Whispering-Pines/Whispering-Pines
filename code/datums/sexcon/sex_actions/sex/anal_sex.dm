@@ -2,6 +2,7 @@
 	name = "Sodomize them"
 	stamina_cost = 1.0
 	check_incapacitated = FALSE
+	affecting_organ_slot = ORGAN_SLOT_GUTS
 
 /datum/sex_action/anal_sex/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

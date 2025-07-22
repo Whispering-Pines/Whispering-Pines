@@ -123,6 +123,7 @@
 			if(!apply_damage(I.throwforce, damagetype, zone, armor))
 				nodmg = TRUE
 				next_attack_msg += span_warning(" Armor stops the damage.")
+			SEND_SIGNAL(I, COMSIG_MOVABLE_THROW_HIT_MOB, src, throwingdatum.thrower, nodmg, zone)
 			if(!nodmg)
 				if(iscarbon(src))
 					var/obj/item/bodypart/affecting = get_bodypart(zone)

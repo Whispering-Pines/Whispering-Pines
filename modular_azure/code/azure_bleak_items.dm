@@ -674,3 +674,27 @@ Reel teleports the attached atom to the grabbed turf.
 	output = /obj/item/candle/eora
 	output_amount = 3
 	uses_attacked_atom = TRUE
+
+//whetstone and shit
+/obj/item/natural
+	var/sharpening_factor = 0
+	var/spark_chance = 0
+
+/obj/item/natural/stone
+	sharpening_factor = 0.1
+	spark_chance = 35
+
+/obj/item/natural/whetstone
+	name = "whetstone"
+	icon = 'modular_azure/icons/items/natural.dmi'
+	icon_state = "whetstone"
+	desc = "A honed slab made for sharpening blades and striking flames."
+	force = 12
+	throwforce = 18
+	slot_flags = ITEM_SLOT_MOUTH
+	obj_flags = null
+	w_class = WEIGHT_CLASS_TINY
+	experimental_inhand = FALSE
+	possible_item_intents = list(/datum/intent/hit, /datum/intent/mace/smash/wood, /datum/intent/dagger/cut)
+	sharpening_factor = 0.4
+	spark_chance = 80

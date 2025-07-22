@@ -2,6 +2,7 @@
 	name = "Fuck their ass with object"
 	var/ouchietext = "owie"
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_GUTS
 
 /datum/sex_action/object_anal_other/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

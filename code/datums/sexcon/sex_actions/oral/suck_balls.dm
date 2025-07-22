@@ -2,6 +2,7 @@
 	name = "Suck their balls"
 	check_incapacitated = FALSE
 	gags_user = TRUE
+	affecting_organ_slot = ORGAN_SLOT_TESTICLES
 
 /datum/sex_action/suck_balls/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

@@ -70,11 +70,16 @@
 
 //maneater but sex
 /obj/structure/flora/grass/maneater/elfbane
+	icon = 'icons/roguetown/mob/monster/maneater.dmi'
+	icon_state = "maneater-hidden"
 	color = "#9fe5ff"
 
 /obj/structure/flora/grass/maneater/real/elfbane
+	icon = 'icons/roguetown/mob/monster/maneater.dmi'
+	icon_state = "maneater-hidden"
 	color = "#9fe5ff"
 	var/is_fucking = FALSE
+	var/firsttime_injected = FALSE
 
 /obj/structure/flora/grass/maneater/real/elfbane/update_icon()
 	. = ..()
@@ -117,9 +122,27 @@
 			START_PROCESSING(SSobj, src)
 			if(!HAS_TRAIT(L, TRAIT_NOPAIN))
 				L.emote("scream", forced = TRUE)
-			visible_message(span_love("[src] snatches and injects [L] with a tendril!"), span_red("I feel a sting on my arm!"))
-			L.reagents.add_reagent(/datum/reagent/medicine/soporpot/fast_acting, 30)
-			L.reagents.add_reagent(/datum/reagent/medicine/inaprovaline, 30) //incase there are goblins or some shit also attacking the poor soul etc.
+			if(!firsttime_injected) //just so you wont get 90000 doses of sopo or abuse inaprovaline injection.
+				firsttime_injected = TRUE
+				visible_message(span_love("[src] snatches and injects [L] with a tendril!"), span_red("I feel a sting on my arm!"))
+				L.reagents.add_reagent(/datum/reagent/medicine/soporpot/fast_acting, 15)
+				L.reagents.add_reagent(/datum/reagent/medicine/inaprovaline, 30) //incase there are goblins or some shit also attacking the poor soul etc.
+			//unequip those shi
+			if(L.wear_armor)
+				var/obj/item/citem = L.wear_armor
+				var/turf/target = get_ranged_target_turf(src, pick(GLOB.alldirs), 3)
+				L.dropItemToGround(citem)
+				citem.throw_at(target, 3, 2)
+			if(L.wear_pants)
+				var/obj/item/citem = L.wear_pants
+				var/turf/target = get_ranged_target_turf(src, pick(GLOB.alldirs), 3)
+				L.dropItemToGround(citem)
+				citem.throw_at(target, 3, 2)
+			if(L.wear_shirt)
+				var/obj/item/citem = L.wear_shirt
+				var/turf/target = get_ranged_target_turf(src, pick(GLOB.alldirs), 3)
+				L.dropItemToGround(citem)
+				citem.throw_at(target, 3, 2)
 			L.Paralyze(15 SECONDS)
 			playsound(src.loc, list('sound/vo/mobs/plant/attack (1).ogg','sound/vo/mobs/plant/attack (2).ogg','sound/vo/mobs/plant/attack (3).ogg','sound/vo/mobs/plant/attack (4).ogg'), 100, FALSE, -1)
 		if(istype(AM, /obj/item))
@@ -168,18 +191,19 @@
 					visible_message(span_love("[src]'s tendrils latch onto [L]'s breasts!"), span_red("I feel tendrils suck on my breasts!"))
 				if(L.getorganslot(ORGAN_SLOT_PENIS))
 					visible_message(span_love("[src]'s tendrils engulf [L]'s shaft!"), span_red("I feel a wet tendril around my shaft..!"))
-					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_PENIS, /datum/reagent/consumable/cum/plant, 5), 0.1 SECONDS, TIMER_STOPPABLE)
+					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_PENIS, /datum/reagent/consumable/cum/plant, 10), 0.1 SECONDS, TIMER_STOPPABLE)
 				if(L.getorganslot(ORGAN_SLOT_VAGINA))
 					visible_message(span_love("[src]'s tendrils slam inside [L]'s pussy!"), span_red("a tendril slams in my pussy violently..!"))
-					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_VAGINA, /datum/reagent/consumable/cum/plant, 5), 0.2 SECONDS, TIMER_STOPPABLE)
+					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_VAGINA, /datum/reagent/consumable/cum/plant, 10), 0.2 SECONDS, TIMER_STOPPABLE)
 				if(L.getorganslot(ORGAN_SLOT_GUTS) && C.gender == FEMALE) //no good way of knowing their prefs so imma just make it non homo.
 					visible_message(span_love("[src]'s tendrils slam inside [L]'s ass!"), span_red("a tendril slams in my ass violently..!"))
-					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_GUTS, /datum/reagent/consumable/cum/plant, 5), 0.3 SECONDS, TIMER_STOPPABLE)
+					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, ORGAN_SLOT_GUTS, /datum/reagent/consumable/cum/plant, 10), 0.3 SECONDS, TIMER_STOPPABLE)
 				if(C.gender == FEMALE)
 					visible_message(span_love("[src]'s tendrils slam inside [L]'s throat!"), span_red("a tendril slams in my mouth..!"))
-					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, "mouth", /datum/reagent/medicine/soporpot, 15), 0.4 SECONDS, TIMER_STOPPABLE)
+					addtimer(CALLBACK(src, PROC_REF(start_obj_sex), L, SEX_SPEED_EXTREME, SEX_FORCE_HIGH, TRUE, "mouth", /datum/reagent/medicine/soporpot, 5), 0.4 SECONDS, TIMER_STOPPABLE)
 			else
-				if(prob(10))
+				if(prob(20))
+					visible_message(span_red("[src]'s tendrils clench onto [L]'s limbs!"), span_red("tendrils hold me in place..!"))
 					L.AdjustParalyzed(5 SECONDS) //make it harder to escape.
 				var/liquids_remaining = 0
 				for(var/obj/item/organ/filling_organ/forgan in C.internal_organs)
@@ -192,8 +216,8 @@
 					return
 				var/obj/item/organ/filling_organ/breasts/boobers = C.getorganslot(ORGAN_SLOT_BREASTS)
 				if(boobers && boobers.reagents.total_volume >= 10)
-					boobers.reagents.remove_reagent(boobers.reagent_to_make, boobers.reagents.maximum_volume/20)
-					seednutrition += (boobers.reagents.maximum_volume/20)/2
+					boobers.reagents.remove_reagent(boobers.reagent_to_make, boobers.reagents.maximum_volume/40)
+					seednutrition += (boobers.reagents.maximum_volume/40)/4
 					balloon_alert_to_viewers("sucks in [C]'s [boobers.name] [boobers.reagent_to_make.name]!")
 					playsound(src, pick('modular_whisper/sound/gulp.ogg','modular_whisper/sound/slurp.ogg'), 50, TRUE, ignore_walls = FALSE) //funny noises
 				else if(boobers)
@@ -202,7 +226,7 @@
 /datum/status_effect/debuff/fluid_drained
 	id = "cum_drained"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/fluid_drained
-	effectedstats = list(STATKEY_SPD = -1, STATKEY_END = -1)
+	effectedstats = list(STATKEY_SPD = -1, STATKEY_END = -1,  STATKEY_LCK = 1)
 	duration = 5 MINUTES
 
 /atom/movable/screen/alert/status_effect/debuff/fluid_drained

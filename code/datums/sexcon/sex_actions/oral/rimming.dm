@@ -2,6 +2,8 @@
 	name = "Rim them"
 	check_incapacitated = FALSE
 	gags_user = TRUE
+	affecting_organ_slot = ORGAN_SLOT_GUTS
+	organ_damage_mult = 0.5
 
 /datum/sex_action/rimming/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

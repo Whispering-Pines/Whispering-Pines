@@ -2,6 +2,7 @@
 	name = "Fuck their cunt"
 	stamina_cost = 1.0
 	check_incapacitated = FALSE
+	affecting_organ_slot = ORGAN_SLOT_VAGINA
 
 /datum/sex_action/vaginal_sex/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

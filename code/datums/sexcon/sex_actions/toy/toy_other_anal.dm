@@ -1,5 +1,6 @@
 /datum/sex_action/toy_other_anal
 	name = "Use toy on their butt"
+	affecting_organ_slot = ORGAN_SLOT_GUTS
 
 /datum/sex_action/toy_other_anal/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

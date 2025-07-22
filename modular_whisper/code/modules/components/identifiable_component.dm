@@ -12,7 +12,6 @@
 	var/prev_icon_state
 
 /datum/component/identifiable/RegisterWithParent()
-	. = ..()
 	if(!identified)
 		mysterize(parent)
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
@@ -39,15 +38,18 @@
 	parent.update_appearance(UPDATE_ICON)
 
 /datum/component/identifiable/proc/on_update_icon(datum/source)
+	SIGNAL_HANDLER
 	if(!identified) //prevents stuff from returning to their initial icons
 		return FALSE
 
 /datum/component/identifiable/proc/on_attack(datum/source, mob/living/carbon/human/user)
+	SIGNAL_HANDLER
 	if(!identified) //stops using an item if not identified
 		user.balloon_alert(user, "I don't know how to use this.")
 		return FALSE
 
-/datum/component/identifiable/proc/on_examine(datum/source, mob/living/carbon/human/user)
+/datum/component/identifiable/proc/on_examine(datum/source, mob/living/carbon/human/user, list/exam)
+	SIGNAL_HANDLER
 	if(!ishuman(user))
 		return
 	if(!user.mind)

@@ -1086,6 +1086,9 @@
 		return pick("trails_1", "trails_2")
 
 /mob/living/can_resist()
+	if(IsParalyzed() || IsStun() || IsSleeping() || IsUnconscious() || IsImmobilized() || IsFrozen())
+		to_chat(src, span_red(pick("I... can't...", "Ugh, I can't.", "I.. Can't move...", "What..? I.. Can't move...")))
+		return FALSE
 	return !((next_move > world.time) || incapacitated(ignore_restraints = TRUE, ignore_stasis = TRUE))
 
 /mob/living/verb/resist()
@@ -1096,10 +1099,13 @@
 
 ///proc extender of [/mob/living/verb/resist] meant to make the process queable if the server is overloaded when the verb is called
 /mob/living/proc/execute_resist()
-	if(!can_resist() || surrendering || IsParalyzed() || IsStun() || IsSleeping() || IsUnconscious())
+	if(!can_resist() || surrendering)
 		return
 
 	changeNext_move(CLICK_CD_RESIST)
+
+	if(!buckled) //unbuckle first, mostly for lewd machinery that consricts.
+		stop_all_doing()
 
 	if(atkswinging)
 		stop_attack(FALSE)

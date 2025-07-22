@@ -142,7 +142,7 @@
 	else
 		target.add_stress(/datum/stressevent/cumok)
 	playsound(target, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-	add_cum_floor(get_turf(target))
+	cum_onto_floor(get_turf(target))
 	after_ejaculation()
 
 /datum/sex_controller/proc/cum_into(mob/living/target, oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE, girljuice = FALSE)
@@ -200,7 +200,7 @@
 		return
 	if(issimple(target))
 		if(testes) //simple target just remove the coom.
-			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
+			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, testes.reagents.total_volume)
 			testes.reagents.remove_reagent(testes.reagent_to_make, cum_to_take)
 			user.add_stress(/datum/stressevent/cumok)
 			after_ejaculation()
@@ -208,7 +208,7 @@
 	if(!issimple(target) && testes)
 		if(oral)
 			playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
-			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
+			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/4), 1, testes.reagents.total_volume)
 			testes.reagents.trans_to(target, cum_to_take, transfered_by = user, method = INGEST)
 		else
 			var/obj/item/organ/filling_organ/cameloc
@@ -416,7 +416,20 @@
 			playsound(action_target, pick('sound/foley/footsteps/FTMUD (1).ogg','sound/foley/footsteps/FTMUD (2).ogg','sound/foley/footsteps/FTMUD (3).ogg','sound/foley/footsteps/FTMUD (4).ogg','sound/foley/footsteps/FTMUD (5).ogg'), 50, TRUE, -1)
 			action_target.flash_fullscreen("redflash3")
 	//SEX CRITS END
+	user.sexcon.calc_sex_organloss(action_target, pain_amt)
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
+
+/datum/sex_controller/proc/calc_sex_organloss(mob/living/target, pain_amt)
+	if(!user.sexcon || !target.sexcon)
+		return
+	var/datum/sex_action/ca = user.sexcon.current_action
+	if(!ca)
+		return
+	if(pain_amt < PAIN_MINIMUM_FOR_DAMAGE)
+		return
+	if(!ca.affecting_organ_slot)
+		return
+	target.adjustOrganLoss(ca.affecting_organ_slot, force*ca.organ_damage_mult)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed, damage_organ_slot)
 	arousal_amt *= get_force_pleasure_multiplier(applied_force, giving)
@@ -432,20 +445,14 @@
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
 	try_do_pain_effect(pain_amt, giving)
 
-/datum/sex_controller/proc/damage_from_pain(pain_amt, damage_organ_slot)
+/datum/sex_controller/proc/damage_from_pain(pain_amt)
 	if(pain_amt < PAIN_MINIMUM_FOR_DAMAGE)
 		return
 	var/damage = (pain_amt / PAIN_DAMAGE_DIVISOR)
-	if(!damage_organ_slot)
-		var/obj/item/bodypart/part = user.get_bodypart(BODY_ZONE_PRECISE_GROIN)
-		if(!part)
-			return
-		user.apply_damage(damage, BRUTE, part)
-	else
-		var/obj/item/organ/part = user.getorganslot(damage_organ_slot)
-		if(!part)
-			return
-		user.adjustOrganLoss(part, damage)
+	var/obj/item/bodypart/part = user.get_bodypart(BODY_ZONE_PRECISE_GROIN)
+	if(!part)
+		return
+	user.apply_damage(damage, BRUTE, part)
 	update_aching(pain_amt)
 
 /datum/sex_controller/proc/try_do_moan(arousal_amt, pain_amt, applied_force, giving)
@@ -1036,23 +1043,28 @@
 		victim.do_jitter_animation(5*force)
 		victim.sexcon.perform_sex_action(victim, 2.4*victim.sexcon.get_force_pleasure_multiplier(force, FALSE), ((4*victim.sexcon.get_force_pain_multiplier(force))*victim.sexcon.get_speed_pain_multiplier(speed)), TRUE)
 		victim.sexcon.handle_passive_ejaculation()
+		if(cameloc && force > SEX_FORCE_MID && prob(5))
+			victim.visible_message(span_crit("[victim] shudders as [src] hurts their [pick(cameloc.altnames)]!"), span_crit("[src] hurts my [pick(cameloc.altnames)]!"),span_notice("I hear a sickening crunch."))
+			victim.adjustOrganLoss(organ_slot, force*5)
+			playsound(src, 'sound/combat/hits/punch/punch_hard (1).ogg', 50, TRUE, -2, ignore_walls = FALSE)
+			victim.flash_fullscreen("redflash1")
 		if(victim.sexcon.do_message_signature("objectsex_[name]_[organ_slot]"))
 			if(cameloc && victim.getorganslot(organ_slot))
-				to_chat(victim, "[force_span][name] [force_adj] fucks [victim.name]'s [pick(cameloc.altnames)].</span>")
+				victim.visible_message("[force_span][name] [force_adj] fucks [victim.name]'s [pick(cameloc.altnames)].</span>")
 			else
-				to_chat(victim, "[force_span][name] [force_adj] fucks [victim.name]'s [organ_slot].</span>") //fake message basically for unknown organs, such as mouth.
-		if(cameloc && victim.getorganslot(organ_slot))
-			if(prob(5*(speed+force)) && can_cum)
-				to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [pick(cameloc.altnames)]!"))
-				cameloc.reagents.add_reagent(cum_type, cum_amt)
-				playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-				add_cum_floor(get_turf(src))
-		else
-			if(prob(5*(speed+force)) && can_cum)
-				to_chat(victim, span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [organ_slot]!"))
-				victim.reagents.add_reagent(cum_type, cum_amt)
-				playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-				add_cum_floor(get_turf(src))
+				victim.visible_message("[force_span][name] [force_adj] fucks [victim.name]'s [organ_slot].</span>") //fake message basically for unknown organs, such as mouth.
+			if(cameloc && victim.getorganslot(organ_slot))
+				if(prob(5) && can_cum)
+					victim.visible_message(span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [pick(cameloc.altnames)]!"))
+					cameloc.reagents.add_reagent(cum_type, cum_amt)
+					playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+					add_cum_floor(get_turf(src))
+			else
+				if(prob(5) && can_cum)
+					victim.visible_message(span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [organ_slot]!"))
+					victim.reagents.add_reagent(cum_type, cum_amt)
+					playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+					add_cum_floor(get_turf(src))
 	//ending
 	if(cameloc && victim.getorganslot(organ_slot))
 		balloon_alert_to_viewers("Disconnects from [victim]'s [pick(cameloc.altnames)]")
@@ -1081,10 +1093,10 @@
 		elfy.balloon_alert_to_viewers("Sucks up [name]'s juices!")
 		playsound(src, pick('modular_whisper/sound/gulp.ogg','modular_whisper/sound/slurp.ogg'), 50, TRUE, ignore_walls = FALSE) //funny noises
 		if(getorganslot(ORGAN_SLOT_VAGINA)) //since no pussyjuice
-			elfy.seednutrition += 10
+			elfy.seednutrition += 3
 		for(var/obj/item/organ/filling_organ/forgan in humanuser.internal_organs)
-			var/amount_taken = forgan.reagents.maximum_volume/6
-			elfy.seednutrition += amount_taken
+			var/amount_taken = forgan.reagents.maximum_volume/10
+			elfy.seednutrition += amount_taken/4
 			forgan.reagents.remove_any(amount_taken)
 	//Sexgenerator
 	for(var/obj/structure/chair/sexgenerator/sexgen in range(0,src))
@@ -1100,3 +1112,13 @@
 			throw_at(target, 3, 2)
 			sexgen.charge_stored = 2
 			emote("painscream")
+
+//new cummening
+/datum/sex_controller/proc/cum_onto_floor(turf/turfu)
+	var/list/datum/reagent/reagents_to_use
+	if(user.getorganslot(ORGAN_SLOT_TESTICLES))
+		var/obj/item/organ/filling_organ/testicles/testy = user.getorganslot(ORGAN_SLOT_TESTICLES)
+		testy.reagents.trans_to(reagents_to_use, testy.reagents.maximum_volume/6)
+	if(user.getorganslot(ORGAN_SLOT_VAGINA))
+		reagents_to_use += list(/datum/reagent/water/pussjuice = 15)
+	chem_splash(turfu, 2, reagents_to_use)

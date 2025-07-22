@@ -2,6 +2,8 @@
 	name = "Force them to fuck nipple"
 	require_grab = TRUE
 	stamina_cost = 1.0
+	affecting_organ_slot = ORGAN_SLOT_PENIS //normally should hurt own breast but we only damage targets.
+	organ_damage_mult = 0.5
 
 /datum/sex_action/force_nipple_sex/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

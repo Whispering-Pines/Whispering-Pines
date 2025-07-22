@@ -22,6 +22,8 @@
 	var/gags_target = FALSE
 	var/segsovolume = 50 //volume for plaps
 	var/pull_out_volume = 50
+	var/affecting_organ_slot
+	var/organ_damage_mult = 1
 
 /datum/sex_action/proc/can_perform(mob/living/user, mob/living/target)
 	return TRUE

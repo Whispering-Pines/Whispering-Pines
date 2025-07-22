@@ -128,6 +128,7 @@
 /datum/reagent/water/pussjuice
 	name = "pussy juice"
 	description = "A strange slightly gooey substance."
+	color = "#999999"
 
 /datum/reagent/consumable/cum
 	name = "Semen"
@@ -180,8 +181,8 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
-			H.adjust_hydration(8)
-			H.adjust_nutrition(8)
+			H.adjust_hydration(4)
+			H.adjust_nutrition(4)
 	var/list/wCount = M.get_wounds()
 	if(M.blood_volume < BLOOD_VOLUME_NORMAL) //can not overfill
 		M.blood_volume = min(M.blood_volume+3, BLOOD_VOLUME_MAXIMUM)
@@ -192,7 +193,9 @@
 	M.adjustFireLoss(-1, 0)
 	M.adjustToxLoss(-1, 0)
 	for(var/obj/item/organ/filling_organ/organny in M.internal_organs)
-		M.adjustOrganLoss(organny.slot, -8) //alot of genital repair, elfbane will rip em apart anyway.
+		if(organny.damage && prob(5))
+			to_chat(M, span_green("I feel a  soothing chill on my [pick(organny.altnames)] due to the floral juice."))
+		M.adjustOrganLoss(organny.slot, -1) //genital repair juice
 	. = 1
 	..()
 

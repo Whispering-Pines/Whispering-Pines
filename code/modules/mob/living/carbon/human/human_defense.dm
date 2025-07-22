@@ -199,7 +199,6 @@
 				L.add_embedded_object(I, silent = FALSE, crit_message = TRUE)
 				emote("embed")
 				L.receive_damage(I.w_class*I.embedding.embedded_impact_pain_multiplier)
-				SEND_SIGNAL(I, COMSIG_APPLY_REAGENTS, I.thrownby, L)
 //					visible_message("<span class='danger'>[I] embeds itself in [src]'s [L.name]!</span>","<span class='danger'>[I] embeds itself in my [L.name]!</span>")
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
 				hitpush = FALSE
@@ -632,16 +631,16 @@
 			health_status = " It looks <span class='green'>OK</span>"
 		if(forgan.reagents.total_volume)
 			if(userino.has_quirk(/datum/quirk/selfawaregeni))
-				examination += span_info("My [pick(forgan.altnames)] are <bold>[forgan.reagents.total_volume]/[forgan.reagents.maximum_volume] oz</bold> full.[health_status]")
+				examination += span_info("[pick(forgan.altnames)] are <bold>[forgan.reagents.total_volume]/[forgan.reagents.maximum_volume] oz</bold> full.[health_status]")
 			else
-				examination += span_info("My [pick(forgan.altnames)] are about <bold>[round(forgan.reagents.total_volume / 3)]/[round(forgan.reagents.maximum_volume / 3)] oz</bold> full.[health_status]")
+				examination += span_info("[pick(forgan.altnames)] are about <bold>[round(forgan.reagents.total_volume / 3)]/[round(forgan.reagents.maximum_volume / 3)] oz</bold> full.[health_status]")
 		else
 			if(userino.has_quirk(/datum/quirk/selfawaregeni))
-				examination += span_info("My [pick(forgan.altnames)] is empty.[health_status]")
+				examination += span_info("[pick(forgan.altnames)] is empty.[health_status]")
 			else
-				examination += span_info("My [pick(forgan.altnames)] is empty.[health_status]")
+				examination += span_info("[pick(forgan.altnames)] is empty.[health_status]")
 		if(forgan.contents.len)
-			examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in my [pick(forgan.altnames)].")
+			examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in [pick(forgan.altnames)].")
 		continue
 
 	examination += "ø ------------ ø</span>"

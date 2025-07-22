@@ -2,7 +2,8 @@
 	name = "NPC Suck their cunt off"
 	stamina_cost = 0
 	check_same_tile = FALSE
-
+	affecting_organ_slot = ORGAN_SLOT_VAGINA
+	organ_damage_mult = 0.3
 
 /datum/sex_action/npc_cunnilingus/shows_on_menu(mob/living/user, mob/living/target)
 	return FALSE

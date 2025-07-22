@@ -2,6 +2,8 @@
 	name = "NPC Rim them"
 	stamina_cost = 0
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_GUTS
+	organ_damage_mult = 0.3
 
 /datum/sex_action/npc_rimming/shows_on_menu(mob/living/user, mob/living/target)
 	return FALSE

@@ -117,15 +117,15 @@
 	..()
 	if(owner.client && beating)
 		failed = FALSE
-		var/sound/slowbeat = sound('sound/blank.ogg', repeat = TRUE)
-		var/sound/fastbeat = sound('sound/blank.ogg', repeat = TRUE)
+		var/sound/slowbeat = sound('modular_whisper/sound/slowbeat.ogg', repeat = TRUE)
+		var/sound/fastbeat = sound('modular_whisper/sound/fastbeat.ogg', repeat = TRUE)
 		var/mob/living/carbon/H = owner
 
 
 		if(H.health <= H.crit_threshold && beat != BEAT_SLOW)
 			beat = BEAT_SLOW
 			H.playsound_local(get_turf(H), slowbeat,40,0, channel = CHANNEL_HEARTBEAT)
-//			to_chat(owner, "<span class='notice'>I feel my heart slow down...</span>")
+			to_chat(owner, "<span class='notice'>I feel my heart slow down...</span>")
 		if(beat == BEAT_SLOW && H.health > H.crit_threshold)
 			H.stop_sound_channel(CHANNEL_HEARTBEAT)
 			beat = BEAT_NONE

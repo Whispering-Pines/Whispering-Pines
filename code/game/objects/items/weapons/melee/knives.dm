@@ -72,10 +72,6 @@
 	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg", "modular_helmsguard/sound/sheath_sounds/draw_dagger2.ogg", "sound/foley/equip/swordsmall2.ogg")
 	. = ..()
 
-/obj/item/weapon/knife/Initialize()
-	. = ..()
-	AddElement(/datum/element/tipped_item, _max_reagents = 10, _dip_amount = 5, _inject_amount = 0.5)
-
 /obj/item/weapon/knife/getonmobprop(tag)
 	. = ..()
 	if(tag)

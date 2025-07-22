@@ -85,13 +85,17 @@
 	if(damage > low_threshold)
 		if(prob(3))
 			to_chat(H, span_warning("My [pick(altnames)] aches..."))
-		if(damage > high_threshold) //internal bleeding ig
-			owner.transfer_blood_to(src, round(damage/10), TRUE)
-			to_chat(H, span_boldwarning("My [pick(altnames)] BLEEDS..!"))
+		if(prob(15) && damage > high_threshold) //internal bleeding ig
+			owner.transfer_blood_to(src, round(damage/15), TRUE)
+			to_chat(H, span_boldwarning("My [pick(altnames)] BLEED..!"))
 
+	if(reagents.maximum_volume < reagents.total_volume) //overflow
+		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents due to damage!"),span_info("My [pick(altnames)] spill some of it's contents due to damage!"),span_unconscious("I hear a splash."))
+		var/turf/ownerloc = owner.loc
+		ownerloc.add_liquid_from_reagents(reagents, amount = reagents.maximum_volume-reagents.total_volume)
 
 	// modify nutrition to generate reagents
-	if(damage) //cant regen or consume while damaged.
+	if(!damage) //cant regen or consume while damaged.
 		if(!HAS_TRAIT(src, TRAIT_NOHUNGER)) //if not nohunger
 			if(owner.nutrition < (NUTRITION_LEVEL_HUNGRY - 25) && hungerhelp) //consumes if hungry and uses nutrient, putting below the limit so person dont get stress message spam.
 				var/remove_amount = min(reagent_generate_rate, reagents.total_volume)
@@ -138,19 +142,19 @@
 						span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)].")))
 				var/obj/item/reagent_containers/the_bottle
 				if((owner.mobility_flags & MOBILITY_STAND))
-					for(var/obj/item/reagent_containers/bottle in range(0,H)) //having a bottle under us speed up leak greatly and transfer the leak there instead.
+					for(var/obj/item/reagent_containers/bottle in loc.contents) //having a bottle under us speed up leak greatly and transfer the leak there instead.
 						if(bottle.reagents.total_volume >= bottle.reagents.maximum_volume)
 							continue
 						if(bottle.reagents.flags & REFILLABLE)
 							the_bottle = bottle
 							break
 				if(!the_bottle) //no bottle so just spill
-					reagents.remove_all(tempdriprate)
+					var/turf/ownerloc = owner.loc
+					ownerloc.add_liquid_from_reagents(reagents, amount = tempdriprate)
 				else
-					var/avlspace = the_bottle.reagents.maximum_volume - the_bottle.reagents.total_volume
 					tempdriprate *= 50 //since default values are basically decimals.
-					reagents.trans_to(the_bottle, min(tempdriprate, avlspace))
-					to_chat(owner, span_info("I collect the fluids in \the [the_bottle] beneath me."))
+					reagents.trans_to(the_bottle, min(tempdriprate))
+					to_chat(owner, span_info("I collect the fluids in \the [the_bottle]."))
 	else //we got something in contents
 		for(var/obj/item/reagent_containers/contentitem in contents) //we got a bottle inside
 			if(contentitem.reagents && contentitem.spillable)
@@ -169,7 +173,7 @@
 	var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
 	if(reagents.total_volume > reagents.maximum_volume / 2 && spiller && prob(keepinsidechance)) //if you have more than half full spiller organ.
 		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill some of it's contents with the pressure on it! [keepinsidechance]%"),span_unconscious("I hear a splash."))
-		reagents.remove_all(keepinsidechance)
+		chem_splash(owner, 3, reagents)
 		playsound(owner, 'sound/foley/waterenter.ogg', 15)
 
 	if(!issimple(H) && H.mind)

@@ -3,6 +3,8 @@
 	stamina_cost = 0
 	check_same_tile = FALSE
 	require_grab = FALSE
+	affecting_organ_slot = ORGAN_SLOT_GUTS
+	organ_damage_mult = 0.6
 
 /datum/sex_action/npc_anal_sex/shows_on_menu(mob/living/user, mob/living/target)
 	return FALSE

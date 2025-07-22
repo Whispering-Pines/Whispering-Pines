@@ -1,6 +1,7 @@
 /datum/sex_action/tailpegging_anal
 	name = "Peg butt with tail"
 	check_incapacitated = FALSE
+	affecting_organ_slot = ORGAN_SLOT_GUTS
 
 /datum/sex_action/tailpegging_anal/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

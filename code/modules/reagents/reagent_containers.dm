@@ -153,7 +153,6 @@
 			return
 
 	reagents.clear_reagents()
-	update_appearance(UPDATE_OVERLAYS)
 
 /obj/item/reagent_containers/heating_act()
 	reagents.expose_temperature(1000)
@@ -167,8 +166,6 @@
 
 /obj/item/reagent_containers/update_overlays()
 	. = ..()
-	if(!reagents?.total_volume)
-		return
 	if(!fill_icon_thresholds)
 		return
 	var/fill_name = fill_icon_state ? fill_icon_state : icon_state

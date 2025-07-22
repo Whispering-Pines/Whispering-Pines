@@ -1,5 +1,7 @@
 /datum/sex_action/titjob
 	name = "Use their tits to get off"
+	affecting_organ_slot = ORGAN_SLOT_BREASTS
+	organ_damage_mult = 0.5
 
 /datum/sex_action/titjob/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

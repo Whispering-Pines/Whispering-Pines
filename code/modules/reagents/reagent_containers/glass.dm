@@ -201,7 +201,6 @@
 		reagents.reaction(target, TOUCH)
 		playsound(target.loc, pick('sound/foley/water_land1.ogg','sound/foley/water_land2.ogg', 'sound/foley/water_land3.ogg'), 100, FALSE)
 		chem_splash(target.loc, 2, list(reagents))
-		update_appearance(UPDATE_OVERLAYS)
 
 /obj/item/reagent_containers/glass/attack_turf(turf/T, mob/living/user)
 	if(spillable && reagents.total_volume && user.used_intent.type == INTENT_SPLASH)

@@ -1,6 +1,8 @@
 /datum/sex_action/scissoring
 	name = "Scissor them"
 	check_incapacitated = FALSE
+	affecting_organ_slot = ORGAN_SLOT_VAGINA
+	organ_damage_mult = 0.8
 
 /datum/sex_action/scissoring/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

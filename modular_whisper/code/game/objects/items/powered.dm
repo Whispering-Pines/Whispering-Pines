@@ -5,14 +5,14 @@
 	desc = ""
 	var/toggled = FALSE
 	var/self_powering = FALSE
-	var/charge_amt = 0
+	var/charge_amt = 4000
 	var/charge_max = 4000
 
 /obj/item/basic_power/examine(mob/user)
 	. = ..()
 	if(ident_comp && !ident_comp.identified)
 		return
-	. += span_notice("It's power gauge reads [(charge_amt/charge_max)*100]%.")
+	. += span_notice("It's power gauge reads [round((charge_amt/charge_max)*100)]%.")
 
 /obj/item/basic_power/Initialize()
 	. = ..()
@@ -54,10 +54,10 @@
 	toggle()
 
 /obj/item/basic_power/attack(mob/living/M, mob/living/user, params)
+	. = ..()
 	if(!toggled)
 		user.balloon_alert(user, "Not on.")
 		return
-	. = ..()
 
 //healthscanner
 

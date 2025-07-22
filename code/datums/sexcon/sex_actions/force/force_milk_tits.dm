@@ -1,6 +1,7 @@
 /datum/sex_action/force_milk_tits
 	name = "Forcibly milk tits"
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_BREASTS
 
 /datum/sex_action/force_milk_tits/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

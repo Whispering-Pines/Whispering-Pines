@@ -2,6 +2,8 @@
 	name = "Fuck their cunt"
 	stamina_cost = 0
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_VAGINA
+	organ_damage_mult = 0.6
 
 /datum/sex_action/npc_vaginal_sex/shows_on_menu(mob/living/user, mob/living/target)
 	return FALSE

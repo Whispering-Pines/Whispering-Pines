@@ -1,6 +1,7 @@
 /datum/sex_action/suck_nipples
 	name = "Suck their nipples"
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_BREASTS
 
 /datum/sex_action/suck_nipples/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

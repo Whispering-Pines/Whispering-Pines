@@ -184,3 +184,16 @@
 	craftdiff = 2
 	skillcraft = /datum/skill/misc/sewing
 	subtypes_allowed = TRUE
+
+/datum/repeatable_crafting_recipe/survival/whetstone
+	name = "whetstone"
+	requirements = list(
+		/obj/item/natural/stone = 2,
+	)
+
+	blacklisted_paths = list(/obj/item/natural/whetstone)
+	attacked_atom = /obj/item/natural/stone
+	starting_atom = /obj/item/natural/stone
+	output = /obj/item/natural/whetstone
+	craftdiff = 0
+	uses_attacked_atom = TRUE

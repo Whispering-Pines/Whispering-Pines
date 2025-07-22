@@ -1,6 +1,7 @@
 /datum/sex_action/masturbate_other_vagina_finger
 	name = "Finger their pussy"
 	check_same_tile = FALSE
+	affecting_organ_slot = ORGAN_SLOT_VAGINA
 
 /datum/sex_action/masturbate_other_vagina_finger/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

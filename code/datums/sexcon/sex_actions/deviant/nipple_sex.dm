@@ -1,6 +1,8 @@
 /datum/sex_action/nipple_sex
 	name = "Fuck their Nipple"
 	stamina_cost = 1.0
+	affecting_organ_slot = ORGAN_SLOT_BREASTS
+	organ_damage_mult = 1.5
 
 /datum/sex_action/nipple_sex/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
