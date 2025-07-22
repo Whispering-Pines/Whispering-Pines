@@ -631,16 +631,16 @@
 			health_status = " It looks <span class='green'>OK</span>"
 		if(forgan.reagents.total_volume)
 			if(userino.has_quirk(/datum/quirk/selfawaregeni))
-				examination += span_info("[pick(forgan.altnames)] are <bold>[forgan.reagents.total_volume]/[forgan.reagents.maximum_volume] oz</bold> full.[health_status]")
+				examination += span_info("[user == src ? "my" : "[user.p_their()]"] [pick(forgan.altnames)] are <bold>[forgan.reagents.total_volume]/[forgan.reagents.maximum_volume] oz</bold> full.[health_status]")
 			else
-				examination += span_info("[pick(forgan.altnames)] are about <bold>[round(forgan.reagents.total_volume / 3)]/[round(forgan.reagents.maximum_volume / 3)] oz</bold> full.[health_status]")
+				examination += span_info("[user == src ? "my" : "[user.p_their()]"] [pick(forgan.altnames)] are about <bold>[round(forgan.reagents.total_volume / 3)]/[round(forgan.reagents.maximum_volume / 3)] oz</bold> full.[health_status]")
 		else
 			if(userino.has_quirk(/datum/quirk/selfawaregeni))
-				examination += span_info("[pick(forgan.altnames)] is empty.[health_status]")
+				examination += span_info("[user == src ? "my" : "[user.p_their()]"] [pick(forgan.altnames)] is empty.[health_status]")
 			else
-				examination += span_info("[pick(forgan.altnames)] is empty.[health_status]")
+				examination += span_info("[user == src ? "my" : "[user.p_their()]"] [pick(forgan.altnames)] is empty.[health_status]")
 		if(forgan.contents.len)
-			examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in [pick(forgan.altnames)].")
+			examination += span_info("There is <bold>[english_list(forgan.contents)]</bold> in [user == src ? "my" : "[user.p_their()]"] [pick(forgan.altnames)].")
 		continue
 
 	examination += "ø ------------ ø</span>"

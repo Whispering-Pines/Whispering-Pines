@@ -315,7 +315,7 @@
 		visible_message(span_danger("[src] reaches full maturity!"))
 		var/turf/T = get_turf(src)
 		var/obj/structure/flora/grass/maneater/real/myboy
-		if(prob(95))
+		if(prob(65))
 			myboy = new /obj/structure/flora/grass/maneater/real(T)
 		else
 			myboy = new /obj/structure/flora/grass/maneater/real/elfbane(T)

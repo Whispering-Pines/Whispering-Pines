@@ -93,6 +93,7 @@
 		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents due to damage!"),span_info("My [pick(altnames)] spill some of it's contents due to damage!"),span_unconscious("I hear a splash."))
 		var/turf/ownerloc = owner.loc
 		ownerloc.add_liquid_from_reagents(reagents, amount = reagents.maximum_volume-reagents.total_volume)
+		reagents.remove_all(reagents.maximum_volume-reagents.total_volume)
 
 	// modify nutrition to generate reagents
 	if(!damage) //cant regen or consume while damaged.
@@ -142,7 +143,7 @@
 						span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)].")))
 				var/obj/item/reagent_containers/the_bottle
 				if((owner.mobility_flags & MOBILITY_STAND))
-					for(var/obj/item/reagent_containers/bottle in loc.contents) //having a bottle under us speed up leak greatly and transfer the leak there instead.
+					for(var/obj/item/reagent_containers/bottle in owner.loc) //having a bottle under us speed up leak greatly and transfer the leak there instead.
 						if(bottle.reagents.total_volume >= bottle.reagents.maximum_volume)
 							continue
 						if(bottle.reagents.flags & REFILLABLE)
@@ -151,6 +152,7 @@
 				if(!the_bottle) //no bottle so just spill
 					var/turf/ownerloc = owner.loc
 					ownerloc.add_liquid_from_reagents(reagents, amount = tempdriprate)
+					reagents.remove_all(tempdriprate)
 				else
 					tempdriprate *= 50 //since default values are basically decimals.
 					reagents.trans_to(the_bottle, min(tempdriprate))

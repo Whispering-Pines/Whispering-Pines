@@ -1053,18 +1053,18 @@
 				victim.visible_message("[force_span][name] [force_adj] fucks [victim.name]'s [pick(cameloc.altnames)].</span>")
 			else
 				victim.visible_message("[force_span][name] [force_adj] fucks [victim.name]'s [organ_slot].</span>") //fake message basically for unknown organs, such as mouth.
-			if(cameloc && victim.getorganslot(organ_slot))
-				if(prob(5) && can_cum)
-					victim.visible_message(span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [pick(cameloc.altnames)]!"))
-					cameloc.reagents.add_reagent(cum_type, cum_amt)
-					playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-					add_cum_floor(get_turf(src))
-			else
-				if(prob(5) && can_cum)
-					victim.visible_message(span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [organ_slot]!"))
-					victim.reagents.add_reagent(cum_type, cum_amt)
-					playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-					add_cum_floor(get_turf(src))
+		if(cameloc && victim.getorganslot(organ_slot))
+			if(prob(1) && can_cum)
+				victim.visible_message(span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [pick(cameloc.altnames)]!"))
+				cameloc.reagents.add_reagent(cum_type, cum_amt)
+				playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+				add_cum_floor(get_turf(src))
+		else
+			if(prob(1) && can_cum)
+				victim.visible_message(span_love("[name] cums [!istype(cum_type, /datum/reagent/consumable/cum) ? "some [cum_type.name]" : ""] in [victim.name]'s [organ_slot]!"))
+				victim.reagents.add_reagent(cum_type, cum_amt)
+				playsound(src, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
+				add_cum_floor(get_turf(src))
 	//ending
 	if(cameloc && victim.getorganslot(organ_slot))
 		balloon_alert_to_viewers("Disconnects from [victim]'s [pick(cameloc.altnames)]")
