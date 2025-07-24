@@ -23,3 +23,7 @@
 /// Called from the base of '/obj/item/bodypart/proc/drop_limb(special)' ()
 #define COMSIG_MOB_DISMEMBER "mob_drop_limb"
 	#define COMPONENT_CANCEL_DISMEMBER (1<<0) //cancel the drop limb
+
+///from base of mob/swap_hand(): (obj/item/currently_held_item)
+#define COMSIG_MOB_SWAPPING_HANDS "mob_swapping_hands"
+	#define COMPONENT_BLOCK_SWAP (1<<0)

@@ -160,8 +160,8 @@
 			return FALSE
 		if(inputty in GLOB.excommunicated_players)
 			GLOB.excommunicated_players -= inputty
-			priority_announce("[real_name] has forgiven [inputty]. New gods hear their prayers once more!", title = "Hail new gods!", sound = 'sound/misc/bell.ogg')
-			for(var/mob/living/carbon/human/H in GLOB.player_list)
+			priority_announce("[real_name] has forgiven [inputty]. New gods hear their prayers once more!", title = "Hail the new gods!", sound = 'sound/misc/bell.ogg')
+			for(var/mob/living/carbon/human/H in GLOB.human_list)
 				if(H.real_name == inputty)
 					H.cleric?.recommunicate()
 			return
@@ -169,17 +169,15 @@
 			to_chat(src, span_warning("I cannot excommunicate anyone during the schism!"))
 			return FALSE
 
-		for(var/mob/living/carbon/human/H in GLOB.player_list)
+		for(var/mob/living/carbon/human/H in GLOB.human_list)
 			if(H.real_name == inputty)
 				if(H.advjob == "Faceless One")
 					to_chat(src, span_danger("I wasn't able to do that!"))
 					return FALSE
 				H.cleric?.excommunicate()
+				GLOB.excommunicated_players += inputty
+				priority_announce("[real_name] has excommunicated [inputty]! The New gods have turned away from them!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 				break
-			return FALSE
-
-		GLOB.excommunicated_players += inputty
-		priority_announce("[real_name] has excommunicated [inputty]! New gods have turned away from them!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 
 /mob/living/carbon/human/proc/churchcurse()
 	set name = "Curse"
@@ -241,10 +239,8 @@
 					return FALSE
 				H.add_stress(/datum/stressevent/psycurse)
 				GLOB.heretical_players += inputty
-				H.add_curse(curse_to_use)
 				priority_announce("[real_name] has put [patron.name]'s curse on [inputty] for offending the church!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 				break
-			return FALSE
 
 /mob/living/carbon/human/proc/churchannouncement()
 	set name = "Announcement"

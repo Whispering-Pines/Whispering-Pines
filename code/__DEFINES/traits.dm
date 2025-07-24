@@ -469,3 +469,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SEA_DRINKER "Denizen of the Deep"
 #define TRAIT_EMBALMED "embalmed" //stops rotting
 #define TRAIT_ENDOWMENT "Oversized Genitals"
+/// Properly wielded two handed item
+#define TRAIT_WIELDED "wielded"
+/// The items needs two hands to be carried
+#define TRAIT_NEEDS_TWO_HANDS "needstwohands"

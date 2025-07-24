@@ -117,8 +117,15 @@
 	icon_state = "craft"
 	screen_loc = rogueui_craft
 	var/last_craft
+	var/obj/item/recipe_book/always_known/book
 
 /atom/movable/screen/craft/Click(location, control, params)
+	var/list/modifiers = params2list(params)
+	if(modifiers["middle"])
+		if(QDELETED(book))
+			book = new(null)
+		usr << browse(book.generate_html(usr),"window=recipe;size=800x810")
+		return
 	if(world.time < lastclick + 3 SECONDS)
 		return
 	lastclick = world.time
@@ -129,6 +136,10 @@
 			last_craft = world.time
 			var/datum/component/personal_crafting/C = H.craftingthing
 			C.roguecraft(location, control, params, H)
+
+/atom/movable/screen/craft/Destroy()
+	QDEL_NULL(book)
+	. = ..()
 
 /atom/movable/screen/area_creator
 	name = "create new area"
@@ -269,10 +280,10 @@
 		if(held_index)
 			if(!C.has_hand_for_held_index(held_index))
 				. += blocked_overlay
-			else if(!C.has_hand_for_held_index(held_index, TRUE))
-				. += fingerless_overlay
 			else if(C.check_arm_grabbed(held_index))
 				. += grabbed_overlay
+			else if(!C.has_hand_for_held_index(held_index, TRUE))
+				. += fingerless_overlay
 
 	if(held_index == hud.mymob.active_hand_index)
 		. += "hand_active"

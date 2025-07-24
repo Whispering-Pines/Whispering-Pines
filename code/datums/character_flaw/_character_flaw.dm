@@ -26,6 +26,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	"Chronic Arthritis" = /datum/charflaw/chronic_arthritis,
 	"Sex Pest" = /datum/charflaw/addiction/lovefiend,
 	"Necrophile" = /datum/charflaw/addiction/necro,
+	"Luxless" = /datum/charflaw/lux_taken,
 	"Witless Pixie" = /datum/charflaw/witless_pixie,
 	"Random Flaw or No Flaw"=/datum/charflaw/randflaw,
 	"Guaranteed No Flaw (3 TRI)"=/datum/charflaw/noflaw,
@@ -339,7 +340,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 /datum/charflaw/hunted
 	name = "Hunted"
 	desc = "Something in my past has made me a target. I'm always looking over my shoulder.	\
-	THIS IS A DIFFICULT FLAW, YOU WILL BE HUNTED AND HAVE ASSASINATION ATTEMPTS MADE AGAINST YOU WITHOUT ANY ESCALATION. \
+	\nTHIS IS A DIFFICULT FLAW, YOU WILL BE HUNTED AND HAVE ASSASINATION ATTEMPTS MADE AGAINST YOU WITHOUT ANY ESCALATION. \
 	EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
 	var/logged = FALSE
 
@@ -761,6 +762,23 @@ GLOBAL_LIST_INIT(character_flaws, list(
 						to_chat(H, span_warning("The weight of your equipment aggravates your chronic back pain!"))
 					BP.lingering_pain += pain_amount
 					break
+
+/datum/charflaw/lux_taken
+	name = "Lux-less"
+	desc = "Through some grand misfortune, or heroic sacrifice- you have given up your link to Psydon, and with it- your soul. A putrid, horrid thing, you cosign yourself to an eternity of nil after death. Perhaps you are fine with this. \
+	\n\n EXPECT A DIFFICULT, MECHANICALLY UNFAIR EXPERIENCE. \n Rakshari, Hollowkin and Kobolds do not apply, given they already have no lux. "
+
+/datum/charflaw/lux_taken/after_spawn(mob/user)
+	if(!ishuman(user))
+		return
+
+	var/mob/living/carbon/human/H = user
+
+	// If they don't have lux randomize them
+	if(H.dna?.species?.id in RACES_PLAYER_LUXLESS)
+		H.get_random_flaw()
+		return
+	H.apply_status_effect(/datum/status_effect/debuff/flaw_lux_taken)
 
 /datum/charflaw/witless_pixie
 	name = "Witless Pixie"
