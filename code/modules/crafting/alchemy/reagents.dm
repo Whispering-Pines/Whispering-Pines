@@ -112,7 +112,7 @@
 	. = 1
 
 /datum/reagent/medicine/rosawater
-	name = "Rosa Water"
+	name = "Rose Water"
 	description = "Steeped rose petals with mild regeneration."
 	reagent_state = LIQUID
 	color = "#f398b6"

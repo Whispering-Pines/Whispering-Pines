@@ -12,14 +12,14 @@
 	for(var/obj/item/thing in user.held_items)
 		if(thing == null)
 			continue
-		if(istype(thing, /obj/item/dildo/silver)||istype(thing, /obj/item/dildo/plug/silver))
+		if(thing.has_enchantment(/datum/enchantment/silver))
 			return TRUE
-	return null
+	return FALSE
 
 /proc/dildoburn(mob/living/user)
 	var/mob/living/carbon/human/H = user
 	var/datum/antagonist/vampire/lord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampire/lord)
-	var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
+	var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf)
 	if(ishuman(H))
 		if(H.mind.has_antag_datum(/datum/antagonist/vampire))
 			if(prob(25))

@@ -402,4 +402,5 @@ SUBSYSTEM_DEF(BMtreasury)
 
 /area/rogue/indoors/town/bath/vault
 	name = "Bathmaster vault"
+	icon = 'modular_azure/icons/turf/areas.dmi'
 	icon_state = "bathvault"

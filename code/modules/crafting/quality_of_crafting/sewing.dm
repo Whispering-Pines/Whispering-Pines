@@ -317,7 +317,7 @@
 	category = "Hat"
 
 /datum/repeatable_crafting_recipe/sewing/flowercrown/rosa
-	name = "rosa crown"
+	name = "rose crown"
 	requirements = list(/obj/item/rope = 1,\
 					/obj/item/alch/rosa = 2)
 	output = /obj/item/clothing/head/flowercrown/rosa

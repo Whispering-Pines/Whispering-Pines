@@ -26,6 +26,8 @@
 		return TRUE
 	if(!get_insertable_in_hand(target))
 		return FALSE
+	if(check_dildo_silver(user) && (target.mind?.has_antag_datum(/datum/antagonist/vampire) || target.mind?.has_antag_datum(/datum/antagonist/werewolf)))
+		return FALSE
 	return TRUE
 
 /datum/sex_action/store_nipple_other/can_perform(mob/living/user, mob/living/target)

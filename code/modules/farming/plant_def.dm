@@ -386,7 +386,7 @@
 	produce_type = /obj/item/alch/artemisia
 
 /datum/plant_def/alchemical/rosa
-	name = "rosa"
+	name = "rose"
 	icon_state = "rosa"
 	produce_type = /obj/item/alch/rosa
 

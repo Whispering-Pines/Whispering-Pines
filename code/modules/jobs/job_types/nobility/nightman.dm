@@ -407,7 +407,10 @@
 	icon = 'modular_azure/icons/clothing/head.dmi'
 	mob_overlay_icon = 'modular_azure/icons/clothing/onmob/head_items.dmi'
 	material = "silver"
-	is_silver = TRUE
+
+/obj/item/lockpick/goldpin/silver/Initialize(mapload)
+	. = ..()
+	enchant(/datum/enchantment/silver)
 
 /obj/item/storage/keyring/nightman
 	keys = list(/obj/item/key/bathhouse, /obj/item/key/nightman, /obj/item/key/apothecary)

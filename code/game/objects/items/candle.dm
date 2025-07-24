@@ -131,7 +131,7 @@
 
 /obj/item/candle/eora
 	icon = 'icons/roguetown/items/lighting.dmi'
-	name = "rosa candle"
+	name = "rose candle"
 	desc = "Lasts forever, usually affiliated with moonbeam for sensual aura."
 	color = "#f858b5ff"
 	light_color = "#ff13d8ff"

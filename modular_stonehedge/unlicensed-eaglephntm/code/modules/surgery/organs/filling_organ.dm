@@ -156,7 +156,7 @@
 				else
 					tempdriprate *= 50 //since default values are basically decimals.
 					reagents.trans_to(the_bottle, min(tempdriprate))
-					to_chat(owner, span_info("I collect the fluids in \the [the_bottle]."))
+					to_chat(owner, span_info("I collect the fluids dripping from me in \the [the_bottle]."))
 	else //we got something in contents
 		for(var/obj/item/reagent_containers/contentitem in contents) //we got a bottle inside
 			if(contentitem.reagents && contentitem.spillable)

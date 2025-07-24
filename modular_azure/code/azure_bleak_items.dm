@@ -477,6 +477,10 @@ Reel teleports the attached atom to the grabbed turf.
 	infinite = TRUE
 	sellprice = 40
 
+/obj/item/candle/candlestick/silver/Initialize(mapload)
+	. = ..()
+	enchant(/datum/enchantment/silver)
+
 /obj/item/candle/candlestick/silver/update_icon_state()
 	. = ..()
 	icon_state = "scandelabra[lit ? "_lit" : ""]"
@@ -545,6 +549,10 @@ Reel teleports the attached atom to the grabbed turf.
 	icon_state = "scandle_lit"
 	start_lit = TRUE
 
+/obj/item/candle/silver/Initialize(mapload)
+	. = ..()
+	enchant(/datum/enchantment/silver)
+
 // TALLOW is used as an intermediate crafting ingredient for other recipes.
 /obj/item/reagent_containers/food/snacks/tallow
 	name = "tallow"
@@ -590,7 +598,7 @@ Reel teleports the attached atom to the grabbed turf.
 /obj/item/mobilestove
 	name = "packed stove"
 	desc = "A portable bronze stovetop. The underside is covered in an esoteric pattern of small tubes."
-	icon = 'icons/roguetown/misc/lighting.dmi'
+	icon = 'modular_azure/icons/misc/lighting.dmi'
 	icon_state = "hobostovep"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_BACK
@@ -600,6 +608,7 @@ Reel teleports the attached atom to the grabbed turf.
 /obj/machinery/light/fueled/hearth/mobilestove // thanks to Reen and Ppooch for their help on this. If any of this is slopcode, its my slopcode, not theirs. They only made improvements.
 	name = "mobile stove"
 	desc = "A portable bronze stovetop. The underside is covered in an esoteric pattern of small tubes."
+	icon = 'modular_azure/icons/misc/lighting.dmi'
 	icon_state = "hobostove1"
 	base_state = "hobostove"
 	brightness = 4
@@ -660,10 +669,10 @@ Reel teleports the attached atom to the grabbed turf.
 	skillcraft = /datum/skill/craft/cooking
 	craftdiff = 2
 	output_amount = 2
-	uses_attacked_atom = TRUE
+
 
 /datum/repeatable_crafting_recipe/candle/eora
-	name = "rosa candle"
+	name = "rose candle"
 	requirements = list(
 		/obj/item/reagent_containers/food/snacks/tallow= 1,
 		/obj/item/natural/fibers= 1,
@@ -673,7 +682,7 @@ Reel teleports the attached atom to the grabbed turf.
 	attacked_atom = /obj/item/reagent_containers/food/snacks/tallow
 	output = /obj/item/candle/eora
 	output_amount = 3
-	uses_attacked_atom = TRUE
+
 
 //whetstone and shit
 /obj/item/natural

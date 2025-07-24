@@ -115,7 +115,7 @@
 
 // ---------------------- ROSA FIELD ----------------------------
 /obj/structure/flora/field/rosa
-	name = "rosa field"
+	name = "rose field"
 	icon_state = "rosa"
 
 /obj/structure/flora/field/rosa/Crossed(atom/movable/AM)

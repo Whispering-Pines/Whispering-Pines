@@ -22,7 +22,7 @@
 	skin_tone_wording = "Clan"
 
 	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE, OLDGREY)
-	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOSTINK)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOSTINK, TRAIT_DEATHBYSNOOSNOO)
 
 	allowed_voicetypes_m = VOICE_TYPES_MASCANDRO
 

@@ -145,24 +145,10 @@
 	dildo_material = "silver"
 	sellprice = 30
 	desc = "Not recommended for vampires and verevolves in heat."
-	is_silver = TRUE
 
-/obj/item/dildo/silver/pickup(mob/user)
+/obj/item/dildo/silver/Initialize(mapload)
 	. = ..()
-	var/mob/living/carbon/human/H = user
-	var/datum/antagonist/vampire/lord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampire/lord)
-	var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
-	if(ishuman(H))
-		if(H.mind.has_antag_datum(/datum/antagonist/vampire) || H.mind.has_antag_datum(/datum/antagonist/vampire))
-			to_chat(H, span_userdanger("The silver sizzles and burns my hand!"))
-			H.adjustFireLoss(35)
-		if(V_lord)
-			if(!V_lord.ascended)
-				to_chat(H, span_userdanger("The silver sizzles in my hand..."))
-				H.adjustFireLoss(15)
-		if(W && W.transformed == TRUE)
-			to_chat(H, span_userdanger("The silver sizzles and burns my hand!"))
-			H.adjustFireLoss(25)
+	enchant(/datum/enchantment/silver)
 
 /obj/item/dildo/gold
 	color = "#b38f1b"
@@ -281,24 +267,10 @@
 	dildo_material = "silver"
 	sellprice = 30
 	desc = "Not recommended for vampires and verevolves in heat."
-	is_silver = TRUE
 
-/obj/item/dildo/plug/silver/pickup(mob/user)
+/obj/item/dildo/plug/silver/Initialize(mapload)
 	. = ..()
-	var/mob/living/carbon/human/H = user
-	var/datum/antagonist/vampire/lord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampire/lord)
-	var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
-	if(ishuman(H))
-		if(H.mind.has_antag_datum(/datum/antagonist/vampire) || H.mind.has_antag_datum(/datum/antagonist/vampire))
-			to_chat(H, span_userdanger("The silver sizzles and burns my hand!"))
-			H.adjustFireLoss(35)
-		if(V_lord)
-			if(!V_lord.ascended)
-				to_chat(H, span_userdanger("The silver sizzles in my hand..."))
-				H.adjustFireLoss(15)
-		if(W && W.transformed == TRUE)
-			to_chat(H, span_userdanger("The silver sizzles and burns my hand!"))
-			H.adjustFireLoss(25)
+	enchant(/datum/enchantment/silver)
 
 /obj/item/dildo/plug/gold
 	color = "#b38f1b"

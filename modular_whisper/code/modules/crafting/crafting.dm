@@ -70,7 +70,7 @@
 	starting_atom = /obj/item/grown/log/tree/stick
 	output = /obj/item/weapon/hammer/stone
 	craftdiff = 0
-	uses_attacked_atom = TRUE
+
 
 /datum/crafting_recipe/alch/charcoal
 	name = "make charcoal"
@@ -196,4 +196,4 @@
 	starting_atom = /obj/item/natural/stone
 	output = /obj/item/natural/whetstone
 	craftdiff = 0
-	uses_attacked_atom = TRUE
+

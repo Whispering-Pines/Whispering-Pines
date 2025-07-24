@@ -720,7 +720,7 @@
 
 /atom/movable/screen/eye_intent
 	name = "eye intent"
-	icon = 'icons/mob/roguehud.dmi'
+	icon = 'modular_whisper/icons/mob/roguehud.dmi'
 	icon_state = "eye"
 
 /atom/movable/screen/eye_intent/Click(location,control,params)

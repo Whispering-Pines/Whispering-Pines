@@ -1605,7 +1605,7 @@ GLOBAL_LIST_INIT(natural_precursor_registry, list())
 	)
 
 /datum/natural_precursor/rosa
-	name = "rosa"
+	name = "rose"
 	essence_yields = list(
 		/datum/thaumaturgical_essence/life = 10,
 		/datum/thaumaturgical_essence/light = 5

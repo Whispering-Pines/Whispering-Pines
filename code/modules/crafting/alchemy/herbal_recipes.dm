@@ -198,7 +198,7 @@
 
 //Simple Herbal Recipes using single herbs
 /datum/reagent/medicine/herbal/simple_rosa
-	name = "Rosa Water"
+	name = "Rose Water"
 	description = "Simple rose petal water with very mild healing."
 	color = "#ffb6c1"
 	taste_description = "floral"
@@ -380,7 +380,7 @@
 // Herbal Oils
 
 /datum/reagent/consumable/herbal/rosa_oil
-	name = "Rosa Perfume Oil"
+	name = "Rose Perfume Oil"
 	description = "A fragrant oil with a beautiful rose scent, used for cosmetic purposes."
 	reagent_state = LIQUID
 	color = "#ff69b4"

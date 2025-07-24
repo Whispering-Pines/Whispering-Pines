@@ -347,7 +347,7 @@
 			to_chat(action_target, span_love(lovermessage))
 	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO) && user != action_target)
 		if(istype(user.rmb_intent, /datum/rmb_intent/strong))
-			pain_amt *= 2.5
+			pain_amt *= 2
 	//SEX HEALING
 	var/sexhealrand = rand(0.2, 0.4)
 	//go go gadget sex healing.. magic?
@@ -429,6 +429,9 @@
 		return
 	if(!ca.affecting_organ_slot)
 		return
+	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO) && user != target)
+		if(istype(user.rmb_intent, /datum/rmb_intent/strong))
+			force += 1
 	target.adjustOrganLoss(ca.affecting_organ_slot, force*ca.organ_damage_mult)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed, damage_organ_slot)
@@ -939,10 +942,9 @@
 /datum/sex_controller/proc/try_pelvis_crush(mob/living/carbon/human/target)
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 		if(!target.has_wound(/datum/wound/fracture/groin))
-			if(prob(5)){
+			if(prob(2))
 				var/obj/item/bodypart/groin = target.get_bodypart(check_zone(BODY_ZONE_PRECISE_GROIN))
 				groin.add_wound(/datum/wound/fracture)
-			}
 
 /mob/living
 	var/mouth_blocked = FALSE

@@ -332,7 +332,7 @@
 	minor_pot = /datum/alch_cauldron_recipe/end_potion
 
 /obj/item/alch/rosa
-	name = "rosa"
+	name = "rose"
 	icon_state = "rosa"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head_items.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_MOUTH

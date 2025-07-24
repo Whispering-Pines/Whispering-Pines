@@ -64,7 +64,7 @@
 					var/obj/item/organ/userpussy = user.getorganslot(ORGAN_SLOT_VAGINA)
 					reagents.trans_to(userpussy, amt2take, TRUE, 4, FALSE, M, FALSE, INJECT)
 				bitecount++
-				On_Consumealt(M)
+				on_Consumealt(M)
 				checkLiked(fraction, M)
 				if(bitecount >= bitesize)
 					qdel(src)
@@ -74,7 +74,7 @@
 
 	return 0
 
-/obj/item/reagent_containers/food/snacks/proc/On_Consumealt(mob/living/eater)
+/obj/item/reagent_containers/food/snacks/proc/on_Consumealt(mob/living/eater)
 	if(!eater)
 		return
 

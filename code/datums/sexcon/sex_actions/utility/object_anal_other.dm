@@ -68,6 +68,9 @@
 		segsovolume *= 0.5
 	playsound(user, 'sound/misc/mat/fingering.ogg', segsovolume, TRUE, -2, ignore_walls = FALSE)
 
+	if(check_dildo_silver(user))
+		other_dildoburn(user, target)
+
 	if(dildo.get_temperature() >= (40+T0C))
 		ouchietext = pick("OUCH! \the [dildo] burns [target]'s ass!", "YOUCH! \the [dildo] burns [target]'s asshole!", "OW! \the [dildo] chars [target]'s guts!", "AGH! \the [dildo] burns [target]'s ass!")
 		target.visible_message(span_userdanger(ouchietext))

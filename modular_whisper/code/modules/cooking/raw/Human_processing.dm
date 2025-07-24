@@ -182,7 +182,7 @@
 	attacked_atom = /obj/item/reagent_containers/food/snacks/cooked/sausage/human
 	starting_atom = /obj/item/grown/log/tree/stick
 	output = /obj/item/reagent_containers/food/snacks/cooked/sausage_sticked/human
-	uses_attacked_atom = TRUE
+
 	craft_time = 3 SECONDS
 	crafting_sound = 'sound/foley/dropsound/food_drop.ogg'
 	extra_chance = 100

@@ -230,7 +230,7 @@
 	plant_def_type = /datum/plant_def/alchemical/artemisia
 
 /obj/item/neuFarm/seed/rosa
-	seed_identity = "rosa seeds"
+	seed_identity = "rose seeds"
 	plant_def_type = /datum/plant_def/alchemical/rosa
 
 /obj/item/neuFarm/seed/euphorbia

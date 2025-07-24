@@ -172,7 +172,7 @@
 	finished_smell = /datum/pollutant/food/flower
 
 /datum/container_craft/cooking/herbal_tea/rosa_water
-	name = "Rosa Water"
+	name = "Rose Water"
 	created_reagent = /datum/reagent/medicine/herbal/simple_rosa
 	water_conversion = 1
 	requirements = list(

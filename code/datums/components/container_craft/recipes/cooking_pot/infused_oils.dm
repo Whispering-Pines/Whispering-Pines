@@ -16,7 +16,7 @@
 
 // Rosa Oil (perfume/cosmetic)
 /datum/container_craft/cooking/herbal_oil/rosa_oil
-	name = "Rosa Perfume Oil"
+	name = "Rose Perfume Oil"
 	created_reagent = /datum/reagent/consumable/herbal/rosa_oil
 	water_conversion = 1
 	requirements = list(

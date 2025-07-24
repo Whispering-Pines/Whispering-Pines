@@ -122,7 +122,7 @@
 
 /obj/item/book/granter/spell/spells/rayoffrost
 	name = "Scroll of Ray of Frost"
-	spell = /datum/action/cooldown/spell/beam/ray_of_frost
+	spell = /datum/action/cooldown/spell/beam/beam_of_frost
 	spellname = "ray of frost"
 	icon_state = "scrollred"
 

@@ -168,7 +168,7 @@
 	herbtype = /obj/item/alch/artemisia
 
 /obj/structure/flora/grass/herb/rosa
-	name = "rosa"
+	name = "rose"
 	icon_state = "rosa2"
 
 	herbtype = /obj/item/alch/rosa

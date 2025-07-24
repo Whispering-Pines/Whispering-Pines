@@ -47,13 +47,13 @@
 			H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/tracking, 2, TRUE)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-			var/weapons = list("Recurve Bow","Crossbow")
+			var/weapons = list("Short Bow","Crossbow")
 			var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 			H.set_blindness(0)
 			switch(weapon_choice)
-				if("Recurve Bow")
+				if("Short Bow")
 					H.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
-					backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+					backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/short
 					beltl = /obj/item/ammo_holder/quiver/arrows
 				if("Crossbow")
 					H.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)

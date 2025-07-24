@@ -199,7 +199,6 @@
 	attacked_atom = /obj/item/reagent_containers/food/snacks/tallow
 	output = /obj/item/candle/yellow
 	output_amount = 3
-	uses_attacked_atom = TRUE
 
 /datum/repeatable_crafting_recipe/crafting/imp_saw
 	name = "improvised saw"

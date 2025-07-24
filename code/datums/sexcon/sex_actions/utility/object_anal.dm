@@ -62,9 +62,10 @@
 	if(user.rogue_sneaking || user.alpha <= 100)
 		segsovolume *= 0.5
 	playsound(user, 'sound/misc/mat/fingering.ogg', segsovolume, TRUE, -2, ignore_walls = FALSE)
+	var/obj/item/organ/filling_organ/guts/userass = user.getorganslot(ORGAN_SLOT_GUTS)
 
-	var/obj/item/organ/filling_organ/vagina/userass = user.getorganslot(ORGAN_SLOT_GUTS)
-
+	if(check_dildo_silver(user))
+		dildoburn(user)
 	if(prob(2))
 		if(dildo.w_class < WEIGHT_CLASS_SMALL && !userass.contents.len)
 			to_chat(user, span_userdanger("Oh shit \the [dildo] is so small it slipped and now it's inside my hole."))

@@ -30,6 +30,8 @@
 		return TRUE
 	if(!get_insertable_in_hand(user))
 		return FALSE
+	if(check_dildo_silver(user) && (user.mind?.has_antag_datum(/datum/antagonist/vampire) || user.mind?.has_antag_datum(/datum/antagonist/werewolf)))
+		return FALSE
 	return TRUE
 
 /datum/sex_action/store_anal/on_start(mob/living/user, mob/living/target)
