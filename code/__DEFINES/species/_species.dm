@@ -1,37 +1,24 @@
-#define SPEC_ID_HUMEN "Human"
-#define SPEC_ID_DWARF "Dwarf"
-#define SPEC_ID_AASIMAR "Aasimar"
-#define SPEC_ID_ELF "Elf"
-#define SPEC_ID_HALF_ELF "Half-Elf"
-#define SPEC_ID_DROW "Dark Elf"
-#define SPEC_ID_HALF_DROW "Half-Drow"
-#define SPEC_ID_TIEFLING "Tiefling"
-#define SPEC_ID_HALF_ORC "Half-Orc"
-#define SPEC_ID_RAKSHARI "Rakshari"
-#define SPEC_ID_KOBOLD "Kobold"
-#define SPEC_ID_HOLLOWKIN "Demihuman"
-#define SPEC_ID_HARPY "Harpy"
-#define SPEC_ID_TRITON "Triton"
-#define SPEC_ID_RESURGENTIS "Resurgentis"
-#define SPEC_ID_AKULA "Akula"
-#define SPEC_ID_WILDKIN "Wild-Kin"
-#define SPEC_ID_VERMINVOLK "Verminvolk"
-#define SPEC_ID_DRACON "Dracon"
-#define SPEC_ID_LIZARDFOLK "Lizardfolk"
-#define SPEC_ID_LUPIAN "Lupian"
-#define SPEC_ID_AXIAN "Axian"
-#define SPEC_ID_TABAXI "Tabaxi"
-#define SPEC_ID_VULPKANIN "Vulpkanin"
-#define SPEC_ID_CONSTRUCT "Metal Construct"
-#define SPEC_ID_SLIMEPERSON "Slimeperson"
-#define SPEC_ID_PLANTOID "Plantoid"
-#define SPEC_ID_GOBLINPLAYER	"goblinplayer"
-#define SPEC_ID_HUMAN_SPACE "Human"
+#define SPEC_ID_HUMAN_SPACE "space_human"
+#define SPEC_ID_HUMEN "human"
+#define SPEC_ID_DWARF "dwarf"
+#define SPEC_ID_AASIMAR "aasimar"
+#define SPEC_ID_ELF "elf"
+#define SPEC_ID_HALF_ELF "halfelf"
+#define SPEC_ID_DROW "drow"
+#define SPEC_ID_HALF_DROW "halfdrow"
+#define SPEC_ID_TIEFLING "tiefling"
+#define SPEC_ID_HALF_ORC "halforc"
+#define SPEC_ID_RAKSHARI "rakshari"
+#define SPEC_ID_KOBOLD "kobold"
+#define SPEC_ID_HOLLOWKIN "hollowkin"
+#define SPEC_ID_HARPY "harpy"
+#define SPEC_ID_TRITON "triton"
+#define SPEC_ID_MEDICATOR "medicator"
 
 #define SPEC_ID_ORC	"orc"
 #define SPEC_ID_GOBLIN	"goblin"
 #define SPEC_ID_ROUSMAN	"rousman"
-#define SPEC_ID_ZIZOMBIE	"zizombie"
+#define SPEC_ID_ZIZOMBIE "zizombie"
 
 /// List of all species
 #define ALL_RACES_LIST list(\
@@ -46,6 +33,7 @@
 	SPEC_ID_HARPY,\
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_TRITON,\
+	SPEC_ID_MEDICATOR,\
 	SPEC_ID_KOBOLD,\
 	SPEC_ID_HOLLOWKIN,\
 	SPEC_ID_HALF_ORC,\
@@ -70,9 +58,13 @@
 	SPEC_ID_HUMAN_SPACE,\
 	)
 
-/// Species where females get underwear, no underwear for kobold, rakshari and triton, dwarves handled seperately
+/// Species where females get underwear, no underwear for kobold, rakshari, medicator and triton, dwarves handled seperately
 #define RACES_UNDERWEAR_FEMALE list(\
 	SPEC_ID_HUMEN,\
+	SPEC_ID_ELF,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_DROW,\
+	SPEC_ID_HALF_DROW,\
 	SPEC_ID_HOLLOWKIN,\
 	SPEC_ID_HARPY,\
 	SPEC_ID_TIEFLING,\
@@ -80,7 +72,6 @@
 	SPEC_ID_HALF_ORC,\
 	SPEC_ID_ORC,\
 	SPEC_ID_ZIZOMBIE,\
-	SPEC_ID_ELF,\
 	SPEC_ID_HUMAN_SPACE,\
 	SPEC_ID_TRITON,\
 	SPEC_ID_KOBOLD,\
@@ -107,6 +98,8 @@
 	SPEC_ID_TIEFLING,\
 	SPEC_ID_AASIMAR,\
 	SPEC_ID_HALF_ORC,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_HALF_DROW,\
 	SPEC_ID_ORC,\
 	SPEC_ID_ZIZOMBIE,\
 	SPEC_ID_HUMAN_SPACE,\
@@ -141,6 +134,7 @@
 	SPEC_ID_HARPY,\
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_TRITON,\
+	SPEC_ID_MEDICATOR,\
 	SPEC_ID_KOBOLD,\
 	SPEC_ID_HOLLOWKIN,\
 	SPEC_ID_HALF_ORC,\
@@ -192,8 +186,7 @@
 	SPEC_ID_GOBLINPLAYER,\
 )
 
-/// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Tenebrase. Used for church/faith roles.
-
+/// Species who are nonheretical to the church. Excluded species typically have an inhumen god associated, like Zizo. Used for church/faith roles.
 #define RACES_PLAYER_NONHERETICAL list(\
 	SPEC_ID_HUMEN,\
 	SPEC_ID_DWARF,\
@@ -223,6 +216,7 @@
 	SPEC_ID_SLIMEPERSON,\
 	SPEC_ID_PLANTOID,\
 	SPEC_ID_GOBLINPLAYER,\
+	SPEC_ID_MEDICATOR,\
 )
 
 /// Races who are non-exotic to Phantom Kingdom. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
@@ -239,6 +233,7 @@
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_TRITON,\
 	SPEC_ID_KOBOLD,\
+	SPEC_ID_MEDICATOR,\
 	SPEC_ID_HOLLOWKIN,\
 	SPEC_ID_HALF_ORC,\
 	SPEC_ID_RESURGENTIS,\
@@ -370,6 +365,7 @@
 	SPEC_ID_SLIMEPERSON,\
 	SPEC_ID_PLANTOID,\
 	SPEC_ID_GOBLINPLAYER,\
+	SPEC_ID_MEDICATOR,\
 )
 
 #define RACES_PLAYER_ROYALTY list(\
@@ -391,7 +387,30 @@
 	SPEC_ID_VULPKANIN,\
 )
 
-/// Foreigner Nobility Races
+#define RACES_PLAYER_COURT_PHYSICIAN list(\
+	SPEC_ID_HUMEN,\
+	SPEC_ID_DWARF,\
+	SPEC_ID_AASIMAR,\
+	SPEC_ID_ELF,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_DROW,\
+	SPEC_ID_HALF_DROW,\
+	SPEC_ID_MEDICATOR,\
+	SPEC_ID_HOLLOWKIN,\
+	SPEC_ID_RESURGENTIS,\
+	SPEC_ID_WILDKIN,\
+	SPEC_ID_VERMINVOLK,\
+	SPEC_ID_DRACON,\
+	SPEC_ID_LIZARDFOLK,\
+	SPEC_ID_LUPIAN,\
+	SPEC_ID_AXIAN,\
+	SPEC_ID_TABAXI,\
+	SPEC_ID_VULPKANIN,\
+	SPEC_ID_GOBLINPLAYER,\
+	SPEC_ID_KOBOLD,\
+)
+
+/// Foreigner Nobility Species - No Tiefling (you know why) or hollow-kin or medicators (too young to have nobles mayhaps)
 #define RACES_PLAYER_FOREIGNNOBLE list(\
 	SPEC_ID_HUMEN,\
 	SPEC_ID_DWARF,\

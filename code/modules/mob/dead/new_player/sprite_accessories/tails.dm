@@ -390,3 +390,9 @@
 	name = "Kobold Straight"
 	icon_state = "kobold_alt"
 	can_wag = TRUE
+
+/datum/sprite_accessory/tail/medicator
+	name = "Medicator Plumage"
+	icon = 'icons/mob/sprite_accessory/tails/medicator.dmi'
+	icon_state = "vulture"
+	specuse = list(SPEC_ID_MEDICATOR)

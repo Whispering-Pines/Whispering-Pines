@@ -133,6 +133,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Anti-Scrying" = TRAIT_ANTISCRYING,
 		"Shock Immunity" = TRAIT_SHOCKIMMUNE,
 		"Expert Herb Finder" = TRAIT_LEGENDARY_ALCHEMIST,
+		"Secret Officiant" = TRAIT_SECRET_OFFICIANT,
 		"Deceiving Meekness" = TRAIT_DECEIVING_MEEKNESS,
 		"Thieves Guild Member" = TRAIT_THIEVESGUILD,
 		"Engineering Goggles" = TRAIT_ENGINEERING_GOGGLES,
@@ -271,6 +272,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_BLINDFIGHTING = span_info("I have an incredible sense of awareness, allowing me to dodge and parry attacks even when I can't see them coming, If i am in high awareness, I can even prevent sneak attacks."),
 	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely."),
 	TRAIT_ENDOWMENT = span_danger("I got massive bits that slow me down and don't fit in most clothes or armor."),
+	TRAIT_SECRET_OFFICIANT = span_love("I am able to conduct secret wedding ceremonies outside of the church. Love cannot be stopped!"),
 	TRAIT_DUALWIELDER = span_info("I am trained in the art of dual wielding."),
 ))
 

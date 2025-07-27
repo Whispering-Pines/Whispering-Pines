@@ -88,7 +88,7 @@
 		/datum/sprite_accessory/ears/goblin_small,
 		/datum/sprite_accessory/ears/halforc)
 
-/datum/customizer/organ/ears/goblin 
+/datum/customizer/organ/ears/goblin
 	customizer_choices = list(/datum/customizer_choice/organ/ears/goblin)
 	allows_disabling = FALSE
 
@@ -112,7 +112,7 @@
 	allows_disabling = TRUE
 
 /datum/customizer_choice/organ/ears/demihuman
-	name = "Half-Kinhuman Ears"
+	name = "Half-Kin Ears"
 	organ_type = /obj/item/organ/ears
 	generic_random_pick = TRUE
 	sprite_accessories = list(
