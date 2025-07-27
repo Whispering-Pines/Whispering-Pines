@@ -181,7 +181,7 @@
 
 /obj/item/clothing/cloak/cape/inquisitor
 	name = "Inquisitors Cloak"
-	desc = "A time honored cloak Zhaladuskn design, used by founding clans of the Zhaladuskn Lodge"
+	desc = "A time honored cloak of inquisition serving the new worlds' religions."
 	icon_state = "inquisitor_cloak"
 	icon = 'icons/roguetown/clothing/cloaks.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'

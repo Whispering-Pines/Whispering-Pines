@@ -242,6 +242,10 @@
 		/datum/sprite_accessory/ears/cobrahoodears,
 		)
 
+/obj/item/organ/ears/akula
+	name = "axian ears"
+	accessory_type = /datum/sprite_accessory/ears/shark
+
 /datum/customizer/organ/ears/tiefling
 	customizer_choices = list(/datum/customizer_choice/organ/ears/tiefling)
 	allows_disabling = FALSE

@@ -103,7 +103,6 @@
 /obj/item/organ/wings/moth
 	name = "fluvian wings"
 	desc = "A pair of fuzzy moth wings."
-	flight_for_species = list("moth")
 
 /obj/item/organ/wings/dracon
 	name = "drakian wings"

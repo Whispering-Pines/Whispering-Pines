@@ -8,19 +8,14 @@
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/strange
 
-	desc = "Medicators originate from the the fetid swamps and murk within the Isle of Enigma. Their species has historically been localized around the area, \
-	although the Brass Cataclysm of Heartfelt's fall has resulted in droves of their kind seeking refuge elsewhere. They are a newer form of sentience, with records dating back only after Zizo's ascension. \
+	desc = "Medicators originate from the the fetid swamps and murk within No mans Land. \
 	\n\n\
 	Their appearance is gaunt, patches of bare skin riddled with feathers and pox scars, Medicators are a horrifying fusion of bird and men- unlike their far more appealing adversaries, the harpies. \
 	With long, hanging beaks clacking as they breathe, other species find them dipleasing at best and repulsive at worst. Despite this, their eyes betray great intelligence behind otherwise monstrosity.	\
 	\n\n\
 	Born of carcinogens, pollution, mechanical and biological waste, these creatures were not always sentient. \
-	Through their appearance, accidental origin, and innate sicknesses, they have gained the fascination and uplifting of Pestra and inherited aspects of the serpentine goddess in turn. \
-	Medicators, as they called themselves, carry with them the bedside manners, or lack thereof, of the worst Pestrans. \
 	Their culture holds discovery and medicinal breakthroughs in the highest regard, be it through experimentation to shift their own ailments or others'. \
-	Medicators care little about the nickname granted to them by other species, 'feculents,' so long as their medical prowess is not subject to question. \
-	\n\n\
-	Medicators and Harpies often find themselves in conflict, mirroring the quarrels of their patrons, whether of conscious faith or not."
+	Medicators care little about the nickname granted to them by other species, 'feculents,' so long as their medical prowess is not subject to question."
 
 	possible_ages = NORMAL_AGES_LIST
 
@@ -77,7 +72,7 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_GUTS = /obj/item/organ/guts,
+		ORGAN_SLOT_GUTS = /obj/item/organ/filling_organ/guts,
 		ORGAN_SLOT_TAIL = /obj/item/organ/tail/medicator,
 		ORGAN_SLOT_SNOUT = /obj/item/organ/snout/beak,
 		ORGAN_SLOT_NECK_FEATURE = /obj/item/organ/neck_feature/medicator,

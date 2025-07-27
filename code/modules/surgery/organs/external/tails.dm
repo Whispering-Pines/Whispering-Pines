@@ -8,14 +8,13 @@
 	slot = ORGAN_SLOT_TAIL
 	var/can_wag = TRUE
 	var/wagging = FALSE
+	var/can_penetrate = TRUE //most can, least cant.
 
 /obj/item/organ/tail/Remove(mob/living/carbon/human/H,  special = 0)
 	. = ..()
 	if(H && H.dna && H.dna.species)
 		H.dna.species.stop_wagging_tail(H)
 
-/obj/item/organ/tail/cat
-	name = "cat tail"
 
 /obj/item/organ/tail/harpy
 	name = "harpy plumage"

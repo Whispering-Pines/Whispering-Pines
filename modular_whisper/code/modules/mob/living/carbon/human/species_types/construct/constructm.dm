@@ -98,39 +98,46 @@
 /obj/item/organ/brain/construct
 	name = "construct brain"
 	desc = "The centre of thought for a construct. It crackles with knowledge... and something more sinister."
+	icon = 'modular_whisper/icons/obj/surgery.dmi'
 	icon_state = "brain-con"
 
 /obj/item/organ/heart/construct
 	name = "construct core"
 	desc = "Swirling with a blessing of Astrata and pulsing with lux inside. This allows a construct to move."
+	icon = 'modular_whisper/icons/obj/surgery.dmi'
 	icon_state = "heartcon-on"
 	icon_base = "heartcon"
 
 /obj/item/organ/lungs/construct
 	name = "construct aersource"
 	desc = "A complex hollow crystal, which courses with air through unknowable means. Steam wisps around it in a vortex."
+	icon = 'modular_whisper/icons/obj/surgery.dmi'
 	icon_state = "lungs-con"
 
 /obj/item/organ/eyes/construct
 	name = "construct eyes"
 	desc = "Some beast's eyes, preserved through artifice and with magical rock embedded in their back. Seems to fit a construct's head."
+	icon = 'modular_whisper/icons/obj/surgery.dmi'
 	icon_state = "eyeball-con"
 	glows = TRUE
 
 /obj/item/organ/tongue/construct
 	name = "construct tongue"
 	desc = "A beast's tongue, preserved through artifice and with crystals embedded in the base. It seems rather dead..."
+	icon = 'modular_whisper/icons/obj/surgery.dmi'
 	icon_state = "tongue-con"
 	say_mod = "crackles"
 	taste_sensitivity = 30 //It's dead, jim.
 
 /obj/item/organ/liver/construct
 	name = "construct decay regulator"
+	icon = 'modular_whisper/icons/obj/surgery.dmi'
 	icon_state = "liver-con"
 	desc = "A construct's decay regulator. Swirling with pestran energies, it prevents corrosion and rot. Unfortunately, this makes them susceptible to toxins."
 
 /obj/item/organ/stomach/construct
 	name = "construct soulseed"
+	icon = 'modular_whisper/icons/obj/surgery.dmi'
 	icon_state = "stomach-con"
 	desc = "The seat of a construct's soul, where a stomach would go. Wisps of lux cycle about, impossible to grab."
 

@@ -1,14 +1,3 @@
-/obj/item/organ/tail
-	name = "tail"
-	desc = "A severed tail. What did you cut this off of?"
-	icon_state = "severedtail"
-	visible_organ = TRUE
-	zone = BODY_ZONE_PRECISE_GROIN
-	slot = ORGAN_SLOT_TAIL
-	var/can_wag = TRUE
-	var/wagging = FALSE
-	var/can_penetrate = TRUE //most can, least cant.
-
 /obj/item/organ/tail/cat
 	name = "cat tail"
 	desc = "A severed cat tail. Who's wagging now?"
@@ -37,8 +26,6 @@
 /obj/item/organ/tail/lupian
 	name = "lupian tail"
 
-/obj/item/organ/tail/avali
-	name = "avali tail"
 
 /obj/item/organ/tail/vulpkanin
 	name = "vulpkian tail"
@@ -47,15 +34,6 @@
 
 /obj/item/organ/tail/tajaran
 	name = "tajaran tail"
-
-/obj/item/organ/tail/vox
-	name = "vox tail"
-
-/obj/item/organ/tail/synth
-	name = "synthetic tail"
-
-/obj/item/organ/tail/xeno
-	name = "xeno tail"
 
 /obj/item/organ/tail/tiefling
 	name = "tiefling tail"

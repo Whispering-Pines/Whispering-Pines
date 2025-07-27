@@ -130,7 +130,7 @@
 					wrists = /obj/item/clothing/neck/psycross/silver/ravox
 					H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 				if(/datum/patron/divine/xylix)
-					head = /obj/item/clothing/head/helmet/heavy/necked // Placeholder
+					head = /obj/item/clothing/head/helmet/heavy/necked/xylix
 					wrists = /obj/item/clothing/neck/psycross/silver/xylix
 					H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 				if(/datum/patron/divine/pestra)
