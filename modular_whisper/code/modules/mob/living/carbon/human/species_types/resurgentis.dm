@@ -32,6 +32,10 @@
 
 	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE, OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_ORGAN_EATER)
+	inherent_skills = list(
+		/datum/skill/misc/athletics = 1,
+	)
+
 
 	use_skintones = 1
 
@@ -82,7 +86,6 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	//i guess more than usual stats for having major visibility disadvantage. (4)
 	specstats_m = list(STATKEY_STR = 2, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 1, STATKEY_END = 0, STATKEY_SPD = -1, STATKEY_LCK = 0)
 	specstats_f = list(STATKEY_STR = 1, STATKEY_PER = 0, STATKEY_INT = 0, STATKEY_CON = 0, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
 

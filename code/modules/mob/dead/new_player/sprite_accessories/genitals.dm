@@ -29,8 +29,9 @@
 /datum/sprite_accessory/penis/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(!organ.visible_organ)
 		return FALSE
-	if(owner.age == AGE_CHILD)
-		return FALSE
+	if(owner)
+		if(owner.age == AGE_CHILD)
+			return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
 
 /datum/sprite_accessory/penis/human
@@ -100,8 +101,9 @@
 /datum/sprite_accessory/testicles/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(!organ.visible_organ)
 		return FALSE
-	if(owner.age == AGE_CHILD)
-		return FALSE
+	if(owner)
+		if(owner.age == AGE_CHILD)
+			return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
 
 /datum/sprite_accessory/testicles/pair
@@ -191,8 +193,9 @@
 /datum/sprite_accessory/vagina/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(!organ.visible_organ)
 		return FALSE
-	if(owner.age == AGE_CHILD)
-		return FALSE
+	if(owner)
+		if(owner.age == AGE_CHILD)
+			return FALSE
 	update_overlay(organ, owner)
 	return is_human_part_visible(owner, HIDECROTCH|HIDEBUTT|HIDEJUMPSUIT)
 

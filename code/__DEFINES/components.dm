@@ -316,3 +316,4 @@
 //Whispering pines slop
 #define COMSIG_POWER_UPDATE "power_update"
 #define COMSIG_MOVABLE_THROW_HIT_MOB "movable_throw_hit_mob"
+#define COMSIG_MOB_POST_EQUIP_ITEM "mob_post_equip_item"
