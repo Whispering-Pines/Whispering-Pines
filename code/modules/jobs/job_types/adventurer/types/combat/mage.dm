@@ -1,8 +1,6 @@
 /datum/advclass/combat/mage
 	name = "Mage"
 	tutorial = "You are a wandering mage, ones who aren't gifted in magic but are intelligent enough to study to harness it through hard work."
-	allowed_sexes = list(MALE, FEMALE)
-
 	outfit = /datum/outfit/job/adventurer/mage
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 0

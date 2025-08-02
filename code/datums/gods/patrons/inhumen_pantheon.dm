@@ -33,8 +33,12 @@ creative punis- 'Tests' to her believers that are often lethal to the weak. Tene
 	flaws = "Hubris, Superiority, Fury"
 	worshippers = "Dark Elves, Aspirants, Necromancers"
 	sins = "Moralism, Weakness"
-	boons = "You know other followers of Tenebrase when you see them."
-	added_traits = list(TRAIT_CABAL)
+	boons = "You may perform fleshcrafting. Access to roles with magic."
+	//added_traits = list(TRAIT_CABAL)	No need for this. They have fleshcrafting now.
+	t0 = /datum/action/cooldown/spell/undirected/touch/orison //Cursed water, btw
+	t1 = /datum/action/cooldown/spell/projectile/profane
+	t2 = /datum/action/cooldown/spell/conjure/raise_lesser_undead
+	t3 = /datum/action/cooldown/spell/undirected/rituos
 	confess_lines = list(
 		"I FOLLOW THE PATH OF TENEBRASE!",
 		"LONG LIVE THE DARK EMPRESS!",
@@ -56,6 +60,10 @@ soul and too many atrocities to count. He was a red orc called.. 'Bad Green' but
 	sins = "Compassion, Frailty, Servility"
 	boons = "You are drawn to the flavour of raw flesh and organs, and may consume without worry. Your weapons lose integrity slower."
 	added_traits = list(TRAIT_ORGAN_EATER, TRAIT_SHARPER_BLADES)
+	t0 = /datum/action/cooldown/spell/undirected/bloodrage
+	t1 = /datum/action/cooldown/spell/undirected/call_to_slaughter
+	t2 = /datum/action/cooldown/spell/projectile/blood_net
+	t3 = /datum/action/cooldown/spell/revel_in_slaughter
 	confess_lines = list(
 		"SINIUS IS THE BEAST I WORSHIP!",
 		"SINIUS WILL RAVAGE YOU!",
@@ -72,6 +80,10 @@ soul and too many atrocities to count. He was a red orc called.. 'Bad Green' but
 	sins = "Clumsiness, Stupidity, Humility"
 	boons = "You can see the most expensive item someone is carrying."
 	added_traits = list(TRAIT_MATTHIOS_EYES)
+	t0 = /datum/action/cooldown/spell/appraise/holy //what the point if he got matthios's eyes though?
+	t1 = /datum/action/cooldown/spell/transact
+	t2 = /datum/action/cooldown/spell/beam/equalize
+	t3 = /datum/action/cooldown/spell/churn_wealthy
 	confess_lines = list(
 		"DISMAS STEALS FROM THE WORTHLESS!",
 		"DISMAS IS JUSTICE FOR THE COMMON MAN!",
@@ -96,6 +108,10 @@ the power of a minor goddess.'"
 	sins = "Sobriety, Self-Sacrifice, Faltering Willpower"
 	boons = "Your hips break others' when you are on strong intent during sex, clerics gain devotion through sex."
 	added_traits = list(TRAIT_DEATHBYSNOOSNOO, TRAIT_SEXDEVO)
+	t0 = /datum/action/cooldown/spell/find_flaw
+	t1 = /datum/action/cooldown/spell/baothablessings
+	t2 = /datum/action/cooldown/spell/projectile/blowingdust
+	t3 = /datum/action/cooldown/spell/painkiller
 	confess_lines = list(
 		"BREED IN LAMASHTU'S NAME!",
 		"MULTIPLY TO A HORDE FOR LAMASHTU!",

@@ -8,7 +8,7 @@
 
 /datum/world_trait/pestra_mercy
 	name = "Pestra's Mercy"
-	desc = "Makes corpses rot slower."
+	desc = "Corpses rot slower."
 
 /datum/world_trait/matthios_fingers
 	name = "Dismas' Fingers"
@@ -16,7 +16,7 @@
 
 /datum/world_trait/necra_requiem
 	name = "Last Death's Requiem"
-	desc = "New corpses wont become deadites."
+	desc = "New corpses won't become deadites."
 
 /datum/world_trait/zizo_defilement
 	name = "Tenebrase's Defilement"

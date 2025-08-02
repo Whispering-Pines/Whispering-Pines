@@ -72,6 +72,7 @@
 #define SPAN_ORC "orc"
 #define SPAN_BEAST "beast"
 #define SPAN_DRACONIC "reptile"
+#define SPAN_DEEPSPEAK "deepspeak"
 
 //bitflag #defines for return value of the radio() proc.
 #define ITALICS 1

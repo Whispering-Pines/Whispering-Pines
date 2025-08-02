@@ -19,6 +19,7 @@
 	hub_password = "zX1svaLpIhl70uii"
 	name = "WHISPERING PINES"
 	fps = 20
+	cache_lifespan = 0
 #ifdef FIND_REF_NO_CHECK_TICK
 	loop_checks = FALSE
 #endif

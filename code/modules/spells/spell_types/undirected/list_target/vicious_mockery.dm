@@ -8,7 +8,7 @@
 
 	spell_type = NONE
 	cooldown_time = 30 SECONDS
-
+	invocation_type = INVOCATION_SHOUT
 	choose_target_message = "Choose who to mock."
 	target_radius = 6
 

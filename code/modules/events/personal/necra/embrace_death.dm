@@ -2,7 +2,7 @@
 	name = "Last Death's Embrace"
 	track = EVENT_TRACK_PERSONAL
 	typepath = /datum/round_event/necra_embrace
-	weight = 7
+	weight = 5
 	earliest_start = 40 MINUTES
 	max_occurrences = 1
 	min_players = 40

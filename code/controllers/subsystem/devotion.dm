@@ -161,9 +161,11 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		H.add_spell(spell, source = src)
 
 	level = CLERIC_T1
+
 	passive_devotion_gain = 4
-	max_devotion = 180
-	max_progression = 180
+	max_devotion = 250
+	max_progression = 250
+
 	update_devotion(50, 50)
 
 //Templar Spell Spawner
