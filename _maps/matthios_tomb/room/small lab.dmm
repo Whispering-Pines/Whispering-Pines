@@ -226,9 +226,9 @@
 /area/rogue/under/tomb)
 "zf" = (
 /obj/structure/closet/crate/chest/wicker,
-/obj/item/alch/bonemeal,
-/obj/item/alch/bonemeal,
-/obj/item/alch/bonemeal,
+/obj/item/fertilizer/bone_meal,
+/obj/item/fertilizer/bone_meal,
+/obj/item/fertilizer/bone_meal,
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/under/tomb/indoors)
 "zM" = (
@@ -365,7 +365,7 @@
 /area/rogue/under/tomb/indoors)
 "QD" = (
 /obj/structure/closet/crate/chest,
-/obj/item/reagent_containers/food/snacks/cooked/coppiette,
+/obj/item/reagent_containers/food/snacks/meat/coppiette,
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/under/tomb/indoors)
 "Ra" = (

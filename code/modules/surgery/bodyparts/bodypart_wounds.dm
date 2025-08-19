@@ -123,42 +123,48 @@
 /obj/item/bodypart/proc/bodypart_attacked_by(bclass, dam, mob/living/user, zone_precise, silent = FALSE, crit_message = FALSE)
 	if(!bclass || !dam || !owner || (owner.status_flags & GODMODE))
 		return FALSE
+
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human_owner = owner
 		if(human_owner.checkcritarmor(zone_precise, bclass))
 			return FALSE
+
 	var/do_crit = TRUE
 	if(user)
 		if(user.stat_roll(STATKEY_LCK,2,10))
 			dam += 10
-		if(istype(user.rmb_intent, /datum/rmb_intent/weak))
+		if(ispath(user.rmb_intent?.type, /datum/rmb_intent/weak))
 			do_crit = FALSE
+
 	var/added_wound
 	switch(bclass) //do stuff but only when we are a blade that adds wounds
 		if(BCLASS_SMASH, BCLASS_BLUNT)
 			switch(dam)
-				if(20 to INFINITY)
+				if(30 to INFINITY)
 					added_wound = /datum/wound/bruise/large
-				if(10 to 20)
+				if(15 to 30)
 					added_wound = /datum/wound/bruise
-				if(1 to 10)
+				if(5 to 15)
 					added_wound = /datum/wound/bruise/small
+
 		if(BCLASS_CUT, BCLASS_CHOP)
 			switch(dam)
-				if(20 to INFINITY)
+				if(30 to INFINITY)
 					added_wound = /datum/wound/slash/large
-				if(10 to 20)
+				if(15 to 30)
 					added_wound = /datum/wound/slash
-				if(1 to 10)
+				if(5 to 15)
 					added_wound = /datum/wound/slash/small
+
 		if(BCLASS_STAB, BCLASS_PICK, BCLASS_SHOT, BCLASS_PIERCE)
 			switch(dam)
-				if(20 to INFINITY)
+				if(30 to INFINITY)
 					added_wound = /datum/wound/puncture/large
-				if(10 to 20)
+				if(15 to 30)
 					added_wound = /datum/wound/puncture
-				if(1 to 10)
+				if(5 to 15)
 					added_wound = /datum/wound/puncture/small
+
 		if(BCLASS_LASHING)
 			switch(dam)
 				if(20 to INFINITY)
@@ -167,21 +173,27 @@
 					added_wound = /datum/wound/lashing
 				if(1 to 10)
 					added_wound = /datum/wound/lashing/small
+
 		if(BCLASS_BITE)
+			do_crit = FALSE
 			switch(dam)
 				if(20 to INFINITY)
 					added_wound = /datum/wound/bite/large
+					do_crit = TRUE
 				if(10 to 20)
 					added_wound = /datum/wound/bite
 				if(1 to 10)
 					added_wound = /datum/wound/bite/small
-	if(added_wound)
-		added_wound = add_wound(added_wound, silent, crit_message)
+
+	if(!added_wound)
+		return
+
 	if(do_crit)
 		var/crit_attempt = try_crit(bclass, dam, user, zone_precise, silent, crit_message)
 		if(crit_attempt)
 			return crit_attempt
-	return added_wound
+
+	return add_wound(added_wound, silent, crit_message)
 
 /// Behemoth of a proc used to apply a wound after a bodypart is damaged in an attack
 /obj/item/bodypart/proc/try_crit(bclass, dam, mob/living/user, zone_precise, silent = FALSE, crit_message = FALSE)
@@ -206,9 +218,6 @@
 	if(dam < 5)
 		return FALSE
 
-	if(user?.stat_roll(STATKEY_LCK,2,10))
-		dam += 10
-
 	var/list/crit_classes
 	if(bclass in GLOB.dislocation_bclasses)
 		LAZYADD(crit_classes, "dislocation")
@@ -222,6 +231,9 @@
 	if(!crit_classes)
 		return FALSE
 
+	if(user?.stat_roll(STATKEY_LCK, 2, 10))
+		dam += 10
+
 	var/used
 	var/damage_dividend = (get_damage() / max_damage)
 	var/list/attempted_wounds
@@ -232,6 +244,8 @@
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(prob(used))
 				if(HAS_TRAIT(src, TRAIT_BRITTLE))
 					LAZYADD(attempted_wounds, /datum/wound/fracture)
@@ -245,6 +259,8 @@
 			if(HAS_TRAIT(src, TRAIT_BRITTLE))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(prob(used))
 				if(damage_dividend >= 0.6)
 					LAZYADD(attempted_wounds, /datum/wound/fracture)
@@ -257,12 +273,16 @@
 				else if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 					dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(prob(used))
 				LAZYADD(attempted_wounds, /datum/wound/artery)
 		if("scarring")
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(prob(used))
 				LAZYADD(attempted_wounds, /datum/wound/scarring)
 
@@ -280,14 +300,16 @@
 /obj/item/bodypart/chest/try_crit(bclass, dam, mob/living/user, zone_precise, silent = FALSE, crit_message = FALSE)
 	if(!bclass || !dam || (owner.status_flags & GODMODE))
 		return FALSE
-	var/used
-	var/damage_dividend = (get_damage() / max_damage)
-	var/resistance = HAS_TRAIT(owner, TRAIT_CRITICAL_RESISTANCE)
 	var/from_behind = FALSE
-	if(user && (owner.dir == turn(get_dir(owner,user), 180)))
-		from_behind = TRUE
+	if(user)
+		if((owner.dir == REVERSE_DIR(get_dir(owner, user))))
+			from_behind = TRUE
 	if(user?.stat_roll(STATKEY_LCK,2,10))
 		dam += 10
+
+	if(dam < 5)
+		return FALSE
+
 	var/list/crit_classes
 	if(owner.resting)
 		dam += 15
@@ -336,6 +358,12 @@
 	if(!crit_classes)
 		return FALSE
 
+	if(user?.stat_roll(STATKEY_LCK,2,10))
+		dam += 10
+
+	var/used
+	var/damage_dividend = (get_damage() / max_damage)
+	var/resistance = HAS_TRAIT(owner, TRAIT_CRITICAL_RESISTANCE)
 	var/list/attempted_wounds
 	switch(pick(crit_classes))
 		if("cbt")
@@ -359,6 +387,8 @@
 				if(HAS_TRAIT(src, TRAIT_BRITTLE))
 					dam += 10
 				used = round(damage_dividend * 20 + (dam / 6), 1)
+				if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+					used -= 10
 				var/fracture_type = /datum/wound/fracture/chest
 				if(zone_precise == BODY_ZONE_PRECISE_GROIN)
 					if(damage_dividend >= 0.7) // Lower body paralysis
@@ -371,6 +401,8 @@
 			else if(user && istype(user.rmb_intent, /datum/rmb_intent/aimed))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(prob(used))
 				if((zone_precise == BODY_ZONE_PRECISE_STOMACH) && !resistance)
 					LAZYADD(attempted_wounds, /datum/wound/slash/disembowel)
@@ -382,6 +414,8 @@
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(prob(used))
 				LAZYADD(attempted_wounds, /datum/wound/scarring)
 
@@ -402,15 +436,14 @@
 	var/static/list/nosestab_zones = list(BODY_ZONE_PRECISE_NOSE)
 	var/static/list/earstab_zones = list(BODY_ZONE_PRECISE_EARS)
 	var/static/list/knockout_zones = list(BODY_ZONE_PRECISE_NOSE, BODY_ZONE_PRECISE_EARS, BODY_ZONE_PRECISE_SKULL, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_MOUTH)
-	var/used
-	var/damage_dividend = (get_damage() / max_damage)
-	var/resistance = HAS_TRAIT(owner, TRAIT_CRITICAL_RESISTANCE)
 	var/from_behind = FALSE
 	if(user)
 		if((owner.dir == REVERSE_DIR(get_dir(owner, user))))
 			from_behind = TRUE
-	if(user?.stat_roll(STATKEY_LCK,2,10))
-		dam += 10
+
+	if(dam < 5)
+		return FALSE
+
 	var/list/crit_classes
 	if(owner.resting)
 		dam += 15
@@ -439,11 +472,19 @@
 	if(!crit_classes)
 		return FALSE
 
+	if(user?.stat_roll(STATKEY_LCK, 2, 10))
+		dam += 10
+
+	var/used
+	var/damage_dividend = (get_damage() / max_damage)
+	var/resistance = HAS_TRAIT(owner, TRAIT_CRITICAL_RESISTANCE)
 	var/list/attempted_wounds
 	switch(pick(crit_classes))
 		if("dislocation")
 			if(damage_dividend >= 1)
 				used = round(damage_dividend * 20 + (dam / 6), 1)
+				if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+					used -= 10
 				if(prob(used))
 					if(HAS_TRAIT(src, TRAIT_BRITTLE))
 						LAZYADD(attempted_wounds, /datum/wound/fracture/neck)
@@ -455,6 +496,8 @@
 			if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 				dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(!owner.stat && (zone_precise in knockout_zones) && !(bclass in GLOB.no_knockout_bclasses) && prob(used))
 				owner.next_attack_msg += " [span_crit("<b>Critical hit!</b> [owner] is knocked out[from_behind ? " FROM BEHIND" : ""]!")]"
 				owner.flash_fullscreen("whiteflash3")
@@ -496,6 +539,8 @@
 					if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 						dam += 10
 			used = round(damage_dividend * 20 + (dam / 6), 1)
+			if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+				used -= 10
 			if(prob(used))
 				var/artery_type = /datum/wound/artery
 				if(zone_precise == BODY_ZONE_PRECISE_NECK)

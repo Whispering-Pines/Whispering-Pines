@@ -183,3 +183,21 @@
 
 /// All storytellers
 #define STORYTELLERS_ALL (DIVINE_STORYTELLERS + INHUMEN_STORYTELLERS)
+
+// Divine pantheon
+#define ASTRATA "Lady Solaria"
+#define NOC "Lady Lunaria"
+#define RAVOX "The Wanderer"
+#define ABYSSOR "Abyssor"
+#define XYLIX "Xylix"
+#define NECRA "Last Death"
+#define PESTRA "Pestra"
+#define MALUM "Malum"
+#define EORA "Moonbeam"
+#define DENDOR "Blissrose"
+
+// Inhumen pantheon
+#define ZIZO "Tenebrase"
+#define BAOTHA "Lamashtu"
+#define GRAGGAR "Sinius"
+#define MATTHIOS "Dismas"

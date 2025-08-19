@@ -1,8 +1,9 @@
 /datum/advclass/combat/paladin
 	name = "Paladin"
 	tutorial = "Paladins are former noblemen and clerics who have dedicated themselves to great combat prowess. Often, they were promised redemption for past sins if they crusaded in the name of the gods."
-	allowed_races = RACES_PLAYER_ALL
+	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	outfit = /datum/outfit/job/adventurer/paladin
+	allowed_patrons = ALL_PALADIN_PATRONS
 	maximum_possible_slots = 1
 	min_pq = 2
 	pickprob = 15
@@ -10,7 +11,6 @@
 
 /datum/outfit/job/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
 	..()
-
 	switch(H.patron?.type)
 		if(/datum/patron/psydon, /datum/patron/psydon/progressive)
 			head = /obj/item/clothing/head/helmet/heavy/bucket/gold
@@ -84,7 +84,7 @@
 			GLOB.heretical_players += H.real_name
 			H.virginity = FALSE
 		if(/datum/patron/godless)
-			head = /obj/item/clothing/head/roguehood/green
+			head = /obj/item/clothing/head/roguehood/colored/green
 			H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 			H.change_stat(STATKEY_LCK, -2)
 			GLOB.heretical_players += H.real_name
@@ -99,7 +99,7 @@
 	shoes = /obj/item/clothing/shoes/boots/armor
 	belt = /obj/item/storage/belt/leather/steel
 	beltl = /obj/item/storage/belt/pouch/coins/mid
-	ring = /obj/item/clothing/ring/silver/topaz
+	ring = /obj/item/clothing/ring/silver/toper
 	cloak = /obj/item/clothing/cloak/tabard/crusader
 	neck = /obj/item/clothing/neck/chaincoif
 	gloves = /obj/item/clothing/gloves/plate

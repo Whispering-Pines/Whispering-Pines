@@ -913,7 +913,7 @@
 /obj/item/weapon/hammer/iron,
 /obj/item/weapon/tongs,
 /obj/item/clothing/shoes/boots/leather,
-/obj/item/clothing/head/softcap,
+/obj/item/clothing/head/armingcap,
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /turf/open/floor/naturalstone,
 /area/rogue/under/mountains/anvil/dungeon/lower)
@@ -964,11 +964,11 @@
 	real_name = "Shard"
 	},
 /obj/item/clothing/head/bardhat,
-/obj/item/clothing/cloak/raincloak/mortus,
+/obj/item/clothing/cloak/raincloak/colored/mortus,
 /obj/item/clothing/shoes/boots/leather,
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/pants/tights,
-/obj/item/clothing/shirt/tunic/ucolored,
+/obj/item/clothing/shirt/tunic/colored,
 /obj/item/storage/belt/leather,
 /obj/item/storage/belt/pouch/coins/poor,
 /obj/item/storage/backpack/satchel,
@@ -1074,7 +1074,7 @@
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon)
 "oQ" = (
-/obj/item/reagent_containers/food/snacks/produce/vegetable/potato/baked,
+/obj/item/reagent_containers/food/snacks/produce/vegetable/potato_baked,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon/lower)
@@ -1247,11 +1247,11 @@
 	real_name = "Shriek"
 	},
 /obj/item/clothing/head/bardhat,
-/obj/item/clothing/cloak/raincloak/green,
+/obj/item/clothing/cloak/raincloak/colored/green,
 /obj/item/clothing/shoes/boots/leather,
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/pants/tights,
-/obj/item/clothing/shirt/tunic/purple,
+/obj/item/clothing/shirt/tunic/colored/purple,
 /obj/item/storage/belt/leather,
 /obj/item/storage/belt/pouch/coins/poor,
 /obj/item/storage/backpack/satchel,
@@ -1321,11 +1321,11 @@
 	real_name = "Hollow"
 	},
 /obj/item/clothing/head/bardhat,
-/obj/item/clothing/cloak/raincloak/purple,
+/obj/item/clothing/cloak/raincloak/colored/purple,
 /obj/item/clothing/shoes/boots/leather,
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/pants/tights,
-/obj/item/clothing/shirt/tunic/green,
+/obj/item/clothing/shirt/tunic/colored/green,
 /obj/item/storage/belt/leather,
 /obj/item/storage/belt/pouch/coins/poor,
 /obj/item/storage/backpack/satchel,
@@ -1381,11 +1381,11 @@
 	real_name = "Clatter"
 	},
 /obj/item/clothing/head/bardhat,
-/obj/item/clothing/cloak/raincloak/blue,
+/obj/item/clothing/cloak/raincloak/colored/blue,
 /obj/item/clothing/shoes/boots/leather,
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/pants/tights,
-/obj/item/clothing/shirt/tunic/red,
+/obj/item/clothing/shirt/tunic/colored/red,
 /obj/item/storage/belt/leather,
 /obj/item/storage/belt/pouch/coins/poor,
 /obj/item/storage/backpack/satchel,
@@ -1719,7 +1719,7 @@
 /area/rogue/under/mountains/anvil/dungeon)
 "xh" = (
 /obj/structure/rack,
-/obj/item/clothing/ring/silver/quartz,
+/obj/item/clothing/ring/silver/blortz,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/dungeon/lower)
@@ -1734,11 +1734,11 @@
 	real_name = "Rattle"
 	},
 /obj/item/clothing/head/bardhat,
-/obj/item/clothing/cloak/raincloak/red,
+/obj/item/clothing/cloak/raincloak/colored/red,
 /obj/item/clothing/shoes/boots/leather,
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/pants/tights,
-/obj/item/clothing/shirt/tunic/blue,
+/obj/item/clothing/shirt/tunic/colored/blue,
 /obj/item/storage/belt/leather,
 /obj/item/storage/belt/pouch/coins/poor,
 /obj/item/storage/backpack/satchel,
@@ -1965,9 +1965,9 @@
 /obj/item/reagent_containers/food/snacks/meat/poultry,
 /obj/item/reagent_containers/food/snacks/meat/poultry,
 /obj/item/reagent_containers/food/snacks/meat/poultry,
-/obj/item/reagent_containers/food/snacks/cooked/ham,
-/obj/item/reagent_containers/food/snacks/cooked/ham,
-/obj/item/reagent_containers/food/snacks/cooked/ham,
+/obj/item/reagent_containers/food/snacks/meat/bacon,
+/obj/item/reagent_containers/food/snacks/meat/bacon,
+/obj/item/reagent_containers/food/snacks/meat/bacon,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon)
 "AO" = (
@@ -2286,7 +2286,7 @@
 /turf/open/floor/carpet,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Fh" = (
-/obj/item/clothing/ring/gold/emerald,
+/obj/item/clothing/ring/gold/gemerald,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/dungeon)
 "Fl" = (
@@ -2363,10 +2363,10 @@
 /mob/living/carbon/human/species/skeleton/npc/no_equipment,
 /obj/item/clothing/head/helmet/horned,
 /obj/effect/mapping_helpers/floor_clothing_equipper,
-/obj/item/clothing/cloak/raincloak/furcloak/brown,
+/obj/item/clothing/cloak/raincloak/furcloak/colored/brown,
 /obj/item/clothing/shoes/boots/leather,
 /obj/item/clothing/armor/leather/hide,
-/obj/item/clothing/pants/loincloth/brown,
+/obj/item/clothing/pants/loincloth/colored/brown,
 /obj/item/weapon/axe/boneaxe,
 /obj/item/weapon/axe/boneaxe,
 /obj/item/clothing/wrists/bracers/leather,
@@ -2929,7 +2929,7 @@
 /obj/item/weapon/sword/sabre/scythe,
 /obj/item/weapon/sword/sabre/scythe,
 /obj/item/clothing/pants/trou/leather,
-/obj/item/clothing/shirt/robe/black,
+/obj/item/clothing/shirt/robe/colored/black,
 /obj/item/clothing/gloves/leather/black,
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /obj/item/clothing/shoes/boots,
@@ -3026,7 +3026,7 @@
 /area/rogue/under/mountains/anvil/dungeon)
 "Oi" = (
 /obj/effect/decal/cleanable/blood,
-/obj/item/clothing/ring/gold/quartz,
+/obj/item/clothing/ring/gold/blortz,
 /turf/open/floor/naturalstone,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Om" = (
@@ -3044,7 +3044,7 @@
 /area/rogue/under/mountains/anvil/dungeon)
 "Ou" = (
 /obj/item/clothing/face/facemask/goldmask,
-/obj/item/clothing/wrists/bracers/hoplite,
+/obj/item/clothing/wrists/bracers/rare/hoplite,
 /obj/item/clothing/neck/gorget/hoplite,
 /obj/item/weapon/polearm/spear/hoplite/winged,
 /obj/item/weapon/shield/tower/hoplite,
@@ -3718,7 +3718,7 @@
 /obj/item/clothing/gloves/leather/black,
 /obj/item/clothing/shoes/boots/leather,
 /obj/item/clothing/pants/trou/leather,
-/obj/item/clothing/shirt/undershirt/uncolored,
+/obj/item/clothing/shirt/undershirt/colored/uncolored,
 /obj/item/storage/belt/leather/cloth,
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /obj/item/clothing/wrists/nocwrappings,

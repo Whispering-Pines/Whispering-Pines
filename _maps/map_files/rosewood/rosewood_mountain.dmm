@@ -528,7 +528,7 @@
 /obj/structure/closet/crate/crafted_closet/inn/south,
 /obj/item/clothing/shirt/tunic/noblecoat,
 /obj/item/clothing/shoes/nobleboot/thighboots,
-/obj/item/clothing/shirt/robe/mage,
+/obj/item/clothing/shirt/robe/colored/mage,
 /obj/item/clothing/shirt/undershirt/fancy,
 /obj/item/clothing/armor/rare/elfplate/welfplate,
 /turf/open/floor/ruinedwood/spiral,
@@ -578,7 +578,7 @@
 /area/rogue/under/mountains/anvil/lower)
 "eP" = (
 /obj/structure/closet/crate/chest/gold,
-/obj/item/clothing/ring/silver/ruby,
+/obj/item/clothing/ring/silver/rontz,
 /obj/item/reagent_containers/glass/carafe/gold,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/dungeon)
@@ -1006,7 +1006,7 @@
 /area/rogue/under/mountains/anvil/upper)
 "hD" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/ring/silver/ruby,
+/obj/item/clothing/ring/silver/rontz,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "hE" = (
@@ -1556,7 +1556,7 @@
 /area/rogue/indoors/mountains/anvil/surface/building)
 "mo" = (
 /obj/structure/chair/stool,
-/obj/item/clothing/head/roguehood/red{
+/obj/item/clothing/head/roguehood/colored/red{
 	name = "Red Scarf";
 	desc = "Smells like cat?"
 	},
@@ -1570,7 +1570,7 @@
 /turf/open/water/bath,
 /area/rogue/under/mountains/anvil/dungeon)
 "mu" = (
-/obj/item/clothing/ring/gold/diamond,
+/obj/item/clothing/ring/gold/dorpel,
 /obj/item/ore/silver,
 /obj/effect/spawner/map_spawner/loot/common,
 /obj/structure/closet/crate/chest/gold,
@@ -3143,7 +3143,7 @@
 /area/rogue/under/mountains/anvil/upper)
 "zB" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/ring/silver/sapphire,
+/obj/item/clothing/ring/silver/saffira,
 /turf/open/floor/herringbone,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "zF" = (
@@ -3921,7 +3921,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Gd" = (
 /obj/structure/closet/crate/chest/gold,
-/obj/item/clothing/ring/gold/sapphire,
+/obj/item/clothing/ring/gold/saffira,
 /obj/effect/spawner/map_spawner/loot/medium,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
@@ -5098,7 +5098,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "OP" = (
-/obj/item/clothing/ring/silver/ruby,
+/obj/item/clothing/ring/silver/rontz,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon)
 "OU" = (
@@ -5528,7 +5528,7 @@
 "Sf" = (
 /mob/living/carbon/human/species/skeleton/npc/no_equipment,
 /obj/item/clothing/head/crown/circlet/vision,
-/obj/item/clothing/shirt/robe/mage,
+/obj/item/clothing/shirt/robe/colored/mage,
 /obj/item/weapon/polearm/woodstaff/quarterstaff/steel,
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /turf/open/floor/carpet/purple,
@@ -5627,7 +5627,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "ST" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/clothing/ring/silver/sapphire,
+/obj/item/clothing/ring/silver/saffira,
 /turf/open/floor/herringbone,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "SU" = (
@@ -6422,7 +6422,7 @@
 /area/rogue/under/mountains/anvil/dungeon)
 "Za" = (
 /obj/item/chair/stool/bar,
-/obj/item/clothing/head/roguehood/green{
+/obj/item/clothing/head/roguehood/colored/green{
 	desc = "A rather short green scarf";
 	name = "Green Scarf"
 	},

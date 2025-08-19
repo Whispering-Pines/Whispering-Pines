@@ -423,7 +423,7 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/clothing/armor/leather)
 	created_item = /obj/item/clothing/armor/leather/studded/bikini/bra
-	i_type = "Armor"
+	category = "Armor"
 
 /datum/anvil_recipe/armor/steel/chainkini
 	name = "Haubergon bikini (+1 Cloth)"
@@ -435,7 +435,7 @@
 	name = "Maille bikini"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/armor/chainmail/iron/bikini/bra
-	i_type = "Armor"
+	category = "Armor"
 
 /datum/anvil_recipe/armor/steel/platebikini
 	name = "Half-Plate bikini (+1 Steel, +1 Cured Leather)"
@@ -450,7 +450,7 @@
 	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/plate/bikini/bra
 	craftdiff = 3
-	i_type = "Armor"
+	category = "Armor"
 
 /datum/anvil_recipe/armor/steel/fullplatebikini
 	name = "Full-Plate bikini (+2 Steel, +1 Cured Leather)"
@@ -500,16 +500,16 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 5
 
-/datum/crafting_recipe/leather/bikini
+/datum/repeatable_crafting_recipe/leather/bikini
 	name = "leather bikini (2 leather)"
-	result = /obj/item/clothing/armor/leather/bikini
-	reqs = list(/obj/item/natural/hide/cured = 2)
+	output = /obj/item/clothing/armor/leather/bikini
+	requirements = list(/obj/item/natural/hide/cured = 2)
 	sellprice = 26
 
-/datum/crafting_recipe/leather/hidebikini
+/datum/repeatable_crafting_recipe/leather/hidebikini
 	name = "hide bikini (2 leather, 1 fur)"
-	result = /obj/item/clothing/armor/leather/hide/bikini
-	reqs = list(/obj/item/natural/hide/cured = 2,
+	output = /obj/item/clothing/armor/leather/hide/bikini
+	requirements = list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fur = 1)
 	sellprice = 26
 
@@ -555,153 +555,153 @@
 	craftdiff = 2
 
 ///----------------------CONVERSIONS--------------------------------------
-/datum/crafting_recipe/hauberkconvone
+/datum/repeatable_crafting_recipe/hauberkconvone
 	name = "hauberk to bikini"
-	result = /obj/item/clothing/armor/chainmail/hauberk/bikini
-	reqs = list(/obj/item/clothing/armor/chainmail/hauberk = 1)
+	output = /obj/item/clothing/armor/chainmail/hauberk/bikini
+	requirements = list(/obj/item/clothing/armor/chainmail/hauberk = 1)
 
-/datum/crafting_recipe/hauberkconvtwo
+/datum/repeatable_crafting_recipe/hauberkconvtwo
 	name = "hauberk bikini to bra"
-	result = /obj/item/clothing/armor/chainmail/hauberk/bikini/bra
-	reqs = list(/obj/item/clothing/armor/chainmail/hauberk/bikini = 1)
+	output = /obj/item/clothing/armor/chainmail/hauberk/bikini/bra
+	requirements = list(/obj/item/clothing/armor/chainmail/hauberk/bikini = 1)
 
-/datum/crafting_recipe/brigandineconvone
+/datum/repeatable_crafting_recipe/brigandineconvone
 	name = "brigandine to bikini"
-	result = /obj/item/clothing/armor/brigandine/bikini
-	reqs = list(/obj/item/clothing/armor/brigandine = 1)
+	output = /obj/item/clothing/armor/brigandine/bikini
+	requirements = list(/obj/item/clothing/armor/brigandine = 1)
 
-/datum/crafting_recipe/brigandineconvtwo
+/datum/repeatable_crafting_recipe/brigandineconvtwo
 	name = "brigandine bikini to bra"
-	result = /obj/item/clothing/armor/brigandine/bikini/bra
-	reqs = list(/obj/item/clothing/armor/brigandine/bikini = 1)
+	output = /obj/item/clothing/armor/brigandine/bikini/bra
+	requirements = list(/obj/item/clothing/armor/brigandine/bikini = 1)
 
-/datum/crafting_recipe/scaleconvone
+/datum/repeatable_crafting_recipe/scaleconvone
 	name = "scalemail to bikini"
-	result = /obj/item/clothing/armor/medium/scale/bikini
-	reqs = list(/obj/item/clothing/armor/medium/scale = 1)
+	output = /obj/item/clothing/armor/medium/scale/bikini
+	requirements = list(/obj/item/clothing/armor/medium/scale = 1)
 
-/datum/crafting_recipe/scaleconvtwo
+/datum/repeatable_crafting_recipe/scaleconvtwo
 	name = "scalemail bikini to bra"
-	result = /obj/item/clothing/armor/medium/scale/bikini/bra
-	reqs = list(/obj/item/clothing/armor/medium/scale/bikini = 1)
+	output = /obj/item/clothing/armor/medium/scale/bikini/bra
+	requirements = list(/obj/item/clothing/armor/medium/scale/bikini = 1)
 
-/datum/crafting_recipe/gambesonlconvone
+/datum/repeatable_crafting_recipe/gambesonlconvone
 	name = "light gambeson to bikini"
-	result = /obj/item/clothing/armor/gambeson/light/bikini
-	reqs = list(/obj/item/clothing/armor/gambeson/light = 1)
+	output = /obj/item/clothing/armor/gambeson/light/bikini
+	requirements = list(/obj/item/clothing/armor/gambeson/light = 1)
 
-/datum/crafting_recipe/gambesonlconvtwo
+/datum/repeatable_crafting_recipe/gambesonlconvtwo
 	name = "light gambeson bikini to bra"
-	result = /obj/item/clothing/armor/gambeson/light/bikini/bra
-	reqs = list(/obj/item/clothing/armor/gambeson/light/bikini = 1)
+	output = /obj/item/clothing/armor/gambeson/light/bikini/bra
+	requirements = list(/obj/item/clothing/armor/gambeson/light/bikini = 1)
 
-/datum/crafting_recipe/gambesonconvone
+/datum/repeatable_crafting_recipe/gambesonconvone
 	name = "gambeson to bikini"
-	result = /obj/item/clothing/armor/gambeson/bikini
-	reqs = list(/obj/item/clothing/armor/gambeson = 1)
+	output = /obj/item/clothing/armor/gambeson/bikini
+	requirements = list(/obj/item/clothing/armor/gambeson = 1)
 
-/datum/crafting_recipe/gambesonconvtwo
+/datum/repeatable_crafting_recipe/gambesonconvtwo
 	name = "gambeson bikini to bra"
-	result = /obj/item/clothing/armor/gambeson/bikini/bra
-	reqs = list(/obj/item/clothing/armor/gambeson/bikini = 1)
+	output = /obj/item/clothing/armor/gambeson/bikini/bra
+	requirements = list(/obj/item/clothing/armor/gambeson/bikini = 1)
 
-/datum/crafting_recipe/gambesonpconvone
+/datum/repeatable_crafting_recipe/gambesonpconvone
 	name = "padded gambeson to bikini"
-	result = /obj/item/clothing/armor/gambeson/bikini
-	reqs = list(/obj/item/clothing/armor/gambeson = 1)
+	output = /obj/item/clothing/armor/gambeson/bikini
+	requirements = list(/obj/item/clothing/armor/gambeson = 1)
 
-/datum/crafting_recipe/gambesonpconvtwo
+/datum/repeatable_crafting_recipe/gambesonpconvtwo
 	name = "padded gambeson bikini to bra"
-	result = /obj/item/clothing/armor/gambeson/heavy/bikini/bra
-	reqs = list(/obj/item/clothing/armor/gambeson/heavy/bikini = 1)
+	output = /obj/item/clothing/armor/gambeson/heavy/bikini/bra
+	requirements = list(/obj/item/clothing/armor/gambeson/heavy/bikini = 1)
 
-/datum/crafting_recipe/amazonchainconv
+/datum/repeatable_crafting_recipe/amazonchainconv
 	name = "splint armor to amazon bikini"
-	result = /obj/item/clothing/armor/amazon_chainkini
-	reqs = list(/obj/item/clothing/armor/leather/splint = 1)
+	output = /obj/item/clothing/armor/amazon_chainkini
+	requirements = list(/obj/item/clothing/armor/leather/splint = 1)
 
-/datum/crafting_recipe/larmorconvone
+/datum/repeatable_crafting_recipe/larmorconvone
 	name = "leather armor to bikini"
-	result = /obj/item/clothing/armor/leather/bikini
-	reqs = list(/obj/item/clothing/armor/leather = 1)
+	output = /obj/item/clothing/armor/leather/bikini
+	requirements = list(/obj/item/clothing/armor/leather = 1)
 
-/datum/crafting_recipe/larmorconvtwo
+/datum/repeatable_crafting_recipe/larmorconvtwo
 	name = "leather bikini to bra"
-	result = /obj/item/clothing/armor/leather/bikini/bra
-	reqs = list(/obj/item/clothing/armor/leather/bikini = 1)
+	output = /obj/item/clothing/armor/leather/bikini/bra
+	requirements = list(/obj/item/clothing/armor/leather/bikini = 1)
 
-/datum/crafting_recipe/mlarmorconvone
+/datum/repeatable_crafting_recipe/mlarmorconvone
 	name = "masterwork leather armor to bikini"
-	result = /obj/item/clothing/armor/leather/masterwork/bikini
-	reqs = list(/obj/item/clothing/armor/leather/masterwork = 1)
+	output = /obj/item/clothing/armor/leather/masterwork/bikini
+	requirements = list(/obj/item/clothing/armor/leather/masterwork = 1)
 
-/datum/crafting_recipe/mlarmorconvtwo
+/datum/repeatable_crafting_recipe/mlarmorconvtwo
 	name = "masterwork leather bikini to bra"
-	result = /obj/item/clothing/armor/leather/masterwork/bikini/bra
-	reqs = list(/obj/item/clothing/armor/leather/masterwork/bikini = 1)
+	output = /obj/item/clothing/armor/leather/masterwork/bikini/bra
+	requirements = list(/obj/item/clothing/armor/leather/masterwork/bikini = 1)
 
-/datum/crafting_recipe/hidearmorconvone
+/datum/repeatable_crafting_recipe/hidearmorconvone
 	name = "hide armor to bikini"
-	result = /obj/item/clothing/armor/leather/hide/bikini
-	reqs = list(/obj/item/clothing/armor/leather/hide = 1)
+	output = /obj/item/clothing/armor/leather/hide/bikini
+	requirements = list(/obj/item/clothing/armor/leather/hide = 1)
 
-/datum/crafting_recipe/hidearmorconvtwo
+/datum/repeatable_crafting_recipe/hidearmorconvtwo
 	name = "hide bikini to bra"
-	result = /obj/item/clothing/armor/leather/hide/bikini/bra
-	reqs = list(/obj/item/clothing/armor/leather/hide/bikini = 1)
+	output = /obj/item/clothing/armor/leather/hide/bikini/bra
+	requirements = list(/obj/item/clothing/armor/leather/hide/bikini = 1)
 
-/datum/crafting_recipe/furlinedankletsconv
+/datum/repeatable_crafting_recipe/furlinedankletsconv
 	name = "fur-lined boots to anklets"
-	result = /obj/item/clothing/shoes/boots/furlinedanklets
-	reqs = list(/obj/item/clothing/shoes/boots/furlinedboots = 1)
+	output = /obj/item/clothing/shoes/boots/furlinedanklets
+	requirements = list(/obj/item/clothing/shoes/boots/furlinedboots = 1)
 	craftdiff = 1
 
-/datum/crafting_recipe/studdedconvone
+/datum/repeatable_crafting_recipe/studdedconvone
 	name = "studded armor to bikini"
-	result = list(/obj/item/clothing/armor/leather/studded/bikini)
-	reqs = list(/obj/item/clothing/armor/leather/studded = 1)
+	output = list(/obj/item/clothing/armor/leather/studded/bikini)
+	requirements = list(/obj/item/clothing/armor/leather/studded = 1)
 
-/datum/crafting_recipe/studdedconvtwo
+/datum/repeatable_crafting_recipe/studdedconvtwo
 	name = "studded bikini to bra"
-	result = list(/obj/item/clothing/armor/leather/studded/bikini/bra)
-	reqs = list(/obj/item/clothing/armor/leather/studded/bikini = 1)
+	output = list(/obj/item/clothing/armor/leather/studded/bikini/bra)
+	requirements = list(/obj/item/clothing/armor/leather/studded/bikini = 1)
 
-/datum/crafting_recipe/lharmorconvone
+/datum/repeatable_crafting_recipe/lharmorconvone
 	name = "hardened leather armor to bikini"
-	result = /obj/item/clothing/armor/leather/advanced/bikini
-	reqs = list(/obj/item/clothing/armor/leather/advanced = 1)
+	output = /obj/item/clothing/armor/leather/advanced/bikini
+	requirements = list(/obj/item/clothing/armor/leather/advanced = 1)
 
-/datum/crafting_recipe/lharmorconvtwo
+/datum/repeatable_crafting_recipe/lharmorconvtwo
 	name = "hardened leather bikini to bra"
-	result = /obj/item/clothing/armor/leather/advanced/bikini/bra
-	reqs = list(/obj/item/clothing/armor/leather/advanced/bikini = 1)
+	output = /obj/item/clothing/armor/leather/advanced/bikini/bra
+	requirements = list(/obj/item/clothing/armor/leather/advanced/bikini = 1)
 
-/datum/crafting_recipe/ichainkiniconv
+/datum/repeatable_crafting_recipe/ichainkiniconv
 	name = "chainmail bikini to bra"
-	result = list(/obj/item/clothing/armor/chainmail/iron/bikini/bra)
-	reqs = list(/obj/item/clothing/armor/chainmail/iron/bikini = 1)
+	output = list(/obj/item/clothing/armor/chainmail/iron/bikini/bra)
+	requirements = list(/obj/item/clothing/armor/chainmail/iron/bikini = 1)
 
-/datum/crafting_recipe/chainkiniconv
+/datum/repeatable_crafting_recipe/chainkiniconv
 	name = "chainmail bikini to bra"
-	result = list(/obj/item/clothing/armor/chainmail/bikini/bra)
-	reqs = list(/obj/item/clothing/armor/chainmail/bikini = 1)
+	output = list(/obj/item/clothing/armor/chainmail/bikini/bra)
+	requirements = list(/obj/item/clothing/armor/chainmail/bikini = 1)
 
-/datum/crafting_recipe/halfplateconvone
+/datum/repeatable_crafting_recipe/halfplateconvone
 	name = "halfplate armor to bikini"
-	result = list(/obj/item/clothing/armor/plate/bikini)
-	reqs = list(/obj/item/clothing/armor/plate = 1)
+	output = list(/obj/item/clothing/armor/plate/bikini)
+	requirements = list(/obj/item/clothing/armor/plate = 1)
 
-/datum/crafting_recipe/halfplateconvtwo
+/datum/repeatable_crafting_recipe/halfplateconvtwo
 	name = "halfplate bikini to bra"
-	result = list(/obj/item/clothing/armor/plate/bikini/bra)
-	reqs = list(/obj/item/clothing/armor/plate/bikini = 1)
+	output = list(/obj/item/clothing/armor/plate/bikini/bra)
+	requirements = list(/obj/item/clothing/armor/plate/bikini = 1)
 
-/datum/crafting_recipe/halfplateconvone
+/datum/repeatable_crafting_recipe/halfplateconvone
 	name = "fullplate armor to bikini"
-	result = list(/obj/item/clothing/armor/plate/full/bikini)
-	reqs = list(/obj/item/clothing/armor/plate/full = 1)
+	output = list(/obj/item/clothing/armor/plate/full/bikini)
+	requirements = list(/obj/item/clothing/armor/plate/full = 1)
 
-/datum/crafting_recipe/halfplateconvtwo
+/datum/repeatable_crafting_recipe/halfplateconvtwo
 	name = "fullplate bikini to bra"
-	result = list(/obj/item/clothing/armor/plate/full/bikini/bra)
-	reqs = list(/obj/item/clothing/armor/plate/full/bikini = 1)
+	output = list(/obj/item/clothing/armor/plate/full/bikini/bra)
+	requirements = list(/obj/item/clothing/armor/plate/full/bikini = 1)

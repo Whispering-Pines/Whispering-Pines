@@ -315,7 +315,7 @@
 			if(skill == /datum/skill/misc/reading && old_level == SKILL_LEVEL_NONE && current.is_literate())
 				record_round_statistic(STATS_LITERACY_TAUGHT)
 		if(skill == /datum/skill/magic/arcane)
-			current?.adjust_spellpoints(1)
+			current?.adjust_spell_points(1)
 
 		return TRUE
 	else
@@ -339,7 +339,7 @@
 	var/amt2gain = 0
 	// Give spellpoints if the skill is arcane
 	if(skill == /datum/skill/magic/arcane)
-		current?.adjust_spellpoints(amt)
+		current?.adjust_spell_points(amt)
 		current?.calculate_spell_slots()
 	if(amt > 0)
 		for(var/i in 1 to amt)
@@ -426,9 +426,14 @@
  ** max - maximum amount up to which the skill will be changed
 */
 /datum/skill_holder/proc/clamped_adjust_skillrank(skill, amt, max, silent)
-	if(!max) //basically up_to
-		max = amt
-	adjust_skillrank(skill, clamp(abs(amt - get_skill_level(skill)), 0, max), silent)
+	var/skill_difference =  max - get_skill_level(skill)
+
+	if(skill_difference <= 0)
+		return
+
+	var/amount_to_adjust_by = min(skill_difference, max)
+
+	adjust_skillrank(skill, amount_to_adjust_by, silent)
 
 /**
  * sets the skill level to a specific amount

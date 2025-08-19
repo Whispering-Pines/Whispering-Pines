@@ -25,7 +25,7 @@
 			wrists = /obj/item/clothing/wrists/bracers/leather
 			belt = /obj/item/storage/belt/leather
 			armor = /obj/item/clothing/armor/leather/hide
-			cloak = /obj/item/clothing/cloak/raincloak/green
+			cloak = /obj/item/clothing/cloak/raincloak/colored/green
 			backl = /obj/item/storage/backpack/satchel
 			beltr = /obj/item/flashlight/flare/torch/lantern
 			backpack_contents = list(/obj/item/bait = 1, /obj/item/weapon/knife/hunting = 1, /obj/item/recipe_book/survival = 1)

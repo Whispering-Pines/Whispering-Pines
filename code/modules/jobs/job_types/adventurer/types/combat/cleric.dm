@@ -2,12 +2,13 @@
 /datum/advclass/combat/cleric
 	name = "Cleric"
 	tutorial = "Clerics are wandering warriors of the Gods, drawn from the ranks of temple acolytes who demonstrated martial talent. Protected by armor and zeal, they are a force to be reckoned with."
-	allowed_races = RACES_PLAYER_ALL
+	allowed_races = RACES_PLAYER_NONHERETICAL
 	vampcompat = FALSE
 	outfit = /datum/outfit/job/adventurer/cleric
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 0
 	maximum_possible_slots = 4
+	allowed_patrons = ALL_CLERIC_PATRONS
 
 /datum/outfit/job/adventurer/cleric
 	allowed_patrons = ALL_CLERIC_PATRONS
@@ -62,24 +63,24 @@
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 		if(/datum/patron/divine/xylix)
 			wrists = /obj/item/clothing/neck/psycross/silver/xylix
-			cloak = /obj/item/clothing/cloak/tabard/crusader
+			cloak = /obj/item/clothing/cloak/stabard/templar/xylix
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 		if(/datum/patron/inhumen/graggar) // Heretical Patrons
-			cloak = /obj/item/clothing/cloak/raincloak/mortus
+			cloak = /obj/item/clothing/cloak/raincloak/colored/mortus
 			H.cmode_music = 'sound/music/cmode/antag/combat_werewolf.ogg'
 			GLOB.heretical_players += H.real_name
 		if(/datum/patron/inhumen/zizo)
-			cloak = /obj/item/clothing/cloak/raincloak/mortus
+			cloak = /obj/item/clothing/cloak/raincloak/colored/mortus
 			H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
 			GLOB.heretical_players += H.real_name
 		if(/datum/patron/inhumen/matthios)
-			cloak = /obj/item/clothing/cloak/raincloak/mortus
+			cloak = /obj/item/clothing/cloak/raincloak/colored/mortus
 			H.cmode_music = 'sound/music/cmode/antag/CombatBandit1.ogg'
 			GLOB.heretical_players += H.real_name
 		if(/datum/patron/inhumen/baotha)
 			head = /obj/item/clothing/head/crown/circlet
 			mask = /obj/item/clothing/face/spectacles/sglasses
-			cloak = /obj/item/clothing/cloak/raincloak/purple
+			cloak = /obj/item/clothing/cloak/raincloak/colored/purple
 			H.cmode_music = 'sound/music/cmode/antag/CombatBaotha.ogg'
 			GLOB.heretical_players += H.real_name
 			H.virginity = FALSE
@@ -169,7 +170,7 @@
 					GLOB.heretical_players += H.real_name
 					H.virginity = FALSE
 				if(/datum/patron/godless)
-					head = /obj/item/clothing/head/roguehood/green
+					head = /obj/item/clothing/head/roguehood/colored/green
 					H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 					H.change_stat(STATKEY_LCK, -2)
 					GLOB.heretical_players += H.real_name
@@ -184,7 +185,7 @@
 			shoes = /obj/item/clothing/shoes/boots/armor
 			belt = /obj/item/storage/belt/leather/steel
 			beltl = /obj/item/storage/belt/pouch/coins/mid
-			ring = /obj/item/clothing/ring/silver/topaz
+			ring = /obj/item/clothing/ring/silver/toper
 			cloak = /obj/item/clothing/cloak/tabard/crusader
 			neck = /obj/item/clothing/neck/chaincoif
 			gloves = /obj/item/clothing/gloves/plate

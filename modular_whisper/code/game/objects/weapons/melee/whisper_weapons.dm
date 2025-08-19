@@ -28,6 +28,4 @@
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/weapon/knife/dagger/steel/parrying
 	recipe_name = "a Parrying Dagger"
-	createmultiple = FALSE
-	createditem_num = 0
 	craftdiff = 3

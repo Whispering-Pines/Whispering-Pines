@@ -67,7 +67,7 @@
 		if (istype(I, /obj/item/natural/poo))
 			biomass_amount += 1
 			qdel(I)
-		else if (istype(I, /obj/item/compost))
+		else if (istype(I, /obj/item/fertilizer))
 			biomass_amount += 2
 			qdel(I)
 		else if (istype(I, /obj/item/reagent_containers/food))

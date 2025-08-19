@@ -216,7 +216,7 @@
 		spawned.set_apprentice_name(apprentice_name)
 
 	add_spells(spawned)
-	spawned.adjust_spellpoints(spell_points)
+	spawned.adjust_spell_points(spell_points)
 	spawned.generate_random_attunements(rand(attunements_min, attunements_max))
 
 	var/list/used_stats = ((spawned.gender == FEMALE) && jobstats_f) ? jobstats_f : jobstats
@@ -266,6 +266,12 @@
 		humanguy.invisibility = INVISIBILITY_MAXIMUM
 		humanguy.become_blind("advsetup")
 		hugboxify_for_class_selection(spawned)
+
+	var/list/owned_triumph_buys = SStriumphs.triumph_buy_owners[player_client.ckey]
+	if(length(owned_triumph_buys))
+		for(var/datum/triumph_buy/T in owned_triumph_buys)
+			if(!T.activated)
+				T.on_after_spawn(humanguy)
 
 /// When our guy is OLD do we do anything extra
 /datum/job/proc/old_age_effects()
@@ -347,9 +353,9 @@
 			if(P.associated_faith == old_patron.associated_faith) //Prioritize choosing a possible patron within our pantheon
 				godlist |= god
 		if(length(godlist))
-			H.set_patron(default_patron || pick(godlist))
+			H.set_patron(default_patron || pick(godlist), TRUE)
 		else
-			H.set_patron(default_patron || pick(possiblegods))
+			H.set_patron(default_patron || pick(possiblegods), TRUE)
 		if(old_patron != H.patron) // If the patron we selected first does not match the patron we end up with, display the message.
 			to_chat(H, "<span class='warning'>I've followed the word of [old_patron.display_name ? old_patron.display_name : old_patron] in my younger years, but the path I tread todae has accustomed me to [H.patron.display_name? H.patron.display_name : H.patron].")
 
@@ -379,10 +385,6 @@
 			if(check_crownlist(H.ckey))
 				H.mind.special_items["Champion Circlet"] = /obj/item/clothing/head/crown/sparrowcrown
 			give_special_items(H)
-	for(var/list_key in SStriumphs.post_equip_calls)
-		var/datum/triumph_buy/thing = SStriumphs.post_equip_calls[list_key]
-		thing.on_activate(H)
-	return
 
 /// Returns an atom where the mob should spawn in.
 /datum/job/proc/get_roundstart_spawn_point()

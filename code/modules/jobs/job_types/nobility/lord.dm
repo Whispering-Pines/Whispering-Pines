@@ -67,7 +67,9 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	head = /obj/item/clothing/head/crown/serpcrown
 	backr = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather/plaquegold
-	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/special = 1, /obj/item/scomstone = 1)
+	backpack_contents = list(/obj/item/scomstone = 1)
+	beltl = /obj/item/weapon/knife/dagger/steel/special
+	scabbards = list(/obj/item/weapon/scabbard/knife)
 	ring = /obj/item/clothing/ring/active/nomag
 	l_hand = /obj/item/weapon/lordscepter
 	H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
@@ -86,8 +88,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	H.change_stat(STATKEY_STR, 2) //to beat your wife efficently.
 	H.change_stat(STATKEY_INT, 3)
 	if(H.gender == MALE)
-		pants = /obj/item/clothing/pants/tights/black
-		shirt = /obj/item/clothing/shirt/undershirt/black
+		pants = /obj/item/clothing/pants/tights/colored/black
+		shirt = /obj/item/clothing/shirt/undershirt/colored/black
 		armor = /obj/item/clothing/armor/gambeson/arming
 		shoes = /obj/item/clothing/shoes/boots
 		cloak = /obj/item/clothing/cloak/lordcloak
@@ -95,7 +97,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 			if(H.dna.species.id == SPEC_ID_HUMEN)
 				H.dna.species.soundpack_m = new /datum/voicepack/male/evil()
 	else
-		pants = /obj/item/clothing/pants/tights/random
+		pants = /obj/item/clothing/pants/tights/colored/random
 		armor = /obj/item/clothing/shirt/dress/royal
 		shirt = /obj/item/clothing/armor/gambeson/heavy
 		shoes = /obj/item/clothing/shoes/shortboots
@@ -150,8 +152,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	if(H.age == AGE_OLD)
 		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	if(H.gender == MALE)
-		pants = /obj/item/clothing/pants/tights/black
-		shirt = /obj/item/clothing/shirt/undershirt/black
+		pants = /obj/item/clothing/pants/tights/colored/black
+		shirt = /obj/item/clothing/shirt/undershirt/colored/black
 		armor = /obj/item/clothing/armor/gambeson/arming
 		shoes = /obj/item/clothing/shoes/boots
 		cloak = /obj/item/clothing/cloak/lordcloak
@@ -159,7 +161,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 			if(H.dna.species.id == "human")
 				H.dna.species.soundpack_m = new /datum/voicepack/male/evil()
 	else
-		pants = /obj/item/clothing/pants/tights/random
+		pants = /obj/item/clothing/pants/tights/colored/random
 		armor = /obj/item/clothing/shirt/dress/royal
 		shirt = /obj/item/clothing/armor/gambeson/heavy
 		shoes = /obj/item/clothing/shoes/shortboots

@@ -12,11 +12,9 @@
 
 /datum/outfit/job/adventurer/monk/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguehood/brown
-	neck = /obj/item/clothing/neck/psycross/silver/ravox
-	shoes = /obj/item/clothing/shoes/shortboots
-	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
-	armor = /obj/item/clothing/shirt/robe/plain
+	head = /obj/item/clothing/head/roguehood/colored/brown
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/colored/brown
+	armor = /obj/item/clothing/shirt/robe/colored/plain
 	wrists = /obj/item/clothing/wrists/bracers/leather
 	belt = /obj/item/storage/belt/leather/rope
 	beltr = /obj/item/storage/belt/pouch/coins/poor

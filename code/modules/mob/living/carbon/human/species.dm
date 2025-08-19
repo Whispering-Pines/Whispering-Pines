@@ -264,6 +264,8 @@ GLOBAL_LIST_EMPTY(patreon_races)
 	/// Amount of times we got autocorrected?? why is this a thing?
 	var/amtfail = 0
 
+	var/punch_damage = 0
+
 ///////////
 // PROCS //
 ///////////
@@ -1296,7 +1298,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 			return FALSE
 		if(!target.Adjacent(user))
 			return
-		if(user.incapacitated(ignore_grab = TRUE))
+		if(user.incapacitated(IGNORE_GRAB))
 			return
 
 		var/damage = user.get_punch_dmg()
@@ -1856,7 +1858,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 						else
 							H.emote("pain")
 				if(damage_amount > ((H.STACON*10) / 3) && !HAS_TRAIT(H, TRAIT_NOPAINSTUN))
-					H.Immobilize(8)
+					H.Immobilize(4)
 					shake_camera(H, 2, 2)
 					H.stuttering += 5
 				if(damage_amount > 10 && !HAS_TRAIT(H, TRAIT_NOPAINSTUN))
@@ -2050,7 +2052,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 			burning_items |= leg_clothes
 
 		for(var/obj/item/I as anything in burning_items)
-			I.fire_act(((H.fire_stacks + H.divine_fire_stacks)* 50)) //damage taken is reduced to 2% of this value by fire_act()
+			I.fire_act(((H.fire_stacks + H.divine_fire_stacks) * 25)) //damage taken is reduced to 2% of this value by fire_act()
 
 		var/thermal_protection = H.get_thermal_protection()
 

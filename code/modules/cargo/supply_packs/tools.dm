@@ -201,3 +201,8 @@
 	cost = 10
 	not_in_public = TRUE
 	contains = list(/obj/item/key/merchant)
+
+/datum/supply_pack/tools/bottle_kit
+	name = "Bottle Kit"
+	cost = 50
+	contains = list(/obj/item/bottle_kit)

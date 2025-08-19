@@ -89,7 +89,7 @@
 "B" = (
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
 /obj/effect/landmark/chest_or_mimic,
-/obj/item/clothing/ring/silver/ruby,
+/obj/item/clothing/ring/silver/rontz,
 /turf/open/floor/naturalstone,
 /area/rogue/under/tomb)
 "C" = (

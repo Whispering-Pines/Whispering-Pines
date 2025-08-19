@@ -154,7 +154,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 
 /datum/loadout_item/longshirt
 	name = "Shirt"
-	path = /obj/item/clothing/shirt/undershirt/black
+	path = /obj/item/clothing/shirt/undershirt/colored/black
 
 /datum/loadout_item/shortshirt
 	name = "Short-sleeved Shirt"
@@ -239,7 +239,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 //PANTS
 /datum/loadout_item/tights
 	name = "Cloth Tights"
-	path = /obj/item/clothing/pants/tights/black
+	path = /obj/item/clothing/pants/tights/colored/black
 
 /datum/loadout_item/leathertights
 	name = "Leather Tights"
@@ -386,11 +386,11 @@ GLOBAL_LIST_EMPTY(loadout_items)
 
 /datum/loadout_item/chaperon/alt
 	name = "Chaperon (Alt)"
-	path = /obj/item/clothing/head/chaperon/greyscale
+	path = /obj/item/clothing/head/chaperon/colored/greyscale
 
 /datum/loadout_item/chaperon/burgher
 	name = "Silk Chaperon"
-	path = /obj/item/clothing/head/chaperon/greyscale/silk
+	path = /obj/item/clothing/head/chaperon/colored/greyscale/silk
 
 /datum/loadout_item/feldcollar
 	name = "Feldcollar"

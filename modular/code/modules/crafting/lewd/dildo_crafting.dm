@@ -27,37 +27,37 @@
 	name = "Iron dildo 3x"
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/dildo/iron, /obj/item/dildo/iron, /obj/item/dildo/iron)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /datum/anvil_recipe/copper_dildo
 	name = "Copper dildo 3x"
 	req_bar = /obj/item/ingot/copper
 	created_item = list(/obj/item/dildo/copper, /obj/item/dildo/copper, /obj/item/dildo/copper)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /datum/anvil_recipe/steel_dildo
 	name = "Steel dildo 3x"
 	req_bar = /obj/item/ingot/steel
 	created_item = list(/obj/item/dildo/steel, /obj/item/dildo/steel, /obj/item/dildo/steel)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /datum/anvil_recipe/silver_dildo
 	name = "Silver dildo 3x"
 	req_bar = /obj/item/ingot/silver
 	created_item = list(/obj/item/dildo/silver, /obj/item/dildo/silver, /obj/item/dildo/silver)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /datum/anvil_recipe/gold_dildo
 	name = "Golden dildo 3x"
 	req_bar = /obj/item/ingot/gold
 	created_item = list(/obj/item/dildo/gold, /obj/item/dildo/gold, /obj/item/dildo/gold)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /datum/anvil_recipe/glass_dildo
 	name = "Glass dildo 3x"
 	req_bar = /obj/item/natural/glass
 	created_item = list(/obj/item/dildo/glass, /obj/item/dildo/glass, /obj/item/dildo/glass)
-	i_type = "Utilities"
+	category = "Utilities"
 
 //plugs
 
@@ -75,36 +75,36 @@
 	name = "Iron plug 3x"
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/dildo/plug/iron, /obj/item/dildo/plug/iron, /obj/item/dildo/plug/iron)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /datum/anvil_recipe/copper_plug
 	name = "Copper plug 3x"
 	req_bar = /obj/item/ingot/copper
 	created_item = list(/obj/item/dildo/plug/copper, /obj/item/dildo/plug/copper, /obj/item/dildo/plug/copper)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /datum/anvil_recipe/steel_plug
 	name = "Steel plug 3x"
 	req_bar = /obj/item/ingot/steel
 	created_item = list(/obj/item/dildo/plug/steel, /obj/item/dildo/plug/steel, /obj/item/dildo/plug/steel)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /datum/anvil_recipe/silver_plug
 	name = "Silver plug 3x"
 	req_bar = /obj/item/ingot/silver
 	created_item = list(/obj/item/dildo/plug/silver, /obj/item/dildo/plug/silver, /obj/item/dildo/plug/silver)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /datum/anvil_recipe/gold_plug
 	name = "Golden plug 3x"
 	req_bar = /obj/item/ingot/gold
 	created_item = list(/obj/item/dildo/plug/gold, /obj/item/dildo/plug/gold, /obj/item/dildo/plug/gold)
-	i_type = "Utilities"
+	category = "Utilities"
 
 /* This place has no glass ingot
 /datum/anvil_recipe/glass_plug
 	name = "Glass plug 3x"
 	req_bar = /obj/item/ingot/glass
 	created_item = list(/obj/item/dildo/plug/glass, /obj/item/dildo/plug/glass, /obj/item/dildo/plug/glass)
-	i_type = "Utilities"
+	category = "Utilities"
 */

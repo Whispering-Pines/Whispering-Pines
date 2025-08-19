@@ -1,5 +1,6 @@
 /datum/objective/retainer
 	name = "Recruit Retainer"
+	triumph_count = 2
 	var/retainers_recruited = 0
 
 /datum/objective/retainer/on_creation()
@@ -25,7 +26,7 @@
 	to_chat(owner.current, span_greentext("You have recruited a retainer and completed Solaria's objective!"))
 	owner.current.adjust_triumphs(triumph_count)
 	completed = TRUE
-	adjust_storyteller_influence("Solaria", 15)
+	adjust_storyteller_influence(ASTRATA, 15)
 	escalate_objective()
 
 /datum/objective/retainer/update_explanation_text()

@@ -1,5 +1,6 @@
 /datum/component/rot
 	var/amount = 0
+	var/rot_amount_per_process = 10 //1 second
 	var/last_process = 0
 	var/datum/looping_sound/fliesloop/soundloop
 
@@ -21,7 +22,7 @@
 	return ..()
 
 /datum/component/rot/process()
-	var/amt2add = 10 //1 second
+	var/amt2add = rot_amount_per_process
 	if(last_process)
 		amt2add = ((world.time - last_process)/10) * amt2add
 	last_process = world.time
@@ -41,7 +42,7 @@
 		amount = 0
 		return
 	if(has_world_trait(/datum/world_trait/pestra_mercy))
-		amount -= 5 * time_elapsed
+		amount -= (is_ascendant(PESTRA) ? 2.5 : 5) * time_elapsed
 
 	var/is_zombie
 	if(C.mind)
@@ -104,6 +105,9 @@
 			if(soundloop && soundloop.stopped && !is_zombie)
 				soundloop.start()
 		C.update_body()
+
+/datum/component/rot/simple
+	rot_amount_per_process = 5
 
 /datum/component/rot/simple/process()
 	..()

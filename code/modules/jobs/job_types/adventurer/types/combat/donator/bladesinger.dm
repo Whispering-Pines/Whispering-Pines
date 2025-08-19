@@ -25,13 +25,13 @@
 		H.change_stat(STATKEY_STR, 1) // Same stat spread as lancer/swordmaster, but gets a small bonus to speed instead of a malus, at the cost of getting no constitution bonus
 		H.change_stat(STATKEY_END, 1)
 		H.change_stat(STATKEY_SPD, 1)
-	pants = /obj/item/clothing/pants/tights/black
+	pants = /obj/item/clothing/pants/tights/colored/black
 	backr = /obj/item/weapon/sword/long/greatsword/elfgsword
 	beltl = /obj/item/storage/belt/pouch/coins/mid
 	shoes = /obj/item/clothing/shoes/boots/rare/elfplate/welfplate
 	gloves = /obj/item/clothing/gloves/rare/elfplate/welfplate
 	belt = /obj/item/storage/belt/leather
-	shirt = /obj/item/clothing/shirt/undershirt/black
+	shirt = /obj/item/clothing/shirt/undershirt/colored/black
 	armor = /obj/item/clothing/armor/rare/elfplate/welfplate
 	backl = /obj/item/storage/backpack/satchel
 	head = /obj/item/clothing/head/rare/elfplate/welfplate

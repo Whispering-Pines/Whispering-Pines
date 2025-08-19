@@ -33,6 +33,6 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		to_chat(L, span_warning("Gah! Something.. got in my - eyes.."))
-		L.reagents.add_reagent(/datum/reagent/berrypoison, 5)
+		L.reagents.add_reagent(/datum/reagent/toxin/berrypoison, 5)
 		L.apply_status_effect(/datum/status_effect/debuff/baothadruqks)
 		L.blur_eyes(2)

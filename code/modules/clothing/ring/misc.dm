@@ -10,32 +10,32 @@
 	icon_state = "guild_mason"
 	sellprice = 0
 
-/obj/item/clothing/ring/silver/diamond
+/obj/item/clothing/ring/silver/dorpel
 	name = "diamond ring"
 	icon_state = "s_ring_diamond"
 	sellprice = 140
 
-/obj/item/clothing/ring/silver/quartz
+/obj/item/clothing/ring/silver/blortz
 	name = "quartz ring"
 	icon_state = "s_ring_quartz"
 	sellprice = 110
 
-/obj/item/clothing/ring/silver/sapphire
+/obj/item/clothing/ring/silver/saffira
 	name = "sapphire ring"
 	icon_state = "s_ring_sapphire"
 	sellprice = 95
 
-/obj/item/clothing/ring/silver/emerald
+/obj/item/clothing/ring/silver/gemerald
 	name = "emerald ring"
 	icon_state = "s_ring_emerald"
 	sellprice = 80
 
-/obj/item/clothing/ring/silver/topaz
+/obj/item/clothing/ring/silver/toper
 	name = "topaz ring"
 	icon_state = "s_ring_topaz"
 	sellprice = 65
 
-/obj/item/clothing/ring/silver/ruby
+/obj/item/clothing/ring/silver/rontz
 	name = "ruby ring"
 	icon_state = "s_ring_ruby"
 	sellprice = 130
@@ -51,32 +51,32 @@
 	icon_state = "guild_mercator"
 	sellprice = 0
 
-/obj/item/clothing/ring/gold/diamond
+/obj/item/clothing/ring/gold/dorpel
 	name = "diamond ring"
 	icon_state = "g_ring_diamond"
 	sellprice = 270
 
-/obj/item/clothing/ring/gold/quartz
+/obj/item/clothing/ring/gold/blortz
 	name = "quartz ring"
 	icon_state = "g_ring_quartz"
 	sellprice = 245
 
-/obj/item/clothing/ring/gold/sapphire
+/obj/item/clothing/ring/gold/saffira
 	name = "sapphire ring"
 	icon_state = "g_ring_sapphire"
 	sellprice = 200
 
-/obj/item/clothing/ring/gold/emerald
+/obj/item/clothing/ring/gold/gemerald
 	name = "emerald ring"
 	icon_state = "g_ring_emerald"
 	sellprice = 195
 
-/obj/item/clothing/ring/gold/topaz
+/obj/item/clothing/ring/gold/toper
 	name = "topaz ring"
 	icon_state = "g_ring_topaz"
 	sellprice = 180
 
-/obj/item/clothing/ring/gold/ruby
+/obj/item/clothing/ring/gold/rontz
 	name = "ruby ring"
 	icon_state = "g_ring_ruby"
 	sellprice = 255
@@ -318,7 +318,7 @@
 	if(ismob(loc))
 		return
 	visible_message(span_warning("[src] begins to twitch and shake violently, before crumbling into ash"))
-	new /obj/item/ash(loc)
+	new /obj/item/fertilizer/ash(loc)
 	qdel(src)
 
 /obj/item/clothing/ring/gold/burden/equipped(mob/user, slot)

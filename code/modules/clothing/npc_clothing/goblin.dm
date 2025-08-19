@@ -25,7 +25,7 @@
 	max_integrity = 60
 	allowed_race = list(SPEC_ID_GOBLIN)
 	sellprice = 0
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 
 /obj/item/clothing/armor/leather/hide/goblin
 	name = "goblin loincloth"
@@ -37,7 +37,7 @@
 	body_parts_covered = CHEST|GROIN
 	flags_inv = HIDECROTCH
 	sellprice = 0
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 
 /obj/item/clothing/head/helmet/leather/goblin
 	name = "goblin leather helmet"
@@ -48,7 +48,7 @@
 	body_parts_covered = HEAD|EARS|HAIR|EYES
 	allowed_race = list(SPEC_ID_GOBLIN)
 	sellprice = 0
-	smeltresult = /obj/item/ash
+	smeltresult = /obj/item/fertilizer/ash
 
 /obj/item/clothing/head/helmet/goblin
 	name = "goblin helmet"

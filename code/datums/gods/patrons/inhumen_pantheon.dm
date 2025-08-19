@@ -20,7 +20,7 @@
 /* ----------------- */
 
 /datum/patron/inhumen/zizo
-	name = "Lady Tenebrase"
+	name = ZIZO
 	domain = "Primordial Darkness, Evil, Chaos, Darkness, Undeath"
 	desc = "Tenebrase the Primordial Darkness. Tenebrase's history is a mystery to all, only way she shown her existence to the mortal \
 realm is through the underdark, as undead dug from their resting places towards the newly built \
@@ -51,7 +51,7 @@ creative punis- 'Tests' to her believers that are often lethal to the weak. Tene
 	)
 
 /datum/patron/inhumen/graggar
-	name = "Sinius"
+	name = GRAGGAR
 	domain = "New God of Ultraviolence, Hatred and Cannibalism"
 	desc = "Once an orc warlord who were gifted a fragment of Tenebrase's great power through being deemed worthy due to his pure evil \
 soul and too many atrocities to count. He was a red orc called.. 'Bad Green' but was named Sinius by Tenebrase who found that stupid."
@@ -72,7 +72,7 @@ soul and too many atrocities to count. He was a red orc called.. 'Bad Green' but
 	storyteller = /datum/storyteller/graggar
 
 /datum/patron/inhumen/matthios
-	name = "Dismas"
+	name = MATTHIOS
 	domain = "God of Thievery, Ill-Gotten Gains, and Highwaymen"
 	desc = "Legendary human bandit whose greatest thievery was a spark of divinity through which He ascended himself to be a new god."
 	flaws = "Pride, Greed, Orneryness"
@@ -92,7 +92,7 @@ soul and too many atrocities to count. He was a red orc called.. 'Bad Green' but
 	storyteller = /datum/storyteller/matthios
 
 /datum/patron/inhumen/baotha
-	name = "Lamashtu"
+	name = BAOTHA
 	domain = "Goddess of Monsters, Family, Breeding, Hedonism"
 	desc = "Mother of Monsters and demon-goddess of family. A demonic gnoll, she is primarily worshipped by \
 evil creatures, though any being who plans on starting a family can follow her. Good creatures who \

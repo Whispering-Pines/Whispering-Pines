@@ -21,6 +21,7 @@
 	var/no_name_quantity = FALSE // If TRUE, do not display the name as "[Name] x [Amount]".
 	var/not_in_public = FALSE // If true, this pack will not be listed in the public goldface.
 	var/mandated_public_profit = 0 // If set, this pack will always additional cost this much percentage on top of the base cost when in the public vendor. All of the forced profit
+	abstract_type = /datum/supply_pack
 
 /datum/supply_pack/New()
 	..()

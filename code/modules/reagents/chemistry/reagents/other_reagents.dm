@@ -25,6 +25,10 @@
 				C.blood_volume = min(C.blood_volume + round(reac_volume, 0.1), BLOOD_VOLUME_MAXIMUM)
 				L.adjustOxyLoss(round(reac_volume*REM, 0.1))
 
+	if((method == INGEST) && L.clan)
+		L.adjust_bloodpool(reac_volume)
+		L.clan.handle_bloodsuck(BLOOD_PREFERENCE_FANCY)
+
 
 /datum/reagent/blood/on_merge(list/mix_data)
 	if(data && mix_data)

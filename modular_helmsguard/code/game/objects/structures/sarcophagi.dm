@@ -228,11 +228,11 @@
 
 
 	shirt = pick(
-		/obj/item/clothing/shirt/tunic/random,
+		/obj/item/clothing/shirt/tunic/colored/random,
 		/obj/item/clothing/armor/gambeson/heavy,
 		/obj/item/clothing/shirt/rags,
-		/obj/item/clothing/shirt/shortshirt/random,
-		/obj/item/clothing/shirt/undershirt/random,
+		/obj/item/clothing/shirt/shortshirt/colored/random,
+		/obj/item/clothing/shirt/undershirt/colored/random,
 		/obj/item/clothing/armor/gambeson,
 		/obj/item/clothing/armor/gambeson/light,
 		/obj/item/clothing/armor/gambeson/heavy,
@@ -242,8 +242,8 @@
 		/obj/item/clothing/pants/trou/leather,
 		/obj/item/clothing/pants/chainlegs/iron,
 		/obj/item/clothing/pants/chainlegs,
-		/obj/item/clothing/pants/tights/random,
-		/obj/item/clothing/pants/tights/vagrant,
+		/obj/item/clothing/pants/tights/colored/random,
+		/obj/item/clothing/pants/tights/colored/vagrant,
 		/obj/item/clothing/pants/trou/shadowpants,
 		/obj/item/clothing/pants/trou/beltpants,
 		)
@@ -276,7 +276,6 @@
 			/obj/item/clothing/head/antlerhood,
 			/obj/item/clothing/head/roguehood,
 			/obj/item/clothing/head/fisherhat,
-			/obj/item/clothing/head/softcap,
 			/obj/item/clothing/head/armingcap,
 			/obj/item/clothing/head/helmet/bascinet,
 			/obj/item/clothing/head/hatfur,
@@ -285,17 +284,17 @@
 			/obj/item/clothing/head/helmet/kettle,
 			/obj/item/clothing/head/helmet/sallet,
 			/obj/item/clothing/head/headband,
-			/obj/item/clothing/head/headband/red,
+			/obj/item/clothing/head/headband/colored/red,
 			/obj/item/clothing/head/helmet/leather/advanced,
 		)
 	if(prob(50))
 		cloak = pick(
 			/obj/item/clothing/cloak/stabard/dungeon,
 			/obj/item/clothing/cloak/raincloak,
-			/obj/item/clothing/cloak/raincloak/mortus,
+			/obj/item/clothing/cloak/raincloak/colored/mortus,
 			/obj/item/clothing/cloak/raincloak/furcloak,
-			/obj/item/clothing/cloak/raincloak/furcloak/brown,
-			/obj/item/clothing/cloak/raincloak/furcloak/black,
+			/obj/item/clothing/cloak/raincloak/furcloak/colored/brown,
+			/obj/item/clothing/cloak/raincloak/furcloak/colored/black,
 			/obj/item/clothing/cloak/black_cloak,
 			/obj/item/clothing/cloak/heartfelt,
 			/obj/item/clothing/cloak/tabard,
@@ -359,7 +358,7 @@
 			/obj/item/weapon/knife/dagger/steel,
 			/obj/item/flint,
 			/obj/item/needle,
-			/obj/item/bomb,
+			/obj/item/explosive/bottle,
 			/obj/item/smokebomb,
 			/obj/item/clothing/face/cigarette/rollie/nicotine,
 			/obj/item/clothing/face/cigarette/rollie/cannabis,
@@ -374,7 +373,7 @@
 			/obj/item/weapon/knife/dagger/steel,
 			/obj/item/flint,
 			/obj/item/needle,
-			/obj/item/bomb,
+			/obj/item/explosive/bottle,
 			/obj/item/smokebomb,
 			/obj/item/clothing/face/cigarette/rollie/nicotine,
 			/obj/item/clothing/face/cigarette/rollie/cannabis,
@@ -388,9 +387,9 @@
 
 
 	shirt = pick(
-		/obj/item/clothing/shirt/tunic/random,
-		/obj/item/clothing/shirt/shortshirt/random,
-		/obj/item/clothing/shirt/undershirt/random,
+		/obj/item/clothing/shirt/tunic/colored/random,
+		/obj/item/clothing/shirt/shortshirt/colored/random,
+		/obj/item/clothing/shirt/undershirt/colored/random,
 		/obj/item/clothing/armor/gambeson,
 		/obj/item/clothing/armor/gambeson/light,
 		/obj/item/clothing/armor/gambeson/heavy,
@@ -400,7 +399,7 @@
 		/obj/item/clothing/pants/trou/leather,
 		/obj/item/clothing/pants/chainlegs/iron,
 		/obj/item/clothing/pants/chainlegs,
-		/obj/item/clothing/pants/tights/random,
+		/obj/item/clothing/pants/tights/colored/random,
 		/obj/item/clothing/pants/chainlegs/skirt,
 		/obj/item/clothing/pants/platelegs/skirt,
 		)
@@ -483,7 +482,7 @@
 			/obj/item/weapon/knife/dagger/steel,
 			/obj/item/flint,
 			/obj/item/needle,
-			/obj/item/bomb,
+			/obj/item/explosive/bottle,
 			/obj/item/smokebomb,
 			/obj/item/clothing/face/cigarette/rollie/nicotine,
 			/obj/item/clothing/face/cigarette/rollie/cannabis,
@@ -498,7 +497,7 @@
 			/obj/item/weapon/knife/dagger/steel,
 			/obj/item/flint,
 			/obj/item/needle,
-			/obj/item/bomb,
+			/obj/item/explosive/bottle,
 			/obj/item/smokebomb,
 			/obj/item/clothing/face/cigarette/rollie/nicotine,
 			/obj/item/clothing/face/cigarette/rollie/cannabis,
@@ -566,7 +565,7 @@
 			/obj/item/weapon/knife/dagger/steel,
 			/obj/item/flint,
 			/obj/item/needle,
-			/obj/item/bomb,
+			/obj/item/explosive/bottle,
 			/obj/item/smokebomb,
 			/obj/item/clothing/face/cigarette/rollie/nicotine,
 			/obj/item/clothing/face/cigarette/rollie/cannabis,
@@ -580,7 +579,7 @@
 			/obj/item/weapon/knife/dagger/steel,
 			/obj/item/flint,
 			/obj/item/needle,
-			/obj/item/bomb,
+			/obj/item/explosive/bottle,
 			/obj/item/smokebomb,
 			/obj/item/clothing/face/cigarette/rollie/nicotine,
 			/obj/item/clothing/face/cigarette/rollie/cannabis,
@@ -601,11 +600,11 @@
 
 		pants = pick(
 			/obj/item/clothing/pants/trou,
-			/obj/item/clothing/pants/tights/random,
+			/obj/item/clothing/pants/tights/colored/random,
 		)
 		shirt = pick(
-			/obj/item/clothing/shirt/tunic/random,
-			/obj/item/clothing/shirt/undershirt/random,
+			/obj/item/clothing/shirt/tunic/colored/random,
+			/obj/item/clothing/shirt/undershirt/colored/random,
 			/obj/item/clothing/shirt/tunic/noblecoat,
 			/obj/item/clothing/shirt/undershirt/artificer,
 			/obj/item/clothing/shirt/undershirt/puritan,
@@ -626,8 +625,8 @@
 				/obj/item/clothing/shirt/dress/gown/summergown,
 				/obj/item/clothing/shirt/dress/gown/fallgown,
 				/obj/item/clothing/shirt/dress/gown/wintergown,
-				/obj/item/clothing/shirt/dress/gen/random,
-				/obj/item/clothing/shirt/dress/silkdress/random,
+				/obj/item/clothing/shirt/dress/gen/colored/random,
+				/obj/item/clothing/shirt/dress/silkdress/colored/random,
 				/obj/item/clothing/shirt/dress/silkdress,
 				)
 
@@ -642,12 +641,12 @@
 
 	if(prob(70))
 		cloak = pick(
-		/obj/item/clothing/cloak/half/random,
+		/obj/item/clothing/cloak/half/colored/random,
 		/obj/item/clothing/cloak/heartfelt,
 		/obj/item/clothing/cloak/stole/red,
 		/obj/item/clothing/cloak/black_cloak,
 		/obj/item/clothing/cloak/stole/purple,
-		/obj/item/clothing/cloak/cape/rogue,
+		/obj/item/clothing/cloak/cape/puritan,
 		)
 	if(prob(70))
 		belt = pick(
@@ -687,8 +686,8 @@
 			)
 		pants = pick(
 			/obj/item/clothing/pants/trou/leather,
-			/obj/item/clothing/pants/tights/random,
-			/obj/item/clothing/pants/tights/vagrant,
+			/obj/item/clothing/pants/tights/colored/random,
+			/obj/item/clothing/pants/tights/colored/vagrant,
 			)
 	else
 		head = pick(
@@ -697,12 +696,12 @@
 			/obj/item/clothing/head/hatfur,
 			)
 
-		armor = /obj/item/clothing/shirt/dress/gen/random
+		armor = /obj/item/clothing/shirt/dress/gen/colored/random
 
 	shirt = pick(
 		/obj/item/clothing/shirt/rags,
-		/obj/item/clothing/shirt/shortshirt/random,
-		/obj/item/clothing/shirt/undershirt/random,
+		/obj/item/clothing/shirt/shortshirt/colored/random,
+		/obj/item/clothing/shirt/undershirt/colored/random,
 		)
 
 	if(prob(70))
@@ -754,7 +753,7 @@
 			/obj/item/weapon/knife/dagger/steel,
 			/obj/item/flint,
 			/obj/item/needle,
-			/obj/item/bomb,
+			/obj/item/explosive/bottle,
 			/obj/item/smokebomb,
 			/obj/item/clothing/face/cigarette/rollie/nicotine,
 			/obj/item/clothing/face/cigarette/rollie/cannabis,
@@ -768,7 +767,7 @@
 			/obj/item/weapon/knife/dagger/steel,
 			/obj/item/flint,
 			/obj/item/needle,
-			/obj/item/bomb,
+			/obj/item/explosive/bottle,
 			/obj/item/smokebomb,
 			/obj/item/clothing/face/cigarette/rollie/nicotine,
 			/obj/item/clothing/face/cigarette/rollie/cannabis,

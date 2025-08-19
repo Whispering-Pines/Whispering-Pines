@@ -55,8 +55,8 @@
 	H.verbs |= /mob/proc/haltyell
 	cloak = /obj/item/clothing/cloak/apron/waist
 	if(H.gender == MALE)
-		pants = /obj/item/clothing/pants/tights/random
-		shirt = /obj/item/clothing/shirt/shortshirt/random
+		pants = /obj/item/clothing/pants/tights/colored/random
+		shirt = /obj/item/clothing/shirt/shortshirt/colored/random
 	else
 		armor = /obj/item/clothing/shirt/dress
 	shoes = /obj/item/clothing/shoes/shortboots
@@ -64,7 +64,7 @@
 	neck = /obj/item/storage/belt/pouch/coins/mid
 	beltl = /obj/item/storage/keyring/innkeep
 	beltr = /obj/item/reagent_containers/glass/bottle/beer/blackgoat
-	backpack_contents = list(/obj/item/recipe_book/cooking = 1, /obj/item/weapon/knife/dagger/steel/special = 1, /obj/item/rope/chain = 1)
+	backpack_contents = list(/obj/item/recipe_book/cooking = 1, /obj/item/weapon/knife/dagger/steel/special = 1, /obj/item/rope/chain = 1, /obj/item/bottle_kit)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, type)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, type)
 	ADD_TRAIT(H, TRAIT_BREADY, type)

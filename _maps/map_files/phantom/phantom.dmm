@@ -673,7 +673,7 @@
 	pixel_x = 1;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/peppermill{
+/obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = 15;
 	pixel_y = 11
 	},
@@ -1419,7 +1419,7 @@
 /obj/structure/closet/crate/crafted_closet,
 /obj/item/clothing/shoes/nobleboot,
 /obj/item/clothing/shirt/formal,
-/obj/item/clothing/pants/tights/black,
+/obj/item/clothing/pants/tights/colored/black,
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
 "bax" = (
@@ -1566,9 +1566,9 @@
 /area/rogue/indoors/town/cell)
 "beV" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/cloak/half/random,
-/obj/item/clothing/cloak/half/random,
-/obj/item/clothing/cloak/raincloak/green,
+/obj/item/clothing/cloak/half/colored/random,
+/obj/item/clothing/cloak/half/colored/random,
+/obj/item/clothing/cloak/raincloak/colored/green,
 /turf/open/floor/tile,
 /area/rogue/indoors/town/manor)
 "bfg" = (
@@ -1646,18 +1646,18 @@
 "bgR" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/shirt/dress/gen/random{
+/obj/item/clothing/shirt/dress/gen/colored/random{
 	pixel_x = -7;
 	pixel_y = 8
 	},
-/obj/item/clothing/shirt/dress/silkdress/random{
+/obj/item/clothing/shirt/dress/silkdress/colored/random{
 	pixel_x = -2
 	},
-/obj/item/clothing/shirt/dress/silkdress/random{
+/obj/item/clothing/shirt/dress/silkdress/colored/random{
 	pixel_x = 9;
 	pixel_y = 9
 	},
-/obj/item/clothing/shirt/dress/gen/random{
+/obj/item/clothing/shirt/dress/gen/colored/random{
 	pixel_x = 8;
 	pixel_y = 2
 	},
@@ -2212,9 +2212,9 @@
 "bwZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/crafted,
-/obj/item/clothing/armor/leather/vest/black,
-/obj/item/clothing/pants/tights/uncolored,
-/obj/item/clothing/shirt/undershirt/uncolored,
+/obj/item/clothing/armor/leather/vest/colored/black,
+/obj/item/clothing/pants/tights/colored/uncolored,
+/obj/item/clothing/shirt/undershirt/colored/uncolored,
 /obj/item/storage/belt/pouch,
 /turf/open/floor/twig,
 /area/rogue/indoors)
@@ -2350,10 +2350,10 @@
 /area/rogue/under/town/sewer/phantom)
 "bzM" = (
 /obj/structure/closet/crate/drawer/random,
-/obj/item/clothing/shirt/tunic/random,
-/obj/item/clothing/shirt/tunic/random,
+/obj/item/clothing/shirt/tunic/colored/random,
+/obj/item/clothing/shirt/tunic/colored/random,
 /obj/item/clothing/pants/tights,
-/obj/item/clothing/pants/tights/black,
+/obj/item/clothing/pants/tights/colored/black,
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
@@ -2663,15 +2663,15 @@
 "bLJ" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/shirt/shortshirt/random{
+/obj/item/clothing/shirt/shortshirt/colored/random{
 	pixel_x = 6
 	},
-/obj/item/clothing/shirt/tunic/random{
+/obj/item/clothing/shirt/tunic/colored/random{
 	pixel_x = -6;
 	pixel_y = 9
 	},
 /obj/item/clothing/shirt/undershirt/lowcut,
-/obj/item/clothing/shirt/undershirt/random,
+/obj/item/clothing/shirt/undershirt/colored/random,
 /obj/item/clothing/shirt/undershirt/sailor,
 /obj/item/clothing/shirt/undershirt/sailor/red,
 /turf/open/floor/ruinedwood/turned/darker,
@@ -3185,9 +3185,9 @@
 /area/rogue/under/town/basement)
 "cfA" = (
 /obj/structure/closet/crate/crafted_closet/dark,
-/obj/item/clothing/shirt/tunic/green,
-/obj/item/clothing/shirt/undershirt/random,
-/obj/item/clothing/pants/tights/random,
+/obj/item/clothing/shirt/tunic/colored/green,
+/obj/item/clothing/shirt/undershirt/colored/random,
+/obj/item/clothing/pants/tights/colored/random,
 /obj/machinery/light/fueledstreet/basic_power/blue/wall{
 	pixel_y = -6
 	},
@@ -3503,8 +3503,8 @@
 "crC" = (
 /obj/structure/closet/crate/crafted_closet,
 /obj/item/clothing/shirt/formal,
-/obj/item/clothing/shirt/undershirt/black,
-/obj/item/clothing/pants/tights/black,
+/obj/item/clothing/shirt/undershirt/colored/black,
+/obj/item/clothing/pants/tights/colored/black,
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
 "crJ" = (
@@ -3893,7 +3893,7 @@
 	pixel_x = 6;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/cooked/coppiette{
+/obj/item/reagent_containers/food/snacks/meat/coppiette{
 	pixel_x = -3;
 	pixel_y = 9
 	},
@@ -3960,11 +3960,11 @@
 	pixel_x = 8;
 	pixel_y = 13
 	},
-/obj/item/clothing/head/chaperon/greyscale/random{
+/obj/item/clothing/head/chaperon/colored/greyscale/random{
 	pixel_x = -6;
 	pixel_y = 2
 	},
-/obj/item/clothing/head/chaperon/greyscale/random{
+/obj/item/clothing/head/chaperon/colored/greyscale/random{
 	pixel_x = -9;
 	pixel_y = 5
 	},
@@ -4146,7 +4146,7 @@
 /area/rogue/outdoors/town)
 "cMo" = (
 /obj/item/coin/copper/pile,
-/obj/item/bomb,
+/obj/item/explosive/bottle,
 /obj/structure/fake_machine/bathvend{
 	pixel_y = 25;
 	density = 0
@@ -4247,11 +4247,11 @@
 /area/rogue/indoors/town/clinic_large)
 "cPP" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/head/roguehood/black{
+/obj/item/clothing/head/roguehood/colored/black{
 	pixel_x = -4;
 	pixel_y = 5
 	},
-/obj/item/clothing/head/roguehood/brown{
+/obj/item/clothing/head/roguehood/colored/brown{
 	pixel_x = 7;
 	pixel_y = -4
 	},
@@ -4350,7 +4350,7 @@
 	pixel_x = 19;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/cooked/sausage{
+/obj/item/reagent_containers/food/snacks/bun_grenz/plated{
 	pixel_x = 1;
 	pixel_y = 5
 	},
@@ -5270,11 +5270,11 @@
 /area/rogue/indoors/town)
 "dFW" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/shirt/undershirt/random,
-/obj/item/clothing/pants/tights/random,
-/obj/item/clothing/pants/tights/random,
-/obj/item/clothing/pants/tights/random,
-/obj/item/clothing/pants/tights/random,
+/obj/item/clothing/shirt/undershirt/colored/random,
+/obj/item/clothing/pants/tights/colored/random,
+/obj/item/clothing/pants/tights/colored/random,
+/obj/item/clothing/pants/tights/colored/random,
+/obj/item/clothing/pants/tights/colored/random,
 /obj/item/clothing/pants/trou/leather,
 /obj/machinery/light/fueledstreet/basic_power/blue/wall{
 	dir = 4;
@@ -5456,19 +5456,19 @@
 /area/rogue/under/town/basement)
 "dNW" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/head/roguehood/red{
+/obj/item/clothing/head/roguehood/colored/red{
 	pixel_x = -6;
 	pixel_y = -3
 	},
-/obj/item/clothing/head/roguehood/random{
+/obj/item/clothing/head/roguehood/colored/random{
 	pixel_x = 9;
 	pixel_y = 8
 	},
-/obj/item/clothing/head/roguehood/green{
+/obj/item/clothing/head/roguehood/colored/green{
 	pixel_x = 8;
 	pixel_y = -7
 	},
-/obj/item/clothing/head/roguehood/uncolored{
+/obj/item/clothing/head/roguehood/colored{
 	pixel_x = -3;
 	pixel_y = 4
 	},
@@ -5994,15 +5994,15 @@
 /area/rogue/indoors/town/bath)
 "ejV" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/pants/skirt/random{
+/obj/item/clothing/pants/skirt/colored/random{
 	pixel_x = -3;
 	pixel_y = 11
 	},
-/obj/item/clothing/pants/tights/random{
+/obj/item/clothing/pants/tights/colored/random{
 	pixel_x = 8;
 	pixel_y = 10
 	},
-/obj/item/clothing/pants/tights/random{
+/obj/item/clothing/pants/tights/colored/random{
 	pixel_x = 6;
 	pixel_y = 5
 	},
@@ -7724,11 +7724,11 @@
 /area/rogue/indoors/town/bath)
 "fvd" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/cloak/raincloak/random{
+/obj/item/clothing/cloak/raincloak/colored/random{
 	pixel_x = -9;
 	pixel_y = 6
 	},
-/obj/item/clothing/cloak/raincloak/red{
+/obj/item/clothing/cloak/raincloak/colored/red{
 	pixel_x = 3;
 	pixel_y = -3
 	},
@@ -7815,7 +7815,7 @@
 /obj/structure/table/wood/large/corner{
 	dir = 8
 	},
-/obj/item/reagent_containers/peppermill{
+/obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = 10;
 	pixel_y = 1
 	},
@@ -9226,7 +9226,7 @@
 	dir = 5;
 	icon_state = "largetable"
 	},
-/obj/item/reagent_containers/peppermill,
+/obj/item/reagent_containers/food/condiment/peppermill,
 /turf/open/floor/tile/checkeralt,
 /area/rogue/indoors/town/tavern)
 "gEb" = (
@@ -9250,8 +9250,8 @@
 /area/rogue/outdoors/river)
 "gFi" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/pants/tights/black,
-/obj/item/clothing/shirt/dress/silkdress/black,
+/obj/item/clothing/pants/tights/colored/black,
+/obj/item/clothing/shirt/dress/silkdress/colored/black,
 /obj/item/clothing/shoes/nobleboot,
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
@@ -9294,8 +9294,8 @@
 /obj/structure/closet/crate/crafted_closet,
 /obj/item/clothing/armor/leather/jacket/silk_coat,
 /obj/item/clothing/armor/leather/jacket/silk_coat,
-/obj/item/clothing/shirt/dress/silkdress/random,
-/obj/item/clothing/shirt/dress/silkdress/random,
+/obj/item/clothing/shirt/dress/silkdress/colored/random,
+/obj/item/clothing/shirt/dress/silkdress/colored/random,
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/indoors/town/theatre)
 "gGt" = (
@@ -11896,15 +11896,15 @@
 /area/rogue/indoors/town/magician)
 "iCZ" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/cloak/half/random{
+/obj/item/clothing/cloak/half/colored/random{
 	pixel_x = -8;
 	pixel_y = 6
 	},
-/obj/item/clothing/cloak/half/random{
+/obj/item/clothing/cloak/half/colored/random{
 	pixel_x = 1;
 	pixel_y = -3
 	},
-/obj/item/clothing/cloak/half/red{
+/obj/item/clothing/cloak/half/colored/red{
 	pixel_x = 7;
 	pixel_y = 5
 	},
@@ -12833,7 +12833,7 @@
 /obj/item/reagent_containers/food/snacks/meat/steak,
 /obj/item/reagent_containers/food/snacks/meat/steak,
 /obj/item/reagent_containers/food/snacks/meat/poultry,
-/obj/item/reagent_containers/food/snacks/spiderhoney,
+/obj/item/reagent_containers/food/snacks/honey,
 /obj/item/reagent_containers/food/snacks/butter,
 /obj/item/reagent_containers/food/snacks/fat,
 /obj/item/reagent_containers/food/snacks/cheese,
@@ -14335,8 +14335,8 @@
 "kju" = (
 /obj/structure/closet/crate/crafted_closet,
 /obj/item/clothing/shirt/formal,
-/obj/item/clothing/shirt/undershirt/black,
-/obj/item/clothing/pants/tights/black,
+/obj/item/clothing/shirt/undershirt/colored/black,
+/obj/item/clothing/pants/tights/colored/black,
 /obj/item/clothing/shoes/nobleboot,
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
@@ -14499,7 +14499,7 @@
 /turf/open/water,
 /area/rogue/under/cave)
 "kpa" = (
-/obj/item/clothing/cloak/raincloak/mortus{
+/obj/item/clothing/cloak/raincloak/colored/mortus{
 	name = "cloak"
 	},
 /obj/item/clothing/head/sack,
@@ -14624,7 +14624,7 @@
 	dir = 1
 	},
 /obj/structure/table/wood/plain_alt,
-/obj/item/bomb,
+/obj/item/explosive/bottle,
 /turf/open/floor/blocks/newstone/alt,
 /area/rogue/indoors/town/dwarfin)
 "ksm" = (
@@ -18981,8 +18981,8 @@
 /obj/item/clothing/armor/gambeson/heavy/dress,
 /obj/item/clothing/shoes/boots/leather,
 /obj/item/clothing/armor/leather/vest,
-/obj/item/clothing/pants/tights/random,
-/obj/item/clothing/shirt/undershirt/random,
+/obj/item/clothing/pants/tights/colored/random,
+/obj/item/clothing/shirt/undershirt/colored/random,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/smithy)
 "nnT" = (
@@ -19884,7 +19884,7 @@
 /obj/item/clothing/armor/gambeson/light{
 	pixel_x = 5
 	},
-/obj/item/clothing/armor/leather/vest/random,
+/obj/item/clothing/armor/leather/vest/colored/random,
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
 "nQQ" = (
@@ -20630,7 +20630,7 @@
 /obj/item/perfume/random,
 /obj/item/perfume/random,
 /obj/item/perfume/random,
-/obj/item/clothing/pants/tights/black,
+/obj/item/clothing/pants/tights/colored/black,
 /obj/item/clothing/shirt/dress/royal/princess,
 /obj/item/clothing/shirt/dress/royal/prince,
 /obj/item/clothing/shirt/undershirt/fancy,
@@ -21323,10 +21323,10 @@
 /area/rogue/outdoors/town/roofs)
 "oLe" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/shirt/dress/gen/purple,
+/obj/item/clothing/shirt/dress/gen/colored/purple,
 /obj/item/clothing/head/headdress,
 /obj/item/clothing/head/headdress/alt,
-/obj/item/clothing/shirt/dress/silkdress/random,
+/obj/item/clothing/shirt/dress/silkdress/colored/random,
 /obj/item/storage/backpack/satchel,
 /obj/item/clothing/cloak/half,
 /obj/item/clothing/armor/gambeson/heavy/winterdress,
@@ -22628,7 +22628,7 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /obj/effect/spawner/map_spawner/loot/coin/med,
 /obj/structure/closet/crate/drawer,
-/obj/item/reagent_containers/food/snacks/cheese_wedge,
+/obj/item/reagent_containers/food/snacks/cheddarwedge,
 /turf/open/floor/twig,
 /area/rogue/indoors/town/garrison)
 "pDF" = (
@@ -25614,11 +25614,11 @@
 /area/rogue/indoors/town/manor)
 "rLb" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/cloak/raincloak/brown{
+/obj/item/clothing/cloak/raincloak/colored/brown{
 	pixel_x = 7;
 	pixel_y = 2
 	},
-/obj/item/clothing/cloak/raincloak/furcloak/brown{
+/obj/item/clothing/cloak/raincloak/furcloak/colored/brown{
 	pixel_x = -6;
 	pixel_y = -2
 	},
@@ -26731,7 +26731,7 @@
 "sEn" = (
 /obj/structure/closet/crate/crafted_closet/inn,
 /obj/item/clothing/shoes/boots,
-/obj/item/clothing/pants/tights/black,
+/obj/item/clothing/pants/tights/colored/black,
 /obj/item/clothing/shirt/undershirt/fancy,
 /obj/machinery/light/fueledstreet/basic_power/blue/wall{
 	pixel_y = -6
@@ -27095,7 +27095,7 @@
 	dir = 1;
 	icon_state = "longtable"
 	},
-/obj/item/reagent_containers/peppermill{
+/obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = -6;
 	pixel_y = 8
 	},
@@ -28180,7 +28180,7 @@
 /area/rogue/indoors/town/manor)
 "tGu" = (
 /obj/structure/closet/crate/crafted_closet/crafted,
-/obj/item/clothing/cloak/apron/waist/bar,
+/obj/item/clothing/cloak/apron/waist/colored/bar,
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town/tavern)
 "tGC" = (
@@ -29812,7 +29812,7 @@
 	pixel_x = 4;
 	pixel_y = 14
 	},
-/obj/item/reagent_containers/peppermill{
+/obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = 13;
 	pixel_y = -2
 	},
@@ -29872,11 +29872,11 @@
 /area/rogue/indoors/town/tavern)
 "uIS" = (
 /obj/structure/closet/crate/drawer/random,
-/obj/item/clothing/shirt/undershirt/black,
-/obj/item/clothing/pants/tights/black,
-/obj/item/clothing/shirt/robe/white,
+/obj/item/clothing/shirt/undershirt/colored/black,
+/obj/item/clothing/pants/tights/colored/black,
+/obj/item/clothing/shirt/robe,
 /obj/item/clothing/shirt/robe/wizard,
-/obj/item/clothing/cloak/raincloak/blue,
+/obj/item/clothing/cloak/raincloak/colored/blue,
 /obj/item/clothing/head/wizhat,
 /obj/item/clothing/shoes/boots,
 /obj/item/clothing/shoes/shortboots,
@@ -30590,8 +30590,8 @@
 "vmg" = (
 /obj/structure/closet/crate/crafted_closet,
 /obj/item/clothing/shoes/nobleboot,
-/obj/item/clothing/pants/tights/uncolored,
-/obj/item/clothing/shirt/robe/plain,
+/obj/item/clothing/pants/tights/colored/uncolored,
+/obj/item/clothing/shirt/robe/colored/plain,
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
 "vmo" = (
@@ -32077,7 +32077,7 @@
 /area/rogue/indoors/town/manor)
 "woW" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/pants/tights/black,
+/obj/item/clothing/pants/tights/colored/black,
 /obj/item/clothing/shirt/formal,
 /obj/item/clothing/shoes/nobleboot,
 /turf/open/floor/wood,
@@ -32181,12 +32181,12 @@
 /obj/structure/closet/crate/crafted_closet,
 /obj/item/clothing/shirt/undershirt/lowcut,
 /obj/item/clothing/shirt/undershirt/lowcut,
-/obj/item/clothing/shirt/tunic/random,
-/obj/item/clothing/shirt/tunic/random,
+/obj/item/clothing/shirt/tunic/colored/random,
+/obj/item/clothing/shirt/tunic/colored/random,
 /obj/item/clothing/pants/trou,
 /obj/item/clothing/pants/tights,
 /obj/item/clothing/pants/tights,
-/obj/item/clothing/pants/skirt/random,
+/obj/item/clothing/pants/skirt/colored/random,
 /turf/open/floor/woodturned,
 /area/rogue/indoors/butchershop)
 "wso" = (
@@ -32975,19 +32975,19 @@
 /area/rogue/under/cave)
 "wUo" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/pants/tights/uncolored{
+/obj/item/clothing/pants/tights/colored/uncolored{
 	pixel_x = 5;
 	pixel_y = 2
 	},
-/obj/item/clothing/pants/tights/uncolored{
+/obj/item/clothing/pants/tights/colored/uncolored{
 	pixel_x = -1;
 	pixel_y = -1
 	},
-/obj/item/clothing/shirt/undershirt/uncolored{
+/obj/item/clothing/shirt/undershirt/colored/uncolored{
 	pixel_x = -4;
 	pixel_y = 2
 	},
-/obj/item/clothing/shirt/undershirt/uncolored{
+/obj/item/clothing/shirt/undershirt/colored/uncolored{
 	pixel_x = 3;
 	pixel_y = -4
 	},
@@ -33054,8 +33054,8 @@
 "wXf" = (
 /obj/structure/closet/crate/crafted_closet/dark,
 /obj/item/clothing/head/padded/deathshroud,
-/obj/item/clothing/cloak/raincloak/mortus,
-/obj/item/clothing/cloak/raincloak/mortus,
+/obj/item/clothing/cloak/raincloak/colored/mortus,
+/obj/item/clothing/cloak/raincloak/colored/mortus,
 /turf/open/floor/woodturned,
 /area/rogue/under/town/basement)
 "wXj" = (
@@ -33513,14 +33513,14 @@
 "xnb" = (
 /obj/structure/closet/crate/crafted_closet,
 /obj/item/clothing/shirt/undershirt/puritan,
-/obj/item/clothing/shirt/undershirt/random,
-/obj/item/clothing/shirt/undershirt/random,
-/obj/item/clothing/shirt/undershirt/random,
+/obj/item/clothing/shirt/undershirt/colored/random,
+/obj/item/clothing/shirt/undershirt/colored/random,
+/obj/item/clothing/shirt/undershirt/colored/random,
 /obj/item/clothing/shirt/undershirt/sailor,
 /obj/item/clothing/shirt/undershirt/sailor/red,
-/obj/item/clothing/armor/leather/vest/black,
-/obj/item/clothing/armor/leather/vest/random,
-/obj/item/clothing/armor/leather/vest/random,
+/obj/item/clothing/armor/leather/vest/colored/black,
+/obj/item/clothing/armor/leather/vest/colored/random,
+/obj/item/clothing/armor/leather/vest/colored/random,
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/indoors/town/theatre)
 "xnk" = (

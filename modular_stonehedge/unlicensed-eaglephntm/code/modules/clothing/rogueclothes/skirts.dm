@@ -52,10 +52,10 @@
 
 ///RECIPES
 
-/datum/crafting_recipe/sewing/leatherskirt
+/datum/repeatable_crafting_recipe/sewing/leatherskirt
 	name = "leather skirt"
-	result = list(/obj/item/clothing/pants/trou/leather/skirt)
-	reqs = list(/obj/item/natural/hide = 1,
+	output = list(/obj/item/clothing/pants/trou/leather/skirt)
+	requirements = list(/obj/item/natural/hide = 1,
 	/obj/item/reagent_containers/food/snacks/tallow = 1,)
 	sellprice = 10
 
@@ -72,21 +72,21 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/clothing/pants/trou/leather/skirt)
 	created_item = /obj/item/clothing/pants/chainlegs/iron/studdedskirt
-	i_type = "Armor"
+	category = "Armor"
 
 /datum/anvil_recipe/armor/chainskirt
 	name = "Chain Skirt"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/pants/chainlegs/skirt
 	craftdiff = 2
-	i_type = "Armor"
+	category = "Armor"
 
 /datum/anvil_recipe/armor/ichainskirt
 	name = "Iron Chain Skirt"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/pants/chainlegs/iron/skirt
 	craftdiff = 1
-	i_type = "Armor"
+	category = "Armor"
 
 /datum/anvil_recipe/armor/plateskirt
 	name = "Plate Tassets (+1 Steel)"
@@ -94,16 +94,16 @@
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/pants/platelegs/skirt
 	craftdiff = 4	//It's plate, no easy craft.
-	i_type = "Armor"
+	category = "Armor"
 
 ///CONVERSIONS
 
-/datum/crafting_recipe/leatherskirtconv
+/datum/repeatable_crafting_recipe/leatherskirtconv
 	name = "leather pants to skirt"
-	result = list(/obj/item/clothing/pants/trou/leather/skirt)
-	reqs = list(/obj/item/clothing/pants/trou/leather = 1)
+	output = list(/obj/item/clothing/pants/trou/leather/skirt)
+	requirements = list(/obj/item/clothing/pants/trou/leather = 1)
 
-/datum/crafting_recipe/leatherskirtconvtwo
+/datum/repeatable_crafting_recipe/leatherskirtconvtwo
 	name = "hardened leather pants to skirt"
-	result = list(/obj/item/clothing/pants/trou/leather/advanced/skirt)
-	reqs = list(/obj/item/clothing/pants/trou/leather/advanced = 1)
+	output = list(/obj/item/clothing/pants/trou/leather/advanced/skirt)
+	requirements = list(/obj/item/clothing/pants/trou/leather/advanced = 1)

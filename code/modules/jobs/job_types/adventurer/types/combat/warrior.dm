@@ -76,7 +76,7 @@
 			beltl = /obj/item/storage/belt/pouch/coins/poor
 			wrists = /obj/item/clothing/wrists/bracers/leather
 			shoes = /obj/item/clothing/shoes/boots
-			cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+			cloak = /obj/item/clothing/cloak/raincloak/furcloak/colored/brown
 			backpack_contents = list(/obj/item/flashlight/flare/torch = 1, /obj/item/weapon/knife/hunting = 1, /obj/item/recipe_book/survival = 1)
 
 		if("Duelist")
@@ -109,7 +109,7 @@
 			head = /obj/item/clothing/head/fancyhat
 			cloak = /obj/item/clothing/cloak/half
 			wrists = /obj/item/clothing/wrists/bracers/leather
-			shirt = /obj/item/clothing/shirt/undershirt/black
+			shirt = /obj/item/clothing/shirt/undershirt/colored/black
 			pants = /obj/item/clothing/pants/trou/leather
 			beltl = /obj/item/storage/belt/pouch/coins/poor
 			shoes = /obj/item/clothing/shoes/boots
@@ -140,7 +140,7 @@
 			shoes = /obj/item/clothing/shoes/boots/leather
 			wrists = /obj/item/clothing/wrists/bracers/leather
 			head = /obj/item/clothing/head/helmet/horned
-			cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+			cloak = /obj/item/clothing/cloak/raincloak/furcloak/colored/brown
 			armor = /obj/item/clothing/armor/leather/hide
 			beltr = /obj/item/weapon/axe/iron
 			if(prob(50))
@@ -183,7 +183,7 @@
 			shirt = /obj/item/clothing/armor/chainmail
 			belt = /obj/item/storage/belt/leather/knifebelt/black/steel
 			shoes = /obj/item/clothing/shoes/boots
-			pants = /obj/item/clothing/pants/tights/black
+			pants = /obj/item/clothing/pants/tights/colored/black
 			cloak = /obj/item/clothing/cloak/cape/puritan
 			neck = /obj/item/storage/belt/pouch/coins/poor
 			head = /obj/item/clothing/head/leather/inqhat

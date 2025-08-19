@@ -42,7 +42,7 @@
 	var/craftdiff = 1
 	var/datum/skill/skillcraft
 	var/anchor_craft = FALSE
-	var/craftsound
+	var/crafting_sound
 	///Place finished result in front of assembly in user's direction. Mutually exclusive with offset_user.
 	var/offset_forward = FALSE
 	///Place finished result at user's location. Mutually exclusive with offset_forward.
@@ -247,8 +247,8 @@
 			if(amt2raise > 0)
 				user.adjust_experience(skillcraft, amt2raise, FALSE)
 
-	if(craftsound)
-		playsound(get_turf(assembly), craftsound, 100, TRUE)
+	if(crafting_sound)
+		playsound(get_turf(assembly), crafting_sound, 100, TRUE)
 
 	assembly.being_finished = TRUE
 	var/list/results = list()

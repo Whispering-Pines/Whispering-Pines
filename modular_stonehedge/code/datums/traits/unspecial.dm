@@ -177,9 +177,9 @@
 /datum/quirk/greenthumb/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.clamped_adjust_skillrank(/datum/skill/labor/farming, 4, 4, TRUE)
-	H.mind.special_items["Fertilizer 1"] = /obj/item/compost
-	H.mind.special_items["Fertilizer 2"] = /obj/item/compost
-	H.mind.special_items["Fertilizer 3"] = /obj/item/compost
+	H.mind.special_items["Fertilizer 1"] = /obj/item/fertilizer
+	H.mind.special_items["Fertilizer 2"] = /obj/item/fertilizer
+	H.mind.special_items["Fertilizer 3"] = /obj/item/fertilizer
 	H.mind.special_items["Whore"] = /obj/item/weapon/hoe // I too respect a humble farmer.
 
 /datum/quirk/eagle_eyed
@@ -526,8 +526,8 @@
 
 /datum/quirk/arsonist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.special_items["Firebomb One"] = /obj/item/bomb
-	H.mind.special_items["Firebomb Two"] = /obj/item/bomb
+	H.mind.special_items["Firebomb One"] = /obj/item/explosive/bottle
+	H.mind.special_items["Firebomb Two"] = /obj/item/explosive/bottle
 	H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
 
 /datum/quirk/rider

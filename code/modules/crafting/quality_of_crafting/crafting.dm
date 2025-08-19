@@ -510,6 +510,22 @@
 	output = /obj/item/clothing/neck/psycross
 	craft_time = 5 SECONDS
 
+/datum/repeatable_crafting_recipe/crafting/bottle_kit
+	name = "bottle kit"
+	requirements = list(
+		/obj/item/reagent_containers/glass/bottle = 2,
+		/obj/item/paper = 2,
+	)
+	attacked_atom = /obj/item/paper
+	starting_atom = /obj/item/reagent_containers/glass/bottle
+	allow_inverse_start = FALSE
+	output = /obj/item/bottle_kit
+	craft_time = 5 SECONDS
+	subtypes_allowed = TRUE
+
+/datum/repeatable_crafting_recipe/crafting/bottle_kit/create_blacklisted_paths()
+	blacklisted_paths = subtypesof(/obj/item/paper)
+
 /datum/repeatable_crafting_recipe/crafting/woodflail
 	name = "wooden flail"
 	requirements = list(
@@ -686,3 +702,35 @@
 	starting_atom = /obj/item/reagent_containers/food/snacks/meat
 	attacked_atom = /obj/item/natural/cloth
 	subtypes_allowed = TRUE
+
+/datum/repeatable_crafting_recipe/crafting/alchemical_vial
+	name = "Alchemical Vial"
+	output = /obj/item/reagent_containers/glass/alchemical
+	requirements = list(
+		/obj/item/natural/glass = 1,
+	)
+	tool_usage = list(
+		/obj/item/weapon/knife = list("starts to carve out a rune", "start to carve a rune")
+	)
+
+	attacked_atom = /obj/item/natural/glass
+	starting_atom = /obj/item/weapon/knife
+	subtypes_allowed = TRUE // so you can use any subtype of knife
+	output_amount = 3
+	craftdiff = 3
+
+/datum/repeatable_crafting_recipe/crafting/alchemical_bottle
+	name = "Alchemical Bottle"
+	output = /obj/item/reagent_containers/glass/bottle
+	requirements = list(
+		/obj/item/natural/glass = 1,
+	)
+	tool_usage = list(
+		/obj/item/weapon/knife = list("starts to carve out a rune", "start to carve a rune")
+	)
+
+	attacked_atom = /obj/item/natural/glass
+	starting_atom = /obj/item/weapon/knife
+	subtypes_allowed = TRUE // so you can use any subtype of knife
+	output_amount = 1
+	craftdiff = 3

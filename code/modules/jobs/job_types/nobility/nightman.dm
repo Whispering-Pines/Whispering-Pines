@@ -33,7 +33,7 @@
 	head = /obj/item/lockpick/goldpin/silver
 	shoes = /obj/item/clothing/shoes/boots
 	belt = /obj/item/storage/belt/leather/black
-	shirt = /obj/item/clothing/armor/gambeson/heavy/dark
+	shirt = /obj/item/clothing/armor/gambeson/heavy/colored/dark
 	armor = /obj/item/clothing/armor/leather/jacket/apothecary
 	wrists = /obj/item/storage/keyring/nightman
 	neck = /obj/item/storage/belt/pouch/coins/rich
@@ -137,9 +137,9 @@
 	if(H.gender == FEMALE)
 		shirt = /obj/item/clothing/shirt/undershirt
 		armor = /obj/item/clothing/shirt/dress/gen/sexy
-		pants = /obj/item/clothing/pants/skirt/red
+		pants = /obj/item/clothing/pants/skirt/colored/red
 	else
-		shirt = /obj/item/clothing/shirt/tunic/random
+		shirt = /obj/item/clothing/shirt/tunic/colored/random
 	backpack_contents = list(
 		/obj/item/soap/bath = 1
 	)
@@ -247,13 +247,13 @@
 	beltr = /obj/item/storage/belt/pouch/coins/poor
 	ring = /obj/item/clothing/ring/gold
 	if(prob(50))
-		ring = /obj/item/clothing/ring/gold/emerald
+		ring = /obj/item/clothing/ring/gold/gemerald
 	if(prob(30))
-		ring = /obj/item/clothing/ring/gold/topaz
+		ring = /obj/item/clothing/ring/gold/toper
 	if(prob(15))
 		ring = /obj/item/clothing/ring/silver
 	if(prob(5))
-		ring = /obj/item/clothing/ring/gold/diamond
+		ring = /obj/item/clothing/ring/gold/dorpel
 	shoes = /obj/item/clothing/shoes/anklets
 	backl = /obj/item/storage/backpack/satchel
 	backpack_contents = list(
@@ -322,9 +322,9 @@
 	if(H.gender == FEMALE)
 		shirt = /obj/item/clothing/shirt/undershirt
 		armor = /obj/item/clothing/shirt/dress/gen/sexy
-		pants = /obj/item/clothing/pants/skirt/red
+		pants = /obj/item/clothing/pants/skirt/colored/red
 	else
-		shirt = /obj/item/clothing/shirt/tunic/random
+		shirt = /obj/item/clothing/shirt/tunic/colored/random
 	backpack_contents = list(
 		/obj/item/soap/bath = 1
 	)

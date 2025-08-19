@@ -85,31 +85,31 @@
 	created_item = list (/obj/item/clothing/shoes/anklets)
 	craftdiff = 6
 
-/datum/crafting_recipe/sewing/exoticsilkbra
+/datum/repeatable_crafting_recipe/sewing/exoticsilkbra
 	name = "exotic silk bra - (4 silk, 1 gold ring; MASTER)"
-	result = list (/obj/item/clothing/shirt/exoticsilkbra)
-	reqs = list(/obj/item/natural/silk = 3,
+	output = list (/obj/item/clothing/shirt/exoticsilkbra)
+	requirements = list(/obj/item/natural/silk = 3,
 				/obj/item/clothing/ring/gold = 1)
 	craftdiff = 6
 
-/datum/crafting_recipe/sewing/anklets
+/datum/repeatable_crafting_recipe/sewing/anklets
 	name = "exotic silk anklets - (3 silk, 1 gold ring; MASTER)"
-	result = list (/obj/item/clothing/shoes/anklets)
-	reqs = list(/obj/item/natural/silk = 3,
+	output = list (/obj/item/clothing/shoes/anklets)
+	requirements = list(/obj/item/natural/silk = 3,
 				/obj/item/clothing/ring/gold = 1)
 	craftdiff = 6
 
-/datum/crafting_recipe/sewing/exoticsilkbelt
+/datum/repeatable_crafting_recipe/sewing/exoticsilkbelt
 	name = "exotic silk belt - (3 silk, 1 gold ring; MASTER)"
-	result = list (/obj/item/storage/belt/leather/exoticsilkbelt)
-	reqs = list(/obj/item/natural/silk = 3,
+	output = list (/obj/item/storage/belt/leather/exoticsilkbelt)
+	requirements = list(/obj/item/natural/silk = 3,
 				/obj/item/clothing/ring/gold = 1)
 	craftdiff = 6
 
-/datum/crafting_recipe/sewing/exoticsilkmask
+/datum/repeatable_crafting_recipe/sewing/exoticsilkmask
 	name = "exotic silk mask - (3 silk, 1 gold ring; MASTER)"
-	result = list (/obj/item/clothing/face/exoticsilkmask)
-	reqs = list(/obj/item/natural/silk = 3,
+	output = list (/obj/item/clothing/face/exoticsilkmask)
+	requirements = list(/obj/item/natural/silk = 3,
 				/obj/item/clothing/ring/gold = 1)
 	craftdiff = 6
 
@@ -566,34 +566,34 @@ Reel teleports the attached atom to the grabbed turf.
 	bitesize = 1
 	dropshrink = 0.3
 
-/datum/crafting_recipe/roguetown/tallow/hearth_tallow
+/datum/repeatable_crafting_recipe/roguetown/tallow/hearth_tallow
 	name = "render tallow over the hearth"
-	result = list(
+	output = list(
 				/obj/item/reagent_containers/food/snacks/tallow,
 				/obj/item/reagent_containers/food/snacks/tallow,
 				/obj/item/reagent_containers/food/snacks/tallow,
 				/obj/item/reagent_containers/food/snacks/tallow,
 				)
-	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 1)
-	tools = list(/obj/item/cooking/pan,)
-	structurecraft = /obj/machinery/light/fueled/hearth
+	requirements = list(/obj/item/reagent_containers/food/snacks/fat = 1)
+	tool_usage = list(/obj/item/cooking/pan,)
+	attacked_atom = /obj/machinery/light/fueled/hearth
 	craftdiff = 0
-	craftsound = 'sound/misc/frying.ogg'
-	verbage = "render"
+	crafting_sound = 'sound/misc/frying.ogg'
 
-/datum/crafting_recipe/roguetown/tallow/campfire_tallow
+
+/datum/repeatable_crafting_recipe/roguetown/tallow/campfire_tallow
 	name = "render tallow over the campfire"
-	result = list(
+	output = list(
 				/obj/item/reagent_containers/food/snacks/tallow,
 				/obj/item/reagent_containers/food/snacks/tallow,
 				/obj/item/reagent_containers/food/snacks/tallow,
 				)
-	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 1)
-	tools = list(/obj/item/cooking/pan,)
-	structurecraft = /obj/machinery/light/fueled/campfire
+	requirements = list(/obj/item/reagent_containers/food/snacks/fat = 1)
+	tool_usage = list(/obj/item/cooking/pan,)
+	attacked_atom = /obj/machinery/light/fueled/campfire
 	craftdiff = 0
-	craftsound = 'sound/misc/frying.ogg'
-	verbage = "render"
+	crafting_sound = 'sound/misc/frying.ogg'
+
 
 /obj/item/mobilestove
 	name = "packed stove"
@@ -642,20 +642,20 @@ Reel teleports the attached atom to the grabbed turf.
 		new_mobilestove.color = src.color
 		qdel(src)
 
-/datum/crafting_recipe/roguetown/cooking/mobilestove_tallow
+/datum/repeatable_crafting_recipe/roguetown/cooking/mobilestove_tallow
 	name = "render tallow over the mobile stove"
-	result = list(
+	output = list(
 				/obj/item/reagent_containers/food/snacks/tallow,
 				/obj/item/reagent_containers/food/snacks/tallow,
 				/obj/item/reagent_containers/food/snacks/tallow,
 				)
-	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 1)
-	tools = list(/obj/item/cooking/pan,)
-	structurecraft = /obj/machinery/light/fueled/hearth/mobilestove
+	requirements = list(/obj/item/reagent_containers/food/snacks/fat = 1)
+	tool_usage = list(/obj/item/cooking/pan,)
+	attacked_atom = /obj/machinery/light/fueled/hearth/mobilestove
 	craftdiff = 0
-	craftsound = 'sound/misc/frying.ogg'
-	req_table = FALSE
-	verbage = "render"
+	crafting_sound = 'sound/misc/frying.ogg'
+	required_table = FALSE
+
 
 /datum/repeatable_crafting_recipe/survival/ration_wrapper
 	name = "ration wrapping paper"

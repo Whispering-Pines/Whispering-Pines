@@ -16,7 +16,8 @@
 	possible_rmb_intents = list(/datum/rmb_intent/feint, /datum/rmb_intent/swift, /datum/rmb_intent/riposte, /datum/rmb_intent/weak)
 	flee_in_pain = TRUE
 	stand_attempts = 6
-	vitae_pool = 250 // Small, frail creechers with not so much vitality to gain from.
+	bloodpool = 250 // Small, frail creechers with not so much vitality to gain from.
+	//whisper slop start
 	erpable = TRUE
 
 	skin_tone = "e8b59b"
@@ -38,9 +39,13 @@
 	butt_min = 3
 	butt_max = 3
 
+//for genitals
 /mob/living/carbon/human/species/goblin/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
 	. = ..()
 	update_body_parts(TRUE)
+
+/mob/living/carbon/human/species/goblin/apply_prefs_job(client/player_client, datum/job/job)
+	return
 
 /mob/living/carbon/human/species/goblin/npc
 	ai_controller = /datum/ai_controller/human_npc
@@ -193,6 +198,7 @@
 /obj/item/bodypart/head/goblin/skeletonize()
 	. = ..()
 	icon_state = "goblin_skel_head"
+	sellprice = 2
 	if(headprice)
 		headprice = 2
 
@@ -314,6 +320,7 @@
 			headdy.icon = 'icons/roguetown/mob/monster/goblins.dmi'
 			headdy.icon_state = "[src.dna.species.id]_head"
 			headdy.headprice = rand(7,20)
+			headdy.sellprice = rand(7,20)
 	var/obj/item/organ/eyes/eyes = src.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
 		eyes.Remove(src,1)
@@ -349,7 +356,7 @@
 	last_process = world.time
 	amount += amt2add
 	if(has_world_trait(/datum/world_trait/pestra_mercy))
-		amount -= 5 * time_elapsed
+		amount -= (is_ascendant(PESTRA) ? 2.5 : 5) * time_elapsed
 
 	var/mob/living/carbon/C = parent
 	if(!C)

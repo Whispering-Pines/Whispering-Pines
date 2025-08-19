@@ -301,7 +301,7 @@
 /area/rogue/under/tomb/indoors)
 "Pk" = (
 /mob/living/carbon/human/species/zizombie/npc/militiamen,
-/obj/item/clothing/ring/gold/emerald,
+/obj/item/clothing/ring/gold/gemerald,
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/under/tomb/indoors)

@@ -59,7 +59,7 @@
 /area/rogue/under/tomb/indoors/magic)
 "cS" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/pants/tights/lord,
+/obj/item/clothing/pants/tights/colored/lord,
 /obj/item/natural/cloth,
 /turf/open/floor/tile/bath,
 /area/rogue/under/tomb/indoors/magic)
@@ -325,7 +325,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood,
-/obj/item/clothing/ring/gold/ruby,
+/obj/item/clothing/ring/gold/rontz,
 /mob/living/carbon/human/species/zizombie/npc/ambush,
 /turf/open/floor/carpet/green,
 /area/rogue/under/tomb/indoors/magic)

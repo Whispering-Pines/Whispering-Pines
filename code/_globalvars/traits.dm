@@ -162,6 +162,9 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Use Magic" = TRAIT_USEMAGIC,
 		"Learn Magic" = TRAIT_LEARNMAGIC,
 		"Sea Drinker" = TRAIT_SEA_DRINKER,
+		"Violator of the Coven" = TRAIT_VIOLATOR,
+		"Endless Slumber" = TRAIT_TORPOR,
+		"Boundless Energy" = TRAIT_NOENERGY,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
@@ -274,6 +277,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_ENDOWMENT = span_danger("I got massive bits that slow me down and don't fit in most clothes or armor."),
 	TRAIT_SECRET_OFFICIANT = span_love("I am able to conduct secret wedding ceremonies outside of the church. Love cannot be stopped!"),
 	TRAIT_DUALWIELDER = span_info("I am trained in the art of dual wielding."),
+	TRAIT_NOENERGY = span_info("I don't need rest; I won't ever feel fatigue.")
 ))
 
 /// value -> trait name, generated on use from trait_by_type global

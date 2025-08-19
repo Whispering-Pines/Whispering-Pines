@@ -24,10 +24,10 @@
 	name = "Chain Fishnet"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/pants/chainlegs/fishnet
-	i_type = "Armor"
+	category = "Armor"
 
 /datum/anvil_recipe/armor/ichainfishnet
 	name = "Chain Fishnet"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/pants/chainlegs/iron/fishnet
-	i_type = "Armor"
+	category = "Armor"

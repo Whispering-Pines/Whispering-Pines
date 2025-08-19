@@ -10,11 +10,14 @@
 	salvage_amount = 1
 	genital_access = TRUE
 
-/obj/item/clothing/pants/loincloth/brown
+/obj/item/clothing/pants/loincloth/colored
+	misc_flags = CRAFTING_TEST_EXCLUDE
+
+/obj/item/clothing/pants/loincloth/colored/brown
 	color = CLOTHING_BARK_BROWN
 
-/obj/item/clothing/pants/loincloth/black
+/obj/item/clothing/pants/loincloth/colored/black
 	color = CLOTHING_SOOT_BLACK
 
-/obj/item/clothing/pants/loincloth/pink
+/obj/item/clothing/pants/loincloth/colored/pink
 	color = "#b98ae3"

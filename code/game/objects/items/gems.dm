@@ -32,7 +32,7 @@
 /obj/item/gem/on_consume(mob/living/eater)
 	. = ..()
 	if(attuned)
-		eater.adjust_spellpoints(0.5)
+		eater.adjust_spell_points(0.5)
 		eater.mana_pool.adjust_attunement(attuned, 0.1)
 
 ///This is a switch incase anyone would like to add more...
@@ -99,7 +99,7 @@
 	attuned = /datum/attunement/light
 
 /obj/item/gem/red
-	name = "rubor"
+	name = "rontz"
 	desc = "Glistening with unkempt rage."
 	//color = "#ff00008c"
 	icon_state = "ruby_cut"

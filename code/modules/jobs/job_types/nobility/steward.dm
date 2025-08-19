@@ -43,6 +43,7 @@
 	beltl = /obj/item/weapon/knife/dagger/steel
 	backr = /obj/item/storage/backpack/satchel
 	ring = /obj/item/scomstone
+	scabbards = list(/obj/item/weapon/scabbard/knife)
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/rich = 1, /obj/item/lockpickring/mundane = 1)
 
 	H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)

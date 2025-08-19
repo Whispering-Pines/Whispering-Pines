@@ -413,7 +413,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 /mob/living/simple_animal/spawn_dust(just_ash = FALSE)
 	if(just_ash || !remains_type)
 		for(var/i in 1 to 5)
-			new /obj/item/ash(loc)
+			new /obj/item/fertilizer/ash(loc)
 	else
 		new remains_type(loc)
 
@@ -661,7 +661,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/do_footstep = FALSE
 
 /mob/living/simple_animal/hostile/RangedAttack(atom/A, params) //Player firing
-	if(ranged && ranged_cooldown <= world.time)
+	if(!ai_controller && ranged && ranged_cooldown <= world.time)
 		target = A
 		OpenFire(A)
 	..()

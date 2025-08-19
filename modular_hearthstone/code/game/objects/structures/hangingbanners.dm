@@ -48,29 +48,29 @@
 
 ///Crafting
 
-/datum/crafting_recipe/structure/littlebanners
+/datum/blueprint_recipe/structure/littlebanners
 	name = "fair banners red-white"
-	result = list(/obj/structure/fluff/littlebanners)
-	reqs = list(/obj/item/natural/cloth = 4, /obj/item/natural/fibers)
-	verbage = "construct"
+	result_type = list(/obj/structure/fluff/littlebanners)
+	required_materials = list(/obj/item/natural/cloth = 4, /obj/item/natural/fibers)
+
 	craftdiff = 0
 
-/datum/crafting_recipe/structure/littlebanners/greenblue
+/datum/blueprint_recipe/structure/littlebanners/greenblue
 	name = "fair banners green-blue"
-	result = list(/obj/structure/fluff/littlebanners/greenblue)
+	result_type = list(/obj/structure/fluff/littlebanners/greenblue)
 
-/datum/crafting_recipe/structure/littlebanners/greenred
+/datum/blueprint_recipe/structure/littlebanners/greenred
 	name = "fair banners green-red"
-	result = list(/obj/structure/fluff/littlebanners/greenred)
+	result_type = list(/obj/structure/fluff/littlebanners/greenred)
 
-/datum/crafting_recipe/structure/littlebanners/bluewhite
+/datum/blueprint_recipe/structure/littlebanners/bluewhite
 	name = "fair banners blue-white"
-	result = list(/obj/structure/fluff/littlebanners/bluewhite)
+	result_type = list(/obj/structure/fluff/littlebanners/bluewhite)
 
-/datum/crafting_recipe/structure/littlebanners/greenwhite
+/datum/blueprint_recipe/structure/littlebanners/greenwhite
 	name = "fair banners green-white"
-	result = list(/obj/structure/fluff/littlebanners/greenwhite)
+	result_type = list(/obj/structure/fluff/littlebanners/greenwhite)
 
-/datum/crafting_recipe/structure/littlebanners/bluered
+/datum/blueprint_recipe/structure/littlebanners/bluered
 	name = "fair banners blue-red"
-	result = list(/obj/structure/fluff/littlebanners/bluered)
+	result_type = list(/obj/structure/fluff/littlebanners/bluered)

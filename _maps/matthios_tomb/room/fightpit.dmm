@@ -14,7 +14,7 @@
 /area/rogue/under/tomb/indoors)
 "aX" = (
 /obj/structure/table/wood/counter/end,
-/obj/item/reagent_containers/food/snacks/cooked/sausage,
+/obj/item/reagent_containers/food/snacks/bun_grenz/plated,
 /turf/open/floor/hexstone,
 /area/rogue/under/tomb)
 "aY" = (
@@ -195,7 +195,7 @@
 /obj/structure/table/wood/counter{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/snacks/cooked/sausage{
+/obj/item/reagent_containers/food/snacks/bun_grenz/plated{
 	pixel_y = 5;
 	pixel_x = -7
 	},
@@ -336,7 +336,7 @@
 /obj/structure/table/wood/counter{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/snacks/cooked/sausage,
+/obj/item/reagent_containers/food/snacks/bun_grenz/plated,
 /turf/open/floor/hexstone,
 /area/rogue/under/tomb)
 "yO" = (
@@ -423,7 +423,7 @@
 /obj/structure/table/wood/counter{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/snacks/cooked/sausage{
+/obj/item/reagent_containers/food/snacks/bun_grenz/plated{
 	pixel_x = 12;
 	pixel_y = 11
 	},

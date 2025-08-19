@@ -37,14 +37,14 @@
 	to_chat(H, "<span class='info'>I can gesture in thieves' cant with ,t before my speech.</span>")
 
 /datum/outfit/job/adventurer/rogue/proc/scavengerarch(mob/living/carbon/human/H)
-	pants = /obj/item/clothing/pants/tights/black
-	armor = /obj/item/clothing/armor/leather/vest/black
-	shirt = /obj/item/clothing/shirt/undershirt/black
+	pants = /obj/item/clothing/pants/tights/colored/black
+	armor = /obj/item/clothing/armor/leather/vest/colored/black
+	shirt = /obj/item/clothing/shirt/undershirt/colored/black
 	backl = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather/rope
 	backpack_contents = list(/obj/item/weapon/pick = 1, /obj/item/weapon/knife/hunting = 1, /obj/item/lockpickring/mundane)
 	gloves = /obj/item/clothing/gloves/fingerless
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	cloak = /obj/item/clothing/cloak/raincloak/colored/mortus
 	shoes = /obj/item/clothing/shoes/boots/leather
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	beltl = /obj/item/weapon/whip // You know why.
@@ -121,7 +121,7 @@
 		armor = /obj/item/clothing/armor/leather
 		shirt = /obj/item/clothing/armor/gambeson
 		pants = /obj/item/clothing/pants/trou/leather
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	cloak = /obj/item/clothing/cloak/raincloak/colored/mortus
 	gloves = /obj/item/clothing/gloves/fingerless
 	shoes = /obj/item/clothing/shoes/boots
 	backl = /obj/item/storage/backpack/backpack
@@ -178,7 +178,7 @@
 	backl = /obj/item/storage/backpack/satchel
 	beltl = /obj/item/weapon/sword/rapier
 	beltr = /obj/item/weapon/shield/tower/buckleriron
-	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/parrying = 1, /obj/item/bomb = 1,  /obj/item/smokebomb = 1, /obj/item/recipe_book/survival = 1)
+	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/parrying = 1, /obj/item/explosive/bottle = 1,  /obj/item/smokebomb = 1, /obj/item/recipe_book/survival = 1)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DECEIVING_MEEKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) //if they got all the shield and parry stuff, might aswell.
@@ -216,7 +216,7 @@
 		armor = /obj/item/clothing/armor/leather
 		shirt = /obj/item/clothing/armor/gambeson
 		pants = /obj/item/clothing/pants/trou/leather
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	cloak = /obj/item/clothing/cloak/raincloak/colored/mortus
 	backl = /obj/item/storage/backpack/satchel
 	beltr = /obj/item/weapon/knife/dagger/steel
 	beltl = /obj/item/weapon/knife/dagger/steel
@@ -230,7 +230,7 @@
 	H.change_stat(STATKEY_INT, 3)
 	H.visible_message(span_info("I was always intrigued by magic, more than others. I took my time learning to use magic and stole a spellbook along the way."))
 	if(H.mind)
-		H.adjust_spellpoints(1)
+		H.adjust_spell_points(1)
 	H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
 	H.add_spell(/datum/action/cooldown/spell/projectile/fetch)
 	H.add_spell(/datum/action/cooldown/spell/aoe/knock)

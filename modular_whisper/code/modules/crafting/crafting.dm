@@ -43,20 +43,18 @@
 
 /datum/anvil_recipe/tools/isyringe
 	name = "iron syringe (x3)"
-	i_type = "Utilities"
+	category = "Utilities"
 	created_item = /obj/item/reagent_containers/syringe/iron
 	req_bar = /obj/item/ingot/iron
-	createmultiple = TRUE
-	createditem_num = 2
+	createditem_extra = 2
 	craftdiff = 1
 
 /datum/anvil_recipe/tools/ssyringe
 	name = "steel syringe (x3)"
-	i_type = "Utilities"
+	category = "Utilities"
 	created_item = /obj/item/reagent_containers/syringe/steel
 	req_bar = /obj/item/ingot/steel
-	createmultiple = TRUE
-	createditem_num = 2
+	createditem_extra = 2
 	craftdiff = 1
 
 /datum/repeatable_crafting_recipe/survival/stone_hammer
@@ -72,101 +70,106 @@
 	craftdiff = 0
 
 
-/datum/crafting_recipe/alch/charcoal
+/datum/repeatable_crafting_recipe/alch/charcoal
 	name = "make charcoal"
-	reqs = list(/obj/item/grown/log/tree/small = 1)
-	result = /obj/item/ore/coal/charcoal
-	structurecraft = /obj/machinery/light/fueled/campfire
+	requirements = list(/obj/item/grown/log/tree/small = 1)
+	output = /obj/item/ore/coal/charcoal
+	attacked_atom = /obj/machinery/light/fueled/campfire
 	craftdiff = 0
 	skillcraft = /datum/skill/craft/crafting
 
-/datum/crafting_recipe/alch/charcoal/hearth
-	structurecraft = /obj/machinery/light/fueled/hearth
+/datum/repeatable_crafting_recipe/alch/charcoal/hearth
+	attacked_atom = /obj/machinery/light/fueled/hearth
 
-/datum/crafting_recipe/alch/charcoal/mobile
-	structurecraft = /obj/machinery/light/fueled/hearth/mobilestove
+/datum/repeatable_crafting_recipe/alch/charcoal/mobile
+	attacked_atom = /obj/machinery/light/fueled/hearth/mobilestove
 
 ///glass shit
-/datum/crafting_recipe/glass/cup
+/datum/repeatable_crafting_recipe/glass/cup
 	name = "glass cup"
-	result = /obj/item/reagent_containers/glass/cup/glassware
-	reqs = list(
+	output = /obj/item/reagent_containers/glass/cup/glassware
+	requirements = list(
 		/obj/item/natural/glass = 1,
 	)
+	attacked_atom = /obj/machinery/light/fueled/smelter
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 1
-	structurecraft = /obj/machinery/light/fueled/smelter
 
-/datum/crafting_recipe/glass/wineglass
+/datum/repeatable_crafting_recipe/glass/wineglass
 	name = "wine glass"
-	result = /obj/item/reagent_containers/glass/cup/glassware/wineglass
-	reqs = list(
+	output = /obj/item/reagent_containers/glass/cup/glassware/wineglass
+	requirements = list(
 		/obj/item/natural/glass = 1,
 	)
+	attacked_atom = /obj/machinery/light/fueled/smelter
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 2
-	structurecraft = /obj/machinery/light/fueled/smelter
 
-/datum/crafting_recipe/glass/shotglass
+/datum/repeatable_crafting_recipe/glass/shotglass
 	name = "shot glass"
-	result = /obj/item/reagent_containers/glass/cup/glassware/shotglass
-	reqs = list(
+	output = /obj/item/reagent_containers/glass/cup/glassware/shotglass
+	requirements = list(
 		/obj/item/natural/glass = 1,
 	)
+	attacked_atom = /obj/machinery/light/fueled/smelter
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 1
-	structurecraft = /obj/machinery/light/fueled/smelter
 
-/datum/crafting_recipe/glass/shotglass
+/datum/repeatable_crafting_recipe/glass/shotglass
 	name = "glass carafe"
-	result = /obj/item/reagent_containers/glass/carafe
-	reqs = list(
+	output = /obj/item/reagent_containers/glass/carafe
+	requirements = list(
 		/obj/item/natural/glass = 2,
 	)
+	attacked_atom = /obj/machinery/light/fueled/smelter
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 3
-	structurecraft = /obj/machinery/light/fueled/smelter
 
-/datum/crafting_recipe/glass/dropper
+
+/datum/repeatable_crafting_recipe/glass/dropper
 	name = "glass dropper"
-	result = /obj/item/reagent_containers/dropper
-	reqs = list(
+	output = /obj/item/reagent_containers/dropper
+	requirements = list(
 		/obj/item/natural/glass = 1,
 	)
+	attacked_atom = /obj/machinery/light/fueled/smelter
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 2
-	structurecraft = /obj/machinery/light/fueled/smelter
 
-/datum/crafting_recipe/glass/glasspane
+
+/datum/repeatable_crafting_recipe/glass/glasspane
 	name = "glass"
-	result = /obj/item/natural/glass
-	reqs = list(
+	output = /obj/item/natural/glass
+	requirements = list(
 		/obj/item/natural/sand = 1,
 		/obj/item/natural/stone = 1,
 	)
+	attacked_atom = /obj/machinery/light/fueled/smelter
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 2
-	structurecraft = /obj/machinery/light/fueled/smelter
 
-/datum/crafting_recipe/glass/glassbottle
+
+/datum/repeatable_crafting_recipe/glass/glassbottle
 	name = "glass bottle"
-	result = /obj/item/reagent_containers/glass/bottle
-	reqs = list(
+	output = /obj/item/reagent_containers/glass/bottle
+	requirements = list(
 		/obj/item/natural/glass = 2,
 	)
+	attacked_atom = /obj/machinery/light/fueled/smelter
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 2
-	structurecraft = /obj/machinery/light/fueled/smelter
 
-/datum/crafting_recipe/glass/glassvial
+
+/datum/repeatable_crafting_recipe/glass/glassvial
 	name = "glass vial"
-	result = /obj/item/reagent_containers/glass/bottle/vial
-	reqs = list(
+	output = /obj/item/reagent_containers/glass/bottle/vial
+	requirements = list(
 		/obj/item/natural/glass = 1,
 	)
+	attacked_atom = /obj/machinery/light/fueled/smelter
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 1
-	structurecraft = /obj/machinery/light/fueled/smelter
+
 
 //head bag
 /datum/repeatable_crafting_recipe/sewing/headbag
