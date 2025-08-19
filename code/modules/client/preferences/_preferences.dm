@@ -463,24 +463,10 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	dat += "<td width='33%' align='left'></td>"
 	dat += "<td width='33%' align='center'>"
 	var/mob/dead/new_player/N = user
-	if(istype(N))
-		//dat += "<a href='?_src_=prefs;preference=bespecial'><b>[next_special_trait ? "<font color='red'>SPECIAL</font>" : "BE SPECIAL"]</b></a><BR>"
-		if(SSticker.current_state <= GAME_STATE_PREGAME)
-			switch(N.ready)
-				if(PLAYER_NOT_READY)
-					dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
-				if(PLAYER_READY_TO_PLAY)
-					dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
-		else
-			if(!is_active_migrant())
-				dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
-			else
-				dat += "<a class='linkOff' href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
-			dat += " - <a href='?_src_=prefs;preference=migrants'>MIGRATION</a>"
-			dat += "<br><a href='?_src_=prefs;preference=manifest'>ACTORS</a>"
-	else
-		dat += "<a href='?_src_=prefs;preference=finished'>DONE</a>"
-		dat += "</center>"
+
+	dat += "<a href='?_src_=prefs;preference=finished'>DONE</a>"
+	dat += "</center>"
+
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
 	dat += "<b>Be Voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"
