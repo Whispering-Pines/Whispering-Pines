@@ -2536,7 +2536,7 @@ $(function() {
 
 	$('#saveLog').click(function(e) {
 		var date = new Date();
-		var fname = ' Phantom Kingdom Chat Log ' +
+		var fname = ' Whispering Pines Chat Log ' +
 					date.getFullYear() + '-' +
 					(date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1) + '-' +
 					(date.getDate() < 10 ? '0' : '') + date.getDate() + ' ' +
@@ -2550,7 +2550,7 @@ $(function() {
 			url: 'browserOutput_white.css',
 			success: function(styleData) {
 				var blob = new Blob([
-					'<head><title>Phantom Kingdom Chat Log</title><style>',
+					'<head><title>Whispering Pines Chat Log</title><style>',
 					styleData,
 					'</style></head><body>',
 					$messages.html(),
