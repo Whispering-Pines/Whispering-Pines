@@ -96,14 +96,39 @@
 	craftdiff = 4	//It's plate, no easy craft.
 	category = "Armor"
 
+/obj/item/clothing/pants/trou/leather/masterwork/skirt
+	name = "masterwork leather skirt"
+	icon = 'modular_stonehedge/icons/clothing/armor/pants.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/pants.dmi'
+	icon_state = "hlskirt"
+	item_state = "hlskirt"
+	genital_access = TRUE
+
 ///CONVERSIONS
 
-/datum/repeatable_crafting_recipe/leatherskirtconv
-	name = "leather pants to skirt"
+/datum/repeatable_crafting_recipe/conversion
+	tool_usage = list(
+		/obj/item/weapon/knife = list("starts to cut", "start to cut")
+	)
+	starting_atom = /obj/item/weapon/knife
+	output_amount = 1
+	craftdiff = 0
+	subtypes_allowed = TRUE
+
+/datum/repeatable_crafting_recipe/conversion/leatherskirtconv
+	name = "leather skirt"
 	output = list(/obj/item/clothing/pants/trou/leather/skirt)
 	requirements = list(/obj/item/clothing/pants/trou/leather = 1)
+	attacked_atom = /obj/item/clothing/pants/trou/leather
 
-/datum/repeatable_crafting_recipe/leatherskirtconvtwo
-	name = "hardened leather pants to skirt"
+/datum/repeatable_crafting_recipe/conversion/leatherskirtconvtwo
+	name = "hardened leather skirt"
 	output = list(/obj/item/clothing/pants/trou/leather/advanced/skirt)
 	requirements = list(/obj/item/clothing/pants/trou/leather/advanced = 1)
+	attacked_atom = /obj/item/clothing/pants/trou/leather/advanced
+
+/datum/repeatable_crafting_recipe/conversion/leatherskirtconvthree
+	name = "masterwork leather skirt"
+	output = list(/obj/item/clothing/pants/trou/leather/masterwork/skirt)
+	requirements = list(/obj/item/clothing/pants/trou/leather/masterwork/skirt = 1)
+	attacked_atom = /obj/item/clothing/pants/trou/leather/masterwork

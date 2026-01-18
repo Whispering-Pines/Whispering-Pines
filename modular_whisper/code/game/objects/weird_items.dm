@@ -169,7 +169,7 @@
 	taste_description = "sweet slime"
 	glass_name = "glass of floral reproductive juice"
 
-/datum/reagent/consumable/cum/on_transfer(atom/A, method, trans_volume)
+/datum/reagent/consumable/cum/plant/on_transfer(atom/A, method, trans_volume)
 	. = ..()
 	if(istype(A, /obj/item/organ/filling_organ/vagina) && virile)
 		var/obj/item/organ/filling_organ/vagina/forgan = A
@@ -177,7 +177,7 @@
 			if(prob(trans_volume))
 				forgan.be_itempregnated(/obj/item/maneaterseed, 4) //boom
 
-/datum/reagent/consumable/cum/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/cum/plant/on_mob_life(mob/living/carbon/M)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))

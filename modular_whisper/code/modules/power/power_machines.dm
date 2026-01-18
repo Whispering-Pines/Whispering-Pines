@@ -271,7 +271,7 @@ GLOBAL_VAR_INIT(global_biomass_storage, 0.5)
 	suck_bonus = 0
 	for(var/mob/living/carbon/human/victim in contents)
 		working = TRUE
-		if(victim.age == AGE_CHILD)
+		if(victim.age == AGE_CHILD) //we dont even have children playable here but still.
 			say("ALERT! War crime detected: Harvesting of Children... Process halted... Error, Failed to send alert to united nations confederation, no connection available.", language = /datum/language/ancient_english)
 			open()
 			return
